@@ -1,18 +1,5 @@
 {
-	"name": "@mono/contracts",
+	"name": "@kex/contracts",
 	"version": "1.0.0",
-	"type": "module",
-	"scripts": {
-		"build": "bunx hardhat build",
-		"test": "bunx hardhat test",
-		"test:sol": "bunx hardhat test solidity"
-	},
-	"devDependencies": {
-		"@nomicfoundation/hardhat-ignition": "^3.0.7",
-		"@nomicfoundation/hardhat-toolbox-viem": "^5.0.2",
-		"@types/node": "^22.8.5",
-		"forge-std": "foundry-rs/forge-std#v1.9.4",
-		"hardhat": "^3.1.5",
-		"viem": "^2.43.0"
-	}
+	"type": "module"
 }
