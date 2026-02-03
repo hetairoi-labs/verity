@@ -17,7 +17,7 @@ const app = (
 		<QueryClientProvider>
 			<ThemeProvider defaultTheme="dark" storageKey="theme">
 				<RouterProvider router={router} />
-				<Toaster position="bottom-left" theme="dark" />
+				<Toaster position="top-right" theme={"dark"} />
 			</ThemeProvider>
 		</QueryClientProvider>
 	</StrictMode>

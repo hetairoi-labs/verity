@@ -17,5 +17,8 @@
 		"components": "@/src/components",
 		"ui": "@/src/components/ui"
 	},
-	"iconLibrary": "lucide"
+	"iconLibrary": "lucide",
+	"registries": {
+		"@acme": "https://acme.com/r/{name}.json"
+	}
 }

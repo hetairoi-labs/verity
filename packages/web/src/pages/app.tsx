@@ -5,8 +5,9 @@ import {
 	Outlet,
 } from "@tanstack/react-router";
 import { useAnalytics } from "@/src/lib/hooks/use-analytics";
-import HomePage from "@/src/pages/home";
+import { FormPage } from "@/src/pages/form";
 import _404 from "./404";
+import { HomePage } from "./home";
 
 const rootRoute = createRootRoute({
 	component: () => {
@@ -24,7 +25,15 @@ const indexRoute = createRoute({
 	},
 });
 
-const routeTree = rootRoute.addChildren([indexRoute]);
+const formRoute = createRoute({
+	getParentRoute: () => rootRoute,
+	path: "/form",
+	component: function Form() {
+		return <FormPage />;
+	},
+});
+
+const routeTree = rootRoute.addChildren([indexRoute, formRoute]);
 const router = createRouter({
 	routeTree,
 });
