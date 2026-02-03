@@ -2,12 +2,17 @@ import { z } from "zod";
 
 // env schema
 const envSchema = z.object({
-	DATABASE_URL: z.string().min(1, "DATABASE_URL is required"),
+	// client & server
 	PUBLIC_SERVER_URL: z.url(),
 	PUBLIC_GA_ID: z.string().optional(),
+	PUBLIC_PRIVY_APP_ID: z.string().min(1, "PRIVY_APP_ID is required"),
+
+	// server only
 	PORT: z.coerce.number().int().positive("PORT must be a positive integer"),
-	PRIVY_APP_ID: z.string().min(1, "PRIVY_APP_ID is required"),
 	PRIVY_APP_SECRET: z.string().min(1, "PRIVY_APP_SECRET is required"),
+	DATABASE_URL: z.string().min(1, "DATABASE_URL is required"),
+	GOOGLE_CLIENT_ID: z.string().min(1, "GOOGLE_CLIENT_ID is required"),
+	GOOGLE_CLIENT_SECRET: z.string().min(1, "GOOGLE_CLIENT_SECRET is required"),
 });
 type EnvSchema = z.infer<typeof envSchema>;
 
@@ -20,6 +25,7 @@ declare module "bun" {
 export function validateEnv() {
 	try {
 		const parsedEnv = envSchema.parse(Bun.env);
+		console.log("🔑 Environment validated successfully");
 		return parsedEnv;
 	} catch (error) {
 		if (error instanceof z.ZodError) {

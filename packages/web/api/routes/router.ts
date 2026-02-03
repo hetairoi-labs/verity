@@ -1,6 +1,6 @@
 import { Hono } from "hono";
-import welcome from "./welcome.route";
+import google from "./google.route";
 
-const routes = new Hono().route("/welcome", welcome);
+const routes = new Hono().route("/google", google);
 
 export default routes;

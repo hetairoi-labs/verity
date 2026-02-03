@@ -1,10 +1,10 @@
 import { hc } from "hono/client";
-import type { WelcomeType } from "@/api/routes/welcome.route";
+import type { GoogleType } from "@/api/routes/google.route";
 
 const baseUrl = process.env.PUBLIC_SERVER_URL;
 
 const client = {
-	welcome: hc<WelcomeType>(`${baseUrl}/welcome`),
+	google: hc<GoogleType>(`${baseUrl}/google`),
 };
 
 export default client;

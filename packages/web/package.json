@@ -5,15 +5,19 @@
 	"main": "server.ts",
 	"module": "server.ts",
 	"scripts": {
-		"dev": "./scripts/dev.sh",
-		"start": "./scripts/prod.sh",
+		"dev": "bun push && bun check && bun --hot server.ts",
+		"start": "NODE_ENV=production bun server.ts",
 		"deploy": "./scripts/deploy.sh",
-		"build": "bun run build.ts",
+		"build": "bun utils/build.ts",
+		"tsc": "bunx tsc --noEmit",
+		"format": "bunx biome format --write",
+		"lint": "bunx biome lint --write",
 		"check": "bunx biome check --write",
 		"generate": "bunx drizzle-kit generate",
 		"migrate": "bunx drizzle-kit migrate",
 		"push": "bunx drizzle-kit push",
-		"shadcn": "bunx shadcn@latest add"
+		"shadcn": "bunx shadcn@latest add",
+		"authenticate": "bun utils/google.ts"
 	},
 	"dependencies": {
 		"@hono/zod-validator": "^0.7.6",
@@ -25,6 +29,7 @@
 		"class-variance-authority": "^0.7.1",
 		"clsx": "^2.1.1",
 		"drizzle-orm": "^0.45.1",
+		"google-auth-library": "^10.5.0",
 		"googleapis": "^171.1.0",
 		"gsap": "^3.14.2",
 		"hono": "^4.11.7",

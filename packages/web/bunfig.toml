@@ -1,4 +1,3 @@
 [serve.static]
 plugins = ["bun-plugin-tailwind"]
 env = "PUBLIC_*"
-telemetry = false

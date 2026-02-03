@@ -1,7 +1,7 @@
 import { serve } from "bun";
 import hono from "@/api/hono";
 import html from "@/src/index.html";
-import { validateEnv } from "./env";
+import { validateEnv } from "./utils/env";
 
 validateEnv();
 const isDev = process.env.NODE_ENV !== "production";
@@ -34,7 +34,5 @@ const server = serve({
 	},
 });
 
-console.log(
-	`${isDev ? "Development" : "Production"} server is running at ${server.url} 🚀`,
-);
-console.log(`Bun version: ${Bun.version}`);
+console.log(`🐰 Bun version: ${Bun.version}`);
+console.log(`🔥 ${isDev ? "Dev" : "Prod"} server is running at ${server.url}`);
