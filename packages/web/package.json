@@ -20,6 +20,7 @@
 		"authenticate": "bun utils/google.ts"
 	},
 	"dependencies": {
+		"@google/genai": "^1.39.0",
 		"@hono/zod-validator": "^0.7.6",
 		"@phosphor-icons/react": "^2.1.10",
 		"@tanstack/react-form": "^1.28.0",

@@ -1,10 +1,10 @@
 import { hc } from "hono/client";
-import type { GoogleType } from "@/api/routes/google.route";
+import type { MeetType } from "@/api/routes/meet.route";
 
 const baseUrl = process.env.PUBLIC_SERVER_URL;
 
 const client = {
-	google: hc<GoogleType>(`${baseUrl}/google`),
+	meet: hc<MeetType>(`${baseUrl}/meet`),
 };
 
 export default client;

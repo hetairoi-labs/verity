@@ -5,9 +5,9 @@ import { trimTrailingSlash } from "hono/trailing-slash";
 import { rateLimiter } from "hono-rate-limiter";
 import { respond } from "@/api/lib/utils/respond";
 import routes from "@/api/routes/router";
+import ws from "./ws/ws";
 
 const hono = new Hono()
-	.use(cors())
 	.use(logger())
 	.use(trimTrailingSlash())
 	.use(
@@ -25,6 +25,8 @@ const hono = new Hono()
 			},
 		}),
 	)
+	.route("/api/v1/ws", ws) // put websocket routes before cors to avoid immutable response header error
+	.use(cors())
 	.route("/api/v1", routes)
 	.get("*", (ctx) => {
 		return respond.err(ctx, "Invalid v1 api route", 404);

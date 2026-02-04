@@ -1,4 +1,5 @@
 import { serve } from "bun";
+import { websocket } from "hono/bun";
 import hono from "@/api/hono";
 import html from "@/src/index.html";
 import { validateEnv } from "./utils/env";
@@ -27,6 +28,8 @@ const server = serve({
 
 		"/*": html,
 	},
+
+	websocket,
 
 	error(error) {
 		console.error(error);
