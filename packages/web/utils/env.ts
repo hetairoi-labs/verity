@@ -14,6 +14,8 @@ const envSchema = z.object({
 	GOOGLE_CLIENT_ID: z.string().min(1, "GOOGLE_CLIENT_ID is required"),
 	GOOGLE_CLIENT_SECRET: z.string().min(1, "GOOGLE_CLIENT_SECRET is required"),
 	GEMINI_API_KEY: z.string().min(1, "GEMINI_API_KEY is required"),
+	RECALL_API_URL: z.url(),
+	RECALL_API_KEY: z.string().min(1, "RECALL_API_KEY is required"),
 });
 type EnvSchema = z.infer<typeof envSchema>;
 

@@ -1,30 +1,31 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import client from "../utils/api-client";
 
-export function useWs() {
+export function useTimeWs() {
+	const socketRef = useRef<WebSocket | null>(null);
 	const [data, setData] = useState<string[]>([]);
+	const [isConnected, setIsConnected] = useState(false);
 
 	useEffect(() => {
-		const socket = client.ws.time.$ws(0);
+		const ws = client.ws.time.$ws(0);
+		socketRef.current = ws;
 
-		socket.onopen = () => {
-			console.log("WebSocket opened at", socket.url);
+		ws.onopen = () => {
+			console.log("WS opened");
+			setIsConnected(true);
 		};
+		ws.onmessage = (e) => setData([e.data]);
+		ws.onclose = () => setIsConnected(false);
+		ws.onerror = (err) => console.error("WS Error:", err);
 
-		socket.onmessage = (event) => {
-			setData([event.data]);
-		};
-
-		socket.onerror = (err: Event) => console.error("WS Error:", err);
-
-		return () => {
-			socket.close();
-		};
+		return () => ws.close();
 	}, []);
 
+	const send = (message: string) => socketRef.current?.send(message);
+
 	return {
-		time: {
-			data,
-		},
+		data,
+		send,
+		isConnected,
 	};
 }

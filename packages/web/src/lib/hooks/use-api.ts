@@ -21,5 +21,22 @@ export function useApi() {
 				console.error(err);
 			},
 		}),
+		createBot: useMutation({
+			mutationFn: async (json: { meetingUrl: string }) => {
+				const res = await client.meet["create-bot"].$post({
+					json,
+				});
+				const parsed = await res.json();
+				if (!parsed.success) {
+					throw new Error(parsed.message);
+				}
+			},
+			onSuccess: (data) => {
+				console.log(data);
+			},
+			onError: (err) => {
+				console.error(err);
+			},
+		}),
 	};
 }

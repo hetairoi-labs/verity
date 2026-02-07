@@ -39,3 +39,4 @@ const server = serve({
 
 console.log(`🐰 Bun version: ${Bun.version}`);
 console.log(`🔥 ${isDev ? "Dev" : "Prod"} server is running at ${server.url}`);
+console.log(`🔑 Environment: ${process.env.PUBLIC_SERVER_URL}`);

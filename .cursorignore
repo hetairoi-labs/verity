@@ -1,3 +1,4 @@
 // all .env subdirectories
 **/.env
+**/.env.*
 secrets/

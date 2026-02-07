@@ -5,10 +5,11 @@
 	"main": "server.ts",
 	"module": "server.ts",
 	"scripts": {
-		"dev": "bun push && bun check && bun --hot server.ts",
+		"dev": "clear && bun push && bun check && bun --hot server.ts",
 		"start": "NODE_ENV=production bun server.ts",
 		"deploy": "./scripts/deploy.sh",
 		"build": "bun utils/build.ts",
+		"ngrok": "bun --env-file=.env.staging run dev",
 		"tsc": "bunx tsc --noEmit",
 		"format": "bunx biome format --write",
 		"lint": "bunx biome lint --write",
