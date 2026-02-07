@@ -15,7 +15,7 @@ export function useApi() {
 				return parsed.data;
 			},
 			onSuccess: (data) => {
-				console.log(data);
+				console.log("Meeting created successfully:", data);
 			},
 			onError: (err) => {
 				console.error(err);
@@ -28,11 +28,12 @@ export function useApi() {
 				});
 				const parsed = await res.json();
 				if (!parsed.success) {
-					throw new Error(parsed.message);
+					throw new Error(parsed.error);
 				}
+				return parsed.data;
 			},
 			onSuccess: (data) => {
-				console.log(data);
+				console.log("Bot created successfully:", data);
 			},
 			onError: (err) => {
 				console.error(err);

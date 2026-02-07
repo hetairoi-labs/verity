@@ -25,5 +25,6 @@ export async function createBot(meetingUrl: URL) {
 		throw new Error(`Error: ${response.status} ${response.statusText}`);
 	}
 
-	return response.json();
+	const data = await response.json();
+	return data;
 }
