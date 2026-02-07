@@ -14,6 +14,7 @@ const meetRoute = new Hono().post(
 		}),
 	),
 	async (c) => {
+		console.log(c.req.url);
 		try {
 			const { summary } = c.req.valid("json");
 			const client = await getAuthenticatedClient();

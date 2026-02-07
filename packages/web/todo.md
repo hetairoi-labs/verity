@@ -1,0 +1,5 @@
+- user creates a new course / project -> no. of sessions (meetings), goals to achieve (flexible) etc.
+- user schedules a new session -> we create meet link for them.
+- we place a bot in the meeting room (DIY / third party) when it starts, to get audio and transcript.
+- get audio & duplex gemini live interactive answers in the same meet.
+- get transcript of the meeting and pass it to a verifier agent to verify the knowledge exchange based on set goals.

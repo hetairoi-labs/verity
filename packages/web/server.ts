@@ -24,7 +24,7 @@ const server = serve({
 			}),
 		),
 
-		"/api/v1/*": (req) => hono.fetch(req),
+		"/api/v1/*": (req, server) => hono.fetch(req, server),
 
 		"/*": html,
 	},

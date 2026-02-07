@@ -4,9 +4,9 @@ import client from "../utils/api-client";
 export function useApi() {
 	return {
 		meet: useMutation({
-			mutationFn: async (options: { summary: string }) => {
+			mutationFn: async (json: { summary: string }) => {
 				const res = await client.meet["create-meeting"].$post({
-					json: options,
+					json,
 				});
 				const parsed = await res.json();
 				if (!parsed.success) {
