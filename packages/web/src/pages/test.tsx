@@ -18,7 +18,7 @@ export function TestPage() {
 				<TestCard
 					title="Meeting API"
 					description="Create a test meeting"
-					data={meet.data?.event}
+					data={meet.data?.event.hangoutLink}
 				>
 					<Button
 						className="w-full"

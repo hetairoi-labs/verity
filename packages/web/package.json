@@ -9,7 +9,7 @@
 		"start": "NODE_ENV=production bun server.ts",
 		"deploy": "./scripts/deploy.sh",
 		"build": "bun utils/build.ts",
-		"ngrok": "bun --env-file=.env.staging run dev",
+		"staging": "bun --env-file=.env.staging run dev",
 		"tsc": "bunx tsc --noEmit",
 		"format": "bunx biome format --write",
 		"lint": "bunx biome lint --write",
