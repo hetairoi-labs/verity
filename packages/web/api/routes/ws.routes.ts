@@ -5,7 +5,7 @@ import { respond } from "../lib/utils/hono/respond";
 
 const wsRouter = new Hono()
 	.get("/", (c) => {
-		return respond.ok(c, {}, "WebSocket is running", 200);
+		return respond.ok(c, 200, "WebSocket is running", {});
 	})
 	.get(
 		"/time",

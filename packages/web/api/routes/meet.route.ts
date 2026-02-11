@@ -4,7 +4,6 @@ import { z } from "zod";
 import { createBot } from "@/api/lib/utils/bot";
 import { respond } from "@/api/lib/utils/hono/respond";
 import { getAuthenticatedClient } from "@/utils/google";
-import { AppError } from "../lib/utils/hono/error";
 import { validator } from "../lib/utils/zod";
 
 const meetRoute = new Hono()
@@ -40,12 +39,9 @@ const meetRoute = new Hono()
 				},
 			});
 
-			return respond.ok(
-				c,
-				{ event: event.data },
-				"Meeting created successfully! 🎉",
-				200,
-			);
+			return respond.ok(c, 200, "Meeting created successfully! 🎉", {
+				event: event.data,
+			});
 		},
 	)
 	.post(
@@ -59,46 +55,7 @@ const meetRoute = new Hono()
 		async (c) => {
 			const { meetingUrl } = c.req.valid("json");
 			const bot = await createBot(new URL(meetingUrl));
-			return respond.ok(c, { bot }, "Bot created successfully! 🤖", 200);
-		},
-	)
-	.post(
-		"/test",
-		validator(
-			"json",
-			z.object({
-				email: z.email("Invalid email address"),
-				age: z.coerce.number().min(18, "Age must be greater than 18"),
-			}),
-		),
-		async (c) => {
-			const { email, age } = c.req.valid("json");
-
-			// 1. Test manual AppError (403 Forbidden)
-			if (email.endsWith("@blocked.com")) {
-				throw new AppError("This domain is blacklisted", 403, {
-					reason: "Security policy",
-					domain: "@blocked.com",
-				});
-			}
-
-			// 2. Test unexpected crash (500 Internal Server Error)
-			if (email === "crash@test.com") {
-				throw new Error("Simulated database failure!", {
-					cause: {
-						code: "DATABASE_ERROR",
-						message: "Database connection failed",
-					},
-				});
-			}
-
-			// 3. Success Path (200 OK)
-			return respond.ok(
-				c,
-				{ user: { email, age } },
-				"Test successful! 🚀",
-				200,
-			);
+			return respond.ok(c, 200, "Bot created successfully! 🤖", { bot });
 		},
 	);
 

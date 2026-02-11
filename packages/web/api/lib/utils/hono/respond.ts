@@ -3,16 +3,17 @@ import type { ResponseHeader } from "hono/utils/headers";
 import type {
 	ClientErrorStatusCode,
 	ServerErrorStatusCode,
+	SuccessStatusCode,
 } from "hono/utils/http-status";
 import type { BaseMime } from "hono/utils/mime";
 import type { JSONObject } from "hono/utils/types";
 
 export const respond = {
-	ok: <C extends Context, T extends JSONObject, U extends 200 | 201 | 202>(
+	ok: <C extends Context, T extends JSONObject, U extends SuccessStatusCode>(
 		ctx: C,
-		data: T,
+		status: U = 200 as U,
 		message: string,
-		status: U,
+		data: T,
 		headers?: HeaderRecord,
 	) => {
 		ctx.status(status);
@@ -28,8 +29,8 @@ export const respond = {
 		T extends JSONObject,
 	>(
 		ctx: C,
+		status: U = 500 as U,
 		message: string,
-		status: U,
 		error?: T,
 		headers?: HeaderRecord,
 	) => {

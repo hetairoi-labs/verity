@@ -12,8 +12,8 @@ export class AppError<T extends JSONObject = JSONObject> extends HTTPException {
 	public readonly headers?: HeaderRecord;
 
 	constructor(
-		message: string,
 		status: ClientErrorStatusCode | ServerErrorStatusCode = 500,
+		message: string,
 		error?: T,
 		headers?: HeaderRecord,
 	) {
@@ -34,5 +34,5 @@ export function handleError(err: Error | HTTPException, c: Context) {
 
 	console.error(`[Error]: ${err.message}`);
 	console.log("Error Details:", errorBody);
-	return respond.err(c, err.message, status, errorBody, headers);
+	return respond.err(c, status, err.message, errorBody, headers);
 }
