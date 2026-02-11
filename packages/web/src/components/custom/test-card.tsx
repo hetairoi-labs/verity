@@ -11,9 +11,12 @@ interface TestCardProps {
 	title: string;
 	description?: string;
 	children: ReactNode;
-	data?: {
-		[key: string]: unknown;
-	} | null;
+	data?:
+		| {
+				[key: string]: unknown;
+		  }
+		| string
+		| null;
 	className?: string;
 }
 

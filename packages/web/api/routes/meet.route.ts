@@ -1,15 +1,20 @@
 import { google } from "googleapis";
 import { Hono } from "hono";
 import { z } from "zod";
-import { createBot } from "@/api/lib/utils/bot";
+import {
+	createBot,
+	downloadTranscript,
+	retrieveBot,
+} from "@/api/lib/utils/bot";
 import { respond } from "@/api/lib/utils/hono/respond";
 import { getAuthenticatedClient } from "@/utils/google";
 import { getGeminiEphemeralToken } from "../lib/utils/gemini";
+import { ApiError } from "../lib/utils/hono/server-error";
 import { validator } from "../lib/utils/zod";
 
 const meetRoute = new Hono()
 	.post(
-		"/create-meeting",
+		"/create-meeting-with-bot",
 		validator(
 			"json",
 			z.object({
@@ -40,31 +45,53 @@ const meetRoute = new Hono()
 				},
 			});
 
-			return respond.ok(c, 200, "Meeting created successfully! 🎉", {
+			if (!event.data.hangoutLink) {
+				throw new ApiError(
+					500,
+					"Something went wrong while creating the meeting..",
+				);
+			}
+
+			return respond.ok(c, 200, "Meeting created successfully", {
 				event: event.data,
 			});
 		},
 	)
 	.post(
 		"/create-bot",
-		validator(
-			"json",
-			z.object({
-				meetingUrl: z.url(),
-			}),
-		),
+		validator("json", z.object({ meetingUrl: z.url() })),
 		async (c) => {
 			const { meetingUrl } = c.req.valid("json");
 			const bot = await createBot(new URL(meetingUrl));
-			return respond.ok(c, 200, "Bot created successfully! 🤖", { bot });
+			return respond.ok(c, 200, "Bot created successfully", {
+				bot,
+			});
 		},
 	)
 	.get("/token", async (c) => {
 		const token = await getGeminiEphemeralToken();
-		return respond.ok(c, 200, "Gemini token retrieved successfully! 🔑", {
+		return respond.ok(c, 200, "Gemini token retrieved successfully", {
 			token,
 		});
-	});
+	})
+	.get("/bot/:botId", async (c) => {
+		const { botId } = c.req.param();
+		const bot = await retrieveBot(botId);
+		return respond.ok(c, 200, "Bot retrieved successfully", {
+			bot,
+		});
+	})
+	.get(
+		"/transcript/:transcriptUrl",
+		validator("param", z.object({ transcriptUrl: z.url() })),
+		async (c) => {
+			const { transcriptUrl } = c.req.param();
+			const transcript = await downloadTranscript(new URL(transcriptUrl));
+			return respond.ok(c, 200, "Transcript downloaded successfully", {
+				transcript,
+			});
+		},
+	);
 
 export default meetRoute;
 export type MeetType = typeof meetRoute;
