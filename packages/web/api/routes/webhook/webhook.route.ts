@@ -8,7 +8,7 @@ const webhookRoute = new Hono().post(
 	zValidator("json", recallWebhookSchema),
 	async (c) => {
 		const payload = c.req.valid("json");
-		console.log("Webhook payload:", payload);
+		console.log("[RECALL WEBHOOK]:", payload);
 		return respond.ok(c, 200, "Webhook processed successfully", {});
 	},
 );

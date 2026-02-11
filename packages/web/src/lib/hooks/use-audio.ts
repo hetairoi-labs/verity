@@ -17,8 +17,6 @@ export function useAudio() {
 	const getToken = useApi().getToken;
 	const token = getToken.data;
 
-	console.log(token);
-
 	const [logs, setLogs] = useState<LogEntry[]>([]);
 	const [status, setStatus] = useState("idle");
 	const hasInit = useRef(false);

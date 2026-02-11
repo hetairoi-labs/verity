@@ -1,3 +1,4 @@
+import type { JSONObject } from "hono/utils/types";
 import type { ReactNode } from "react";
 import {
 	Card,
@@ -11,12 +12,7 @@ interface TestCardProps {
 	title: string;
 	description?: string;
 	children: ReactNode;
-	data?:
-		| {
-				[key: string]: unknown;
-		  }
-		| string
-		| null;
+	data?: JSONObject | string | null;
 	className?: string;
 }
 

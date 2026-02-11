@@ -5,14 +5,14 @@ import { Input } from "@/src/components/ui/input";
 import { useGetBot } from "@/src/lib/hooks/api/use-api";
 
 export function GetBot() {
-	const [botId, setBotId] = useState("");
-	const { data, isPending, error } = useGetBot(botId);
+	const [botId, setBotId] = useState<string | undefined>();
+	const { data } = useGetBot(botId);
 
 	return (
 		<TestCard
 			title="Get Bot"
 			description="Retrieve bot by ID"
-			data={error ? (error as Error).message : (data ?? null)}
+			data={data ? JSON.stringify(data, null, 2) : null}
 		>
 			<form
 				onSubmit={(e) => {
@@ -22,9 +22,9 @@ export function GetBot() {
 				}}
 				className="flex flex-col gap-4"
 			>
-				<Input type="text" placeholder="Enter bot ID" name="botId" />
-				<Button className="w-full" type="submit" disabled={isPending}>
-					{isPending ? "Fetching..." : "Fetch Bot"}
+				<Input type="text" placeholder="Enter bot ID" name="botId" required />
+				<Button className="w-full" type="submit">
+					Fetch Bot
 				</Button>
 			</form>
 		</TestCard>

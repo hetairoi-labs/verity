@@ -33,7 +33,15 @@ export function useApi() {
 				console.error(JSON.stringify(getApiError(error), null, 2)),
 		}),
 
-		getToken: useGetToken,
+		getToken: useQuery({
+			queryKey: ["token"],
+			queryFn: async () => {
+				const result = await parseResponse(client.meet.token.$get());
+				return result.data;
+			},
+			select: (data) => data?.token,
+			enabled: true,
+		}),
 		getBot: useGetBot,
 		getTranscript: useGetTranscript,
 	};
@@ -55,24 +63,12 @@ export function useCreateBot(meetingUrl: string) {
 	});
 }
 
-export function useGetToken() {
-	return useQuery({
-		queryKey: ["token"],
-		queryFn: async () => {
-			const result = await parseResponse(client.meet.token.$get());
-			return result.data;
-		},
-		select: (data) => data?.token,
-		enabled: true,
-	});
-}
-
-export function useGetBot(botId: string) {
+export function useGetBot(botId?: string) {
 	return useQuery({
 		queryKey: ["bot", botId],
 		queryFn: async () => {
 			const result = await parseResponse(
-				client.meet.bot[":botId"].$get({ param: { botId } }),
+				client.meet.bot[":botId"].$get({ param: { botId: botId ?? "" } }),
 			);
 			return result.data;
 		},
@@ -81,13 +77,13 @@ export function useGetBot(botId: string) {
 	});
 }
 
-export function useGetTranscript(transcriptUrl: string) {
+export function useGetTranscript(transcriptUrl?: string) {
 	return useQuery({
 		queryKey: ["transcript", transcriptUrl],
 		queryFn: async () => {
 			const result = await parseResponse(
 				client.meet.transcript[":transcriptUrl"].$get({
-					param: { transcriptUrl },
+					param: { transcriptUrl: transcriptUrl ?? "" },
 				}),
 			);
 			return result.data;

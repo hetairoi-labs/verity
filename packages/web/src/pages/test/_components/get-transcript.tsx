@@ -5,14 +5,20 @@ import { Input } from "@/src/components/ui/input";
 import { useGetTranscript } from "@/src/lib/hooks/api/use-api";
 
 export function GetTranscript() {
-	const [transcriptUrl, setTranscriptUrl] = useState("");
-	const { data, isPending, error } = useGetTranscript(transcriptUrl);
+	const [transcriptUrl, setTranscriptUrl] = useState<string | undefined>();
+	const { data } = useGetTranscript(transcriptUrl);
 
 	return (
 		<TestCard
 			title="Get Transcript"
 			description="Download transcript by URL"
-			data={error ? (error as Error).message : (data ?? null)}
+			data={
+				data
+					? {
+							...data,
+						}
+					: null
+			}
 		>
 			<form
 				onSubmit={(e) => {
@@ -26,9 +32,10 @@ export function GetTranscript() {
 					type="url"
 					placeholder="Enter transcript URL"
 					name="transcriptUrl"
+					required
 				/>
-				<Button className="w-full" type="submit" disabled={isPending}>
-					{isPending ? "Fetching..." : "Fetch Transcript"}
+				<Button className="w-full" type="submit">
+					Fetch Transcript
 				</Button>
 			</form>
 		</TestCard>

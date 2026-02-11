@@ -15,20 +15,16 @@ export async function createBot(meetingUrl: URL) {
 		body: JSON.stringify({
 			meeting_url: meetingUrl.href,
 			bot_name: "Kex Bot",
+			variant: {
+				zoom: "web_4_core",
+				google_meet: "web_4_core",
+				microsoft_teams: "web_4_core",
+			},
 			output_media: {
 				camera: {
 					kind: "webpage",
 					config: {
 						url: `${process.env.PUBLIC_APP_URL}/live`,
-					},
-				},
-			},
-			recording_config: {
-				transcript: {
-					provider: {
-						recallai_streaming: {
-							mode: "prioritize_accuracy",
-						},
 					},
 				},
 			},
