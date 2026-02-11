@@ -1,47 +1,8 @@
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useAudio } from "@/src/lib/hooks/use-audio";
 import Layout from "../layout";
 
 export function LivePage() {
-	const [logs, setLogs] = useState<string[]>([]);
-	const hasInit = useRef(false);
-
-	const addLog = useCallback((msg: string) => {
-		setLogs((prev) => [...prev.slice(-5), `> ${msg}`]);
-	}, []);
-
-	useEffect(() => {
-		if (hasInit.current) return;
-
-		const startEcho = async () => {
-			try {
-				addLog("Requesting Meeting Audio...");
-				const stream = await navigator.mediaDevices.getUserMedia({
-					audio: true,
-				});
-				addLog("Microphone Captured!");
-
-				const AudioContext =
-					window.AudioContext || (window as any).webkitAudioContext;
-				const ctx = new AudioContext();
-
-				if (ctx.state === "suspended") await ctx.resume();
-				addLog(`Audio State: ${ctx.state}`);
-
-				const source = ctx.createMediaStreamSource(stream);
-				source.connect(ctx.destination);
-				addLog("Loopback Active: Bot should now echo everything.");
-
-				hasInit.current = true;
-			} catch (err) {
-				addLog(
-					`Echo Error: ${err instanceof Error ? err.message : String(err)}`,
-				);
-			}
-		};
-
-		const timer = setTimeout(startEcho, 2000);
-		return () => clearTimeout(timer);
-	}, [addLog]);
+	const { logs } = useAudio();
 
 	return (
 		<Layout className="flex flex-col items-center justify-center h-screen bg-background text-foreground p-10">
@@ -51,8 +12,11 @@ export function LivePage() {
 					KEX_LIVE
 				</p>
 				{logs.map((log) => (
-					<div key={log} className="text-primary font-mono">
-						{log}
+					<div
+						key={`${log.timestamp.getTime()}-${log.message}`}
+						className="text-primary font-mono"
+					>
+						{log.message}
 					</div>
 				))}
 			</div>
