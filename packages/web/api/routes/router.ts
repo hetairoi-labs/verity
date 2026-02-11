@@ -9,3 +9,4 @@ const routes = new Hono()
 	.route("/webhook", webhook);
 
 export default routes;
+export type RoutesType = typeof routes;

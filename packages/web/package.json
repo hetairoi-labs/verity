@@ -10,7 +10,7 @@
 		"deploy": "./scripts/deploy.sh",
 		"build": "bun utils/build.ts",
 		"staging": "bun --env-file=.env.staging run dev",
-		"tsc": "bunx tsc --noEmit",
+		"tsc": "bunx --bun tsc --noEmit",
 		"format": "bunx biome format --write",
 		"lint": "bunx biome lint --write",
 		"check": "bunx biome check --write",

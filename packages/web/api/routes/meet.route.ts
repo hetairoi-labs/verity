@@ -4,6 +4,7 @@ import { z } from "zod";
 import { createBot } from "@/api/lib/utils/bot";
 import { respond } from "@/api/lib/utils/hono/respond";
 import { getAuthenticatedClient } from "@/utils/google";
+import { ApiError } from "../lib/utils/hono/server-error";
 import { validator } from "../lib/utils/zod";
 
 const meetRoute = new Hono()
@@ -49,11 +50,16 @@ const meetRoute = new Hono()
 		validator(
 			"json",
 			z.object({
-				meetingUrl: z.url("Invalid meeting URL"),
+				meetingUrl: z.string().min(1, "Min length is 1"),
 			}),
 		),
 		async (c) => {
 			const { meetingUrl } = c.req.valid("json");
+
+			if (!meetingUrl) {
+				throw new ApiError(400, "No meeting URL provided");
+			}
+
 			const bot = await createBot(new URL(meetingUrl));
 			return respond.ok(c, 200, "Bot created successfully! 🤖", { bot });
 		},

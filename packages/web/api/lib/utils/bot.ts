@@ -16,19 +16,14 @@ export async function createBot(meetingUrl: URL) {
 			authorization: process.env.RECALL_API_KEY,
 		},
 		body: JSON.stringify({
+			bot_name: "KEX Bot",
 			meeting_url: meetingUrl,
-			recording_config: {
-				video_mixed_layout: "gallery_view_v2",
-				video_separate_mp4: {},
-			},
-			audio_separate_raw: {},
-			realtime_endpoints: [
-				{
-					type: "websocket",
-					url: `${wsUrl}/stream`,
-					events: ["audio_separate_raw.data"],
+			output_media: {
+				kind: "webpage",
+				config: {
+					url: "https://intemerately-unsardonic-ebonie.ngrok-free.dev",
 				},
-			],
+			},
 		}),
 	});
 

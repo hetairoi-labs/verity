@@ -7,18 +7,18 @@ import type {
 import type { JSONObject } from "hono/utils/types";
 import { type HeaderRecord, respond } from "./respond";
 
-export class AppError<T extends JSONObject = JSONObject> extends HTTPException {
-	public readonly error?: T;
+export class ApiError<T extends JSONObject = JSONObject> extends HTTPException {
+	public readonly data?: T;
 	public readonly headers?: HeaderRecord;
 
 	constructor(
 		status: ClientErrorStatusCode | ServerErrorStatusCode = 500,
 		message: string,
-		error?: T,
+		data?: T,
 		headers?: HeaderRecord,
 	) {
-		super(status, { message, cause: error });
-		this.error = error;
+		super(status, { message, cause: data });
+		this.data = data;
 		this.headers = headers;
 	}
 }
@@ -29,8 +29,8 @@ export function handleError(err: Error | HTTPException, c: Context) {
 			? (err.status as ClientErrorStatusCode | ServerErrorStatusCode)
 			: 500;
 
-	const headers = err instanceof AppError ? err.headers : undefined;
-	const errorBody = err instanceof AppError ? err.error : err.cause;
+	const headers = err instanceof ApiError ? err.headers : undefined;
+	const errorBody = err instanceof ApiError ? err.data : err.cause;
 
 	console.error(`[Error]: ${err.message}`);
 	console.log("Error Details:", errorBody);

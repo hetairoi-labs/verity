@@ -1,17 +1,23 @@
 import { TestCard } from "@/src/components/custom/test-card";
 import { Button } from "@/src/components/ui/button";
 import { Input } from "@/src/components/ui/input";
-import { useApi } from "@/src/lib/hooks/use-api";
-import { useTimeWs } from "@/src/lib/hooks/use-ws";
+import { useApi } from "@/src/lib/hooks/api/use-api";
 import Layout from "./layout";
 
 export function TestPage() {
 	const { meet, createBot } = useApi();
-	const { data: wsTimeData, send: wsSend, isConnected } = useTimeWs();
+	// const { data: wsTimeData, send: wsSend, isConnected } = useTimeWs();
 
 	return (
 		<Layout className="flex flex-col items-center min-h-screen p-8">
 			<h1 className="text-2xl lg:text-4xl mb-8 text-center">API Tests</h1>
+
+			<div className="flex flex-col items-center gap-4 mb-8">
+				<Button onClick={() => createBot.mutate({ meetingUrl: "" })}>
+					Test create bot API
+				</Button>
+				<p className="text-red-500">{createBot.error?.zod?.summary}</p>
+			</div>
 
 			<div className="flex flex-col items-center gap-8 min-w-full">
 				{/* Meeting API Test */}
@@ -46,12 +52,16 @@ export function TestPage() {
 							}
 						}}
 					>
-						<Input
-							name="meetingUrl"
-							type="url"
-							placeholder="Enter meeting URL"
-							required
-						/>
+						<div className="flex flex-col gap-2">
+							<Input
+								name="meetingUrl"
+								type="url"
+								placeholder="Enter meeting URL"
+							/>
+							<p className="text-red-500">
+								{createBot.error?.zod?.details.meetingUrl?.join(", ")}
+							</p>
+						</div>
 						<Button
 							className="w-fit"
 							type="submit"
@@ -63,7 +73,7 @@ export function TestPage() {
 				</TestCard>
 
 				{/* WebSocket Test */}
-				<TestCard
+				{/* <TestCard
 					title={`WebSocket Test ${!isConnected ? "(Connecting...)" : ""}`}
 					description="Test WebSocket connection and messaging"
 					data={wsTimeData}
@@ -84,7 +94,7 @@ export function TestPage() {
 							Send
 						</Button>
 					</form>
-				</TestCard>
+				</TestCard> */}
 			</div>
 		</Layout>
 	);

@@ -2,7 +2,12 @@ import { zValidator as honoZValidator } from "@hono/zod-validator";
 import type { ValidationTargets } from "hono";
 import type { ZodType } from "zod";
 import { z } from "zod";
-import { AppError } from "./hono/error";
+import { ApiError } from "./hono/server-error";
+
+export type ZodErrorDetails = {
+	summary: string;
+	details: Record<string, string[] | undefined>;
+};
 
 export const validator = <
 	T extends ZodType,
@@ -13,12 +18,11 @@ export const validator = <
 ) =>
 	honoZValidator(target, schema, (result) => {
 		if (!result.success) {
-			const errorDetails = {
-				type: "zod",
+			const errorDetails: ZodErrorDetails = {
 				summary: z.prettifyError(result.error),
 				details: z.flattenError(result.error).fieldErrors,
 			};
-			throw new AppError("Input validation failed", 400, errorDetails);
+			throw new ApiError(400, "Zod", errorDetails);
 		}
 	});
 
