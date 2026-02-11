@@ -2,11 +2,14 @@ import { TestCard } from "@/src/components/custom/test-card";
 import { Button } from "@/src/components/ui/button";
 import { Input } from "@/src/components/ui/input";
 import { useApi } from "@/src/lib/hooks/api/use-api";
+import { getApiError } from "@/src/lib/utils/client-error";
 import Layout from "./layout";
 
 export function TestPage() {
 	const { meet, createBot } = useApi();
 	// const { data: wsTimeData, send: wsSend, isConnected } = useTimeWs();
+
+	const botError = getApiError(createBot.error);
 
 	return (
 		<Layout className="flex flex-col items-center min-h-screen p-8">
@@ -16,7 +19,7 @@ export function TestPage() {
 				<Button onClick={() => createBot.mutate({ meetingUrl: "" })}>
 					Test create bot API
 				</Button>
-				<p className="text-red-500">{createBot.error?.zod?.summary}</p>
+				<p className="text-red-500">{botError.zod?.summary}</p>
 			</div>
 
 			<div className="flex flex-col items-center gap-8 min-w-full">
@@ -59,7 +62,7 @@ export function TestPage() {
 								placeholder="Enter meeting URL"
 							/>
 							<p className="text-red-500">
-								{createBot.error?.zod?.details.meetingUrl?.join(", ")}
+								{botError.zod?.details.meetingUrl?.join(", ")}
 							</p>
 						</div>
 						<Button

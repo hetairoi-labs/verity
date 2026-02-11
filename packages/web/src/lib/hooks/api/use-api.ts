@@ -1,21 +1,38 @@
+import { useMutation } from "@tanstack/react-query";
+import { parseResponse } from "hono/client";
 import client from "../../utils/api-client";
-import { useApiMutation } from "./use-api-mutation";
-
-type MeetResponse = { event: { hangoutLink?: string } };
-type BotResponse = { bot: unknown };
+import { getApiError } from "../../utils/client-error";
 
 export function useApi() {
 	return {
-		meet: useApiMutation<MeetResponse, { summary: string }>(
-			(json: { summary: string }) =>
-				client.meet["create-meeting"].$post({ json }),
-			"meet",
-		),
+		meet: useMutation({
+			mutationFn: async (json: { summary: string }) => {
+				const result = await parseResponse(
+					client.meet["create-meeting"].$post({ json }),
+				);
+				return result.data;
+			},
+			onSuccess: (data) => {
+				console.log("[meet mutation] Success:", data);
+			},
+			onError: (error) =>
+				console.error(JSON.stringify(getApiError(error), null, 2)),
+		}),
 
-		createBot: useApiMutation<BotResponse, { meetingUrl: string }>(
-			(json: { meetingUrl: string }) =>
-				client.meet["create-bot"].$post({ json }),
-			"createBot",
-		),
+		createBot: useMutation({
+			mutationFn: async (json: { meetingUrl: string }) => {
+				const result = await parseResponse(
+					client.meet["create-bot"].$post({
+						json,
+					}),
+				);
+				return result.data;
+			},
+			onSuccess: (data) => {
+				console.log("[createBot mutation] Success:", data);
+			},
+			onError: (error) =>
+				console.error(JSON.stringify(getApiError(error), null, 2)),
+		}),
 	};
 }
