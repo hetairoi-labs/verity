@@ -5,9 +5,6 @@ import type {
 import { ApiError } from "./hono/server-error";
 
 export async function createBot(meetingUrl: URL) {
-	console.log("Creating bot for meeting:", meetingUrl.href);
-	console.log("RECALL_API_URL:", process.env.RECALL_API_URL);
-	console.log("RECALL_API_KEY:", process.env.RECALL_API_KEY);
 	const response = await fetch(`${process.env.RECALL_API_URL}/bot`, {
 		method: "POST",
 		headers: {
@@ -18,11 +15,6 @@ export async function createBot(meetingUrl: URL) {
 		body: JSON.stringify({
 			meeting_url: meetingUrl.href,
 			bot_name: "Kex Bot",
-			variant: {
-				zoom: "web_4_core",
-				google_meet: "web_4_core",
-				microsoft_teams: "web_4_core",
-			},
 			output_media: {
 				camera: {
 					kind: "webpage",

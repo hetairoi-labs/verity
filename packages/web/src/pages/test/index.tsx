@@ -1,6 +1,9 @@
 import Layout from "../layout";
 import { CreateBot } from "./_components/create-bot";
 import { CreateMeet } from "./_components/create-meet";
+import { GetBot } from "./_components/get-bot";
+import { GetToken } from "./_components/get-token";
+import { GetTranscript } from "./_components/get-transcript";
 import { WebSocketTest } from "./_components/websocket";
 
 export function TestPage() {
@@ -14,6 +17,15 @@ export function TestPage() {
 
 				{/* Bot API Test */}
 				<CreateBot />
+
+				{/* Get Token */}
+				<GetToken />
+
+				{/* Get Bot */}
+				<GetBot />
+
+				{/* Get Transcript */}
+				<GetTranscript />
 
 				{/* WebSocket Test */}
 				<WebSocketTest />

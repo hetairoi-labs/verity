@@ -63,6 +63,7 @@ export function useGetToken() {
 			return result.data;
 		},
 		select: (data) => data?.token,
+		enabled: true,
 	});
 }
 
@@ -76,6 +77,7 @@ export function useGetBot(botId: string) {
 			return result.data;
 		},
 		select: (data) => data?.bot,
+		enabled: !!botId,
 	});
 }
 
@@ -91,5 +93,6 @@ export function useGetTranscript(transcriptUrl: string) {
 			return result.data;
 		},
 		select: (data) => data?.transcript,
+		enabled: !!transcriptUrl,
 	});
 }
