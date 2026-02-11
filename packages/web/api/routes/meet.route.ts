@@ -4,6 +4,7 @@ import { z } from "zod";
 import { createBot } from "@/api/lib/utils/bot";
 import { respond } from "@/api/lib/utils/hono/respond";
 import { getAuthenticatedClient } from "@/utils/google";
+import { getGeminiEphemeralToken } from "../lib/utils/gemini";
 import { validator } from "../lib/utils/zod";
 
 const meetRoute = new Hono()
@@ -57,7 +58,13 @@ const meetRoute = new Hono()
 			const bot = await createBot(new URL(meetingUrl));
 			return respond.ok(c, 200, "Bot created successfully! 🤖", { bot });
 		},
-	);
+	)
+	.get("/token", async (c) => {
+		const token = await getGeminiEphemeralToken();
+		return respond.ok(c, 200, "Gemini token retrieved successfully! 🔑", {
+			token,
+		});
+	});
 
 export default meetRoute;
 export type MeetType = typeof meetRoute;

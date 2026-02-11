@@ -13,7 +13,7 @@ const envSchema = z.object({
 	DATABASE_URL: z.string().min(1, "DATABASE_URL is required"),
 	GOOGLE_CLIENT_ID: z.string().min(1, "GOOGLE_CLIENT_ID is required"),
 	GOOGLE_CLIENT_SECRET: z.string().min(1, "GOOGLE_CLIENT_SECRET is required"),
-	PUBLIC_GEMINI_API_KEY: z.string().min(1, "GEMINI_API_KEY is required"),
+	GEMINI_API_KEY: z.string().min(1, "GEMINI_API_KEY is required"),
 	RECALL_API_URL: z.url(),
 	RECALL_API_KEY: z.string().min(1, "RECALL_API_KEY is required"),
 });
@@ -25,11 +25,12 @@ declare module "bun" {
 }
 
 // validate env
+let env: EnvSchema;
 export function validateEnv() {
 	try {
 		const parsedEnv = envSchema.parse(Bun.env);
 		console.log("🔑 Environment validated successfully");
-		return parsedEnv;
+		env = parsedEnv;
 	} catch (error) {
 		if (error instanceof z.ZodError) {
 			const errorMessages = error.issues
@@ -41,4 +42,4 @@ export function validateEnv() {
 	}
 }
 
-export type { EnvSchema };
+export { env, type EnvSchema };

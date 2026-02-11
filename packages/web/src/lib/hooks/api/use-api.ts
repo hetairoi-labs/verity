@@ -1,4 +1,4 @@
-import { useMutation } from "@tanstack/react-query";
+import { useMutation, useQuery } from "@tanstack/react-query";
 import { parseResponse } from "hono/client";
 import client from "../../utils/api-client";
 import { getApiError } from "../../utils/client-error";
@@ -33,6 +33,15 @@ export function useApi() {
 			},
 			onError: (error) =>
 				console.error(JSON.stringify(getApiError(error), null, 2)),
+		}),
+
+		getToken: useQuery({
+			queryKey: ["token"],
+			queryFn: async () => {
+				const result = await parseResponse(client.meet.token.$get());
+				return result.data;
+			},
+			select: (data) => data?.token,
 		}),
 	};
 }

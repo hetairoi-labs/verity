@@ -1,7 +1,7 @@
 import { GoogleGenAI, type LiveServerMessage, Modality } from "@google/genai";
 import { useCallback, useEffect, useRef, useState } from "react";
+import { useApi } from "./api/use-api";
 
-// gemini-2.0-flash-exp does NOT support Live API; use a native-audio model
 const MODEL = "gemini-2.5-flash-native-audio-preview-12-2025";
 
 interface LogEntry {
@@ -14,6 +14,11 @@ interface LiveSession {
 }
 
 export function useAudio() {
+	const getToken = useApi().getToken;
+	const token = getToken.data;
+
+	console.log(token);
+
 	const [logs, setLogs] = useState<LogEntry[]>([]);
 	const [status, setStatus] = useState("idle");
 	const hasInit = useRef(false);
@@ -67,12 +72,15 @@ export function useAudio() {
 			// 2. Connect to Gemini SDK
 			addLog("Connecting to Gemini SDK...");
 			console.log("[DEBUG] Checking API key");
-			const apiKey = process.env.PUBLIC_GEMINI_API_KEY;
+			const apiKey = token;
 			if (!apiKey) {
-				throw new Error("PUBLIC_GEMINI_API_KEY is required");
+				throw new Error("Gemini token is required");
 			}
 			console.log("[DEBUG] Creating GoogleGenAI instance");
-			const genAI = new GoogleGenAI({ apiKey });
+			const genAI = new GoogleGenAI({
+				apiKey,
+				httpOptions: { apiVersion: "v1alpha" },
+			});
 			console.log("[DEBUG] Calling genAI.live.connect()");
 			sessionRef.current = await genAI.live.connect({
 				model: MODEL,
@@ -129,11 +137,7 @@ export function useAudio() {
 								const bytes = new Uint8Array(binary.length);
 								for (let i = 0; i < binary.length; i++)
 									bytes[i] = binary.charCodeAt(i);
-								const pcm16 = new Int16Array(
-									bytes.buffer,
-									0,
-									bytes.length / 2,
-								);
+								const pcm16 = new Int16Array(bytes.buffer, 0, bytes.length / 2);
 								const numSamples = pcm16.length;
 								const audioBuffer = outputCtxRef.current.createBuffer(
 									1,
@@ -232,7 +236,7 @@ export function useAudio() {
 			addLog(`Init Failed: ${err}`);
 			setStatus("error");
 		}
-	}, [addLog]);
+	}, [addLog, token]);
 
 	useEffect(() => {
 		console.log("[DEBUG] Scheduling Gemini initialization in 2 seconds");
