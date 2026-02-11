@@ -13,7 +13,7 @@ export function TestPage() {
 		<Layout className="flex flex-col items-center min-h-screen p-8">
 			<h1 className="text-2xl lg:text-4xl mb-8 text-center">API Tests</h1>
 
-			<div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+			<div className="flex flex-col items-center gap-8 min-w-full">
 				{/* Meeting API Test */}
 				<TestCard
 					title="Meeting API"
