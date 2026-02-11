@@ -23,7 +23,7 @@ export async function createBot(meetingUrl: URL) {
 				camera: {
 					kind: "webpage",
 					config: {
-						url: "https://cerebras.livekit.io",
+						url: "https://intemerately-unsardonic-ebonie.ngrok-free.dev/live",
 					},
 				},
 			},

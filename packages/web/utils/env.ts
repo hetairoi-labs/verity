@@ -3,7 +3,7 @@ import { z } from "zod";
 // env schema
 const envSchema = z.object({
 	// client & server
-	PUBLIC_SERVER_URL: z.url(),
+	PUBLIC_APP_URL: z.url(),
 	PUBLIC_GA_ID: z.string().optional(),
 	PUBLIC_PRIVY_APP_ID: z.string().min(1, "PRIVY_APP_ID is required"),
 

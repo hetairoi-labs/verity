@@ -45,5 +45,5 @@ serve({
 
 console.log(`🐰 Bun version: ${Bun.version}`);
 console.log(
-	`🔥 ${isDev ? "Dev" : "Prod"} server is running at ${process.env.PUBLIC_SERVER_URL}`,
+	`🔥 ${isDev ? "Dev" : "Prod"} server is running at ${process.env.PUBLIC_APP_URL}`,
 );

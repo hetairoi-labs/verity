@@ -9,6 +9,7 @@ import { FormPage } from "@/src/pages/form";
 import { TestPage } from "@/src/pages/test/test";
 import _404 from "./404";
 import { HomePage } from "./home";
+import { LivePage } from "./live";
 
 const rootRoute = createRootRoute({
 	component: () => {
@@ -42,7 +43,21 @@ const testRoute = createRoute({
 	},
 });
 
-const routeTree = rootRoute.addChildren([indexRoute, formRoute, testRoute]);
+const liveRoute = createRoute({
+	getParentRoute: () => rootRoute,
+	path: "/live",
+	component: function Live() {
+		return <LivePage />;
+	},
+});
+
+const routeTree = rootRoute.addChildren([
+	indexRoute,
+	formRoute,
+	testRoute,
+	liveRoute,
+]);
+
 const router = createRouter({
 	routeTree,
 });
