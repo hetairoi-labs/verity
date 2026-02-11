@@ -6,7 +6,7 @@ import {
 } from "@tanstack/react-router";
 import { useAnalytics } from "@/src/lib/hooks/use-analytics";
 import { FormPage } from "@/src/pages/form";
-import { TestPage } from "@/src/pages/test";
+import { TestPage } from "@/src/pages/test/test";
 import _404 from "./404";
 import { HomePage } from "./home";
 

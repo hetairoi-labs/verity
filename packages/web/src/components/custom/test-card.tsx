@@ -11,7 +11,9 @@ interface TestCardProps {
 	title: string;
 	description?: string;
 	children: ReactNode;
-	data?: any;
+	data?: {
+		[key: string]: unknown;
+	} | null;
 	className?: string;
 }
 
@@ -33,7 +35,7 @@ export function TestCard({
 				{data && (
 					<div className="mt-4">
 						<h3 className="text-sm font-medium mb-2">Response:</h3>
-						<pre className="text-xs bg-gray-50 dark:bg-gray-900 p-2 font-mono overflow-x-auto max-h-48">
+						<pre className="text-xs bg-accent p-2 font-mono overflow-x-auto max-h-48">
 							{JSON.stringify(data, null, 2)}
 						</pre>
 					</div>

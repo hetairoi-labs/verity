@@ -1,3 +1,4 @@
+import { ApiError } from "./hono/server-error";
 import { getWsUrl } from "./hono/ws";
 
 export function processAudioChunk(audioBuffer: Uint8Array) {
@@ -16,19 +17,31 @@ export async function createBot(meetingUrl: URL) {
 			authorization: process.env.RECALL_API_KEY,
 		},
 		body: JSON.stringify({
-			bot_name: "KEX Bot",
 			meeting_url: meetingUrl,
+			bot_name: "Kex Bot",
 			output_media: {
-				kind: "webpage",
-				config: {
-					url: "https://intemerately-unsardonic-ebonie.ngrok-free.dev",
+				camera: {
+					kind: "webpage",
+					config: {
+						url: "https://cerebras.livekit.io",
+					},
+				},
+			},
+			recording_config: {
+				transcript: {
+					provider: {
+						meeting_captions: {},
+					},
 				},
 			},
 		}),
 	});
 
 	if (!response.ok) {
-		throw new Error(`Error: ${response.status} ${response.statusText}`);
+		throw new ApiError(
+			400,
+			`Bot CreationError: ${response.status} ${response.statusText}`,
+		);
 	}
 
 	const data = await response.json();
