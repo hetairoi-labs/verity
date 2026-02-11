@@ -9,7 +9,7 @@ export function WebSocketTest() {
 		<TestCard
 			title={`WebSocket Test ${!isConnected ? "(Connecting...)" : ""}`}
 			description="Test WebSocket connection and messaging"
-			data={data}
+			data={data.length > 0 ? { messages: data } : null}
 		>
 			<form
 				className="flex gap-2"
