@@ -17,20 +17,27 @@ export async function createBot(meetingUrl: URL) {
 			authorization: process.env.RECALL_API_KEY,
 		},
 		body: JSON.stringify({
-			meeting_url: meetingUrl,
+			meeting_url: meetingUrl.href,
 			bot_name: "Kex Bot",
+			variant: {
+				zoom: "web_4_core",
+				google_meet: "web_4_core",
+				microsoft_teams: "web_4_core",
+			},
 			output_media: {
 				camera: {
 					kind: "webpage",
 					config: {
-						url: "https://intemerately-unsardonic-ebonie.ngrok-free.dev/live",
+						url: `${process.env.PUBLIC_APP_URL}/live`,
 					},
 				},
 			},
 			recording_config: {
 				transcript: {
 					provider: {
-						meeting_captions: {},
+						recallai_streaming: {
+							mode: "prioritize_accuracy",
+						},
 					},
 				},
 			},
@@ -40,7 +47,7 @@ export async function createBot(meetingUrl: URL) {
 	if (!response.ok) {
 		throw new ApiError(
 			400,
-			`Bot CreationError: ${response.status} ${response.statusText}`,
+			`Bot Creation Error: ${response.status} ${response.statusText}`,
 		);
 	}
 

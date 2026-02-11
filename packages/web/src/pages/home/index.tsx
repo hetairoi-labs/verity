@@ -9,12 +9,18 @@ export function HomePage() {
 				Verify Knowledge exchange using Chainlink CRE.
 			</p>
 
-			<div className="mt-10">
+			<div className="mt-10 flex gap-4">
 				<Link
 					to="/test"
 					className="px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors"
 				>
 					API Tests
+				</Link>
+				<Link
+					to="/live"
+					className="px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors"
+				>
+					Live
 				</Link>
 			</div>
 		</Layout>
