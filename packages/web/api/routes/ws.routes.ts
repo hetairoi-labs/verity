@@ -1,7 +1,7 @@
 import { Hono } from "hono";
 import { upgradeWebSocket } from "hono/bun";
 import { processAudioChunk } from "../lib/utils/bot";
-import { respond } from "../lib/utils/respond";
+import { respond } from "../lib/utils/hono/respond";
 
 const wsRouter = new Hono()
 	.get("/", (c) => {

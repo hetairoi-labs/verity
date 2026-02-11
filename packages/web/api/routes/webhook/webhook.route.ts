@@ -1,7 +1,7 @@
 import { zValidator } from "@hono/zod-validator";
 import { Hono } from "hono";
-import { respond } from "@/api/lib/utils/respond";
-import { recallWebhookSchema } from "./webhook.schema";
+import { respond } from "@/api/lib/utils/hono/respond";
+import { recallWebhookSchema } from "./webhook.types";
 
 const webhookRoute = new Hono().post(
 	"/recall",

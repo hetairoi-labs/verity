@@ -7,7 +7,7 @@ import { validateEnv } from "./utils/env";
 validateEnv();
 const isDev = process.env.NODE_ENV !== "production";
 
-const server = serve({
+serve({
 	development: isDev
 		? {
 				hmr: true,
@@ -20,6 +20,12 @@ const server = serve({
 		"/api": new Response(
 			JSON.stringify({
 				message: "Bun Web Server",
+				version: "v1.0.0",
+			}),
+		),
+		"/api/v1": new Response(
+			JSON.stringify({
+				message: "Hono API",
 				version: "v1.0.0",
 			}),
 		),
@@ -38,5 +44,6 @@ const server = serve({
 });
 
 console.log(`🐰 Bun version: ${Bun.version}`);
-console.log(`🔥 ${isDev ? "Dev" : "Prod"} server is running at ${server.url}`);
-console.log(`🔑 Environment: ${process.env.PUBLIC_SERVER_URL}`);
+console.log(
+	`🔥 ${isDev ? "Dev" : "Prod"} server is running at ${process.env.PUBLIC_SERVER_URL}`,
+);

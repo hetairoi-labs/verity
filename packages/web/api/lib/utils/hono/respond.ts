@@ -19,27 +19,29 @@ export const respond = {
 		for (const [name, value] of Object.entries(headers || {})) {
 			ctx.header(name, value);
 		}
-		return ctx.json({ success: true, data, message });
+		return ctx.json({ success: true, message, data });
 	},
 
 	err: <
 		C extends Context,
 		U extends ClientErrorStatusCode | ServerErrorStatusCode,
+		T extends JSONObject,
 	>(
 		ctx: C,
 		message: string,
 		status: U,
+		error?: T,
 		headers?: HeaderRecord,
 	) => {
 		ctx.status(status);
 		for (const [name, value] of Object.entries(headers || {})) {
 			ctx.header(name, value);
 		}
-		return ctx.json({ success: false, error: message });
+		return ctx.json({ success: false, message, error });
 	},
 };
 
-type HeaderRecord =
+export type HeaderRecord =
 	| Record<"Content-Type", BaseMime>
 	| Record<ResponseHeader, string>
 	| Record<string, string>;

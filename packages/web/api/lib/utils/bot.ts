@@ -1,4 +1,4 @@
-import { getWsUrl } from "./ws";
+import { getWsUrl } from "./hono/ws";
 
 export function processAudioChunk(audioBuffer: Uint8Array) {
 	console.log("Processing audio chunk:", audioBuffer);

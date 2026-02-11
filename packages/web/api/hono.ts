@@ -3,7 +3,7 @@ import { cors } from "hono/cors";
 import { logger } from "hono/logger";
 import { trimTrailingSlash } from "hono/trailing-slash";
 import { rateLimiter } from "hono-rate-limiter";
-import { respond } from "@/api/lib/utils/respond";
+import { AppError, handleError } from "@/api/lib/utils/hono/error";
 import routes from "@/api/routes/router";
 
 const hono = new Hono()
@@ -26,9 +26,10 @@ const hono = new Hono()
 			},
 		}),
 	)
+	.onError(handleError)
 	.route("/", routes)
-	.get("*", (ctx) => {
-		return respond.err(ctx, "Invalid v1 api route", 404);
+	.get("*", () => {
+		throw new AppError("Invalid v1 api route", 404);
 	});
 
 export default hono;
