@@ -1,94 +1,40 @@
-import { useMutation, useQuery } from "@tanstack/react-query";
-import { parseResponse } from "hono/client";
-import client from "../../utils/api-client";
-import { getApiError } from "../../utils/client-error";
+import type {
+	CreateBotInput,
+	CreateMeetInput,
+	GetBotInput,
+	GetEphemeralTokenInput,
+	GetTranscriptInput,
+} from "./use-meet-api";
+import {
+	useCreateBotMutation,
+	useCreateMeetMutation,
+	useGetBotQuery,
+	useGetEphemeralTokenQuery,
+	useGetTranscriptQuery,
+} from "./use-meet-api";
 
 export function useApi() {
 	return {
-		createMeet: useMutation({
-			mutationFn: async (json: { summary: string }) => {
-				const result = await parseResponse(
-					client.meet["create-meeting-with-bot"].$post({ json }),
-				);
-				return result.data;
-			},
-			onSuccess: (data) => {
-				console.log("[meet mutation] Success:", data);
-			},
-			onError: (error) =>
-				console.error(JSON.stringify(getApiError(error), null, 2)),
-		}),
-
-		createBot: useMutation({
-			mutationFn: async (json: { meetingUrl: string }) => {
-				const result = await parseResponse(
-					client.meet["create-bot"].$post({ json }),
-				);
-				return result.data;
-			},
-			onSuccess: (data) => {
-				console.log("[meet mutation] Success:", data);
-			},
-			onError: (error) =>
-				console.error(JSON.stringify(getApiError(error), null, 2)),
-		}),
-
-		getToken: useQuery({
-			queryKey: ["token"],
-			queryFn: async () => {
-				const result = await parseResponse(client.meet.token.$get());
-				return result.data;
-			},
-			select: (data) => data?.token,
-			enabled: true,
-		}),
-		getBot: useGetBot,
-		getTranscript: useGetTranscript,
+		createMeet: useCreateMeetMutation(),
+		createBot: useCreateBotMutation(),
+		getBot: useGetBotQuery,
+		getTranscript: useGetTranscriptQuery,
+		getToken: useGetEphemeralTokenQuery,
 	};
 }
 
-export function useCreateBot(meetingUrl: string) {
-	return useMutation({
-		mutationFn: async () => {
-			const result = await parseResponse(
-				client.meet["create-bot"].$post({ json: { meetingUrl } }),
-			);
-			return result.data;
-		},
-		onSuccess: (data) => {
-			console.log("[meet mutation] Success:", data);
-		},
-		onError: (error) =>
-			console.error(JSON.stringify(getApiError(error), null, 2)),
-	});
-}
+export type ApiRequestTypes = {
+	createMeet: CreateMeetInput;
+	createBot: CreateBotInput;
+	getBot: GetBotInput;
+	getTranscript: GetTranscriptInput;
+	getToken: GetEphemeralTokenInput;
+};
 
-export function useGetBot(botId?: string) {
-	return useQuery({
-		queryKey: ["bot", botId],
-		queryFn: async () => {
-			const result = await parseResponse(
-				client.meet.bot[":botId"].$get({ param: { botId: botId ?? "" } }),
-			);
-			return result.data;
-		},
-		select: (data) => data?.bot,
-		enabled: !!botId,
-	});
-}
-
-export function useGetTranscript(transcriptUrl?: string) {
-	return useQuery({
-		queryKey: ["transcript", transcriptUrl],
-		queryFn: async () => {
-			const result = await parseResponse(
-				client.meet.transcript[":transcriptUrl"].$get({
-					param: { transcriptUrl: transcriptUrl ?? "" },
-				}),
-			);
-			return result.data;
-		},
-		select: (data) => data?.transcript,
-		enabled: !!transcriptUrl,
-	});
-}
+export type ApiResponseTypes = {
+	createMeet: Awaited<ReturnType<typeof useCreateMeetMutation>>["data"];
+	createBot: Awaited<ReturnType<typeof useCreateBotMutation>>["data"];
+	getBot: Awaited<ReturnType<typeof useGetBotQuery>>["data"];
+	getTranscript: Awaited<ReturnType<typeof useGetTranscriptQuery>>["data"];
+	getToken: Awaited<ReturnType<typeof useGetEphemeralTokenQuery>>["data"];
+};

@@ -74,18 +74,25 @@ const meetRoute = new Hono()
 			token,
 		});
 	})
-	.get("/bot/:botId", async (c) => {
-		const { botId } = c.req.param();
-		const bot = await retrieveBot(botId);
-		return respond.ok(c, 200, "Bot retrieved successfully", {
-			bot,
-		});
-	})
 	.get(
-		"/transcript/:transcriptUrl",
-		validator("param", z.object({ transcriptUrl: z.url() })),
+		"/bot",
+		validator(
+			"query",
+			z.object({ botId: z.string().min(1, "Bot ID is required") }),
+		),
 		async (c) => {
-			const { transcriptUrl } = c.req.param();
+			const { botId } = c.req.valid("query");
+			const bot = await retrieveBot(botId);
+			return respond.ok(c, 200, "Bot retrieved successfully", {
+				bot,
+			});
+		},
+	)
+	.get(
+		"/transcript",
+		validator("query", z.object({ transcriptUrl: z.url() })),
+		async (c) => {
+			const { transcriptUrl } = c.req.valid("query");
 			const transcript = await downloadTranscript(new URL(transcriptUrl));
 			return respond.ok(c, 200, "Transcript downloaded successfully", {
 				transcript,
