@@ -2,11 +2,11 @@ import { useState } from "react";
 import { TestCard } from "@/src/components/custom/test-card";
 import { Button } from "@/src/components/ui/button";
 import { Input } from "@/src/components/ui/input";
-import { useGetBot } from "@/src/lib/hooks/api/use-api";
+import { useApi } from "@/src/lib/hooks/api/use-api";
 
 export function GetBot() {
 	const [botId, setBotId] = useState<string | undefined>();
-	const { data } = useGetBot(botId);
+	const { data } = useApi().getBot({ botId: botId ?? "" });
 
 	return (
 		<TestCard

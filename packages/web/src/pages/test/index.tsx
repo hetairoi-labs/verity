@@ -12,22 +12,11 @@ export function TestPage() {
 			<h1 className="text-2xl lg:text-4xl mb-8 text-center">API Tests</h1>
 
 			<div className="flex flex-col items-center gap-8 min-w-full">
-				{/* Meeting API Test */}
 				<CreateMeet />
-
-				{/* Bot API Test */}
 				<CreateBot />
-
-				{/* Get Token */}
 				<GetToken />
-
-				{/* Get Bot */}
 				<GetBot />
-
-				{/* Get Transcript */}
 				<GetTranscript />
-
-				{/* WebSocket Test */}
 				<WebSocketTest />
 			</div>
 		</Layout>

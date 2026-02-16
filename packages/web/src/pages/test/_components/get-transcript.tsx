@@ -2,11 +2,13 @@ import { useState } from "react";
 import { TestCard } from "@/src/components/custom/test-card";
 import { Button } from "@/src/components/ui/button";
 import { Input } from "@/src/components/ui/input";
-import { useGetTranscript } from "@/src/lib/hooks/api/use-api";
+import { useApi } from "@/src/lib/hooks/api/use-api";
 
 export function GetTranscript() {
 	const [transcriptUrl, setTranscriptUrl] = useState<string | undefined>();
-	const { data } = useGetTranscript(transcriptUrl);
+	const { data } = useApi().getTranscript({
+		transcriptUrl: transcriptUrl ?? "",
+	});
 
 	return (
 		<TestCard

@@ -13,14 +13,14 @@ if (!rootElement) throw new Error("Failed to find the root element");
 
 // App
 const app = (
-	<StrictMode>
-		<QueryClientProvider>
-			<ThemeProvider defaultTheme="dark" storageKey="theme">
-				<RouterProvider router={router} />
-				<Toaster position="top-right" theme={"dark"} />
-			</ThemeProvider>
-		</QueryClientProvider>
-	</StrictMode>
+	// <StrictMode>
+	<QueryClientProvider>
+		<ThemeProvider defaultTheme="dark" storageKey="theme">
+			<RouterProvider router={router} />
+			<Toaster position="top-right" theme={"dark"} />
+		</ThemeProvider>
+	</QueryClientProvider>
+	// </StrictMode>
 );
 
 // HMR

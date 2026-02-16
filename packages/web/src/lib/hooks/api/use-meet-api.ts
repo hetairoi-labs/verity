@@ -81,18 +81,14 @@ export function useGetTranscriptQuery(query: GetTranscriptInput) {
 type GetEphemeralTokenRoute = (typeof client.meet)["token"]["$get"];
 export type GetEphemeralTokenInput = InferRequestType<GetEphemeralTokenRoute>;
 
-export function useGetEphemeralTokenQuery(query: GetEphemeralTokenInput) {
+export function useGetEphemeralTokenQuery(enabled: boolean) {
 	return useQuery({
 		queryKey: ["ephemeral-token"],
 		queryFn: async () => {
-			const result = await parseResponse(
-				client.meet.token.$get({
-					query,
-				}),
-			);
+			const result = await parseResponse(client.meet.token.$get());
 			return result.data;
 		},
 		select: (data) => data?.token,
-		enabled: true,
+		enabled,
 	});
 }
