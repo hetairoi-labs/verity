@@ -1,9 +1,8 @@
-import { Link } from "@tanstack/react-router";
-import Layout from "../layout";
+import { createFileRoute, Link } from "@tanstack/react-router";
 
-export function HomePage() {
+function HomePage() {
 	return (
-		<Layout className="flex flex-col items-center justify-center h-screen p-8">
+		<div className="flex flex-col items-center justify-center h-screen p-8">
 			<h1 className="text-7xl lg:text-9xl">KEX</h1>
 			<p className="text-2xl text-muted-foreground font-light mt-2">
 				Verify Knowledge exchange using Chainlink CRE.
@@ -22,7 +21,17 @@ export function HomePage() {
 				>
 					Live
 				</Link>
+				<Link
+					to="/form"
+					className="px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors"
+				>
+					Form
+				</Link>
 			</div>
-		</Layout>
+		</div>
 	);
 }
+
+export const Route = createFileRoute("/")({
+	component: HomePage,
+});

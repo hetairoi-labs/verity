@@ -1,4 +1,5 @@
 import { useForm, useStore } from "@tanstack/react-form";
+import { createFileRoute } from "@tanstack/react-router";
 import { toast } from "sonner";
 import z from "zod";
 import { FieldInfo } from "@/src/components/custom/field-info";
@@ -14,7 +15,6 @@ import {
 } from "@/src/components/ui/card";
 import { Input } from "@/src/components/ui/input";
 import { Label } from "@/src/components/ui/label";
-import Layout from "../layout";
 
 const userSchema = z.object({
 	firstName: z.string().min(1, "First name is required"),
@@ -24,7 +24,7 @@ const userSchema = z.object({
 	city: z.string().min(1, "City is required"),
 });
 
-export function FormPage() {
+function FormIndex() {
 	const form = useForm({
 		defaultValues: {
 			firstName: "",
@@ -58,7 +58,7 @@ export function FormPage() {
 	const isSubmitting = useStore(form.store, (state) => state.isSubmitting);
 
 	return (
-		<Layout className="flex flex-col items-center justify-center h-screen p-8">
+		<div className="flex flex-col items-center justify-center h-screen p-8">
 			<Card>
 				<CardHeader>
 					<CardTitle>Tanstack Form</CardTitle>
@@ -202,6 +202,10 @@ export function FormPage() {
 					</CardAction>
 				</CardFooter>
 			</Card>
-		</Layout>
+		</div>
 	);
 }
+
+export const Route = createFileRoute("/form/")({
+	component: FormIndex,
+});

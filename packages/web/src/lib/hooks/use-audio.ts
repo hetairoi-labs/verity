@@ -15,7 +15,7 @@ interface LiveSession {
 
 export function useAudio() {
 	const getToken = useApi().getToken;
-	const token = getToken.data;
+	const token = getToken(true).data;
 
 	const [logs, setLogs] = useState<LogEntry[]>([]);
 	const [status, setStatus] = useState("idle");

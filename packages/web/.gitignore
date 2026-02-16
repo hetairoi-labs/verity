@@ -134,3 +134,5 @@ dist/
 # Drizzle
 drizzle/
 *.db
+
+routeTree.gen.ts

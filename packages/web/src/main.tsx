@@ -1,10 +1,12 @@
-import { RouterProvider } from "@tanstack/react-router";
+import { createRouter, RouterProvider } from "@tanstack/react-router";
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { Toaster } from "sonner";
 import { QueryClientProvider } from "@/src/lib/context/query-client";
 import { ThemeProvider } from "@/src/lib/context/theme-provider";
-import router from "@/src/pages/app";
+import { routeTree } from "./routeTree.gen";
+
+const router = createRouter({ routeTree });
 import "@/src/globals.css";
 
 // Root element
@@ -13,14 +15,14 @@ if (!rootElement) throw new Error("Failed to find the root element");
 
 // App
 const app = (
-	// <StrictMode>
-	<QueryClientProvider>
-		<ThemeProvider defaultTheme="dark" storageKey="theme">
-			<RouterProvider router={router} />
-			<Toaster position="top-right" theme={"dark"} />
-		</ThemeProvider>
-	</QueryClientProvider>
-	// </StrictMode>
+	<StrictMode>
+		<QueryClientProvider>
+			<ThemeProvider defaultTheme="dark" storageKey="theme">
+				<RouterProvider router={router} />
+				<Toaster position="top-right" theme={"dark"} />
+			</ThemeProvider>
+		</QueryClientProvider>
+	</StrictMode>
 );
 
 // HMR

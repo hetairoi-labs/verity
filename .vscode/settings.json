@@ -26,5 +26,17 @@
 	"editor.formatOnSave": true,
 
 	// Optional: Enable format on paste
-	"editor.formatOnPaste": true
+	"editor.formatOnPaste": true,
+
+	"files.readonlyInclude": {
+		"**/routeTree.gen.ts": true
+	},
+
+	"files.watcherExclude": {
+		"**/routeTree.gen.ts": true
+	},
+
+	"search.exclude": {
+		"**/routeTree.gen.ts": true
+	}
 }
