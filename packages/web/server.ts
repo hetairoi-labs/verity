@@ -2,7 +2,7 @@ import { serve } from "bun";
 import { websocket } from "hono/bun";
 import hono from "@/api/hono";
 import html from "@/src/index.html";
-import { validateEnv } from "./utils/env";
+import { validateEnv } from "./lib/utils/env";
 
 validateEnv();
 const isDev = process.env.NODE_ENV !== "production";

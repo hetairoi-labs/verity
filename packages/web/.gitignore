@@ -136,3 +136,4 @@ drizzle/
 *.db
 
 routeTree.gen.ts
+.tanstack

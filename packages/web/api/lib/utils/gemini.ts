@@ -1,5 +1,5 @@
 import { GoogleGenAI, Modality } from "@google/genai";
-import { env } from "@/utils/env";
+import { env } from "@/lib/utils/env";
 
 export async function getGeminiEphemeralToken() {
 	const client = new GoogleGenAI({ apiKey: env.GEMINI_API_KEY });

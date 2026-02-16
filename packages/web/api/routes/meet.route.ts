@@ -7,7 +7,7 @@ import {
 	retrieveBot,
 } from "@/api/lib/utils/bot";
 import { respond } from "@/api/lib/utils/hono/respond";
-import { getAuthenticatedClient } from "@/utils/google";
+import { getAuthenticatedClient } from "@/lib/utils/google";
 import { getGeminiEphemeralToken } from "../lib/utils/gemini";
 import { ApiError } from "../lib/utils/hono/server-error";
 import { validator } from "../lib/utils/zod";
