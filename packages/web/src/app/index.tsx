@@ -10,6 +10,12 @@ function HomePage() {
 
 			<div className="mt-10 flex gap-4">
 				<Link
+					to="/auth"
+					className="px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors"
+				>
+					Auth
+				</Link>
+				<Link
 					to="/test"
 					className="px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors"
 				>

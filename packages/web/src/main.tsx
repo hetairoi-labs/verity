@@ -5,23 +5,27 @@ import { Toaster } from "sonner";
 import { QueryClientProvider } from "@/src/lib/context/query-client";
 import { ThemeProvider } from "@/src/lib/context/theme-provider";
 import { routeTree } from "./routeTree.gen";
+import "@/src/globals.css";
+import { PrivyProvider } from "./lib/context/privy-provider";
+import { WagmiProvider } from "./lib/context/wagmi-provider";
 
 const router = createRouter({ routeTree });
-import "@/src/globals.css";
-
-// Root element
 const rootElement = document.getElementById("root");
 if (!rootElement) throw new Error("Failed to find the root element");
 
 // App
 const app = (
 	<StrictMode>
-		<QueryClientProvider>
-			<ThemeProvider defaultTheme="dark" storageKey="theme">
-				<RouterProvider router={router} />
-				<Toaster position="top-right" theme={"dark"} />
-			</ThemeProvider>
-		</QueryClientProvider>
+		<ThemeProvider defaultTheme="dark" storageKey="theme">
+			<PrivyProvider>
+				<QueryClientProvider>
+					<WagmiProvider>
+						<RouterProvider router={router} />
+						<Toaster position="top-right" theme={"dark"} />
+					</WagmiProvider>
+				</QueryClientProvider>
+			</PrivyProvider>
+		</ThemeProvider>
 	</StrictMode>
 );
 

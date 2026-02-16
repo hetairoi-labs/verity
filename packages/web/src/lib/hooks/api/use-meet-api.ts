@@ -1,7 +1,6 @@
 import { useMutation, useQuery } from "@tanstack/react-query";
 import { type InferRequestType, parseResponse } from "hono/client";
 import client from "../../utils/api-client";
-import { getApiError } from "../../utils/client-error";
 
 // get bot by id
 type GetBotRoute = (typeof client.meet)["bot"]["$get"];
@@ -34,8 +33,6 @@ export function useCreateMeetMutation() {
 		onSuccess: (data) => {
 			console.log("[meet mutation] Success:", data);
 		},
-		onError: (error) =>
-			console.error(JSON.stringify(getApiError(error), null, 2)),
 	});
 }
 
@@ -54,8 +51,6 @@ export function useCreateBotMutation() {
 		onSuccess: (data) => {
 			console.log("[meet mutation] Success:", data);
 		},
-		onError: (error) =>
-			console.error(JSON.stringify(getApiError(error), null, 2)),
 	});
 }
 

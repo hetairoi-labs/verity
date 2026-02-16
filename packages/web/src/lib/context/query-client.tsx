@@ -2,12 +2,16 @@ import {
 	QueryClient,
 	QueryClientProvider as QueryClientProviderBase,
 } from "@tanstack/react-query";
-import { toast } from "sonner";
+import { getApiError } from "../utils/client-error";
 
 // Tanstack Query
-const queryClient = new QueryClient();
-queryClient.defaultMutationOptions({
-	onError: ({ error }) => toast(error),
+const queryClient = new QueryClient({
+	defaultOptions: {
+		mutations: {
+			onError: (error) =>
+				console.error(JSON.stringify(getApiError(error), null, 2)),
+		},
+	},
 });
 
 export function QueryClientProvider({

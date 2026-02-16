@@ -118,8 +118,13 @@
 @layer base {
 	* {
 		@apply border-border outline-ring/50 font-inter;
+		scrollbar-width: thin;
+		scrollbar-color: var(--border) transparent;
 	}
 	body {
 		@apply bg-background text-foreground;
+	}
+	h1 {
+		@apply text-2xl lg:text-4xl;
 	}
 }

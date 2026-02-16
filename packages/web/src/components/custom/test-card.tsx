@@ -1,4 +1,3 @@
-import type { JSONObject } from "hono/utils/types";
 import type { ReactNode } from "react";
 import {
 	Card,
@@ -12,7 +11,7 @@ interface TestCardProps {
 	title: string;
 	description?: string;
 	children: ReactNode;
-	data?: JSONObject | string | null;
+	data?: string | null;
 	className?: string;
 }
 
@@ -35,7 +34,7 @@ export function TestCard({
 					<div className="mt-4">
 						<h3 className="text-sm font-medium mb-2">Response:</h3>
 						<pre className="text-xs bg-accent p-2 font-mono overflow-x-auto max-h-48">
-							{JSON.stringify(data, null, 2)}
+							{data}
 						</pre>
 					</div>
 				)}

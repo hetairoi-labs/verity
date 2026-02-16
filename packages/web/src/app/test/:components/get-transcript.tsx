@@ -14,13 +14,7 @@ export function GetTranscript() {
 		<TestCard
 			title="Get Transcript"
 			description="Download transcript by URL"
-			data={
-				data
-					? {
-							...data,
-						}
-					: null
-			}
+			data={data ? JSON.stringify(data, null, 2) : null}
 		>
 			<form
 				onSubmit={(e) => {

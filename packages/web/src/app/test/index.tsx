@@ -9,7 +9,7 @@ import { WebSocketTest } from "./:components/websocket";
 function TestPage() {
 	return (
 		<div className="flex flex-col items-center min-h-screen p-8">
-			<h1 className="text-2xl lg:text-4xl mb-8 text-center">API Tests</h1>
+			<h1 className="mb-8 text-center">API</h1>
 
 			<div className="flex flex-col items-center gap-8 min-w-full">
 				<CreateMeet />
