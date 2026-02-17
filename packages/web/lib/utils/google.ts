@@ -1,6 +1,7 @@
+import path from "node:path";
 import { google } from "googleapis";
 
-const TOKEN_PATH = "/lib/secrets/credentials.json";
+const TOKEN_PATH = path.join(process.cwd(), "lib/secrets/credentials.json");
 const PORT = 30012;
 
 const SCOPES = [
@@ -31,6 +32,7 @@ export async function getAuthenticatedClient() {
 	);
 
 	const file = Bun.file(TOKEN_PATH);
+	console.log(await file.exists());
 
 	/* reuse token */
 	if (await file.exists()) {

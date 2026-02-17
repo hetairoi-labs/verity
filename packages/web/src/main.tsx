@@ -8,13 +8,13 @@ import { ThemeProvider } from "@/src/lib/context/theme-provider";
 import "@/src/globals.css";
 import { PrivyProvider } from "./lib/context/privy-provider";
 import { WagmiProvider } from "./lib/context/wagmi-provider";
-import { setupErrorHandling } from "./lib/errors/setup-errors";
+import { setupErrorListener } from "./lib/errors/listener";
 
 const router = createRouter({ routeTree });
 const rootElement = document.getElementById("root");
 if (!rootElement) throw new Error("Failed to find the root element");
 
-setupErrorHandling();
+setupErrorListener();
 
 const app = (
 	<StrictMode>
