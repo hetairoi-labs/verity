@@ -1,6 +1,6 @@
 import { useMutation, useQuery } from "@tanstack/react-query";
 import { type InferRequestType, parseResponse } from "hono/client";
-import client from "../../utils/api-client";
+import client from "@/src/lib/utils/api-client";
 
 // get bot by id
 type GetBotRoute = (typeof client.meet)["bot"]["$get"];

@@ -1,5 +1,6 @@
 import { usePrivy, useWallets } from "@privy-io/react-auth";
 import { useSetActiveWallet } from "@privy-io/wagmi";
+import { safeAsync } from "../../errors/safe";
 
 export function useSwitchWallet() {
 	const { user } = usePrivy();
@@ -7,10 +8,14 @@ export function useSwitchWallet() {
 	const { setActiveWallet } = useSetActiveWallet();
 
 	const activeWallet = user?.wallet?.address;
+
 	const switchWallet = async (walletAddress: string) => {
-		const wallet = wallets.find((wallet) => wallet.address === walletAddress);
-		if (!wallet) throw new Error("Wallet not found");
-		await setActiveWallet(wallet);
+		return await safeAsync(async () => {
+			const wallet = wallets.find((wallet) => wallet.address === walletAddress);
+			if (!wallet) throw new Error("Wallet not found");
+			await setActiveWallet(wallet);
+			return true;
+		});
 	};
 
 	return { wallets, activeWallet, switchWallet };

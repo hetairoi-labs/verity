@@ -1,6 +1,6 @@
 import { google } from "googleapis";
 
-const TOKEN_PATH = "secrets/credentials.json";
+const TOKEN_PATH = "/lib/secrets/credentials.json";
 const PORT = 30012;
 
 const SCOPES = [

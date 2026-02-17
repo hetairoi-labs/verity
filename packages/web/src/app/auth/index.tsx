@@ -49,11 +49,11 @@ function AuthPage() {
 				description="Switch Wallet with Privy"
 				children={
 					<form
-						onSubmit={(e) => {
+						onSubmit={async (e) => {
 							e.preventDefault();
 							const formData = new FormData(e.target as HTMLFormElement);
 							const walletAddress = formData.get("walletAddress") as string;
-							switchWallet(walletAddress);
+							await switchWallet(walletAddress);
 						}}
 						className="flex gap-2 w-full"
 					>
@@ -80,12 +80,12 @@ function AuthPage() {
 				description="Switch Chain with Privy"
 				children={
 					<form
-						onSubmit={(e) => {
+						onSubmit={async (e) => {
 							e.preventDefault();
 							const formData = new FormData(e.target as HTMLFormElement);
 							const walletAddress = formData.get("walletAddress") as string;
 							const selectedChainId = formData.get("selectedChain") as string;
-							switchChain(walletAddress, Number(selectedChainId));
+							await switchChain(walletAddress, Number(selectedChainId));
 						}}
 						className="flex gap-2 w-full"
 					>
