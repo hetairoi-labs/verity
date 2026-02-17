@@ -1,126 +1,49 @@
-import type {
-	ClientErrorStatusCode,
-	ServerErrorStatusCode,
-} from "hono/utils/http-status";
-import { ApiError } from "./hono/server-error";
+import type { Bot, Transcript } from "../types/bot.types";
+import { AxiosClient } from "./axios";
+
+const botClient = new AxiosClient(process.env.RECALL_API_URL, {
+	authorization: process.env.RECALL_API_KEY,
+	accept: "application/json",
+	"content-type": "application/json",
+});
+
+const RETENTION_HOURS = 160;
+const LIVE_URL = `${process.env.PUBLIC_APP_URL}/live`;
 
 export async function createBot(meetingUrl: URL) {
-	const response = await fetch(`${process.env.RECALL_API_URL}/bot`, {
-		method: "POST",
-		headers: {
-			accept: "application/json",
-			"content-type": "application/json",
-			authorization: process.env.RECALL_API_KEY,
+	return botClient.post<Bot>("/bot", {
+		meeting_url: meetingUrl.href,
+		bot_name: "Kex Bot",
+		variant: {
+			zoom: "web_4_core",
+			google_meet: "web_4_core",
+			microsoft_teams: "web_4_core",
 		},
-		body: JSON.stringify({
-			meeting_url: meetingUrl.href,
-			bot_name: "Kex Bot",
-			variant: {
-				zoom: "web_4_core",
-				google_meet: "web_4_core",
-				microsoft_teams: "web_4_core",
-			},
-			output_media: {
-				camera: {
-					kind: "webpage",
-					config: {
-						url: `${process.env.PUBLIC_APP_URL}/live`,
-					},
+		output_media: {
+			camera: {
+				kind: "webpage",
+				config: {
+					url: LIVE_URL,
 				},
 			},
-		}),
+		},
+		recording_config: {
+			retention: {
+				type: "timed",
+				hours: RETENTION_HOURS,
+			},
+		},
 	});
-
-	if (!response.ok) {
-		throw new ApiError(
-			response.status as ClientErrorStatusCode | ServerErrorStatusCode,
-			`Bot Creation Error: ${response.statusText}`,
-		);
-	}
-
-	console.log("Bot created:", response.status);
-	const data = await response.json();
-	return data;
 }
-
-export type Recording = {
-	id: string;
-	media_shortcuts: {
-		transcript: {
-			id: string;
-			data: {
-				download_url: string;
-			};
-			provider: {
-				recallai_streaming: object;
-			};
-		};
-	};
-};
-
-export type Bot = {
-	id: string;
-	recordings: Recording[];
-};
 
 export async function retrieveBot(botId: string) {
-	const response = await fetch(`${process.env.RECALL_API_URL}/bot/${botId}`, {
-		method: "GET",
-		headers: {
-			authorization: process.env.RECALL_API_KEY,
-			accept: "application/json",
-		},
-	});
-
-	if (!response.ok) {
-		throw new ApiError(
-			400,
-			`Bot Retrieval Error: ${response.status} ${response.statusText}`,
-		);
-	}
-
-	const data = await response.json();
-	return data as Bot;
+	return botClient.get<Bot>(`/bot/${botId}`);
 }
 
-export type Transcript = {
-	participant: {
-		id: string;
-		name: string | null;
-		is_host: boolean | null;
-		platform: string | null;
-		extra_data: Record<string, unknown> | null;
-		email: string | null;
-	};
-	words: {
-		text: string;
-		start_timestamp: {
-			absolute: string;
-			relative: number;
-		};
-		end_timestamp: {
-			absolute: string;
-			relative: number;
-		};
-	};
-}[];
-
 export async function downloadTranscript(transcriptUrl: URL) {
-	const response = await fetch(transcriptUrl.href, {
-		method: "GET",
-		headers: {
-			authorization: process.env.RECALL_API_KEY,
-			accept: "application/json",
-		},
-	});
+	return botClient.get<Transcript>(transcriptUrl.href);
+}
 
-	if (!response.ok) {
-		throw new ApiError(
-			400,
-			`Transcript Download Error: ${response.status} ${response.statusText}`,
-		);
-	}
-
-	const data = await response.json();
-	return data as Transcript;
+export async function deleteRecording(recordingId: string) {
+	return botClient.delete(`/recording/${recordingId}/`);
 }
