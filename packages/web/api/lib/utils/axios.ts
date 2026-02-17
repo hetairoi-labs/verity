@@ -16,8 +16,9 @@ export class AxiosClient {
 			(error) => {
 				if (error.response) {
 					throw new ApiError(
-						error.response.status,
-						`API Error: ${error.response.status} ${error.response.statusText}`,
+						500,
+						`Axios: ${error.response.status} ${error.response.statusText}`,
+						{ error: error.response.data.error },
 					);
 				}
 				throw new ApiError(500, `Network error: ${error.message}`);
