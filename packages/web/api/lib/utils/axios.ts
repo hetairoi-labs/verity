@@ -1,5 +1,5 @@
 import axios from "axios";
-import { ApiError } from "./hono/server-error";
+import { ApiError } from "./hono/error";
 
 export class AxiosClient {
 	private axiosInstance;
@@ -14,11 +14,12 @@ export class AxiosClient {
 		this.axiosInstance.interceptors.response.use(
 			(response) => response,
 			(error) => {
+				// in prod, we should not reveal internal api errors to the client
 				if (error.response) {
 					throw new ApiError(
 						500,
-						`Axios: ${error.response.status} ${error.response.statusText}`,
-						{ error: error.response.data.error },
+						`Axios Error: ${error.response.status} ${error.response.statusText}`,
+						error.response.data,
 					);
 				}
 				throw new ApiError(500, `Network error: ${error.message}`);

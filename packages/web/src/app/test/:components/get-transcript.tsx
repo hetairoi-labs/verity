@@ -6,15 +6,16 @@ import { useApi } from "@/src/lib/hooks/api/use-api";
 
 export function GetTranscript() {
 	const [transcriptUrl, setTranscriptUrl] = useState<string | undefined>();
-	const { data } = useApi().getTranscript({
-		transcriptUrl: transcriptUrl ?? "",
+	const { data, error } = useApi().getTranscript({
+		transcriptUrl: transcriptUrl ? transcriptUrl : "",
 	});
 
 	return (
 		<TestCard
 			title="Get Transcript"
-			description="Download transcript by URL"
+			description="Get transcript by URL"
 			data={data ? JSON.stringify(data, null, 2) : null}
+			error={error ? JSON.stringify(error, null, 2) : null}
 		>
 			<form
 				onSubmit={(e) => {
@@ -25,7 +26,7 @@ export function GetTranscript() {
 				className="flex flex-col gap-4"
 			>
 				<Input
-					type="url"
+					type="text"
 					placeholder="Enter transcript URL"
 					name="transcriptUrl"
 					required

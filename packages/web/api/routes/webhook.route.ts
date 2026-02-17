@@ -1,14 +1,23 @@
-import { zValidator } from "@hono/zod-validator";
 import { Hono } from "hono";
 import { respond } from "@/api/lib/utils/hono/respond";
 import { recallWebhookSchema } from "../lib/types/webhook.types";
+import { logger } from "../lib/utils/pino";
+import { validator } from "../lib/utils/zod";
 
 const webhookRoute = new Hono().post(
 	"/recall",
-	zValidator("json", recallWebhookSchema),
+	validator("json", recallWebhookSchema),
 	async (c) => {
 		const payload = c.req.valid("json");
-		console.log("[RECALL WEBHOOK]:", payload);
+
+		logger.info(
+			{
+				event: payload.event,
+				data: payload.data,
+			},
+			"webhook.recall.received",
+		);
+
 		return respond.ok(c, 200, "Webhook processed successfully", {});
 	},
 );

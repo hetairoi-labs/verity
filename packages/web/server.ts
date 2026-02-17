@@ -2,6 +2,7 @@ import { serve } from "bun";
 import { websocket } from "hono/bun";
 import hono from "@/api/hono";
 import html from "@/src/index.html";
+import { logger } from "./api/lib/utils/pino";
 import { validateEnv } from "./lib/utils/env";
 
 validateEnv();
@@ -11,7 +12,7 @@ serve({
 	development: isDev
 		? {
 				hmr: true,
-				console: true,
+				console: false,
 			}
 		: false,
 	port: process.env.PORT,
@@ -38,12 +39,23 @@ serve({
 	websocket,
 
 	error(error) {
-		console.error(error);
+		logger.error(
+			{
+				message: error.message,
+				stack: error.stack,
+			},
+			"server.bun.error",
+		);
 		return new Response(`Internal Error: ${error.message}`, { status: 500 });
 	},
 });
 
-console.log(`🐰 Bun version: ${Bun.version}`);
-console.log(
-	`🔥 ${isDev ? "Dev" : "Prod"} server is running at ${process.env.PUBLIC_APP_URL}`,
+logger.info(
+	{
+		bunVersion: Bun.version,
+		port: process.env.PORT,
+		env: isDev ? "development" : "production",
+		url: process.env.PUBLIC_APP_URL,
+	},
+	"server.started",
 );

@@ -1,3 +1,4 @@
+import axios from "axios";
 import type { Bot, Transcript } from "../types/bot.types";
 import { AxiosClient } from "./axios";
 
@@ -32,6 +33,13 @@ export async function createBot(meetingUrl: URL) {
 				type: "timed",
 				hours: RETENTION_HOURS,
 			},
+			transcript: {
+				provider: {
+					recallai_streaming: {
+						mode: "prioritize_accuracy",
+					},
+				},
+			},
 		},
 	});
 }
@@ -41,7 +49,8 @@ export async function retrieveBot(botId: string) {
 }
 
 export async function downloadTranscript(transcriptUrl: URL) {
-	return botClient.get<Transcript>(transcriptUrl.href);
+	const response = await axios.get<Transcript>(transcriptUrl.href);
+	return response.data;
 }
 
 export async function deleteRecording(recordingId: string) {

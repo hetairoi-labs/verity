@@ -2,7 +2,8 @@ import { zValidator as honoZValidator } from "@hono/zod-validator";
 import type { ValidationTargets } from "hono";
 import type { ZodType } from "zod";
 import { z } from "zod";
-import { ApiError } from "./hono/server-error";
+import { ApiError } from "./hono/error";
+import { safe } from "./safe";
 
 export type ZodErrorDetails = {
 	summary: string;
@@ -30,11 +31,7 @@ export const zJsonString = () =>
 	z
 		.string()
 		.refine((value) => {
-			try {
-				JSON.parse(value);
-				return true;
-			} catch (_) {
-				return false;
-			}
+			const [_, error] = safe(() => JSON.parse(value));
+			return !error;
 		})
 		.transform((value) => JSON.parse(value));

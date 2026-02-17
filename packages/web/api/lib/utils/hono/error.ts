@@ -5,6 +5,7 @@ import type {
 	ServerErrorStatusCode,
 } from "hono/utils/http-status";
 import type { JSONObject } from "hono/utils/types";
+import { logger } from "../pino";
 import { type HeaderRecord, respond } from "./respond";
 
 export class ApiError<T extends JSONObject = JSONObject> extends HTTPException {
@@ -31,8 +32,16 @@ export function handleError(err: Error | HTTPException, c: Context) {
 
 	const headers = err instanceof ApiError ? err.headers : undefined;
 	const errorBody = err instanceof ApiError ? err.data : err.cause;
+	const requestLogger = c.get("logger") ?? logger;
 
-	console.error(`[Error]: ${err.message}`);
-	console.log("Error Details:", errorBody);
+	requestLogger.error(
+		{
+			status,
+			message: err.message,
+			errorBody,
+		},
+		"http.error",
+	);
+
 	return respond.err(c, status, err.message, errorBody, headers);
 }

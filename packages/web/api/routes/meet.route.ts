@@ -9,7 +9,7 @@ import {
 import { respond } from "@/api/lib/utils/hono/respond";
 import { getAuthenticatedClient } from "@/lib/utils/google";
 import { getGeminiEphemeralToken } from "../lib/utils/gemini";
-import { ApiError } from "../lib/utils/hono/server-error";
+import { ApiError } from "../lib/utils/hono/error";
 import { validator } from "../lib/utils/zod";
 
 const meetRoute = new Hono()
