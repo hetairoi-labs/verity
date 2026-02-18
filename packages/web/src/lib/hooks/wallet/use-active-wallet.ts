@@ -6,7 +6,7 @@ import {
 import { useSetActiveWallet } from "@privy-io/wagmi";
 import { useCallback, useMemo } from "react";
 import { defaultChain } from "@/src/constants";
-import { safeAsync } from "../../errors/safe";
+import { safeAsync } from "@/src/lib/errors/safe";
 
 export const useActiveWallet = () => {
 	const { ready, authenticated, user } = usePrivy();

@@ -1,25 +1,20 @@
+import {
+	safe as baseSafe,
+	safeAsync as baseSafeAsync,
+	type Result,
+} from "@/lib/utils/safe";
 import { ErrorHandler } from "./handler";
 
-export type Result<T> = [T, null] | [null, Error];
-
 export const safe = <T>(fn: () => T): Result<T> => {
-	try {
-		return [fn(), null];
-	} catch (e) {
-		ErrorHandler.getInstance().handleError(e);
-		return [null, e instanceof Error ? e : new Error(String(e))];
-	}
+	const result = baseSafe(fn);
+	if (result[1]) ErrorHandler.getInstance().handleError(result[1]);
+	return result;
 };
 
 export const safeAsync = async <T>(
 	fn: (() => Promise<T>) | Promise<T>,
 ): Promise<Result<T>> => {
-	try {
-		const promise = typeof fn === "function" ? fn() : fn;
-		const data = await promise;
-		return [data, null];
-	} catch (e) {
-		ErrorHandler.getInstance().handleError(e);
-		return [null, e instanceof Error ? e : new Error(String(e))];
-	}
+	const result = await baseSafeAsync(fn);
+	if (result[1]) ErrorHandler.getInstance().handleError(result[1]);
+	return result;
 };

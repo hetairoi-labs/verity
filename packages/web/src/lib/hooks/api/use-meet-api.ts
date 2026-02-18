@@ -19,14 +19,14 @@ export function useGetBotQuery(query: GetBotInput) {
 }
 
 // create new meeting
-type CreateMeetRoute = (typeof client.meet)["create-meeting-with-bot"]["$post"];
-export type CreateMeetInput = InferRequestType<CreateMeetRoute>["json"];
+type CreateEventRoute = (typeof client.meet)["create-event"]["$post"];
+export type CreateEventInput = InferRequestType<CreateEventRoute>["json"];
 
-export function useCreateMeetMutation() {
+export function useCreateEventMutation() {
 	return useMutation({
-		mutationFn: async (json: CreateMeetInput) => {
+		mutationFn: async (json: CreateEventInput) => {
 			const result = await parseResponse(
-				client.meet["create-meeting-with-bot"].$post({ json }),
+				client.meet["create-event"].$post({ json }),
 			);
 			return result.data;
 		},

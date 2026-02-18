@@ -47,8 +47,8 @@ export const sessions = sqliteTable(
 		id: integer().primaryKey({
 			autoIncrement: true,
 		}),
-		meetingUrl: text().notNull(),
-		botId: text().notNull(),
+		meetingUrl: text(),
+		botId: text(),
 		transcriptUrl: text(),
 		courseId: integer()
 			.references(() => courses.id)

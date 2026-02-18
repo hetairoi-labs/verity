@@ -10,12 +10,17 @@ const envSchema = z.object({
 	// server only
 	PORT: z.coerce.number().int().positive("PORT must be a positive integer"),
 	PRIVY_APP_SECRET: z.string().min(1, "PRIVY_APP_SECRET is required"),
+	PRIVY_JWT_VERIFICATION_KEY: z
+		.string()
+		.min(1, "PRIVY_JWT_VERIFICATION_KEY is required"),
 	DATABASE_URL: z.string().min(1, "DATABASE_URL is required"),
 	GOOGLE_CLIENT_ID: z.string().min(1, "GOOGLE_CLIENT_ID is required"),
 	GOOGLE_CLIENT_SECRET: z.string().min(1, "GOOGLE_CLIENT_SECRET is required"),
 	GEMINI_API_KEY: z.string().min(1, "GEMINI_API_KEY is required"),
 	RECALL_API_URL: z.url(),
 	RECALL_API_KEY: z.string().min(1, "RECALL_API_KEY is required"),
+
+	NODE_ENV: z.enum(["development", "production"]).default("development"),
 });
 type EnvSchema = z.infer<typeof envSchema>;
 
@@ -25,21 +30,24 @@ declare module "bun" {
 }
 
 // validate env
-let env: EnvSchema;
-export function validateEnv() {
-	try {
-		const parsedEnv = envSchema.parse(Bun.env);
-		console.log("🔑 Environment validated successfully");
-		env = parsedEnv;
-	} catch (error) {
-		if (error instanceof z.ZodError) {
-			const errorMessages = error.issues
-				.map((err) => `${err.path.join(".")}: ${err.message}`)
-				.join("\n");
-			throw new Error(`Environment validation failed:\n${errorMessages}`);
+let _env: EnvSchema | null = null;
+export const getEnv = (): EnvSchema => {
+	if (!_env) {
+		try {
+			const parsedEnv = envSchema.parse(Bun.env);
+			console.log("🔑 Environment validated successfully");
+			_env = parsedEnv;
+		} catch (error) {
+			if (error instanceof z.ZodError) {
+				const errorMessages = error.issues
+					.map((err) => `${err.path.join(".")}: ${err.message}`)
+					.join("\n");
+				throw new Error(`Environment validation failed:\n${errorMessages}`);
+			}
+			throw error;
 		}
-		throw error;
 	}
-}
+	return _env;
+};
 
-export { env, type EnvSchema };
+export const env = getEnv();

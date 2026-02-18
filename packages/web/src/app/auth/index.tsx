@@ -22,6 +22,14 @@ function AuthPage() {
 
 	const privy = usePrivy();
 
+	useEffect(() => {
+		if (privy.authenticated) {
+			privy.getAccessToken().then((token) => {
+				console.log(token);
+			});
+		}
+	}, [privy.authenticated, privy.getAccessToken]);
+
 	if (!privy.ready) return <Loader />;
 	return (
 		<div className="flex flex-col items-center min-h-screen p-8">

@@ -3,10 +3,9 @@ import { websocket } from "hono/bun";
 import hono from "@/api/hono";
 import html from "@/src/index.html";
 import { logger } from "./api/lib/utils/pino";
-import { validateEnv } from "./lib/utils/env";
+import { env } from "./lib/utils/env";
 
-validateEnv();
-const isDev = process.env.NODE_ENV !== "production";
+const isDev = env.NODE_ENV === "development";
 
 serve({
 	development: isDev

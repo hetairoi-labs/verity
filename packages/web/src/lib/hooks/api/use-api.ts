@@ -1,13 +1,13 @@
 import type {
 	CreateBotInput,
-	CreateMeetInput,
+	CreateEventInput,
 	GetBotInput,
 	GetEphemeralTokenInput,
 	GetTranscriptInput,
 } from "./use-meet-api";
 import {
 	useCreateBotMutation,
-	useCreateMeetMutation,
+	useCreateEventMutation,
 	useGetBotQuery,
 	useGetEphemeralTokenQuery,
 	useGetTranscriptQuery,
@@ -15,7 +15,7 @@ import {
 
 export function useApi() {
 	return {
-		createMeet: useCreateMeetMutation(),
+		createEvent: useCreateEventMutation(),
 		createBot: useCreateBotMutation(),
 		getBot: useGetBotQuery,
 		getTranscript: useGetTranscriptQuery,
@@ -24,7 +24,7 @@ export function useApi() {
 }
 
 export type ApiRequestTypes = {
-	createMeet: CreateMeetInput;
+	createEvent: CreateEventInput;
 	createBot: CreateBotInput;
 	getBot: GetBotInput;
 	getTranscript: GetTranscriptInput;
@@ -32,7 +32,7 @@ export type ApiRequestTypes = {
 };
 
 export type ApiResponseTypes = {
-	createMeet: Awaited<ReturnType<typeof useCreateMeetMutation>>["data"];
+	createEvent: Awaited<ReturnType<typeof useCreateEventMutation>>["data"];
 	createBot: Awaited<ReturnType<typeof useCreateBotMutation>>["data"];
 	getBot: Awaited<ReturnType<typeof useGetBotQuery>>["data"];
 	getTranscript: Awaited<ReturnType<typeof useGetTranscriptQuery>>["data"];

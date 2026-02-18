@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { CreateBot } from "./:components/create-bot";
-import { CreateMeet } from "./:components/create-meet";
+import { CreateEvent } from "./:components/create-event";
 import { GetBot } from "./:components/get-bot";
 import { GetToken } from "./:components/get-token";
 import { GetTranscript } from "./:components/get-transcript";
@@ -12,7 +12,7 @@ function TestPage() {
 			<h1 className="mb-8 text-center">API</h1>
 
 			<div className="flex flex-col items-center gap-8 min-w-full">
-				<CreateMeet />
+				<CreateEvent />
 				<CreateBot />
 				<GetToken />
 				<GetBot />

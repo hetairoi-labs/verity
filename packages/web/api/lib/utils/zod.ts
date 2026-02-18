@@ -3,8 +3,8 @@ import type { ValidationTargets } from "hono";
 import { getAddress, isAddress } from "viem";
 import type { ZodType } from "zod";
 import { z } from "zod";
+import { safe } from "@/lib/utils/safe";
 import { ApiError } from "./hono/error";
-import { safe } from "./safe";
 
 export type ZodErrorDetails = {
 	summary: string;

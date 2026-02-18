@@ -1,6 +1,6 @@
 import { createMiddleware } from "hono/factory";
 import { logger } from "@/api/lib/utils/pino";
-import { safeAsync } from "@/api/lib/utils/safe";
+import { safeAsync } from "@/lib/utils/safe";
 
 export default createMiddleware(async (c, next) => {
 	const startedAt = Date.now();

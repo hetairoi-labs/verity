@@ -1,17 +1,19 @@
 import { and, desc, eq, isNull } from "drizzle-orm";
 import { Hono } from "hono";
 import { z } from "zod";
+import { safeAsync } from "@/lib/utils/safe";
 import { db } from "../lib/db";
 import { schema, views } from "../lib/db/schema";
 import { ApiError } from "../lib/utils/hono/error";
 import { respond } from "../lib/utils/hono/respond";
-import { safeAsync } from "../lib/utils/safe";
 import { validator, zHexAddress } from "../lib/utils/zod";
+import { requireAuth } from "../middleware/auth";
 
 const { users } = schema;
-const { activeUsers, deletedUsers } = views;
+const { activeUsers } = views;
 
 const usersRoute = new Hono()
+	.use(requireAuth)
 	.get(
 		"/",
 		validator(
@@ -42,15 +44,6 @@ const usersRoute = new Hono()
 			});
 		},
 	)
-	.get("/deleted", async (c) => {
-		const [data, error] = await safeAsync(db.select().from(deletedUsers));
-
-		if (error) throw new ApiError(500, error.message, { error });
-		if (data.length === 0) throw new ApiError(404, "No deleted users found");
-		return respond.ok(c, 200, "Deleted users fetched successfully", {
-			users: data,
-		});
-	})
 	.get(
 		"/:address",
 		validator("param", z.object({ address: zHexAddress() })),

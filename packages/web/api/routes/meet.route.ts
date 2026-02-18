@@ -1,4 +1,3 @@
-import { google } from "googleapis";
 import { Hono } from "hono";
 import { z } from "zod";
 import {
@@ -7,14 +6,14 @@ import {
 	retrieveBot,
 } from "@/api/lib/utils/bot";
 import { respond } from "@/api/lib/utils/hono/respond";
-import { getAuthenticatedClient } from "@/lib/utils/google";
 import { getGeminiEphemeralToken } from "../lib/utils/gemini";
+import { createGoogleCalendarEvent } from "../lib/utils/google";
 import { ApiError } from "../lib/utils/hono/error";
 import { validator } from "../lib/utils/zod";
 
 const meetRoute = new Hono()
 	.post(
-		"/create-meeting-with-bot",
+		"/create",
 		validator(
 			"json",
 			z.object({
@@ -26,44 +25,17 @@ const meetRoute = new Hono()
 		),
 		async (c) => {
 			const { summary } = c.req.valid("json");
-			const client = await getAuthenticatedClient();
-			const calendar = google.calendar({ version: "v3", auth: client });
-
-			const event = await calendar.events.insert({
-				calendarId: "primary",
-				conferenceDataVersion: 1,
-				requestBody: {
-					summary,
-					start: { dateTime: new Date().toISOString() },
-					end: { dateTime: new Date(Date.now() + 30 * 60_000).toISOString() },
-					conferenceData: {
-						createRequest: {
-							requestId: crypto.randomUUID(),
-							conferenceSolutionKey: { type: "hangoutsMeet" },
-						},
-					},
-				},
-			});
-
-			if (!event.data.hangoutLink) {
+			const event = await createGoogleCalendarEvent(summary);
+			if (!event.hangoutLink) {
 				throw new ApiError(
 					500,
 					"Something went wrong while creating the meeting..",
 				);
 			}
+			const bot = await createBot(new URL(event.hangoutLink));
 
 			return respond.ok(c, 200, "Meeting created successfully", {
-				event: event.data,
-			});
-		},
-	)
-	.post(
-		"/create-bot",
-		validator("json", z.object({ meetingUrl: z.url() })),
-		async (c) => {
-			const { meetingUrl } = c.req.valid("json");
-			const bot = await createBot(new URL(meetingUrl));
-			return respond.ok(c, 200, "Bot created successfully", {
+				event,
 				bot,
 			});
 		},
