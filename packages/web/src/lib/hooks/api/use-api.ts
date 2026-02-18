@@ -12,6 +12,7 @@ import {
 	useGetEphemeralTokenQuery,
 	useGetTranscriptQuery,
 } from "./use-meet-api";
+import { useRegisterUserMutation } from "./use-user-api";
 
 export function useApi() {
 	return {
@@ -20,6 +21,7 @@ export function useApi() {
 		getBot: useGetBotQuery,
 		getTranscript: useGetTranscriptQuery,
 		getToken: useGetEphemeralTokenQuery,
+		registerUser: useRegisterUserMutation(),
 	};
 }
 

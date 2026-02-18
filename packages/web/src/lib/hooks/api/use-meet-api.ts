@@ -19,15 +19,13 @@ export function useGetBotQuery(query: GetBotInput) {
 }
 
 // create new meeting
-type CreateEventRoute = (typeof client.meet)["create-event"]["$post"];
+type CreateEventRoute = (typeof client.meet)["create"]["$post"];
 export type CreateEventInput = InferRequestType<CreateEventRoute>["json"];
 
 export function useCreateEventMutation() {
 	return useMutation({
 		mutationFn: async (json: CreateEventInput) => {
-			const result = await parseResponse(
-				client.meet["create-event"].$post({ json }),
-			);
+			const result = await parseResponse(client.meet.create.$post({ json }));
 			return result.data;
 		},
 		onSuccess: (data) => {
@@ -37,15 +35,13 @@ export function useCreateEventMutation() {
 }
 
 // create a new bot for a given meeting
-type CreateBotRoute = (typeof client.meet)["create-bot"]["$post"];
+type CreateBotRoute = (typeof client.meet)["create"]["$post"];
 export type CreateBotInput = InferRequestType<CreateBotRoute>["json"];
 
 export function useCreateBotMutation() {
 	return useMutation({
 		mutationFn: async (json: CreateBotInput) => {
-			const result = await parseResponse(
-				client.meet["create-bot"].$post({ json }),
-			);
+			const result = await parseResponse(client.meet.create.$post({ json }));
 			return result.data;
 		},
 		onSuccess: (data) => {

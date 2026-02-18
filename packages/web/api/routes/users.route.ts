@@ -44,20 +44,6 @@ const usersRoute = new Hono()
 			});
 		},
 	)
-	.get(
-		"/:address",
-		validator("param", z.object({ address: zHexAddress() })),
-		async (c) => {
-			const { address } = c.req.valid("param");
-			const [data, error] = await safeAsync(
-				db.select().from(activeUsers).where(eq(activeUsers.address, address)),
-			);
-
-			if (error) throw new ApiError(500, error.message, { error });
-			if (!data[0]) throw new ApiError(404, "User not found");
-			return respond.ok(c, 200, "User fetched successfully", { user: data[0] });
-		},
-	)
 	.post(
 		"/",
 		validator(
@@ -66,12 +52,14 @@ const usersRoute = new Hono()
 				name: z
 					.string()
 					.min(1, "Minimum 1 character required")
-					.max(32, "Maximum 32 characters required"),
+					.max(32, "Maximum 32 characters required")
+					.optional(),
 				address: zHexAddress(),
 			}),
 		),
 		async (c) => {
 			const { name, address } = c.req.valid("json");
+
 			const [data, error] = await safeAsync(
 				db.insert(users).values({ address, name }).returning(),
 			);

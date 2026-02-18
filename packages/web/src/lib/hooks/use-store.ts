@@ -1,6 +1,8 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
-import type { User } from "@/api/lib/db/schema/users";
+import type { Schema } from "@/api/lib/db/schema";
+
+type User = Schema["users"];
 
 interface UserStore {
 	user?: User;

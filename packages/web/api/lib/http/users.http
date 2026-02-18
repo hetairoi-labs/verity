@@ -1,6 +1,10 @@
 @baseUrl = http://localhost:3000/api/v1/users
+@token = abc
 
 GET {{baseUrl}}
+Headers:
+Authorization: Bearer {{token}}
+
 
 ###
 GET {{baseUrl}}/deleted
