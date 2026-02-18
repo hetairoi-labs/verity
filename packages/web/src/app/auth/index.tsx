@@ -1,10 +1,9 @@
-import { usePrivy } from "@privy-io/react-auth";
 import { createFileRoute } from "@tanstack/react-router";
 import { Loader } from "@/src/components/custom/loading";
 import { TestCard } from "@/src/components/custom/test-card";
 import { Button } from "@/src/components/ui/button";
-import { useActiveWallet } from "@/src/lib/hooks/wallet/use-active-wallet";
-import { useAuth } from "@/src/lib/hooks/wallet/use-auth";
+import { useActiveWallet } from "@/src/lib/hooks/web3/use-active-wallet";
+import { useAuth } from "@/src/lib/hooks/web3/use-auth";
 
 export const Route = createFileRoute("/auth/")({
 	component: AuthPage,
@@ -13,10 +12,9 @@ export const Route = createFileRoute("/auth/")({
 function AuthPage() {
 	const { isWalletOnDefaultChain, switchNetwork, defaultChain } =
 		useActiveWallet();
-	const privy = usePrivy();
-	const { login, logout } = useAuth();
+	const { state, login, logout } = useAuth();
 
-	if (!privy.ready) return <Loader />;
+	if (state.ready) return <Loader />;
 	return (
 		<div className="flex flex-col items-center min-h-screen p-8">
 			<h1 className="mb-8 text-center">Auth</h1>
@@ -24,8 +22,8 @@ function AuthPage() {
 			<TestCard
 				title="Login"
 				description="Login with Privy"
-				children={<Button onClick={() => login()}>Login</Button>}
-				data={privy.user ? JSON.stringify(privy.user, null, 2) : null}
+				children={<Button onClick={() => login.mutate()}>Login</Button>}
+				data={state.user ? JSON.stringify(state.user, null, 2) : null}
 			/>
 
 			<TestCard
@@ -50,7 +48,7 @@ function AuthPage() {
 				title="Logout"
 				description="Logout with Privy"
 				children={<Button onClick={() => logout()}>Logout</Button>}
-				data={privy.authenticated ? "Logged in" : "Not logged in"}
+				data={state.authenticated ? "Logged in" : "Not logged in"}
 			/>
 		</div>
 	);

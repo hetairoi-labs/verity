@@ -1,11 +1,10 @@
-import { and, desc, eq, isNull } from "drizzle-orm";
+import { eq } from "drizzle-orm";
 import { Hono } from "hono";
 import { z } from "zod";
-import { safeAsync } from "@/lib/utils/safe";
 import { db } from "../lib/db";
 import { schema, views } from "../lib/db/schema";
-import { ApiError } from "../lib/utils/hono/error";
 import { respond } from "../lib/utils/hono/respond";
+import { safeQuery } from "../lib/utils/safe";
 import { validator, zHexAddress } from "../lib/utils/zod";
 import { requireAuth } from "../middleware/auth";
 
@@ -14,36 +13,13 @@ const { activeUsers } = views;
 
 const usersRoute = new Hono()
 	.use(requireAuth)
-	.get(
-		"/",
-		validator(
-			"query",
-			z.object({
-				page: z.coerce.number().default(1),
-				limit: z.coerce.number().default(5),
-			}),
-		),
-		async (c) => {
-			const { page, limit } = c.req.valid("query");
-			const offset = (page - 1) * limit;
-			const [data, error] = await safeAsync(
-				db
-					.select()
-					.from(activeUsers)
-					.orderBy(desc(activeUsers.createdAt))
-					.limit(limit)
-					.offset(offset),
-			);
-
-			if (error) throw new ApiError(500, error.message, { error });
-			if (data.length === 0) throw new ApiError(404, "No users found");
-			return respond.ok(c, 200, "Users fetched successfully", {
-				page,
-				limit,
-				users: data,
-			});
-		},
-	)
+	.get("/", async (c) => {
+		const userId = c.var.user.user_id;
+		const user = await safeQuery(
+			db.select().from(activeUsers).where(eq(users.id, userId)),
+		);
+		return respond.ok(c, 200, "User fetched successfully", { user: user[0] });
+	})
 	.post(
 		"/",
 		validator(
@@ -59,31 +35,15 @@ const usersRoute = new Hono()
 		),
 		async (c) => {
 			const { name, address } = c.req.valid("json");
+			const privyId = c.var.user.user_id;
 
-			const [data, error] = await safeAsync(
-				db.insert(users).values({ address, name }).returning(),
-			);
-
-			if (error) throw new ApiError(500, error.message, { error });
-			return respond.ok(c, 201, "User created successfully", { user: data[0] });
-		},
-	)
-	.delete(
-		"/:address",
-		validator("param", z.object({ address: zHexAddress() })),
-		async (c) => {
-			const { address } = c.req.valid("param");
-			const [data, error] = await safeAsync(
+			const user = await safeQuery(
 				db
-					.update(users)
-					.set({ deletedAt: new Date().toISOString() })
-					.where(and(eq(users.address, address), isNull(users.deletedAt)))
+					.insert(users)
+					.values({ id: privyId, walletAddress: address, name })
 					.returning(),
 			);
-
-			if (error) throw new ApiError(500, error.message, { error });
-			if (!data[0]) throw new ApiError(404, "User not found");
-			return respond.ok(c, 200, "User deleted successfully", { user: data[0] });
+			return respond.ok(c, 201, "User created successfully", { user: user[0] });
 		},
 	);
 export default usersRoute;
