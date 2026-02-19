@@ -11,8 +11,6 @@
 		"deploy": "./lib/scripts/deploy.sh",
 		"build": "tsr generate && bun lib/utils/build.ts",
 		"tsc": "bunx --bun tsc --noEmit",
-		"format": "bunx biome format --write",
-		"lint": "bunx biome lint --write",
 		"check": "bunx biome check --write",
 		"generate": "bunx drizzle-kit generate",
 		"migrate": "bunx drizzle-kit migrate",

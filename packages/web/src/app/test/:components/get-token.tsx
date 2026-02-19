@@ -6,7 +6,7 @@ import { useApi } from "@/src/lib/hooks/api/use-api";
 export function GetToken() {
 	const [enabled, setEnabled] = useState(false);
 	const api = useApi();
-	const { data, isFetching, refetch } = api.meet.getToken(enabled);
+	const { data, isFetching, refetch } = api.gemini.getToken(enabled);
 
 	return (
 		<TestCard

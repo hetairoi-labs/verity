@@ -1,27 +1,35 @@
-import { isNotNull, isNull, sql } from "drizzle-orm";
+import { isNull } from "drizzle-orm";
 import {
 	index,
+	integer,
 	sqliteTable,
 	sqliteView,
 	text,
-	uniqueIndex,
 } from "drizzle-orm/sqlite-core";
 import type { ZHexAddress } from "../../utils/zod";
-import { timestamps } from "../timestamps";
+import { timestamps, uniqueIndexSoft } from "../utils";
 
-export const users = sqliteTable(
-	"users",
+export const users = sqliteTable("users", {
+	id: text().primaryKey(),
+	name: text().default(""),
+	...timestamps,
+});
+
+export const linkedAccounts = sqliteTable(
+	"linked_accounts",
 	{
-		id: text("id").primaryKey(),
-		address: text("address").$type<ZHexAddress>(),
-		name: text("name"),
+		address: text().$type<ZHexAddress>().primaryKey(),
+		userId: text()
+			.notNull()
+			.references(() => users.id, { onDelete: "cascade" }),
+		method: text().notNull(),
+		isPrimary: integer({ mode: "boolean" }).default(false),
 		...timestamps,
 	},
 	(table) => [
-		index("users_address_idx").on(table.address),
-		uniqueIndex("unique_active_address")
-			.on(table.address)
-			.where(sql`${table.deletedAt} IS NULL`),
+		index("linked_accounts_user_id_idx").on(table.userId),
+		index("linked_accounts_address_idx").on(table.address),
+		uniqueIndexSoft("linked_accounts_address_unique", table).on(table.address),
 	],
 );
 
@@ -29,6 +37,7 @@ export const activeUsers = sqliteView("active_users").as((qb) =>
 	qb.select().from(users).where(isNull(users.deletedAt)),
 );
 
-export const deletedUsers = sqliteView("deleted_users").as((qb) =>
-	qb.select().from(users).where(isNotNull(users.deletedAt)),
+export const activeLinkedAccounts = sqliteView("active_linked_accounts").as(
+	(qb) =>
+		qb.select().from(linkedAccounts).where(isNull(linkedAccounts.deletedAt)),
 );

@@ -4,7 +4,7 @@ import client from "../../utils/api-client";
 import { usePrivyToken } from "../web3/use-privy-token";
 
 // register new user
-type RegisterUserRoute = (typeof client.users)["index"]["$post"];
+type RegisterUserRoute = (typeof client.users)["$post"];
 export type RegisterUserInput = InferRequestType<RegisterUserRoute>["json"];
 
 export function useRegisterUserMutation() {
@@ -15,7 +15,7 @@ export function useRegisterUserMutation() {
 		mutationFn: async (json: RegisterUserInput) => {
 			if (!token) return;
 			const result = await parseResponse(
-				client.users.index.$post(
+				client.users.$post(
 					{ json },
 					{ headers: { Authorization: `Bearer ${token}` } },
 				),
@@ -30,7 +30,7 @@ export function useRegisterUserMutation() {
 }
 
 // get authenticated user
-type GetUserRoute = (typeof client.users)["index"]["$get"];
+type GetUserRoute = (typeof client.users)["$get"];
 export type GetUserInput = InferRequestType<GetUserRoute>;
 
 export function useGetUserQuery() {
@@ -39,7 +39,7 @@ export function useGetUserQuery() {
 		queryKey: ["user", token],
 		queryFn: async () => {
 			const result = await parseResponse(
-				client.users.index.$get(
+				client.users.$get(
 					{},
 					{ headers: { Authorization: `Bearer ${token}` } },
 				),

@@ -6,4 +6,5 @@ const db = drizzle({
 	client: sqlite,
 	casing: "snake_case",
 });
+export type DrizzleDb = typeof db;
 export { db };

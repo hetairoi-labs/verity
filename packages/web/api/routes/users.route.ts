@@ -9,7 +9,7 @@ import { safeQuery } from "../lib/utils/safe";
 import { validator, zHexAddress } from "../lib/utils/zod";
 import { requireAuth } from "../middleware/auth";
 
-const { users } = schema;
+const { users, linkedAccounts } = schema;
 const { activeUsers } = views;
 
 const usersRoute = new Hono()
@@ -33,23 +33,30 @@ const usersRoute = new Hono()
 					.max(32, "Maximum 32 characters required")
 					.optional(),
 				address: zHexAddress(),
+				method: z.string().min(1, "Minimum 1 character required"),
 			}),
 		),
 		async (c) => {
-			const { name, address } = c.req.valid("json");
-			const privyId = c.var.user.user_id;
+			const { name, address, method } = c.req.valid("json");
+			const userId = c.var.user.user_id;
 
 			const user = await safeQuery(
+				db.insert(users).values({ id: userId, name }).returning(),
+			);
+
+			const linkedAccount = await safeQuery(
 				db
-					.insert(users)
-					.values({ id: privyId, address, name })
-					.onConflictDoUpdate({
-						target: users.id,
-						set: { address, name },
-					})
+					.insert(linkedAccounts)
+					.values({ address, userId, method })
 					.returning(),
 			);
-			return respond.ok(c, 201, "User created successfully", { user: user[0] });
+
+			return respond.ok(c, 201, "User created successfully", {
+				user: {
+					user: user[0],
+					linkedAccount: linkedAccount[0],
+				},
+			});
 		},
 	);
 export default usersRoute;

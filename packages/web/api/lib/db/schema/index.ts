@@ -3,16 +3,19 @@ import {
 	activeGoals,
 	activeSessions,
 	courses,
-	deletedCourses,
-	deletedGoals,
-	deletedSessions,
 	goals,
 	sessions,
 } from "./sessions";
-import { activeUsers, deletedUsers, users } from "./users";
+import {
+	activeLinkedAccounts,
+	activeUsers,
+	linkedAccounts,
+	users,
+} from "./users";
 
 export const schema = {
 	users,
+	linkedAccounts,
 	courses,
 	goals,
 	sessions,
@@ -20,6 +23,7 @@ export const schema = {
 
 export type Schema = {
 	users: typeof users.$inferSelect;
+	linkedAccounts: typeof linkedAccounts.$inferSelect;
 	courses: typeof courses.$inferSelect;
 	sessions: typeof sessions.$inferSelect;
 	goals: typeof goals.$inferSelect;
@@ -27,11 +31,8 @@ export type Schema = {
 
 export const views = {
 	activeUsers: activeUsers,
-	deletedUsers: deletedUsers,
+	activeLinkedAccounts: activeLinkedAccounts,
 	activeCourses: activeCourses,
-	deletedCourses: deletedCourses,
 	activeSessions: activeSessions,
-	deletedSessions: deletedSessions,
 	activeGoals: activeGoals,
-	deletedGoals: deletedGoals,
 };

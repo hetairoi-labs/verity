@@ -54,7 +54,12 @@ function useLoginMutation() {
 			const address = params.user.wallet?.address;
 			const name = params.user.google?.name || undefined;
 			if (!address) return;
-			!params.wasAlreadyAuthenticated && registerUser.mutate({ address, name });
+			!params.wasAlreadyAuthenticated &&
+				registerUser.mutate({
+					address,
+					name,
+					method: String(params.loginMethod),
+				});
 
 			setResult({
 				isNewUser: params.isNewUser,

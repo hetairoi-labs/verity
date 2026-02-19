@@ -10,7 +10,7 @@ import { useApi } from "./api/use-api";
 
 export function useLive() {
 	const api = useApi();
-	const { data: token } = api.meet.getToken(true);
+	const { data: token } = api.gemini.getToken(true);
 
 	const [logs, setLogs] = useState<LogEntry[]>([]);
 	const [status, setStatus] = useState("idle");

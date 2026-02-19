@@ -1,4 +1,4 @@
-import { isNotNull, isNull, sql } from "drizzle-orm";
+import { isNull } from "drizzle-orm";
 import {
 	index,
 	integer,
@@ -6,9 +6,8 @@ import {
 	sqliteTable,
 	sqliteView,
 	text,
-	uniqueIndex,
 } from "drizzle-orm/sqlite-core";
-import { timestamps } from "../timestamps";
+import { timestamps, uniqueIndexSoft } from "../utils";
 import { users } from "./users";
 
 export const courses = sqliteTable(
@@ -18,27 +17,23 @@ export const courses = sqliteTable(
 			autoIncrement: true,
 		}),
 		title: text().notNull(),
-		desc: text().notNull(),
-		numberOfSessions: integer().notNull(),
-		authorId: integer()
+		desc: text().default(""),
+		authorId: text()
 			.references(() => users.id)
 			.notNull(),
 		...timestamps,
 	},
 	(table) => [
 		index("courses_author_id_idx").on(table.authorId),
-		uniqueIndex("courses_author_title_unique")
-			.on(table.authorId, table.title)
-			.where(sql`${table.deletedAt} IS NULL`),
+		uniqueIndexSoft("courses_author_title_unique", table).on(
+			table.authorId,
+			table.title,
+		),
 	],
 );
 
 export const activeCourses = sqliteView("active_courses").as((qb) =>
 	qb.select().from(courses).where(isNull(courses.deletedAt)),
-);
-
-export const deletedCourses = sqliteView("deleted_courses").as((qb) =>
-	qb.select().from(courses).where(isNotNull(courses.deletedAt)),
 );
 
 export const sessions = sqliteTable(
@@ -58,18 +53,12 @@ export const sessions = sqliteTable(
 	(table) => [
 		index("sessions_course_id_idx").on(table.courseId),
 		index("sessions_bot_id_idx").on(table.botId),
-		uniqueIndex("sessions_meeting_url_unique")
-			.on(table.meetingUrl)
-			.where(sql`${table.deletedAt} IS NULL`),
+		uniqueIndexSoft("sessions_meeting_url_unique", table).on(table.meetingUrl),
 	],
 );
 
 export const activeSessions = sqliteView("active_sessions").as((qb) =>
 	qb.select().from(sessions).where(isNull(sessions.deletedAt)),
-);
-
-export const deletedSessions = sqliteView("deleted_sessions").as((qb) =>
-	qb.select().from(sessions).where(isNotNull(sessions.deletedAt)),
 );
 
 export const goals = sqliteTable(
@@ -91,17 +80,13 @@ export const goals = sqliteTable(
 	},
 	(table) => [
 		index("goals_session_id_idx").on(table.sessionId),
-		index("goals_weightage_idx").on(table.weightage),
-		uniqueIndex("goals_session_name_unique")
-			.on(table.sessionId, table.key)
-			.where(sql`${table.deletedAt} IS NULL`),
+		uniqueIndexSoft("goals_session_name_unique", table).on(
+			table.sessionId,
+			table.key,
+		),
 	],
 );
 
 export const activeGoals = sqliteView("active_goals").as((qb) =>
 	qb.select().from(goals).where(isNull(goals.deletedAt)),
-);
-
-export const deletedGoals = sqliteView("deleted_goals").as((qb) =>
-	qb.select().from(goals).where(isNotNull(goals.deletedAt)),
 );

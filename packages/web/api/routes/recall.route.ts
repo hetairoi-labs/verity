@@ -4,8 +4,8 @@ import { recallWebhookSchema } from "../lib/types/webhook.types";
 import { logger } from "../lib/utils/pino";
 import { validator } from "../lib/utils/zod";
 
-const webhookRoute = new Hono().post(
-	"/recall",
+const recallRoute = new Hono().post(
+	"/webhooks",
 	validator("json", recallWebhookSchema),
 	async (c) => {
 		const payload = c.req.valid("json");
@@ -22,5 +22,5 @@ const webhookRoute = new Hono().post(
 	},
 );
 
-export default webhookRoute;
-export type WebhookType = typeof webhookRoute;
+export default recallRoute;
+export type RecallType = typeof recallRoute;
