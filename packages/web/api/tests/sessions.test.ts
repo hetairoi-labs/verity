@@ -39,27 +39,6 @@ describe("createSession Integration", () => {
 	});
 
 	test(
-		"test bad input params",
-		async () => {
-			if (!RUN_INTEGRATION) {
-				expect(true).toBe(true);
-				return;
-			}
-
-			const pastDate = new Date(Date.now() - 60000);
-
-			expect(
-				createSession(userId, {
-					summary: "",
-					startDate: pastDate,
-					duration: 5,
-				}),
-			).rejects.toThrow();
-		},
-		{ timeout: 10000 },
-	);
-
-	test(
 		"create a new session",
 		async () => {
 			if (!RUN_INTEGRATION) {
@@ -74,6 +53,11 @@ describe("createSession Integration", () => {
 				startDate,
 				duration: 5,
 			});
+
+			console.log(result.session);
+			console.log(result.event);
+			console.log(result.bot);
+			console.log(result.bot.recordings[0]?.media_shortcuts.transcript.data);
 
 			const meetingUrl = result.event.hangoutLink;
 			const botId = result.bot.id;

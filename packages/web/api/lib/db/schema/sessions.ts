@@ -14,8 +14,10 @@ export const sessions = sqliteTable(
 		id: integer().primaryKey({
 			autoIncrement: true,
 		}),
+		eventLink: text("event_link"),
 		meetingUrl: text("meeting_url"),
 		botId: text("bot_id"),
+		startDate: text("start_date").notNull(),
 		transcriptUrl: text("transcript_url"),
 		summary: text("summary"),
 		userId: text("user_id")

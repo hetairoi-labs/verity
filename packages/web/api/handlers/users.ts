@@ -16,7 +16,7 @@ export const createUserInputSchema = z.object({
 		.max(32, "Maximum 32 characters required")
 		.optional(),
 });
-export type CreateUserInput = z.infer<typeof createUserInputSchema>;
+export type CreateUserInput = z.input<typeof createUserInputSchema>;
 
 export async function getUser(userId: string) {
 	const [user] = await safeQuery(
@@ -30,14 +30,15 @@ export async function getUser(userId: string) {
 }
 
 export async function createUser(userId: string, json: CreateUserInput) {
+	const { name } = createUserInputSchema.parse(json);
 	const [user] = await safeQuery(
 		db
 			.insert(users)
-			.values({ id: userId, name: json.name ?? "" })
+			.values({ id: userId, name })
 			.onConflictDoUpdate({
 				target: users.id,
 				set: {
-					name: json.name ?? "",
+					name,
 					deletedAt: null,
 					updatedAt: isoNow(),
 				},
