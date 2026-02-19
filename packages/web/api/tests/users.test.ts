@@ -1,9 +1,9 @@
 import { afterEach, describe, expect, test } from "bun:test";
-import { db } from "../db";
-import { schema } from "../db/schema";
-import { ApiError } from "../utils/hono/error";
-import { zIsoDate } from "../utils/zod";
-import { createUser, deleteUser, getUser } from "./users";
+import { createUser, deleteUser, getUser } from "../handlers/users";
+import { db } from "../lib/db";
+import { schema } from "../lib/db/schema";
+import { ApiError } from "../lib/utils/hono/error";
+import { zIsoDate } from "../lib/utils/zod";
 
 const { users } = schema;
 
@@ -47,31 +47,31 @@ describe("getUser", () => {
 
 describe("createUser", () => {
 	test("should create user with name", async () => {
-		const result = await createUser("user-2", {
+		const user = await createUser("user-2", {
 			name: "Bob",
 		});
-		expect(result.user.id).toBe("user-2");
-		expect(result.user.name).toBe("Bob");
+		expect(user.id).toBe("user-2");
+		expect(user.name).toBe("Bob");
 	});
 
 	test("should create user without name", async () => {
-		const result = await createUser("user-3", {});
-		expect(result.user.id).toBe("user-3");
-		expect(result.user.name).toBe("");
+		const user = await createUser("user-3", {});
+		expect(user.id).toBe("user-3");
+		expect(user.name).toBe("");
 	});
 
 	test("should ressurect deleted user", async () => {
 		await db.insert(users).values({ id: "user-7", name: "Deleted User" });
 		await deleteUser("user-7");
-		const result = await createUser("user-7", { name: "New User" });
-		expect(result.user.id).toBe("user-7");
-		expect(result.user.name).toBe("New User");
-		expect(zIsoDate().parse(result.user.createdAt)).toBeInstanceOf(Date);
+		const user = await createUser("user-7", { name: "New User" });
+		expect(user.id).toBe("user-7");
+		expect(user.name).toBe("New User");
+		expect(zIsoDate().parse(user.createdAt)).toBeInstanceOf(Date);
 	});
 
 	test("should set correct ISOString createdAt", async () => {
-		const result = await createUser("user-4", { name: "Charlie" });
-		expect(zIsoDate().parse(result.user.createdAt)).toBeInstanceOf(Date);
+		const user = await createUser("user-4", { name: "Charlie" });
+		expect(zIsoDate().parse(user.createdAt)).toBeInstanceOf(Date);
 	});
 });
 

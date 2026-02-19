@@ -1,11 +1,11 @@
 import { and, eq, sql } from "drizzle-orm";
 import { z } from "zod";
-import { db } from "../db";
-import { schema } from "../db/schema";
-import { isActive, isoNow } from "../db/utils";
-import { softCascade } from "../db/utils/cascade";
-import { ApiError } from "../utils/hono/error";
-import { safeQuery } from "../utils/safe";
+import { db } from "../lib/db";
+import { schema } from "../lib/db/schema";
+import { isActive, isoNow } from "../lib/db/utils";
+import { softCascade } from "../lib/db/utils/cascade";
+import { ApiError } from "../lib/utils/hono/error";
+import { safeQuery } from "../lib/utils/safe";
 
 const { users, sessions, goals } = schema;
 
@@ -46,7 +46,7 @@ export async function createUser(userId: string, json: CreateUserInput) {
 			.returning(),
 	);
 	if (!user) throw new ApiError(409, "User already exists");
-	return { user };
+	return user;
 }
 
 export async function deleteUser(userId: string) {

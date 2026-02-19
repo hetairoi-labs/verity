@@ -32,7 +32,6 @@ export async function getAuthenticatedClient() {
 	);
 
 	const file = Bun.file(TOKEN_PATH);
-	console.log(await file.exists());
 
 	/* reuse token */
 	if (await file.exists()) {

@@ -17,6 +17,7 @@ export const sessions = sqliteTable(
 		meetingUrl: text("meeting_url"),
 		botId: text("bot_id"),
 		transcriptUrl: text("transcript_url"),
+		summary: text("summary"),
 		userId: text("user_id")
 			.references(() => users.id)
 			.notNull(),

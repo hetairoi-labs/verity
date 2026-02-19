@@ -1,13 +1,13 @@
 import { createMiddleware } from "hono/factory";
-import { logger } from "@/api/lib/utils/pino";
+import { logger as pinoLogger } from "@/api/lib/utils/pino";
 import { safeAsync } from "@/lib/utils/safe";
 
-export default createMiddleware(async (c, next) => {
+export const logger = createMiddleware(async (c, next) => {
 	const startedAt = Date.now();
 	const reqId = c.req.header("X-Request-Id") ?? crypto.randomUUID();
 	c.header("X-Request-Id", reqId);
 
-	const requestLogger = logger.child({ reqId, path: c.req.path });
+	const requestLogger = pinoLogger.child({ reqId, path: c.req.path });
 	c.set("logger", requestLogger);
 
 	const query = c.req.query();

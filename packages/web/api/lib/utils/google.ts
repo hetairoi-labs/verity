@@ -1,7 +1,11 @@
 import { google } from "googleapis";
 import { getAuthenticatedClient } from "@/lib/utils/google";
 
-export async function createGoogleCalendarEvent(summary: string) {
+export async function createGoogleCalendarEvent(
+	startDate: Date,
+	duration: number,
+	summary?: string,
+) {
 	const client = await getAuthenticatedClient();
 	const calendar = google.calendar({ version: "v3", auth: client });
 
@@ -10,8 +14,12 @@ export async function createGoogleCalendarEvent(summary: string) {
 		conferenceDataVersion: 1,
 		requestBody: {
 			summary,
-			start: { dateTime: new Date().toISOString() },
-			end: { dateTime: new Date(Date.now() + 30 * 60_000).toISOString() },
+			start: { dateTime: startDate.toISOString() },
+			end: {
+				dateTime: new Date(
+					startDate.getTime() + duration * 60_000,
+				).toISOString(),
+			},
 			conferenceData: {
 				createRequest: {
 					requestId: crypto.randomUUID(),

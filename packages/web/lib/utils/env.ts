@@ -4,6 +4,7 @@ import { z } from "zod";
 const envSchema = z.object({
 	// client & server
 	PUBLIC_APP_URL: z.url(),
+	PUBLIC_LIVE_APP_URL: z.url(),
 	PUBLIC_GA_ID: z.string().optional(),
 	PUBLIC_PRIVY_APP_ID: z.string().min(1, "PRIVY_APP_ID is required"),
 
@@ -20,7 +21,9 @@ const envSchema = z.object({
 	RECALL_API_URL: z.url(),
 	RECALL_API_KEY: z.string().min(1, "RECALL_API_KEY is required"),
 
-	NODE_ENV: z.enum(["development", "production"]).default("development"),
+	NODE_ENV: z
+		.enum(["development", "production", "test"])
+		.default("development"),
 });
 type EnvSchema = z.infer<typeof envSchema>;
 

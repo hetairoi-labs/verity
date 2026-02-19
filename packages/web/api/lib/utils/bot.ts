@@ -1,20 +1,22 @@
 import axios from "axios";
+import { env } from "@/lib/utils/env";
 import type { Bot, Transcript } from "../types/bot.types";
 import { AxiosClient } from "./axios";
 
-const botClient = new AxiosClient(process.env.RECALL_API_URL, {
-	authorization: process.env.RECALL_API_KEY,
+const botClient = new AxiosClient(env.RECALL_API_URL, {
+	authorization: env.RECALL_API_KEY,
 	accept: "application/json",
 	"content-type": "application/json",
 });
 
 const RETENTION_HOURS = 160;
-const LIVE_URL = `${process.env.PUBLIC_APP_URL}/live`;
+const LIVE_URL = `${env.PUBLIC_LIVE_APP_URL}/live`;
 
-export async function createBot(meetingUrl: URL) {
+export async function createBot(meetingUrl: string) {
 	return botClient.post<Bot>("/bot", {
-		meeting_url: meetingUrl.href,
+		meeting_url: meetingUrl,
 		bot_name: "Kex Bot",
+		join_at: new Date(Date.now() + 0.2 * 60_000).toISOString(),
 		variant: {
 			zoom: "web_4_core",
 			google_meet: "web_4_core",

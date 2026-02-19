@@ -56,9 +56,7 @@ function useLoginMutation() {
 			if (!address) return;
 			!params.wasAlreadyAuthenticated &&
 				registerUser.mutate({
-					address,
 					name,
-					method: String(params.loginMethod),
 				});
 
 			setResult({
