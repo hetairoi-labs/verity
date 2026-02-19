@@ -34,7 +34,6 @@ function AuthPage() {
 					<div className="flex gap-2">
 						<Button
 							onClick={() => {
-								console.log("called login button");
 								login.mutate();
 							}}
 						>

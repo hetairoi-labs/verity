@@ -35,8 +35,6 @@ export type GetUserInput = InferRequestType<GetUserRoute>;
 
 export function useGetUserQuery() {
 	const token = usePrivyToken();
-
-	console.log(token);
 	return useQuery({
 		queryKey: ["user", token],
 		queryFn: async () => {
