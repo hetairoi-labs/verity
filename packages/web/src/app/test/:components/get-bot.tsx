@@ -6,7 +6,8 @@ import { useApi } from "@/src/lib/hooks/api/use-api";
 
 export function GetBot() {
 	const [botId, setBotId] = useState<string | undefined>();
-	const { data } = useApi().getBot({ botId: botId ?? "" });
+	const api = useApi();
+	const { data } = api.meet.getBot({ botId: botId ?? "" });
 
 	return (
 		<TestCard

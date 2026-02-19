@@ -6,7 +6,8 @@ import { useApi } from "@/src/lib/hooks/api/use-api";
 
 export function GetTranscript() {
 	const [transcriptUrl, setTranscriptUrl] = useState<string | undefined>();
-	const { data, error } = useApi().getTranscript({
+	const api = useApi();
+	const { data, error } = api.meet.getTranscript({
 		transcriptUrl: transcriptUrl ? transcriptUrl : "",
 	});
 

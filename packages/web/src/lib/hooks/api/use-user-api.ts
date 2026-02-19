@@ -1,4 +1,4 @@
-import { useMutation, useQuery } from "@tanstack/react-query";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { type InferRequestType, parseResponse } from "hono/client";
 import client from "../../utils/api-client";
 import { usePrivyToken } from "../web3/use-privy-token";
@@ -9,9 +9,11 @@ export type RegisterUserInput = InferRequestType<RegisterUserRoute>["json"];
 
 export function useRegisterUserMutation() {
 	const token = usePrivyToken();
+	const queryClient = useQueryClient();
+
 	return useMutation({
 		mutationFn: async (json: RegisterUserInput) => {
-			if (!token) throw new Error("Authentication required");
+			if (!token) return;
 			const result = await parseResponse(
 				client.users.index.$post(
 					{ json },
@@ -22,17 +24,21 @@ export function useRegisterUserMutation() {
 		},
 		onSuccess: (data) => {
 			console.log("[RegisterUserMutation] Success:", data);
+			queryClient.invalidateQueries({ queryKey: ["user", token] });
 		},
 	});
 }
 
+// get authenticated user
 type GetUserRoute = (typeof client.users)["index"]["$get"];
 export type GetUserInput = InferRequestType<GetUserRoute>;
 
 export function useGetUserQuery() {
 	const token = usePrivyToken();
+
+	console.log(token);
 	return useQuery({
-		queryKey: ["user"],
+		queryKey: ["user", token],
 		queryFn: async () => {
 			const result = await parseResponse(
 				client.users.index.$get(

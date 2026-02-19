@@ -34,22 +34,6 @@ export function useCreateEventMutation() {
 	});
 }
 
-// create a new bot for a given meeting
-type CreateBotRoute = (typeof client.meet)["create"]["$post"];
-export type CreateBotInput = InferRequestType<CreateBotRoute>["json"];
-
-export function useCreateBotMutation() {
-	return useMutation({
-		mutationFn: async (json: CreateBotInput) => {
-			const result = await parseResponse(client.meet.create.$post({ json }));
-			return result.data;
-		},
-		onSuccess: (data) => {
-			console.log("[meet mutation] Success:", data);
-		},
-	});
-}
-
 // get transcript by url
 type GetTranscriptRoute = (typeof client.meet)["transcript"]["$get"];
 export type GetTranscriptInput = InferRequestType<GetTranscriptRoute>["query"];

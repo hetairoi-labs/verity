@@ -9,8 +9,8 @@ import {
 import { useApi } from "./api/use-api";
 
 export function useLive() {
-	const getToken = useApi().getToken;
-	const token = getToken(true).data;
+	const api = useApi();
+	const { data: token } = api.meet.getToken(true);
 
 	const [logs, setLogs] = useState<LogEntry[]>([]);
 	const [status, setStatus] = useState("idle");

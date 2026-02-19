@@ -12,15 +12,15 @@ import { timestamps } from "../timestamps";
 export const users = sqliteTable(
 	"users",
 	{
-		id: text().primaryKey(),
-		walletAddress: text().$type<ZHexAddress>(),
-		name: text(),
+		id: text("id").primaryKey(),
+		address: text("address").$type<ZHexAddress>(),
+		name: text("name"),
 		...timestamps,
 	},
 	(table) => [
-		index("users_wallet_address_idx").on(table.walletAddress),
+		index("users_address_idx").on(table.address),
 		uniqueIndex("unique_active_address")
-			.on(table.walletAddress)
+			.on(table.address)
 			.where(sql`${table.deletedAt} IS NULL`),
 	],
 );

@@ -46,14 +46,15 @@ type LoginResult = {
 
 function useLoginMutation() {
 	const [result, setResult] = useState<LoginResult | undefined>(undefined);
-	const registerUser = useApi().registerUser;
+	const api = useApi();
+	const registerUser = api.users.registerUser();
 
 	const { login: mutate } = useLogin({
 		onComplete(params) {
 			const address = params.user.wallet?.address;
 			const name = params.user.google?.name || undefined;
 			if (!address) return;
-			params.isNewUser && registerUser.mutate({ address, name });
+			!params.wasAlreadyAuthenticated && registerUser.mutate({ address, name });
 
 			setResult({
 				isNewUser: params.isNewUser,

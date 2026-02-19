@@ -3,6 +3,7 @@ import { Hono } from "hono";
 import { z } from "zod";
 import { db } from "../lib/db";
 import { schema, views } from "../lib/db/schema";
+import { ApiError } from "../lib/utils/hono/error";
 import { respond } from "../lib/utils/hono/respond";
 import { safeQuery } from "../lib/utils/safe";
 import { validator, zHexAddress } from "../lib/utils/zod";
@@ -16,8 +17,9 @@ const usersRoute = new Hono()
 	.get("/", async (c) => {
 		const userId = c.var.user.user_id;
 		const user = await safeQuery(
-			db.select().from(activeUsers).where(eq(users.id, userId)),
+			db.select().from(activeUsers).where(eq(activeUsers.id, userId)),
 		);
+		if (user.length === 0) throw new ApiError(404, "User not found");
 		return respond.ok(c, 200, "User fetched successfully", { user: user[0] });
 	})
 	.post(
@@ -40,7 +42,11 @@ const usersRoute = new Hono()
 			const user = await safeQuery(
 				db
 					.insert(users)
-					.values({ id: privyId, walletAddress: address, name })
+					.values({ id: privyId, address, name })
+					.onConflictDoUpdate({
+						target: users.id,
+						set: { address, name },
+					})
 					.returning(),
 			);
 			return respond.ok(c, 201, "User created successfully", { user: user[0] });

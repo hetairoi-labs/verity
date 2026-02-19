@@ -3,7 +3,8 @@ import { Button } from "@/src/components/ui/button";
 import { useApi } from "@/src/lib/hooks/api/use-api";
 
 export function CreateEvent() {
-	const { createEvent } = useApi();
+	const api = useApi();
+	const createEvent = api.meet.createEvent();
 	return (
 		<TestCard
 			title="Meeting API"

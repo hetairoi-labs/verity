@@ -13,7 +13,7 @@ import {
 interface TestCardProps {
 	title: string;
 	description?: string;
-	children: ReactNode;
+	children?: ReactNode;
 	data?: string | null;
 	className?: string;
 	error?: string | null;
