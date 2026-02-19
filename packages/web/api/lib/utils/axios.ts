@@ -1,5 +1,6 @@
 import axios from "axios";
 import { ApiError } from "./hono/error";
+import { logger } from "./pino";
 
 export class AxiosClient {
 	private axiosInstance;
@@ -14,12 +15,13 @@ export class AxiosClient {
 		this.axiosInstance.interceptors.response.use(
 			(response) => response,
 			(error) => {
-				// in prod, we should not reveal internal api errors to the client
 				if (error.response) {
 					throw new ApiError(
 						500,
 						`Axios Error: ${error.response.status} ${error.response.statusText}`,
-						error.response.data,
+						{
+							error: error.response.data,
+						},
 					);
 				}
 				throw new ApiError(500, `Network error: ${error.message}`);
@@ -28,16 +30,19 @@ export class AxiosClient {
 	}
 
 	async get<T = unknown>(endpoint: string): Promise<T> {
+		logger.debug({ endpoint }, "axios.get.request");
 		const response = await this.axiosInstance.get(endpoint);
 		return response.data;
 	}
 
 	async post<T = unknown>(endpoint: string, data?: unknown): Promise<T> {
+		logger.debug({ endpoint, data }, "axios.post.request");
 		const response = await this.axiosInstance.post(endpoint, data);
 		return response.data;
 	}
 
 	async delete<T = unknown>(endpoint: string): Promise<T> {
+		logger.debug({ endpoint }, "axios.delete.request");
 		const response = await this.axiosInstance.delete(endpoint);
 		return response.data;
 	}

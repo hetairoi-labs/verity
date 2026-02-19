@@ -13,34 +13,53 @@ const RETENTION_HOURS = 160;
 const LIVE_URL = `${env.PUBLIC_LIVE_APP_URL}/live`;
 
 export async function createBot(meetingUrl: string) {
-	return botClient.post<Bot>("/bot", {
-		meeting_url: meetingUrl,
-		bot_name: "Kex Bot",
-		join_at: new Date(Date.now() + 0.2 * 60_000).toISOString(),
-		variant: {
-			zoom: "web_4_core",
-			google_meet: "web_4_core",
-			microsoft_teams: "web_4_core",
-		},
-		output_media: {
-			camera: {
-				kind: "webpage",
-				config: {
-					url: LIVE_URL,
+	if (env.NODE_ENV === "production") {
+		console.log("Creating production bot");
+		return botClient.post<Bot>("/bot", {
+			meeting_url: meetingUrl,
+			bot_name: "Kex Bot",
+			join_at: new Date(Date.now() + 0.5 * 60_000).toISOString(),
+			variant: {
+				zoom: "web_4_core",
+				google_meet: "web_4_core",
+				microsoft_teams: "web_4_core",
+			},
+			output_media: {
+				camera: {
+					kind: "webpage",
+					config: {
+						url: LIVE_URL,
+					},
 				},
 			},
-		},
+			recording_config: {
+				include_bot_in_recording: {
+					audio: true,
+				},
+				retention: {
+					type: "timed",
+					hours: RETENTION_HOURS,
+				},
+				transcript: {
+					provider: {
+						recallai_streaming: {
+							mode: "prioritize_accuracy",
+						},
+					},
+				},
+			},
+		});
+	}
+
+	console.log("Creating bot for testing");
+	return botClient.post<Bot>("/bot", {
+		meeting_url: meetingUrl,
+		bot_name: "Kex Bot (Ephemeral)",
+		join_at: new Date(Date.now() + 0.1 * 60_000).toISOString(),
 		recording_config: {
 			retention: {
 				type: "timed",
-				hours: RETENTION_HOURS,
-			},
-			transcript: {
-				provider: {
-					recallai_streaming: {
-						mode: "prioritize_accuracy",
-					},
-				},
+				hours: 1,
 			},
 		},
 	});
@@ -53,6 +72,10 @@ export async function retrieveBot(botId: string) {
 export async function downloadTranscript(transcriptUrl: URL) {
 	const response = await axios.get<Transcript>(transcriptUrl.href);
 	return response.data;
+}
+
+export async function removeBotFromCall(botId: string) {
+	return botClient.post(`/bot/${botId}/leave_call/`);
 }
 
 export async function deleteRecording(recordingId: string) {

@@ -31,3 +31,15 @@ export async function createGoogleCalendarEvent(
 
 	return event.data;
 }
+
+export async function deleteGoogleCalendarEvent(eventId: string) {
+	const client = await getAuthenticatedClient();
+	const calendar = google.calendar({ version: "v3", auth: client });
+
+	await calendar.events.delete({
+		calendarId: "primary",
+		eventId: eventId,
+	});
+
+	return { success: true };
+}

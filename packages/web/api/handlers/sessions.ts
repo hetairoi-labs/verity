@@ -17,12 +17,12 @@ export const createSessionInputSchema = z.object({
 	startDate: z
 		.date()
 		.min(new Date(), "Start date must be in the future")
-		.default(() => new Date(Date.now() + 60000)), // 1 minute from now
+		.default(() => new Date(Date.now())),
 	duration: z
 		.number()
-		.min(1, "Duration must be greater than 0")
+		.min(0.1, "Duration must be greater than 0")
 		.max(60, "Duration must be less than 60 minutes")
-		.default(5),
+		.default(1),
 	botName: z
 		.string()
 		.min(3, "Bot name must be at least 1 character")

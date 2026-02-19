@@ -10,6 +10,7 @@ import { createSession } from "../handlers/sessions";
 import { createUser } from "../handlers/users";
 import { db } from "../lib/db";
 import { schema } from "../lib/db/schema";
+import { removeBotFromCall } from "../lib/utils/bot";
 
 const { sessions, users } = schema;
 const RUN_INTEGRATION = process.env.INTEGRATION === "true";
@@ -35,7 +36,11 @@ describe("createSession Integration", () => {
 
 	afterAll(async () => {
 		if (!RUN_INTEGRATION) return;
+		for (const botId of createdBots) {
+			await removeBotFromCall(botId);
+		}
 		await db.delete(users);
+		console.log("Cleaned up users and bots");
 	});
 
 	test(
@@ -46,18 +51,16 @@ describe("createSession Integration", () => {
 				return;
 			}
 
-			const startDate = new Date(Date.now() + 120000);
-
-			const result = await createSession(userId, {
-				summary: "Integration Test Session",
-				startDate,
-				duration: 5,
-			});
+			const input = {
+				summary: "Integration Test Session 5599",
+				startDate: new Date(Date.now() + 120000),
+				duration: 0.1,
+			};
+			const result = await createSession(userId, input);
 
 			console.log(result.session);
 			console.log(result.event);
 			console.log(result.bot);
-			console.log(result.bot.recordings[0]?.media_shortcuts.transcript.data);
 
 			const meetingUrl = result.event.hangoutLink;
 			const botId = result.bot.id;
@@ -71,7 +74,7 @@ describe("createSession Integration", () => {
 
 			createdBots.push(botId);
 
-			expect(result.event.summary).toBe("Integration Test Session");
+			expect(result.event.summary).toBe(input.summary);
 			expect(session.userId).toBe(userId);
 			expect(session.meetingUrl).toBe(meetingUrl);
 			expect(session.botId).toBe(botId);
