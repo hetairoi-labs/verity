@@ -15,7 +15,7 @@
 		"generate": "bunx drizzle-kit generate",
 		"migrate": "bunx drizzle-kit migrate",
 		"push": "bunx drizzle-kit push",
-		"test": "rm -f test.db && bun --env-file=.env.test run test:inner",
+		"test": "clear && rm -f test.db && bun --env-file=.env.test run test:inner",
 		"test:inner": "bun run push --force && bun test",
 		"shadcn": "bunx --bun shadcn@latest add",
 		"authenticate": "bun lib/utils/google.ts",

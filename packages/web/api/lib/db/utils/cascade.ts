@@ -1,6 +1,7 @@
-import { eq, inArray } from "drizzle-orm";
+import { and, eq, inArray } from "drizzle-orm";
 import type { AnySQLiteColumn, SQLiteTable } from "drizzle-orm/sqlite-core";
 import type { DBType } from "../index";
+import { isActive, isoNow } from "./index";
 
 type Tx = Parameters<Parameters<DBType["transaction"]>[0]>[0];
 type SoftDeletableTable = SQLiteTable & {
@@ -8,14 +9,14 @@ type SoftDeletableTable = SQLiteTable & {
 	deletedAt: AnySQLiteColumn;
 };
 
-interface ChildConfig<TId, TChildId = number> {
+export interface ChildConfig<TId, TChildId = number> {
 	table: SoftDeletableTable;
 	foreignKeyField: AnySQLiteColumn & { _: { data: TId } };
 	children?: ChildConfig<TChildId>[];
 }
 
 const setDeleted =
-	(now: Date) =>
+	(now: string) =>
 	<T extends SoftDeletableTable>(
 		tx: Tx,
 		table: T,
@@ -23,12 +24,12 @@ const setDeleted =
 	) =>
 		tx
 			.update(table)
-			.set({ deletedAt: now } as { deletedAt: Date })
+			.set({ deletedAt: now } as Partial<T["$inferInsert"]>)
 			.where(where);
 
 async function deleteChildren<TId>(
 	tx: Tx,
-	now: Date,
+	now: string,
 	parentId: TId,
 	children: ChildConfig<TId, number>[],
 ) {
@@ -60,8 +61,12 @@ export const softCascade = async <
 	children: ChildConfig<TId, number>[] = [],
 ) =>
 	db.transaction(async (tx) => {
-		const now = new Date();
+		const now = isoNow();
 		await deleteChildren(tx, now, parentId, children);
-		await setDeleted(now)(tx, parentTable, eq(parentTable.id, parentId));
-		return { success: true, deletedAt: now };
+		const [row] = await tx
+			.update(parentTable)
+			.set({ deletedAt: now } as Partial<TTable["$inferInsert"]>)
+			.where(and(eq(parentTable.id, parentId), isActive(parentTable)))
+			.returning();
+		return { success: true, deletedAt: now, row };
 	});

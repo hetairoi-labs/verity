@@ -1,12 +1,13 @@
-import { and, eq } from "drizzle-orm";
+import { and, eq, sql } from "drizzle-orm";
 import { z } from "zod";
 import { db } from "../db";
 import { schema } from "../db/schema";
-import { isActive } from "../db/utils";
+import { isActive, isoNow } from "../db/utils";
+import { softCascade } from "../db/utils/cascade";
 import { ApiError } from "../utils/hono/error";
 import { safeQuery } from "../utils/safe";
 
-const { users } = schema;
+const { users, sessions, goals } = schema;
 
 export const createUserInputSchema = z.object({
 	name: z
@@ -30,8 +31,32 @@ export async function getUser(userId: string) {
 
 export async function createUser(userId: string, json: CreateUserInput) {
 	const [user] = await safeQuery(
-		db.insert(users).values({ id: userId, name: json.name }).returning(),
+		db
+			.insert(users)
+			.values({ id: userId, name: json.name ?? "" })
+			.onConflictDoUpdate({
+				target: users.id,
+				set: {
+					name: json.name ?? "",
+					deletedAt: null,
+					updatedAt: isoNow(),
+				},
+				setWhere: sql`${users.deletedAt} IS NOT NULL`,
+			})
+			.returning(),
 	);
-	if (!user) throw new ApiError(500, "Failed to create user");
+	if (!user) throw new ApiError(409, "User already exists");
 	return { user };
+}
+
+export async function deleteUser(userId: string) {
+	const result = await softCascade(db, users, userId, [
+		{
+			table: sessions,
+			foreignKeyField: sessions.userId,
+			children: [{ table: goals, foreignKeyField: goals.sessionId }],
+		},
+	]);
+	if (!result.row) throw new ApiError(404, "No user to delete");
+	return { user: result.row };
 }

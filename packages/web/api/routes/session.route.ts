@@ -1,4 +1,4 @@
-import { and, eq, sql } from "drizzle-orm";
+import { and, eq } from "drizzle-orm";
 import { Hono } from "hono";
 import { z } from "zod";
 import { db } from "@/api/lib/db";
@@ -99,7 +99,12 @@ const sessionRoute = new Hono()
 			const [session] = await safeQuery(
 				db
 					.insert(sessions)
-					.values({ meetingUrl, botId, transcriptUrl, userId })
+					.values({
+						meetingUrl,
+						botId,
+						transcriptUrl,
+						userId,
+					})
 					.returning(),
 			);
 			if (!session) throw new ApiError(500, "Failed to create session");
@@ -147,7 +152,7 @@ const sessionRoute = new Hono()
 			const result = await safeQuery(
 				db
 					.update(sessions)
-					.set({ ...updateData, updatedAt: sql`CURRENT_TIMESTAMP` })
+					.set({ ...updateData, updatedAt: new Date().toISOString() })
 					.where(
 						and(
 							eq(sessions.id, id),

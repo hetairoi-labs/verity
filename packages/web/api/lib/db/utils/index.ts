@@ -2,11 +2,11 @@ import { isNull, sql } from "drizzle-orm";
 import type { AnySQLiteColumn } from "drizzle-orm/sqlite-core";
 import { text, uniqueIndex } from "drizzle-orm/sqlite-core";
 
+export const isoNow = () => new Date().toISOString();
+
 export const timestamps = {
 	updatedAt: text("updated_at"),
-	createdAt: text("created_at")
-		.default(sql`(strftime('%Y-%m-%dT%H:%M:%fZ', 'now', 'utc'))`)
-		.notNull(),
+	createdAt: text("created_at").notNull().$defaultFn(isoNow),
 	deletedAt: text("deleted_at"),
 };
 

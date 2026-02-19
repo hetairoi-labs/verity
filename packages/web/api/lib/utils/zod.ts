@@ -46,3 +46,6 @@ export const zHexAddress = () =>
 		.transform((value) => getAddress(value));
 
 export type ZHexAddress = z.infer<ReturnType<typeof zHexAddress>>;
+
+export const zIsoDate = () => z.iso.datetime().pipe(z.coerce.date());
+export type ZIsoDate = z.infer<ReturnType<typeof zIsoDate>>;
