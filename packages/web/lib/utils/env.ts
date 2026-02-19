@@ -38,7 +38,6 @@ export const getEnv = (): EnvSchema => {
 	if (!_env) {
 		try {
 			const parsedEnv = envSchema.parse(Bun.env);
-			console.log("🔑 Environment validated successfully");
 			_env = parsedEnv;
 		} catch (error) {
 			if (error instanceof z.ZodError) {

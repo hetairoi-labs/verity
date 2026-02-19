@@ -11,6 +11,7 @@ import { createUser } from "../handlers/users";
 import { db } from "../lib/db";
 import { schema } from "../lib/db/schema";
 import { removeBotFromCall } from "../lib/utils/bot";
+import { isIntegrationEnv } from "../lib/utils/test";
 
 const { sessions, users } = schema;
 const RUN_INTEGRATION = process.env.INTEGRATION === "true";
@@ -46,10 +47,7 @@ describe("createSession Integration", () => {
 	test(
 		"create a new session",
 		async () => {
-			if (!RUN_INTEGRATION) {
-				expect(true).toBe(true);
-				return;
-			}
+			if (!isIntegrationEnv()) return;
 
 			const input = {
 				summary: "Integration Test Session 5599",
