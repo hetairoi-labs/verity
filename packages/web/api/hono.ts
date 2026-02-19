@@ -2,8 +2,8 @@ import { Hono } from "hono";
 import { cors } from "hono/cors";
 import { trimTrailingSlash } from "hono/trailing-slash";
 import { rateLimiter } from "hono-rate-limiter";
+import logger from "@/api/lib/middleware/logger";
 import { ApiError, handleError } from "@/api/lib/utils/hono/error";
-import logger from "@/api/middleware/logger";
 import routes from "@/api/routes/router";
 
 // Extend Hono context types

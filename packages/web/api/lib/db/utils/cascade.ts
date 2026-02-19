@@ -1,8 +1,8 @@
 import { eq, inArray } from "drizzle-orm";
 import type { AnySQLiteColumn, SQLiteTable } from "drizzle-orm/sqlite-core";
-import type { DrizzleDb } from "../index";
+import type { DBType } from "../index";
 
-type Tx = Parameters<Parameters<DrizzleDb["transaction"]>[0]>[0];
+type Tx = Parameters<Parameters<DBType["transaction"]>[0]>[0];
 type SoftDeletableTable = SQLiteTable & {
 	id: AnySQLiteColumn;
 	deletedAt: AnySQLiteColumn;
@@ -54,7 +54,7 @@ export const softCascade = async <
 	TTable extends SoftDeletableTable,
 	TId = TTable["id"]["_"]["data"],
 >(
-	db: DrizzleDb,
+	db: DBType,
 	parentTable: TTable,
 	parentId: TId,
 	children: ChildConfig<TId, number>[] = [],

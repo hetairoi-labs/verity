@@ -5,9 +5,9 @@
 	"main": "server.ts",
 	"module": "server.ts",
 	"scripts": {
-		"dev": "clear && bun push && bun check && bun run --parallel routes-watch dev:server",
+		"dev": "clear && bun push && bun check && bun run --parallel tsr-watch dev:server",
 		"dev:server": "bun --hot server.ts",
-		"start": "bun run routes-generate && NODE_ENV=production bun --env-file=.env.production run server.ts",
+		"start": "tsr generate && NODE_ENV=production bun --env-file=.env.production run server.ts",
 		"deploy": "./lib/scripts/deploy.sh",
 		"build": "tsr generate && bun lib/utils/build.ts",
 		"tsc": "bunx --bun tsc --noEmit",
@@ -15,10 +15,11 @@
 		"generate": "bunx drizzle-kit generate",
 		"migrate": "bunx drizzle-kit migrate",
 		"push": "bunx drizzle-kit push",
+		"test": "rm -f test.db && bun --env-file=.env.test run test:inner",
+		"test:inner": "bun run push --force && bun test",
 		"shadcn": "bunx --bun shadcn@latest add",
 		"authenticate": "bun lib/utils/google.ts",
-		"routes-watch": "tsr watch",
-		"routes-generate": "tsr generate"
+		"tsr-watch": "tsr watch"
 	},
 	"dependencies": {
 		"@google/genai": "^1.39.0",
@@ -63,6 +64,6 @@
 		"@tanstack/router-cli": "^1.160.0",
 		"@types/react": "^19.2.10",
 		"@types/react-dom": "^19.2.3",
-		"drizzle-kit": "^0.31.8"
+		"drizzle-kit": "^0.31.9"
 	}
 }

@@ -1,13 +1,13 @@
-import { sql } from "drizzle-orm";
+import { isNull, sql } from "drizzle-orm";
 import type { AnySQLiteColumn } from "drizzle-orm/sqlite-core";
 import { text, uniqueIndex } from "drizzle-orm/sqlite-core";
 
 export const timestamps = {
-	updatedAt: text(),
-	createdAt: text()
+	updatedAt: text("updated_at"),
+	createdAt: text("created_at")
 		.default(sql`(strftime('%Y-%m-%dT%H:%M:%fZ', 'now', 'utc'))`)
 		.notNull(),
-	deletedAt: text(),
+	deletedAt: text("deleted_at"),
 };
 
 export const uniqueIndexSoft = <T extends { deletedAt: AnySQLiteColumn }>(
@@ -19,3 +19,6 @@ export const uniqueIndexSoft = <T extends { deletedAt: AnySQLiteColumn }>(
 			.on(...columns)
 			.where(sql`${table.deletedAt} IS NULL`),
 });
+
+export const isActive = (t: { deletedAt: AnySQLiteColumn }) =>
+	isNull(t.deletedAt);

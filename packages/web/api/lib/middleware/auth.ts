@@ -1,7 +1,7 @@
 import type { VerifyAccessTokenResponse } from "@privy-io/node";
 import { createMiddleware } from "hono/factory";
-import { ApiError } from "../lib/utils/hono/error";
-import { privy } from "../lib/utils/privy";
+import { ApiError } from "../utils/hono/error";
+import { privy } from "../utils/privy";
 
 export const requireAuth = createMiddleware<{
 	Variables: {
@@ -20,6 +20,7 @@ export const requireAuth = createMiddleware<{
 			reason: "No token provided",
 		});
 	}
+
 	const verifiedClaims = await privy.utils().auth().verifyAccessToken(token);
 	c.set("user", verifiedClaims);
 	await next();
