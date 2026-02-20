@@ -1,9 +1,11 @@
 import { afterAll, describe, expect, test } from "bun:test";
 import path from "node:path";
 import { FileState } from "@google/genai";
+import { z } from "zod";
+import { safe } from "@/lib/utils/safe";
 import {
 	deleteFileFromGemini,
-	generateContentStream,
+	generateContent,
 	getGeminiEphemeralToken,
 	uploadPDFToGemini,
 } from "../handlers/gemini";
@@ -61,29 +63,42 @@ describe("uploadPDFToGemini", () => {
 });
 
 describe("generateContent", () => {
-	test("should generate content", async () => {
+	test("test structured content streaming with enabled tools", async () => {
 		// if (!isIntegrationEnv()) return;
-		const textContent = [
+		const structuredOutput = z.object({
+			greeting: z.string("Greeting goes here"),
+			weather: z.string("Weather goes here"),
+			docSummary: z.string("Doc summary goes here"),
+			pdfSummary: z.string("PDF summary goes here"),
+		});
+		const text = [
 			"1. What is the current weather in Jaunpur, UP? (Search Web)",
 			"2. What is this doc about: https://ai.google.dev/gemini-api/docs/code-execution",
-			"3. Summarize the following document:",
+			"3. Summarize the attached document",
 		];
-		const pdfFiles = {
-			url: "https://pdfobject.com/pdf/sample.pdf",
-			displayName: "sample.pdf",
-		};
-		const systemInstruction =
-			"Be concise and start your response with 'Hello World!' and end with 'Goodbye World!'";
+		const files = [
+			{
+				url: "https://pdfobject.com/pdf/sample.pdf",
+				displayName: "sample.pdf",
+			},
+		];
+		const systemInstruction = "Greetings should contain 'Hail Kartik!'";
 
-		const stream = await generateContentStream(
-			{ text: textContent, files: [pdfFiles] },
+		const { stream } = await generateContent({
+			contents: { text, files },
+			structuredOutput,
 			systemInstruction,
-		);
+		});
 		const chunks: { text: string | undefined; timestamp: number }[] = [];
 		const startTime = Date.now();
 
+		if (!stream) throw new Error("Response type should be stream by default");
+
 		for await (const chunk of stream) {
-			chunks.push({ text: chunk.text, timestamp: Date.now() - startTime });
+			chunks.push({
+				text: chunk.candidates?.[0]?.content?.parts?.[0]?.text,
+				timestamp: Date.now() - startTime,
+			});
 		}
 
 		console.log({ chunks });
@@ -91,7 +106,13 @@ describe("generateContent", () => {
 		expect(chunks.length).toBeGreaterThan(0);
 		const fullContent = chunks.map((c) => c.text).join("");
 		expect(fullContent.length).toBeGreaterThan(10);
-		expect(fullContent).toContain("Hello World!");
-		expect(fullContent).toContain("Goodbye World!");
+		expect(fullContent).toContain("Hail Kartik!");
+
+		const [result, error] = safe(() =>
+			structuredOutput.parse(JSON.parse(fullContent)),
+		);
+		console.log({ result, error });
+		expect(error).toBeNull();
+		expect(result).toBeDefined();
 	}, 60_000);
 });

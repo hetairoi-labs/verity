@@ -1,6 +1,7 @@
 import {
 	type ContentListUnion,
 	createPartFromUri,
+	type GenerateContentParameters,
 	GoogleGenAI,
 	Modality,
 	type ThinkingLevel,
@@ -86,26 +87,29 @@ export async function deleteFileFromGemini(name: string) {
 	console.log("deleted file from gemini", name);
 }
 
-export async function generateContentStream(
+export interface GenerateContentParams {
 	contents: {
 		text: string[];
 		files?: {
 			url: string;
 			displayName: string;
 		}[];
-		structuredOutput?: z.ZodType;
-	},
-	systemInstruction?: string,
-	model?: (typeof availableModels)[number],
-	tools?: ToolListUnion,
-	thinkingLevel?: ThinkingLevel,
-) {
-	const selectedModel = model ?? availableModels[0];
+	};
+	structuredOutput?: z.ZodType;
+	systemInstruction?: string;
+	model?: (typeof availableModels)[number];
+	tools?: ToolListUnion;
+	thinkingLevel?: ThinkingLevel;
+	staticResponse?: boolean;
+}
+
+export async function generateContent(params: GenerateContentParams) {
+	const selectedModel = params.model ?? availableModels[0];
 	if (!selectedModel) throw new Error("No model selected");
 
-	const contentInput: ContentListUnion = contents.text;
-	if (contents.files && contents.files.length > 0) {
-		for (const item of contents.files) {
+	const contentInput: ContentListUnion = params.contents.text;
+	if (params.contents.files && params.contents.files.length > 0) {
+		for (const item of params.contents.files) {
 			const file = await uploadPDFToGemini(item.url, item.displayName);
 			if (file.uri && file.mimeType) {
 				const fileContent = createPartFromUri(file.uri, file.mimeType);
@@ -114,18 +118,38 @@ export async function generateContentStream(
 		}
 	}
 
-	return await ai.models.generateContentStream({
+	const structuredOutputJsonSchema = params.structuredOutput
+		? z.toJSONSchema(params.structuredOutput)
+		: undefined;
+
+	const generateParams: GenerateContentParameters = {
 		model: selectedModel,
 		contents: contentInput,
 		config: {
 			thinkingConfig:
 				selectedModel === "gemini-3-flash-preview"
 					? {
-							thinkingLevel,
+							thinkingLevel: params.thinkingLevel,
 						}
 					: undefined,
-			systemInstruction,
-			tools,
+			systemInstruction: params.systemInstruction,
+			tools: params.tools,
+			responseMimeType: structuredOutputJsonSchema
+				? "application/json"
+				: undefined,
+			responseJsonSchema: structuredOutputJsonSchema,
 		},
-	});
+	};
+
+	const staticResponse = params.staticResponse
+		? await ai.models.generateContent(generateParams)
+		: undefined;
+	const stream = params.staticResponse
+		? undefined
+		: await ai.models.generateContentStream(generateParams);
+
+	return {
+		staticResponse,
+		stream,
+	};
 }
