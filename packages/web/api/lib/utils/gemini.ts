@@ -1,16 +1,58 @@
+import {
+	type ContentListUnion,
+	createPartFromUri,
+	type GenerateContentParameters,
+	GoogleGenAI,
+	Modality,
+	type ThinkingLevel,
+	type ToolListUnion,
+} from "@google/genai";
 import { z } from "zod";
-import { ai } from "@/api/handlers/gemini";
+import { env } from "@/lib/utils/env";
 
-export async function uploadPDFToGemini(
+export const ai = new GoogleGenAI({ apiKey: env.GEMINI_API_KEY });
+export const availableModels = [
+	"gemini-2.5-flash-lite",
+	"gemini-2.5-flash",
+	"gemini-3-flash-preview",
+] as const;
+
+export async function getGeminiEphemeralToken() {
+	const expireTime = new Date(Date.now() + 60 * 60 * 1000).toISOString();
+	const model = "gemini-live-2.5-flash-native-audio";
+
+	const token = await ai.authTokens.create({
+		config: {
+			uses: 1,
+			expireTime: expireTime,
+			liveConnectConstraints: {
+				model,
+				config: {
+					sessionResumption: {},
+					temperature: 0.7,
+					responseModalities: [Modality.AUDIO],
+				},
+			},
+			httpOptions: {
+				apiVersion: "v1alpha",
+			},
+		},
+	});
+
+	return token;
+}
+
+export async function uploadFileToGemini(
 	filePath: string,
+	mimeType: string,
 	displayName?: string,
 ) {
 	const url = z.url().safeParse(filePath);
-	const pdfBuffer = url.success
+	const fileBuffer = url.success
 		? await fetch(url.data).then((r) => r.arrayBuffer())
 		: await Bun.file(filePath).arrayBuffer();
 
-	const fileBlob = new Blob([pdfBuffer], { type: "application/pdf" });
+	const fileBlob = new Blob([fileBuffer], { type: mimeType });
 
 	const file = await ai.files.upload({
 		file: fileBlob,
@@ -23,7 +65,6 @@ export async function uploadPDFToGemini(
 		throw new Error("Something went wrong while uploading the file to Gemini.");
 	}
 
-	// Wait for the file to be processed.
 	let getFile = await ai.files.get({ name: file.name });
 	while (getFile.state === "PROCESSING") {
 		getFile = await ai.files.get({ name: file.name });
@@ -43,5 +84,78 @@ export async function uploadPDFToGemini(
 
 export async function deleteFileFromGemini(name: string) {
 	await ai.files.delete({ name });
-	console.log("deleted file from gemini", name);
+	return true;
+}
+
+export interface GenerateContentParams<T extends z.ZodType = z.ZodType> {
+	contents: {
+		text: string[];
+		files?: {
+			url: string;
+			mimeType: string;
+			displayName?: string;
+		}[];
+	};
+	structuredOutput?: T;
+	systemInstruction?: string;
+	model?: (typeof availableModels)[number];
+	tools?: ToolListUnion;
+	thinkingLevel?: ThinkingLevel;
+	staticResponse?: boolean;
+}
+export async function streamTextGemini<T extends z.ZodType = z.ZodType>(
+	params: GenerateContentParams<T>,
+) {
+	const selectedModel = params.model ?? availableModels[0];
+	if (!selectedModel) throw new Error("No model selected");
+
+	const contentInput: ContentListUnion = params.contents.text;
+	if (params.contents.files && params.contents.files.length > 0) {
+		for (const item of params.contents.files) {
+			const file = await uploadFileToGemini(
+				item.url,
+				item.mimeType,
+				item.displayName,
+			);
+			if (file.uri && file.mimeType) {
+				const fileContent = createPartFromUri(file.uri, file.mimeType);
+				contentInput.push(fileContent);
+			}
+		}
+	}
+
+	const structuredOutputJsonSchema = params.structuredOutput
+		? z.toJSONSchema(params.structuredOutput)
+		: undefined;
+
+	const generateParams: GenerateContentParameters = {
+		model: selectedModel,
+		contents: contentInput,
+		config: {
+			thinkingConfig:
+				selectedModel === "gemini-3-flash-preview"
+					? {
+							thinkingLevel: params.thinkingLevel,
+						}
+					: undefined,
+			systemInstruction: params.systemInstruction,
+			tools: params.tools,
+			responseMimeType: structuredOutputJsonSchema
+				? "application/json"
+				: undefined,
+			responseJsonSchema: structuredOutputJsonSchema,
+		},
+	};
+
+	const staticResponse = params.staticResponse
+		? await ai.models.generateContent(generateParams)
+		: undefined;
+	const stream = params.staticResponse
+		? undefined
+		: await ai.models.generateContentStream(generateParams);
+
+	return {
+		staticResponse,
+		stream,
+	};
 }

@@ -21,6 +21,8 @@ const envSchema = z.object({
 	RECALL_API_URL: z.url(),
 	RECALL_API_KEY: z.string().min(1, "RECALL_API_KEY is required"),
 
+	CEREBRAS_API_KEY: z.string().min(1, "CEREBRAS_API_KEY is required"),
+
 	NODE_ENV: z
 		.enum(["development", "production", "test"])
 		.default("development"),
