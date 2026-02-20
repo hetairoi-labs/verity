@@ -9,15 +9,6 @@ import { safeQuery } from "../lib/utils/safe";
 
 const { users, sessions, goals } = schema;
 
-export const createUserInputSchema = z.object({
-	name: z
-		.string()
-		.min(1, "Minimum 1 character required")
-		.max(32, "Maximum 32 characters required")
-		.optional(),
-});
-export type CreateUserInput = z.input<typeof createUserInputSchema>;
-
 export async function getUser(userId: string) {
 	const [user] = await safeQuery(
 		db
@@ -29,6 +20,14 @@ export async function getUser(userId: string) {
 	return user;
 }
 
+export const createUserInputSchema = z.object({
+	name: z
+		.string()
+		.min(1, "Minimum 1 character required")
+		.max(32, "Maximum 32 characters required")
+		.optional(),
+});
+export type CreateUserInput = z.input<typeof createUserInputSchema>;
 export async function createUser(userId: string, json: CreateUserInput) {
 	const { name } = createUserInputSchema.parse(json);
 	const [user] = await safeQuery(
