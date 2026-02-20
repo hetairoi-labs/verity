@@ -1,6 +1,13 @@
-import { describe, expect, test } from "bun:test";
-import { getGeminiEphemeralToken } from "../handlers/gemini";
-import { isIntegrationEnv } from "../lib/utils/test";
+import { afterAll, describe, expect, test } from "bun:test";
+import path from "node:path";
+import { FileState } from "@google/genai";
+import {
+	deleteFileFromGemini,
+	generateContentStream,
+	getGeminiEphemeralToken,
+	uploadPDFToGemini,
+} from "../handlers/gemini";
+import { isIntegrationEnv } from "../lib/utils/tests";
 
 describe("getGeminiEphemeralToken", () => {
 	test("should generate a token", async () => {
@@ -11,4 +18,80 @@ describe("getGeminiEphemeralToken", () => {
 		expect(typeof token.name).toBe("string");
 		expect(token.name?.length).toBeGreaterThan(0);
 	});
+});
+
+describe("uploadPDFToGemini", () => {
+	let hostedFileName: string | undefined;
+
+	afterAll(async () => {
+		if (!hostedFileName) return;
+		await deleteFileFromGemini(hostedFileName);
+	});
+
+	test("should fail for non-existent file", async () => {
+		const fileName = "non-existent.pdf";
+		const filePath = path.join(process.cwd(), "/api/temp", fileName);
+		expect(uploadPDFToGemini(filePath, fileName)).rejects.toThrow();
+	});
+	test("should upload a local PDF file to Gemini", async () => {
+		if (!isIntegrationEnv()) return;
+		const fileName = "test.pdf";
+		const filePath = path.join(process.cwd(), "/api/temp", fileName);
+		const uploadedFile = await uploadPDFToGemini(filePath, fileName);
+
+		hostedFileName = uploadedFile.name;
+		expect(hostedFileName).toBeDefined();
+		expect(uploadedFile.mimeType).toBe("application/pdf");
+		expect(uploadedFile.displayName).toBe(fileName);
+		expect(uploadedFile.state).toBe(FileState.ACTIVE);
+	});
+	test("should accept hosted pdfs", async () => {
+		if (!isIntegrationEnv()) return;
+		const url = "https://pdfobject.com/pdf/sample.pdf"; // 18KB
+		const uploadedFile = await uploadPDFToGemini(url);
+
+		console.log({ uploadedFile });
+
+		hostedFileName = uploadedFile.name;
+		expect(hostedFileName).toBeDefined();
+		expect(uploadedFile.mimeType).toBe("application/pdf");
+		expect(uploadedFile.displayName).toBeUndefined();
+		expect(uploadedFile.state).toBe(FileState.ACTIVE);
+	});
+});
+
+describe("generateContent", () => {
+	test("should generate content", async () => {
+		// if (!isIntegrationEnv()) return;
+		const textContent = [
+			"1. What is the current weather in Jaunpur, UP? (Search Web)",
+			"2. What is this doc about: https://ai.google.dev/gemini-api/docs/code-execution",
+			"3. Summarize the following document:",
+		];
+		const pdfFiles = {
+			url: "https://pdfobject.com/pdf/sample.pdf",
+			displayName: "sample.pdf",
+		};
+		const systemInstruction =
+			"Be concise and start your response with 'Hello World!' and end with 'Goodbye World!'";
+
+		const stream = await generateContentStream(
+			{ text: textContent, files: [pdfFiles] },
+			systemInstruction,
+		);
+		const chunks: { text: string | undefined; timestamp: number }[] = [];
+		const startTime = Date.now();
+
+		for await (const chunk of stream) {
+			chunks.push({ text: chunk.text, timestamp: Date.now() - startTime });
+		}
+
+		console.log({ chunks });
+
+		expect(chunks.length).toBeGreaterThan(0);
+		const fullContent = chunks.map((c) => c.text).join("");
+		expect(fullContent.length).toBeGreaterThan(10);
+		expect(fullContent).toContain("Hello World!");
+		expect(fullContent).toContain("Goodbye World!");
+	}, 60_000);
 });

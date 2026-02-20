@@ -11,7 +11,7 @@ import { createUser } from "../handlers/users";
 import { db } from "../lib/db";
 import { schema } from "../lib/db/schema";
 import { removeBotFromCall } from "../lib/utils/bot";
-import { isIntegrationEnv } from "../lib/utils/test";
+import { isIntegrationEnv } from "../lib/utils/tests";
 
 const { sessions, users } = schema;
 const RUN_INTEGRATION = process.env.INTEGRATION === "true";

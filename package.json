@@ -11,6 +11,7 @@
 		"contracts:compile": "bun run --filter @kex/contracts build",
 		"contracts:test": "bun run --filter @kex/contracts test",
 		"web:dev": "bun run --filter @kex/web dev",
+		"web:test": "bun run --filter @kex/web test",
 		"web:start": "bun run --filter @kex/web start",
 		"web:build": "bun run --filter @kex/web build",
 		"web:deploy": "bun run --filter @kex/web deploy"

@@ -137,3 +137,4 @@ drizzle/
 
 routeTree.gen.ts
 .tanstack
+temp/
