@@ -70,7 +70,7 @@ describe("uploadPDFToGemini", () => {
 
 describe("streamTextGemini", () => {
 	test("test structured content streaming with enabled tools", async () => {
-		// if (!isIntegrationEnv()) return;
+		if (!isIntegrationEnv()) return;
 		const structuredOutputSchema = z.object({
 			greeting: z.string(),
 			weather: z.string(),

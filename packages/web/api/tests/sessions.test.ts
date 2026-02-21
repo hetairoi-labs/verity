@@ -6,6 +6,7 @@ import {
 	expect,
 	test,
 } from "bun:test";
+import { createMeeting } from "../handlers/meetings";
 import { createSession } from "../handlers/sessions";
 import { createUser } from "../handlers/users";
 import { db } from "../lib/db";
@@ -13,10 +14,10 @@ import { schema } from "../lib/db/schema";
 import { removeBotFromCall } from "../lib/utils/bot";
 import { isIntegrationEnv } from "../lib/utils/tests";
 
-const { sessions, users } = schema;
+const { meetings, sessions, users } = schema;
 const RUN_INTEGRATION = process.env.INTEGRATION === "true";
 
-describe("createSession Integration", () => {
+describe("createMeeting Integration", () => {
 	let userId: string;
 	const createdBots: string[] = [];
 
@@ -32,6 +33,7 @@ describe("createSession Integration", () => {
 
 	afterEach(async () => {
 		if (!RUN_INTEGRATION) return;
+		await db.delete(meetings);
 		await db.delete(sessions);
 	});
 
@@ -45,47 +47,49 @@ describe("createSession Integration", () => {
 	});
 
 	test(
-		"create a new session",
+		"create a new meeting",
 		async () => {
 			if (!isIntegrationEnv()) return;
 
+			const session = await createSession(userId, {
+				title: "Integration Test Session",
+				description: "Test",
+				price: 0,
+			});
 			const input = {
-				summary: "Integration Test Session 5599",
+				sessionId: session.id,
+				summary: "Integration Test Meeting 5599",
 				startDate: new Date(Date.now() + 120000),
 				duration: 0.1,
 			};
-			const result = await createSession(userId, input);
-
-			console.log(result.session);
-			console.log(result.event);
-			console.log(result.bot);
+			const result = await createMeeting(userId, input);
 
 			const meetingUrl = result.event.hangoutLink;
 			const botId = result.bot.id;
-			const session = result.session;
-			expect(session).toBeDefined();
+			const meeting = result.meeting;
+			expect(meeting).toBeDefined();
 			expect(botId).toBeDefined();
 			expect(meetingUrl).toBeDefined();
 
-			if (!session || !botId || !meetingUrl)
-				throw new Error("expected session, bot, and event");
+			if (!meeting || !botId || !meetingUrl)
+				throw new Error("expected meeting, bot, and event");
 
 			createdBots.push(botId);
 
 			expect(result.event.summary).toBe(input.summary);
-			expect(session.userId).toBe(userId);
-			expect(session.meetingUrl).toBe(meetingUrl);
-			expect(session.botId).toBe(botId);
-			expect(session.transcriptUrl).toBeNull();
-			expect(session.deletedAt).toBeNull();
-			expect(new Date(session.createdAt)).toBeInstanceOf(Date);
+			expect(meeting.sessionId).toBe(session.id);
+			expect(meeting.meetingUrl).toBe(meetingUrl);
+			expect(meeting.botId).toBe(botId);
+			expect(meeting.transcriptUrl).toBeNull();
+			expect(meeting.deletedAt).toBeNull();
+			expect(new Date(meeting.createdAt)).toBeInstanceOf(Date);
 
 			expect(result.event.start?.dateTime).toBeDefined();
 			expect(result.event.end?.dateTime).toBeDefined();
 
-			const dbSessions = await db.select().from(sessions);
-			expect(dbSessions).toHaveLength(1);
-			expect(dbSessions[0]?.id).toBe(session.id);
+			const dbMeetings = await db.select().from(meetings);
+			expect(dbMeetings).toHaveLength(1);
+			expect(dbMeetings[0]?.id).toBe(meeting.id);
 		},
 		{ timeout: 30000, retry: 2 },
 	);

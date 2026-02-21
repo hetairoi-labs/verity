@@ -1,14 +1,18 @@
 import { afterEach, describe, expect, test } from "bun:test";
+import { eq } from "drizzle-orm";
 import { createUser, deleteUser, getUser } from "../handlers/users";
 import { db } from "../lib/db";
 import { schema } from "../lib/db/schema";
 import { ApiError } from "../lib/utils/hono/error";
 import { zIsoDate } from "../lib/utils/zod";
 
-const { users } = schema;
+const { users, sessions, meetings, goals } = schema;
 
 afterEach(async () => {
 	await db.delete(users);
+	await db.delete(sessions);
+	await db.delete(meetings);
+	await db.delete(goals);
 });
 
 describe("getUser", () => {
@@ -17,14 +21,14 @@ describe("getUser", () => {
 			id: "user-1",
 			name: "Alice",
 		});
-		const user = await getUser("user-1");
+		const user = await getUser({ userId: "user-1" });
 		expect(user.id).toBe("user-1");
 		expect(user.name).toBe("Alice");
 	});
 
 	test("should throw ApiError 404 when user not found", async () => {
-		expect(getUser("nonexistent")).rejects.toThrow(ApiError);
-		expect(getUser("nonexistent")).rejects.toMatchObject({
+		expect(getUser({ userId: "nonexistent" })).rejects.toThrow(ApiError);
+		expect(getUser({ userId: "nonexistent" })).rejects.toMatchObject({
 			status: 404,
 			message: "User not found",
 		});
@@ -41,7 +45,7 @@ describe("getUser", () => {
 			})
 			.returning();
 
-		expect(getUser("deleted-user")).rejects.toThrow(ApiError);
+		expect(getUser({ userId: "deleted-user" })).rejects.toThrow(ApiError);
 	});
 });
 
@@ -62,7 +66,7 @@ describe("createUser", () => {
 
 	test("should ressurect deleted user", async () => {
 		await db.insert(users).values({ id: "user-7", name: "Deleted User" });
-		await deleteUser("user-7");
+		await deleteUser({ userId: "user-7" });
 		const user = await createUser("user-7", { name: "New User" });
 		expect(user.id).toBe("user-7");
 		expect(user.name).toBe("New User");
@@ -78,7 +82,56 @@ describe("createUser", () => {
 describe("deleteUser", () => {
 	test("should set correct ISOString deletedAt", async () => {
 		await db.insert(users).values({ id: "user-5", name: "Deleted User" });
-		const result = await deleteUser("user-5");
-		expect(zIsoDate().parse(result.user.deletedAt)).toBeInstanceOf(Date);
+		const result = await deleteUser({ userId: "user-5" });
+		expect(zIsoDate().parse(result?.deletedAt)).toBeInstanceOf(Date);
+	});
+	test("should associated sessions, meetings, and goals", async () => {
+		const user = await createUser("user-8", { name: "Deleted User" });
+		const [session] = await db
+			.insert(sessions)
+			.values({ title: "Session 1", price: "100", hostId: user.id })
+			.returning();
+		if (!session) throw new Error("Session not created");
+		const [meeting] = await db
+			.insert(meetings)
+			.values({
+				duration: 1,
+				sessionId: session.id,
+				eventId: "event-1",
+				botId: "bot-1",
+				meetingUrl: "https://example.com",
+				startDate: new Date().toISOString(),
+			})
+			.returning();
+		if (!meeting) throw new Error("Meeting not created");
+		const [goal] = await db
+			.insert(goals)
+			.values({
+				key: "increase sale",
+				result: "10",
+				unit: "%",
+				description: "Increase sales by 10%",
+				weightage: 100,
+				progress: 0,
+				meetingId: meeting.id,
+			})
+			.returning();
+		if (!goal) throw new Error("Goal not created");
+		const result = await deleteUser({ userId: user.id });
+		expect(result).toBeDefined();
+		expect(result?.deletedAt).toBeDefined();
+		expect(getUser({ userId: user.id })).rejects.toThrow(ApiError);
+		const [session2] = await db
+			.select()
+			.from(sessions)
+			.where(eq(sessions.id, session.id));
+		expect(session2?.deletedAt).toBeDefined();
+		const [meeting2] = await db
+			.select()
+			.from(meetings)
+			.where(eq(meetings.id, meeting.id));
+		expect(meeting2?.deletedAt).toBeDefined();
+		const [goal2] = await db.select().from(goals).where(eq(goals.id, goal.id));
+		expect(goal2?.deletedAt).toBeDefined();
 	});
 });
