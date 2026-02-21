@@ -1,4 +1,4 @@
-import { isNull, sql } from "drizzle-orm";
+import { sql } from "drizzle-orm";
 import type { AnySQLiteColumn } from "drizzle-orm/sqlite-core";
 import { text, uniqueIndex } from "drizzle-orm/sqlite-core";
 
@@ -19,6 +19,3 @@ export const uniqueIndexSoft = <T extends { deletedAt: AnySQLiteColumn }>(
 			.on(...columns)
 			.where(sql`${table.deletedAt} IS NULL`),
 });
-
-export const isActive = (t: { deletedAt: AnySQLiteColumn }) =>
-	isNull(t.deletedAt);

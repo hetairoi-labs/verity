@@ -1,23 +1,23 @@
 import { and, eq, inArray } from "drizzle-orm";
-import type { AnySQLiteColumn, SQLiteTable } from "drizzle-orm/sqlite-core";
+import type { AnySQLiteColumn } from "drizzle-orm/sqlite-core";
 import type { DBType } from "../index";
-import { isActive, isoNow } from "./index";
+import type { SchemaTable } from "../schema";
+import { isActive } from "./builders";
+import { isoNow } from "./index";
 
 type Tx = Parameters<Parameters<DBType["transaction"]>[0]>[0];
-type SoftDeletableTable = SQLiteTable & {
-	id: AnySQLiteColumn;
-	deletedAt: AnySQLiteColumn;
-};
+
+type CascadeableTable = SchemaTable & { id: AnySQLiteColumn };
 
 export interface ChildConfig<TId, TChildId = number> {
-	table: SoftDeletableTable;
+	table: CascadeableTable;
 	foreignKeyField: AnySQLiteColumn & { _: { data: TId } };
 	children?: ChildConfig<TChildId>[];
 }
 
 const setDeleted =
 	(now: string) =>
-	<T extends SoftDeletableTable>(
+	<T extends CascadeableTable>(
 		tx: Tx,
 		table: T,
 		where: ReturnType<typeof eq>,
@@ -52,14 +52,18 @@ async function deleteChildren<TId>(
 }
 
 export const softCascade = async <
-	TTable extends SoftDeletableTable,
+	TTable extends CascadeableTable,
 	TId = TTable["id"]["_"]["data"],
 >(
 	db: DBType,
 	parentTable: TTable,
 	parentId: TId,
 	children: ChildConfig<TId, number>[] = [],
-) =>
+): Promise<{
+	success: true;
+	deletedAt: string;
+	row: TTable["$inferSelect"] | undefined;
+}> =>
 	db.transaction(async (tx) => {
 		const now = isoNow();
 		await deleteChildren(tx, now, parentId, children);
