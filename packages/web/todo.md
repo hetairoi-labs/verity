@@ -1,7 +1,3 @@
-- get audio & duplex gemini live interactive answers in the same meet.
-
-# Todo
-
 ### MVP Deadline: 28/02/2026
 - Host
     - apply to become a host (manual verification and approval)
@@ -32,3 +28,5 @@
         - calls server with sessionId to get the session details + goals details + transcripts. (confidential http)
         - calls verification function to get the payout score based on this.
         - triggers the onchain event to payout the users. (evm.write)
+
+    - add activation keyword for live session.

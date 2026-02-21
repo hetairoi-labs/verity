@@ -8,7 +8,6 @@ import {
 } from "drizzle-orm/sqlite-core";
 import { timestamps, uniqueIndexSoft } from "../utils";
 
-/** Table built with timestamps util */
 export type SchemaTable = SQLiteTable & {
 	createdAt: AnySQLiteColumn;
 	updatedAt: AnySQLiteColumn;

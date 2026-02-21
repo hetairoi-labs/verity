@@ -4,7 +4,7 @@ import { db } from "../lib/db";
 import { schema } from "../lib/db/schema";
 import { buildWhereActive } from "../lib/db/utils/builders";
 import { softCascade } from "../lib/db/utils/cascade";
-import { safeQuery } from "../lib/db/utils/safe";
+import { requireAtLeastOne, safeQuery } from "../lib/db/utils/safe";
 import { ApiError } from "../lib/utils/hono/error";
 
 const { sessions, meetings, goals } = schema;
@@ -13,22 +13,23 @@ const { sessions, meetings, goals } = schema;
 export const createSessionInputSchema = z.object({
 	title: z.string().min(1, "Title is required"),
 	description: z.string().optional(),
-	price: z.number().min(0, "Price in USDC must be greater than 0"),
+	price: z
+		.number()
+		.min(0, "Price in USDC must be greater than 0")
+		.max(1000000, "Price in USDC must be less than 1,000,000"),
 });
 
 export const getAllSessionsInputSchema = z.object({
 	page: z.number().min(1).default(1),
 	limit: z.number().min(1).max(100).default(10),
-	userId: z.string().optional(),
 });
 
 export const getSessionByIdInputSchema = z.object({
-	sessionId: z.number().optional(),
-	hostId: z.string().optional(),
+	sessionId: z.number().min(1, "Session ID is required"),
 });
 
 export const deleteSessionInputSchema = z.object({
-	sessionId: z.number().min(1),
+	sessionId: z.number().min(1, "Session ID is required"),
 });
 
 // Types
@@ -38,7 +39,7 @@ export type GetSessionByIdInput = z.input<typeof getSessionByIdInputSchema>;
 export type DeleteSessionInput = z.input<typeof deleteSessionInputSchema>;
 
 // Handlers
-export async function createSession(userId: string, json: CreateSessionInput) {
+export async function createSession(json: CreateSessionInput, hostId: string) {
 	const input = createSessionInputSchema.parse(json);
 
 	// Create Session
@@ -49,7 +50,7 @@ export async function createSession(userId: string, json: CreateSessionInput) {
 				title: input.title,
 				description: input.description,
 				price: input.price.toString(),
-				hostId: userId,
+				hostId,
 			})
 			.returning(),
 	);
@@ -57,21 +58,18 @@ export async function createSession(userId: string, json: CreateSessionInput) {
 	return result;
 }
 
-export async function getAllSessions(params: GetAllSessionsInput) {
-	const {
-		page = 1,
-		limit = 10,
-		userId,
-	} = getAllSessionsInputSchema.parse(params);
+export async function getAllSessions(
+	params: GetAllSessionsInput,
+	hostId?: string,
+) {
+	const { page = 1, limit = 10 } = getAllSessionsInputSchema.parse(params);
 	const offset = (page - 1) * limit;
 
 	const result = await safeQuery(
 		db
 			.select()
 			.from(sessions)
-			.where(
-				buildWhereActive([{ table: sessions, filters: { hostId: userId } }]),
-			)
+			.where(buildWhereActive([{ table: sessions, filters: { hostId } }]))
 			.orderBy(desc(sessions.createdAt))
 			.limit(limit)
 			.offset(offset),
@@ -80,26 +78,30 @@ export async function getAllSessions(params: GetAllSessionsInput) {
 }
 
 export async function getSessionById(params: GetSessionByIdInput) {
-	const { sessionId, hostId } = getSessionByIdInputSchema.parse(params);
-	if (!sessionId && !hostId)
-		throw new ApiError(400, "Session ID or host ID is required");
+	const { sessionId } = getSessionByIdInputSchema.parse(params);
+	requireAtLeastOne({ sessionId }, "Session ID is required");
 
 	const [result] = await safeQuery(
 		db
 			.select()
 			.from(sessions)
 			.where(
-				buildWhereActive([
-					{ table: sessions, filters: { id: sessionId, hostId } },
-				]),
+				buildWhereActive([{ table: sessions, filters: { id: sessionId } }]),
 			),
 	);
 	if (!result) throw new ApiError(404, "Session not found");
-	return { session: result };
+	return result;
 }
 
-export async function deleteSession(params: DeleteSessionInput) {
+export async function deleteSession(
+	params: DeleteSessionInput,
+	hostId: string,
+) {
 	const { sessionId } = deleteSessionInputSchema.parse(params);
+
+	const session = await getSessionById({ sessionId });
+	if (session.hostId !== hostId) throw new ApiError(403, "Unauthorized");
+
 	const result = await softCascade(db, sessions, sessionId, [
 		{
 			table: meetings,
