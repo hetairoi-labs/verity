@@ -96,3 +96,5 @@ export const schema = {
 	meetings,
 	goals,
 };
+
+export type Schema = typeof schema;
