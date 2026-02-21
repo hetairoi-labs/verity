@@ -1,6 +1,17 @@
 import { google } from "googleapis";
 import { getAuthenticatedClient } from "@/lib/utils/google";
 
+export async function getGoogleEventData(eventId: string) {
+	const client = await getAuthenticatedClient();
+	const calendar = google.calendar({ version: "v3", auth: client });
+
+	const response = await calendar.events.get({
+		eventId,
+	});
+
+	return response.data;
+}
+
 export async function createGoogleCalendarEvent(
 	startDate: Date,
 	duration: number,
