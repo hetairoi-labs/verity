@@ -1,3 +1,4 @@
+import { ApiError } from "@/api/lib/utils/hono/error";
 import {
 	type ContentListUnion,
 	createPartFromUri,
@@ -62,7 +63,10 @@ export async function uploadFileToGemini(
 	});
 
 	if (!file.name) {
-		throw new Error("Something went wrong while uploading the file to Gemini.");
+		throw new ApiError(
+			502,
+			"Something went wrong while uploading the file to Gemini.",
+		);
 	}
 
 	let getFile = await ai.files.get({ name: file.name });
@@ -76,7 +80,7 @@ export async function uploadFileToGemini(
 		});
 	}
 	if (file.state === "FAILED") {
-		throw new Error("File processing failed.");
+		throw new ApiError(502, "File processing failed.");
 	}
 
 	return file;
@@ -107,7 +111,7 @@ export async function streamTextGemini<T extends z.ZodType = z.ZodType>(
 	params: GenerateContentParams<T>,
 ) {
 	const selectedModel = params.model ?? availableModels[0];
-	if (!selectedModel) throw new Error("No model selected");
+	if (!selectedModel) throw new ApiError(500, "No model selected");
 
 	const contentInput: ContentListUnion = params.contents.text;
 	if (params.contents.files && params.contents.files.length > 0) {

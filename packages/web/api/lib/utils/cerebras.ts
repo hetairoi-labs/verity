@@ -1,4 +1,5 @@
 import Cerebras from "@cerebras/cerebras_cloud_sdk";
+import { ApiError } from "@/api/lib/utils/hono/error";
 import { z } from "zod";
 import { env } from "@/lib/utils/env";
 
@@ -82,7 +83,7 @@ export async function structuredCerebras<T extends z.ZodType>(
 
 	const content = (completion as StreamChunk).choices[0]?.message?.content;
 	if (!content) {
-		throw new Error("No content received from Cerebras API");
+		throw new ApiError(502, "No content received from Cerebras API");
 	}
 
 	return schema.parse(JSON.parse(content));

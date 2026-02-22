@@ -31,12 +31,18 @@ export const getSessionByIdInputSchema = z.object({
 export const deleteSessionInputSchema = z.object({
 	sessionId: z.number().min(1, "Session ID is required"),
 });
+export const getSessionTranscriptsInputSchema = z.object({
+	sessionId: z.number().min(1, "Session ID is required"),
+});
 
 // Types
 export type CreateSessionInput = z.input<typeof createSessionInputSchema>;
 export type GetAllSessionsInput = z.input<typeof getAllSessionsInputSchema>;
 export type GetSessionByIdInput = z.input<typeof getSessionByIdInputSchema>;
 export type DeleteSessionInput = z.input<typeof deleteSessionInputSchema>;
+export type GetSessionTranscriptsInput = z.input<
+	typeof getSessionTranscriptsInputSchema
+>;
 
 // Handlers
 export async function createSession(json: CreateSessionInput, hostId: string) {
@@ -120,15 +126,9 @@ export async function deleteSession(
 	if (session.hostId !== hostId) throw new ApiError(403, "Unauthorized");
 
 	const result = await softCascade(db, sessions, sessionId, [
-		{
-			table: meetings,
-			foreignKeyField: meetings.sessionId,
-			children: [{ table: goals, foreignKeyField: goals.meetingId }],
-		},
-		{
-			table: participants,
-			foreignKeyField: participants.sessionId,
-		},
+		{ table: meetings, foreignKeyField: meetings.sessionId },
+		{ table: participants, foreignKeyField: participants.sessionId },
+		{ table: goals, foreignKeyField: goals.sessionId },
 	]);
 	if (!result.row) throw new ApiError(404, "Session not found");
 	return { session: result.row };

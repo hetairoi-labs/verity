@@ -1,7 +1,11 @@
 import axios from "axios";
 import { env } from "@/lib/utils/env";
-import type { Bot, Transcript } from "../types/bot.types";
-import { AxiosClient } from "./axios";
+import type {
+	Bot,
+	Transcript,
+	TranscriptArtifact,
+} from "../../types/bot.types";
+import { AxiosClient } from "../axios";
 
 const botClient = new AxiosClient(env.RECALL_API_URL, {
 	authorization: env.RECALL_API_KEY,
@@ -69,8 +73,12 @@ export async function retrieveBot(botId: string) {
 	return botClient.get<Bot>(`/bot/${botId}`);
 }
 
-export async function downloadTranscript(transcriptUrl: URL) {
-	const response = await axios.get<Transcript>(transcriptUrl.href);
+export async function retrieveTranscript(transcriptId: string) {
+	return botClient.get<TranscriptArtifact>(`/transcript/${transcriptId}/`);
+}
+
+export async function downloadTranscript(transcriptUrl: string) {
+	const response = await axios.get<Transcript>(transcriptUrl);
 	return response.data;
 }
 

@@ -1,5 +1,6 @@
 import { afterAll, describe, expect, test } from "bun:test";
 import path from "node:path";
+import { ApiError } from "../lib/utils/hono/error";
 import { FileState } from "@google/genai";
 import { z } from "zod";
 import { safe } from "@/lib/utils/safe";
@@ -99,7 +100,7 @@ describe("streamTextGemini", () => {
 		const chunks: { text: string | undefined; timestamp: number }[] = [];
 		const startTime = Date.now();
 
-		if (!stream) throw new Error("Response type should be stream by default");
+		if (!stream) throw new ApiError(500, "Response type should be stream by default");
 
 		for await (const chunk of stream) {
 			chunks.push({

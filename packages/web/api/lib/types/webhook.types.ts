@@ -5,7 +5,7 @@ const botBase = z.object({
 	metadata: z.record(z.string(), z.string()),
 });
 
-const botStatusSchema = z.object({
+export const botStatusSchema = z.object({
 	event: z.enum([
 		"bot.joining_call",
 		"bot.in_waiting_room",
@@ -29,7 +29,7 @@ const botStatusSchema = z.object({
 	}),
 });
 
-const transcriptSchema = z.object({
+export const transcriptSchema = z.object({
 	event: z.enum(["transcript.done", "transcript.failed"]),
 	data: z.object({
 		bot: botBase,
@@ -55,3 +55,5 @@ export const recallWebhookSchema = z.discriminatedUnion("event", [
 ]);
 
 export type RecallWebhookSchema = z.infer<typeof recallWebhookSchema>;
+export type BotStatusSchema = z.infer<typeof botStatusSchema>;
+export type TranscriptSchema = z.infer<typeof transcriptSchema>;

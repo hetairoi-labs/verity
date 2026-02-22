@@ -5,11 +5,11 @@ import { schema } from "../lib/db/schema";
 import { buildWhereActive } from "../lib/db/utils/builders";
 import { softCascade } from "../lib/db/utils/cascade";
 import { requireAtLeastOne, safeQuery } from "../lib/db/utils/safe";
-import { createBot } from "../lib/utils/bot";
 import { createGoogleCalendarEvent } from "../lib/utils/calendar";
 import { ApiError } from "../lib/utils/hono/error";
+import { createBot } from "../lib/utils/recall/bot";
 
-const { sessions, meetings, goals } = schema;
+const { sessions, meetings } = schema;
 
 // Schemas
 export const createMeetingInputSchema = z.object({
@@ -159,11 +159,6 @@ export async function getMeetingById(params: GetMeetingByIdInput) {
 
 export async function deleteMeeting(params: DeleteMeetingInput) {
 	const { meetingId } = deleteMeetingInputSchema.parse(params);
-	const result = await softCascade(db, meetings, meetingId, [
-		{
-			table: goals,
-			foreignKeyField: goals.meetingId,
-		},
-	]);
+	const result = await softCascade(db, meetings, meetingId, []);
 	return result;
 }

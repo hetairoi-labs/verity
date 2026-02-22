@@ -1,5 +1,6 @@
 import { afterEach, describe, expect, test } from "bun:test";
 import { eq } from "drizzle-orm";
+import { createSession } from "../handlers/sessions";
 import { createUser, deleteUser, getUser } from "../handlers/users";
 import { db } from "../lib/db";
 import { schema } from "../lib/db/schema";
@@ -87,11 +88,11 @@ describe("deleteUser", () => {
 	});
 	test("should associated sessions, meetings, and goals", async () => {
 		const user = await createUser("user-8", { name: "Deleted User" });
-		const [session] = await db
-			.insert(sessions)
-			.values({ title: "Session 1", price: "100", hostId: user.id })
-			.returning();
-		if (!session) throw new Error("Session not created");
+		const session = await createSession(
+			{ title: "Session 1", price: 100 },
+			user.id,
+		);
+		if (!session) throw new ApiError(500, "Session not created");
 		const [meeting] = await db
 			.insert(meetings)
 			.values({
@@ -103,7 +104,7 @@ describe("deleteUser", () => {
 				startDate: new Date().toISOString(),
 			})
 			.returning();
-		if (!meeting) throw new Error("Meeting not created");
+		if (!meeting) throw new ApiError(500, "Meeting not created");
 		const [goal] = await db
 			.insert(goals)
 			.values({
@@ -113,10 +114,10 @@ describe("deleteUser", () => {
 				description: "Increase sales by 10%",
 				weightage: 100,
 				progress: 0,
-				meetingId: meeting.id,
+				sessionId: session.id,
 			})
 			.returning();
-		if (!goal) throw new Error("Goal not created");
+		if (!goal) throw new ApiError(500, "Goal not created");
 		const result = await deleteUser({ userId: user.id });
 		expect(result).toBeDefined();
 		expect(result?.deletedAt).toBeDefined();

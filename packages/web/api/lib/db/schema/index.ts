@@ -48,7 +48,8 @@ export const meetings = sqliteTable(
 		summary: text(),
 		meetingUrl: text("meeting_url").notNull(),
 		calendarLink: text("calendar_link"),
-		transcriptUrl: text("transcript_url"),
+		transcriptStatus: text("transcript_status").notNull().default("pending"),
+		transcriptId: text("transcript_id"),
 		startDate: text("start_date").notNull(),
 		duration: integer().notNull(),
 		sessionId: integer("session_id")
@@ -99,15 +100,15 @@ export const goals = sqliteTable(
 		description: text(),
 		weightage: integer().default(0),
 		progress: integer().default(0),
-		meetingId: integer("meeting_id")
-			.references(() => meetings.id)
+		sessionId: integer("session_id")
+			.references(() => sessions.id)
 			.notNull(),
 		...timestamps,
 	},
 	(table) => [
-		index("goals_meeting_id_idx").on(table.meetingId),
-		uniqueIndexSoft("goals_meeting_key_unique", table).on(
-			table.meetingId,
+		index("goals_session_id_idx").on(table.sessionId),
+		uniqueIndexSoft("goals_session_key_unique", table).on(
+			table.sessionId,
 			table.key,
 		),
 	],

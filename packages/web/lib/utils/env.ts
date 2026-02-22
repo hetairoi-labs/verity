@@ -20,6 +20,7 @@ const envSchema = z.object({
 	GEMINI_API_KEY: z.string().min(1, "GEMINI_API_KEY is required"),
 	RECALL_API_URL: z.url(),
 	RECALL_API_KEY: z.string().min(1, "RECALL_API_KEY is required"),
+	RECALL_WEBHOOK_SECRET: z.string().startsWith("whsec_"),
 
 	CEREBRAS_API_KEY: z.string().min(1, "CEREBRAS_API_KEY is required"),
 

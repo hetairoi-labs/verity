@@ -1,3 +1,4 @@
+import { ApiError } from "../lib/utils/hono/error";
 import {
 	afterAll,
 	afterEach,
@@ -11,7 +12,7 @@ import { createSession } from "../handlers/sessions";
 import { createUser } from "../handlers/users";
 import { db } from "../lib/db";
 import { schema } from "../lib/db/schema";
-import { removeBotFromCall } from "../lib/utils/bot";
+import { removeBotFromCall } from "../lib/utils/recall/bot";
 import { isIntegrationEnv } from "../lib/utils/tests";
 
 const { meetings, sessions, users } = schema;
@@ -75,7 +76,7 @@ describe("createMeeting Integration", () => {
 			expect(meetingUrl).toBeDefined();
 
 			if (!meeting || !botId || !meetingUrl)
-				throw new Error("expected meeting, bot, and event");
+				throw new ApiError(500, "expected meeting, bot, and event");
 
 			createdBots.push(botId);
 
@@ -83,7 +84,8 @@ describe("createMeeting Integration", () => {
 			expect(meeting.sessionId).toBe(session.id);
 			expect(meeting.meetingUrl).toBe(meetingUrl);
 			expect(meeting.botId).toBe(botId);
-			expect(meeting.transcriptUrl).toBeNull();
+			expect(meeting.transcriptId).toBeNull();
+			expect(meeting.transcriptStatus).toBe("pending");
 			expect(meeting.deletedAt).toBeNull();
 			expect(new Date(meeting.createdAt)).toBeInstanceOf(Date);
 

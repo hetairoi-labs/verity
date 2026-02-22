@@ -8,7 +8,7 @@ import { softCascade } from "../lib/db/utils/cascade";
 import { safeQuery } from "../lib/db/utils/safe";
 import { ApiError } from "../lib/utils/hono/error";
 
-const { users, sessions, goals, meetings } = schema;
+const { users, sessions, goals, meetings, participants } = schema;
 
 // Schemas
 export const createUserInputSchema = z.object({
@@ -84,11 +84,9 @@ export async function deleteUser(
 			table: sessions,
 			foreignKeyField: sessions.hostId,
 			children: [
-				{
-					table: goals,
-					foreignKeyField: goals.meetingId,
-					children: [{ table: meetings, foreignKeyField: meetings.id }],
-				},
+				{ table: meetings, foreignKeyField: meetings.sessionId },
+				{ table: participants, foreignKeyField: participants.sessionId },
+				{ table: goals, foreignKeyField: goals.sessionId },
 			],
 		},
 	]);
