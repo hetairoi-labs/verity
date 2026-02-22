@@ -4,7 +4,6 @@ import { getAddress, isAddress } from "viem";
 import type { ZodType } from "zod";
 import { z } from "zod";
 import { safe } from "@/lib/utils/safe";
-import { ApiError } from "./hono/error";
 
 export type ZodErrorDetails = {
 	summary: string;
@@ -19,13 +18,7 @@ export const validator = <
 	schema: T,
 ) =>
 	honoZValidator(target, schema, (result) => {
-		if (!result.success) {
-			const errorDetails: ZodErrorDetails = {
-				summary: z.prettifyError(result.error),
-				details: z.flattenError(result.error).fieldErrors,
-			};
-			throw new ApiError(400, "Zod", errorDetails);
-		}
+		if (!result.success) throw result.error;
 	});
 
 export const zJsonString = () =>

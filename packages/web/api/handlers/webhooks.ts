@@ -1,6 +1,6 @@
-import { eq } from "drizzle-orm";
 import { safe } from "@/lib/utils/safe";
 import { db } from "../lib/db";
+import { buildWhereActive } from "../lib/db/utils/builders";
 import { ApiError } from "../lib/utils/hono/error";
 import { schema } from "../lib/db/schema";
 import { safeQuery } from "../lib/db/utils/safe";
@@ -22,7 +22,11 @@ export async function handleTranscriptDone(payload: TranscriptSchema) {
 				transcriptStatus: meetings.transcriptStatus,
 			})
 			.from(meetings)
-			.where(eq(meetings.botId, payload.data.bot.id))
+			.where(
+				buildWhereActive([
+					{ table: meetings, filters: { botId: payload.data.bot.id } },
+				]),
+			)
 			.limit(1),
 	);
 	if (!existingMeeting) throw new ApiError(404, "Meeting not found");
@@ -45,7 +49,8 @@ export async function handleTranscriptDone(payload: TranscriptSchema) {
 			processedTranscript,
 		);
 	});
-	if (error) throw new ApiError(500, `Failed to save transcripts: ${error.message}`);
+	if (error)
+		throw new ApiError(500, `Failed to save transcripts: ${error.message}`);
 
 	const [meeting] = await safeQuery(
 		db
@@ -54,7 +59,11 @@ export async function handleTranscriptDone(payload: TranscriptSchema) {
 				transcriptId: payload.data.transcript.id,
 				transcriptStatus: "done",
 			})
-			.where(eq(meetings.botId, payload.data.bot.id))
+			.where(
+				buildWhereActive([
+					{ table: meetings, filters: { botId: payload.data.bot.id } },
+				]),
+			)
 			.returning(),
 	);
 
@@ -67,7 +76,11 @@ export async function handleTranscriptFailed(payload: TranscriptSchema) {
 		db
 			.update(meetings)
 			.set({ transcriptStatus: "failed" })
-			.where(eq(meetings.botId, payload.data.bot.id))
+			.where(
+				buildWhereActive([
+					{ table: meetings, filters: { botId: payload.data.bot.id } },
+				]),
+			)
 			.returning(),
 	);
 

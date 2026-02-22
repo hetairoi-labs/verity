@@ -5,6 +5,7 @@ import type {
 	ServerErrorStatusCode,
 } from "hono/utils/http-status";
 import type { JSONObject } from "hono/utils/types";
+import { z, ZodError } from "zod";
 import { logger } from "../pino";
 import { type HeaderRecord, respond } from "./respond";
 
@@ -25,13 +26,23 @@ export class ApiError<T extends JSONObject = JSONObject> extends HTTPException {
 }
 
 export function handleError(err: Error | HTTPException, c: Context) {
-	const status =
-		err instanceof HTTPException
-			? (err.status as ClientErrorStatusCode | ServerErrorStatusCode)
-			: 500;
+	let status: ClientErrorStatusCode | ServerErrorStatusCode = 500;
+	let headers: HeaderRecord | undefined;
+	let errorBody: unknown;
 
-	const headers = err instanceof ApiError ? err.headers : undefined;
-	const errorBody = err instanceof ApiError ? err.data : err.cause;
+	if (err instanceof HTTPException) {
+		status = err.status as ClientErrorStatusCode | ServerErrorStatusCode;
+		headers = err instanceof ApiError ? err.headers : undefined;
+		errorBody = err instanceof ApiError ? err.data : err.cause;
+	} else if (err instanceof ZodError) {
+		status = 400;
+		errorBody = {
+			summary: z.prettifyError(err),
+			details: z.flattenError(err).fieldErrors,
+		};
+	} else {
+		errorBody = err.cause;
+	}
 	const requestLogger = c.get("logger") ?? logger;
 
 	requestLogger.error(
@@ -43,5 +54,11 @@ export function handleError(err: Error | HTTPException, c: Context) {
 		"http.error",
 	);
 
-	return respond.err(c, status, err.message, errorBody, headers);
+	return respond.err(
+		c,
+		status,
+		err.message,
+		errorBody as JSONObject | undefined,
+		headers,
+	);
 }
