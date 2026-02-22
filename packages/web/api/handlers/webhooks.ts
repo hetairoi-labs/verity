@@ -50,7 +50,10 @@ export async function handleTranscriptDone(payload: TranscriptSchema) {
 		);
 	});
 	if (error)
-		throw new ApiError(500, `Failed to save transcripts: ${error.message}`);
+		throw new ApiError(
+			500,
+			`Failed to save transcripts for transcript id: ${payload.data.transcript.id}: ${error.message}`,
+		);
 
 	const [meeting] = await safeQuery(
 		db
