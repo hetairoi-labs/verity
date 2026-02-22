@@ -51,18 +51,21 @@ describe("createMeeting Integration", () => {
 		async () => {
 			if (!isIntegrationEnv()) return;
 
-			const session = await createSession(userId, {
-				title: "Integration Test Session",
-				description: "Test",
-				price: 0,
-			});
+			const session = await createSession(
+				{
+					title: "Integration Test Session",
+					description: "Test",
+					price: 0,
+				},
+				userId,
+			);
 			const input = {
 				sessionId: session.id,
 				summary: "Integration Test Meeting 5599",
 				startDate: new Date(Date.now() + 120000),
 				duration: 0.1,
 			};
-			const result = await createMeeting(userId, input);
+			const result = await createMeeting(input, userId);
 
 			const meetingUrl = result.event.hangoutLink;
 			const botId = result.bot.id;

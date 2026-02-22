@@ -1,5 +1,5 @@
 {
-	"name": "kex",
+	"name": "verity",
 	"type": "module",
 	"private": true,
 	"workspaces": [
@@ -8,13 +8,13 @@
 	"scripts": {
 		"check": "bunx biome check --write .",
 		"purge": "./scripts/purge.sh",
-		"contracts:compile": "bun run --filter @kex/contracts build",
-		"contracts:test": "bun run --filter @kex/contracts test",
-		"web:dev": "bun run --filter @kex/web dev",
-		"web:test": "bun run --filter @kex/web test",
-		"web:start": "bun run --filter @kex/web start",
-		"web:build": "bun run --filter @kex/web build",
-		"web:deploy": "bun run --filter @kex/web deploy"
+		"contracts:compile": "bun run --filter @verity/contracts build",
+		"contracts:test": "bun run --filter @verity/contracts test",
+		"web:dev": "bun run --filter @verity/web dev",
+		"web:test": "bun run --filter @verity/web test",
+		"web:start": "bun run --filter @verity/web start",
+		"web:build": "bun run --filter @verity/web build",
+		"web:deploy": "bun run --filter @verity/web deploy"
 	},
 	"devDependencies": {
 		"@types/node": "^25",

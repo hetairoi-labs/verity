@@ -1,4 +1,4 @@
-import { desc, eq } from "drizzle-orm";
+import { desc } from "drizzle-orm";
 import { z } from "zod";
 import { db } from "../lib/db";
 import { schema } from "../lib/db/schema";
@@ -35,9 +35,8 @@ export const createMeetingInputSchema = z.object({
 		.default("Kex Bot"),
 });
 
-export const getMeetingsInputSchema = z.object({
+export const getSessionMeetingsInputSchema = z.object({
 	sessionId: z.number().optional(),
-	hostId: z.string().optional(),
 	page: z.number().min(1).default(1),
 	limit: z.number().min(1).max(100).default(10),
 });
@@ -52,12 +51,15 @@ export const deleteMeetingInputSchema = z.object({
 
 // Types
 export type CreateMeetingInput = z.input<typeof createMeetingInputSchema>;
-export type GetMeetingsInput = z.input<typeof getMeetingsInputSchema>;
+export type GetSessionMeetingsInput = z.input<
+	typeof getSessionMeetingsInputSchema
+>;
 export type GetMeetingByIdInput = z.input<typeof getMeetingByIdInputSchema>;
 export type DeleteMeetingInput = z.input<typeof deleteMeetingInputSchema>;
 
 // Handlers
-export async function createMeeting(userId: string, json: CreateMeetingInput) {
+
+export async function createMeeting(json: CreateMeetingInput, hostId: string) {
 	const input = createMeetingInputSchema.parse(json);
 
 	// Create Calendar Event
@@ -88,7 +90,7 @@ export async function createMeeting(userId: string, json: CreateMeetingInput) {
 			.from(sessions)
 			.where(
 				buildWhereActive([
-					{ table: sessions, filters: { id: input.sessionId, hostId: userId } },
+					{ table: sessions, filters: { id: input.sessionId, hostId } },
 				]),
 			)
 			.limit(1),
@@ -120,27 +122,20 @@ export async function createMeeting(userId: string, json: CreateMeetingInput) {
 	};
 }
 
-export async function getMeetings(params: GetMeetingsInput) {
+export async function getSessionMeetings(params: GetSessionMeetingsInput) {
 	const {
 		sessionId,
-		hostId,
 		page = 1,
 		limit = 10,
-	} = getMeetingsInputSchema.parse(params);
-	requireAtLeastOne({ sessionId, hostId }, "Session ID or host ID is required");
+	} = getSessionMeetingsInputSchema.parse(params);
+	requireAtLeastOne({ sessionId }, "Session ID is required");
 	const offset = (page - 1) * limit;
 
 	const result = await safeQuery(
 		db
 			.select()
 			.from(meetings)
-			.innerJoin(sessions, eq(meetings.sessionId, sessions.id))
-			.where(
-				buildWhereActive([
-					{ table: meetings, filters: { sessionId } },
-					{ table: sessions, filters: { hostId } },
-				]),
-			)
+			.where(buildWhereActive([{ table: meetings, filters: { sessionId } }]))
 			.orderBy(desc(meetings.createdAt))
 			.offset(offset)
 			.limit(limit),

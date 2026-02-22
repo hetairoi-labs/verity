@@ -1,5 +1,5 @@
 {
-	"name": "@kex/web",
+	"name": "@verity/web",
 	"version": "1.0.0",
 	"type": "module",
 	"main": "server.ts",

@@ -7,7 +7,7 @@ import { softCascade } from "../lib/db/utils/cascade";
 import { requireAtLeastOne, safeQuery } from "../lib/db/utils/safe";
 import { ApiError } from "../lib/utils/hono/error";
 
-const { sessions, meetings, goals } = schema;
+const { sessions, meetings, goals, participants } = schema;
 
 // Schemas
 export const createSessionInputSchema = z.object({
@@ -42,20 +42,37 @@ export type DeleteSessionInput = z.input<typeof deleteSessionInputSchema>;
 export async function createSession(json: CreateSessionInput, hostId: string) {
 	const input = createSessionInputSchema.parse(json);
 
-	// Create Session
-	const [result] = await safeQuery(
-		db
-			.insert(sessions)
-			.values({
-				title: input.title,
-				description: input.description,
-				price: input.price.toString(),
-				hostId,
-			})
-			.returning(),
-	);
-	if (!result) throw new ApiError(500, "Failed to create session..");
-	return result;
+	return db.transaction(async (tx) => {
+		// Create Session
+		const [sessionResult] = await safeQuery(
+			tx
+				.insert(sessions)
+				.values({
+					title: input.title,
+					description: input.description,
+					price: input.price.toString(),
+					hostId,
+				})
+				.returning(),
+		);
+		if (!sessionResult) throw new ApiError(500, "Failed to create session..");
+
+		// Add host as participant
+		const [participantResult] = await safeQuery(
+			tx
+				.insert(participants)
+				.values({
+					sessionId: sessionResult.id,
+					userId: hostId,
+					role: "host",
+				})
+				.returning(),
+		);
+		if (!participantResult)
+			throw new ApiError(500, "Failed to add host as participant..");
+
+		return sessionResult;
+	});
 }
 
 export async function getAllSessions(
@@ -107,6 +124,10 @@ export async function deleteSession(
 			table: meetings,
 			foreignKeyField: meetings.sessionId,
 			children: [{ table: goals, foreignKeyField: goals.meetingId }],
+		},
+		{
+			table: participants,
+			foreignKeyField: participants.sessionId,
 		},
 	]);
 	if (!result.row) throw new ApiError(404, "Session not found");

@@ -63,6 +63,30 @@ export const meetings = sqliteTable(
 	],
 );
 
+export const participants = sqliteTable(
+	"participants",
+	{
+		id: integer().primaryKey({ autoIncrement: true }),
+		sessionId: integer("session_id")
+			.references(() => sessions.id)
+			.notNull(),
+		userId: text("user_id")
+			.references(() => users.id)
+			.notNull(),
+		role: text().notNull().default("participant"),
+		status: text().notNull().default("active"),
+		...timestamps,
+	},
+	(table) => [
+		index("session_participants_session_id_idx").on(table.sessionId),
+		index("session_participants_user_id_idx").on(table.userId),
+		uniqueIndexSoft("participants_session_user_unique", table).on(
+			table.sessionId,
+			table.userId,
+		),
+	],
+);
+
 export const goals = sqliteTable(
 	"goals",
 	{
@@ -94,6 +118,7 @@ export const schema = {
 	sessions,
 	meetings,
 	goals,
+	participants,
 };
 
 export type Schema = typeof schema;

@@ -16,3 +16,14 @@ export function requireAtLeastOne<T extends Record<string, unknown>>(
 		throw new ApiError(400, errorMessage, { values });
 	}
 }
+
+export function requireOnlyOne<T extends Record<string, unknown>>(
+	values: T,
+	errorMessage = "Only one value must be provided",
+): void {
+	const hasOnlyOne =
+		Object.values(values).filter((value) => value != null).length === 1;
+	if (!hasOnlyOne) {
+		throw new ApiError(400, errorMessage, { values });
+	}
+}

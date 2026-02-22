@@ -1,10 +1,10 @@
-# @kex/web Package Technical Specification
+# @verity/web Package Technical Specification
 
 ## Overview
 
 **Architectural Intent**: Production-ready full-stack application with type safety, performance optimization, and developer experience as primary concerns.
 
-The `@kex/web` package implements a modern web architecture featuring a Hono.js API backend for type-safe routing and middleware composition, React frontend with file-based routing, and comprehensive TypeScript coverage throughout the stack.
+The `@verity/web` package implements a modern web architecture featuring a Hono.js API backend for type-safe routing and middleware composition, React frontend with file-based routing, and comprehensive TypeScript coverage throughout the stack.
 
 ## 1. Overall Configuration
 
