@@ -58,7 +58,6 @@ export type GetMeetingByIdInput = z.input<typeof getMeetingByIdInputSchema>;
 export type DeleteMeetingInput = z.input<typeof deleteMeetingInputSchema>;
 
 // Handlers
-
 export async function createMeeting(json: CreateMeetingInput, hostId: string) {
 	const input = createMeetingInputSchema.parse(json);
 
