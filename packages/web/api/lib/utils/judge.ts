@@ -7,7 +7,7 @@ const systemPrompt = `You are a neutral judge evaluating knowledge exchange qual
 Compare the transcript against the given goals. For each goal, score 0-5 and provide brief reasoning.
 
 Criteria: topic coverage, depth, relevance, clarity, completeness, accuracy.
-Return the exact goal key for each item. Be fair; give full score if only minimal improvements needed.`;
+For the "goal" field, return only the short key (e.g. "Topic coverage", "Depth"), not the full line. Be fair; give full score if only minimal improvements needed.`;
 
 const structuredOutputSchema = z.array(
 	z.object({
@@ -63,15 +63,19 @@ export async function judge(params: JudgeInput) {
 		);
 	}
 
-	// weighted average score for goals
+	// weighted average score for goals (key = part before " (weight: N):")
 	const weightByKey = new Map<string, number>();
 	for (const m of goals.matchAll(/• (.+?) \(weight: (\d+)\):/g)) {
 		if (m[1] != null && m[2] != null)
 			weightByKey.set(m[1].trim(), Number(m[2]));
 	}
+	const toKey = (goal: string) =>
+		goal.includes(" (weight: ")
+			? goal.split(" (weight: ")[0]?.trim() ?? goal
+			: goal.trim();
 	const { sumWS, sumW } = raw.reduce(
 		(acc, { goal, score }) => {
-			const w = weightByKey.get(goal) ?? 0;
+			const w = weightByKey.get(toKey(goal)) ?? 0;
 			return { sumWS: acc.sumWS + w * score, sumW: acc.sumW + w };
 		},
 		{ sumWS: 0, sumW: 0 },
