@@ -1,4 +1,3 @@
-import { ApiError } from "../lib/utils/hono/error";
 import {
 	afterAll,
 	afterEach,
@@ -12,6 +11,7 @@ import { createSession } from "../handlers/sessions";
 import { createUser } from "../handlers/users";
 import { db } from "../lib/db";
 import { schema } from "../lib/db/schema";
+import { ApiError } from "../lib/utils/hono/error";
 import { removeBotFromCall } from "../lib/utils/recall/bot";
 import { isIntegrationEnv } from "../lib/utils/tests";
 

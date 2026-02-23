@@ -95,7 +95,7 @@ export const goals = sqliteTable(
 			autoIncrement: true,
 		}),
 		key: text().notNull(),
-		result: numeric().notNull(),
+		result: integer().notNull(),
 		unit: text().notNull(),
 		description: text(),
 		weightage: integer().default(0),

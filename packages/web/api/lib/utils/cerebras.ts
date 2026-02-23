@@ -1,6 +1,6 @@
 import Cerebras from "@cerebras/cerebras_cloud_sdk";
-import { ApiError } from "@/api/lib/utils/hono/error";
 import { z } from "zod";
+import { ApiError } from "@/api/lib/utils/hono/error";
 import { env } from "@/lib/utils/env";
 
 const client = new Cerebras({

@@ -1,4 +1,3 @@
-import { ApiError } from "@/api/lib/utils/hono/error";
 import {
 	type ContentListUnion,
 	createPartFromUri,
@@ -9,6 +8,7 @@ import {
 	type ToolListUnion,
 } from "@google/genai";
 import { z } from "zod";
+import { ApiError } from "@/api/lib/utils/hono/error";
 import { env } from "@/lib/utils/env";
 
 export const ai = new GoogleGenAI({ apiKey: env.GEMINI_API_KEY });

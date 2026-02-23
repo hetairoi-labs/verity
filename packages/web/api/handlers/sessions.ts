@@ -6,6 +6,7 @@ import { buildWhereActive } from "../lib/db/utils/builders";
 import { softCascade } from "../lib/db/utils/cascade";
 import { requireAtLeastOne, safeQuery } from "../lib/db/utils/safe";
 import { ApiError } from "../lib/utils/hono/error";
+import { createGoalInputSchema } from "./goals";
 
 const { sessions, meetings, goals, participants } = schema;
 
@@ -16,7 +17,11 @@ export const createSessionInputSchema = z.object({
 	price: z
 		.number()
 		.min(0, "Price in USDC must be greater than 0")
-		.max(1000000, "Price in USDC must be less than 1,000,000"),
+		.max(100000, "Price in USDC must be less than 100,000"),
+	goals: z
+		.array(createGoalInputSchema.omit({ sessionId: true }))
+		.min(1, "At least one goal is required")
+		.optional(),
 });
 
 export const getAllSessionsInputSchema = z.object({
@@ -76,6 +81,22 @@ export async function createSession(json: CreateSessionInput, hostId: string) {
 		);
 		if (!participantResult)
 			throw new ApiError(500, "Failed to add host as participant..");
+
+		// Create goals
+		if (input.goals) {
+			for (const goal of input.goals) {
+				const [goalResult] = await safeQuery(
+					tx
+						.insert(goals)
+						.values({
+							...goal,
+							sessionId: sessionResult.id,
+						})
+						.returning(),
+				);
+				if (!goalResult) throw new ApiError(500, "Failed to create goal..");
+			}
+		}
 
 		return sessionResult;
 	});

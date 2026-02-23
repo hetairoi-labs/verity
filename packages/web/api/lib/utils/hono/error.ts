@@ -5,7 +5,7 @@ import type {
 	ServerErrorStatusCode,
 } from "hono/utils/http-status";
 import type { JSONObject } from "hono/utils/types";
-import { z, ZodError } from "zod";
+import { ZodError, z } from "zod";
 import { logger } from "../pino";
 import { type HeaderRecord, respond } from "./respond";
 
