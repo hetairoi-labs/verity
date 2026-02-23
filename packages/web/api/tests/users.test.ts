@@ -109,7 +109,7 @@ describe("deleteUser", () => {
 			.insert(goals)
 			.values({
 				key: "increase sale",
-				result: "10",
+				result: 10,
 				unit: "%",
 				description: "Increase sales by 10%",
 				weightage: 100,

@@ -4,15 +4,12 @@ import { schema } from "../lib/db/schema";
 import { buildWhereActive } from "../lib/db/utils/builders";
 import { safeQuery } from "../lib/db/utils/safe";
 import type { TranscriptSchema } from "../lib/types/webhook.types";
+import { compressTranscript, saveTranscript } from "../lib/utils/compress";
 import { ApiError } from "../lib/utils/hono/error";
 import {
 	downloadTranscript,
 	retrieveTranscript,
 } from "../lib/utils/recall/bot";
-import {
-	compressTranscript,
-	saveTranscript,
-} from "../lib/utils/recall/transcript";
 
 const { meetings } = schema;
 export async function handleTranscriptDone(payload: TranscriptSchema) {

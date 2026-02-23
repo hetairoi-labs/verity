@@ -1,9 +1,6 @@
 import { describe, expect, test } from "bun:test";
 import type { Transcript } from "../lib/types/bot.types";
-import {
-	compressTranscript,
-	saveTranscript,
-} from "../lib/utils/recall/transcript";
+import { compressTranscript, saveTranscript } from "../lib/utils/compress";
 
 const SAMPLE_TRANSCRIPT: Transcript = [
 	{

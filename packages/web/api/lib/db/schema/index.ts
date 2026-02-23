@@ -1,3 +1,4 @@
+import type { InferSelectModel } from "drizzle-orm";
 import type { AnySQLiteColumn, SQLiteTable } from "drizzle-orm/sqlite-core";
 import {
 	index,
@@ -122,4 +123,10 @@ export const schema = {
 	participants,
 };
 
-export type Schema = typeof schema;
+export type Schema = {
+	users: InferSelectModel<typeof users>;
+	sessions: InferSelectModel<typeof sessions>;
+	meetings: InferSelectModel<typeof meetings>;
+	goals: InferSelectModel<typeof goals>;
+	participants: InferSelectModel<typeof participants>;
+};

@@ -1,4 +1,5 @@
-import type { Transcript } from "../../types/bot.types";
+import type { Schema } from "../db/schema";
+import type { Transcript } from "../types/bot.types";
 
 export function compressTranscript(transcript: Transcript): string {
 	const participantMap = new Map<
@@ -56,6 +57,21 @@ export function compressTranscript(transcript: Transcript): string {
 	return header + dialogue;
 }
 
+export function compressGoals(goals: Schema["goals"][]): string {
+	return goals
+		.map((g) => {
+			const w = g.weightage ?? 0;
+			const target = `Target: ${g.result} ${g.unit}`;
+			const desc = g.description?.trim() ? `. ${g.description}` : "";
+			return `• ${g.key} (weight: ${w}): ${target}${desc}`;
+		})
+		.join("\n");
+}
+
 export function saveTranscript(id: string, transcript: string) {
 	Bun.write(`${process.cwd()}/transcripts/${id}.txt`, transcript);
+}
+
+export function saveGoals(id: string, goals: string) {
+	Bun.write(`${process.cwd()}/goals/${id}.txt`, goals);
 }

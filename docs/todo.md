@@ -1,6 +1,5 @@
 ### MVP Deadline: 28/02/2026
 - Host
-    - apply to become a host (manual verification and approval)
     - should be able to create a session (target goals, price in usdc, duration / expiry)
     - one session, multiple meetings
     - a dashboard for host to see: estimated payout multiplier + analysis & reasoning behind the score + suggestions to improve the score
