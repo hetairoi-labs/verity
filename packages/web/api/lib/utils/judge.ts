@@ -29,16 +29,27 @@ const structuredOutputSchema = z.array(
 export type JudgeInput = {
 	transcript: string;
 	goals: string;
-	userRatings?: number[];
+	ratings?: {
+		average: number;
+		count: number;
+	};
+	reputation?: {
+		avgScore: number;
+		sessionCount: number;
+	};
 };
 
 export async function judge(params: JudgeInput) {
-	// hyperparameters
-	const alpha = 0.8;
 	const tau = 0.3;
+	const { transcript, goals, ratings, reputation } = params;
+
+	// compute alpha based on user ratings and historical reputation
+	const alpha = computeAlpha({
+		ratings,
+		reputation,
+	});
 
 	// generate ai scores
-	const { transcript, goals, userRatings = [] } = params;
 	if (!transcript.trim() || !goals.trim()) {
 		throw new ApiError(400, "Transcript & goals are required");
 	}
@@ -63,7 +74,7 @@ export async function judge(params: JudgeInput) {
 		);
 	}
 
-	// weighted average score for goals (key = part before " (weight: N):")
+	// compute weighted average score for goals
 	const weightByKey = new Map<string, number>();
 	for (const m of goals.matchAll(/• (.+?) \(weight: (\d+)\):/g)) {
 		if (m[1] != null && m[2] != null)
@@ -71,7 +82,7 @@ export async function judge(params: JudgeInput) {
 	}
 	const toKey = (goal: string) =>
 		goal.includes(" (weight: ")
-			? goal.split(" (weight: ")[0]?.trim() ?? goal
+			? (goal.split(" (weight: ")[0]?.trim() ?? goal)
 			: goal.trim();
 	const { sumWS, sumW } = raw.reduce(
 		(acc, { goal, score }) => {
@@ -82,21 +93,47 @@ export async function judge(params: JudgeInput) {
 	);
 	const aggregate = sumW ? sumWS / sumW : 0;
 
-	// blend with user ratings based on alpha
+	// blend with participant ratings when available
 	const final =
-		userRatings.length && alpha < 1
-			? alpha * aggregate +
-				(1 - alpha) *
-					(userRatings.reduce((a, b) => a + b, 0) / userRatings.length)
+		ratings?.count &&
+		ratings?.count > 0 &&
+		ratings?.average != null &&
+		ratings?.average >= 0 &&
+		alpha < 1
+			? alpha * aggregate + (1 - alpha) * ratings?.average
 			: aggregate;
 
-	// calculate payout multiplier (0.4–1.0)
-	const multiplier = 0.4 + 0.6 / (1 + Math.exp(-(final - 2.5) / tau));
+	const multiplier = 0.25 + 0.75 / (1 + Math.exp(-(final - 2.5) / tau));
 
 	return {
-		raw, // per-goal: { goal, score, reasoning, improvements }
-		aggregate, // weighted avg 0–5
+		raw,
+		aggregate,
 		final,
-		multiplier, // 0.4–1.0 for refund calc
+		multiplier,
 	};
+}
+
+function computeAlpha(p: {
+	ratings?: {
+		average: number;
+		count: number;
+	};
+	reputation?: {
+		avgScore: number;
+		sessionCount: number;
+	};
+}): number {
+	if (p.ratings?.count === 0) return 1;
+
+	let alpha = 0.95;
+	alpha -= 0.35 * Math.min(1, (p.ratings?.count ?? 0) / 8);
+	alpha -= 0.05 * Math.min(1, (p.reputation?.sessionCount ?? 0) / 20);
+	if (
+		(p.reputation?.sessionCount ?? 0) >= 1 &&
+		p.reputation?.avgScore != null
+	) {
+		alpha += p.reputation?.avgScore < 2 ? 0.05 : 0;
+		alpha -= p.reputation?.avgScore >= 3.5 ? 0.05 : 0;
+	}
+	return Math.max(0.5, Math.min(1, alpha));
 }
