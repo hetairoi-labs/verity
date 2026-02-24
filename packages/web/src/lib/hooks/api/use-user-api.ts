@@ -13,7 +13,7 @@ export function useRegisterUserMutation() {
 
 	return useMutation({
 		mutationFn: async (json: RegisterUserInput) => {
-			if (!token) return;
+			if (!token) throw new Error("No auth token");
 			const result = await parseResponse(
 				client.users.$post(
 					{ json },
@@ -51,9 +51,35 @@ export function useGetUserQuery() {
 	});
 }
 
+// delete user
+export function useDeleteUserMutation() {
+	const token = usePrivyToken();
+	const queryClient = useQueryClient();
+
+	return useMutation({
+		mutationFn: async () => {
+			if (!token) throw new Error("No auth token");
+			const result = await parseResponse(
+				client.users.$delete(
+					{},
+					{ headers: { Authorization: `Bearer ${token}` } },
+				),
+			);
+			return result.data;
+		},
+		onSuccess: (data) => {
+			console.log("[DeleteUserMutation] Success:", data);
+			queryClient.invalidateQueries({ queryKey: ["user", token] });
+		},
+	});
+}
+
 export type GetUserResponse = Awaited<
 	ReturnType<typeof useGetUserQuery>
 >["data"];
 export type RegisterUserResponse = Awaited<
 	ReturnType<typeof useRegisterUserMutation>
+>["data"];
+export type DeleteUserResponse = Awaited<
+	ReturnType<typeof useDeleteUserMutation>
 >["data"];
