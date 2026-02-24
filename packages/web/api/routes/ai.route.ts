@@ -1,5 +1,5 @@
 import { Hono } from "hono";
-import { streamText } from "hono/streaming";
+import { typedStream } from "hono-typedstream";
 import { respond } from "@/api/lib/utils/hono/respond";
 import {
 	fastChat,
@@ -21,9 +21,9 @@ const aiRoute = new Hono()
 		const json = c.req.valid("json");
 		const stream = await fastText(json);
 
-		return streamText(c, async (s) => {
+		return typedStream(c, async function* () {
 			for await (const chunk of stream) {
-				s.write(chunk);
+				yield { text: chunk };
 			}
 		});
 	})
@@ -31,9 +31,9 @@ const aiRoute = new Hono()
 		const json = c.req.valid("json");
 		const stream = await fastChat(json);
 
-		return streamText(c, async (s) => {
+		return typedStream(c, async function* () {
 			for await (const chunk of stream) {
-				s.write(chunk);
+				yield { text: chunk };
 			}
 		});
 	});

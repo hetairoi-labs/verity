@@ -45,6 +45,7 @@
 		"googleapis": "^171.1.0",
 		"hono": "^4.11.7",
 		"hono-rate-limiter": "^0.5.3",
+		"hono-typedstream": "^0.1.3",
 		"lucide-react": "^0.564.0",
 		"motion": "^12.34.3",
 		"pino": "^10.3.1",
