@@ -1,6 +1,6 @@
 import { createMiddleware } from "hono/factory";
 import { logger as pinoLogger } from "@/api/lib/utils/pino";
-import { safeAsync } from "@/lib/utils/safe";
+// import { safeAsync } from "@/lib/utils/safe";
 
 export const logger = createMiddleware(async (c, next) => {
 	const startedAt = Date.now();
@@ -11,11 +11,11 @@ export const logger = createMiddleware(async (c, next) => {
 	c.set("logger", requestLogger);
 
 	const query = c.req.query();
-	const [jsonBody, jsonError] = await safeAsync(async () =>
-		c.req.header("content-type")?.includes("application/json")
-			? c.req.json()
-			: null,
-	);
+	// const [jsonBody, jsonError] = await safeAsync(async () =>
+	// 	c.req.header("content-type")?.includes("application/json")
+	// 		? c.req.json()
+	// 		: null,
+	// );
 
 	await next();
 
@@ -25,8 +25,8 @@ export const logger = createMiddleware(async (c, next) => {
 				res: `${c.res.status} ${c.req.method} ${c.req.path.replace("/api/v1", "")}`,
 				durationMs: Date.now() - startedAt,
 				...(Object.keys(query).length > 0 && { query }),
-				...(jsonBody && !jsonError && { json: jsonBody }),
-				...(jsonError && { bodyError: jsonError.message }),
+				// ...(jsonBody && !jsonError && { json: jsonBody }),
+				// ...(jsonError && { bodyError: jsonError.message }),
 			},
 			"http.request",
 		);

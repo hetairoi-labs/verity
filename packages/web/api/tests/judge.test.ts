@@ -75,7 +75,7 @@ test("judge penalizes bad host who wastes session on stories", async () => {
 }, 30_000);
 
 test("judge scores average host who teaches steadily and covers everything", async () => {
-	// if (!isIntegrationEnv()) return;
+	if (!isIntegrationEnv()) return;
 	const out = await judge({
 		transcript: AVERAGE_HOST_TRANSCRIPT,
 		goals: SAMPLE_GOALS,

@@ -16,6 +16,9 @@ function RouteComponent() {
 				<Link to="/test/live">
 					<Button>Live</Button>
 				</Link>
+				<Link to="/test/chat">
+					<Button>Chat</Button>
+				</Link>
 				<Link to="test/form">
 					<Button>Form</Button>
 				</Link>

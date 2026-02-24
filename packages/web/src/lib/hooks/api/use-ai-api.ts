@@ -65,5 +65,3 @@ export function useFastChatStream() {
 export type GetLiveTokenResponse = Awaited<
 	ReturnType<typeof useGetLiveTokenQuery>
 >["data"];
-export type FastTextChunk = { text: string };
-export type FastChatChunk = { text: string };

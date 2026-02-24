@@ -20,7 +20,7 @@ alwaysApply: true
 
 ## Before Done
 
-- Run linting, typechecking, and tests. Fix failures.
+- Run linting, typechecking, and tests. Fix failures. (`bun check`, `bun tsc`, `bun run test`)
 - Never mark complete without proving it works.
 - Diff behavior between main and your changes when relevant.
 - Ask: "Would a staff engineer approve this?"
