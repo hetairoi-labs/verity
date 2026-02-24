@@ -2,11 +2,13 @@
 alwaysApply: true
 ---
 
-# Code Patterns
+# Code Patterns for Full Stack Web Development
 
 - Prefer reusable utils over inline logic. Extract when used twice.
-- Result pattern: use safe/safeAsync for [data, null] | [null, Error]. Don't swallow errors.
-- Throw ApiError (backend) for HTTP errors. Use ErrorHandler (frontend) for global handling.
+- Before implementing any new tool or library, always search the web for latest documentation and github for best practices and implementation examples. 
+- Result pattern: use safe/safeAsync for [data, null] | [null, Error]. Don't swallow errors. Don't use try/catch.
+- In backend (API), Always throw `ApiError` over `Error`. Thrown errors are handled globally by `ErrorHandler`.
+- Frontend catches errors globally as well using the `setupErrorListener` function. No need to handle errors locally.
 - Middlewares: createMiddleware, c.set() for downstream. Providers: Context + useX, throw if used outside.
 - Reuse existing: safeQuery, buildWhereActive, cn, zHexAddress, etc. Check lib/ before adding.
 - Singleton for shared state (ErrorHandler). Factory for per-request (privy, logger).
