@@ -6,11 +6,10 @@ import {
 	MODEL,
 	toBase64Pcm,
 } from "../utils/live";
-import { useApi } from "./api/use-api";
+import { useGetLiveTokenQuery } from "./api/use-ai-api";
 
 export function useLive() {
-	const api = useApi();
-	const { data: token } = api.gemini.getToken(true);
+	const { data: token } = useGetLiveTokenQuery(true);
 
 	const [logs, setLogs] = useState<LogEntry[]>([]);
 	const [status, setStatus] = useState("idle");

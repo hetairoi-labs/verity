@@ -5,7 +5,7 @@ import {
 	usePrivy,
 } from "@privy-io/react-auth";
 import { useState } from "react";
-import { useApi } from "../api/use-api";
+import { useRegisterUserMutation } from "../api/use-user-api";
 
 export const useAuth = () => {
 	const privy = usePrivy();
@@ -46,8 +46,7 @@ type LoginResult = {
 
 function useLoginMutation() {
 	const [result, setResult] = useState<LoginResult | undefined>(undefined);
-	const api = useApi();
-	const registerUser = api.users.registerUser();
+	const registerUser = useRegisterUserMutation();
 
 	const { login: mutate } = useLogin({
 		onComplete(params) {

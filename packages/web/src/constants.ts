@@ -1,5 +1,6 @@
 import { hardhat, mainnet, sepolia } from "viem/chains";
 
-export const privyChains = [hardhat, mainnet, sepolia];
-export const wagmiChains = [hardhat, mainnet, sepolia] as const;
+const chains = [hardhat, mainnet, sepolia] as const;
+export const privyChains = [...chains];
+export const wagmiChains = chains;
 export const defaultChain = hardhat;
