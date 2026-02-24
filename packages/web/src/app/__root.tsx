@@ -1,4 +1,5 @@
 import { useAnalytics } from "@hooks/use-analytics";
+import { SpinnerBallIcon } from "@phosphor-icons/react";
 import { createRootRoute, Outlet } from "@tanstack/react-router";
 import { RootErrorComponent } from "@/src/components/custom/error";
 import NotFoundPage from "@/src/components/custom/not-found";
@@ -25,7 +26,7 @@ export const Route = createRootRoute({
 	errorComponent: RootErrorComponent,
 	pendingComponent: () => (
 		<div className="min-h-screen flex items-center justify-center">
-			<div className="animate-spin rounded-full h-32 w-32 border-b-2 border-primary"></div>
+			<SpinnerBallIcon size={32} className="animate-spin" />
 		</div>
 	),
 });

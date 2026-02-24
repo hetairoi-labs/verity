@@ -206,6 +206,6 @@ function FormIndex() {
 	);
 }
 
-export const Route = createFileRoute("/form/")({
+export const Route = createFileRoute("/test/form/")({
 	component: FormIndex,
 });

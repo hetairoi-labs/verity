@@ -27,6 +27,6 @@ function LiveIndex() {
 	);
 }
 
-export const Route = createFileRoute("/live/")({
+export const Route = createFileRoute("/test/live/")({
 	component: LiveIndex,
 });

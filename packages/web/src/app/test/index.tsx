@@ -1,26 +1,29 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { CreateEvent } from "./:components/create-event";
-import { GetBot } from "./:components/get-bot";
-import { GetToken } from "./:components/get-token";
-import { GetTranscript } from "./:components/get-transcript";
-import { WebSocketTest } from "./:components/websocket";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { Button } from "../../components/ui/button";
 
-function TestPage() {
+function RouteComponent() {
 	return (
-		<div className="flex flex-col items-center min-h-screen p-8">
-			<h1 className="mb-8 text-center">API</h1>
+		<div className="flex flex-col items-center justify-center h-screen p-8">
+			<h1 className="text-7xl lg:text-9xl uppercase">Tests</h1>
 
-			<div className="flex flex-col items-center gap-8 min-w-full">
-				<CreateEvent />
-				<GetToken />
-				<GetBot />
-				<GetTranscript />
-				<WebSocketTest />
+			<div className="mt-10 flex gap-4">
+				<Link to="/test">
+					<Button>API Tests</Button>
+				</Link>
+				<Link to="/test/auth">
+					<Button>Auth</Button>
+				</Link>
+				<Link to="/test/live">
+					<Button>Live</Button>
+				</Link>
+				<Link to="test/form">
+					<Button>Form</Button>
+				</Link>
 			</div>
 		</div>
 	);
 }
 
 export const Route = createFileRoute("/test/")({
-	component: TestPage,
+	component: RouteComponent,
 });

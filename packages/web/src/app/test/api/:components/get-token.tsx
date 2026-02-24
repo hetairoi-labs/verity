@@ -1,12 +1,11 @@
 import { useState } from "react";
 import { TestCard } from "@/src/components/custom/test-card";
 import { Button } from "@/src/components/ui/button";
-import { useApi } from "@/src/lib/hooks/api/use-api";
+import { useGetLiveTokenQuery } from "@/src/lib/hooks/api/use-ai-api";
 
 export function GetToken() {
 	const [enabled, setEnabled] = useState(false);
-	const api = useApi();
-	const { data, isFetching, refetch } = api.gemini.getToken(enabled);
+	const { data, isFetching, refetch } = useGetLiveTokenQuery(enabled);
 
 	return (
 		<TestCard
