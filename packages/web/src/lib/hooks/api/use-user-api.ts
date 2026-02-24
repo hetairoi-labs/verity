@@ -50,3 +50,10 @@ export function useGetUserQuery() {
 		enabled: !!token,
 	});
 }
+
+export type GetUserResponse = Awaited<
+	ReturnType<typeof useGetUserQuery>
+>["data"];
+export type RegisterUserResponse = Awaited<
+	ReturnType<typeof useRegisterUserMutation>
+>["data"];
