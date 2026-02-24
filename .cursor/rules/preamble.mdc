@@ -1,0 +1,32 @@
+---
+alwaysApply: true
+---
+
+# Agent Guidelines
+
+## Before You Code
+
+- Read existing code in the area you're changing. Match its patterns.
+- For 3+ step tasks: list steps first, then implement.
+- Write detailed specs upfront to reduce ambiguity.
+- If stuck or unsure: stop and ask. Don't guess.
+
+## While Coding
+
+- Minimal changes. Touch only what's necessary.
+- Fix root causes, not symptoms. No temporary fixes.
+- Follow project patterns in `.cursor/rules/` when they apply.
+- For non-trivial changes: pause and ask "is there a more elegant way?" If a fix feels hacky, redo it properly. Skip for simple fixes.
+
+## Before Done
+
+- Run linting, typechecking, and tests. Fix failures.
+- Never mark complete without proving it works.
+- Diff behavior between main and your changes when relevant.
+- Ask: "Would a staff engineer approve this?"
+
+## After Corrections
+
+- Log to `learning.mdc`: `Mistake: X. Fix: Y.`
+- If repeatable: add a rule in `.cursor/rules/` (follow rulebook.mdc).
+- Review learning.mdc and relevant rules at session start.

@@ -1,0 +1,13 @@
+---
+description: API hook conventions; when adding hooks in lib/hooks/api/
+globs: "**/hooks/api/**/*.ts"
+alwaysApply: false
+---
+
+# API Hooks
+
+- One file per domain: `use-{domain}-api.ts`. See use-user-api.ts, use-ai-api.ts.
+- Add `export * from "./use-X-api"` to index.ts.
+- Infer types from client: `InferRequestType<typeof client.path>`. POST: `["json"]`, GET: `["query"]` or full route.
+- Auth routes: use usePrivyToken(), guard with `if (!token)` before fetch, pass `Authorization: Bearer ${token}`.
+- Export Response types at file end: `Awaited<ReturnType<typeof useX>>["data"]`.
