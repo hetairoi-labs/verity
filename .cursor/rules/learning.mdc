@@ -1,5 +1,5 @@
 ---
-description: Log of corrections and pitfalls; append when user corrects
+description: agent's log of corrections and pitfalls; append to this file when user corrects your response.
 alwaysApply: false
 ---
 # Learning Log

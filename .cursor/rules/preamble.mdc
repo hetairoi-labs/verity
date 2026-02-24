@@ -2,8 +2,6 @@
 alwaysApply: true
 ---
 
-# Agent Guidelines
-
 ## Before You Code
 
 - Read existing code in the area you're changing. Match its patterns.
@@ -27,6 +25,6 @@ alwaysApply: true
 
 ## After Corrections
 
-- Log to `learning.mdc`: `Mistake: X. Fix: Y.`
+- Log to `learning.mdc`: `[YYYY-MM-DD] Mistake: X. Fix: Y.`
 - If repeatable: add a rule in `.cursor/rules/` (follow rulebook.mdc).
 - Review learning.mdc and relevant rules at session start.
