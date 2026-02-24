@@ -39,11 +39,15 @@ const markdownComponents: Components = {
 		<h2 className="mb-2 mt-5 text-lg font-semibold text-primary">{children}</h2>
 	),
 	h3: ({ children }) => (
-		<h3 className="mb-2 mt-4 text-base font-semibold text-foreground">{children}</h3>
+		<h3 className="mb-2 mt-4 text-base font-semibold text-foreground">
+			{children}
+		</h3>
 	),
 	hr: () => <hr className="my-5 border-border/80" />,
 	ul: ({ children }) => (
-		<ul className="my-3 list-disc space-y-1 pl-5 marker:text-primary">{children}</ul>
+		<ul className="my-3 list-disc space-y-1 pl-5 marker:text-primary">
+			{children}
+		</ul>
 	),
 	ol: ({ children }) => (
 		<ol className="my-3 list-decimal space-y-1 pl-5 marker:text-primary">
@@ -74,7 +78,9 @@ const markdownComponents: Components = {
 		const isBlock = className?.includes("language-");
 		if (isBlock) {
 			return (
-				<code className={cn("font-mono text-[13px] text-foreground", className)}>
+				<code
+					className={cn("font-mono text-[13px] text-foreground", className)}
+				>
 					{children}
 				</code>
 			);
@@ -88,7 +94,9 @@ const markdownComponents: Components = {
 	},
 	table: ({ children }) => (
 		<div className="my-4 overflow-x-auto rounded-xl border border-border">
-			<table className="w-full border-collapse text-left text-sm">{children}</table>
+			<table className="w-full border-collapse text-left text-sm">
+				{children}
+			</table>
 		</div>
 	),
 	thead: ({ children }) => <thead className="bg-muted/50">{children}</thead>,
