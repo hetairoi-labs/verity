@@ -4,7 +4,7 @@ import { initSentry, rootOptions } from "@/src/lib/sentry";
 import { ErrorHandler } from "./handler";
 import { parseError } from "./parse";
 
-export function setupErrorListener({ router }: { router: AnyRouter }) {
+export function setupErrorListener(router: AnyRouter) {
 	initSentry(router);
 	const handler = ErrorHandler.getInstance();
 

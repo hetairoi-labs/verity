@@ -7,20 +7,25 @@
 	"scripts": {
 		"dev": "clear && bun push && bun check && bun run --parallel tsr-watch dev:server",
 		"dev:server": "bun --hot server.ts",
-		"start": "tsr generate && NODE_ENV=production bun --env-file=.env.production run server.ts",
+		"tsr-watch": "tsr watch",
+
+		"build": "tsr generate && bun run lib/build/index.ts",
 		"deploy": "./lib/scripts/deploy.sh",
-		"build": "tsr generate && bun --env-file=.env.production run lib/build/index.ts",
-		"tsc": "bunx --bun tsc --noEmit",
+		"prod": "tsr generate && NODE_ENV=production bun run server.ts",
+
 		"check": "bunx biome check --write",
+		"tsc": "bunx --bun tsc --noEmit",
+
 		"generate": "bunx drizzle-kit generate",
 		"migrate": "bunx drizzle-kit migrate",
 		"push": "bunx drizzle-kit push",
+
 		"test": "rm -f test.db && bun --env-file=.env.test run test:inner",
-		"test:int": "INTEGRATION=true bun --env-file=.env.test run test:inner",
 		"test:inner": "bun run push --force && bun test",
+		"test:int": "INTEGRATION=true bun --env-file=.env.test run test:inner",
+
 		"shadcn": "bunx --bun shadcn@latest add",
-		"authenticate": "bun lib/utils/google.ts",
-		"tsr-watch": "tsr watch"
+		"authenticate": "bun lib/utils/google.ts"
 	},
 	"dependencies": {
 		"@base-ui/react": "^1.2.0",

@@ -4,7 +4,7 @@ import tailwindPlugin from "bun-plugin-tailwind";
 const outdir = `${process.cwd()}/dist`;
 const entrypoints = [`${process.cwd()}/src/index.html`];
 
-export async function runBuild() {
+export async function bundle() {
 	if (await Bun.file(outdir).exists()) {
 		console.log(`Cleaning up previous build...`);
 		await rm(outdir, { recursive: true, force: true });

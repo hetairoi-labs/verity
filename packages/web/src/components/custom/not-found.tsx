@@ -27,7 +27,7 @@ export default function NotFoundPage() {
 				</div>
 
 				<div className="flex flex-wrap items-center justify-center gap-3 mt-2">
-					<Button asChild variant="default" size="lg" className="px-6">
+					<Button variant="default" size="lg" className="px-6">
 						<Link to="/">Back to home</Link>
 					</Button>
 				</div>
