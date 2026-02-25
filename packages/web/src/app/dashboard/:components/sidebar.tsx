@@ -1,5 +1,5 @@
-import logo from "@assets/logo.svg";
 import { MoonIcon } from "@phosphor-icons/react";
+import Logo from "@/src/components/custom/logo";
 import { Separator } from "@/src/components/ui/separator";
 import { cn } from "@/src/lib/utils";
 import { sidebarNav } from "./mock";
@@ -8,7 +8,7 @@ export default function Sidebar() {
 	return (
 		<aside className="sticky top-0 flex h-dvh w-60 shrink-0 flex-col bg-card">
 			<div className="flex items-center gap-3 px-8 pt-9 pb-7">
-				<img src={logo} alt="Verity Logo" className="size-9" />
+				<Logo className="size-12" />
 				<span className="text-3xl tracking-wider text-foreground">Verity</span>
 			</div>
 

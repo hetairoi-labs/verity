@@ -5,11 +5,11 @@ import {
 	MoonStarsIcon,
 	SunIcon,
 } from "@phosphor-icons/react";
+import ThemeSwitch from "@/src/components/custom/theme-switch";
 import { Avatar, AvatarFallback } from "@/src/components/ui/avatar";
 import { Button } from "@/src/components/ui/button";
 import { Input } from "@/src/components/ui/input";
 import { useTheme } from "@/src/lib/context/theme-provider";
-import ThemeSwitch from "@/src/components/custom/theme-switch";
 
 export default function Header() {
 	const { theme, setTheme } = useTheme();
