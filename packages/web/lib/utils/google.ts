@@ -1,7 +1,6 @@
-import path from "node:path";
 import { google } from "googleapis";
 
-const TOKEN_PATH = path.join(process.cwd(), "lib/secrets/credentials.json");
+const TOKEN_PATH = `${process.cwd()}/lib/secrets/credentials.json`;
 const PORT = 30012;
 
 const SCOPES = [

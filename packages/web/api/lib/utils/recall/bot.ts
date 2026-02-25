@@ -17,7 +17,7 @@ const RETENTION_HOURS = 160;
 const LIVE_URL = `${env.PUBLIC_LIVE_APP_URL}/live`;
 
 export async function createBot(meetingUrl: string) {
-	if (env.NODE_ENV === "production") {
+	if (process.env.NODE_ENV === "production") {
 		console.log("Creating production bot");
 		return botClient.post<Bot>("/bot", {
 			meeting_url: meetingUrl,

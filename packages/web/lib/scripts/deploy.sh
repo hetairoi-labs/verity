@@ -2,11 +2,7 @@
 clear;
 
 echo "🔍 Installing project dependencies..."
-bun install --production
-echo
-
-echo "⬆️ Pushing schema to database..."
-bun run push
+bun install
 echo
 
 echo "🔍 Linting and formatting code..."

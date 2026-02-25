@@ -139,3 +139,4 @@ routeTree.gen.ts
 .tanstack
 temp/
 transcripts/
+.vercel

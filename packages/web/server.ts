@@ -3,9 +3,8 @@ import { websocket } from "hono/bun";
 import hono from "@/api/hono";
 import html from "@/src/index.html";
 import { logger } from "./api/lib/utils/pino";
-import { env } from "./lib/utils/env";
 
-const isDev = env.NODE_ENV === "development";
+const isDev = process.env.NODE_ENV === "development";
 
 serve({
 	development: isDev

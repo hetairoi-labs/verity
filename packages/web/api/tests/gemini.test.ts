@@ -1,5 +1,4 @@
 import { afterAll, describe, expect, test } from "bun:test";
-import path from "node:path";
 import { FileState } from "@google/genai";
 import { z } from "zod";
 import { safe } from "@/lib/utils/safe";
@@ -33,7 +32,7 @@ describe("uploadPDFToGemini", () => {
 
 	test("should fail for non-existent file", async () => {
 		const fileName = "non-existent.pdf";
-		const filePath = path.join(process.cwd(), "/api/temp", fileName);
+		const filePath = `${process.cwd()}/api/temp/${fileName}`;
 		expect(
 			uploadFileToGemini(filePath, "application/pdf", fileName),
 		).rejects.toThrow();
@@ -41,7 +40,7 @@ describe("uploadPDFToGemini", () => {
 	test("should upload a local PDF file to Gemini", async () => {
 		if (!isIntegrationEnv()) return;
 		const fileName = "test.pdf";
-		const filePath = path.join(process.cwd(), "/api/temp", fileName);
+		const filePath = `${process.cwd()}/api/temp/${fileName}`;
 		const uploadedFile = await uploadFileToGemini(
 			filePath,
 			"application/pdf",

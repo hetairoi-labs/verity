@@ -2,33 +2,38 @@ import { z } from "zod";
 
 // env schema
 const envSchema = z.object({
-	// client & server
+	// core
 	PUBLIC_APP_URL: z.url(),
 	PUBLIC_LIVE_APP_URL: z.url(),
-	PUBLIC_GA_ID: z.string().optional(),
 	PUBLIC_PRIVY_APP_ID: z.string().min(1, "PRIVY_APP_ID is required"),
 	PUBLIC_RELEASE: z.string().optional(),
-	PUBLIC_SENTRY_DSN: z.url().optional(),
-
-	// server only
 	PORT: z.coerce.number().int().positive("PORT must be a positive integer"),
+	DATABASE_URL: z.string().min(1, "DATABASE_URL is required"),
+
+	// Privy
 	PRIVY_APP_SECRET: z.string().min(1, "PRIVY_APP_SECRET is required"),
 	PRIVY_JWT_VERIFICATION_KEY: z
 		.string()
 		.min(1, "PRIVY_JWT_VERIFICATION_KEY is required"),
-	DATABASE_URL: z.string().min(1, "DATABASE_URL is required"),
-	GOOGLE_CLIENT_ID: z.string().min(1, "GOOGLE_CLIENT_ID is required"),
-	GOOGLE_CLIENT_SECRET: z.string().min(1, "GOOGLE_CLIENT_SECRET is required"),
-	GEMINI_API_KEY: z.string().min(1, "GEMINI_API_KEY is required"),
+
+	// Recall
 	RECALL_API_URL: z.url(),
 	RECALL_API_KEY: z.string().min(1, "RECALL_API_KEY is required"),
 	RECALL_WEBHOOK_SECRET: z.string().startsWith("whsec_"),
 
-	CEREBRAS_API_KEY: z.string().min(1, "CEREBRAS_API_KEY is required"),
+	// Google
+	GOOGLE_CLIENT_ID: z.string().min(1, "GOOGLE_CLIENT_ID is required"),
+	GOOGLE_CLIENT_SECRET: z.string().min(1, "GOOGLE_CLIENT_SECRET is required"),
+	GEMINI_API_KEY: z.string().min(1, "GEMINI_API_KEY is required"),
+	PUBLIC_GA_ID: z.string().optional(),
 
-	NODE_ENV: z
-		.enum(["development", "production", "test"])
-		.default("development"),
+	// Sentry
+	PUBLIC_SENTRY_DSN: z.url().optional(),
+	SENTRY_AUTH_TOKEN: z.string().optional(),
+	SENTRY_PROJECT: z.string().optional(),
+
+	// Cerebras
+	CEREBRAS_API_KEY: z.string().min(1, "CEREBRAS_API_KEY is required"),
 });
 type EnvSchema = z.infer<typeof envSchema>;
 
