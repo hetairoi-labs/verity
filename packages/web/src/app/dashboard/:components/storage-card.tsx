@@ -22,17 +22,14 @@ export default function StorageCard() {
 					<div className="flex size-14 items-center justify-center rounded-full bg-secondary">
 						<CloudArrowUpIcon size={28} className="text-foreground" />
 					</div>
-					<CardTitle className="text-lg font-bold">{storage.label}</CardTitle>
+					<CardTitle className="text-lg">{storage.label}</CardTitle>
 					<CardDescription>{storage.description}</CardDescription>
 				</div>
 				<div className="flex items-center justify-between text-sm mt-8">
 					<span className="font-medium text-foreground">{storage.used} Gb</span>
 					<span className="text-muted-foreground">{storage.total} Gb</span>
 				</div>
-				<Progress
-					value={percentage}
-					className="h-1.5 bg-secondary *:data-[slot=progress-indicator]:bg-primary"
-				/>
+				<Progress value={percentage} />
 			</CardContent>
 		</Card>
 	);

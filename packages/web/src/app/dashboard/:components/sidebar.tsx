@@ -58,7 +58,9 @@ export default function Sidebar() {
 						/>
 					</div>
 					<div className="mt-8 text-center">
-						<p className="text-sm font-bold text-foreground">Upgrade to PRO</p>
+						<p className="text-sm font-medium text-foreground">
+							Upgrade to PRO
+						</p>
 						<p className="mt-1 text-xs text-foreground/80">
 							to get access to all features!
 						</p>

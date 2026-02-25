@@ -1,4 +1,4 @@
-import { UploadSimpleIcon } from "@phosphor-icons/react";
+import { GitBranchIcon, UploadSimpleIcon } from "@phosphor-icons/react";
 import { Button } from "@/src/components/ui/button";
 import {
 	Card,
@@ -12,9 +12,7 @@ export default function CompleteProfile() {
 	return (
 		<Card className="flex flex-col h-full">
 			<CardHeader>
-				<CardTitle className="text-lg font-bold">
-					Complete your profile
-				</CardTitle>
+				<CardTitle className="text-lg">Complete your profile</CardTitle>
 				<CardDescription>
 					Stay on the pulse of distributed projects with an anline whiteboard to
 					plan, coordinate and discuss
@@ -26,13 +24,14 @@ export default function CompleteProfile() {
 					<div className="flex size-12 items-center justify-center rounded-full bg-secondary">
 						<UploadSimpleIcon size={24} className="text-foreground" />
 					</div>
-					<h4 className="text-sm font-bold text-foreground">Upload Files</h4>
+					<h4 className="text-sm font-medium text-foreground">Upload Files</h4>
 					<p className="text-xs text-muted-foreground">
 						PNG, JPG and GIF files are allowed
 					</p>
 				</div>
 
-				<Button className="w-fit bg-primary text-primary-foreground hover:bg-primary/90">
+				<Button className="w-fit">
+					<GitBranchIcon size={16} />
 					Publish now
 				</Button>
 			</CardContent>

@@ -1,13 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router";
-import AllProjects from "./:c/all-projects";
-import CompleteProfile from "./:c/complete-profile";
-import Footer from "./:c/footer";
-import GeneralInfo from "./:c/general-info";
-import Header from "./:c/header";
-import Notifications from "./:c/notifications";
-import ProfileBanner from "./:c/profile-banner";
-import Sidebar from "./:c/sidebar";
-import StorageCard from "./:c/storage-card";
+import AllProjects from "./:components/all-projects";
+import CompleteProfile from "./:components/complete-profile";
+import Footer from "./:components/footer";
+import GeneralInfo from "./:components/general-info";
+import Header from "./:components/header";
+import Notifications from "./:components/notifications";
+import ProfileBanner from "./:components/profile-banner";
+import Sidebar from "./:components/sidebar";
+import StorageCard from "./:components/storage-card";
 
 export const Route = createFileRoute("/dashboard/")({
 	component: DashboardPage,

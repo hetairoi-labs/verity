@@ -1,4 +1,5 @@
 import { PencilSimpleIcon } from "@phosphor-icons/react";
+import { Button } from "@/src/components/ui/button";
 import {
 	Card,
 	CardContent,
@@ -12,7 +13,7 @@ export default function AllProjects() {
 	return (
 		<Card className="h-full">
 			<CardHeader>
-				<CardTitle className="text-lg font-bold">All Projects</CardTitle>
+				<CardTitle className="text-lg">All Projects</CardTitle>
 				<CardDescription>
 					Here you can find more details about your projects. Keep you user
 					engaged by providing meaningful information.
@@ -28,7 +29,7 @@ export default function AllProjects() {
 						<div className="size-12 shrink-0 rounded-lg bg-muted" />
 
 						<div className="flex-1 min-w-0">
-							<p className="text-sm font-bold text-foreground truncate">
+							<p className="text-sm font-medium text-foreground truncate">
 								{project.title}
 							</p>
 							<p className="text-xs text-muted-foreground">
@@ -39,12 +40,9 @@ export default function AllProjects() {
 							</p>
 						</div>
 
-						<button
-							type="button"
-							className="flex size-8 shrink-0 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground"
-						>
+						<Button variant="ghost" size="icon" className="shrink-0">
 							<PencilSimpleIcon size={16} />
-						</button>
+						</Button>
 					</div>
 				))}
 			</CardContent>

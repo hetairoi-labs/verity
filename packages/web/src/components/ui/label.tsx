@@ -1,14 +1,12 @@
-import { Label as LabelPrimitive } from "radix-ui";
-import type * as React from "react";
+import type { ComponentProps } from "react";
+import { cn } from "@/src/lib/utils/index";
 
-import { cn } from "@/src/lib/utils";
+interface LabelProps extends ComponentProps<"label"> {}
 
-function Label({
-	className,
-	...props
-}: React.ComponentProps<typeof LabelPrimitive.Root>) {
+function Label({ className, ...props }: LabelProps) {
 	return (
-		<LabelPrimitive.Root
+		// biome-ignore lint: This component forwards htmlFor prop for proper label-input association
+		<label
 			data-slot="label"
 			className={cn(
 				"gap-2 text-sm leading-none font-medium group-data-[disabled=true]:opacity-50 peer-disabled:opacity-50 flex items-center select-none group-data-[disabled=true]:pointer-events-none peer-disabled:cursor-not-allowed",

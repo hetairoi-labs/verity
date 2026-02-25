@@ -5,6 +5,7 @@ import {
 	MoonIcon,
 } from "@phosphor-icons/react";
 import { Avatar, AvatarFallback } from "@/src/components/ui/avatar";
+import { Button } from "@/src/components/ui/button";
 import { Input } from "@/src/components/ui/input";
 
 export default function Header() {
@@ -12,7 +13,7 @@ export default function Header() {
 		<header className="flex items-center justify-between pb-6">
 			<div>
 				<p className="text-xs text-muted-foreground">Pages / Profile</p>
-				<h1 className="text-2xl font-bold text-foreground lg:text-2xl">
+				<h1 className="text-2xl font-medium text-foreground">
 					Profile
 				</h1>
 			</div>
@@ -29,24 +30,15 @@ export default function Header() {
 					/>
 				</div>
 
-				<button
-					type="button"
-					className="flex size-8 items-center justify-center rounded-full text-muted-foreground transition-colors hover:text-foreground"
-				>
+				<Button variant="ghost" size="icon">
 					<BellIcon size={18} />
-				</button>
-				<button
-					type="button"
-					className="flex size-8 items-center justify-center rounded-full text-muted-foreground transition-colors hover:text-foreground"
-				>
+				</Button>
+				<Button variant="ghost" size="icon">
 					<MoonIcon size={18} />
-				</button>
-				<button
-					type="button"
-					className="flex size-8 items-center justify-center rounded-full text-muted-foreground transition-colors hover:text-foreground"
-				>
+				</Button>
+				<Button variant="ghost" size="icon">
 					<InfoIcon size={18} />
-				</button>
+				</Button>
 
 				<Avatar className="size-9">
 					<AvatarFallback className="bg-secondary text-sm">AP</AvatarFallback>

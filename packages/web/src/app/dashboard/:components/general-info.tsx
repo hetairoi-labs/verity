@@ -10,7 +10,7 @@ export default function GeneralInfo() {
 	return (
 		<Card className="h-full">
 			<CardHeader>
-				<CardTitle className="text-lg font-bold">General Information</CardTitle>
+				<CardTitle className="text-lg">General Information</CardTitle>
 			</CardHeader>
 
 			<CardContent className="space-y-5">

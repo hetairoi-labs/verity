@@ -5,7 +5,7 @@ export default function Footer() {
 		<footer className="flex items-center justify-between py-6 text-sm text-muted-foreground">
 			<p>
 				© 2022 Horizon UI. All Rights Reserved. Made with love by{" "}
-				<span className="font-bold text-foreground">Simmmple!</span>
+				<span className="font-medium text-foreground">ishtails</span>
 			</p>
 
 			<div className="flex items-center gap-6">

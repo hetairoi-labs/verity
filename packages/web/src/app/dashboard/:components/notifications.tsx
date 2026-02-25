@@ -1,4 +1,5 @@
 import { DotsThreeIcon } from "@phosphor-icons/react";
+import { Button } from "@/src/components/ui/button";
 import {
 	Card,
 	CardAction,
@@ -13,14 +14,11 @@ export default function Notifications() {
 	return (
 		<Card className="h-full">
 			<CardHeader>
-				<CardTitle className="text-lg font-bold">Notifications</CardTitle>
+				<CardTitle className="text-lg">Notifications</CardTitle>
 				<CardAction>
-					<button
-						type="button"
-						className="text-muted-foreground hover:text-foreground transition-colors"
-					>
+					<Button variant="ghost" size="icon">
 						<DotsThreeIcon size={20} weight="bold" />
-					</button>
+					</Button>
 				</CardAction>
 			</CardHeader>
 
