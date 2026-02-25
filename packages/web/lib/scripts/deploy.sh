@@ -2,11 +2,11 @@
 clear;
 
 echo "🔍 Installing project dependencies..."
-bun install
+bun i
 echo
 
 echo "🔍 Linting and formatting code..."
-bun run check
+bun check
 echo
 
 echo "🔍 Building project..."
@@ -14,7 +14,7 @@ bun run build
 echo
 
 echo "⚡ Spinning up production server..."
-bun run start
+bun prod
 echo
 
 echo "✅ Deployment completed successfully!"

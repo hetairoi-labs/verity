@@ -11,6 +11,5 @@ const { result, duration } = await bundle();
 summary(result.outputs, duration);
 
 if (result.success) {
-	console.log("\n\nUploading sourcemaps to Sentry...");
 	await uploadSourcemaps(outdir);
 }

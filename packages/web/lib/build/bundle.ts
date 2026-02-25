@@ -1,14 +1,12 @@
 import { cp, rm } from "node:fs/promises";
 import tailwindPlugin from "bun-plugin-tailwind";
+import { safeAsync } from "../utils/safe";
 
 const outdir = `${process.cwd()}/dist`;
 const entrypoints = [`${process.cwd()}/src/index.html`];
 
 export async function bundle() {
-	if (await Bun.file(outdir).exists()) {
-		console.log(`Cleaning up previous build...`);
-		await rm(outdir, { recursive: true, force: true });
-	}
+	await safeAsync(rm(outdir, { recursive: true, force: true }));
 
 	const start = performance.now();
 	const result = await Bun.build({
@@ -23,12 +21,19 @@ export async function bundle() {
 		},
 		plugins: [tailwindPlugin],
 		splitting: true,
+		naming: {
+			chunk: "chunks/[name]-[hash].[ext]",
+			asset: "assets/[name]-[hash].[ext]",
+		},
+		drop: ["console", "debugger"],
 	});
 
-	const publicDir = `${process.cwd()}/public`;
-	if (await Bun.file(publicDir).exists()) {
-		await cp(publicDir, outdir, { recursive: true });
+	if (result.logs.length > 0) {
+		for (const msg of result.logs) console.warn(msg);
 	}
+
+	const publicDir = `${process.cwd()}/public`;
+	await safeAsync(cp(publicDir, outdir, { recursive: true }));
 
 	return { result, duration: performance.now() - start };
 }
