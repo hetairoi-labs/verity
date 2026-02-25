@@ -13,9 +13,7 @@ export default function Header() {
 		<header className="flex items-center justify-between pb-6">
 			<div>
 				<p className="text-xs text-muted-foreground">Pages / Profile</p>
-				<h1 className="text-2xl font-medium text-foreground">
-					Profile
-				</h1>
+				<h1 className="text-2xl font-medium text-foreground">Profile</h1>
 			</div>
 
 			<div className="flex items-center gap-2 rounded-full bg-card px-4 py-2 ring-1 ring-border">

@@ -7,6 +7,8 @@ const envSchema = z.object({
 	PUBLIC_LIVE_APP_URL: z.url(),
 	PUBLIC_GA_ID: z.string().optional(),
 	PUBLIC_PRIVY_APP_ID: z.string().min(1, "PRIVY_APP_ID is required"),
+	PUBLIC_RELEASE: z.string().optional(),
+	PUBLIC_SENTRY_DSN: z.url().optional(),
 
 	// server only
 	PORT: z.coerce.number().int().positive("PORT must be a positive integer"),

@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Button } from "../components/ui/button";
 
 export const Route = createFileRoute("/")({
 	component: RouteComponent,
@@ -11,6 +12,15 @@ function RouteComponent() {
 			<p className="text-2xl text-muted-foreground font-light mt-2">
 				Verifiable Proof of Value for the expert economy.
 			</p>
+
+			<Button
+				onClick={() => {
+					throw new Error("Sentry Test Error");
+				}}
+				className="mt-4"
+			>
+				Sentry Test Error
+			</Button>
 		</div>
 	);
 }
