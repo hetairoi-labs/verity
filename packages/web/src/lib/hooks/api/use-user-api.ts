@@ -1,6 +1,6 @@
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { type InferRequestType, parseResponse } from "hono/client";
-import client from "../../utils/api-client";
+import client from "../../utils/hc";
 import { usePrivyToken } from "../web3/use-privy-token";
 
 // register new user

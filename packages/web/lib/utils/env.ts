@@ -1,16 +1,21 @@
 import { z } from "zod";
 
 // env schema
-const envSchema = z.object({
-	// core
+const clientEnvSchema = z.object({
 	PUBLIC_APP_URL: z.url(),
 	PUBLIC_LIVE_APP_URL: z.url(),
-	PUBLIC_RELEASE: z.string().optional(),
+	PUBLIC_RELEASE: z.string(),
+	PUBLIC_SENTRY_DSN: z.url(),
+	PUBLIC_PRIVY_APP_ID: z.string(),
+});
+
+const envSchema = z.object({
+	...clientEnvSchema.shape,
+	NODE_ENV: z.enum(["development", "production"]).default("development"),
 	PORT: z.coerce.number().int().positive("PORT must be a positive integer"),
 	DATABASE_URL: z.string().min(1, "DATABASE_URL is required"),
 
 	// Privy
-	PUBLIC_PRIVY_APP_ID: z.string().min(1, "PRIVY_APP_ID is required"),
 	PRIVY_APP_SECRET: z.string().min(1, "PRIVY_APP_SECRET is required"),
 	PRIVY_JWT_VERIFICATION_KEY: z
 		.string()
@@ -25,10 +30,8 @@ const envSchema = z.object({
 	GOOGLE_CLIENT_ID: z.string().min(1, "GOOGLE_CLIENT_ID is required"),
 	GOOGLE_CLIENT_SECRET: z.string().min(1, "GOOGLE_CLIENT_SECRET is required"),
 	GEMINI_API_KEY: z.string().min(1, "GEMINI_API_KEY is required"),
-	PUBLIC_GA_ID: z.string().optional(),
 
 	// Sentry
-	PUBLIC_SENTRY_DSN: z.url().optional(),
 	SENTRY_AUTH_TOKEN: z.string().optional(),
 	SENTRY_PROJECT: z.string().optional(),
 

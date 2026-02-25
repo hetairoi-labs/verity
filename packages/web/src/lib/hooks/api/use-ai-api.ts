@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { type InferRequestType, parseResponse } from "hono/client";
 import { receiveTypedStream } from "hono-typedstream/client";
-import client from "../../utils/api-client";
+import client from "../../utils/hc";
 import { usePrivyToken } from "../web3/use-privy-token";
 
 // get live token

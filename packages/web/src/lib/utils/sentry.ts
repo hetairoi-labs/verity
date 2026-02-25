@@ -1,12 +1,9 @@
 import * as Sentry from "@sentry/react";
 import type { AnyRouter } from "@tanstack/react-router";
 
-const DSN = process.env.PUBLIC_SENTRY_DSN;
-
 export function initSentry(router: AnyRouter) {
-	if (!DSN) return;
 	Sentry.init({
-		dsn: DSN,
+		dsn: process.env.PUBLIC_SENTRY_DSN,
 		release: process.env.PUBLIC_RELEASE,
 		sendDefaultPii: true,
 		environment: process.env.NODE_ENV || "development",

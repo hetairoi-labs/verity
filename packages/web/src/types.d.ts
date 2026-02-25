@@ -35,11 +35,6 @@ declare module "*.webm" {
 	export default src;
 }
 
-// Global type declarations
-interface Window {
-	gtag?: (...args: unknown[]) => void;
-}
-
 const _window: Window = window;
 
 declare class MediaStreamTrackProcessor {

@@ -1,4 +1,5 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import ThemeSwitch from "../components/custom/theme-switch";
 import { Button } from "../components/ui/button";
 
 export const Route = createFileRoute("/")({
@@ -13,14 +14,14 @@ function RouteComponent() {
 				Verifiable Proof of Value for the expert economy.
 			</p>
 
-			<Button
-				onClick={() => {
-					throw new Error("Sentry Test Error");
-				}}
-				className="mt-4"
-			>
-				Sentry Test Error
-			</Button>
+			<Link to="/dashboard" className="mt-4">
+				<Button>Dashboard</Button>
+			</Link>
+
+			<ThemeSwitch
+				variant={"secondary"}
+				className="absolute right-4 bottom-4"
+			/>
 		</div>
 	);
 }

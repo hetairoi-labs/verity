@@ -1,11 +1,8 @@
-import type { AnyRouter } from "@tanstack/react-router";
 import { toast } from "sonner";
-import { initSentry, rootOptions } from "@/src/lib/sentry";
 import { ErrorHandler } from "./handler";
 import { parseError } from "./parse";
 
-export function setupErrorListener(router: AnyRouter) {
-	initSentry(router);
+export function setupErrorListener() {
 	const handler = ErrorHandler.getInstance();
 
 	window.addEventListener("unhandledrejection", (e) => {
@@ -25,7 +22,3 @@ export function setupErrorListener(router: AnyRouter) {
 		toast.error(parsed.message);
 	});
 }
-
-export const errorRootOptions = {
-	...rootOptions,
-};

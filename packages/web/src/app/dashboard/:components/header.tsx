@@ -2,13 +2,18 @@ import {
 	BellIcon,
 	InfoIcon,
 	MagnifyingGlassIcon,
-	MoonIcon,
+	MoonStarsIcon,
+	SunIcon,
 } from "@phosphor-icons/react";
 import { Avatar, AvatarFallback } from "@/src/components/ui/avatar";
 import { Button } from "@/src/components/ui/button";
 import { Input } from "@/src/components/ui/input";
+import { useTheme } from "@/src/lib/context/theme-provider";
+import ThemeSwitch from "@/src/components/custom/theme-switch";
 
 export default function Header() {
+	const { theme, setTheme } = useTheme();
+
 	return (
 		<header className="flex items-center justify-between pb-6">
 			<div>
@@ -31,9 +36,7 @@ export default function Header() {
 				<Button variant="ghost" size="icon">
 					<BellIcon size={18} />
 				</Button>
-				<Button variant="ghost" size="icon">
-					<MoonIcon size={18} />
-				</Button>
+				<ThemeSwitch />
 				<Button variant="ghost" size="icon">
 					<InfoIcon size={18} />
 				</Button>

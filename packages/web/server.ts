@@ -10,7 +10,7 @@ serve({
 	development: isDev
 		? {
 				hmr: true,
-				console: false,
+				console: true,
 			}
 		: false,
 	port: process.env.PORT,

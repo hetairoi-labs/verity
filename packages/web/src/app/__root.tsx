@@ -1,11 +1,9 @@
-import { useAnalytics } from "@hooks/use-analytics";
 import { SpinnerBallIcon } from "@phosphor-icons/react";
 import { createRootRoute, Outlet } from "@tanstack/react-router";
 import { RootErrorComponent } from "@/src/components/custom/error";
 import NotFoundPage from "@/src/components/custom/not-found";
 
 function RootLayout() {
-	useAnalytics();
 	return (
 		<div className="bg-background">
 			<div className="@container/main">

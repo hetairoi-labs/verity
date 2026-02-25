@@ -1,5 +1,3 @@
-import { captureException } from "@sentry/react";
-
 export class ErrorHandler {
 	private static instance: ErrorHandler;
 	private callbacks: Array<(error: Error) => void> = [];
@@ -19,7 +17,6 @@ export class ErrorHandler {
 		const normalizedError =
 			error instanceof Error ? error : new Error(String(error));
 
-		captureException(normalizedError);
 		this.callbacks.forEach((callback) => {
 			try {
 				callback(normalizedError);
