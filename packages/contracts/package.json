@@ -1,5 +1,5 @@
 {
-	"name": "@verity/contracts",
-	"version": "1.0.0",
-	"type": "module"
+    "name": "contracts",
+    "version": "1.0.0",
+    "type": "module"
 }
