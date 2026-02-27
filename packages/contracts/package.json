@@ -1,5 +1,11 @@
 {
     "name": "contracts",
     "version": "1.0.0",
-    "type": "module"
+    "type": "module",
+    "scripts": {
+        "tests": "bun test",
+        "compile": "hardhat compile",
+        "migrate": "bunx --bun hardhat run scripts/deploy.ts",
+        "mock-server": "bun run test/mock/mock-server.ts"
+    }
 }
