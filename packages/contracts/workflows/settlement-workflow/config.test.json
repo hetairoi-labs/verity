@@ -1,0 +1,24 @@
+{
+  "model": "gemini-2.5-flash",
+  "triggers": [
+    {
+      "on": "log",
+      "contract": {
+        "address": "0x523e9920ecef9D5d3fa5c58488685E8b5DdA76EC",
+        "event": "EvaluationRequested"
+      }
+    }
+  ],
+  "evms": [
+    {
+      "chainSelectorName": "ethereum-testnet-sepolia",
+      "gasLimit": "1000000",
+      "sessionRegistryAddress": "0xdB86BDe34a6aF53De234c413D2053dfB49dD2C85"
+    },
+    {
+      "chainSelectorName": "ethereum-testnet-sepolia-optimism-1",
+      "gasLimit": "1000000",
+      "sessionRegistryAddress": "0x523e9920ecef9D5d3fa5c58488685E8b5DdA76EC"
+    }
+  ]
+}
