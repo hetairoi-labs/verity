@@ -1,4 +1,10 @@
 {
     "$schema": "https://biomejs.dev/schemas/2.3.11/schema.json",
-    "root": false
+    "root": false,
+    "files": {
+        "includes": [
+            "**/*.ts",
+            "!workflows/*/tmp.js"
+        ]
+    }
 }
