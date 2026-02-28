@@ -8,3 +8,10 @@
 /bundle
 
 # Hardhat Build Artifacts
+/artifacts
+
+# Hardhat compilation (v2) support directory
+/cache
+
+# Typechain output
+/types
