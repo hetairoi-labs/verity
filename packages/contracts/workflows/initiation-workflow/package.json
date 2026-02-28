@@ -1,0 +1,19 @@
+{
+    "name": "typescript-simple-template",
+    "version": "1.0.0",
+    "main": "dist/main.js",
+    "private": true,
+    "scripts": {
+        "postinstall": "bunx cre-setup"
+    },
+    "license": "UNLICENSED",
+    "dependencies": {
+        "@verity/workflows-shared": "workspace:*",
+        "@chainlink/cre-sdk": "^1.1.1",
+        "viem": "^2.38.3",
+        "zod": "^4.1.12"
+    },
+    "devDependencies": {
+        "@types/bun": "1.2.21"
+    }
+}
