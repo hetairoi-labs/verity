@@ -7,5 +7,10 @@
         "compile": "hardhat compile",
         "migrate": "bunx --bun hardhat run scripts/deploy.ts",
         "mock-server": "bun run test/mock/mock-server.ts"
-    }
+    },
+    "workspaces": [
+        "workflows/shared",
+        "workflows/initiation-workflow",
+        "workflows/settlement-workflow"
+    ]
 }
