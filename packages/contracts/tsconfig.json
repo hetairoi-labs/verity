@@ -1,8 +1,9 @@
+/* Based on https://github.com/tsconfig/bases/blob/501da2bcd640cf95c95805783e1012b992338f28/bases/node22.json */
 {
-	"extends": "../../tsconfig.base.json",
-	"compilerOptions": {
-		"lib": ["ESNext"],
-		"types": ["node"]
-	},
-	"include": ["**/*.ts"]
+       "extends": "../../tsconfig.base.json",
+       "compilerOptions": {
+               "lib": ["ESNext"],
+               "types": ["node"]
+       },
+       "include": ["**/*.ts"]
 }
