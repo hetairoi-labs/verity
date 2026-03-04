@@ -70,7 +70,6 @@ export const zSessionDetails = () =>
 		topic: z.string(),
 		goals: z.array(z.object({ name: z.string(), weight: z.number() })),
 		metadata: z.string(),
-		meetingUrl: z.string(),
 		transcriptId: z.string(),
 	});
 
