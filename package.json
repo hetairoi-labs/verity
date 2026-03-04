@@ -10,11 +10,8 @@
     "purge": "./scripts/purge.sh",
     "contracts:compile": "bun run --filter @verity/contracts build",
     "contracts:test": "bun run --filter @verity/contracts test",
-    "web:dev": "bun run --filter @verity/web dev",
-    "web:test": "bun run --filter @verity/web test",
-    "web:start": "bun run --filter @verity/web start",
-    "web:build": "bun run --filter @verity/web build",
-    "web:deploy": "bun run --filter @verity/web deploy",
+    "dev": "bun run --filter @verity/web dev",
+    "test": "bun run --filter @verity/web test",
     "prepare": "husky"
   },
   "devDependencies": {
