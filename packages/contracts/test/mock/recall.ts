@@ -187,12 +187,11 @@ app.get("/transcript", (c) => {
 	return c.json(mockTranscriptData);
 });
 
-export default app;
-
-if (import.meta.main) {
-	console.log("Starting mock Recall server on http://localhost:3001");
-	Bun.serve({
-		port: 3001,
-		fetch: app.fetch,
+app.post("/bot", (ctx) => {
+	return ctx.json({
+		id: "falana",
+		recordings: [],
 	});
-}
+});
+
+export default app;
