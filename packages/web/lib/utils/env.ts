@@ -11,7 +11,9 @@ const clientEnvSchema = z.object({
 
 const envSchema = z.object({
 	...clientEnvSchema.shape,
-	NODE_ENV: z.enum(["development", "production"]).default("development"),
+	NODE_ENV: z
+		.enum(["development", "production", "test"])
+		.default("development"),
 	PORT: z.coerce.number().int().positive("PORT must be a positive integer"),
 	DATABASE_URL: z.string().min(1, "DATABASE_URL is required"),
 
