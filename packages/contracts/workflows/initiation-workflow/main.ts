@@ -9,23 +9,22 @@ import {
 import { createRecallBot } from "@verity/workflows-shared/recall";
 import { readFromStore, writeToStore } from "@verity/workflows-shared/store";
 import { zConfig, zHex } from "@verity/workflows-shared/zod";
-import { decodeEventLog, keccak256, parseAbi, toHex } from "viem";
-import z from "zod";
+import { decodeEventLog, keccak256, stringToBytes, toHex } from "viem";
+import type z from "zod";
+import { definitions } from "../../definitions.gen";
 import { getPartialDataCidByIndex, initiateSession } from "./src/evm";
 
 type Config = z.infer<ReturnType<typeof zConfig>>;
 
-const eventAbi = parseAbi([
-	"event SessionRegistrationRequested(address indexed teacher, address indexed learner, uint256 amount, string meetingLink, uint256 partialDataCIDIndex)",
-]);
+const eventAbi = definitions.test.KXManager.abi;
 const eventSignature =
 	"SessionRegistrationRequested(address,address,uint256,string,uint256)";
-const eventHash = keccak256(toHex(eventSignature));
+const eventHash = keccak256(stringToBytes(eventSignature));
 
 const onLogTrigger = (runtime: Runtime<Config>, log: EVMLog): string => {
 	try {
-		const topics = z
-			.tuple([zHex(), zHex()])
+		const topics = zHex()
+			.array()
 			.parse(log.topics.map((t) => bytesToHex(t)));
 		const data = bytesToHex(log.data);
 		const decodedLog = decodeEventLog({ abi: eventAbi, data, topics });
@@ -105,7 +104,7 @@ const initWorkflow = (config: Config) => {
 	return [
 		cre.handler(
 			evmClient.logTrigger({
-				addresses: [config.evms[0].sessionRegistryAddress],
+				addresses: [config.evms[0].managerAddress],
 				topics: [{ values: [eventHash] }],
 				confidence: "CONFIDENCE_LEVEL_FINALIZED",
 			}),
