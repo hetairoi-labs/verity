@@ -23,8 +23,12 @@ contract KXManager is ReceiverTemplate {
         address indexed teacher,
         address indexed learner,
         uint256 amount,
-        string partialDataCID
+        string meetingLink,
+        uint256 partialDataCIDIndex
     );
+    event SessionDataCIDAdded(uint256 index, string dataCID);
+
+    string[] public sessionDataCIDs;
 
     constructor(
         address usdc_,
@@ -51,11 +55,18 @@ contract KXManager is ReceiverTemplate {
         );
     }
 
+    function addSessionDataCID(string memory dataCID_) external {
+        require(msg.sender == _server, "Only server can add data CID");
+        sessionDataCIDs.push(dataCID_);
+        emit SessionDataCIDAdded(sessionDataCIDs.length - 1, dataCID_);
+    }
+
     function requestSessionRegistration(
         address teacher_,
         address learner_,
         uint256 amount_,
-        string memory partialDataCID_
+        string calldata meetingLink_,
+        uint256 partialDataCIDIndex_
     ) external {
         if (amount_ == 0) revert AmountZero();
         if (msg.sender != learner_) revert NotLearner();
@@ -66,7 +77,8 @@ contract KXManager is ReceiverTemplate {
             teacher_,
             learner_,
             amount_,
-            partialDataCID_
+            meetingLink_,
+            partialDataCIDIndex_
         );
     }
 }
