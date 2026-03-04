@@ -5,9 +5,9 @@ import {
 	hexToBase64,
 	type Runtime,
 } from "@chainlink/cre-sdk";
+import type { zConfig, zSessionDetails } from "@verity/workflows-shared/zod";
 import { encodeAbiParameters, parseAbiParameters } from "viem";
 import type z from "zod";
-import type { zConfig, zSessionDetails } from "../../../zod";
 
 type SessionDetails = z.infer<ReturnType<typeof zSessionDetails>>;
 
