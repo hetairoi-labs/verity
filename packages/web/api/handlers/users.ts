@@ -59,7 +59,6 @@ export async function createUser(userId: string, params: CreateUserInput) {
 			})
 			.returning(),
 	);
-	if (!user) throw new ApiError(409, "User already exists");
 	return user;
 }
 
