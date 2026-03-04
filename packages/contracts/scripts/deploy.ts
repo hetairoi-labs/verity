@@ -1,7 +1,7 @@
-import env from "../env";
+import { fileURLToPath } from "node:url";
 import { network } from "hardhat";
 import { isHex } from "viem";
-import { fileURLToPath } from "node:url";
+import env from "../env";
 
 export async function deploy(_network: string) {
 	const { viem, networkName } = await network.connect({
