@@ -1,12 +1,23 @@
 import {
 	bytesToHex,
 	cre,
+	encodeCallMsg,
 	getNetwork,
 	hexToBase64,
+	LAST_FINALIZED_BLOCK_NUMBER,
 	type Runtime,
 } from "@chainlink/cre-sdk";
 import type { zConfig } from "@verity/workflows-shared/zod";
-import { type Address, encodeAbiParameters, parseAbiParameters } from "viem";
+import {
+	type Address,
+	decodeFunctionResult,
+	encodeAbiParameters,
+	encodeFunctionData,
+	getAddress,
+	parseAbi,
+	parseAbiParameters,
+	zeroAddress,
+} from "viem";
 import type z from "zod";
 
 export function initiateSession(
@@ -62,6 +73,55 @@ export function initiateSession(
 	runtime.log(`Write report transaction succeeded: ${txHash}`);
 
 	return txHash;
+}
+
+const Abi = parseAbi([
+	"function sessionDataCIDs(uint256 index) view returns (string)",
+]);
+
+export function getPartialDataCidByIndex(
+	runtime: Runtime<z.infer<ReturnType<typeof zConfig>>>,
+	args: {
+		dataCidIndex: bigint;
+	},
+): string {
+	const evmCfg = runtime.config.evms[0];
+
+	const network = getNetwork({
+		chainFamily: "evm",
+		chainSelectorName: evmCfg.chainSelectorName,
+		isTestnet: true,
+	});
+	if (!network)
+		throw new Error(`Unknown chain name: ${evmCfg.chainSelectorName}`);
+
+	const evmClient = new cre.capabilities.EVMClient(
+		network.chainSelector.selector,
+	);
+	const callData = encodeFunctionData({
+		abi: Abi,
+		functionName: "sessionDataCIDs",
+		args: [BigInt(args.dataCidIndex)],
+	});
+
+	const contractCall = evmClient
+		.callContract(runtime, {
+			call: encodeCallMsg({
+				from: zeroAddress,
+				to: getAddress(evmCfg.managerAddress),
+				data: callData,
+			}),
+			blockNumber: LAST_FINALIZED_BLOCK_NUMBER,
+		})
+		.result();
+
+	const onchainValue = decodeFunctionResult({
+		abi: Abi,
+		functionName: "sessionDataCIDs",
+		data: bytesToHex(contractCall.data),
+	});
+
+	return onchainValue;
 }
 
 const encodeCreationRequest = (
