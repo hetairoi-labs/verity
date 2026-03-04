@@ -1,18 +1,18 @@
 import {
 	BellIcon,
-	InfoIcon,
 	MagnifyingGlassIcon,
-	MoonStarsIcon,
-	SunIcon,
+	SignOutIcon,
 } from "@phosphor-icons/react";
+import { useNavigate } from "@tanstack/react-router";
 import ThemeSwitch from "@/src/components/custom/theme-switch";
 import { Avatar, AvatarFallback } from "@/src/components/ui/avatar";
 import { Button } from "@/src/components/ui/button";
 import { Input } from "@/src/components/ui/input";
-import { useTheme } from "@/src/lib/context/theme-provider";
+import { useAuth } from "@/src/lib/context/auth-context";
 
 export default function Header() {
-	const { theme, setTheme } = useTheme();
+	const { logout } = useAuth();
+	const navigate = useNavigate();
 
 	return (
 		<header className="flex items-center justify-between pb-6">
@@ -37,8 +37,12 @@ export default function Header() {
 					<BellIcon size={18} />
 				</Button>
 				<ThemeSwitch />
-				<Button variant="ghost" size="icon">
-					<InfoIcon size={18} />
+				<Button
+					variant="ghost"
+					size="icon"
+					onClick={() => logout().then(() => navigate({ to: "/" }))}
+				>
+					<SignOutIcon size={18} />
 				</Button>
 
 				<Avatar className="size-9">

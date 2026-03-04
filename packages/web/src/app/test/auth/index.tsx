@@ -2,9 +2,9 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Loader } from "@/src/components/custom/loading";
 import { TestCard } from "@/src/components/custom/test-card";
 import { Button } from "@/src/components/ui/button";
+import { useAuth } from "@/src/lib/context/auth-context";
 import { useGetUserQuery } from "@/src/lib/hooks/api/use-user-api";
 import { useActiveWallet } from "@/src/lib/hooks/web3/use-active-wallet";
-import { useAuth } from "@/src/lib/hooks/web3/use-auth";
 
 export const Route = createFileRoute("/test/auth/")({
 	component: AuthPage,
