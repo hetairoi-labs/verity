@@ -6,7 +6,7 @@ alwaysApply: false
 
 ## Flow
 
-1. **Handler** `handlers/{domain}.ts` → 2. **Route** `routes/{domain}.route.ts` → 3. **Router** add to router.ts → 4. **Hook** `hooks/api/use-{domain}-api.ts` → 5. **Barrel** add to index.ts.
+1. **Handler** `handlers/{domain}.ts` → 2. **Route** `routes/{domain}.route.ts` → 3. **Router** add to router.ts → 4. **Hook** `hooks/api/use-{domain}-api.ts`.
 
 Client path mirrors router: `/users` → `client.users`, `/sessions/meetings` → `client.sessions.meetings`.
 
@@ -39,4 +39,4 @@ Client path mirrors router: `/users` → `client.users`, `/sessions/meetings` �
 - One file per domain: `use-{domain}-api.ts`. Infer types: `InferRequestType<typeof client.path>`. POST: `["json"]`, GET: `["query"]`.
 - Auth routes: usePrivyToken(), guard `if (!token)`, pass `Authorization: Bearer ${token}`.
 - Export Response types: `Awaited<ReturnType<typeof useX>>["data"]`.
-- Barrel: `export * from "./use-{domain}-api"`. See use-user-api.ts, use-ai-api.ts.
+- Import hooks directly from `use-{domain}-api.ts` (no barrel; noBarrelFile).

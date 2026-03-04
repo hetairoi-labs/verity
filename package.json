@@ -1,26 +1,30 @@
 {
-	"name": "verity",
-	"type": "module",
-	"private": true,
-	"workspaces": [
-		"packages/*"
-	],
-	"scripts": {
-		"check": "bunx biome check --write .",
-		"fmt-lint": "bunx biome check --write .",
-		"purge": "./scripts/purge.sh",
-		"contracts:compile": "bun run --filter @verity/contracts build",
-		"contracts:test": "bun run --filter @verity/contracts test",
-		"web:dev": "bun run --filter @verity/web dev",
-		"web:test": "bun run --filter @verity/web test",
-		"web:start": "bun run --filter @verity/web start",
-		"web:build": "bun run --filter @verity/web build",
-		"web:deploy": "bun run --filter @verity/web deploy"
-	},
-	"devDependencies": {
-		"@types/node": "^25",
-		"@biomejs/biome": "2.3.13",
-		"@types/bun": "latest",
-		"typescript": "^5"
-	}
+  "name": "verity",
+  "type": "module",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "check": "ultracite check",
+    "fmt-lint": "bunx biome check --write .",
+    "purge": "./scripts/purge.sh",
+    "contracts:compile": "bun run --filter @verity/contracts build",
+    "contracts:test": "bun run --filter @verity/contracts test",
+    "web:dev": "bun run --filter @verity/web dev",
+    "web:test": "bun run --filter @verity/web test",
+    "web:start": "bun run --filter @verity/web start",
+    "web:build": "bun run --filter @verity/web build",
+    "web:deploy": "bun run --filter @verity/web deploy",
+    "fix": "ultracite fix",
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.4.0",
+    "@types/bun": "latest",
+    "@types/node": "^25",
+    "husky": "^9.1.7",
+    "typescript": "^5",
+    "ultracite": "7.2.4"
+  }
 }
