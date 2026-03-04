@@ -4,8 +4,6 @@ import { z } from "zod";
 const clientEnvSchema = z.object({
 	PUBLIC_APP_URL: z.url(),
 	PUBLIC_LIVE_APP_URL: z.url(),
-	PUBLIC_RELEASE: z.string(),
-	PUBLIC_SENTRY_DSN: z.url(),
 	PUBLIC_PRIVY_APP_ID: z.string(),
 });
 
@@ -32,10 +30,6 @@ const envSchema = z.object({
 	GOOGLE_CLIENT_ID: z.string().min(1, "GOOGLE_CLIENT_ID is required"),
 	GOOGLE_CLIENT_SECRET: z.string().min(1, "GOOGLE_CLIENT_SECRET is required"),
 	GEMINI_API_KEY: z.string().min(1, "GEMINI_API_KEY is required"),
-
-	// Sentry
-	SENTRY_AUTH_TOKEN: z.string().optional(),
-	SENTRY_PROJECT: z.string().optional(),
 
 	// Misc
 	CEREBRAS_API_KEY: z.string().min(1, "CEREBRAS_API_KEY is required"),
