@@ -6,8 +6,7 @@
     "packages/*"
   ],
   "scripts": {
-    "check": "ultracite check",
-    "fmt-lint": "bunx biome check --write .",
+    "check": "ultracite fix",
     "purge": "./scripts/purge.sh",
     "contracts:compile": "bun run --filter @verity/contracts build",
     "contracts:test": "bun run --filter @verity/contracts test",
@@ -16,7 +15,6 @@
     "web:start": "bun run --filter @verity/web start",
     "web:build": "bun run --filter @verity/web build",
     "web:deploy": "bun run --filter @verity/web deploy",
-    "fix": "ultracite fix",
     "prepare": "husky"
   },
   "devDependencies": {
