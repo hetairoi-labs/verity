@@ -15,7 +15,7 @@
 #     secrets-path: "../secrets.yaml"       # Path to secrets file (project root by default)
 
 # ==========================================================================
-local:
+test:
   user-workflow:
     workflow-name: "verity-settlement-workflow"
   workflow-artifacts:
