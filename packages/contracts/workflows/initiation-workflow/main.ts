@@ -11,15 +11,15 @@ import { readFromStore, writeToStore } from "@verity/workflows-shared/store";
 import { zConfig, zHex } from "@verity/workflows-shared/zod";
 import { decodeEventLog, keccak256, parseAbi, toHex } from "viem";
 import z from "zod";
-import { initiateSession } from "./src/evm";
+import { getPartialDataCidByIndex, initiateSession } from "./src/evm";
 
 type Config = z.infer<ReturnType<typeof zConfig>>;
 
 const eventAbi = parseAbi([
-	"event SessionRegistrationRequested(address indexed teacher, address indexed learner, uint256 amount, string partialDataCID)",
+	"event SessionRegistrationRequested(address indexed teacher, address indexed learner, uint256 amount, string meetingLink, uint256 partialDataCIDIndex)",
 ]);
 const eventSignature =
-	"SessionRegistrationRequested(address,address,uint256,string)";
+	"SessionRegistrationRequested(address,address,uint256,string,uint256)";
 const eventHash = keccak256(toHex(eventSignature));
 
 const onLogTrigger = (runtime: Runtime<Config>, log: EVMLog): string => {
@@ -36,11 +36,16 @@ const onLogTrigger = (runtime: Runtime<Config>, log: EVMLog): string => {
 		if (decodedLog.eventName !== "SessionRegistrationRequested")
 			throw new Error("Unexpected event");
 
-		const { teacher, learner, amount, partialDataCID } = decodedLog.args;
+		const { teacher, learner, amount, meetingLink, partialDataCIDIndex } =
+			decodedLog.args;
 
 		runtime.log(
-			`Session registration request detected for teacher: ${teacher}, learner: ${learner}, amount: ${amount}, partialDataCID: ${partialDataCID}`,
+			`Session registration request detected for teacher: ${teacher}, learner: ${learner}, amount: ${amount}, partialDataCIDIndex: ${partialDataCIDIndex}`,
 		);
+
+		const partialDataCID = getPartialDataCidByIndex(runtime, {
+			dataCidIndex: partialDataCIDIndex,
+		});
 
 		const unpublishedSession = readFromStore(
 			runtime,
@@ -48,10 +53,7 @@ const onLogTrigger = (runtime: Runtime<Config>, log: EVMLog): string => {
 			partialDataCID,
 		);
 
-		const { transcriptId } = createRecallBot(
-			runtime,
-			unpublishedSession.meetingUrl,
-		);
+		const { transcriptId } = createRecallBot(runtime, meetingLink);
 
 		const session = writeToStore(runtime, "sessionData", transcriptId, {
 			...unpublishedSession,
