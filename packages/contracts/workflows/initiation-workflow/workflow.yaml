@@ -20,5 +20,5 @@ test:
     workflow-name: "verity-settlement-workflow"
   workflow-artifacts:
     workflow-path: "./main.ts"
-    config-path: "./config.local.json"
+    config-path: "./config.test.json"
     secrets-path: "../secrets.yaml"
