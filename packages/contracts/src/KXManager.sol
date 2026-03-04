@@ -11,6 +11,7 @@ contract KXManager is ReceiverTemplate {
     address private _server;
 
     error AmountZero();
+    error NotLearner();
 
     event SessionRegistered(
         address indexed teacher,
@@ -57,6 +58,7 @@ contract KXManager is ReceiverTemplate {
         string memory partialDataCID_
     ) external {
         if (amount_ == 0) revert AmountZero();
+        if (msg.sender != learner_) revert NotLearner();
 
         usdc.transferFrom(msg.sender, address(sessionRegistry), amount_);
 
