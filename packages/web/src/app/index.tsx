@@ -10,6 +10,7 @@ export const Route = createFileRoute("/")({
 function RouteComponent() {
 	const { state, login } = useAuth();
 	const navigate = useNavigate();
+
 	return (
 		<div className="flex h-screen flex-col items-center justify-center p-8">
 			<h1 className="text-7xl uppercase lg:text-9xl">Verity</h1>

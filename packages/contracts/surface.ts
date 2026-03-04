@@ -7,7 +7,7 @@ export function getContracts(
 ) {
 	if (!definitions[networkName]) {
 		throw new Error(
-			`No contract definitions found for network: ${networkName}`,
+			`No contract definitions found for network: ${String(networkName)}`,
 		);
 	}
 
