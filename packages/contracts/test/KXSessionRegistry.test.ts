@@ -51,7 +51,36 @@ describe("KXSessionRegistry", async () => {
 		});
 	});
 
-	// Error tetst
+	it("should request session registration", async () => {
+		const amount = 100n;
+		const meetingLink = "https://meet.google.com/abc";
+		const partialDataCIDIndex = 0n;
+
+		// Add data CID first
+		await manager.write.addSessionDataCID(["test-data-cid"], {
+			account: deployer.account,
+		});
+
+		// Approve USDC for transfer
+		await usdc.write.approve([manager.address, amount], {
+			account: learner.account,
+		});
+
+		// Request session registration
+		const tx = await manager.write.requestSessionRegistration(
+			[
+				teacher.account.address,
+				learner.account.address,
+				amount,
+				meetingLink,
+				partialDataCIDIndex,
+			],
+			{ account: learner.account },
+		);
+		console.log("Request tx hash:", tx);
+	});
+
+	// Error tests
 	it("should revert on register with zero amount", async () => {
 		expect(
 			registry.write.registerSession(
