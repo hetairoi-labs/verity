@@ -8,10 +8,10 @@ const client = new Cerebras({
 });
 const MODEL = "gpt-oss-120b";
 
-export type CerebrasMessagesInputType = {
-	role: "user" | "assistant" | "system";
+export interface CerebrasMessagesInputType {
 	content: string;
-};
+	role: "user" | "assistant" | "system";
+}
 
 interface CompletionChunk {
 	choices: Array<{
@@ -25,9 +25,11 @@ export async function* streamTextCerebras(prompt: string) {
 		model: MODEL,
 		stream: true,
 	});
-	for await (const chunk of stream) {
+	for await (const chunk of stream as AsyncIterable<CompletionChunk>) {
 		const text = (chunk as CompletionChunk).choices[0]?.text || "";
-		if (text) yield text;
+		if (text) {
+			yield text;
+		}
 	}
 }
 
@@ -44,7 +46,7 @@ interface StreamChunk {
 
 export async function* streamChatCerebras(
 	message: string,
-	conversationHistory: CerebrasMessagesInputType[],
+	conversationHistory: CerebrasMessagesInputType[]
 ) {
 	const messages = [
 		...conversationHistory,
@@ -52,19 +54,21 @@ export async function* streamChatCerebras(
 	];
 
 	const stream = await client.chat.completions.create({
-		messages,
+		messages: messages as never,
 		model: MODEL,
 		stream: true,
 	});
-	for await (const chunk of stream) {
+	for await (const chunk of stream as AsyncIterable<StreamChunk>) {
 		const content = (chunk as StreamChunk).choices[0]?.delta?.content || "";
-		if (content) yield content;
+		if (content) {
+			yield content;
+		}
 	}
 }
 
 export async function structuredCerebras<T extends z.ZodType>(
 	prompt: string,
-	schema: T,
+	schema: T
 ) {
 	const jsonSchema = z.toJSONSchema(schema);
 

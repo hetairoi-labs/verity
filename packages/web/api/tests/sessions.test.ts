@@ -23,23 +23,31 @@ describe("createMeeting Integration", () => {
 	const createdBots: string[] = [];
 
 	beforeEach(async () => {
-		if (!RUN_INTEGRATION) return;
+		if (!RUN_INTEGRATION) {
+			return;
+		}
 
-		userId = (
-			await createUser(`user-int-${Date.now()}`, {
-				name: "Integration Test User",
-			})
-		).id;
+		const created = await createUser(`user-int-${Date.now()}`, {
+			name: "Integration Test User",
+		});
+		if (!created) {
+			throw new Error("createUser failed");
+		}
+		userId = created.id;
 	});
 
 	afterEach(async () => {
-		if (!RUN_INTEGRATION) return;
+		if (!RUN_INTEGRATION) {
+			return;
+		}
 		await db.delete(meetings);
 		await db.delete(sessions);
 	});
 
 	afterAll(async () => {
-		if (!RUN_INTEGRATION) return;
+		if (!RUN_INTEGRATION) {
+			return;
+		}
 		for (const botId of createdBots) {
 			await removeBotFromCall(botId);
 		}
@@ -50,7 +58,9 @@ describe("createMeeting Integration", () => {
 	test(
 		"create a new meeting",
 		async () => {
-			if (!isIntegrationEnv()) return;
+			if (!isIntegrationEnv()) {
+				return;
+			}
 
 			const session = await createSession(
 				{
@@ -58,12 +68,12 @@ describe("createMeeting Integration", () => {
 					description: "Test",
 					price: 0,
 				},
-				userId,
+				userId
 			);
 			const input = {
 				sessionId: session.id,
 				summary: "Integration Test Meeting 5599",
-				startDate: new Date(Date.now() + 120000),
+				startDate: new Date(Date.now() + 120_000),
 				duration: 0.1,
 			};
 			const result = await createMeeting(input, userId);
@@ -75,8 +85,9 @@ describe("createMeeting Integration", () => {
 			expect(botId).toBeDefined();
 			expect(meetingUrl).toBeDefined();
 
-			if (!meeting || !botId || !meetingUrl)
+			if (!(meeting && botId && meetingUrl)) {
 				throw new ApiError(500, "expected meeting, bot, and event");
+			}
 
 			createdBots.push(botId);
 
@@ -96,6 +107,6 @@ describe("createMeeting Integration", () => {
 			expect(dbMeetings).toHaveLength(1);
 			expect(dbMeetings[0]?.id).toBe(meeting.id);
 		},
-		{ timeout: 30000, retry: 2 },
+		{ timeout: 30_000, retry: 2 }
 	);
 });
