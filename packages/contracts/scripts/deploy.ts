@@ -23,7 +23,18 @@ export async function deploy(_network: string) {
 		{ id: 11155111, creName: "ethereum-testnet-sepolia" },
 		{ id: 11155420, creName: "ethereum-testnet-sepolia-optimism-1" },
 	];
-	const WORKFLOW_NAMES = ["settlement-workflow"];
+	const WORKFLOW_NAMES = [
+		{
+			folder: "settlement-workflow",
+			contractKey: "sessionRegistryAddress",
+			contract: "KXSessionRegistry",
+		},
+		{
+			folder: "initiation-workflow",
+			contractKey: "managerAddress",
+			contract: "KXManager",
+		},
+	] as const;
 
 	if (
 		![...SUPPORTED_MAINNETS, ...SUPPORTED_TESTNETS]
@@ -93,16 +104,14 @@ export async function deploy(_network: string) {
 		),
 	);
 
-	for (const workflowName of WORKFLOW_NAMES) {
+	for (const w of WORKFLOW_NAMES) {
 		const isTestnet = SUPPORTED_TESTNETS.map((c) => c.id).includes(chainId);
 		const configFileName = isTestnet ? "config.test.json" : "config.main.json";
-		const creConfigFile = Bun.file(
-			`./workflows/${workflowName}/${configFileName}`,
-		);
+		const creConfigFile = Bun.file(`./workflows/${w.folder}/${configFileName}`);
 		const creConfigTextRaw = await creConfigFile.text();
 		const creConfig = JSON.parse(creConfigTextRaw);
 
-		creConfig.triggers[0].contract.address = sessionRegistry.address;
+		creConfig.triggers[0].contract.address = deployment[w.contract].address;
 
 		const currentChain = [...SUPPORTED_MAINNETS, ...SUPPORTED_TESTNETS].find(
 			(c) => c.id === chainId,
@@ -115,7 +124,7 @@ export async function deploy(_network: string) {
 			);
 
 			if (evmEntry) {
-				evmEntry.sessionRegistryAddress = sessionRegistry.address;
+				evmEntry.sessionRegistryAddress = deployment[w.contract].address;
 			} else {
 				if (!creConfig.evms) {
 					creConfig.evms = [];
@@ -123,7 +132,7 @@ export async function deploy(_network: string) {
 				creConfig.evms.push({
 					chainSelectorName: currentChain.creName,
 					gasLimit: "1000000",
-					sessionRegistryAddress: sessionRegistry.address,
+					[w.contractKey]: deployment[w.contract].address,
 				});
 			}
 		}
