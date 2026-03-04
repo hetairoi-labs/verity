@@ -4,7 +4,7 @@
     {
       "on": "log",
       "contract": {
-        "address": "0x9817FfBC999A9a35f539a381E399376EF06ed600",
+        "address": "0x607e29fdBBD417739e72b69e23fd24815aba8880",
         "event": "EvaluationRequested"
       }
     }
@@ -13,7 +13,7 @@
     {
       "chainSelectorName": "ethereum-testnet-sepolia",
       "gasLimit": "1000000",
-      "sessionRegistryAddress": "0xdB86BDe34a6aF53De234c413D2053dfB49dD2C85"
+      "sessionRegistryAddress": "0x607e29fdBBD417739e72b69e23fd24815aba8880"
     },
     {
       "chainSelectorName": "ethereum-testnet-sepolia-optimism-1",
