@@ -7,26 +7,36 @@ import hre from "hardhat";
 
 const network = await hre.network.connect("test");
 const [wallet1, wallet2] = await network.viem.getWalletClients();
-let contracts: ReturnType<typeof getContracts>;
+
+const definitions = await deploy("test");
+const deployedContractDefinitions = z
+	.object({
+		USDC: z.object({
+			address: zEvmAddress(),
+		}),
+		KXManager: z.object({
+			address: zEvmAddress(),
+		}),
+		KXSessionRegistry: z.object({
+			address: zEvmAddress(),
+		}),
+	})
+	.safeParse(definitions);
+const contracts = getContracts("test", wallet1);
 
 describe("E2E Test", () => {
 	it("Contracts deploy", async () => {
-		const definitions = await deploy("test");
-		const result = z
-			.object({
-				USDC: z.object({
-					address: zEvmAddress(),
-				}),
-				KXManager: z.object({
-					address: zEvmAddress(),
-				}),
-				KXSessionRegistry: z.object({
-					address: zEvmAddress(),
-				}),
-			})
-			.safeParse(definitions);
-		expect(result.success).toBe(true);
+		expect(deployedContractDefinitions.success).toBe(true);
+		expect(contracts.USDC).toBeDefined();
+		expect(contracts.Manager).toBeDefined();
+		expect(contracts.SessionRegistry).toBeDefined();
+	});
 
-		contracts = getContracts("test", wallet1);
+	describe("Initiation Workflow", () => {
+		it("can request a session", async () => {
+			const tx = await contracts.Manager.write.requestSessionRegistration([]);
+			const receipt = await tx.wait();
+			expect(receipt.status).toBe(1);
+		});
 	});
 });
