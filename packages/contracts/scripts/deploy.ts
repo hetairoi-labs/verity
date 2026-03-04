@@ -1,12 +1,11 @@
+import env from "../env";
 import { network } from "hardhat";
 import { isHex } from "viem";
-import env from "../env";
+import { fileURLToPath } from "node:url";
 
 export async function deploy(_network: string) {
-	var argv = require("minimist")(process.argv.slice(2));
-
 	const { viem, networkName } = await network.connect({
-		network: _network ?? argv.network ?? "hardhat",
+		network: _network ?? "hardhat",
 	});
 	const file = Bun.file("./definitions.gen.ts");
 
@@ -135,4 +134,15 @@ export async function deploy(_network: string) {
 	return deployment;
 }
 
-deploy();
+const isMain = process.argv[1] === fileURLToPath(import.meta.url);
+
+if (isMain) {
+	const argv = require("minimist")(process.argv.slice(2));
+
+	if (!argv.network) {
+		console.error("Please specify a network using --network");
+		process.exit(1);
+	}
+
+	deploy(argv.network);
+}
