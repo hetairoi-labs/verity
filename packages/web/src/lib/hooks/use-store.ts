@@ -5,8 +5,8 @@ import type { Schema } from "@/api/lib/db/schema";
 type User = Schema["users"];
 
 interface UserStore {
-	user?: User;
 	setUser: (user: User | undefined) => void;
+	user?: User;
 }
 
 export const useUserStore = create<UserStore>()(
@@ -15,6 +15,6 @@ export const useUserStore = create<UserStore>()(
 			user: undefined,
 			setUser: (user: User | undefined) => set({ user }),
 		}),
-		{ name: "user" },
-	),
+		{ name: "user" }
+	)
 );

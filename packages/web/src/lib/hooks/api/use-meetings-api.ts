@@ -13,12 +13,14 @@ export function useCreateMeetingMutation() {
 
 	return useMutation({
 		mutationFn: async (json: CreateMeetingInput) => {
-			if (!token) throw new Error("No auth token");
+			if (!token) {
+				throw new Error("No auth token");
+			}
 			const result = await parseResponse(
 				client.sessions.meetings.$post(
 					{ json },
-					{ headers: { Authorization: `Bearer ${token}` } },
-				),
+					{ headers: { Authorization: `Bearer ${token}` } }
+				)
 			);
 			return result.data;
 		},
@@ -42,8 +44,8 @@ export function useGetSessionMeetingsQuery(params?: GetSessionMeetingsInput) {
 			const result = await parseResponse(
 				client.sessions.meetings.all.$get(
 					{ query: params || {} },
-					{ headers: { Authorization: `Bearer ${token}` } },
-				),
+					{ headers: { Authorization: `Bearer ${token}` } }
+				)
 			);
 			return result.data;
 		},
@@ -65,8 +67,8 @@ export function useGetMeetingByIdQuery(params: GetMeetingByIdInput) {
 			const result = await parseResponse(
 				client.sessions.meetings.meeting.$get(
 					{ query: params },
-					{ headers: { Authorization: `Bearer ${token}` } },
-				),
+					{ headers: { Authorization: `Bearer ${token}` } }
+				)
 			);
 			return result.data;
 		},
@@ -85,12 +87,14 @@ export function useDeleteMeetingMutation() {
 
 	return useMutation({
 		mutationFn: async (json: DeleteMeetingInput) => {
-			if (!token) throw new Error("No auth token");
+			if (!token) {
+				throw new Error("No auth token");
+			}
 			const result = await parseResponse(
 				client.sessions.meetings.$delete(
 					{ json },
-					{ headers: { Authorization: `Bearer ${token}` } },
-				),
+					{ headers: { Authorization: `Bearer ${token}` } }
+				)
 			);
 			return result.data;
 		},

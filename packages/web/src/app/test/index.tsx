@@ -3,8 +3,8 @@ import { Button } from "../../components/ui/button";
 
 function RouteComponent() {
 	return (
-		<div className="flex flex-col items-center justify-center h-screen p-8">
-			<h1 className="text-7xl lg:text-9xl uppercase">Tests</h1>
+		<div className="flex h-screen flex-col items-center justify-center p-8">
+			<h1 className="text-7xl uppercase lg:text-9xl">Tests</h1>
 
 			<div className="mt-10 flex gap-4">
 				<Link to="/test">

@@ -25,11 +25,11 @@ export function verifyRecallWebhook(args: {
 	const msgSignature =
 		getHeader("webhook-signature") ?? getHeader("svix-signature");
 
-	if (!secret || !secret.startsWith("whsec_")) {
+	if (!secret?.startsWith("whsec_")) {
 		throw new ApiError(401, "Recall webhook secret is missing or invalid");
 	}
 
-	if (!msgId || !msgTimestamp || !msgSignature) {
+	if (!(msgId && msgTimestamp && msgSignature)) {
 		throw new ApiError(401, "Missing webhook headers", {
 			msgId,
 			msgTimestamp,
@@ -50,7 +50,9 @@ export function verifyRecallWebhook(args: {
 	const passedSigs = msgSignature.split(" ");
 	for (const versionedSig of passedSigs) {
 		const [version, signature] = versionedSig.split(",");
-		if (version !== "v1" || !signature) continue;
+		if (version !== "v1" || !signature) {
+			continue;
+		}
 
 		const sigBytes = Buffer.from(signature, "base64");
 		const expectedBytes = Buffer.from(expectedSigBase64, "base64");

@@ -8,23 +8,23 @@ import type {
 import type { BaseMime } from "hono/utils/mime";
 import type { JSONObject } from "hono/utils/types";
 
-export type ErrorResponse<T extends JSONObject = JSONObject> = {
-	message: string;
+export interface ErrorResponse<T extends JSONObject = JSONObject> {
 	error?: T;
-};
-
-export type SuccessResponse<T extends JSONObject = JSONObject> = {
 	message: string;
+}
+
+export interface SuccessResponse<T extends JSONObject = JSONObject> {
 	data?: T;
-};
+	message: string;
+}
 
 export const respond = {
 	ok: <C extends Context, T extends JSONObject, U extends SuccessStatusCode>(
 		ctx: C,
-		status: U = 200 as U,
+		status: U,
 		message: string,
 		data?: T,
-		headers?: HeaderRecord,
+		headers?: HeaderRecord
 	) => {
 		ctx.status(status);
 		for (const [name, value] of Object.entries(headers || {})) {
@@ -39,10 +39,10 @@ export const respond = {
 		T extends JSONObject,
 	>(
 		ctx: C,
-		status: U = 500 as U,
+		status: U,
 		message: string,
 		error?: T,
-		headers?: HeaderRecord,
+		headers?: HeaderRecord
 	) => {
 		ctx.status(status);
 		for (const [name, value] of Object.entries(headers || {})) {

@@ -23,7 +23,7 @@ const wsRouter = new Hono()
 					logger.info("websocket.time.closed");
 				},
 			};
-		}),
+		})
 	);
 
 export default wsRouter;

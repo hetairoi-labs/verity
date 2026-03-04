@@ -10,14 +10,14 @@ import { logger } from "../pino";
 import { type HeaderRecord, respond } from "./respond";
 
 export class ApiError<T extends JSONObject = JSONObject> extends HTTPException {
-	public readonly data?: T;
-	public readonly headers?: HeaderRecord;
+	readonly data?: T;
+	readonly headers?: HeaderRecord;
 
 	constructor(
-		status: ClientErrorStatusCode | ServerErrorStatusCode = 500,
+		status: ClientErrorStatusCode | ServerErrorStatusCode,
 		message: string,
 		data?: T,
-		headers?: HeaderRecord,
+		headers?: HeaderRecord
 	) {
 		super(status, { message, cause: data });
 		this.data = data;
@@ -51,7 +51,7 @@ export function handleError(err: Error | HTTPException, c: Context) {
 			message: err.message,
 			errorBody,
 		},
-		"http.error",
+		"http.error"
 	);
 
 	return respond.err(
@@ -59,6 +59,6 @@ export function handleError(err: Error | HTTPException, c: Context) {
 		status,
 		err.message,
 		errorBody as JSONObject | undefined,
-		headers,
+		headers
 	);
 }

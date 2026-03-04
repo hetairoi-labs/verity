@@ -3,13 +3,15 @@ import { ApiError } from "../../utils/hono/error";
 
 export async function safeQuery<T>(dbQuery: Promise<T>): Promise<T> {
 	const [data, error] = await safeAsync(dbQuery);
-	if (error) throw new ApiError(500, error.message);
+	if (error) {
+		throw new ApiError(500, error.message);
+	}
 	return data;
 }
 
 export function requireAtLeastOne<T extends Record<string, unknown>>(
 	values: T,
-	errorMessage = "At least one value must be provided",
+	errorMessage = "At least one value must be provided"
 ): void {
 	const hasAtLeastOne = Object.values(values).some((value) => value != null);
 	if (!hasAtLeastOne) {
@@ -19,7 +21,7 @@ export function requireAtLeastOne<T extends Record<string, unknown>>(
 
 export function requireOnlyOne<T extends Record<string, unknown>>(
 	values: T,
-	errorMessage = "Only one value must be provided",
+	errorMessage = "Only one value must be provided"
 ): void {
 	const hasOnlyOne =
 		Object.values(values).filter((value) => value != null).length === 1;

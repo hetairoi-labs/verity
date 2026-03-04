@@ -28,7 +28,7 @@ export const logger = createMiddleware(async (c, next) => {
 				// ...(jsonBody && !jsonError && { json: jsonBody }),
 				// ...(jsonError && { bodyError: jsonError.message }),
 			},
-			"http.request",
+			"http.request"
 		);
 	}
 });

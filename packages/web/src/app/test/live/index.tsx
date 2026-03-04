@@ -7,17 +7,17 @@ function LiveIndex() {
 	const live = useLive();
 
 	return (
-		<div className="flex flex-col items-center justify-center h-screen bg-background text-foreground p-10">
-			<div className="size-40 bg-primary rounded-full animate-pulse" />
-			<div className="mt-10 font-mono text-sm bg-card p-4 border border-border rounded w-full max-w-md">
-				<p className="text-muted-foreground mb-2 pb-1 flex items-center gap-2">
+		<div className="flex h-screen flex-col items-center justify-center bg-background p-10 text-foreground">
+			<div className="size-40 animate-pulse rounded-full bg-primary" />
+			<div className="mt-10 w-full max-w-md rounded border border-border bg-card p-4 font-mono text-sm">
+				<p className="mb-2 flex items-center gap-2 pb-1 text-muted-foreground">
 					KEX_LIVE <Badge variant="outline">{live.status.toUpperCase()}</Badge>
 				</p>
 				<Separator className="mb-4" />
 				{live.logs.map((log) => (
 					<div
+						className="font-mono text-primary"
 						key={`${log.timestamp.getTime()}-${log.message}`}
-						className="text-primary font-mono"
 					>
 						{log.message}
 					</div>

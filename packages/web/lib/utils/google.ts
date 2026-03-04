@@ -1,7 +1,7 @@
 import { google } from "googleapis";
 
 const TOKEN_PATH = `${process.cwd()}/lib/secrets/credentials.json`;
-const PORT = 30012;
+const PORT = 30_012;
 
 const SCOPES = [
 	"https://www.googleapis.com/auth/calendar.events",
@@ -13,13 +13,14 @@ const SCOPES = [
 const REDIRECT_URI = `http://localhost:${PORT}/oauth2callback`;
 
 function openBrowser(url: string) {
-	const cmd =
-		process.platform === "darwin"
-			? ["open", url]
-			: process.platform === "win32"
-				? ["cmd", "/c", "start", url]
-				: ["xdg-open", url];
-
+	let cmd: string[];
+	if (process.platform === "darwin") {
+		cmd = ["open", url];
+	} else if (process.platform === "win32") {
+		cmd = ["cmd", "/c", "start", url];
+	} else {
+		cmd = ["xdg-open", url];
+	}
 	Bun.spawn(cmd);
 }
 
@@ -27,7 +28,7 @@ export async function getAuthenticatedClient() {
 	const oauth = new google.auth.OAuth2(
 		process.env.GOOGLE_CLIENT_ID,
 		process.env.GOOGLE_CLIENT_SECRET,
-		REDIRECT_URI,
+		REDIRECT_URI
 	);
 
 	const file = Bun.file(TOKEN_PATH);
@@ -59,15 +60,18 @@ export async function getAuthenticatedClient() {
 		port: PORT,
 		fetch(req) {
 			const u = new URL(req.url);
-			if (u.pathname !== "/oauth2callback")
+			if (u.pathname !== "/oauth2callback") {
 				return new Response("Not found", { status: 404 });
+			}
 
 			code = u.searchParams.get("code");
 			return new Response("Login successful. You can close this tab.");
 		},
 	});
 
-	while (!code) await Bun.sleep(50);
+	while (!code) {
+		await Bun.sleep(50);
+	}
 
 	server.stop();
 

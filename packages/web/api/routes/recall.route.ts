@@ -23,10 +23,10 @@ const recallRoute = new Hono().post("/webhooks", async (c) => {
 	const payload = recallWebhookSchema.parse(JSON.parse(rawBody));
 	const { event } = payload;
 
-	void safeAsync(async () => {
+	safeAsync(async () => {
 		logger.info(
 			{ event: payload.event, data: payload.data },
-			"webhook.recall.received",
+			"webhook.recall.received"
 		);
 
 		if (event === "transcript.done") {
@@ -34,9 +34,15 @@ const recallRoute = new Hono().post("/webhooks", async (c) => {
 		} else if (event === "transcript.failed") {
 			await handleTranscriptFailed(payload);
 		}
-	}).then(([, error]) => {
-		if (error) logger.error(error, "webhook.processing.error");
-	});
+	})
+		.then(([, error]) => {
+			if (error) {
+				logger.error(error, "webhook.processing.error");
+			}
+		})
+		.catch(() => {
+			/* fire-and-forget: errors logged in .then */
+		});
 
 	return respond.ok(c, 200, "Webhook processed successfully");
 });

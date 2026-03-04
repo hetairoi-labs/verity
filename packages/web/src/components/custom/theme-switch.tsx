@@ -13,10 +13,10 @@ export default function ThemeSwitch({
 
 	return (
 		<Button
-			variant={variant}
-			size={size}
-			onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
 			className={className}
+			onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+			size={size}
+			variant={variant}
 			{...props}
 		>
 			<div className="rotate-0 transition-all dark:-rotate-90">

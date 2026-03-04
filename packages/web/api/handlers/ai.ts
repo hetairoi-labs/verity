@@ -5,7 +5,7 @@ export const fastTextInputSchema = z.object({
 	prompt: z.string().min(1, "Prompt is required"),
 });
 export type fastTextInput = z.infer<typeof fastTextInputSchema>;
-export async function fastText(params: fastTextInput) {
+export function fastText(params: fastTextInput) {
 	return streamTextCerebras(params.prompt);
 }
 
@@ -15,10 +15,10 @@ export const fastChatParamsSchema = z.object({
 		z.object({
 			role: z.enum(["user", "assistant"]),
 			content: z.string().min(1, "Content is required"),
-		}),
+		})
 	),
 });
 export type fastChatParams = z.infer<typeof fastChatParamsSchema>;
-export async function fastChat(params: fastChatParams) {
+export function fastChat(params: fastChatParams) {
 	return streamChatCerebras(params.message, params.conversationHistory);
 }

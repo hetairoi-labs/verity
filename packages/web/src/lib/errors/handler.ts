@@ -1,6 +1,6 @@
 export class ErrorHandler {
 	private static instance: ErrorHandler;
-	private callbacks: Array<(error: Error) => void> = [];
+	private readonly callbacks: Array<(error: Error) => void> = [];
 
 	static getInstance(): ErrorHandler {
 		if (!ErrorHandler.instance) {
@@ -17,13 +17,13 @@ export class ErrorHandler {
 		const normalizedError =
 			error instanceof Error ? error : new Error(String(error));
 
-		this.callbacks.forEach((callback) => {
+		for (const callback of this.callbacks) {
 			try {
 				callback(normalizedError);
 			} catch (e) {
 				console.error("Error in error callback:", e);
 			}
-		});
+		}
 
 		return normalizedError;
 	}

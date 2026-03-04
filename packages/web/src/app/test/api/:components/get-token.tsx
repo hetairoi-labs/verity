@@ -9,12 +9,13 @@ export function GetToken() {
 
 	return (
 		<TestCard
-			title="Get Token"
-			description="Fetch Gemini ephemeral token"
 			data={data}
+			description="Fetch Gemini ephemeral token"
+			title="Get Token"
 		>
 			<Button
 				className="w-full"
+				disabled={isFetching}
 				onClick={() => {
 					if (enabled) {
 						refetch();
@@ -22,7 +23,6 @@ export function GetToken() {
 						setEnabled(true);
 					}
 				}}
-				disabled={isFetching}
 			>
 				{isFetching ? "Fetching..." : "Fetch Token"}
 			</Button>

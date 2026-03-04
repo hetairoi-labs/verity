@@ -13,7 +13,9 @@ import { isIntegrationEnv } from "../lib/utils/tests";
 
 describe("getGeminiEphemeralToken", () => {
 	test("should generate a token", async () => {
-		if (!isIntegrationEnv()) return;
+		if (!isIntegrationEnv()) {
+			return;
+		}
 
 		const token = await getGeminiEphemeralToken();
 		expect(token.name).toBeDefined();
@@ -26,25 +28,29 @@ describe("uploadPDFToGemini", () => {
 	let hostedFileName: string | undefined;
 
 	afterAll(async () => {
-		if (!hostedFileName) return;
+		if (!hostedFileName) {
+			return;
+		}
 		await deleteFileFromGemini(hostedFileName);
 	});
 
-	test("should fail for non-existent file", async () => {
+	test("should fail for non-existent file", () => {
 		const fileName = "non-existent.pdf";
 		const filePath = `${process.cwd()}/api/temp/${fileName}`;
-		expect(
-			uploadFileToGemini(filePath, "application/pdf", fileName),
+		return expect(
+			uploadFileToGemini(filePath, "application/pdf", fileName)
 		).rejects.toThrow();
 	});
 	test("should upload a local PDF file to Gemini", async () => {
-		if (!isIntegrationEnv()) return;
+		if (!isIntegrationEnv()) {
+			return;
+		}
 		const fileName = "test.pdf";
 		const filePath = `${process.cwd()}/api/temp/${fileName}`;
 		const uploadedFile = await uploadFileToGemini(
 			filePath,
 			"application/pdf",
-			fileName,
+			fileName
 		);
 
 		hostedFileName = uploadedFile.name;
@@ -54,7 +60,9 @@ describe("uploadPDFToGemini", () => {
 		expect(uploadedFile.state).toBe(FileState.ACTIVE);
 	});
 	test("should accept hosted pdfs", async () => {
-		if (!isIntegrationEnv()) return;
+		if (!isIntegrationEnv()) {
+			return;
+		}
 		const url = "https://pdfobject.com/pdf/sample.pdf"; // 18KB
 		const uploadedFile = await uploadFileToGemini(url, "application/pdf");
 
@@ -70,7 +78,9 @@ describe("uploadPDFToGemini", () => {
 
 describe("streamTextGemini", () => {
 	test("test structured content streaming with enabled tools", async () => {
-		if (!isIntegrationEnv()) return;
+		if (!isIntegrationEnv()) {
+			return;
+		}
 		const structuredOutputSchema = z.object({
 			greeting: z.string(),
 			weather: z.string(),
@@ -99,8 +109,9 @@ describe("streamTextGemini", () => {
 		const chunks: { text: string | undefined; timestamp: number }[] = [];
 		const startTime = Date.now();
 
-		if (!stream)
+		if (!stream) {
 			throw new ApiError(500, "Response type should be stream by default");
+		}
 
 		for await (const chunk of stream) {
 			chunks.push({
@@ -115,7 +126,7 @@ describe("streamTextGemini", () => {
 		expect(fullContent).toContain("Hail Kartik!");
 
 		const [result, error] = safe(() =>
-			structuredOutputSchema.parse(JSON.parse(fullContent)),
+			structuredOutputSchema.parse(JSON.parse(fullContent))
 		);
 		console.log(result);
 		expect(error).toBeNull();

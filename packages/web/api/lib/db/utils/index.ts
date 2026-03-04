@@ -12,7 +12,7 @@ export const timestamps = {
 
 export const uniqueIndexSoft = <T extends { deletedAt: AnySQLiteColumn }>(
 	name: string,
-	table: T,
+	table: T
 ) => ({
 	on: (...columns: [AnySQLiteColumn, ...AnySQLiteColumn[]]) =>
 		uniqueIndex(name)

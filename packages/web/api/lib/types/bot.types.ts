@@ -1,4 +1,4 @@
-export type Recording = {
+export interface Recording {
 	id: string;
 	media_shortcuts: {
 		transcript: {
@@ -11,36 +11,36 @@ export type Recording = {
 			};
 		};
 	};
-};
+}
 
-export type Bot = {
+export interface Bot {
 	id: string;
 	recordings: Recording[];
-};
+}
 
-export type TranscriptArtifact = {
-	id: string;
-	recording: Record<string, unknown>;
+export interface TranscriptArtifact {
 	created_at: string;
-	status: {
-		code: "processing" | "done" | "failed" | "deleted";
-		sub_code: string | null;
-		updated_at: string;
-	};
-	metadata: Record<string, string>;
 	data: {
 		download_url: string | null;
 		provider_data_download_url: string | null;
 	};
 	diarization: { use_separate_streams_when_available: boolean } | null;
+	id: string;
+	metadata: Record<string, string>;
 	provider: Record<string, unknown>;
-};
+	recording: Record<string, unknown>;
+	status: {
+		code: "processing" | "done" | "failed" | "deleted";
+		sub_code: string | null;
+		updated_at: string;
+	};
+}
 
-export type TranscriptWord = {
-	text: string;
-	start_timestamp: { absolute: string; relative: number };
+export interface TranscriptWord {
 	end_timestamp: { absolute: string; relative: number };
-};
+	start_timestamp: { absolute: string; relative: number };
+	text: string;
+}
 
 export type Transcript = {
 	participant: {

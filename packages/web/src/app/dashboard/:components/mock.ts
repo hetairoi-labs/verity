@@ -8,12 +8,12 @@ import {
 	UserIcon,
 } from "@phosphor-icons/react";
 
-export type NavItem = {
-	label: string;
-	icon: Icon;
-	href: string;
+export interface NavItem {
 	active?: boolean;
-};
+	href: string;
+	icon: Icon;
+	label: string;
+}
 
 export const sidebarNav: NavItem[] = [
 	{ label: "Dashboard", icon: HouseIcon, href: "/dashboard", active: true },

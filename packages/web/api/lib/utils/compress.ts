@@ -26,12 +26,14 @@ export function compressTranscript(transcript: Transcript): string {
 		const speaker = participant?.name ?? "Unknown";
 		const rawText = entry.words.map((w) => w.text).join(" ");
 		const text = rawText.replace(/\s+/g, " ").trim();
-		if (!text) continue;
+		if (!text) {
+			continue;
+		}
 
 		const start = entry.words[0]?.start_timestamp?.relative;
 
 		if (lastSpeaker === speaker) {
-			const last = turns[turns.length - 1];
+			const last = turns.at(-1);
 			if (last) {
 				const ts = start != null ? ` [${Math.round(start)}s]` : "";
 				last.text += `${ts} ${text}`;

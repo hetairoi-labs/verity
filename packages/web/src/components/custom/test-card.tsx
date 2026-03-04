@@ -11,12 +11,12 @@ import {
 } from "@/src/components/ui/card";
 
 interface TestCardProps {
-	title: string;
-	description?: string;
 	children?: ReactNode;
-	data?: string | null;
 	className?: string;
+	data?: string | null;
+	description?: string;
 	error?: string | null;
+	title: string;
 }
 
 export function TestCard({
@@ -30,7 +30,9 @@ export function TestCard({
 	const [copied, setCopied] = useState(false);
 
 	const handleCopy = async () => {
-		if (!data) return;
+		if (!data) {
+			return;
+		}
 
 		try {
 			await navigator.clipboard.writeText(data);
@@ -42,34 +44,34 @@ export function TestCard({
 	};
 
 	return (
-		<Card className={`w-full shadow-none max-w-md mb-4 ${className || ""}`}>
+		<Card className={`mb-4 w-full max-w-md shadow-none ${className || ""}`}>
 			<CardHeader>
-				<CardTitle className="text-xl font-semibold">{title}</CardTitle>
+				<CardTitle className="font-semibold text-xl">{title}</CardTitle>
 				{description && <CardDescription>{description}</CardDescription>}
 			</CardHeader>
 			<CardContent className="space-y-4">
 				{children}
 				{data && (
 					<div className="mt-4">
-						<div className="flex items-center justify-between mb-2">
-							<h3 className="text-sm font-medium">Response:</h3>
+						<div className="mb-2 flex items-center justify-between">
+							<h3 className="font-medium text-sm">Response:</h3>
 							<Button
+								className="h-6 w-6"
 								onClick={handleCopy}
 								size="icon"
-								variant="ghost"
-								className="h-6 w-6"
 								title={copied ? "Copied!" : "Copy to clipboard"}
+								variant="ghost"
 							>
 								{copied ? <CheckIcon size={14} /> : <CopyIcon size={14} />}
 							</Button>
 						</div>
 
 						{error && error.length > 0 ? (
-							<pre className="text-xs bg-accent p-2 font-mono overflow-x-auto max-h-48">
+							<pre className="max-h-48 overflow-x-auto bg-accent p-2 font-mono text-xs">
 								{error}
 							</pre>
 						) : (
-							<pre className="text-xs bg-accent p-2 font-mono overflow-x-auto max-h-48">
+							<pre className="max-h-48 overflow-x-auto bg-accent p-2 font-mono text-xs">
 								{data}
 							</pre>
 						)}

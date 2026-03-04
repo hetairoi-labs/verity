@@ -2,8 +2,8 @@ import { SpinnerIcon } from "@phosphor-icons/react";
 
 export function Loader() {
 	return (
-		<div className="min-h-screen flex items-center justify-center">
-			<SpinnerIcon size={32} className="animate-spin" />
+		<div className="flex min-h-screen items-center justify-center">
+			<SpinnerIcon className="animate-spin" size={32} />
 		</div>
 	);
 }

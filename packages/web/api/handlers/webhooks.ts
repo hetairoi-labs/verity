@@ -22,35 +22,42 @@ export async function handleTranscriptDone(payload: TranscriptSchema) {
 			.where(
 				buildWhereActive([
 					{ table: meetings, filters: { botId: payload.data.bot.id } },
-				]),
+				])
 			)
-			.limit(1),
+			.limit(1)
 	);
-	if (!existingMeeting) throw new ApiError(404, "Meeting not found");
-	if (existingMeeting.transcriptStatus === "done") return;
+	if (!existingMeeting) {
+		throw new ApiError(404, "Meeting not found");
+	}
+	if (existingMeeting.transcriptStatus === "done") {
+		return;
+	}
 
 	const transcript = await retrieveTranscript(payload.data.transcript.id);
 	const transcriptUrl = transcript.data.download_url;
 
-	if (!transcriptUrl) throw new ApiError(502, "Transcript URL not found");
+	if (!transcriptUrl) {
+		throw new ApiError(502, "Transcript URL not found");
+	}
 	const downloadedTranscript = await downloadTranscript(transcriptUrl);
 	const processedTranscript = compressTranscript(downloadedTranscript);
 
 	const [_, error] = safe(() => {
 		saveTranscript(
 			`${payload.data.transcript.id}-raw`,
-			JSON.stringify(downloadedTranscript),
+			JSON.stringify(downloadedTranscript)
 		);
 		saveTranscript(
 			`${payload.data.transcript.id}-compressed`,
-			processedTranscript,
+			processedTranscript
 		);
 	});
-	if (error)
+	if (error) {
 		throw new ApiError(
 			500,
-			`Failed to save transcripts for transcript id: ${payload.data.transcript.id}: ${error.message}`,
+			`Failed to save transcripts for transcript id: ${payload.data.transcript.id}: ${error.message}`
 		);
+	}
 
 	const [meeting] = await safeQuery(
 		db
@@ -62,12 +69,14 @@ export async function handleTranscriptDone(payload: TranscriptSchema) {
 			.where(
 				buildWhereActive([
 					{ table: meetings, filters: { botId: payload.data.bot.id } },
-				]),
+				])
 			)
-			.returning(),
+			.returning()
 	);
 
-	if (!meeting) throw new ApiError(404, "Meeting not found");
+	if (!meeting) {
+		throw new ApiError(404, "Meeting not found");
+	}
 	return;
 }
 
@@ -79,11 +88,13 @@ export async function handleTranscriptFailed(payload: TranscriptSchema) {
 			.where(
 				buildWhereActive([
 					{ table: meetings, filters: { botId: payload.data.bot.id } },
-				]),
+				])
 			)
-			.returning(),
+			.returning()
 	);
 
-	if (!meeting) throw new ApiError(404, "Meeting not found");
+	if (!meeting) {
+		throw new ApiError(404, "Meeting not found");
+	}
 	return;
 }

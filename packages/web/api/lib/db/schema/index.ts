@@ -35,7 +35,7 @@ export const sessions = sqliteTable(
 			.notNull(),
 		...timestamps,
 	},
-	(table) => [index("sessions_host_id_idx").on(table.hostId)],
+	(table) => [index("sessions_host_id_idx").on(table.hostId)]
 );
 
 export const meetings = sqliteTable(
@@ -62,7 +62,7 @@ export const meetings = sqliteTable(
 		index("meetings_session_id_idx").on(table.sessionId),
 		index("meetings_bot_id_idx").on(table.botId),
 		uniqueIndexSoft("meetings_meeting_url_unique", table).on(table.meetingUrl),
-	],
+	]
 );
 
 export const participants = sqliteTable(
@@ -84,9 +84,9 @@ export const participants = sqliteTable(
 		index("session_participants_user_id_idx").on(table.userId),
 		uniqueIndexSoft("participants_session_user_unique", table).on(
 			table.sessionId,
-			table.userId,
+			table.userId
 		),
-	],
+	]
 );
 
 export const goals = sqliteTable(
@@ -110,9 +110,9 @@ export const goals = sqliteTable(
 		index("goals_session_id_idx").on(table.sessionId),
 		uniqueIndexSoft("goals_session_key_unique", table).on(
 			table.sessionId,
-			table.key,
+			table.key
 		),
-	],
+	]
 );
 
 export const schema = {
@@ -123,10 +123,10 @@ export const schema = {
 	participants,
 };
 
-export type Schema = {
-	users: InferSelectModel<typeof users>;
-	sessions: InferSelectModel<typeof sessions>;
-	meetings: InferSelectModel<typeof meetings>;
+export interface Schema {
 	goals: InferSelectModel<typeof goals>;
+	meetings: InferSelectModel<typeof meetings>;
 	participants: InferSelectModel<typeof participants>;
-};
+	sessions: InferSelectModel<typeof sessions>;
+	users: InferSelectModel<typeof users>;
+}

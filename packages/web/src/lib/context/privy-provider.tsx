@@ -8,7 +8,7 @@ export function PrivyProvider({ children }: { children: React.ReactNode }) {
 		<PrivyProviderBase
 			appId={process.env.PUBLIC_PRIVY_APP_ID}
 			config={{
-				defaultChain: defaultChain,
+				defaultChain,
 				supportedChains: privyChains,
 				loginMethods: ["wallet", "google"],
 				appearance: {

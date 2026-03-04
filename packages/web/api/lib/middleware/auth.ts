@@ -9,7 +9,7 @@ export const requireAuth = createMiddleware<{
 	};
 }>(async (c, next) => {
 	const authHeader = c.req.header("Authorization");
-	if (!authHeader || !authHeader.startsWith("Bearer ")) {
+	if (!authHeader?.startsWith("Bearer ")) {
 		throw new ApiError(401, "Unauthorized", {
 			reason: "Invalid authorization header",
 		});

@@ -1,9 +1,9 @@
 import { describe, expect, it } from "bun:test";
+import hre from "hardhat";
 import { z } from "zod";
 import { deploy } from "../scripts/deploy";
-import { zEvmAddress } from "../workflows/shared/src";
 import { getContracts } from "../surface";
-import hre from "hardhat";
+import { zEvmAddress } from "../workflows/shared/src";
 
 const network = await hre.network.connect("test");
 const [wallet1, wallet2] = await network.viem.getWalletClients();
@@ -35,9 +35,9 @@ describe("E2E Test", () => {
 	describe("Initiation Workflow", () => {
 		it("can request a session", async () => {
 			const tx = await contracts.Manager.write.requestSessionRegistration([
-                wallet1.account.address,
-                wallet2.account.address,
-            ]);
+				wallet1.account.address,
+				wallet2.account.address,
+			]);
 			const receipt = await tx.wait();
 			expect(receipt.status).toBe(1);
 		});

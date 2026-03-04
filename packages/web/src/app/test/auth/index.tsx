@@ -16,19 +16,19 @@ function AuthPage() {
 	const { isWalletOnDefaultChain, switchNetwork, defaultChain } =
 		useActiveWallet();
 
-	if (!state.ready) return <Loader />;
+	if (!state.ready) {
+		return <Loader />;
+	}
 	return (
-		<div className="flex flex-col items-center min-h-screen p-8">
+		<div className="flex min-h-screen flex-col items-center p-8">
 			<h1 className="mb-8 text-center">Auth</h1>
 			<TestCard
-				title="User Details"
-				description="Coming from API"
 				data={user ? JSON.stringify(user, null, 2) : "Not logged in"}
+				description="Coming from API"
+				title="User Details"
 			/>
 
 			<TestCard
-				title="Authentication"
-				description="Login / Logout"
 				children={
 					<div className="flex gap-2">
 						<Button
@@ -42,15 +42,15 @@ function AuthPage() {
 					</div>
 				}
 				data={state.user ? JSON.stringify(state.user, null, 2) : null}
+				description="Login / Logout"
+				title="Authentication"
 			/>
 
 			<TestCard
-				title="Switch Network"
-				description="Switch to default network"
 				children={
 					<Button
-						onClick={() => switchNetwork(defaultChain.id)}
 						disabled={isWalletOnDefaultChain}
+						onClick={() => switchNetwork(defaultChain.id)}
 					>
 						Switch Network
 					</Button>
@@ -60,6 +60,8 @@ function AuthPage() {
 						? "On default network"
 						: "Not on default network"
 				}
+				description="Switch to default network"
+				title="Switch Network"
 			/>
 		</div>
 	);

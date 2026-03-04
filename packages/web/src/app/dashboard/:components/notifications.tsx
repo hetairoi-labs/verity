@@ -16,7 +16,7 @@ export default function Notifications() {
 			<CardHeader>
 				<CardTitle className="text-lg">Notifications</CardTitle>
 				<CardAction>
-					<Button variant="ghost" size="icon">
+					<Button size="icon" variant="ghost">
 						<DotsThreeIcon size={20} weight="bold" />
 					</Button>
 				</CardAction>
@@ -25,11 +25,11 @@ export default function Notifications() {
 			<CardContent className="space-y-3">
 				{notificationItems.map((item) => (
 					<div
-						key={item.id}
 						className="flex items-center justify-between gap-3"
+						key={item.id}
 					>
 						<Switch defaultChecked={item.enabled} />
-						<span className="flex-1 text-sm text-foreground">{item.label}</span>
+						<span className="flex-1 text-foreground text-sm">{item.label}</span>
 					</div>
 				))}
 			</CardContent>

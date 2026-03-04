@@ -3,7 +3,7 @@ import { ApiError } from "./hono/error";
 import { logger } from "./pino";
 
 export class AxiosClient {
-	private axiosInstance;
+	private readonly axiosInstance;
 
 	constructor(baseUrl: string, defaultHeaders: Record<string, string> = {}) {
 		this.axiosInstance = axios.create({
@@ -21,11 +21,11 @@ export class AxiosClient {
 						`Axios Error: ${error.response.status} ${error.response.statusText}`,
 						{
 							error: error.response.data,
-						},
+						}
 					);
 				}
 				throw new ApiError(500, `Network error: ${error.message}`);
-			},
+			}
 		);
 	}
 

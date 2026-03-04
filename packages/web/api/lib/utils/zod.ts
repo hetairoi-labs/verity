@@ -5,20 +5,22 @@ import type { ZodType } from "zod";
 import { z } from "zod";
 import { safe } from "@/lib/utils/safe";
 
-export type ZodErrorDetails = {
-	summary: string;
+export interface ZodErrorDetails {
 	details: Record<string, string[] | undefined>;
-};
+	summary: string;
+}
 
 export const validator = <
 	T extends ZodType,
 	Target extends keyof ValidationTargets,
 >(
 	target: Target,
-	schema: T,
+	schema: T
 ) =>
 	honoZValidator(target, schema, (result) => {
-		if (!result.success) throw result.error;
+		if (!result.success) {
+			throw result.error;
+		}
 	});
 
 export const zJsonString = () =>

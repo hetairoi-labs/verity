@@ -18,8 +18,8 @@ export const Route = createRootRoute({
 	notFoundComponent: NotFoundPage,
 	errorComponent: RootErrorComponent,
 	pendingComponent: () => (
-		<div className="min-h-screen flex items-center justify-center">
-			<SpinnerBallIcon size={32} className="animate-spin" />
+		<div className="flex min-h-screen items-center justify-center">
+			<SpinnerBallIcon className="animate-spin" size={32} />
 		</div>
 	),
 });

@@ -17,8 +17,9 @@ const usersRoute = new Hono()
 	})
 	.post("/", validator("json", createUserInputSchema), async (c) => {
 		const user = await createUser(c.var.user.user_id, c.req.valid("json"));
-		if (!user)
+		if (!user) {
 			return respond.ok(c, 200, "User already exists", { exists: true });
+		}
 		return respond.ok(c, 201, "User created successfully", { user });
 	})
 	.delete("/", async (c) => {

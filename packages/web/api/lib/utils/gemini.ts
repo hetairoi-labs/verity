@@ -25,7 +25,7 @@ export async function getGeminiEphemeralToken() {
 	const token = await ai.authTokens.create({
 		config: {
 			uses: 1,
-			expireTime: expireTime,
+			expireTime,
 			liveConnectConstraints: {
 				model,
 				config: {
@@ -46,7 +46,7 @@ export async function getGeminiEphemeralToken() {
 export async function uploadFileToGemini(
 	filePath: string,
 	mimeType: string,
-	displayName?: string,
+	displayName?: string
 ) {
 	const url = z.url().safeParse(filePath);
 	const fileBuffer = url.success
@@ -65,7 +65,7 @@ export async function uploadFileToGemini(
 	if (!file.name) {
 		throw new ApiError(
 			502,
-			"Something went wrong while uploading the file to Gemini.",
+			"Something went wrong while uploading the file to Gemini."
 		);
 	}
 
@@ -100,18 +100,20 @@ export interface GenerateContentParams<T extends z.ZodType = z.ZodType> {
 			displayName?: string;
 		}[];
 	};
+	model?: (typeof availableModels)[number];
+	staticResponse?: boolean;
 	structuredOutput?: T;
 	systemInstruction?: string;
-	model?: (typeof availableModels)[number];
-	tools?: ToolListUnion;
 	thinkingLevel?: ThinkingLevel;
-	staticResponse?: boolean;
+	tools?: ToolListUnion;
 }
 export async function streamTextGemini<T extends z.ZodType = z.ZodType>(
-	params: GenerateContentParams<T>,
+	params: GenerateContentParams<T>
 ) {
 	const selectedModel = params.model ?? availableModels[0];
-	if (!selectedModel) throw new ApiError(500, "No model selected");
+	if (!selectedModel) {
+		throw new ApiError(500, "No model selected");
+	}
 
 	const contentInput: ContentListUnion = params.contents.text;
 	if (params.contents.files && params.contents.files.length > 0) {
@@ -119,7 +121,7 @@ export async function streamTextGemini<T extends z.ZodType = z.ZodType>(
 			const file = await uploadFileToGemini(
 				item.url,
 				item.mimeType,
-				item.displayName,
+				item.displayName
 			);
 			if (file.uri && file.mimeType) {
 				const fileContent = createPartFromUri(file.uri, file.mimeType);

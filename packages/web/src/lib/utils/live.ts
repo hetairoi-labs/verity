@@ -14,7 +14,7 @@ export const toBase64Pcm = (float32: Float32Array) => {
 	for (let i = 0; i < float32.length; i++) {
 		const sample = float32[i] ?? 0;
 		const s = Math.max(-1, Math.min(1, sample));
-		pcm16[i] = s < 0 ? s * 0x8000 : s * 0x7fff;
+		pcm16[i] = s < 0 ? s * 0x80_00 : s * 0x7f_ff;
 	}
 	return btoa(String.fromCharCode(...Array.from(new Uint8Array(pcm16.buffer))));
 };

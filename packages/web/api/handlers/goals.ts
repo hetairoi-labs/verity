@@ -32,14 +32,20 @@ export async function createGoal(userId: string, json: CreateGoalInput) {
 			})
 			.from(sessions)
 			.where(eq(sessions.id, input.sessionId))
-			.limit(1),
+			.limit(1)
 	);
-	if (!session) throw new ApiError(404, "Session not found");
-	if (session.hostId !== userId) throw new ApiError(403, "Unauthorized");
+	if (!session) {
+		throw new ApiError(404, "Session not found");
+	}
+	if (session.hostId !== userId) {
+		throw new ApiError(403, "Unauthorized");
+	}
 
 	// create goal
 	const [goal] = await safeQuery(db.insert(goals).values(input).returning());
-	if (!goal) throw new ApiError(500, "Failed to create goal");
+	if (!goal) {
+		throw new ApiError(500, "Failed to create goal");
+	}
 
 	return goal;
 }

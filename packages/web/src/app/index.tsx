@@ -11,9 +11,9 @@ function RouteComponent() {
 	const { state, login } = useAuth();
 	const navigate = useNavigate();
 	return (
-		<div className="flex flex-col items-center justify-center h-screen p-8">
-			<h1 className="text-7xl lg:text-9xl uppercase">Verity</h1>
-			<p className="text-2xl text-muted-foreground font-light mt-2">
+		<div className="flex h-screen flex-col items-center justify-center p-8">
+			<h1 className="text-7xl uppercase lg:text-9xl">Verity</h1>
+			<p className="mt-2 font-light text-2xl text-muted-foreground">
 				Verifiable Proof of Value for the expert economy.
 			</p>
 
@@ -27,8 +27,8 @@ function RouteComponent() {
 			</Button>
 
 			<ThemeSwitch
-				variant={"secondary"}
 				className="absolute right-4 bottom-4"
+				variant={"secondary"}
 			/>
 		</div>
 	);

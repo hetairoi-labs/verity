@@ -28,11 +28,13 @@ export function useFastTextStream() {
 	const token = usePrivyToken();
 
 	const streamText = async (input: FastTextInput) => {
-		if (!token) throw new Error("No auth token");
+		if (!token) {
+			throw new Error("No auth token");
+		}
 
 		const response = await client.ai.text.fast.$post(
 			{ json: input },
-			{ headers: { Authorization: `Bearer ${token}` } },
+			{ headers: { Authorization: `Bearer ${token}` } }
 		);
 
 		return receiveTypedStream(response);
@@ -49,11 +51,13 @@ export function useFastChatStream() {
 	const token = usePrivyToken();
 
 	const streamChat = async (input: FastChatInput) => {
-		if (!token) throw new Error("No auth token");
+		if (!token) {
+			throw new Error("No auth token");
+		}
 
 		const response = await client.ai.chat.fast.$post(
 			{ json: input },
-			{ headers: { Authorization: `Bearer ${token}` } },
+			{ headers: { Authorization: `Bearer ${token}` } }
 		);
 
 		return receiveTypedStream(response);

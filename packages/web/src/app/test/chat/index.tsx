@@ -13,9 +13,9 @@ import { cn } from "@/src/lib/utils";
 type Role = FastChatInput["conversationHistory"][number]["role"];
 
 interface ChatMessage {
+	content: string;
 	id: string;
 	role: Role;
-	content: string;
 }
 
 const starterMessages: ChatMessage[] = [
@@ -31,15 +31,15 @@ const markdownBaseClassName =
 
 const markdownComponents: Components = {
 	h1: ({ children }) => (
-		<h1 className="mb-3 border-b border-primary/30 pb-2 text-xl font-semibold text-primary">
+		<h1 className="mb-3 border-primary/30 border-b pb-2 font-semibold text-primary text-xl">
 			{children}
 		</h1>
 	),
 	h2: ({ children }) => (
-		<h2 className="mb-2 mt-5 text-lg font-semibold text-primary">{children}</h2>
+		<h2 className="mt-5 mb-2 font-semibold text-lg text-primary">{children}</h2>
 	),
 	h3: ({ children }) => (
-		<h3 className="mb-2 mt-4 text-base font-semibold text-foreground">
+		<h3 className="mt-4 mb-2 font-semibold text-base text-foreground">
 			{children}
 		</h3>
 	),
@@ -56,16 +56,16 @@ const markdownComponents: Components = {
 	),
 	a: ({ href, children }) => (
 		<a
-			href={href}
-			target="_blank"
-			rel="noreferrer"
 			className="font-medium text-primary underline decoration-primary/40 underline-offset-4 hover:decoration-primary"
+			href={href}
+			rel="noreferrer"
+			target="_blank"
 		>
 			{children}
 		</a>
 	),
 	blockquote: ({ children }) => (
-		<blockquote className="my-4 rounded-r-lg border-l-4 border-primary/50 bg-muted/40 px-4 py-2 italic text-muted-foreground">
+		<blockquote className="my-4 rounded-r-lg border-primary/50 border-l-4 bg-muted/40 px-4 py-2 text-muted-foreground italic">
 			{children}
 		</blockquote>
 	),
@@ -101,12 +101,12 @@ const markdownComponents: Components = {
 	),
 	thead: ({ children }) => <thead className="bg-muted/50">{children}</thead>,
 	th: ({ children }) => (
-		<th className="border-b border-border px-3 py-2 font-semibold text-foreground">
+		<th className="border-border border-b px-3 py-2 font-semibold text-foreground">
 			{children}
 		</th>
 	),
 	td: ({ children }) => (
-		<td className="border-b border-border/60 px-3 py-2 align-top text-foreground/90">
+		<td className="border-border/60 border-b px-3 py-2 align-top text-foreground/90">
 			{children}
 		</td>
 	),
@@ -122,8 +122,8 @@ function MessageBubble({ message }: { message: ChatMessage }) {
 			<div className={cn("max-w-[85%]", !isUser && "w-full")}>
 				<p
 					className={cn(
-						"mb-1 px-1 text-xs text-muted-foreground/90",
-						isUser ? "text-right" : "text-left",
+						"mb-1 px-1 text-muted-foreground/90 text-xs",
+						isUser ? "text-right" : "text-left"
 					)}
 				>
 					{isUser ? "You" : "Assistant"}
@@ -133,7 +133,7 @@ function MessageBubble({ message }: { message: ChatMessage }) {
 						"whitespace-pre-wrap px-4 py-3 text-sm leading-7",
 						isUser
 							? "rounded-2xl rounded-br-md border border-primary/50 bg-primary text-primary-foreground shadow-sm"
-							: "text-foreground",
+							: "text-foreground"
 					)}
 				>
 					{isUser ? (
@@ -141,8 +141,8 @@ function MessageBubble({ message }: { message: ChatMessage }) {
 					) : (
 						<div className={markdownBaseClassName}>
 							<ReactMarkdown
-								remarkPlugins={[remarkGfm]}
 								components={markdownComponents}
+								remarkPlugins={[remarkGfm]}
 							>
 								{message.content}
 							</ReactMarkdown>
@@ -164,13 +164,17 @@ function ChatTestPage() {
 	const messageCount = messages.length;
 
 	useEffect(() => {
-		if (messageCount < 1) return;
+		if (messageCount < 1) {
+			return;
+		}
 		messageEndRef.current?.scrollIntoView({ behavior: "smooth", block: "end" });
 	}, [messageCount]);
 
 	const handleSend = async () => {
 		const text = input.trim();
-		if (!text || isStreaming) return;
+		if (!text || isStreaming) {
+			return;
+		}
 
 		const conversationHistory: FastChatInput["conversationHistory"] =
 			messages.map((message) => ({
@@ -201,26 +205,30 @@ function ChatTestPage() {
 			});
 
 			for await (const chunk of stream) {
-				if (!chunk || typeof chunk !== "object" || !("text" in chunk)) continue;
+				if (!chunk || typeof chunk !== "object" || !("text" in chunk)) {
+					continue;
+				}
 				const piece = chunk.text;
-				if (typeof piece !== "string") continue;
+				if (typeof piece !== "string") {
+					continue;
+				}
 
 				setMessages((current) =>
 					current.map((message) =>
 						message.id === assistantMessageId
 							? { ...message, content: `${message.content}${piece}` }
-							: message,
-					),
+							: message
+					)
 				);
 			}
 		} catch (streamError) {
 			setError(
 				streamError instanceof Error
 					? streamError.message
-					: "Failed to stream chat response",
+					: "Failed to stream chat response"
 			);
 			setMessages((current) =>
-				current.filter((message) => message.id !== assistantMessageId),
+				current.filter((message) => message.id !== assistantMessageId)
 			);
 		} finally {
 			setIsStreaming(false);
@@ -231,8 +239,8 @@ function ChatTestPage() {
 		<div className="min-h-screen bg-background text-foreground">
 			<header className="sticky top-0 z-10 bg-background/90 backdrop-blur">
 				<div className="mx-auto max-w-4xl px-4 py-4">
-					<h1 className="text-lg font-medium">Fast Chat</h1>
-					<p className="text-sm text-muted-foreground">Cerebras Inference</p>
+					<h1 className="font-medium text-lg">Fast Chat</h1>
+					<p className="text-muted-foreground text-sm">Cerebras Inference</p>
 				</div>
 			</header>
 
@@ -243,9 +251,9 @@ function ChatTestPage() {
 					))}
 
 					{isStreaming && (
-						<p className="px-1 text-xs text-muted-foreground">Streaming...</p>
+						<p className="px-1 text-muted-foreground text-xs">Streaming...</p>
 					)}
-					{error && <p className="px-1 text-xs text-destructive">{error}</p>}
+					{error && <p className="px-1 text-destructive text-xs">{error}</p>}
 					<div ref={messageEndRef} />
 				</div>
 			</main>
@@ -254,22 +262,28 @@ function ChatTestPage() {
 				<div className="mx-auto max-w-4xl px-4 py-4">
 					<div className="flex w-full items-center gap-2 rounded-2xl border bg-card p-2">
 						<Input
-							value={input}
-							placeholder="Ask anything..."
 							className="border-0 bg-transparent shadow-none focus-visible:ring-0"
+							disabled={isStreaming}
 							onChange={(event) => setInput(event.target.value)}
 							onKeyDown={(event) => {
 								if (event.key === "Enter") {
 									event.preventDefault();
-									void handleSend();
+									handleSend().catch(() => {
+										/* fire-and-forget */
+									});
 								}
 							}}
-							disabled={isStreaming}
+							placeholder="Ask anything..."
+							value={input}
 						/>
 						<Button
-							onClick={() => void handleSend()}
-							disabled={!input.trim() || isStreaming}
 							className="rounded-xl"
+							disabled={!input.trim() || isStreaming}
+							onClick={() =>
+								handleSend().catch(() => {
+									/* fire-and-forget */
+								})
+							}
 						>
 							Send
 						</Button>

@@ -57,7 +57,7 @@ export async function createUser(userId: string, params: CreateUserInput) {
 				},
 				setWhere: sql`${users.deletedAt} IS NOT NULL`,
 			})
-			.returning(),
+			.returning()
 	);
 	return user;
 }
@@ -68,14 +68,16 @@ export async function getUser(params: GetUserInput) {
 		db
 			.select()
 			.from(users)
-			.where(buildWhereActive([{ table: users, filters: { id: userId } }])),
+			.where(buildWhereActive([{ table: users, filters: { id: userId } }]))
 	);
-	if (!user) throw new ApiError(404, "User not found");
+	if (!user) {
+		throw new ApiError(404, "User not found");
+	}
 	return user;
 }
 
 export async function deleteUser(
-	params: DeleteUserInput,
+	params: DeleteUserInput
 ): Promise<typeof users.$inferSelect | undefined> {
 	const { userId } = deleteUserInputSchema.parse(params);
 	const result = await softCascade(db, users, userId, [
@@ -89,7 +91,9 @@ export async function deleteUser(
 			],
 		},
 	]);
-	if (!result.success) throw new ApiError(500, "Failed to delete user");
+	if (!result.success) {
+		throw new ApiError(500, "Failed to delete user");
+	}
 	return result.row;
 }
 
@@ -105,8 +109,10 @@ export async function updateUser(userId: string, params: UpdateUserInput) {
 				updatedAt: isoNow(),
 			})
 			.where(buildWhereActive([{ table: users, filters: { id: userId } }]))
-			.returning(),
+			.returning()
 	);
-	if (!user) throw new ApiError(404, "User not found");
+	if (!user) {
+		throw new ApiError(404, "User not found");
+	}
 	return user;
 }

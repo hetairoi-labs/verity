@@ -15,7 +15,7 @@ export async function getGoogleEventData(eventId: string) {
 export async function createGoogleCalendarEvent(
 	startDate: Date,
 	duration: number,
-	summary?: string,
+	summary?: string
 ) {
 	const client = await getAuthenticatedClient();
 	const calendar = google.calendar({ version: "v3", auth: client });
@@ -28,7 +28,7 @@ export async function createGoogleCalendarEvent(
 			start: { dateTime: startDate.toISOString() },
 			end: {
 				dateTime: new Date(
-					startDate.getTime() + duration * 60_000,
+					startDate.getTime() + duration * 60_000
 				).toISOString(),
 			},
 			conferenceData: {
@@ -49,7 +49,7 @@ export async function deleteGoogleCalendarEvent(eventId: string) {
 
 	await calendar.events.delete({
 		calendarId: "primary",
-		eventId: eventId,
+		eventId,
 	});
 
 	return { success: true };

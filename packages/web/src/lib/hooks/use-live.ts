@@ -8,6 +8,46 @@ import {
 } from "../utils/live";
 import { useGetLiveTokenQuery } from "./api/use-ai-api";
 
+const WS_CLOSED_PATTERN = /CLOSING|CLOSED/;
+
+function playAudioFromBase64(
+	audioData: string,
+	outputCtx: AudioContext,
+	activeSources: { current: Set<AudioBufferSourceNode> },
+	nextStartTimeRef: { current: number },
+	addLog: (msg: string) => void
+) {
+	try {
+		const binary = atob(audioData);
+		const bytes = new Uint8Array(binary.length);
+		for (let i = 0; i < binary.length; i++) {
+			bytes[i] = binary.charCodeAt(i);
+		}
+		const pcm16 = new Int16Array(bytes.buffer, 0, bytes.length / 2);
+		const numSamples = pcm16.length;
+		const audioBuffer = outputCtx.createBuffer(1, numSamples, 24_000);
+		const channel = audioBuffer.getChannelData(0);
+		for (let i = 0; i < numSamples; i++) {
+			channel[i] = (pcm16[i] ?? 0) / 32_768;
+		}
+
+		const source = outputCtx.createBufferSource();
+		source.buffer = audioBuffer;
+		source.connect(outputCtx.destination);
+
+		const startTime = Math.max(nextStartTimeRef.current, outputCtx.currentTime);
+		source.start(startTime);
+		nextStartTimeRef.current = startTime + audioBuffer.duration;
+
+		activeSources.current.add(source);
+		source.onended = () => {
+			activeSources.current.delete(source);
+		};
+	} catch (decodeError) {
+		addLog(`Audio decode error: ${decodeError}`);
+	}
+}
+
 export function useLive() {
 	const { data: token } = useGetLiveTokenQuery(true);
 
@@ -30,16 +70,22 @@ export function useLive() {
 	}, []);
 
 	const initializeGemini = useCallback(async () => {
-		if (hasInit.current) return;
+		if (hasInit.current) {
+			return;
+		}
 
 		try {
 			addLog("Initializing Gemini Live session...");
 			addLog("Setting up audio contexts...");
-			inputCtxRef.current = new AudioContext({ sampleRate: 16000 });
-			outputCtxRef.current = new AudioContext({ sampleRate: 24000 });
+			inputCtxRef.current = new AudioContext({ sampleRate: 16_000 });
+			outputCtxRef.current = new AudioContext({ sampleRate: 24_000 });
 			nextStartTimeRef.current = outputCtxRef.current.currentTime;
-			void inputCtxRef.current.resume();
-			void outputCtxRef.current.resume();
+			inputCtxRef.current.resume().catch(() => {
+				/* fire-and-forget */
+			});
+			outputCtxRef.current.resume().catch(() => {
+				/* fire-and-forget */
+			});
 			addLog("Audio contexts created successfully");
 
 			addLog("Connecting to Gemini SDK...");
@@ -69,7 +115,7 @@ export function useLive() {
 						isActiveRef.current = false;
 						sessionRef.current = null;
 					},
-					onmessage: async (msg: LiveServerMessage) => {
+					onmessage: (msg: LiveServerMessage) => {
 						if ("setupComplete" in msg && msg.setupComplete !== undefined) {
 							isActiveRef.current = true;
 							addLog("Session ready - speak now");
@@ -77,9 +123,9 @@ export function useLive() {
 						}
 						if (msg.serverContent?.interrupted) {
 							addLog("User interrupted AI - clearing buffer");
-							activeSources.current.forEach((s) => {
+							for (const s of activeSources.current) {
 								s.stop();
-							});
+							}
 							activeSources.current.clear();
 							nextStartTimeRef.current = 0;
 							return;
@@ -88,41 +134,13 @@ export function useLive() {
 						const audioData =
 							msg.serverContent?.modelTurn?.parts?.[0]?.inlineData?.data;
 						if (audioData && outputCtxRef.current) {
-							try {
-								const binary = atob(audioData);
-								const bytes = new Uint8Array(binary.length);
-								for (let i = 0; i < binary.length; i++)
-									bytes[i] = binary.charCodeAt(i);
-								const pcm16 = new Int16Array(bytes.buffer, 0, bytes.length / 2);
-								const numSamples = pcm16.length;
-								const audioBuffer = outputCtxRef.current.createBuffer(
-									1,
-									numSamples,
-									24000,
-								);
-								const channel = audioBuffer.getChannelData(0);
-								for (let i = 0; i < numSamples; i++) {
-									channel[i] = (pcm16[i] ?? 0) / 32768;
-								}
-
-								const source = outputCtxRef.current.createBufferSource();
-								source.buffer = audioBuffer;
-								source.connect(outputCtxRef.current.destination);
-
-								const startTime = Math.max(
-									nextStartTimeRef.current,
-									outputCtxRef.current.currentTime,
-								);
-								source.start(startTime);
-								nextStartTimeRef.current = startTime + audioBuffer.duration;
-
-								activeSources.current.add(source);
-								source.onended = () => {
-									activeSources.current.delete(source);
-								};
-							} catch (decodeError) {
-								addLog(`Audio decode error: ${decodeError}`);
-							}
+							playAudioFromBase64(
+								audioData,
+								outputCtxRef.current,
+								activeSources,
+								nextStartTimeRef,
+								addLog
+							);
 						}
 					},
 					onerror: (e) => {
@@ -156,7 +174,7 @@ export function useLive() {
 					} catch (err) {
 						if (
 							err instanceof Error &&
-							/CLOSING|CLOSED/.test(err.message ?? "")
+							WS_CLOSED_PATTERN.test(err.message ?? "")
 						) {
 							isActiveRef.current = false;
 						}

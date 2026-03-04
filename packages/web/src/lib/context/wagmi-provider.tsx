@@ -19,7 +19,7 @@ const config = createConfig({
 			acc[chain.id] = http();
 			return acc;
 		},
-		{} as Record<number, HttpTransport>,
+		{} as Record<number, HttpTransport>
 	),
 });
 

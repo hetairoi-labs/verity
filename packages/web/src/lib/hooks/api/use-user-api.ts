@@ -13,12 +13,14 @@ export function useRegisterUserMutation() {
 
 	return useMutation({
 		mutationFn: async (json: RegisterUserInput) => {
-			if (!token) throw new Error("No auth token");
+			if (!token) {
+				throw new Error("No auth token");
+			}
 			const result = await parseResponse(
 				client.users.$post(
 					{ json },
-					{ headers: { Authorization: `Bearer ${token}` } },
-				),
+					{ headers: { Authorization: `Bearer ${token}` } }
+				)
 			);
 			return result.data;
 		},
@@ -39,10 +41,7 @@ export function useGetUserQuery() {
 		queryKey: ["user", token],
 		queryFn: async () => {
 			const result = await parseResponse(
-				client.users.$get(
-					{},
-					{ headers: { Authorization: `Bearer ${token}` } },
-				),
+				client.users.$get({}, { headers: { Authorization: `Bearer ${token}` } })
 			);
 			return result.data;
 		},
@@ -58,12 +57,14 @@ export function useDeleteUserMutation() {
 
 	return useMutation({
 		mutationFn: async () => {
-			if (!token) throw new Error("No auth token");
+			if (!token) {
+				throw new Error("No auth token");
+			}
 			const result = await parseResponse(
 				client.users.$delete(
 					{},
-					{ headers: { Authorization: `Bearer ${token}` } },
-				),
+					{ headers: { Authorization: `Bearer ${token}` } }
+				)
 			);
 			return result.data;
 		},

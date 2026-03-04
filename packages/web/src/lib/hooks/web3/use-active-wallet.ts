@@ -17,7 +17,7 @@ export const useActiveWallet = () => {
 	const { wallets } = useWallets();
 	const activeWallet = useMemo(
 		() => wallets.find((w) => w.address === activeWalletAddress),
-		[wallets, activeWalletAddress],
+		[wallets, activeWalletAddress]
 	);
 
 	// get chain information
@@ -30,25 +30,30 @@ export const useActiveWallet = () => {
 
 	// switch chain
 	const switchNetwork = useCallback(
-		async (chainId: number = defaultChainId) => {
+		(chainId: number = defaultChainId) => {
 			return safeAsync(() => {
-				if (!activeWallet) throw new Error("Active wallet not found");
+				if (!activeWallet) {
+					throw new Error("Active wallet not found");
+				}
 				return activeWallet.switchChain(chainId);
 			});
 		},
-		[activeWallet],
+		[activeWallet]
 	);
 
 	const switchActiveWallet = useCallback(
-		async (wallet: ConnectedWallet) => {
+		(wallet: ConnectedWallet) => {
 			return safeAsync(() => {
-				if (!wallet) throw new Error("Wallet not found");
-				if (wallet.address === activeWalletAddress)
+				if (!wallet) {
+					throw new Error("Wallet not found");
+				}
+				if (wallet.address === activeWalletAddress) {
 					throw new Error("Wallet is already active");
+				}
 				return setActiveWallet(wallet);
 			});
 		},
-		[setActiveWallet, activeWalletAddress],
+		[setActiveWallet, activeWalletAddress]
 	);
 
 	return {

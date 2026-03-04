@@ -36,8 +36,8 @@ function FormIndex() {
 		validators: {
 			onChange: userSchema,
 		},
-		onSubmit: async ({ value }) => {
-			toast.promise(
+		onSubmit: ({ value }) => {
+			return toast.promise(
 				new Promise((resolve) => {
 					setTimeout(() => {
 						resolve(value);
@@ -49,7 +49,7 @@ function FormIndex() {
 					loading: "Submitting...",
 					success: "Form has been submitted",
 					error: "Form has been errored",
-				},
+				}
 			);
 		},
 	});
@@ -58,7 +58,7 @@ function FormIndex() {
 	const isSubmitting = useStore(form.store, (state) => state.isSubmitting);
 
 	return (
-		<div className="flex flex-col items-center justify-center h-screen p-8">
+		<div className="flex h-screen flex-col items-center justify-center p-8">
 			<Card>
 				<CardHeader>
 					<CardTitle>Tanstack Form</CardTitle>
@@ -70,132 +70,132 @@ function FormIndex() {
 				<CardContent className="flex flex-col gap-4">
 					<div className="flex gap-4">
 						<form.Field
-							name="firstName"
 							children={(field) => (
 								<div className="flex flex-col gap-2">
-									<Label htmlFor={field.name} className="text-muted-foreground">
+									<Label className="text-muted-foreground" htmlFor={field.name}>
 										First Name
 									</Label>
 
 									<Input
 										id={field.name}
 										name={field.name}
-										value={field.state.value}
 										onBlur={field.handleBlur}
-										placeholder="First Name"
 										onChange={(e) => field.handleChange(e.target.value)}
+										placeholder="First Name"
+										value={field.state.value}
 									/>
 
 									<FieldInfo field={field} />
 								</div>
 							)}
+							name="firstName"
 						/>
 						<form.Field
-							name="lastName"
 							children={(field) => (
 								<div className="flex flex-col gap-2">
-									<Label htmlFor={field.name} className="text-muted-foreground">
+									<Label className="text-muted-foreground" htmlFor={field.name}>
 										Last Name
 									</Label>
 
 									<Input
 										id={field.name}
 										name={field.name}
-										value={field.state.value}
 										onBlur={field.handleBlur}
-										placeholder="Last Name"
 										onChange={(e) => field.handleChange(e.target.value)}
+										placeholder="Last Name"
+										value={field.state.value}
 									/>
 
 									<FieldInfo field={field} />
 								</div>
 							)}
+							name="lastName"
 						/>
 					</div>
 					<div>
 						<form.Field
-							name="age"
 							children={(field) => (
 								<div className="flex flex-col gap-2">
-									<Label htmlFor={field.name} className="text-muted-foreground">
+									<Label className="text-muted-foreground" htmlFor={field.name}>
 										Age
 									</Label>
 
 									<Input
 										id={field.name}
 										name={field.name}
-										value={field.state.value}
 										onBlur={field.handleBlur}
+										onChange={(e) => field.handleChange(Number(e.target.value))}
 										placeholder="Age"
 										type="number"
-										onChange={(e) => field.handleChange(Number(e.target.value))}
+										value={field.state.value}
 									/>
 
 									<FieldInfo field={field} />
 								</div>
 							)}
+							name="age"
 						/>
 					</div>
 					<div className="flex gap-4">
 						<form.Field
-							name="country"
-							listeners={{
-								onChange: () => form.setFieldValue("city", ""),
-							}}
 							children={(field) => (
 								<div className="flex flex-col gap-2">
-									<Label htmlFor={field.name} className="text-muted-foreground">
+									<Label className="text-muted-foreground" htmlFor={field.name}>
 										Country
 									</Label>
 
 									<Input
 										id={field.name}
 										name={field.name}
-										value={field.state.value}
 										onBlur={field.handleBlur}
-										placeholder="Country"
 										onChange={(e) => field.handleChange(e.target.value)}
+										placeholder="Country"
+										value={field.state.value}
 									/>
 
 									<FieldInfo field={field} />
 								</div>
 							)}
+							listeners={{
+								onChange: () => form.setFieldValue("city", ""),
+							}}
+							name="country"
 						/>
 						<form.Field
-							name="city"
 							children={(field) => (
 								<div className="flex flex-col gap-2">
-									<Label htmlFor={field.name} className="text-muted-foreground">
+									<Label className="text-muted-foreground" htmlFor={field.name}>
 										City
 									</Label>
 
 									<Input
 										id={field.name}
 										name={field.name}
-										value={field.state.value}
 										onBlur={field.handleBlur}
-										placeholder="City"
 										onChange={(e) => field.handleChange(e.target.value)}
+										placeholder="City"
+										value={field.state.value}
 									/>
 
 									<FieldInfo field={field} />
 								</div>
 							)}
+							name="city"
 						/>
 					</div>
 				</CardContent>
 
 				<CardFooter className="justify-end gap-2">
 					<CardAction>
-						<Button variant="outline" onClick={() => form.reset()} className="">
+						<Button className="" onClick={() => form.reset()} variant="outline">
 							Reset
 						</Button>
 					</CardAction>
 
 					<CardAction>
 						<Button
-							onClick={() => form.handleSubmit()}
 							disabled={!canSubmit || isSubmitting}
+							onClick={() => form.handleSubmit()}
 						>
 							Submit
 						</Button>

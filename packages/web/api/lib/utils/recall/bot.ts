@@ -16,7 +16,7 @@ const botClient = new AxiosClient(env.RECALL_API_URL, {
 const RETENTION_HOURS = 160;
 const LIVE_URL = `${env.PUBLIC_LIVE_APP_URL}/live`;
 
-export async function createBot(meetingUrl: string) {
+export function createBot(meetingUrl: string) {
 	if (process.env.NODE_ENV === "production") {
 		console.log("Creating production bot");
 		return botClient.post<Bot>("/bot", {
@@ -69,11 +69,11 @@ export async function createBot(meetingUrl: string) {
 	});
 }
 
-export async function retrieveBot(botId: string) {
+export function retrieveBot(botId: string) {
 	return botClient.get<Bot>(`/bot/${botId}`);
 }
 
-export async function retrieveTranscript(transcriptId: string) {
+export function retrieveTranscript(transcriptId: string) {
 	return botClient.get<TranscriptArtifact>(`/transcript/${transcriptId}/`);
 }
 
@@ -82,10 +82,10 @@ export async function downloadTranscript(transcriptUrl: string) {
 	return response.data;
 }
 
-export async function removeBotFromCall(botId: string) {
+export function removeBotFromCall(botId: string) {
 	return botClient.post(`/bot/${botId}/leave_call/`);
 }
 
-export async function deleteRecording(recordingId: string) {
+export function deleteRecording(recordingId: string) {
 	return botClient.delete(`/recording/${recordingId}/`);
 }

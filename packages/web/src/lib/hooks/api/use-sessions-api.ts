@@ -16,8 +16,8 @@ export function useGetAllSessionsQuery(params?: GetAllSessionsInput) {
 			const result = await parseResponse(
 				client.sessions.all.$get(
 					{ query: params || {} },
-					{ headers: { Authorization: `Bearer ${token}` } },
-				),
+					{ headers: { Authorization: `Bearer ${token}` } }
+				)
 			);
 			return result.data;
 		},
@@ -39,8 +39,8 @@ export function useGetSessionByIdQuery(params: GetSessionByIdInput) {
 			const result = await parseResponse(
 				client.sessions.session.$get(
 					{ query: params },
-					{ headers: { Authorization: `Bearer ${token}` } },
-				),
+					{ headers: { Authorization: `Bearer ${token}` } }
+				)
 			);
 			return result.data;
 		},
@@ -59,12 +59,14 @@ export function useCreateSessionMutation() {
 
 	return useMutation({
 		mutationFn: async (json: CreateSessionInput) => {
-			if (!token) throw new Error("No auth token");
+			if (!token) {
+				throw new Error("No auth token");
+			}
 			const result = await parseResponse(
 				client.sessions.$post(
 					{ json },
-					{ headers: { Authorization: `Bearer ${token}` } },
-				),
+					{ headers: { Authorization: `Bearer ${token}` } }
+				)
 			);
 			return result.data;
 		},
@@ -88,8 +90,8 @@ export function useGetHostSessionsQuery(params?: GetHostSessionsInput) {
 			const result = await parseResponse(
 				client.sessions.host.$get(
 					{ query: params || {} },
-					{ headers: { Authorization: `Bearer ${token}` } },
-				),
+					{ headers: { Authorization: `Bearer ${token}` } }
+				)
 			);
 			return result.data;
 		},
@@ -108,12 +110,14 @@ export function useDeleteSessionMutation() {
 
 	return useMutation({
 		mutationFn: async (json: DeleteSessionInput) => {
-			if (!token) throw new Error("No auth token");
+			if (!token) {
+				throw new Error("No auth token");
+			}
 			const result = await parseResponse(
 				client.sessions.session.$delete(
 					{ json },
-					{ headers: { Authorization: `Bearer ${token}` } },
-				),
+					{ headers: { Authorization: `Bearer ${token}` } }
+				)
 			);
 			return result.data;
 		},

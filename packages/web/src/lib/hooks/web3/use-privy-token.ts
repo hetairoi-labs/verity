@@ -6,7 +6,9 @@ export function usePrivyToken() {
 	const [token, setToken] = useState<string | null>(null);
 
 	useEffect(() => {
-		if (!ready || !authenticated) return setToken(null);
+		if (!(ready && authenticated)) {
+			return setToken(null);
+		}
 		let cancelled = false;
 		getAccessToken().then((t) => !cancelled && setToken(t));
 		return () => {

@@ -8,23 +8,24 @@ import {
 import { createContext, use, useState } from "react";
 import { useRegisterUserMutation } from "../hooks/api/use-user-api";
 
-type LoginResult = {
+interface LoginResult {
 	isNewUser: boolean;
-	wasAlreadyAuthenticated: boolean;
-	loginMethod: string | null;
 	loginAccount: LinkedAccountWithMetadata | null;
-};
+	loginMethod: string | null;
+	wasAlreadyAuthenticated: boolean;
+}
 
-type AuthContextType = {
+interface AuthContextType {
+	login: {
+		mutate: (options?: LoginModalOptions) => void;
+		result: LoginResult | undefined;
+	};
+	logout: () => Promise<void>;
 	state: {
 		ready: boolean;
 		authenticated: boolean;
 		user: User | null;
 		isModalOpen: boolean;
-	};
-	login: {
-		mutate: (options?: LoginModalOptions) => void;
-		result: LoginResult | undefined;
 	};
 	update: {
 		email: (email: string) => void;
@@ -40,22 +41,23 @@ type AuthContextType = {
 			github: (subject: string) => Promise<User>;
 		};
 	};
-	logout: () => Promise<void>;
-};
+}
 
 const AuthContext = createContext<AuthContextType | null>(null);
 export function AuthProvider({ children }: { children: React.ReactNode }) {
 	const privy = usePrivy();
 	const registerUser = useRegisterUserMutation();
 	const [loginResult, setLoginResult] = useState<LoginResult | undefined>(
-		undefined,
+		undefined
 	);
 
 	const { login: loginMutation } = useLogin({
 		onComplete(params) {
 			const address = params.user.wallet?.address;
 			const name = params.user.google?.name || undefined;
-			if (!address) return;
+			if (!address) {
+				return;
+			}
 			!params.wasAlreadyAuthenticated &&
 				registerUser.mutate({
 					name,

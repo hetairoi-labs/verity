@@ -17,15 +17,12 @@ const hono = new Hono()
 			windowMs: 1000,
 			limit: 300,
 			standardHeaders: "draft-6",
-			keyGenerator: async (ctx) => {
-				return (
-					ctx.req.header("CF-Connecting-IP") ||
-					ctx.req.header("X-Forwarded-For")?.split(",")[0]?.trim() ||
-					ctx.req.header("X-Real-IP") ||
-					"127.0.0.1"
-				);
-			},
-		}),
+			keyGenerator: (ctx) =>
+				ctx.req.header("CF-Connecting-IP") ||
+				ctx.req.header("X-Forwarded-For")?.split(",")[0]?.trim() ||
+				ctx.req.header("X-Real-IP") ||
+				"127.0.0.1",
+		})
 	)
 	.onError(handleError)
 	.route("/", routes)

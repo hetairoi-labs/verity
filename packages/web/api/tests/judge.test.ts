@@ -55,7 +55,9 @@ const AVERAGE_HOST_TRANSCRIPT = `Meeting Hosts: Chris
 [470s] Chris: Alright. Thanks.`;
 
 test("judge rewards good host who covers all topics", async () => {
-	if (!isIntegrationEnv()) return;
+	if (!isIntegrationEnv()) {
+		return;
+	}
 	const out = await judge({
 		transcript: SAMPLE_TRANSCRIPT,
 		goals: SAMPLE_GOALS,
@@ -65,7 +67,9 @@ test("judge rewards good host who covers all topics", async () => {
 }, 30_000);
 
 test("judge penalizes bad host who wastes session on stories", async () => {
-	if (!isIntegrationEnv()) return;
+	if (!isIntegrationEnv()) {
+		return;
+	}
 	const out = await judge({
 		transcript: BAD_HOST_TRANSCRIPT,
 		goals: SAMPLE_GOALS,
@@ -75,7 +79,9 @@ test("judge penalizes bad host who wastes session on stories", async () => {
 }, 30_000);
 
 test("judge scores average host who teaches steadily and covers everything", async () => {
-	if (!isIntegrationEnv()) return;
+	if (!isIntegrationEnv()) {
+		return;
+	}
 	const out = await judge({
 		transcript: AVERAGE_HOST_TRANSCRIPT,
 		goals: SAMPLE_GOALS,

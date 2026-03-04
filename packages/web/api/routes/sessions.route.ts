@@ -32,7 +32,7 @@ const sessionsRoute = new Hono()
 	.post("/", validator("json", createSessionInputSchema), async (c) => {
 		const session = await createSession(
 			c.req.valid("json"),
-			c.var.user.user_id,
+			c.var.user.user_id
 		);
 		return respond.ok(c, 201, "Session created successfully", { session });
 	})
@@ -41,7 +41,7 @@ const sessionsRoute = new Hono()
 	.get("/host", validator("query", getAllSessionsInputSchema), async (c) => {
 		const sessions = await getAllSessions(
 			c.req.valid("query"),
-			c.var.user.user_id,
+			c.var.user.user_id
 		);
 		return respond.ok(c, 200, "Sessions fetched successfully", { sessions });
 	})
@@ -53,10 +53,10 @@ const sessionsRoute = new Hono()
 		async (c) => {
 			const session = await deleteSession(
 				c.req.valid("json"),
-				c.var.user.user_id,
+				c.var.user.user_id
 			);
 			return respond.ok(c, 200, "Session deleted successfully", { session });
-		},
+		}
 	);
 
 export default sessionsRoute;

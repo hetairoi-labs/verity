@@ -14,18 +14,18 @@ export default function GeneralInfo() {
 			</CardHeader>
 
 			<CardContent className="space-y-5">
-				<p className="text-sm leading-relaxed text-muted-foreground">
+				<p className="text-muted-foreground text-sm leading-relaxed">
 					{generalInfo.bio}
 				</p>
 
 				<div className="grid grid-cols-2 gap-3">
 					{generalInfo.fields.map((field) => (
 						<div
-							key={field.label}
 							className="space-y-0.5 rounded-2xl bg-secondary/50 px-4 py-3"
+							key={field.label}
 						>
-							<p className="text-xs text-muted-foreground">{field.label}</p>
-							<p className="text-sm font-medium text-foreground">
+							<p className="text-muted-foreground text-xs">{field.label}</p>
+							<p className="font-medium text-foreground text-sm">
 								{field.value}
 							</p>
 						</div>

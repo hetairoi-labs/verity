@@ -10,9 +10,9 @@ type Tx = Parameters<Parameters<DBType["transaction"]>[0]>[0];
 type CascadeableTable = SchemaTable & { id: AnySQLiteColumn };
 
 export interface ChildConfig<TId, TChildId = number> {
-	table: CascadeableTable;
-	foreignKeyField: AnySQLiteColumn & { _: { data: TId } };
 	children?: ChildConfig<TChildId>[];
+	foreignKeyField: AnySQLiteColumn & { _: { data: TId } };
+	table: CascadeableTable;
 }
 
 const setDeleted =
@@ -20,7 +20,7 @@ const setDeleted =
 	<T extends CascadeableTable>(
 		tx: Tx,
 		table: T,
-		where: ReturnType<typeof eq>,
+		where: ReturnType<typeof eq>
 	) =>
 		tx
 			.update(table)
@@ -31,7 +31,7 @@ async function deleteChildren<TId>(
 	tx: Tx,
 	now: string,
 	parentId: TId,
-	children: ChildConfig<TId, number>[],
+	children: ChildConfig<TId, number>[]
 ) {
 	const del = setDeleted(now);
 	for (const child of children) {
@@ -42,7 +42,9 @@ async function deleteChildren<TId>(
 				.where(eq(child.foreignKeyField, parentId));
 			const ids = rows.map((r) => r.id) as number[];
 			if (ids.length) {
-				for (const id of ids) await deleteChildren(tx, now, id, child.children);
+				for (const id of ids) {
+					await deleteChildren(tx, now, id, child.children);
+				}
 				await del(tx, child.table, inArray(child.table.id, ids));
 			}
 			continue;
@@ -58,7 +60,7 @@ export const softCascade = async <
 	db: DBType,
 	parentTable: TTable,
 	parentId: TId,
-	children: ChildConfig<TId, number>[] = [],
+	children: ChildConfig<TId, number>[] = []
 ): Promise<{
 	success: true;
 	deletedAt: string;

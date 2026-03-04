@@ -15,11 +15,11 @@ const SAMPLE_TRANSCRIPT: Transcript = [
 			{
 				text: "No, I am your father.",
 				start_timestamp: {
-					relative: 9.730066299438477,
+					relative: 9.730_066_299_438_477,
 					absolute: "2025-07-17T00:00:09.730066Z",
 				},
 				end_timestamp: {
-					relative: 12.751030921936035,
+					relative: 12.751_030_921_936_035,
 					absolute: "2025-07-17T00:00:12.751031Z",
 				},
 			},
@@ -37,11 +37,11 @@ const SAMPLE_TRANSCRIPT: Transcript = [
 			{
 				text: "No, that's not true.",
 				start_timestamp: {
-					relative: 13.263169288635254,
+					relative: 13.263_169_288_635_254,
 					absolute: "2025-07-17T00:00:13.263169Z",
 				},
 				end_timestamp: {
-					relative: 16.988412857055664,
+					relative: 16.988_412_857_055_664,
 					absolute: "2025-07-17T00:00:16.988413Z",
 				},
 			},
@@ -59,11 +59,11 @@ const SAMPLE_TRANSCRIPT: Transcript = [
 			{
 				text: "That's impossible!",
 				start_timestamp: {
-					relative: 20.384620666503906,
+					relative: 20.384_620_666_503_906,
 					absolute: "2025-07-17T00:00:20.384621Z",
 				},
 				end_timestamp: {
-					relative: 22.707609176635742,
+					relative: 22.707_609_176_635_742,
 					absolute: "2025-07-17T00:00:22.707609Z",
 				},
 			},
@@ -85,13 +85,13 @@ describe("compressTranscript", () => {
 	test("should save a transcript correctly", async () => {
 		saveTranscript("test-raw", JSON.stringify(SAMPLE_TRANSCRIPT));
 		const raw = await Bun.file(
-			`${process.cwd()}/transcripts/test-raw.txt`,
+			`${process.cwd()}/transcripts/test-raw.txt`
 		).text();
 		expect(raw).toBe(JSON.stringify(SAMPLE_TRANSCRIPT));
 
 		saveTranscript("test-compressed", SAMPLE_COMPRESSED_TRANSCRIPT);
 		const compressed = await Bun.file(
-			`${process.cwd()}/transcripts/test-compressed.txt`,
+			`${process.cwd()}/transcripts/test-compressed.txt`
 		).text();
 
 		expect(compressed).toBe(SAMPLE_COMPRESSED_TRANSCRIPT);

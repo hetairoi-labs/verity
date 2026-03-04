@@ -17,7 +17,7 @@ export const createSessionInputSchema = z.object({
 	price: z
 		.number()
 		.min(0, "Price in USDC must be greater than 0")
-		.max(100000, "Price in USDC must be less than 100,000"),
+		.max(100_000, "Price in USDC must be less than 100,000"),
 	goals: z
 		.array(createGoalInputSchema.omit({ sessionId: true }))
 		.min(1, "At least one goal is required")
@@ -50,7 +50,7 @@ export type GetSessionTranscriptsInput = z.input<
 >;
 
 // Handlers
-export async function createSession(json: CreateSessionInput, hostId: string) {
+export function createSession(json: CreateSessionInput, hostId: string) {
 	const input = createSessionInputSchema.parse(json);
 
 	return db.transaction(async (tx) => {
@@ -64,9 +64,11 @@ export async function createSession(json: CreateSessionInput, hostId: string) {
 					price: input.price.toString(),
 					hostId,
 				})
-				.returning(),
+				.returning()
 		);
-		if (!sessionResult) throw new ApiError(500, "Failed to create session..");
+		if (!sessionResult) {
+			throw new ApiError(500, "Failed to create session..");
+		}
 
 		// Add host as participant
 		const [participantResult] = await safeQuery(
@@ -77,10 +79,11 @@ export async function createSession(json: CreateSessionInput, hostId: string) {
 					userId: hostId,
 					role: "host",
 				})
-				.returning(),
+				.returning()
 		);
-		if (!participantResult)
+		if (!participantResult) {
 			throw new ApiError(500, "Failed to add host as participant..");
+		}
 
 		// Create goals
 		if (input.goals) {
@@ -92,9 +95,11 @@ export async function createSession(json: CreateSessionInput, hostId: string) {
 							...goal,
 							sessionId: sessionResult.id,
 						})
-						.returning(),
+						.returning()
 				);
-				if (!goalResult) throw new ApiError(500, "Failed to create goal..");
+				if (!goalResult) {
+					throw new ApiError(500, "Failed to create goal..");
+				}
 			}
 		}
 
@@ -104,7 +109,7 @@ export async function createSession(json: CreateSessionInput, hostId: string) {
 
 export async function getAllSessions(
 	params: GetAllSessionsInput,
-	hostId?: string,
+	hostId?: string
 ) {
 	const { page = 1, limit = 10 } = getAllSessionsInputSchema.parse(params);
 	const offset = (page - 1) * limit;
@@ -116,7 +121,7 @@ export async function getAllSessions(
 			.where(buildWhereActive([{ table: sessions, filters: { hostId } }]))
 			.orderBy(desc(sessions.createdAt))
 			.limit(limit)
-			.offset(offset),
+			.offset(offset)
 	);
 	return result;
 }
@@ -130,27 +135,33 @@ export async function getSessionById(params: GetSessionByIdInput) {
 			.select()
 			.from(sessions)
 			.where(
-				buildWhereActive([{ table: sessions, filters: { id: sessionId } }]),
-			),
+				buildWhereActive([{ table: sessions, filters: { id: sessionId } }])
+			)
 	);
-	if (!result) throw new ApiError(404, "Session not found");
+	if (!result) {
+		throw new ApiError(404, "Session not found");
+	}
 	return result;
 }
 
 export async function deleteSession(
 	params: DeleteSessionInput,
-	hostId: string,
+	hostId: string
 ) {
 	const { sessionId } = deleteSessionInputSchema.parse(params);
 
 	const session = await getSessionById({ sessionId });
-	if (session.hostId !== hostId) throw new ApiError(403, "Unauthorized");
+	if (session.hostId !== hostId) {
+		throw new ApiError(403, "Unauthorized");
+	}
 
 	const result = await softCascade(db, sessions, sessionId, [
 		{ table: meetings, foreignKeyField: meetings.sessionId },
 		{ table: participants, foreignKeyField: participants.sessionId },
 		{ table: goals, foreignKeyField: goals.sessionId },
 	]);
-	if (!result.row) throw new ApiError(404, "Session not found");
+	if (!result.row) {
+		throw new ApiError(404, "Session not found");
+	}
 	return { session: result.row };
 }

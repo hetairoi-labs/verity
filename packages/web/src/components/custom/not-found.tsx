@@ -5,29 +5,31 @@ import { Button } from "@/src/components/ui/button";
 
 export default function NotFoundPage() {
 	return (
-		<div className="min-h-screen flex flex-col items-center justify-center p-8">
+		<div className="flex min-h-screen flex-col items-center justify-center p-8">
 			<motion.div
-				className="flex flex-col items-center text-center gap-6 max-w-lg"
-				initial={{ opacity: 0, y: 20 }}
 				animate={{ opacity: 1, y: 0 }}
+				className="flex max-w-lg flex-col items-center gap-6 text-center"
+				initial={{ opacity: 0, y: 20 }}
 				transition={{ duration: 0.3, ease: "easeOut" }}
 			>
 				<div className="space-y-4">
 					<img
-						src={logo}
 						alt="Logo"
-						className="w-20 h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 drop-shadow-md object-contain mx-auto mb-4"
+						className="mx-auto mb-4 h-20 w-20 object-contain drop-shadow-md md:h-24 md:w-24 lg:h-28 lg:w-28"
+						height={80}
+						src={logo}
+						width={80}
 					/>
-					<p className="text-xs uppercase tracking-[0.17em] text-muted-foreground/80">
+					<p className="text-muted-foreground/80 text-xs uppercase tracking-[0.17em]">
 						Oops, page not found
 					</p>
-					<p className="text-lg md:text-xl text-muted-foreground">
+					<p className="text-lg text-muted-foreground md:text-xl">
 						The page you&apos;re looking for has hopped away or never existed.
 					</p>
 				</div>
 
-				<div className="flex flex-wrap items-center justify-center gap-3 mt-2">
-					<Button variant="default" size="lg" className="px-6">
+				<div className="mt-2 flex flex-wrap items-center justify-center gap-3">
+					<Button className="px-6" size="lg" variant="default">
 						<Link to="/">Back to home</Link>
 					</Button>
 				</div>

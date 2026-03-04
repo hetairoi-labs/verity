@@ -17,17 +17,16 @@ const structuredOutputSchema = z.array(
 			.min(0)
 			.max(5)
 			.describe(
-				"Score 0-5: topic coverage, depth, relevance, clarity, completeness, accuracy",
+				"Score 0-5: topic coverage, depth, relevance, clarity, completeness, accuracy"
 			),
 		reasoning: z
 			.string()
 			.describe("Brief bullet points: what was good, what could improve"),
 		improvements: z.string().describe("Scope for improvements if any"),
-	}),
+	})
 );
 
-export type JudgeInput = {
-	transcript: string;
+export interface JudgeInput {
 	goals: string;
 	ratings?: {
 		average: number;
@@ -37,7 +36,8 @@ export type JudgeInput = {
 		avgScore: number;
 		sessionCount: number;
 	};
-};
+	transcript: string;
+}
 
 export async function judge(params: JudgeInput) {
 	const tau = 0.3;
@@ -50,7 +50,7 @@ export async function judge(params: JudgeInput) {
 	});
 
 	// generate ai scores
-	if (!transcript.trim() || !goals.trim()) {
+	if (!(transcript.trim() && goals.trim())) {
 		throw new ApiError(400, "Transcript & goals are required");
 	}
 	const inputPrompt = `## Goals to evaluate\n\n${goals}\n\n## Transcript\n\n${transcript}`;
@@ -65,20 +65,21 @@ export async function judge(params: JudgeInput) {
 		throw new ApiError(502, "No content from judge model");
 	}
 	const [raw, error] = safe(() =>
-		structuredOutputSchema.parse(JSON.parse(text)),
+		structuredOutputSchema.parse(JSON.parse(text))
 	);
 	if (error) {
 		throw new ApiError(
 			502,
-			`Model produced malformed structure: ${error.message}`,
+			`Model produced malformed structure: ${error.message}`
 		);
 	}
 
 	// compute weighted average score for goals
 	const weightByKey = new Map<string, number>();
 	for (const m of goals.matchAll(/• (.+?) \(weight: (\d+)\):/g)) {
-		if (m[1] != null && m[2] != null)
+		if (m[1] != null && m[2] != null) {
 			weightByKey.set(m[1].trim(), Number(m[2]));
+		}
 	}
 	const toKey = (goal: string) =>
 		goal.includes(" (weight: ")
@@ -89,7 +90,7 @@ export async function judge(params: JudgeInput) {
 			const w = weightByKey.get(toKey(goal)) ?? 0;
 			return { sumWS: acc.sumWS + w * score, sumW: acc.sumW + w };
 		},
-		{ sumWS: 0, sumW: 0 },
+		{ sumWS: 0, sumW: 0 }
 	);
 	const aggregate = sumW ? sumWS / sumW : 0;
 
@@ -123,7 +124,9 @@ function computeAlpha(p: {
 		sessionCount: number;
 	};
 }): number {
-	if (p.ratings?.count === 0) return 1;
+	if (p.ratings?.count === 0) {
+		return 1;
+	}
 
 	let alpha = 0.95;
 	alpha -= 0.35 * Math.min(1, (p.ratings?.count ?? 0) / 8);

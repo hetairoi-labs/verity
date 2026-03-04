@@ -65,16 +65,16 @@ export async function createMeeting(json: CreateMeetingInput, hostId: string) {
 	const event = await createGoogleCalendarEvent(
 		input.startDate,
 		input.duration,
-		input.summary,
+		input.summary
 	);
 	const meetingUrl = event.hangoutLink;
 	const eventLink = event.htmlLink;
 	const startDate = event.start?.dateTime;
 	const eventId = event.id;
-	if (!meetingUrl || !startDate || !eventId) {
+	if (!(meetingUrl && startDate && eventId)) {
 		throw new ApiError(
 			500,
-			"Something went wrong while creating the meeting..",
+			"Something went wrong while creating the meeting.."
 		);
 	}
 
@@ -90,11 +90,13 @@ export async function createMeeting(json: CreateMeetingInput, hostId: string) {
 			.where(
 				buildWhereActive([
 					{ table: sessions, filters: { id: input.sessionId, hostId } },
-				]),
+				])
 			)
-			.limit(1),
+			.limit(1)
 	);
-	if (!session) throw new ApiError(404, "Session not found");
+	if (!session) {
+		throw new ApiError(404, "Session not found");
+	}
 
 	// Create Meeting
 	const [meeting] = await safeQuery(
@@ -110,9 +112,11 @@ export async function createMeeting(json: CreateMeetingInput, hostId: string) {
 				startDate,
 				duration: input.duration,
 			})
-			.returning(),
+			.returning()
 	);
-	if (!meeting) throw new ApiError(500, "Failed to create the meeting..");
+	if (!meeting) {
+		throw new ApiError(500, "Failed to create the meeting..");
+	}
 
 	return {
 		meeting,
@@ -137,7 +141,7 @@ export async function getSessionMeetings(params: GetSessionMeetingsInput) {
 			.where(buildWhereActive([{ table: meetings, filters: { sessionId } }]))
 			.orderBy(desc(meetings.createdAt))
 			.offset(offset)
-			.limit(limit),
+			.limit(limit)
 	);
 	return result;
 }
@@ -149,11 +153,13 @@ export async function getMeetingById(params: GetMeetingByIdInput) {
 			.select()
 			.from(meetings)
 			.where(
-				buildWhereActive([{ table: meetings, filters: { id: meetingId } }]),
+				buildWhereActive([{ table: meetings, filters: { id: meetingId } }])
 			)
-			.limit(1),
+			.limit(1)
 	);
-	if (!result) throw new ApiError(404, "Meeting not found");
+	if (!result) {
+		throw new ApiError(404, "Meeting not found");
+	}
 	return result;
 }
 

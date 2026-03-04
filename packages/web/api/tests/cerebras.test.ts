@@ -6,11 +6,13 @@ describe("streamTextCerebras", () => {
 	test(
 		"logs streamed response",
 		async () => {
-			if (!isIntegrationEnv()) return;
+			if (!isIntegrationEnv()) {
+				return;
+			}
 
 			const chunks: string[] = [];
 			for await (const chunk of streamTextCerebras(
-				"Reply with one short sentence saying hello from Cerebras.",
+				"Reply with one short sentence saying hello from Cerebras."
 			)) {
 				chunks.push(chunk);
 			}
@@ -20,6 +22,6 @@ describe("streamTextCerebras", () => {
 
 			expect(response.length).toBeGreaterThan(0);
 		},
-		{ timeout: 60_000 },
+		{ timeout: 60_000 }
 	);
 });
