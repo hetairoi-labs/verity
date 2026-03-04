@@ -34,7 +34,10 @@ describe("E2E Test", () => {
 
 	describe("Initiation Workflow", () => {
 		it("can request a session", async () => {
-			const tx = await contracts.Manager.write.requestSessionRegistration([]);
+			const tx = await contracts.Manager.write.requestSessionRegistration([
+                wallet1.account.address,
+                wallet2.account.address,
+            ]);
 			const receipt = await tx.wait();
 			expect(receipt.status).toBe(1);
 		});
