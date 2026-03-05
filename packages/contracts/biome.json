@@ -4,7 +4,8 @@
     "files": {
         "includes": [
             "**/*.ts",
-            "!workflows/*/tmp.js"
+            "!workflows/*/tmp.js",
+            "!**/*.gen.ts"
         ]
     }
 }
