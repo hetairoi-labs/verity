@@ -40,8 +40,6 @@ function LandingPage() {
 		setLoginIntent(true);
 		login.mutate();
 	};
-	const { contracts } = useEvmContext();
-	console.log("contracts", contracts);
 
 	return (
 		<div className="relative min-h-dvh overflow-hidden bg-background text-foreground">

@@ -1,7 +1,7 @@
 import { type AnyRouter, RouterProvider } from "@tanstack/react-router";
 import { Toaster } from "sonner";
 import { AuthProvider } from "./auth-context";
-import { EvmProvider } from "./evmContext";
+import { EvmProvider } from "./evm-context";
 import { PrivyProvider } from "./privy-provider";
 import { QueryClientProvider } from "./query-client";
 import { ThemeProvider } from "./theme-provider";
