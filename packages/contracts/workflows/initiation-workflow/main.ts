@@ -9,7 +9,7 @@ import {
 import { createRecallBot } from "@verity/workflows-shared/recall";
 import { readFromStore, writeToStore } from "@verity/workflows-shared/store";
 import { zConfig, zHex } from "@verity/workflows-shared/zod";
-import { decodeEventLog, keccak256, stringToBytes, toHex } from "viem";
+import { decodeEventLog, keccak256, stringToBytes } from "viem";
 import z from "zod";
 import { definitions } from "../../definitions.gen";
 import { getPartialDataCidByIndex, initiateSession } from "./src/evm";
