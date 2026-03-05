@@ -17,7 +17,7 @@
 # ==========================================================================
 test:
   user-workflow:
-    workflow-name: "verity-settlement-workflow"
+    workflow-name: "verity-initiation-workflow"
   workflow-artifacts:
     workflow-path: "./main.ts"
     config-path: "./config.test.json"

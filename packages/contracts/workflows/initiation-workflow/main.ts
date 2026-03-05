@@ -10,7 +10,7 @@ import { createRecallBot } from "@verity/workflows-shared/recall";
 import { readFromStore, writeToStore } from "@verity/workflows-shared/store";
 import { zConfig, zHex } from "@verity/workflows-shared/zod";
 import { decodeEventLog, keccak256, stringToBytes, toHex } from "viem";
-import type z from "zod";
+import z from "zod";
 import { definitions } from "../../definitions.gen";
 import { getPartialDataCidByIndex, initiateSession } from "./src/evm";
 
@@ -23,8 +23,8 @@ const eventHash = keccak256(stringToBytes(eventSignature));
 
 const onLogTrigger = (runtime: Runtime<Config>, log: EVMLog): string => {
 	try {
-		const topics = zHex()
-			.array()
+		const topics = z
+			.tuple([zHex()], zHex())
 			.parse(log.topics.map((t) => bytesToHex(t)));
 		const data = bytesToHex(log.data);
 		const decodedLog = decodeEventLog({ abi: eventAbi, data, topics });
