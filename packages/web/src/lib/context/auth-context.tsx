@@ -5,7 +5,9 @@ import {
 	useLogin,
 	usePrivy,
 } from "@privy-io/react-auth";
-import { createContext, use, useState } from "react";
+import { getContracts } from "@verity/contracts";
+import { createContext, use, useEffect, useState } from "react";
+import { useWalletClient } from "wagmi";
 import { useRegisterUserMutation } from "../hooks/api/use-user-api";
 
 interface LoginResult {
@@ -17,6 +19,7 @@ interface LoginResult {
 
 interface AuthContextType {
 	authenticated: boolean;
+	contracts: ReturnType<typeof getContracts> | undefined;
 	isModalOpen: boolean;
 	login: {
 		mutate: (options?: LoginModalOptions) => void;
@@ -48,6 +51,16 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 	const [loginResult, setLoginResult] = useState<LoginResult | undefined>(
 		undefined
 	);
+	const { data: walletClient } = useWalletClient();
+	const [contracts, setContracts] = useState<ReturnType<typeof getContracts>>();
+
+	useEffect(() => {
+		if (!walletClient) {
+			return;
+		}
+		const contractInstances = getContracts("test", walletClient);
+		setContracts(contractInstances);
+	}, [walletClient]);
 
 	const { login: loginMutation } = useLogin({
 		onComplete(params) {
@@ -74,6 +87,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 		ready: privy.ready,
 		authenticated: privy.authenticated,
 		user: privy.user,
+		contracts,
 		isModalOpen: privy.isModalOpen,
 		login: {
 			mutate: loginMutation,

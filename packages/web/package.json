@@ -5,7 +5,7 @@
   "main": "server.ts",
   "module": "server.ts",
   "scripts": {
-    "dev": "clear && bun push && bun check && bun run --parallel tsr-watch dev:server",
+    "dev": "clear && bun push && bun check && bun run dev:server",
     "dev:server": "bun --hot server.ts",
     "tsr-watch": "tsr watch",
 
@@ -13,7 +13,7 @@
     "serve": "NODE_ENV=production bun run dist/index.html",
 
     "deploy": "./lib/scripts/deploy.sh",
-    "prod": "tsr generate && NODE_ENV=production bun run server.ts",
+    "start": "tsr generate && NODE_ENV=production bun run server.ts",
 
     "check": "ultracite fix",
     "tsc": "bunx --bun tsc --noEmit",

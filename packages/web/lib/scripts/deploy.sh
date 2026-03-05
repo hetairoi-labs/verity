@@ -14,7 +14,7 @@ bun run build
 echo
 
 echo "⚡ Spinning up production server..."
-bun prod
+bun start
 echo
 
 echo "✅ Deployment completed successfully!"

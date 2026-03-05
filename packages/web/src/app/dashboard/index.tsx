@@ -12,10 +12,10 @@ export const Route = createFileRoute("/dashboard/")({
 function NewDashPage() {
 	return (
 		<div className="dark min-h-dvh bg-background p-3 text-foreground md:p-4">
-			<div className="mx-auto grid w-full max-w-480 gap-4 lg:grid-cols-[16.5rem_1fr]">
+			<div className="mx-auto w-full gap-4 lg:grid lg:grid-cols-[16rem_1fr]">
 				<Sidebar />
 
-				<main className="grid min-w-0 gap-4">
+				<main className="flex flex-col gap-4">
 					<TopNavbar />
 					<KpiSection />
 					<PerformanceSection />

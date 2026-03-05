@@ -14,7 +14,7 @@ export function KpiSection() {
 
 function KpiItem({ kpi }: { kpi: KpiCard }) {
 	return (
-		<Panel>
+		<Panel className="py-12">
 			<p className="text-lg md:text-xl">{kpi.title}</p>
 			<div className="mt-2 flex items-baseline gap-2.5">
 				<p className="text-3xl tracking-tight md:text-4xl">{kpi.value}</p>

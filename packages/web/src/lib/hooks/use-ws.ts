@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import client from "../utils/hc";
+import { client } from "../utils/hc";
 
 export function useTimeWs() {
 	const socketRef = useRef<WebSocket | null>(null);

@@ -4,7 +4,7 @@ import { Panel } from "./panel";
 
 export function PerformanceSection() {
 	return (
-		<Panel>
+		<Panel className="py-12">
 			<div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
 				<div>
 					<h3 className="text-2xl md:text-3xl">Session Performance</h3>

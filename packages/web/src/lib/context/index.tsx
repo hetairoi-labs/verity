@@ -1,5 +1,4 @@
-import type { AnyRouter } from "@tanstack/react-router";
-import { RouterProvider } from "@tanstack/react-router";
+import { type AnyRouter, RouterProvider } from "@tanstack/react-router";
 import { Toaster } from "sonner";
 import { AuthProvider } from "./auth-context";
 import { EvmProvider } from "./evmContext";

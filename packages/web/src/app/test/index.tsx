@@ -22,7 +22,7 @@ function RouteComponent() {
 				<Link to="test/form">
 					<Button>Form</Button>
 				</Link>
-				<Link to="/test/demo">
+				<Link to="/demo">
 					<Button>Demo</Button>
 				</Link>
 			</div>

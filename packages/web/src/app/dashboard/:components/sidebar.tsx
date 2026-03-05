@@ -4,7 +4,7 @@ import { sideNavItems } from "./mock";
 
 export function Sidebar() {
 	return (
-		<aside className="flex flex-col rounded-2xl border border-border/70 bg-card/70 p-4 md:p-5 lg:sticky lg:top-4 lg:h-[calc(100dvh-2rem)]">
+		<aside className="hidden flex-col rounded-2xl border border-border/70 bg-card/70 p-4 md:p-5 lg:sticky lg:top-4 lg:flex lg:h-[calc(100dvh-2rem)]">
 			<div className="flex items-center gap-2.5">
 				<span className="grid size-8 place-items-center rounded-full bg-secondary">
 					<StarFourIcon size={16} weight="fill" />

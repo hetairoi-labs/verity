@@ -1,41 +1,56 @@
+import bottomGlowImage from "@assets/bottom-glow.png";
+import heroAssetImage from "@assets/hero-asset.png";
 import { SignOutIcon } from "@phosphor-icons/react";
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
+import { useEffect, useState } from "react";
 import Logo from "../components/custom/logo";
 import ThemeSwitch from "../components/custom/theme-switch";
 import { Button } from "../components/ui/button";
 import { useAuth } from "../lib/context/auth-context";
-import { useContracts } from "../lib/hooks/web3/use-contracts";
 
 export const Route = createFileRoute("/")({
 	component: LandingPage,
 });
 
-const heroAssetUrl =
-	"https://framerusercontent.com/images/epJvtkN6Fjcujly2tBCigpwwYk.png?scale-down-to=4096&width=4224&height=2522";
-const bottomGlowUrl =
-	"https://framerusercontent.com/images/xqtH4KxHeMnMzMUEyOHt96lpE.png?width=1674&height=1203";
-
 function LandingPage() {
-	const { authenticated, login, logout } = useAuth();
+	const { authenticated, login, logout, contracts } = useAuth();
 	const navigate = useNavigate();
+	const [loginIntent, setLoginIntent] = useState(false);
+	console.log(contracts?.Manager.address);
+
+	useEffect(() => {
+		if (!(loginIntent && login.result)) {
+			return;
+		}
+
+		if (login.result.isNewUser) {
+			navigate({ to: "/onboarding" });
+			setLoginIntent(false);
+			return;
+		}
+
+		navigate({ to: "/dashboard" });
+		setLoginIntent(false);
+	}, [login.result, loginIntent, navigate]);
 
 	const handlePrimaryAction = () => {
 		if (authenticated) {
 			navigate({ to: "/dashboard" });
 			return;
 		}
+		setLoginIntent(true);
 		login.mutate();
 	};
-	const contracts = useContracts();
+	const { contracts } = useEvmContext();
 	console.log("contracts", contracts);
 
 	return (
 		<div className="relative min-h-dvh overflow-hidden bg-background text-foreground">
 			<img
 				alt="Blue glow background"
-				className="pointer-events-none absolute -bottom-72 left-1/2 w-440 -translate-x-1/2 opacity-90"
+				className="pointer-events-none absolute -bottom-72 left-1/2 w-full -translate-x-1/2 opacity-90"
 				height={1203}
-				src={bottomGlowUrl}
+				src={bottomGlowImage}
 				width={1674}
 			/>
 
@@ -67,7 +82,7 @@ function LandingPage() {
 								className="h-11 rounded-full px-6"
 								onClick={handlePrimaryAction}
 							>
-								{authenticated ? "Dashboard" : "Start Free Trial"}
+								{authenticated ? "Dashboard" : "Get Started"}
 							</Button>
 							{authenticated ? (
 								<Button
@@ -88,9 +103,7 @@ function LandingPage() {
 					id="features"
 				>
 					<h1 className="mt-6 max-w-4xl text-5xl sm:text-6xl lg:text-7xl">
-						Consult Less on Trust.
-						<br />
-						Verify Value with Verity.
+						Verifiable proof-of-value for the expert economy
 					</h1>
 
 					<p className="mt-6 max-w-3xl text-lg text-muted-foreground sm:text-xl">
@@ -104,7 +117,7 @@ function LandingPage() {
 							className="h-12 rounded-full px-7"
 							onClick={handlePrimaryAction}
 						>
-							{authenticated ? "Go to Dashboard" : "Get Started Free"}
+							{authenticated ? "Go to Dashboard" : "Get Started"}
 						</Button>
 						<a
 							href="https://hetairoiconsultingllc.mintlify.app/"
@@ -126,7 +139,7 @@ function LandingPage() {
 						alt="Verity dashboard preview"
 						className="h-auto w-full rounded-[1.5rem]"
 						height={2522}
-						src={heroAssetUrl}
+						src={heroAssetImage}
 						width={4224}
 					/>
 				</section>
