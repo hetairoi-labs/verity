@@ -6,29 +6,36 @@ import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 import "./KXSessionRegistry.sol";
 
 contract KXManager is ReceiverTemplate {
+    struct Listing {
+        address teacher;
+        uint256 price;
+        string dataCID;
+    }
+
     KXSessionRegistry public sessionRegistry;
     IERC20 public usdc;
+    Listing[] public listings;
     address private _server;
 
     error AmountZero();
     error NotLearner();
+    error NotListingOwner();
+    error InvalidIndex();
 
-    event SessionRegistered(
-        address indexed teacher,
-        address indexed learner,
-        uint256 amount,
-        string dataCID
-    );
     event SessionRegistrationRequested(
         address indexed teacher,
         address indexed learner,
         uint256 amount,
         string meetingLink,
-        uint256 partialDataCIDIndex
+        uint256 listingIndex
     );
-    event SessionDataCIDAdded(uint256 index, string dataCID);
+    event SessionRegistered(
+        address indexed teacher,
+        address indexed learner,
+        string dataCID
+    );
 
-    string[] public sessionDataCIDs;
+    event ListingUpsert(uint256 index, string dataCID);
 
     constructor(
         address usdc_,
@@ -55,10 +62,28 @@ contract KXManager is ReceiverTemplate {
         );
     }
 
-    function addSessionDataCID(string memory dataCID_) external {
-        require(msg.sender == _server, "Only server can add data CID");
-        sessionDataCIDs.push(dataCID_);
-        emit SessionDataCIDAdded(sessionDataCIDs.length - 1, dataCID_);
+    function createListing(string memory dataCID_, uint256 price_) external {
+        Listing memory newListing = Listing({
+            teacher: msg.sender,
+            price: price_,
+            dataCID: dataCID_
+        });
+        listings.push(newListing);
+        emit ListingUpsert(listings.length - 1, dataCID_);
+    }
+
+    function updateListing(
+        uint256 index_,
+        string memory dataCID_,
+        uint256 price_
+    ) external {
+        if (index_ >= listings.length) revert InvalidIndex();
+        Listing storage listing = listings[index_];
+        if (listing.teacher != msg.sender) revert NotListingOwner();
+
+        listing.dataCID = dataCID_;
+        listing.price = price_;
+        emit ListingUpsert(index_, dataCID_);
     }
 
     function requestSessionRegistration(
@@ -66,7 +91,7 @@ contract KXManager is ReceiverTemplate {
         address learner_,
         uint256 amount_,
         string calldata meetingLink_,
-        uint256 partialDataCIDIndex_
+        uint256 ListingIndex_
     ) external {
         if (amount_ == 0) revert AmountZero();
         if (msg.sender != learner_) revert NotLearner();
@@ -78,7 +103,7 @@ contract KXManager is ReceiverTemplate {
             learner_,
             amount_,
             meetingLink_,
-            partialDataCIDIndex_
+            ListingIndex_
         );
     }
 }
