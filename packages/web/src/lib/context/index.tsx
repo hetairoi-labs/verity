@@ -2,6 +2,7 @@ import type { AnyRouter } from "@tanstack/react-router";
 import { RouterProvider } from "@tanstack/react-router";
 import { Toaster } from "sonner";
 import { AuthProvider } from "./auth-context";
+import { EvmProvider } from "./evmContext";
 import { PrivyProvider } from "./privy-provider";
 import { QueryClientProvider } from "./query-client";
 import { ThemeProvider } from "./theme-provider";
@@ -14,8 +15,10 @@ export default function AppProviders({ router }: { router: AnyRouter }) {
 				<PrivyProvider>
 					<WagmiProvider>
 						<AuthProvider>
-							<RouterProvider router={router} />
-							<Toaster position="top-right" theme={"dark"} />
+							<EvmProvider>
+								<RouterProvider router={router} />
+								<Toaster position="top-right" theme={"dark"} />
+							</EvmProvider>
 						</AuthProvider>
 					</WagmiProvider>
 				</PrivyProvider>

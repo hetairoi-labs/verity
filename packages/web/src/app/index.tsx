@@ -4,6 +4,7 @@ import Logo from "../components/custom/logo";
 import ThemeSwitch from "../components/custom/theme-switch";
 import { Button } from "../components/ui/button";
 import { useAuth } from "../lib/context/auth-context";
+import { useContracts } from "../lib/hooks/web3/use-contracts";
 
 export const Route = createFileRoute("/")({
 	component: LandingPage,
@@ -25,6 +26,8 @@ function LandingPage() {
 		}
 		login.mutate();
 	};
+	const contracts = useContracts();
+	console.log("contracts", contracts);
 
 	return (
 		<div className="relative min-h-dvh overflow-hidden bg-background text-foreground">
