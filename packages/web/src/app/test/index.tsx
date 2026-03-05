@@ -22,6 +22,9 @@ function RouteComponent() {
 				<Link to="test/form">
 					<Button>Form</Button>
 				</Link>
+				<Link to="/test/demo">
+					<Button>Demo</Button>
+				</Link>
 			</div>
 		</div>
 	);

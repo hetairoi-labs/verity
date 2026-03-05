@@ -1,123 +1,115 @@
 import type { Icon } from "@phosphor-icons/react";
 import {
-	HouseIcon,
-	KanbanIcon,
-	SignInIcon,
-	StorefrontIcon,
-	TableIcon,
-	UserIcon,
+	BellIcon,
+	CalendarBlankIcon,
+	DotsThreeIcon,
+	FolderIcon,
+	FunnelSimpleIcon,
+	GlobeIcon,
+	LinkSimpleIcon,
+	MagnifyingGlassIcon,
+	PencilSimpleIcon,
+	SquaresFourIcon,
+	UserCircleIcon,
 } from "@phosphor-icons/react";
 
-export interface NavItem {
-	active?: boolean;
-	href: string;
+export interface SideNavItem {
 	icon: Icon;
 	label: string;
 }
 
-export const sidebarNav: NavItem[] = [
-	{ label: "Dashboard", icon: HouseIcon, href: "/dashboard", active: true },
-	{ label: "NFT Marketplace", icon: StorefrontIcon, href: "#" },
-	{ label: "Tables", icon: TableIcon, href: "#" },
-	{ label: "Kanban", icon: KanbanIcon, href: "#" },
-	{ label: "Profile", icon: UserIcon, href: "#" },
-	{ label: "Sign In", icon: SignInIcon, href: "#" },
+export interface TopNavTab {
+	active?: boolean;
+	label: string;
+}
+
+export interface TopNavAction {
+	icon: Icon;
+	label: string;
+	type: "icon" | "profile";
+}
+
+export interface KpiCard {
+	delta: string;
+	deltaUp: boolean;
+	description: string;
+	title: string;
+	value: string;
+}
+
+export const sideNavItems: SideNavItem[] = [
+	{ icon: SquaresFourIcon, label: "Dashboard" },
+	{ icon: FolderIcon, label: "Sessions" },
+	{ icon: LinkSimpleIcon, label: "Goals library" },
+	{ icon: GlobeIcon, label: "Learner discovery" },
+	{ icon: PencilSimpleIcon, label: "Create session" },
 ];
 
-export const profile = {
-	name: "Adela Parkson",
-	role: "Product Designer",
-	stats: [
-		{ label: "Posts", value: "17" },
-		{ label: "Following", value: "9.7k" },
-		{ label: "Followers", value: "274" },
-	],
-};
-
-export const storage = {
-	used: 25.6,
-	total: 50,
-	label: "Your storage",
-	description: "Supervise your drive space in the easiest way",
-};
-
-export const projects = [
-	{
-		id: 1,
-		title: "Technology behind the Blockchain",
-		number: "Project #1",
-		link: "See project details",
-	},
-	{
-		id: 2,
-		title: "Greatest way to a good Economy",
-		number: "Project #2",
-		link: "See project details",
-	},
-	{
-		id: 3,
-		title: "Most essential tips for Burnout",
-		number: "Project #3",
-		link: "See project details",
-	},
+export const topNavTabs: TopNavTab[] = [
+	{ label: "Overview", active: true },
+	{ label: "Sessions" },
+	{ label: "Settlements" },
+	{ label: "Insights" },
 ];
 
-export const generalInfo = {
-	bio: "As we live, our hearts turn colder. Cause pain is what we go through as we become older. We get insulted by others, lose trust for those others. We get back stabbed by friends. It becomes harder for us to give others a hand. We get our heart broken by people we love, even that we give them all...",
-	fields: [
-		{ label: "Education", value: "Stanford University" },
-		{ label: "Languages", value: "English, Spanish, Italian" },
-		{ label: "Department", value: "Product Design" },
-		{ label: "Work History", value: "Google, Facebook" },
-		{ label: "Organization", value: "Simmmple Web LLC" },
-		{ label: "Birthday", value: "20 July 1986" },
-	],
-};
+export const topNavActions: TopNavAction[] = [
+	{ icon: MagnifyingGlassIcon, label: "Search", type: "icon" },
+	{ icon: BellIcon, label: "Notifications", type: "icon" },
+	{ icon: UserCircleIcon, label: "Host", type: "profile" },
+];
 
-export const notifications = [
-	{ id: "item-update", label: "Item update notifications", enabled: true },
-	{ id: "item-comment", label: "Item comment notifications", enabled: false },
-	{ id: "buyer-review", label: "Buyer review notifications", enabled: true },
+export const kpiCards: KpiCard[] = [
 	{
-		id: "rating-reminders",
-		label: "Rating reminders notifications",
-		enabled: false,
+		title: "Escrow locked",
+		value: "320 USDC",
+		delta: "8%",
+		deltaUp: true,
+		description: "Across upcoming sessions",
 	},
 	{
-		id: "meetups-near",
-		label: "Meetups near you notifications",
-		enabled: false,
+		title: "Average merit score",
+		value: "87%",
+		delta: "4%",
+		deltaUp: true,
+		description: "Last 10 settled sessions",
 	},
 	{
-		id: "company-news",
-		label: "Company news notifications",
-		enabled: true,
-	},
-	{
-		id: "new-launches",
-		label: "New launches and projects",
-		enabled: true,
-	},
-	{
-		id: "monthly-product",
-		label: "Monthly product changes",
-		enabled: false,
-	},
-	{
-		id: "subscribe-newsletter",
-		label: "Subscribe to newsletter",
-		enabled: true,
-	},
-	{
-		id: "email-follows",
-		label: "Email me when someone follows me",
-		enabled: true,
+		title: "Pending claims",
+		value: "2",
+		delta: "1",
+		deltaUp: false,
+		description: "Require finalization",
 	},
 ];
 
-export const footerLinks = [
-	{ label: "Marketplace", href: "#" },
-	{ label: "License", href: "#" },
-	{ label: "Terms of Use", href: "#" },
-	{ label: "Blog", href: "#" },
+export const months = ["Jan", "Feb", "Mar", "Apr", "May", "June", "Jul", "Aug"];
+
+export const bars = [
+	[20, 28, 100],
+	[10, 55, 95],
+	[6, 88, 62],
+	[40, 22, 96],
+	[6, 28, 84],
+	[6, 42, 68],
+	[40, 26, 82],
+	[6, 28, 52],
 ];
+
+export const insights = [
+	"Session VERITY-AX41 has low clarity score - add a recap segment in the final 10 minutes.",
+	"Goal weight balance is skewed toward theory - add one applied milestone for higher completion.",
+	"Learners from your last 5 sessions improved faster when check-ins happened every 15 minutes.",
+];
+
+export const quickActions = [
+	"Create a new host session",
+	"Request evaluation on completed call",
+	"Claim available teacher payout",
+];
+
+export const chartFilters = [
+	{ icon: CalendarBlankIcon, label: "Date" },
+	{ icon: FunnelSimpleIcon, label: "View" },
+];
+
+export const insightHeaderActions = [{ icon: DotsThreeIcon, label: "More" }];
