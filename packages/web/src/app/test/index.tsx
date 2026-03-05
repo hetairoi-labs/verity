@@ -7,7 +7,7 @@ function RouteComponent() {
 			<h1 className="text-7xl uppercase lg:text-9xl">Tests</h1>
 
 			<div className="mt-10 flex gap-4">
-				<Link to="/test">
+				<Link to="/test/api">
 					<Button>API Tests</Button>
 				</Link>
 				<Link to="/test/auth">
@@ -19,7 +19,7 @@ function RouteComponent() {
 				<Link to="/test/chat">
 					<Button>Chat</Button>
 				</Link>
-				<Link to="test/form">
+				<Link to="/test/form">
 					<Button>Form</Button>
 				</Link>
 				<Link to="/demo">

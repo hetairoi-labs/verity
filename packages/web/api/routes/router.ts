@@ -4,6 +4,7 @@ import goals from "./goals.route";
 import meetings from "./meetings.route";
 import recall from "./recall.route";
 import sessions from "./sessions.route";
+import uploads from "./uploads.route";
 import users from "./users.route";
 import ws from "./ws.routes";
 
@@ -14,6 +15,7 @@ const routes = new Hono()
 	.route("/sessions/goals", goals)
 	.route("/ai", ai)
 	.route("/recall", recall)
+	.route("/uploads", uploads)
 	.route("/users", users);
 
 export default routes;

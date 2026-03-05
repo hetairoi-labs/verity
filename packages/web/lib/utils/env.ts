@@ -5,6 +5,7 @@ const clientEnvSchema = z.object({
 	PUBLIC_APP_URL: z.url(),
 	PUBLIC_LIVE_APP_URL: z.url(),
 	PUBLIC_PRIVY_APP_ID: z.string(),
+	PUBLIC_PINATA_GATEWAY_URL: z.string(),
 });
 
 const envSchema = z.object({
@@ -31,6 +32,11 @@ const envSchema = z.object({
 	GOOGLE_CLIENT_SECRET: z.string().min(1, "GOOGLE_CLIENT_SECRET is required"),
 	GEMINI_API_KEY: z.string().min(1, "GEMINI_API_KEY is required"),
 
+	// Pinata
+	PINATA_API_KEY: z.string().min(1, "PINATA_API_KEY is required"),
+	PINATA_API_SECRET: z.string().min(1, "PINATA_API_SECRET is required"),
+	PINATA_JWT: z.string().min(1, "PINATA_JWT is required"),
+
 	// Misc
 	CEREBRAS_API_KEY: z.string().min(1, "CEREBRAS_API_KEY is required"),
 });
@@ -43,7 +49,7 @@ declare module "bun" {
 
 // validate env
 let _env: EnvSchema | null = null;
-export const getEnv = (): EnvSchema => {
+const getEnv = (): EnvSchema => {
 	if (!_env) {
 		try {
 			const parsedEnv = envSchema.parse(Bun.env);

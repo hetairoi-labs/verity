@@ -54,7 +54,7 @@ function AuthPage() {
 						Switch Network
 					</Button>
 				}
-				data={isWrongChain ? "On default network" : "Not on default network"}
+				data={isWrongChain ? "Not on default network" : "On default network"}
 				description="Switch to default network"
 				title="Switch Network"
 			/>
