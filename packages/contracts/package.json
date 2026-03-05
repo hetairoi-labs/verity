@@ -5,7 +5,7 @@
     "scripts": {
         "tests": "bun test",
         "compile": "hardhat compile",
-        "migrate": "bunx --bun hardhat run scripts/deploy.ts",
+        "migrate": "bun compile & bun run scripts/deploy.ts",
         "mock-server": "bun run test/mock/mock-server.ts"
     },
     "workspaces": [
