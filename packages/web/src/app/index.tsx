@@ -51,7 +51,7 @@ function LandingPage() {
 				width={1674}
 			/>
 
-			<div className="relative mx-auto flex w-full max-w-7xl flex-col px-4 pt-5 pb-10 sm:px-6 lg:px-8">
+			<div className="relative mx-auto w-full max-w-7xl flex-col px-4 pt-5 pb-10 sm:px-6 lg:px-8">
 				<header className="mx-auto w-full max-w-4xl rounded-full border border-border/60 bg-card/80 p-2.5 backdrop-blur">
 					<nav className="flex items-center justify-between gap-3">
 						<div className="flex items-center gap-2 pl-3.5">
@@ -128,18 +128,13 @@ function LandingPage() {
 					</div>
 				</main>
 
-				<section
-					className="mx-auto mt-14 w-full max-w-6xl rounded-[2rem] border border-border/60 bg-card/80 p-2 shadow-lg shadow-primary/20 sm:p-3"
-					id="demo"
-				>
-					<img
-						alt="Verity dashboard preview"
-						className="h-auto w-full rounded-[1.5rem]"
-						height={2522}
-						src={heroAssetImage}
-						width={4224}
-					/>
-				</section>
+				<img
+					alt="Verity dashboard preview"
+					className="my-10 mt-14 h-auto w-full rounded-[1.5rem]"
+					height={2522}
+					src={heroAssetImage}
+					width={4224}
+				/>
 
 				<section
 					className="mx-auto mt-6 grid w-full max-w-6xl gap-3 sm:grid-cols-3"

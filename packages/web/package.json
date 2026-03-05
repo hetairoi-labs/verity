@@ -5,7 +5,7 @@
   "main": "server.ts",
   "module": "server.ts",
   "scripts": {
-    "dev": "clear && bun push && bun check && bun run dev:server",
+    "dev": "clear && bun push && bun check && bun run --parallel tsr-watch dev:server",
     "dev:server": "bun --hot server.ts",
     "tsr-watch": "tsr watch",
     "build": "tsr generate && bun run lib/build/index.ts",
