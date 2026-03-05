@@ -87,23 +87,22 @@ contract KXManager is ReceiverTemplate {
     }
 
     function requestSessionRegistration(
-        address teacher_,
-        address learner_,
         uint256 amount_,
         string calldata meetingLink_,
-        uint256 ListingIndex_
+        uint256 listingIndex_
     ) external {
         if (amount_ == 0) revert AmountZero();
-        if (msg.sender != learner_) revert NotLearner();
 
+        if (listingIndex_ >= listings.length) revert InvalidIndex();
+        Listing memory listing = listings[listingIndex_];
         usdc.transferFrom(msg.sender, address(sessionRegistry), amount_);
 
         emit SessionRegistrationRequested(
-            teacher_,
-            learner_,
+            listing.teacher,
+            msg.sender,
             amount_,
             meetingLink_,
-            ListingIndex_
+            listingIndex_
         );
     }
 }
