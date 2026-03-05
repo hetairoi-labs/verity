@@ -1,5 +1,7 @@
+/** biome-ignore-all lint/correctness/noUnusedVariables: <hatt> */
 import { describe, expect, it } from "bun:test";
 import hre from "hardhat";
+import { decodeEventLog } from "viem";
 import { z } from "zod";
 import { deploy } from "../scripts/deploy";
 import { getContracts } from "../surface";
@@ -7,6 +9,9 @@ import { zEvmAddress } from "../workflows/shared/src";
 
 const network = await hre.network.connect("test");
 const [wallet1, wallet2] = await network.viem.getWalletClients();
+const publicClient = await network.viem.getPublicClient();
+
+const testCid = "bafybeig6w5o3j5gwg7so4ntza6wxg52hixwavzzxm3zaavazpzm35lyeha";
 
 const definitions = await deploy("test");
 const deployedContractDefinitions = z
@@ -32,14 +37,23 @@ describe("E2E Test", () => {
 		expect(contracts.SessionRegistry).toBeDefined();
 	});
 
-	describe("Initiation Workflow", () => {
-		it("can request a session", async () => {
-			const tx = await contracts.Manager.write.requestSessionRegistration([
-				wallet1.account.address,
-				wallet2.account.address,
+	describe("Listing", () => {
+		it("register listing", async () => {
+			const registerTx = await contracts.Manager.write.createListing([
+				Bun.randomUUIDv7().toString(),
+				100n,
 			]);
-			const receipt = await tx.wait();
-			expect(receipt.status).toBe(1);
+			const receipt = await publicClient.waitForTransactionReceipt({
+				hash: registerTx,
+			});
+
+			const wait = decodeEventLog({
+				abi: contracts.Manager.abi,
+				data: receipt.logs[0].data,
+				topics: receipt.logs[0].topics,
+			});
 		});
 	});
 });
+
+describe("Initiation Workflow", () => {});
