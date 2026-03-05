@@ -12,7 +12,7 @@ declare module "wagmi" {
 	}
 }
 
-const config = createConfig({
+export const config = createConfig({
 	chains: wagmiChains,
 	transports: wagmiChains.reduce(
 		(acc, chain) => {

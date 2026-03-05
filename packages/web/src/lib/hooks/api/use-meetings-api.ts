@@ -1,26 +1,24 @@
+import { usePrivy } from "@privy-io/react-auth";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { type InferRequestType, parseResponse } from "hono/client";
-import client from "../../utils/hc";
-import { usePrivyToken } from "../web3/use-privy-token";
+import { client, getAuthHeaders } from "../../utils/hc";
 
 // create meeting
 type CreateMeetingRoute = (typeof client.sessions.meetings)["$post"];
 export type CreateMeetingInput = InferRequestType<CreateMeetingRoute>["json"];
 
 export function useCreateMeetingMutation() {
-	const token = usePrivyToken();
+	const { getAccessToken } = usePrivy();
 	const queryClient = useQueryClient();
 
 	return useMutation({
 		mutationFn: async (json: CreateMeetingInput) => {
+			const token = await getAccessToken();
 			if (!token) {
-				throw new Error("No auth token");
+				throw new Error("Unauthorized: No auth token");
 			}
 			const result = await parseResponse(
-				client.sessions.meetings.$post(
-					{ json },
-					{ headers: { Authorization: `Bearer ${token}` } }
-				)
+				client.sessions.meetings.$post({ json }, getAuthHeaders(token))
 			);
 			return result.data;
 		},
@@ -37,20 +35,24 @@ export type GetSessionMeetingsInput =
 	InferRequestType<GetSessionMeetingsRoute>["query"];
 
 export function useGetSessionMeetingsQuery(params?: GetSessionMeetingsInput) {
-	const token = usePrivyToken();
+	const { getAccessToken, authenticated, ready } = usePrivy();
 	return useQuery({
 		queryKey: ["meetings", "all", params],
 		queryFn: async () => {
+			const token = await getAccessToken();
+			if (!token) {
+				throw new Error("Unauthorized: No auth token");
+			}
 			const result = await parseResponse(
 				client.sessions.meetings.all.$get(
 					{ query: params || {} },
-					{ headers: { Authorization: `Bearer ${token}` } }
+					getAuthHeaders(token)
 				)
 			);
 			return result.data;
 		},
 		select: (data) => data?.meetings,
-		enabled: !!token,
+		enabled: ready && authenticated,
 	});
 }
 
@@ -60,20 +62,24 @@ export type GetMeetingByIdInput =
 	InferRequestType<GetMeetingByIdRoute>["query"];
 
 export function useGetMeetingByIdQuery(params: GetMeetingByIdInput) {
-	const token = usePrivyToken();
+	const { getAccessToken, authenticated, ready } = usePrivy();
 	return useQuery({
 		queryKey: ["meetings", "meeting", params.meetingId],
 		queryFn: async () => {
+			const token = await getAccessToken();
+			if (!token) {
+				throw new Error("Unauthorized: No auth token");
+			}
 			const result = await parseResponse(
 				client.sessions.meetings.meeting.$get(
 					{ query: params },
-					{ headers: { Authorization: `Bearer ${token}` } }
+					getAuthHeaders(token)
 				)
 			);
 			return result.data;
 		},
 		select: (data) => data?.meeting,
-		enabled: !!token && !!params.meetingId,
+		enabled: ready && authenticated && !!params.meetingId,
 	});
 }
 
@@ -82,19 +88,16 @@ type DeleteMeetingRoute = (typeof client.sessions.meetings)["$delete"];
 export type DeleteMeetingInput = InferRequestType<DeleteMeetingRoute>["json"];
 
 export function useDeleteMeetingMutation() {
-	const token = usePrivyToken();
+	const { getAccessToken } = usePrivy();
 	const queryClient = useQueryClient();
-
 	return useMutation({
 		mutationFn: async (json: DeleteMeetingInput) => {
+			const token = await getAccessToken();
 			if (!token) {
-				throw new Error("No auth token");
+				throw new Error("Unauthorized: No auth token");
 			}
 			const result = await parseResponse(
-				client.sessions.meetings.$delete(
-					{ json },
-					{ headers: { Authorization: `Bearer ${token}` } }
-				)
+				client.sessions.meetings.$delete({ json }, getAuthHeaders(token))
 			);
 			return result.data;
 		},

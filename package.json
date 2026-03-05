@@ -5,6 +5,9 @@
   "workspaces": [
     "packages/*"
   ],
+  "overrides": {
+    "viem": "^2.46.3"
+  },
   "scripts": {
     "check": "ultracite fix",
     "purge": "./scripts/purge.sh",

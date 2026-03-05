@@ -10,16 +10,16 @@ import { WagmiProvider } from "./wagmi-provider";
 export default function AppProviders({ router }: { router: AnyRouter }) {
 	return (
 		<ThemeProvider defaultTheme="dark" storageKey="theme">
-			<PrivyProvider>
-				<QueryClientProvider>
+			<QueryClientProvider>
+				<PrivyProvider>
 					<WagmiProvider>
 						<AuthProvider>
 							<RouterProvider router={router} />
 							<Toaster position="top-right" theme={"dark"} />
 						</AuthProvider>
 					</WagmiProvider>
-				</QueryClientProvider>
-			</PrivyProvider>
+				</PrivyProvider>
+			</QueryClientProvider>
 		</ThemeProvider>
 	);
 }

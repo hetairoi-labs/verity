@@ -1,32 +1,30 @@
+import { usePrivy } from "@privy-io/react-auth";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { type InferRequestType, parseResponse } from "hono/client";
-import client from "../../utils/hc";
-import { usePrivyToken } from "../web3/use-privy-token";
+import { client, getAuthHeaders } from "../../utils/hc";
 
 // register new user
 type RegisterUserRoute = (typeof client.users)["$post"];
 export type RegisterUserInput = InferRequestType<RegisterUserRoute>["json"];
 
 export function useRegisterUserMutation() {
-	const token = usePrivyToken();
+	const { getAccessToken } = usePrivy();
 	const queryClient = useQueryClient();
 
 	return useMutation({
 		mutationFn: async (json: RegisterUserInput) => {
+			const token = await getAccessToken();
 			if (!token) {
 				throw new Error("No auth token");
 			}
 			const result = await parseResponse(
-				client.users.$post(
-					{ json },
-					{ headers: { Authorization: `Bearer ${token}` } }
-				)
+				client.users.$post({ json }, getAuthHeaders(token))
 			);
 			return result.data;
 		},
 		onSuccess: (data) => {
 			console.log("[RegisterUserMutation] Success:", data);
-			queryClient.invalidateQueries({ queryKey: ["user", token] });
+			queryClient.invalidateQueries({ queryKey: ["user", data?.user?.id] });
 		},
 	});
 }
@@ -36,41 +34,43 @@ type GetUserRoute = (typeof client.users)["$get"];
 export type GetUserInput = InferRequestType<GetUserRoute>;
 
 export function useGetUserQuery() {
-	const token = usePrivyToken();
+	const { getAccessToken, authenticated, ready } = usePrivy();
 	return useQuery({
-		queryKey: ["user", token],
+		queryKey: ["user"],
 		queryFn: async () => {
+			const token = await getAccessToken();
+			if (!token) {
+				throw new Error("No auth token");
+			}
 			const result = await parseResponse(
-				client.users.$get({}, { headers: { Authorization: `Bearer ${token}` } })
+				client.users.$get({}, getAuthHeaders(token))
 			);
 			return result.data;
 		},
 		select: (data) => data?.user,
-		enabled: !!token,
+		enabled: ready && authenticated,
 	});
 }
 
 // delete user
 export function useDeleteUserMutation() {
-	const token = usePrivyToken();
+	const { getAccessToken } = usePrivy();
 	const queryClient = useQueryClient();
 
 	return useMutation({
 		mutationFn: async () => {
+			const token = await getAccessToken();
 			if (!token) {
 				throw new Error("No auth token");
 			}
 			const result = await parseResponse(
-				client.users.$delete(
-					{},
-					{ headers: { Authorization: `Bearer ${token}` } }
-				)
+				client.users.$delete({}, getAuthHeaders(token))
 			);
 			return result.data;
 		},
 		onSuccess: (data) => {
 			console.log("[DeleteUserMutation] Success:", data);
-			queryClient.invalidateQueries({ queryKey: ["user", token] });
+			queryClient.invalidateQueries({ queryKey: ["user"] });
 		},
 	});
 }

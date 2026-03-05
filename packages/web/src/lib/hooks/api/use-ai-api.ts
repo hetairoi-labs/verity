@@ -1,8 +1,8 @@
+import { usePrivy } from "@privy-io/react-auth";
 import { useQuery } from "@tanstack/react-query";
 import { type InferRequestType, parseResponse } from "hono/client";
 import { receiveTypedStream } from "hono-typedstream/client";
-import client from "../../utils/hc";
-import { usePrivyToken } from "../web3/use-privy-token";
+import { client, getAuthHeaders } from "../../utils/hc";
 
 // get live token
 type GetLiveTokenRoute = (typeof client.ai.live.token)["$get"];
@@ -25,16 +25,17 @@ type FastTextRoute = (typeof client.ai.text.fast)["$post"];
 export type FastTextInput = InferRequestType<FastTextRoute>["json"];
 
 export function useFastTextStream() {
-	const token = usePrivyToken();
+	const { getAccessToken } = usePrivy();
 
 	const streamText = async (input: FastTextInput) => {
+		const token = await getAccessToken();
 		if (!token) {
-			throw new Error("No auth token");
+			throw new Error("Unauthorized: No auth token");
 		}
 
 		const response = await client.ai.text.fast.$post(
 			{ json: input },
-			{ headers: { Authorization: `Bearer ${token}` } }
+			getAuthHeaders(token)
 		);
 
 		return receiveTypedStream(response);
@@ -48,16 +49,17 @@ type FastChatRoute = (typeof client.ai.chat.fast)["$post"];
 export type FastChatInput = InferRequestType<FastChatRoute>["json"];
 
 export function useFastChatStream() {
-	const token = usePrivyToken();
+	const { getAccessToken } = usePrivy();
 
 	const streamChat = async (input: FastChatInput) => {
+		const token = await getAccessToken();
 		if (!token) {
-			throw new Error("No auth token");
+			throw new Error("Unauthorized: No auth token");
 		}
 
 		const response = await client.ai.chat.fast.$post(
 			{ json: input },
-			{ headers: { Authorization: `Bearer ${token}` } }
+			getAuthHeaders(token)
 		);
 
 		return receiveTypedStream(response);

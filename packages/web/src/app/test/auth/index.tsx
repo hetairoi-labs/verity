@@ -4,7 +4,7 @@ import { TestCard } from "@/src/components/custom/test-card";
 import { Button } from "@/src/components/ui/button";
 import { useAuth } from "@/src/lib/context/auth-context";
 import { useGetUserQuery } from "@/src/lib/hooks/api/use-user-api";
-import { useActiveWallet } from "@/src/lib/hooks/web3/use-active-wallet";
+import { useSwitchNetwork } from "@/src/lib/hooks/web3/use-switch-network";
 
 export const Route = createFileRoute("/test/auth/")({
 	component: AuthPage,
@@ -12,11 +12,10 @@ export const Route = createFileRoute("/test/auth/")({
 
 function AuthPage() {
 	const { data: user } = useGetUserQuery();
-	const { state, login, logout } = useAuth();
-	const { isWalletOnDefaultChain, switchNetwork, defaultChain } =
-		useActiveWallet();
+	const { ready, login, logout } = useAuth();
+	const { isWrongChain, switchToDefaultChain } = useSwitchNetwork();
 
-	if (!state.ready) {
+	if (!ready) {
 		return <Loader />;
 	}
 	return (
@@ -41,7 +40,7 @@ function AuthPage() {
 						<Button onClick={() => logout()}>Logout</Button>
 					</div>
 				}
-				data={state.user ? JSON.stringify(state.user, null, 2) : null}
+				data={user ? JSON.stringify(user, null, 2) : null}
 				description="Login / Logout"
 				title="Authentication"
 			/>
@@ -49,17 +48,13 @@ function AuthPage() {
 			<TestCard
 				children={
 					<Button
-						disabled={isWalletOnDefaultChain}
-						onClick={() => switchNetwork(defaultChain.id)}
+						disabled={isWrongChain}
+						onClick={() => switchToDefaultChain()}
 					>
 						Switch Network
 					</Button>
 				}
-				data={
-					isWalletOnDefaultChain
-						? "On default network"
-						: "Not on default network"
-				}
+				data={isWrongChain ? "On default network" : "Not on default network"}
 				description="Switch to default network"
 				title="Switch Network"
 			/>

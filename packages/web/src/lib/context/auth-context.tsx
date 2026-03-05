@@ -16,17 +16,14 @@ interface LoginResult {
 }
 
 interface AuthContextType {
+	authenticated: boolean;
+	isModalOpen: boolean;
 	login: {
 		mutate: (options?: LoginModalOptions) => void;
 		result: LoginResult | undefined;
 	};
 	logout: () => Promise<void>;
-	state: {
-		ready: boolean;
-		authenticated: boolean;
-		user: User | null;
-		isModalOpen: boolean;
-	};
+	ready: boolean;
 	update: {
 		email: (email: string) => void;
 		phone: (phone: string) => void;
@@ -41,6 +38,7 @@ interface AuthContextType {
 			github: (subject: string) => Promise<User>;
 		};
 	};
+	user: User | null;
 }
 
 const AuthContext = createContext<AuthContextType | null>(null);
@@ -73,12 +71,10 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 	});
 
 	const value = {
-		state: {
-			ready: privy.ready,
-			authenticated: privy.authenticated,
-			user: privy.user,
-			isModalOpen: privy.isModalOpen,
-		},
+		ready: privy.ready,
+		authenticated: privy.authenticated,
+		user: privy.user,
+		isModalOpen: privy.isModalOpen,
 		login: {
 			mutate: loginMutation,
 			result: loginResult,

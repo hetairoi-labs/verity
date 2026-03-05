@@ -4,7 +4,6 @@ import {
 } from "@tanstack/react-query";
 import { ErrorHandler } from "../errors/handler";
 
-// Tanstack Query – mutations route to global handler (queries.onError removed in v5)
 const queryClient = new QueryClient({
 	defaultOptions: {
 		mutations: {
