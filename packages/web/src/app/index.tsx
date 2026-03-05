@@ -11,6 +11,7 @@ export const Route = createFileRoute("/")({
 function RouteComponent() {
 	const { authenticated, login, logout } = useAuth();
 	const navigate = useNavigate();
+
 	const { contracts } = useContracts();
 	console.log("contracts", contracts);
 
