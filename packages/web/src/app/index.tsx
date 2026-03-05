@@ -13,10 +13,9 @@ export const Route = createFileRoute("/")({
 });
 
 function LandingPage() {
-	const { authenticated, login, logout, contracts } = useAuth();
+	const { authenticated, login, logout } = useAuth();
 	const navigate = useNavigate();
 	const [loginIntent, setLoginIntent] = useState(false);
-	console.log(contracts?.Manager.address);
 
 	useEffect(() => {
 		if (!(loginIntent && login.result)) {
