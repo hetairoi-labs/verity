@@ -1,9 +1,15 @@
-import { type Client, getContract } from "viem";
+import {
+	type Account,
+	type Chain,
+	type Client,
+	getContract,
+	type Transport,
+} from "viem";
 import { definitions } from "./definitions.gen";
 
 export function getContracts(
 	networkName: keyof typeof definitions,
-	client: Client,
+	client: Client<Transport, Chain, Account>,
 ) {
 	if (!definitions[networkName]) {
 		throw new Error(
