@@ -1,9 +1,7 @@
 import { TestCard } from "@/src/components/custom/test-card";
 import { Button } from "@/src/components/ui/button";
-import {
-	toGatewayUrl,
-	useUploadToPinataMutation,
-} from "@/src/lib/hooks/api/use-uploads-api";
+import { useUploadToPinataMutation } from "@/src/lib/hooks/api/use-uploads-api";
+import { toGatewayUrl } from "@/src/lib/utils/pinata";
 
 export function UploadToPinata() {
 	const upload = useUploadToPinataMutation();
