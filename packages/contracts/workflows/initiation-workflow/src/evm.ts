@@ -14,11 +14,11 @@ import {
 	encodeAbiParameters,
 	encodeFunctionData,
 	getAddress,
-	parseAbi,
 	parseAbiParameters,
 	zeroAddress,
 } from "viem";
 import type z from "zod";
+import { definitions } from "../../../definitions.gen";
 
 export function initiateSession(
 	runtime: Runtime<z.infer<ReturnType<typeof zConfig>>>,
@@ -75,16 +75,14 @@ export function initiateSession(
 	return txHash;
 }
 
-const Abi = parseAbi([
-	"function sessionDataCIDs(uint256 index) view returns (string)",
-]);
+const Abi = definitions.test.KXManager.abi;
 
-export function getPartialDataCidByIndex(
+export function getListingByIndex(
 	runtime: Runtime<z.infer<ReturnType<typeof zConfig>>>,
 	args: {
-		dataCidIndex: bigint;
+		listingIndex: bigint;
 	},
-): string {
+): { teacher: Address; price: bigint; dataCID: string } {
 	const evmCfg = runtime.config.evms[0];
 
 	const network = getNetwork({
@@ -100,8 +98,8 @@ export function getPartialDataCidByIndex(
 	);
 	const callData = encodeFunctionData({
 		abi: Abi,
-		functionName: "sessionDataCIDs",
-		args: [BigInt(args.dataCidIndex)],
+		functionName: "listings",
+		args: [BigInt(args.listingIndex)],
 	});
 
 	const contractCall = evmClient
@@ -115,13 +113,13 @@ export function getPartialDataCidByIndex(
 		})
 		.result();
 
-	const onchainValue = decodeFunctionResult({
+	const [teacher, price, dataCID] = decodeFunctionResult({
 		abi: Abi,
-		functionName: "sessionDataCIDs",
+		functionName: "listings",
 		data: bytesToHex(contractCall.data),
 	});
 
-	return onchainValue;
+	return { teacher, price, dataCID };
 }
 
 const encodeCreationRequest = (

@@ -68,6 +68,7 @@ export const zSessionDetails = () =>
 	z.object({
 		sessionId: z.number(),
 		topic: z.string(),
+		price: z.number(),
 		goals: z.array(z.object({ name: z.string(), weight: z.number() })),
 		metadata: z.string(),
 		transcriptId: z.string(),
