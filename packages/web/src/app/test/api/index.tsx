@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { GetToken } from "./:components/get-token";
+import { UploadToPinata } from "./:components/upload";
 import { WebSocketTest } from "./:components/websocket";
 
 function TestPage() {
@@ -10,6 +11,7 @@ function TestPage() {
 			<div className="flex min-w-full flex-col items-center gap-8">
 				<GetToken />
 				<WebSocketTest />
+				<UploadToPinata />
 			</div>
 		</div>
 	);

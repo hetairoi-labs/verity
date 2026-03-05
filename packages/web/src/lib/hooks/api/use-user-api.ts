@@ -1,19 +1,18 @@
-import { usePrivy } from "@privy-io/react-auth";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { type InferRequestType, parseResponse } from "hono/client";
 import { client, getAuthHeaders } from "../../utils/hc";
+import { usePrivyToken } from "../web3/use-privy-token";
 
 // register new user
 type RegisterUserRoute = (typeof client.users)["$post"];
 export type RegisterUserInput = InferRequestType<RegisterUserRoute>["json"];
 
 export function useRegisterUserMutation() {
-	const { getAccessToken } = usePrivy();
+	const token = usePrivyToken();
 	const queryClient = useQueryClient();
 
 	return useMutation({
 		mutationFn: async (json: RegisterUserInput) => {
-			const token = await getAccessToken();
 			if (!token) {
 				throw new Error("No auth token");
 			}
@@ -34,11 +33,10 @@ type GetUserRoute = (typeof client.users)["$get"];
 export type GetUserInput = InferRequestType<GetUserRoute>;
 
 export function useGetUserQuery() {
-	const { getAccessToken, authenticated, ready } = usePrivy();
+	const token = usePrivyToken();
 	return useQuery({
 		queryKey: ["user"],
 		queryFn: async () => {
-			const token = await getAccessToken();
 			if (!token) {
 				throw new Error("No auth token");
 			}
@@ -48,18 +46,17 @@ export function useGetUserQuery() {
 			return result.data;
 		},
 		select: (data) => data?.user,
-		enabled: ready && authenticated,
+		enabled: !!token,
 	});
 }
 
 // delete user
 export function useDeleteUserMutation() {
-	const { getAccessToken } = usePrivy();
+	const token = usePrivyToken();
 	const queryClient = useQueryClient();
 
 	return useMutation({
 		mutationFn: async () => {
-			const token = await getAccessToken();
 			if (!token) {
 				throw new Error("No auth token");
 			}
