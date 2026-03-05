@@ -9,17 +9,22 @@ import {
 import { createRecallBot } from "@verity/workflows-shared/recall";
 import { readFromStore, writeToStore } from "@verity/workflows-shared/store";
 import { zConfig, zHex } from "@verity/workflows-shared/zod";
-import { decodeEventLog, keccak256, stringToBytes } from "viem";
+import { decodeEventLog, toEventHash } from "viem";
 import z from "zod";
 import { definitions } from "../../definitions.gen";
-import { getPartialDataCidByIndex, initiateSession } from "./src/evm";
+import { getListingByIndex, initiateSession } from "./src/evm";
 
 type Config = z.infer<ReturnType<typeof zConfig>>;
 
-const eventAbi = definitions.test.KXManager.abi;
-const eventSignature =
-	"SessionRegistrationRequested(address,address,uint256,string,uint256)";
-const eventHash = keccak256(stringToBytes(eventSignature));
+const Abi = definitions.test.KXManager.abi;
+const triggerEventName = "SessionRegistrationRequested" as const;
+const eventAbi = Abi.find(
+	(item) => item.type === "event" && item.name === triggerEventName,
+);
+if (!eventAbi) {
+	throw new Error(`Event ABI not found for event: ${triggerEventName}`);
+}
+const eventHash = toEventHash(eventAbi);
 
 const onLogTrigger = (runtime: Runtime<Config>, log: EVMLog): string => {
 	try {
@@ -27,23 +32,23 @@ const onLogTrigger = (runtime: Runtime<Config>, log: EVMLog): string => {
 			.tuple([zHex()], zHex())
 			.parse(log.topics.map((t) => bytesToHex(t)));
 		const data = bytesToHex(log.data);
-		const decodedLog = decodeEventLog({ abi: eventAbi, data, topics });
+		const decodedLog = decodeEventLog({ abi: Abi, data, topics });
 
 		const evmCfg = runtime.config.evms[0];
 		runtime.log(`Event name: ${decodedLog.eventName}`);
 
-		if (decodedLog.eventName !== "SessionRegistrationRequested")
+		if (decodedLog.eventName !== triggerEventName)
 			throw new Error("Unexpected event");
 
-		const { teacher, learner, amount, meetingLink, partialDataCIDIndex } =
+		const { teacher, learner, amount, meetingLink, listingIndex } =
 			decodedLog.args;
 
 		runtime.log(
-			`Session registration request detected for teacher: ${teacher}, learner: ${learner}, amount: ${amount}, partialDataCIDIndex: ${partialDataCIDIndex}`,
+			`Session registration request detected for teacher: ${teacher}, learner: ${learner}, amount: ${amount}, listingIndex: ${listingIndex}`,
 		);
 
-		const partialDataCID = getPartialDataCidByIndex(runtime, {
-			dataCidIndex: partialDataCIDIndex,
+		const { dataCID: partialDataCID } = getListingByIndex(runtime, {
+			listingIndex: listingIndex,
 		});
 
 		const unpublishedSession = readFromStore(
