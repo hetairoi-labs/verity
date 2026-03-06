@@ -34,15 +34,11 @@ const recallRoute = new Hono().post("/webhooks", async (c) => {
 		} else if (event === "transcript.failed") {
 			await handleTranscriptFailed(payload);
 		}
-	})
-		.then(([, error]) => {
-			if (error) {
-				logger.error(error, "webhook.processing.error");
-			}
-		})
-		.catch(() => {
-			/* fire-and-forget: errors logged in .then */
-		});
+	}).then(([, error]) => {
+		if (error) {
+			logger.error(error, "webhook.processing.error");
+		}
+	});
 
 	return respond.ok(c, 200, "Webhook processed successfully");
 });

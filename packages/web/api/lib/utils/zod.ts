@@ -1,6 +1,6 @@
 import { zValidator as honoZValidator } from "@hono/zod-validator";
 import type { ValidationTargets } from "hono";
-import { getAddress, isAddress } from "viem";
+import { getAddress, type Hex, isAddress, isHex } from "viem";
 import type { ZodType } from "zod";
 import { z } from "zod";
 import { safe } from "@/lib/utils/safe";
@@ -39,6 +39,12 @@ export const zHexAddress = () =>
 			return isAddress(value);
 		}, "Invalid hex address")
 		.transform((value) => getAddress(value));
+
+export const zHex = () =>
+	z
+		.string()
+		.refine((value) => isHex(value), "Invalid Ethereum address")
+		.transform((value) => value as Hex);
 
 export type ZHexAddress = z.infer<ReturnType<typeof zHexAddress>>;
 

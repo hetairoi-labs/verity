@@ -9,10 +9,7 @@ const { sessions, goals } = schema;
 
 export const createGoalInputSchema = z.object({
 	sessionId: z.number().min(1, "Session ID is required"),
-	key: z.string().min(1, "Key is required"),
-	result: z.number().min(1, "Result must be greater than 0"),
-	unit: z.string().min(1, "Unit is required"),
-	description: z.string().optional(),
+	name: z.string().min(1, "Name is required"),
 	weightage: z
 		.number()
 		.min(1, "Weightage must be greater than 0")

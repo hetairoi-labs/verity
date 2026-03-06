@@ -13,11 +13,10 @@ const { sessions, meetings, goals, participants } = schema;
 // Schemas
 export const createSessionInputSchema = z.object({
 	title: z.string().min(1, "Title is required"),
+	topic: z.string().min(1, "Topic is required"),
+	listingIndex: z.number(),
 	description: z.string().optional(),
-	price: z
-		.number()
-		.min(0, "Price in USDC must be greater than 0")
-		.max(100_000, "Price in USDC must be less than 100,000"),
+	price: z.number().min(0, "Price in USDC must be greater than 0"),
 	goals: z
 		.array(createGoalInputSchema.omit({ sessionId: true }))
 		.min(1, "At least one goal is required")
@@ -59,9 +58,11 @@ export function createSession(json: CreateSessionInput, hostId: string) {
 			tx
 				.insert(sessions)
 				.values({
+					listingIndex: input.listingIndex,
 					title: input.title,
 					description: input.description,
 					price: input.price.toString(),
+					topic: input.topic,
 					hostId,
 				})
 				.returning()
