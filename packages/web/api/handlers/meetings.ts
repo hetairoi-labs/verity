@@ -7,7 +7,6 @@ import { softCascade } from "../lib/db/utils/cascade";
 import { requireAtLeastOne, safeQuery } from "../lib/db/utils/safe";
 import { createGoogleCalendarEvent } from "../lib/utils/calendar";
 import { ApiError } from "../lib/utils/hono/error";
-import { createBot } from "../lib/utils/recall/bot";
 
 const { sessions, meetings } = schema;
 
@@ -28,11 +27,7 @@ export const createMeetingInputSchema = z.object({
 		.min(0.1, "Duration must be greater than 0")
 		.max(60, "Duration must be less than 60 minutes")
 		.default(1),
-	botName: z
-		.string()
-		.min(3, "Bot name must be at least 1 character")
-		.max(255, "Bot name must be less than 255 characters")
-		.default("Kex Bot"),
+	attendees: z.array(z.email()),
 });
 
 export const getSessionMeetingsInputSchema = z.object({
@@ -65,7 +60,8 @@ export async function createMeeting(json: CreateMeetingInput, hostId: string) {
 	const event = await createGoogleCalendarEvent(
 		input.startDate,
 		input.duration,
-		input.summary
+		input.summary,
+		input.attendees
 	);
 	const meetingUrl = event.hangoutLink;
 	const eventLink = event.htmlLink;
@@ -77,10 +73,6 @@ export async function createMeeting(json: CreateMeetingInput, hostId: string) {
 			"Something went wrong while creating the meeting.."
 		);
 	}
-
-	// Create Bot
-	const bot = await createBot(meetingUrl);
-	const botId = bot.id;
 
 	// Get Session
 	const [session] = await safeQuery(
@@ -105,7 +97,6 @@ export async function createMeeting(json: CreateMeetingInput, hostId: string) {
 			.values({
 				sessionId: session.id,
 				eventId,
-				botId,
 				meetingUrl,
 				summary: input.summary,
 				calendarLink: eventLink,
@@ -120,7 +111,6 @@ export async function createMeeting(json: CreateMeetingInput, hostId: string) {
 
 	return {
 		meeting,
-		bot,
 		event,
 	};
 }

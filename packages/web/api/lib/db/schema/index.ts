@@ -24,10 +24,7 @@ export const users = sqliteTable("users", {
 export const sessions = sqliteTable(
 	"sessions",
 	{
-		id: integer().primaryKey({
-			autoIncrement: true,
-		}),
-		index: integer().notNull(),
+		id: integer().primaryKey(),
 		cid: text().notNull(),
 		title: text().notNull(),
 		description: text(),
@@ -48,7 +45,6 @@ export const meetings = sqliteTable(
 			autoIncrement: true,
 		}),
 		eventId: text("event_id").notNull(),
-		botId: text("bot_id").notNull(),
 		summary: text(),
 		meetingUrl: text("meeting_url").notNull(),
 		calendarLink: text("calendar_link"),
@@ -63,7 +59,6 @@ export const meetings = sqliteTable(
 	},
 	(table) => [
 		index("meetings_session_id_idx").on(table.sessionId),
-		index("meetings_bot_id_idx").on(table.botId),
 		uniqueIndexSoft("meetings_meeting_url_unique", table).on(table.meetingUrl),
 	]
 );

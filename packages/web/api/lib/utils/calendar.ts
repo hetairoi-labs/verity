@@ -15,7 +15,8 @@ export async function getGoogleEventData(eventId: string) {
 export async function createGoogleCalendarEvent(
 	startDate: Date,
 	duration: number,
-	summary?: string
+	summary?: string,
+	attendees?: string[]
 ) {
 	const client = await getAuthenticatedClient();
 	const calendar = google.calendar({ version: "v3", auth: client });
@@ -37,6 +38,7 @@ export async function createGoogleCalendarEvent(
 					conferenceSolutionKey: { type: "hangoutsMeet" },
 				},
 			},
+			attendees: attendees?.map((email) => ({ email })),
 		},
 	});
 

@@ -10,6 +10,7 @@ import { softCascade } from "../lib/db/utils/cascade";
 import { requireAtLeastOne, safeQuery } from "../lib/db/utils/safe";
 import { waitForReceipt } from "../lib/utils/evm";
 import { ApiError } from "../lib/utils/hono/error";
+import { logger } from "../lib/utils/pino";
 import { zHex, zJsonString } from "../lib/utils/zod";
 import { createGoalInputSchema } from "./goals";
 
@@ -82,7 +83,7 @@ export function createSessionRecord(
 			tx
 				.insert(sessions)
 				.values({
-					index: parsed.index,
+					id: parsed.index,
 					cid: parsed.cid,
 					title: parsed.title,
 					description: parsed.description,
@@ -155,7 +156,7 @@ export async function createSession(json: CreateSessionInput, hostId: string) {
 		zJsonString().parse(input.metadata)
 	);
 
-	return createSessionRecord(
+	const session = await createSessionRecord(
 		{
 			index: Number(listingIndex.index),
 			cid: listingIndex.dataCID,
@@ -170,6 +171,12 @@ export async function createSession(json: CreateSessionInput, hostId: string) {
 		},
 		hostId
 	);
+	if (!session) {
+		throw new ApiError(500, "Failed to create session..");
+	}
+
+	logger.info({ session }, "session.create.success");
+	return session;
 }
 
 export async function updateSession(json: UpdateSessionInput, hostId: string) {
@@ -203,7 +210,7 @@ export async function updateSession(json: UpdateSessionInput, hostId: string) {
 				.from(sessions)
 				.where(
 					buildWhereActive([
-						{ table: sessions, filters: { index: nextIndex, hostId } },
+						{ table: sessions, filters: { id: nextIndex, hostId } },
 					])
 				)
 				.limit(1)
@@ -264,6 +271,7 @@ export async function updateSession(json: UpdateSessionInput, hostId: string) {
 			}
 		}
 
+		logger.info({ session: updatedSession }, "session.update.success");
 		return updatedSession;
 	});
 }

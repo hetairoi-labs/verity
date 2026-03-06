@@ -1,12 +1,13 @@
+import { useState } from "react";
 import { useWriteContract } from "wagmi";
 import { TestCard } from "@/src/components/custom/test-card";
 import { Button } from "@/src/components/ui/button";
+import { Input } from "@/src/components/ui/input";
 import { useEvmContext } from "@/src/lib/context/evm-context";
 import { useUpdateSessionMutation } from "@/src/lib/hooks/api/use-sessions-api";
 import { useUploadToPinataMutation } from "@/src/lib/hooks/api/use-uploads-api";
 
 const listingData = {
-	index: 13,
 	goals: [
 		{ name: "Updated: Deploying a contract to a testnet", weight: 1 },
 		{ name: "Updated: Understanding the contract's functionality", weight: 1 },
@@ -25,12 +26,13 @@ export function UpdateListing() {
 	const writeContract = useWriteContract();
 	const upload = useUploadToPinataMutation();
 	const updateSession = useUpdateSessionMutation();
+	const [index, setIndex] = useState<number | undefined>(undefined);
 
 	const isPending =
 		upload.isPending || writeContract.isPending || updateSession.isPending;
 
 	async function handleUpdateListing() {
-		if (!(contracts?.Manager.address && contracts?.Manager.abi)) {
+		if (!(contracts?.Manager.address && contracts?.Manager.abi && index)) {
 			return;
 		}
 
@@ -47,7 +49,7 @@ export function UpdateListing() {
 			address: contracts.Manager.address,
 			abi: contracts.Manager.abi,
 			functionName: "updateListing",
-			args: [BigInt(listingData.index), cid, BigInt(listingData.price)],
+			args: [BigInt(index), cid, BigInt(listingData.price)],
 		});
 		console.log("write contract completed", txHash);
 
@@ -74,9 +76,13 @@ export function UpdateListing() {
 			description="Update a listing"
 			title="Update Listing"
 		>
+			<Input
+				onChange={(e) => setIndex(Number(e.target.value))}
+				placeholder="Session Index"
+			/>
 			<Button
 				className="w-full"
-				disabled={isPending}
+				disabled={isPending || !index}
 				onClick={handleUpdateListing}
 			>
 				{isPending ? "Updating..." : "Update Listing"}
