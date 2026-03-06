@@ -1,5 +1,7 @@
 import { useMutation } from "@tanstack/react-query";
 import { type InferRequestType, parseResponse } from "hono/client";
+import type z from "zod";
+import type { zListingDataSchema } from "@/api/lib/types/evm.types";
 import { safeAsync } from "@/lib/utils/safe";
 import { client } from "../../utils/hc";
 import { pinata } from "../../utils/pinata";
@@ -10,9 +12,9 @@ type CreateJsonPresignedUrlRoute =
 type CreateJsonPresignedUrlInput =
 	InferRequestType<CreateJsonPresignedUrlRoute>["json"];
 
-export type UploadPayload = Record<string, unknown> | unknown[];
+type ListingData = z.input<typeof zListingDataSchema>;
 export interface UploadToPinataInput {
-	json: UploadPayload;
+	json: ListingData;
 	presign?: CreateJsonPresignedUrlInput;
 }
 

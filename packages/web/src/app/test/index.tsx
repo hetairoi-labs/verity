@@ -10,6 +10,9 @@ function RouteComponent() {
 				<Link to="/test/api">
 					<Button>API Tests</Button>
 				</Link>
+				<Link to="/test/e2e">
+					<Button>E2E Tests</Button>
+				</Link>
 				<Link to="/test/auth">
 					<Button>Auth</Button>
 				</Link>
