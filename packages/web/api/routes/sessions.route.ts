@@ -38,7 +38,7 @@ const sessionsRoute = new Hono()
 				logger.error(error, "evm.session.upsert.error");
 			}
 		});
-		return respond.ok(c, 200, "Upsert queued successfully");
+		return respond.ok(c, 200, "Upsert queued successfully", {});
 	})
 
 	// get all sessions by host (host only)

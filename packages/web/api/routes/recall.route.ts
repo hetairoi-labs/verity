@@ -40,7 +40,7 @@ const recallRoute = new Hono().post("/webhooks", async (c) => {
 		}
 	});
 
-	return respond.ok(c, 200, "Webhook processed successfully");
+	return respond.ok(c, 200, "Webhook processed successfully", {});
 });
 
 export default recallRoute;

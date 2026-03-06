@@ -57,10 +57,7 @@ export function AddListing() {
 			price: listingData.price,
 			goals: listingData.goals,
 		});
-		console.log(
-			"createSession completed",
-			createSessionResponse?.session.listingIndex
-		);
+		console.log("createSession completed", createSessionResponse);
 	}
 
 	return (

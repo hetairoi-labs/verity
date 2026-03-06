@@ -10,6 +10,7 @@
   },
   "scripts": {
     "check": "ultracite fix",
+    "tsc": "clear && bunx --bun tsc --noEmit",
     "purge": "./scripts/purge.sh",
     "contracts:compile": "bun run --filter @verity/contracts build",
     "contracts:test": "bun run --filter @verity/contracts test",

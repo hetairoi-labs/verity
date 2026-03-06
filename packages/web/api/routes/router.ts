@@ -1,6 +1,5 @@
 import { Hono } from "hono";
 import ai from "./ai.route";
-import evm from "./evm.route";
 import goals from "./goals.route";
 import meetings from "./meetings.route";
 import recall from "./recall.route";
@@ -17,7 +16,6 @@ const routes = new Hono()
 	.route("/ai", ai)
 	.route("/recall", recall)
 	.route("/uploads", uploads)
-	.route("/evm", evm)
 	.route("/users", users);
 
 export default routes;

@@ -54,11 +54,5 @@ export function handleError(err: Error | HTTPException, c: Context) {
 		"http.error"
 	);
 
-	return respond.err(
-		c,
-		status,
-		err.message,
-		errorBody as JSONObject | undefined,
-		headers
-	);
+	return respond.err(c, status, err.message, errorBody as JSONObject, headers);
 }

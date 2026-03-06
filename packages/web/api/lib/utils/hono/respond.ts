@@ -23,7 +23,7 @@ export const respond = {
 		ctx: C,
 		status: U,
 		message: string,
-		data?: T,
+		data: T,
 		headers?: HeaderRecord
 	) => {
 		ctx.status(status);
@@ -41,7 +41,7 @@ export const respond = {
 		ctx: C,
 		status: U,
 		message: string,
-		error?: T,
+		error: T,
 		headers?: HeaderRecord
 	) => {
 		ctx.status(status);
