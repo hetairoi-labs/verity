@@ -67,6 +67,8 @@ describe("createMeeting Integration", () => {
 					title: "Integration Test Session",
 					description: "Test",
 					price: 0,
+					topic: "Integration Test Topic",
+					listingIndex: 1,
 				},
 				userId
 			);

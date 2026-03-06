@@ -98,7 +98,12 @@ describe("deleteUser", () => {
 			throw new Error("createUser failed");
 		}
 		const session = await createSession(
-			{ title: "Session 1", price: 100 },
+			{
+				title: "Session 1",
+				price: 100,
+				topic: "Integration Test Topic",
+				listingIndex: 1,
+			},
 			user.id
 		);
 		if (!session) {
@@ -121,12 +126,8 @@ describe("deleteUser", () => {
 		const [goal] = await db
 			.insert(goals)
 			.values({
-				key: "increase sale",
-				result: 10,
-				unit: "%",
-				description: "Increase sales by 10%",
+				name: "increase sale",
 				weightage: 100,
-				progress: 0,
 				sessionId: session.id,
 			})
 			.returning();
