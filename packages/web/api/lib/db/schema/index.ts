@@ -27,8 +27,10 @@ export const sessions = sqliteTable(
 		id: integer().primaryKey({
 			autoIncrement: true,
 		}),
+		listingIndex: integer().notNull(),
 		title: text().notNull(),
 		description: text(),
+		topic: text().notNull(),
 		price: numeric().notNull(),
 		hostId: text("host_id")
 			.references(() => users.id)
@@ -95,24 +97,14 @@ export const goals = sqliteTable(
 		id: integer().primaryKey({
 			autoIncrement: true,
 		}),
-		key: text().notNull(),
-		result: integer().notNull(),
-		unit: text().notNull(),
-		description: text(),
+		name: text().notNull(),
 		weightage: integer().default(0),
-		progress: integer().default(0),
 		sessionId: integer("session_id")
 			.references(() => sessions.id)
 			.notNull(),
 		...timestamps,
 	},
-	(table) => [
-		index("goals_session_id_idx").on(table.sessionId),
-		uniqueIndexSoft("goals_session_key_unique", table).on(
-			table.sessionId,
-			table.key
-		),
-	]
+	(table) => [index("goals_session_id_idx").on(table.sessionId)]
 );
 
 export const schema = {
