@@ -102,7 +102,8 @@ describe("deleteUser", () => {
 				title: "Session 1",
 				price: 100,
 				topic: "Integration Test Topic",
-				listingIndex: 1,
+				index: 1,
+				cid: "test-cid",
 			},
 			user.id
 		);
