@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { AddListing } from "./:comp/add-listing";
 import { GetAllListings } from "./:comp/get-all";
+import { UpdateListing } from "./:comp/update-listing";
 
 export const Route = createFileRoute("/test/e2e/")({
 	component: RouteComponent,
@@ -14,6 +15,7 @@ function RouteComponent() {
 			<div className="flex min-w-full flex-col items-center gap-8">
 				<AddListing />
 				<GetAllListings />
+				<UpdateListing />
 			</div>
 		</div>
 	);

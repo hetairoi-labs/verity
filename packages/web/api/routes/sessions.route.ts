@@ -10,6 +10,8 @@ import {
 	getAllSessionsInputSchema,
 	getSessionById,
 	getSessionByIdInputSchema,
+	updateSession,
+	updateSessionInputSchema,
 } from "../handlers/sessions";
 import { requireAuth } from "../lib/middleware/auth";
 import { logger } from "../lib/utils/pino";
@@ -40,6 +42,16 @@ const sessionsRoute = new Hono()
 			}
 		});
 		return respond.ok(c, 200, "Creation queued successfully", {});
+	})
+	.patch("/", validator("json", updateSessionInputSchema), (c) => {
+		safeAsync(async () => {
+			await updateSession(c.req.valid("json"), c.var.user.user_id);
+		}).then(([, error]) => {
+			if (error) {
+				logger.error(error, "evm.session.update.error");
+			}
+		});
+		return respond.ok(c, 200, "Update queued successfully", {});
 	})
 
 	// get all sessions by host (host only)

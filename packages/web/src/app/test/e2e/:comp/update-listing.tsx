@@ -2,33 +2,34 @@ import { useWriteContract } from "wagmi";
 import { TestCard } from "@/src/components/custom/test-card";
 import { Button } from "@/src/components/ui/button";
 import { useEvmContext } from "@/src/lib/context/evm-context";
-import { useCreateSessionMutation } from "@/src/lib/hooks/api/use-sessions-api";
+import { useUpdateSessionMutation } from "@/src/lib/hooks/api/use-sessions-api";
 import { useUploadToPinataMutation } from "@/src/lib/hooks/api/use-uploads-api";
 
 const listingData = {
+	index: 13,
 	goals: [
-		{ name: "Deploying a contract to a testnet", weight: 1 },
-		{ name: "Understanding the contract's functionality", weight: 1 },
-		{ name: "Understanding the contract's ABI", weight: 1 },
+		{ name: "Updated: Deploying a contract to a testnet", weight: 1 },
+		{ name: "Updated: Understanding the contract's functionality", weight: 1 },
+		{ name: "Updated: Understanding the contract's ABI", weight: 1 },
 	],
-	price: 1_000_000,
-	topic: "Blockchain development",
+	price: 1_000_000_000,
+	topic: "Updated: Blockchain development",
 	metadata: {
-		title: "Ethereum smart contracts",
-		description: "This is a test listing",
+		title: "Updated: Ethereum smart contracts",
+		description: "This is a updated test listing",
 	},
 };
 
-export function AddListing() {
+export function UpdateListing() {
 	const { contracts } = useEvmContext();
 	const writeContract = useWriteContract();
 	const upload = useUploadToPinataMutation();
-	const createSession = useCreateSessionMutation();
+	const updateSession = useUpdateSessionMutation();
 
 	const isPending =
-		upload.isPending || writeContract.isPending || createSession.isPending;
+		upload.isPending || writeContract.isPending || updateSession.isPending;
 
-	async function handleAddListing() {
+	async function handleUpdateListing() {
 		if (!(contracts?.Manager.address && contracts?.Manager.abi)) {
 			return;
 		}
@@ -45,19 +46,19 @@ export function AddListing() {
 		const txHash = await writeContract.mutateAsync({
 			address: contracts.Manager.address,
 			abi: contracts.Manager.abi,
-			functionName: "createListing",
-			args: [cid, BigInt(listingData.price)],
+			functionName: "updateListing",
+			args: [BigInt(listingData.index), cid, BigInt(listingData.price)],
 		});
 		console.log("write contract completed", txHash);
 
-		const createSessionResponse = await createSession.mutateAsync({
+		const updateSessionResponse = await updateSession.mutateAsync({
 			txHash,
 			metadata: JSON.stringify(listingData.metadata),
 			topic: listingData.topic,
 			price: listingData.price,
 			goals: listingData.goals,
 		});
-		console.log("createSession completed", createSessionResponse);
+		console.log("updateSession completed", updateSessionResponse);
 	}
 
 	return (
@@ -70,15 +71,15 @@ export function AddListing() {
 				null,
 				2
 			)}
-			description="Add a listing"
-			title="Add Listing"
+			description="Update a listing"
+			title="Update Listing"
 		>
 			<Button
 				className="w-full"
 				disabled={isPending}
-				onClick={handleAddListing}
+				onClick={handleUpdateListing}
 			>
-				{isPending ? "Adding..." : "Add Listing"}
+				{isPending ? "Updating..." : "Update Listing"}
 			</Button>
 		</TestCard>
 	);

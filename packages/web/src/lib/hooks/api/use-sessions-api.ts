@@ -77,6 +77,34 @@ export function useCreateSessionMutation() {
 	});
 }
 
+// update session
+type UpdateSessionRoute = (typeof client.sessions)["$patch"];
+export type UpdateSessionInput = InferRequestType<UpdateSessionRoute>["json"];
+
+export function useUpdateSessionMutation() {
+	const token = usePrivyToken();
+	const queryClient = useQueryClient();
+
+	return useMutation({
+		mutationFn: async (json: UpdateSessionInput) => {
+			if (!token) {
+				throw new Error("No auth token");
+			}
+			const result = await parseResponse(
+				client.sessions.$patch(
+					{ json },
+					{ headers: { Authorization: `Bearer ${token}` } }
+				)
+			);
+			return result.data;
+		},
+		onSuccess: (data) => {
+			console.log("[UpdateSessionMutation] Success:", data);
+			queryClient.invalidateQueries({ queryKey: ["sessions"] });
+		},
+	});
+}
+
 // get host sessions
 type GetHostSessionsRoute = (typeof client.sessions.host)["$get"];
 export type GetHostSessionsInput =
@@ -136,6 +164,9 @@ export type GetSessionByIdResponse = Awaited<
 >["data"];
 export type CreateSessionResponse = Awaited<
 	ReturnType<typeof useCreateSessionMutation>
+>["data"];
+export type UpdateSessionResponse = Awaited<
+	ReturnType<typeof useUpdateSessionMutation>
 >["data"];
 export type GetHostSessionsResponse = Awaited<
 	ReturnType<typeof useGetHostSessionsQuery>

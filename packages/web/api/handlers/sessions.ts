@@ -4,6 +4,7 @@ import { parseEventLogs } from "viem";
 import { z } from "zod";
 import { db } from "../lib/db";
 import { schema } from "../lib/db/schema";
+import { isoNow } from "../lib/db/utils";
 import { buildWhereActive } from "../lib/db/utils/builders";
 import { softCascade } from "../lib/db/utils/cascade";
 import { requireAtLeastOne, safeQuery } from "../lib/db/utils/safe";
@@ -38,6 +39,7 @@ export const createSessionInputSchema = z
 		txHash: zHex(),
 	})
 	.extend(zListingData().shape);
+export const updateSessionInputSchema = createSessionInputSchema;
 
 export const getAllSessionsInputSchema = z.object({
 	page: z.number().min(1).default(1),
@@ -57,6 +59,7 @@ export const getSessionTranscriptsInputSchema = z.object({
 
 // Types
 export type CreateSessionInput = z.input<typeof createSessionInputSchema>;
+export type UpdateSessionInput = z.input<typeof updateSessionInputSchema>;
 export type CreateSessionRecordInput = z.input<
 	typeof createSessionRecordInputSchema
 >;
@@ -167,6 +170,102 @@ export async function createSession(json: CreateSessionInput, hostId: string) {
 		},
 		hostId
 	);
+}
+
+export async function updateSession(json: UpdateSessionInput, hostId: string) {
+	const input = updateSessionInputSchema.parse(json);
+	const receipt = await waitForReceipt(input.txHash);
+
+	const logs = parseEventLogs({
+		abi: definitions.test.KXManager.abi,
+		logs: receipt.logs,
+		eventName: "ListingUpsert",
+	});
+	const listing = logs[0]?.args;
+	if (listing?.index === undefined || listing?.dataCID === undefined) {
+		throw new ApiError(500, "No listing index or data CID found in logs");
+	}
+
+	const metadata = sessionMetadataSchema.parse(
+		zJsonString().parse(input.metadata)
+	);
+	const nextGoals = input.goals.map((goal) => ({
+		name: goal.name,
+		weightage: goal.weight,
+	}));
+	const nextIndex = Number(listing.index);
+	const nextCid = listing.dataCID;
+
+	return db.transaction(async (tx) => {
+		const [existingSession] = await safeQuery(
+			tx
+				.select()
+				.from(sessions)
+				.where(
+					buildWhereActive([
+						{ table: sessions, filters: { index: nextIndex, hostId } },
+					])
+				)
+				.limit(1)
+		);
+		if (!existingSession) {
+			throw new ApiError(404, "Session not found");
+		}
+
+		const [updatedSession] = await safeQuery(
+			tx
+				.update(sessions)
+				.set({
+					cid: nextCid,
+					title: metadata.title,
+					description: metadata.description,
+					topic: input.topic,
+					price: input.price.toString(),
+					updatedAt: isoNow(),
+				})
+				.where(
+					buildWhereActive([
+						{ table: sessions, filters: { id: existingSession.id, hostId } },
+					])
+				)
+				.returning()
+		);
+		if (!updatedSession) {
+			throw new ApiError(500, "Failed to update session");
+		}
+
+		const now = isoNow();
+		await safeQuery(
+			tx
+				.update(goals)
+				.set({
+					deletedAt: now,
+					updatedAt: now,
+				})
+				.where(
+					buildWhereActive([
+						{ table: goals, filters: { sessionId: existingSession.id } },
+					])
+				)
+		);
+
+		for (const goal of nextGoals) {
+			const [goalResult] = await safeQuery(
+				tx
+					.insert(goals)
+					.values({
+						...goal,
+						sessionId: existingSession.id,
+					})
+					.returning()
+			);
+			if (!goalResult) {
+				throw new ApiError(500, "Failed to update goals");
+			}
+		}
+
+		return updatedSession;
+	});
 }
 
 export async function getAllSessions(
