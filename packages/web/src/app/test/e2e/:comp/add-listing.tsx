@@ -1,11 +1,12 @@
 import { useWriteContract } from "wagmi";
+import type { ListingWithMetadata } from "@/api/handlers/sessions";
 import { TestCard } from "@/src/components/custom/test-card";
 import { Button } from "@/src/components/ui/button";
 import { useEvmContext } from "@/src/lib/context/evm-context";
 import { useCreateSessionMutation } from "@/src/lib/hooks/api/use-sessions-api";
 import { useUploadToPinataMutation } from "@/src/lib/hooks/api/use-uploads-api";
 
-const listingData = {
+const listingData: ListingWithMetadata = {
 	goals: [
 		{ name: "Deploying a contract to a testnet", weight: 1 },
 		{ name: "Understanding the contract's functionality", weight: 1 },
@@ -16,6 +17,7 @@ const listingData = {
 	metadata: {
 		title: "Ethereum smart contracts",
 		description: "This is a test listing",
+		email: "kartik100100@gmail.com",
 	},
 };
 
@@ -50,14 +52,13 @@ export function AddListing() {
 		});
 		console.log("write contract completed", txHash);
 
-		const createSessionResponse = await createSession.mutateAsync({
+		await createSession.mutateAsync({
 			txHash,
-			metadata: JSON.stringify(listingData.metadata),
+			metadata: listingData.metadata,
 			topic: listingData.topic,
 			price: listingData.price,
 			goals: listingData.goals,
 		});
-		console.log("createSession completed", createSessionResponse);
 	}
 
 	return (

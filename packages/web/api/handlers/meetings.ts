@@ -17,7 +17,7 @@ export const createMeetingInputSchema = z.object({
 		.string()
 		.min(1, "Summary must be at least 1 character")
 		.max(255, "Summary must be less than 255 characters")
-		.default("Kex Session"),
+		.default("Verity Session"),
 	startDate: z
 		.date()
 		.min(new Date(), "Start date must be in the future")
@@ -110,8 +110,8 @@ export async function createMeeting(json: CreateMeetingInput, hostId: string) {
 	}
 
 	return {
-		meeting,
-		event,
+		meetingUrl: meeting.meetingUrl,
+		sessionPrice: session.price,
 	};
 }
 

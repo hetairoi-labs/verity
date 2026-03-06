@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { AddListing } from "./:comp/add-listing";
 import { GetAllListings } from "./:comp/get-all";
+import { RequestMeeting } from "./:comp/request-meeting";
 import { UpdateListing } from "./:comp/update-listing";
 
 export const Route = createFileRoute("/test/e2e/")({
@@ -16,6 +17,7 @@ function RouteComponent() {
 				<AddListing />
 				<GetAllListings />
 				<UpdateListing />
+				<RequestMeeting />
 			</div>
 		</div>
 	);

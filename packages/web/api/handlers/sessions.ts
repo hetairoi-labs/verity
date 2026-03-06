@@ -11,22 +11,31 @@ import { requireAtLeastOne, safeQuery } from "../lib/db/utils/safe";
 import { waitForReceipt } from "../lib/utils/evm";
 import { ApiError } from "../lib/utils/hono/error";
 import { logger } from "../lib/utils/pino";
-import { zHex, zJsonString } from "../lib/utils/zod";
+import { zHex } from "../lib/utils/zod";
 import { createGoalInputSchema } from "./goals";
 
 const { sessions, meetings, goals, participants } = schema;
 
-const sessionMetadataSchema = z.object({
-	title: z.string().min(1, "Title is required"),
-	description: z.string().optional(),
-});
+export const listingWithMetadataSchema = zListingData()
+	.omit({
+		metadata: true,
+	})
+	.extend({
+		metadata: z.object({
+			title: z.string().min(1, "Title is required"),
+			description: z.string().optional(),
+			email: z.email("Invalid email address"),
+		}),
+	});
 
+export type ListingWithMetadata = z.input<typeof listingWithMetadataSchema>;
 export const createSessionRecordInputSchema = z.object({
 	index: z.number(),
 	cid: z.string(),
 	title: z.string().min(1, "Title is required"),
 	topic: z.string().min(1, "Topic is required"),
 	description: z.string().optional(),
+	email: z.email("Invalid email address"),
 	price: z.number().min(0, "Price in USDC must be greater than 0"),
 	goals: z
 		.array(createGoalInputSchema.omit({ sessionId: true }))
@@ -39,7 +48,7 @@ export const createSessionInputSchema = z
 	.object({
 		txHash: zHex(),
 	})
-	.extend(zListingData().shape);
+	.extend(listingWithMetadataSchema.shape);
 export const updateSessionInputSchema = createSessionInputSchema;
 
 export const getAllSessionsInputSchema = z.object({
@@ -86,6 +95,7 @@ export function createSessionRecord(
 					id: parsed.index,
 					cid: parsed.cid,
 					title: parsed.title,
+					email: parsed.email,
 					description: parsed.description,
 					price: parsed.price.toString(),
 					topic: parsed.topic,
@@ -152,16 +162,13 @@ export async function createSession(json: CreateSessionInput, hostId: string) {
 		throw new ApiError(500, "No listing index or data CID found in logs");
 	}
 
-	const metadata = sessionMetadataSchema.parse(
-		zJsonString().parse(input.metadata)
-	);
-
 	const session = await createSessionRecord(
 		{
 			index: Number(listingIndex.index),
 			cid: listingIndex.dataCID,
-			title: metadata.title,
-			description: metadata.description,
+			title: input.metadata.title,
+			email: input.metadata.email,
+			description: input.metadata.description,
 			topic: input.topic,
 			price: input.price,
 			goals: input.goals.map((goal) => ({
@@ -193,9 +200,6 @@ export async function updateSession(json: UpdateSessionInput, hostId: string) {
 		throw new ApiError(500, "No listing index or data CID found in logs");
 	}
 
-	const metadata = sessionMetadataSchema.parse(
-		zJsonString().parse(input.metadata)
-	);
 	const nextGoals = input.goals.map((goal) => ({
 		name: goal.name,
 		weightage: goal.weight,
@@ -224,8 +228,9 @@ export async function updateSession(json: UpdateSessionInput, hostId: string) {
 				.update(sessions)
 				.set({
 					cid: nextCid,
-					title: metadata.title,
-					description: metadata.description,
+					title: input.metadata.title,
+					email: input.metadata.email,
+					description: input.metadata.description,
 					topic: input.topic,
 					price: input.price.toString(),
 					updatedAt: isoNow(),

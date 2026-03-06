@@ -27,6 +27,7 @@ export const sessions = sqliteTable(
 		id: integer().primaryKey(),
 		cid: text().notNull(),
 		title: text().notNull(),
+		email: text().notNull(),
 		description: text(),
 		topic: text().notNull(),
 		price: numeric().notNull(),

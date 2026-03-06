@@ -18,6 +18,7 @@ const listingData = {
 	metadata: {
 		title: "Updated: Ethereum smart contracts",
 		description: "This is a updated test listing",
+		email: "kartik100100@gmail.com",
 	},
 };
 
@@ -53,14 +54,13 @@ export function UpdateListing() {
 		});
 		console.log("write contract completed", txHash);
 
-		const updateSessionResponse = await updateSession.mutateAsync({
+		await updateSession.mutateAsync({
 			txHash,
-			metadata: JSON.stringify(listingData.metadata),
+			metadata: listingData.metadata,
 			topic: listingData.topic,
 			price: listingData.price,
 			goals: listingData.goals,
 		});
-		console.log("updateSession completed", updateSessionResponse);
 	}
 
 	return (
@@ -78,7 +78,7 @@ export function UpdateListing() {
 		>
 			<Input
 				onChange={(e) => setIndex(Number(e.target.value))}
-				placeholder="Session Index"
+				placeholder="Session Id"
 			/>
 			<Button
 				className="w-full"
