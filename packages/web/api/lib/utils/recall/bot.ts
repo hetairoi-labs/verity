@@ -21,7 +21,7 @@ export function createBot(meetingUrl: string) {
 		console.log("Creating production bot");
 		return botClient.post<Bot>("/bot", {
 			meeting_url: meetingUrl,
-			bot_name: "Kex Bot",
+			bot_name: "Verity Bot",
 			join_at: new Date(Date.now() + 0.5 * 60_000).toISOString(),
 			variant: {
 				zoom: "web_4_core",
@@ -58,7 +58,7 @@ export function createBot(meetingUrl: string) {
 	console.log("Creating bot for testing");
 	return botClient.post<Bot>("/bot", {
 		meeting_url: meetingUrl,
-		bot_name: "Kex Bot (Ephemeral)",
+		bot_name: "Verity Bot (Ephemeral)",
 		join_at: new Date(Date.now() + 0.1 * 60_000).toISOString(),
 		recording_config: {
 			retention: {

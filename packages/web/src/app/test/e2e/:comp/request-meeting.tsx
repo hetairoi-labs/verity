@@ -8,7 +8,7 @@ import { useEvmContext } from "@/src/lib/context/evm-context";
 import { useCreateMeetingMutation } from "@/src/lib/hooks/api/use-meetings-api";
 
 const SAMPLE_MEETING_DATA = {
-	summary: "Kex Session",
+	summary: "Verity Session",
 	attendees: ["ishtails@gmail.com"],
 };
 
@@ -19,8 +19,6 @@ export function RequestMeeting() {
 	const writeContract = useWriteContract();
 	const createMeeting = useCreateMeetingMutation();
 	const isPending = writeContract.isPending || createMeeting.isPending;
-
-	console.log("connection", connection.address);
 
 	async function handleSubmit() {
 		if (
@@ -51,8 +49,14 @@ export function RequestMeeting() {
 
 		const allowance = await contracts.USDC.read.allowance([
 			connection.address,
-			contracts.USDC.address,
+			contracts.Manager.address,
 		]);
+
+		console.log("allowance", {
+			address: connection.address,
+			toBeApproved: contracts.USDC.address,
+			allowance,
+		});
 
 		// approve USDC
 		if (allowance < amount) {
@@ -70,8 +74,8 @@ export function RequestMeeting() {
 			address: contracts.Manager.address,
 			abi: contracts.Manager.abi,
 			functionName: "requestSessionRegistration",
-			args: [amount, meetingUrl, BigInt(index)],
-			gas: 500_000n,
+			args: [BigInt(index), meetingUrl],
+			gas: 100_000n,
 		});
 		console.log("write contract completed", txHash);
 	}
