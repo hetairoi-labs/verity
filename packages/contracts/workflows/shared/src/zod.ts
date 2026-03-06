@@ -81,6 +81,9 @@ export const zWriteToStoreResponse = () =>
 		}),
 	});
 
+export const zListingData = () =>
+	zSessionDetails().omit({ transcriptId: true, sessionId: true });
+
 export const zStoreKeySchemas = () => ({
 	evaluationReport: z.object({
 		score: z.number(),
@@ -88,7 +91,7 @@ export const zStoreKeySchemas = () => ({
 		improvements: z.string().array(),
 	}),
 	sessionData: zSessionDetails(),
-	unpublishedSessionData: zSessionDetails().omit({ transcriptId: true }),
+	unpublishedSessionData: zListingData(),
 });
 
 export const zRecallTranscriptArtifactResponse = () =>

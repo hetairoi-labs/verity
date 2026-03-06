@@ -38,3 +38,5 @@ export function getContracts(
 		USDC,
 	};
 }
+
+export * from "./definitions.gen";
