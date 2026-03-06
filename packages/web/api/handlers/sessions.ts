@@ -2,13 +2,12 @@ import { definitions, zListingData } from "@verity/contracts";
 import { desc } from "drizzle-orm";
 import { parseEventLogs } from "viem";
 import { z } from "zod";
-import { safeAsync } from "@/lib/utils/safe";
 import { db } from "../lib/db";
 import { schema } from "../lib/db/schema";
 import { buildWhereActive } from "../lib/db/utils/builders";
 import { softCascade } from "../lib/db/utils/cascade";
 import { requireAtLeastOne, safeQuery } from "../lib/db/utils/safe";
-import { publicClient } from "../lib/utils/evm";
+import { waitForReceipt } from "../lib/utils/evm";
 import { ApiError } from "../lib/utils/hono/error";
 import { zHex, zJsonString } from "../lib/utils/zod";
 import { createGoalInputSchema } from "./goals";
@@ -21,7 +20,8 @@ const sessionMetadataSchema = z.object({
 });
 
 export const createSessionRecordInputSchema = z.object({
-	listingIndex: z.number(),
+	index: z.number(),
+	cid: z.string(),
 	title: z.string().min(1, "Title is required"),
 	topic: z.string().min(1, "Topic is required"),
 	description: z.string().optional(),
@@ -67,6 +67,7 @@ export type GetSessionTranscriptsInput = z.input<
 	typeof getSessionTranscriptsInputSchema
 >;
 
+// Helpers
 export function createSessionRecord(
 	input: CreateSessionRecordInput,
 	hostId: string
@@ -78,7 +79,8 @@ export function createSessionRecord(
 			tx
 				.insert(sessions)
 				.values({
-					listingIndex: parsed.listingIndex,
+					index: parsed.index,
+					cid: parsed.cid,
 					title: parsed.title,
 					description: parsed.description,
 					price: parsed.price.toString(),
@@ -131,27 +133,19 @@ export function createSessionRecord(
 // Handlers
 export async function createSession(json: CreateSessionInput, hostId: string) {
 	const input = createSessionInputSchema.parse(json);
-	const [receipt, receiptError] = await safeAsync(
-		publicClient.waitForTransactionReceipt({
-			hash: input.txHash,
-		})
-	);
-
-	if (receiptError) {
-		throw new ApiError(500, "Failed to get transaction receipt", {
-			reason: receiptError.message,
-		});
-	}
+	const receipt = await waitForReceipt(input.txHash);
 
 	const logs = parseEventLogs({
 		abi: definitions.test.KXManager.abi,
 		logs: receipt.logs,
 		eventName: "ListingUpsert",
 	});
-	const listingIndex = logs[0]?.args.index;
-
-	if (listingIndex === undefined) {
-		throw new ApiError(500, "ListingUpsert event not found in transaction");
+	const listingIndex = logs[0]?.args;
+	if (
+		listingIndex?.index === undefined ||
+		listingIndex?.dataCID === undefined
+	) {
+		throw new ApiError(500, "No listing index or data CID found in logs");
 	}
 
 	const metadata = sessionMetadataSchema.parse(
@@ -160,7 +154,8 @@ export async function createSession(json: CreateSessionInput, hostId: string) {
 
 	return createSessionRecord(
 		{
-			listingIndex: Number(listingIndex),
+			index: Number(listingIndex.index),
+			cid: listingIndex.dataCID,
 			title: metadata.title,
 			description: metadata.description,
 			topic: input.topic,

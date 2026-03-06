@@ -27,7 +27,8 @@ export const sessions = sqliteTable(
 		id: integer().primaryKey({
 			autoIncrement: true,
 		}),
-		listingIndex: integer().notNull(),
+		index: integer().notNull(),
+		cid: text().notNull(),
 		title: text().notNull(),
 		description: text(),
 		topic: text().notNull(),
