@@ -110,7 +110,7 @@ contract KXSessionRegistry is ReceiverTemplate, ReentrancyGuard {
             teacher: teacher_,
             learner: learner_,
             amount: amount_,
-            status: Status.None,
+            status: Status.Funded,
             confidenceBps: 0,
             learningBps: 0,
             teacherClaimable: 0,
@@ -121,23 +121,6 @@ contract KXSessionRegistry is ReceiverTemplate, ReentrancyGuard {
         });
 
         emit SessionRegistered(id, teacher_, learner_, amount_);
-    }
-
-    function fundSessionEscrow(uint256 id) external nonReentrant {
-        Session storage session = sessions[id];
-
-        if (session.status != Status.None) revert AlreadyFunded();
-        if (msg.sender != session.learner) revert NotLearner();
-
-        manager.usdc().safeTransferFrom(
-            msg.sender,
-            address(this),
-            session.amount
-        );
-
-        session.status = Status.Funded;
-
-        emit SessionFunded(id, msg.sender);
     }
 
     function requestEvaluation(uint256 id) external {
