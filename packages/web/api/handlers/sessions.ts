@@ -1,20 +1,29 @@
+import { definitions, zListingData } from "@verity/contracts";
 import { desc } from "drizzle-orm";
+import { parseEventLogs } from "viem";
 import { z } from "zod";
+import { safeAsync } from "@/lib/utils/safe";
 import { db } from "../lib/db";
 import { schema } from "../lib/db/schema";
 import { buildWhereActive } from "../lib/db/utils/builders";
 import { softCascade } from "../lib/db/utils/cascade";
 import { requireAtLeastOne, safeQuery } from "../lib/db/utils/safe";
+import { publicClient } from "../lib/utils/evm";
 import { ApiError } from "../lib/utils/hono/error";
+import { zHex, zJsonString } from "../lib/utils/zod";
 import { createGoalInputSchema } from "./goals";
 
 const { sessions, meetings, goals, participants } = schema;
 
-// Schemas
-export const createSessionInputSchema = z.object({
+const sessionMetadataSchema = z.object({
+	title: z.string().min(1, "Title is required"),
+	description: z.string().optional(),
+});
+
+export const createSessionRecordInputSchema = z.object({
+	listingIndex: z.number(),
 	title: z.string().min(1, "Title is required"),
 	topic: z.string().min(1, "Topic is required"),
-	listingIndex: z.number(),
 	description: z.string().optional(),
 	price: z.number().min(0, "Price in USDC must be greater than 0"),
 	goals: z
@@ -22,6 +31,13 @@ export const createSessionInputSchema = z.object({
 		.min(1, "At least one goal is required")
 		.optional(),
 });
+
+// Schemas
+export const createSessionInputSchema = z
+	.object({
+		txHash: zHex(),
+	})
+	.extend(zListingData().shape);
 
 export const getAllSessionsInputSchema = z.object({
 	page: z.number().min(1).default(1),
@@ -41,6 +57,9 @@ export const getSessionTranscriptsInputSchema = z.object({
 
 // Types
 export type CreateSessionInput = z.input<typeof createSessionInputSchema>;
+export type CreateSessionRecordInput = z.input<
+	typeof createSessionRecordInputSchema
+>;
 export type GetAllSessionsInput = z.input<typeof getAllSessionsInputSchema>;
 export type GetSessionByIdInput = z.input<typeof getSessionByIdInputSchema>;
 export type DeleteSessionInput = z.input<typeof deleteSessionInputSchema>;
@@ -48,21 +67,22 @@ export type GetSessionTranscriptsInput = z.input<
 	typeof getSessionTranscriptsInputSchema
 >;
 
-// Handlers
-export function createSession(json: CreateSessionInput, hostId: string) {
-	const input = createSessionInputSchema.parse(json);
+export function createSessionRecord(
+	input: CreateSessionRecordInput,
+	hostId: string
+) {
+	const parsed = createSessionRecordInputSchema.parse(input);
 
 	return db.transaction(async (tx) => {
-		// Create Session
 		const [sessionResult] = await safeQuery(
 			tx
 				.insert(sessions)
 				.values({
-					listingIndex: input.listingIndex,
-					title: input.title,
-					description: input.description,
-					price: input.price.toString(),
-					topic: input.topic,
+					listingIndex: parsed.listingIndex,
+					title: parsed.title,
+					description: parsed.description,
+					price: parsed.price.toString(),
+					topic: parsed.topic,
 					hostId,
 				})
 				.returning()
@@ -87,8 +107,8 @@ export function createSession(json: CreateSessionInput, hostId: string) {
 		}
 
 		// Create goals
-		if (input.goals) {
-			for (const goal of input.goals) {
+		if (parsed.goals) {
+			for (const goal of parsed.goals) {
 				const [goalResult] = await safeQuery(
 					tx
 						.insert(goals)
@@ -106,6 +126,52 @@ export function createSession(json: CreateSessionInput, hostId: string) {
 
 		return sessionResult;
 	});
+}
+
+// Handlers
+export async function createSession(json: CreateSessionInput, hostId: string) {
+	const input = createSessionInputSchema.parse(json);
+	const [receipt, receiptError] = await safeAsync(
+		publicClient.waitForTransactionReceipt({
+			hash: input.txHash,
+		})
+	);
+
+	if (receiptError) {
+		throw new ApiError(500, "Failed to get transaction receipt", {
+			reason: receiptError.message,
+		});
+	}
+
+	const logs = parseEventLogs({
+		abi: definitions.test.KXManager.abi,
+		logs: receipt.logs,
+		eventName: "ListingUpsert",
+	});
+	const listingIndex = logs[0]?.args.index;
+
+	if (listingIndex === undefined) {
+		throw new ApiError(500, "ListingUpsert event not found in transaction");
+	}
+
+	const metadata = sessionMetadataSchema.parse(
+		zJsonString().parse(input.metadata)
+	);
+
+	return createSessionRecord(
+		{
+			listingIndex: Number(listingIndex),
+			title: metadata.title,
+			description: metadata.description,
+			topic: input.topic,
+			price: input.price,
+			goals: input.goals.map((goal) => ({
+				name: goal.name,
+				weightage: goal.weight,
+			})),
+		},
+		hostId
+	);
 }
 
 export async function getAllSessions(

@@ -62,10 +62,14 @@ export function AddListing() {
 
 	return (
 		<TestCard
-			data={JSON.stringify({
-				txHash: writeContract.data,
-				cid: upload.data?.cid,
-			})}
+			data={JSON.stringify(
+				{
+					txHash: writeContract.data,
+					cid: upload.data?.cid,
+				},
+				null,
+				2
+			)}
 			description="Add a listing"
 			title="Add Listing"
 		>

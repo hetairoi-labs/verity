@@ -1,6 +1,6 @@
 import { afterEach, describe, expect, test } from "bun:test";
 import { eq } from "drizzle-orm";
-import { createSession } from "../handlers/sessions";
+import { createSessionRecord } from "../handlers/sessions";
 import { createUser, deleteUser, getUser } from "../handlers/users";
 import { db } from "../lib/db";
 import { schema } from "../lib/db/schema";
@@ -97,7 +97,7 @@ describe("deleteUser", () => {
 		if (!user) {
 			throw new Error("createUser failed");
 		}
-		const session = await createSession(
+		const session = await createSessionRecord(
 			{
 				title: "Session 1",
 				price: 100,

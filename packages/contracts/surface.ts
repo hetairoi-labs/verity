@@ -40,3 +40,4 @@ export function getContracts(
 }
 
 export * from "./definitions.gen";
+export * from "./workflows/shared/src/zod";

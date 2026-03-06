@@ -1,8 +1,9 @@
 import { Hono } from "hono";
 import { respond } from "@/api/lib/utils/hono/respond";
 import { safeAsync } from "@/lib/utils/safe";
-import { upsertListing, upsertListingInputSchema } from "../handlers/evm";
 import {
+	createSession,
+	createSessionInputSchema,
 	deleteSession,
 	deleteSessionInputSchema,
 	getAllSessions,
@@ -30,15 +31,15 @@ const sessionsRoute = new Hono()
 	})
 
 	// create session (all users)
-	.post("/", validator("json", upsertListingInputSchema), (c) => {
+	.post("/", validator("json", createSessionInputSchema), (c) => {
 		safeAsync(async () => {
-			await upsertListing(c.req.valid("json"), c.var.user.user_id);
+			await createSession(c.req.valid("json"), c.var.user.user_id);
 		}).then(([, error]) => {
 			if (error) {
 				logger.error(error, "evm.session.upsert.error");
 			}
 		});
-		return respond.ok(c, 200, "Upsert queued successfully", {});
+		return respond.ok(c, 200, "Creation queued successfully", {});
 	})
 
 	// get all sessions by host (host only)

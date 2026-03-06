@@ -7,7 +7,7 @@ import {
 	test,
 } from "bun:test";
 import { createMeeting } from "../handlers/meetings";
-import { createSession } from "../handlers/sessions";
+import { createSessionRecord } from "../handlers/sessions";
 import { createUser } from "../handlers/users";
 import { db } from "../lib/db";
 import { schema } from "../lib/db/schema";
@@ -62,7 +62,7 @@ describe("createMeeting Integration", () => {
 				return;
 			}
 
-			const session = await createSession(
+			const session = await createSessionRecord(
 				{
 					title: "Integration Test Session",
 					description: "Test",
