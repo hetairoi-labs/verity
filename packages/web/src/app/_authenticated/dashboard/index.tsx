@@ -1,11 +1,14 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { useConnection } from "wagmi";
 import { DashboardShell } from "@/src/app/_authenticated/dashboard/:components/dashboard-shell";
 import { Panel } from "@/src/app/_authenticated/dashboard/:components/panel";
 import { Button } from "@/src/components/ui/button";
+import { useFaucetMutation } from "@/src/lib/hooks/api/use-evm-api";
 import {
 	useGetDashboardMetricsQuery,
 	useGetHostSessionsQuery,
 } from "@/src/lib/hooks/api/use-sessions-api";
+import { useUsdtBalance } from "@/src/lib/hooks/web3/use-usdt-balance";
 import { formatUSDC } from "@/src/lib/utils/usdc";
 
 export const Route = createFileRoute("/_authenticated/dashboard/")({
@@ -82,6 +85,8 @@ function DashboardPage() {
 					</p>
 				) : null}
 			</Panel>
+
+			<FaucetPanel />
 		</DashboardShell>
 	);
 }
@@ -97,6 +102,60 @@ function MetricCard({
 		<Panel className="py-8">
 			<p className="text-muted-foreground text-sm">{label}</p>
 			<p className="mt-2 text-3xl">{value ?? "-"}</p>
+		</Panel>
+	);
+}
+
+function FaucetPanel() {
+	const { address } = useConnection();
+	const faucet = useFaucetMutation();
+	const { balance, isLoading: isBalanceLoading, refetch } = useUsdtBalance();
+
+	function handleClaimFaucet() {
+		if (!address) {
+			return;
+		}
+
+		if (balance === undefined) {
+			return;
+		}
+
+		if (balance < 1_000_000n) {
+			faucet.mutate(
+				{
+					address,
+				},
+				{
+					onSuccess: () => {
+						refetch();
+					},
+				}
+			);
+		}
+	}
+
+	const hasEnoughBalance = balance !== undefined && balance >= 1_000_000n;
+	const isDisabled =
+		faucet.isPending || !address || isBalanceLoading || hasEnoughBalance;
+
+	return (
+		<Panel className="space-y-3">
+			<div>
+				<h2 className="text-lg">Claim test USDC</h2>
+				<p className="mt-1 text-muted-foreground text-sm">
+					Top up your wallet with test USDC for trying out bookings and payouts.
+				</p>
+				<p className="mt-1 text-muted-foreground text-sm">
+					Current balance: {balance !== undefined ? formatUSDC(balance) : "—"}
+				</p>
+			</div>
+			<Button
+				className="w-full sm:w-auto"
+				disabled={isDisabled}
+				onClick={handleClaimFaucet}
+			>
+				{faucet.isPending ? "Claiming..." : "Claim USDC"}
+			</Button>
 		</Panel>
 	);
 }

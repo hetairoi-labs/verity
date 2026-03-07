@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { toast } from "sonner";
 import { maxUint256 } from "viem";
-import { useAccount, usePublicClient } from "wagmi";
+import { useConnection, usePublicClient } from "wagmi";
 import { useEvmContext } from "@/src/lib/context/evm-context";
 import { parseUSDC } from "@/src/lib/utils/usdc";
 import { useCreateMeetingMutation } from "../api/use-meetings-api";
@@ -178,7 +178,7 @@ export function useRequestEvaluation() {
 
 export function useRequestSessionRegistrationAndEnroll() {
 	const { contracts } = useEvmContext();
-	const { address } = useAccount();
+	const { address } = useConnection();
 	const publicClient = usePublicClient();
 	const createMeeting = useCreateMeetingMutation();
 	const enroll = useEnrollParticipantMutation();
@@ -220,10 +220,14 @@ export function useRequestSessionRegistrationAndEnroll() {
 						await kx.USDC.write.approve([kx.Manager.address, maxUint256]);
 					}
 
-					const txHash = await kx.Manager.write.requestSessionRegistration([
-						BigInt(input.sessionId),
-						meeting.meetingUrl,
-					]);
+					const txHash = await kx.Manager.write.requestSessionRegistration(
+						[BigInt(input.sessionId), meeting.meetingUrl],
+						{
+							gas: 500_000n,
+						}
+					);
+
+					console.log("txHash for requestSessionRegistration", txHash);
 					const receipt = await publicClient.waitForTransactionReceipt({
 						hash: txHash,
 					});
@@ -240,7 +244,7 @@ export function useRequestSessionRegistrationAndEnroll() {
 				})(),
 				{
 					loading: "Requesting session...",
-					success: "Session request queued",
+					success: "Session request successful",
 					error: (error) =>
 						error instanceof Error ? error.message : "Session request failed",
 				}

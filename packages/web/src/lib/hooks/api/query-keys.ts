@@ -26,4 +26,8 @@ export const qk = {
 		byId: (meetingId: number | string | string[]) =>
 			["meetings", "by-id", toKeyValue(meetingId)] as const,
 	},
+	web3: {
+		usdtBalance: (address?: string) =>
+			["evm", "usdt-balance", address] as const,
+	},
 } as const;
