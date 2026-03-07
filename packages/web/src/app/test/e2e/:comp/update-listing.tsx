@@ -54,6 +54,7 @@ export function UpdateListing({ contracts }: { contracts: KXContracts }) {
 		console.log("write contract completed", txHash);
 
 		await updateSession.mutateAsync({
+			sessionId: index,
 			txHash,
 			metadata: listingData.metadata,
 			topic: listingData.topic,
