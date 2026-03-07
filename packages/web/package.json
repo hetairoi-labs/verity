@@ -13,7 +13,7 @@
     "deploy": "./lib/scripts/deploy.sh",
     "start": "tsr generate && NODE_ENV=production bun run server.ts",
     "check": "ultracite fix",
-    "tsc": "clear && bunx --bun tsc --noEmit",
+    "tsc": "bunx --bun tsc --noEmit",
     "generate": "bunx drizzle-kit generate",
     "migrate": "bunx drizzle-kit migrate",
     "push": "bunx drizzle-kit push",
