@@ -6,10 +6,15 @@ import {
 	createSessionInputSchema,
 	deleteSession,
 	deleteSessionInputSchema,
+	enrollParticipant,
+	enrollParticipantInputSchema,
 	getAllSessions,
 	getAllSessionsInputSchema,
+	getDashboardMetrics,
 	getSessionById,
 	getSessionByIdInputSchema,
+	getSessionHistory,
+	getSessionHistoryInputSchema,
 	updateSession,
 	updateSessionInputSchema,
 } from "../handlers/sessions";
@@ -62,6 +67,38 @@ const sessionsRoute = new Hono()
 		);
 		return respond.ok(c, 200, "Sessions fetched successfully", { sessions });
 	})
+	.get(
+		"/history",
+		validator("query", getSessionHistoryInputSchema),
+		async (c) => {
+			const sessions = await getSessionHistory(
+				c.req.valid("query"),
+				c.var.user.user_id
+			);
+			return respond.ok(c, 200, "Session history fetched successfully", {
+				sessions,
+			});
+		}
+	)
+	.get("/dashboard/metrics", async (c) => {
+		const metrics = await getDashboardMetrics(c.var.user.user_id);
+		return respond.ok(c, 200, "Dashboard metrics fetched successfully", {
+			metrics,
+		});
+	})
+	.post(
+		"/participants/enroll",
+		validator("json", enrollParticipantInputSchema),
+		async (c) => {
+			const participant = await enrollParticipant(
+				c.req.valid("json"),
+				c.var.user.user_id
+			);
+			return respond.ok(c, 200, "Participant enrolled successfully", {
+				participant,
+			});
+		}
+	)
 
 	// delete session by id (host only)
 	.delete(

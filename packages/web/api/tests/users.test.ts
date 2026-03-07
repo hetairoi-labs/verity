@@ -100,6 +100,7 @@ describe("deleteUser", () => {
 		const session = await createSessionRecord(
 			{
 				title: "Session 1",
+				email: "test@example.com",
 				price: 100,
 				topic: "Integration Test Topic",
 				index: 1,
@@ -116,7 +117,6 @@ describe("deleteUser", () => {
 				duration: 1,
 				sessionId: session.id,
 				eventId: "event-1",
-				botId: "bot-1",
 				meetingUrl: "https://example.com",
 				startDate: new Date().toISOString(),
 			})
