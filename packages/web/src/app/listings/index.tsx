@@ -16,8 +16,8 @@ function ListingsPage() {
 	const [page, setPage] = useState(1);
 	const [search, setSearch] = useState("");
 	const { data, isLoading } = useGetAllSessionsQuery({
-		page,
-		limit: LISTINGS_PAGE_LIMIT,
+		page: String(page),
+		limit: String(LISTINGS_PAGE_LIMIT),
 	});
 
 	const filteredListings = useMemo(() => {

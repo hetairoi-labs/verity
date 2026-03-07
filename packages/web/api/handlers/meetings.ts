@@ -31,9 +31,9 @@ export const createMeetingInputSchema = z.object({
 });
 
 export const getSessionMeetingsInputSchema = z.object({
-	sessionId: z.number().optional(),
-	page: z.number().min(1).default(1),
-	limit: z.number().min(1).max(100).default(10),
+	sessionId: z.coerce.number().optional(),
+	page: z.coerce.number().min(1).default(1),
+	limit: z.coerce.number().min(1).max(100).default(10),
 });
 
 export const getMeetingByIdInputSchema = z.object({

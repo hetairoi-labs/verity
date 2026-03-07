@@ -236,7 +236,11 @@ function SessionDetailPage() {
 		{ sessionId: String(sessionId) }
 	);
 	const { data: meetings, isLoading: isMeetingsLoading } =
-		useGetSessionMeetingsQuery({ sessionId, page: 1, limit: 20 });
+		useGetSessionMeetingsQuery({
+			sessionId: String(sessionId),
+			page: "1",
+			limit: "20",
+		});
 
 	return (
 		<DashboardShell

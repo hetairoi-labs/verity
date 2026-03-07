@@ -16,8 +16,8 @@ function DashboardPage() {
 		useGetDashboardMetricsQuery();
 	const { data: sessions, isLoading: isSessionsLoading } =
 		useGetHostSessionsQuery({
-			page: 1,
-			limit: 20,
+			page: "1",
+			limit: "20",
 		});
 
 	return (
