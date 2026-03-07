@@ -2,6 +2,7 @@ import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { type InferRequestType, parseResponse } from "hono/client";
 import { client, getAuthHeaders } from "../../utils/hc";
 import { usePrivyToken } from "../web3/use-privy-token";
+import { qk } from "./query-keys";
 
 // get all sessions
 type GetAllSessionsRoute = (typeof client.sessions.all)["$get"];
@@ -11,7 +12,7 @@ export type GetAllSessionsInput =
 export function useGetAllSessionsQuery(params?: GetAllSessionsInput) {
 	const token = usePrivyToken();
 	return useQuery({
-		queryKey: ["sessions", "all", params],
+		queryKey: qk.sessions.all(params),
 		queryFn: async () => {
 			const result = await parseResponse(
 				client.sessions.all.$get(
@@ -34,7 +35,7 @@ export type GetSessionByIdInput =
 export function useGetSessionByIdQuery(params: GetSessionByIdInput) {
 	const token = usePrivyToken();
 	return useQuery({
-		queryKey: ["sessions", "session", params.sessionId],
+		queryKey: qk.sessions.byId(params.sessionId),
 		queryFn: async () => {
 			const result = await parseResponse(
 				client.sessions.session.$get(
@@ -70,9 +71,10 @@ export function useCreateSessionMutation() {
 			);
 			return result.data;
 		},
-		onSuccess: (data) => {
-			console.log("[CreateSessionMutation] Success:", data);
-			queryClient.invalidateQueries({ queryKey: ["sessions"] });
+		onSuccess: () => {
+			queryClient.invalidateQueries({ queryKey: qk.sessions.all() });
+			queryClient.invalidateQueries({ queryKey: qk.sessions.host() });
+			queryClient.invalidateQueries({ queryKey: qk.sessions.metrics() });
 		},
 	});
 }
@@ -81,15 +83,18 @@ export function useCreateSessionMutation() {
 type UpdateSessionRoute = (typeof client.sessions)["$patch"];
 export type UpdateSessionInput = InferRequestType<UpdateSessionRoute>["json"];
 
+export type UpdateSessionVariables = UpdateSessionInput & { sessionId: number };
+
 export function useUpdateSessionMutation() {
 	const token = usePrivyToken();
 	const queryClient = useQueryClient();
 
 	return useMutation({
-		mutationFn: async (json: UpdateSessionInput) => {
+		mutationFn: async (variables: UpdateSessionVariables) => {
 			if (!token) {
 				throw new Error("No auth token");
 			}
+			const { sessionId: _sessionId, ...json } = variables;
 			const result = await parseResponse(
 				client.sessions.$patch(
 					{ json },
@@ -98,9 +103,12 @@ export function useUpdateSessionMutation() {
 			);
 			return result.data;
 		},
-		onSuccess: (data) => {
-			console.log("[UpdateSessionMutation] Success:", data);
-			queryClient.invalidateQueries({ queryKey: ["sessions"] });
+		onSuccess: (_data, variables) => {
+			queryClient.invalidateQueries({
+				queryKey: qk.sessions.byId(variables.sessionId),
+			});
+			queryClient.invalidateQueries({ queryKey: qk.sessions.host() });
+			queryClient.invalidateQueries({ queryKey: qk.sessions.metrics() });
 		},
 	});
 }
@@ -113,7 +121,7 @@ export type GetHostSessionsInput =
 export function useGetHostSessionsQuery(params?: GetHostSessionsInput) {
 	const token = usePrivyToken();
 	return useQuery({
-		queryKey: ["sessions", "host", params],
+		queryKey: qk.sessions.host(params),
 		queryFn: async () => {
 			const result = await parseResponse(
 				client.sessions.host.$get(
@@ -149,9 +157,86 @@ export function useDeleteSessionMutation() {
 			);
 			return result.data;
 		},
-		onSuccess: (data) => {
-			console.log("[DeleteSessionMutation] Success:", data);
-			queryClient.invalidateQueries({ queryKey: ["sessions"] });
+		onSuccess: (_data, variables) => {
+			queryClient.invalidateQueries({
+				queryKey: qk.sessions.byId(String(variables.sessionId)),
+			});
+			queryClient.invalidateQueries({ queryKey: qk.sessions.host() });
+			queryClient.invalidateQueries({ queryKey: qk.sessions.history() });
+			queryClient.invalidateQueries({ queryKey: qk.sessions.metrics() });
+		},
+	});
+}
+
+// get history sessions
+type GetSessionHistoryRoute = (typeof client.sessions.history)["$get"];
+export type GetSessionHistoryInput =
+	InferRequestType<GetSessionHistoryRoute>["query"];
+
+export function useGetSessionHistoryQuery(params?: GetSessionHistoryInput) {
+	const token = usePrivyToken();
+	return useQuery({
+		queryKey: qk.sessions.history(params),
+		queryFn: async () => {
+			const result = await parseResponse(
+				client.sessions.history.$get(
+					{ query: params || {} },
+					{ headers: { Authorization: `Bearer ${token}` } }
+				)
+			);
+			return result.data;
+		},
+		select: (data) => data?.sessions,
+		enabled: !!token,
+	});
+}
+
+export function useGetDashboardMetricsQuery() {
+	const token = usePrivyToken();
+	return useQuery({
+		queryKey: qk.sessions.metrics(),
+		queryFn: async () => {
+			const result = await parseResponse(
+				client.sessions.dashboard.metrics.$get(undefined, {
+					headers: { Authorization: `Bearer ${token}` },
+				})
+			);
+			return result.data;
+		},
+		select: (data) => data?.metrics,
+		enabled: !!token,
+	});
+}
+
+// enroll participant
+type EnrollParticipantRoute =
+	(typeof client.sessions.participants.enroll)["$post"];
+export type EnrollParticipantInput =
+	InferRequestType<EnrollParticipantRoute>["json"];
+
+export function useEnrollParticipantMutation() {
+	const token = usePrivyToken();
+	const queryClient = useQueryClient();
+
+	return useMutation({
+		mutationFn: async (json: EnrollParticipantInput) => {
+			if (!token) {
+				throw new Error("No auth token");
+			}
+			const result = await parseResponse(
+				client.sessions.participants.enroll.$post(
+					{ json },
+					{ headers: { Authorization: `Bearer ${token}` } }
+				)
+			);
+			return result.data;
+		},
+		onSuccess: (_data, variables) => {
+			queryClient.invalidateQueries({
+				queryKey: qk.sessions.byId(String(variables.sessionId)),
+			});
+			queryClient.invalidateQueries({ queryKey: qk.sessions.history() });
+			queryClient.invalidateQueries({ queryKey: qk.sessions.metrics() });
 		},
 	});
 }
@@ -173,4 +258,13 @@ export type GetHostSessionsResponse = Awaited<
 >["data"];
 export type DeleteSessionResponse = Awaited<
 	ReturnType<typeof useDeleteSessionMutation>
+>["data"];
+export type GetSessionHistoryResponse = Awaited<
+	ReturnType<typeof useGetSessionHistoryQuery>
+>["data"];
+export type GetDashboardMetricsResponse = Awaited<
+	ReturnType<typeof useGetDashboardMetricsQuery>
+>["data"];
+export type EnrollParticipantResponse = Awaited<
+	ReturnType<typeof useEnrollParticipantMutation>
 >["data"];

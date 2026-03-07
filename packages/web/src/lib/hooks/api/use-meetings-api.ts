@@ -2,6 +2,7 @@ import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { type InferRequestType, parseResponse } from "hono/client";
 import { client, getAuthHeaders } from "../../utils/hc";
 import { usePrivyToken } from "../web3/use-privy-token";
+import { qk } from "./query-keys";
 
 // create meeting
 type CreateMeetingRoute = (typeof client.sessions.meetings)["$post"];
@@ -21,9 +22,14 @@ export function useCreateMeetingMutation() {
 			);
 			return result.data;
 		},
-		onSuccess: (data) => {
-			console.log("[CreateMeetingMutation] Success:", data);
-			queryClient.invalidateQueries({ queryKey: ["meetings"] });
+		onSuccess: (_data, variables) => {
+			queryClient.invalidateQueries({
+				queryKey: qk.meetings.bySession(variables.sessionId),
+			});
+			queryClient.invalidateQueries({
+				queryKey: qk.sessions.byId(variables.sessionId),
+			});
+			queryClient.invalidateQueries({ queryKey: qk.sessions.metrics() });
 		},
 	});
 }
@@ -35,8 +41,9 @@ export type GetSessionMeetingsInput =
 
 export function useGetSessionMeetingsQuery(params?: GetSessionMeetingsInput) {
 	const token = usePrivyToken();
+	const sessionId = params?.sessionId ?? "all";
 	return useQuery({
-		queryKey: ["meetings", "all", params],
+		queryKey: qk.meetings.bySession(sessionId, params),
 		queryFn: async () => {
 			if (!token) {
 				throw new Error("Unauthorized: No auth token");
@@ -62,7 +69,7 @@ export type GetMeetingByIdInput =
 export function useGetMeetingByIdQuery(params: GetMeetingByIdInput) {
 	const token = usePrivyToken();
 	return useQuery({
-		queryKey: ["meetings", "meeting", params.meetingId],
+		queryKey: qk.meetings.byId(params.meetingId),
 		queryFn: async () => {
 			if (!token) {
 				throw new Error("Unauthorized: No auth token");
@@ -99,7 +106,9 @@ export function useDeleteMeetingMutation() {
 		},
 		onSuccess: (data) => {
 			console.log("[DeleteMeetingMutation] Success:", data);
-			queryClient.invalidateQueries({ queryKey: ["meetings"] });
+			queryClient.invalidateQueries({ queryKey: qk.meetings.root() });
+			queryClient.invalidateQueries({ queryKey: qk.sessions.root() });
+			queryClient.invalidateQueries({ queryKey: qk.sessions.metrics() });
 		},
 	});
 }
