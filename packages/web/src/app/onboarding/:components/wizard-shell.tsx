@@ -1,6 +1,6 @@
 import { StarFourIcon } from "@phosphor-icons/react";
 import type { ReactNode } from "react";
-import { Panel } from "@/src/app/dashboard/:components/panel";
+import { Panel } from "@/src/app/_authenticated/dashboard/:components/panel";
 
 export function WizardShell({
 	children,

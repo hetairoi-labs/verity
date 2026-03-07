@@ -1,11 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { toast } from "sonner";
-import { DashboardShell } from "@/src/app/dashboard/:components/dashboard-shell";
-import { Panel } from "@/src/app/dashboard/:components/panel";
+import { DashboardShell } from "@/src/app/_authenticated/dashboard/:components/dashboard-shell";
+import { Panel } from "@/src/app/_authenticated/dashboard/:components/panel";
 import { Button } from "@/src/components/ui/button";
 import { useAuth } from "@/src/lib/context/auth-context";
 
-export const Route = createFileRoute("/settings/")({
+export const Route = createFileRoute("/_authenticated/settings/")({
 	component: SettingsPage,
 });
 

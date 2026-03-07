@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { DashboardShell } from "@/src/app/dashboard/:components/dashboard-shell";
-import { Panel } from "@/src/app/dashboard/:components/panel";
+import { DashboardShell } from "@/src/app/_authenticated/dashboard/:components/dashboard-shell";
+import { Panel } from "@/src/app/_authenticated/dashboard/:components/panel";
 import { Button } from "@/src/components/ui/button";
 import {
 	useGetDashboardMetricsQuery,
@@ -8,7 +8,7 @@ import {
 } from "@/src/lib/hooks/api/use-sessions-api";
 import { formatUSDC } from "@/src/lib/utils/usdc";
 
-export const Route = createFileRoute("/dashboard/")({
+export const Route = createFileRoute("/_authenticated/dashboard/")({
 	component: DashboardPage,
 });
 
@@ -47,7 +47,7 @@ function DashboardPage() {
 				/>
 			</section>
 
-			<Panel className="h-full space-y-3">
+			<Panel className="space-y-3">
 				<div className="flex items-center justify-between">
 					<h2 className="text-lg">Hosted Listings</h2>
 					<Link to="/listings/create">

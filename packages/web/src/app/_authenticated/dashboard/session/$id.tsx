@@ -1,9 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import { DashboardShell } from "@/src/app/dashboard/:components/dashboard-shell";
-import { Panel } from "@/src/app/dashboard/:components/panel";
-import { SessionActionPanel } from "@/src/app/dashboard/:components/session-action-panel";
-import { ListingForm } from "@/src/app/listings/:components/listing-form";
+import { DashboardShell } from "@/src/app/_authenticated/dashboard/:components/dashboard-shell";
+import { Panel } from "@/src/app/_authenticated/dashboard/:components/panel";
+import { SessionActionPanel } from "@/src/app/_authenticated/dashboard/:components/session-action-panel";
+import { ListingForm } from "@/src/app/_authenticated/listings/:components/listing-form";
 import { Button } from "@/src/components/ui/button";
 import { Input } from "@/src/components/ui/input";
 import {
@@ -15,7 +15,7 @@ import { useGetSessionMeetingsQuery } from "@/src/lib/hooks/api/use-meetings-api
 import { useGetSessionByIdQuery } from "@/src/lib/hooks/api/use-sessions-api";
 import { formatUSDC } from "@/src/lib/utils/usdc";
 
-export const Route = createFileRoute("/dashboard/session/$id")({
+export const Route = createFileRoute("/_authenticated/dashboard/session/$id")({
 	component: SessionDetailPage,
 });
 

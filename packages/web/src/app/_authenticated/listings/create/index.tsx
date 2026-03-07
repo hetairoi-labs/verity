@@ -1,10 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { DashboardShell } from "@/src/app/dashboard/:components/dashboard-shell";
-import { SessionActionPanel } from "@/src/app/dashboard/:components/session-action-panel";
-import { ListingForm } from "@/src/app/listings/:components/listing-form";
+import { DashboardShell } from "@/src/app/_authenticated/dashboard/:components/dashboard-shell";
+import { SessionActionPanel } from "@/src/app/_authenticated/dashboard/:components/session-action-panel";
+import { ListingForm } from "@/src/app/_authenticated/listings/:components/listing-form";
 import { useAddListing } from "@/src/lib/hooks/actions/use-session-actions";
 
-export const Route = createFileRoute("/listings/create/")({
+export const Route = createFileRoute("/_authenticated/listings/create/")({
 	component: CreateListingPage,
 });
 

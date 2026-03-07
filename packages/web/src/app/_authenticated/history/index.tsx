@@ -1,13 +1,13 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
-import { DashboardShell } from "@/src/app/dashboard/:components/dashboard-shell";
-import { Panel } from "@/src/app/dashboard/:components/panel";
+import { DashboardShell } from "@/src/app/_authenticated/dashboard/:components/dashboard-shell";
+import { Panel } from "@/src/app/_authenticated/dashboard/:components/panel";
 import { Button } from "@/src/components/ui/button";
 import { useGetSessionHistoryQuery } from "@/src/lib/hooks/api/use-sessions-api";
 
 const HISTORY_PAGE_LIMIT = 10;
 
-export const Route = createFileRoute("/history/")({
+export const Route = createFileRoute("/_authenticated/history/")({
 	component: HistoryPage,
 });
 
