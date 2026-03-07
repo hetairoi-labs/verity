@@ -12,7 +12,7 @@ const { sessions, meetings } = schema;
 
 // Schemas
 export const createMeetingInputSchema = z.object({
-	sessionId: z.number().min(1, "Session ID is required"),
+	sessionId: z.number().min(0, "Session ID is required"),
 	summary: z
 		.string()
 		.min(1, "Summary must be at least 1 character")
@@ -56,6 +56,25 @@ export type DeleteMeetingInput = z.input<typeof deleteMeetingInputSchema>;
 export async function createMeeting(json: CreateMeetingInput, hostId: string) {
 	const input = createMeetingInputSchema.parse(json);
 
+	// Get Session
+	const [session] = await safeQuery(
+		db
+			.select()
+			.from(sessions)
+			.where(
+				buildWhereActive([
+					{ table: sessions, filters: { id: input.sessionId, hostId } },
+				])
+			)
+			.limit(1)
+	);
+	if (!session) {
+		throw new ApiError(404, "Session not found");
+	}
+
+	// add host as attendee
+	input.attendees.push(session.email);
+
 	// Create Calendar Event
 	const event = await createGoogleCalendarEvent(
 		input.startDate,
@@ -72,22 +91,6 @@ export async function createMeeting(json: CreateMeetingInput, hostId: string) {
 			500,
 			"Something went wrong while creating the meeting.."
 		);
-	}
-
-	// Get Session
-	const [session] = await safeQuery(
-		db
-			.select()
-			.from(sessions)
-			.where(
-				buildWhereActive([
-					{ table: sessions, filters: { id: input.sessionId, hostId } },
-				])
-			)
-			.limit(1)
-	);
-	if (!session) {
-		throw new ApiError(404, "Session not found");
 	}
 
 	// Create Meeting

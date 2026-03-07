@@ -1,6 +1,6 @@
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { type InferRequestType, parseResponse } from "hono/client";
-import { client } from "../../utils/hc";
+import { client, getAuthHeaders } from "../../utils/hc";
 import { usePrivyToken } from "../web3/use-privy-token";
 
 // get all sessions
@@ -39,7 +39,7 @@ export function useGetSessionByIdQuery(params: GetSessionByIdInput) {
 			const result = await parseResponse(
 				client.sessions.session.$get(
 					{ query: params },
-					{ headers: { Authorization: `Bearer ${token}` } }
+					getAuthHeaders(token ?? "")
 				)
 			);
 			return result.data;

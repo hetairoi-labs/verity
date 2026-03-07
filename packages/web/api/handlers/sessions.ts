@@ -57,14 +57,14 @@ export const getAllSessionsInputSchema = z.object({
 });
 
 export const getSessionByIdInputSchema = z.object({
-	sessionId: z.number().min(1, "Session ID is required"),
+	sessionId: z.coerce.number().min(0, "Session ID is required"),
 });
 
 export const deleteSessionInputSchema = z.object({
-	sessionId: z.number().min(1, "Session ID is required"),
+	sessionId: z.coerce.number().min(0, "Session ID is required"),
 });
 export const getSessionTranscriptsInputSchema = z.object({
-	sessionId: z.number().min(1, "Session ID is required"),
+	sessionId: z.coerce.number().min(0, "Session ID is required"),
 });
 
 // Types
