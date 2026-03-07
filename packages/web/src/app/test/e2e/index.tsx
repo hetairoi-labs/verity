@@ -5,6 +5,7 @@ import { AddListing } from "./:comp/add-listing";
 import { ClaimFaucet } from "./:comp/claim-faucet";
 import { GetAllListings } from "./:comp/get-all";
 import { ReadAll } from "./:comp/read-all";
+import { RequestEvaluation } from "./:comp/request-evaluation";
 import { RequestMeeting } from "./:comp/request-meeting";
 import { UpdateListing } from "./:comp/update-listing";
 
@@ -24,12 +25,13 @@ function RouteComponent() {
 			<h1 className="mb-8 text-center text-4xl">E2E Tests</h1>
 
 			<div className="flex min-w-full flex-col items-center gap-8">
-				<GetAllListings />
 				<ReadAll contracts={contracts} />
+				<GetAllListings />
 				<AddListing contracts={contracts} />
 				<UpdateListing contracts={contracts} />
 				<ClaimFaucet />
 				<RequestMeeting />
+				<RequestEvaluation contracts={contracts} />
 			</div>
 		</div>
 	);
