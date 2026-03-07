@@ -77,6 +77,7 @@ const onLogTrigger = (runtime: Runtime<Config>, log: EVMLog): string => {
 			learner,
 			amount,
 			dataCid: session.data.cid,
+			listingIndex,
 		});
 		runtime.log(`Initiation tx hash: ${txHash}`);
 

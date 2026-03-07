@@ -27,6 +27,7 @@ export function initiateSession(
 		learner: Address;
 		amount: bigint;
 		dataCid: string;
+		listingIndex: bigint;
 	},
 ): string {
 	const evmCfg = runtime.config.evms[0];
@@ -48,6 +49,7 @@ export function initiateSession(
 		session.learner,
 		session.amount,
 		session.dataCid,
+		session.listingIndex,
 	);
 
 	const requestResponse = runtime
@@ -127,10 +129,11 @@ const encodeCreationRequest = (
 	learner: Address,
 	amount: bigint,
 	dataCid: string,
+	listingIndex: bigint,
 ) =>
 	encodeAbiParameters(
 		parseAbiParameters(
-			"address teacher_, address learner_, uint256 amount_, string dataCID_",
+			"address teacher_, address learner_, uint256 amount_, string dataCID_, uint256 listingIndex_",
 		),
-		[teacher, learner, amount, dataCid],
+		[teacher, learner, amount, dataCid, listingIndex],
 	);

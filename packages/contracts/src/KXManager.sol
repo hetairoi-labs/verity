@@ -15,6 +15,7 @@ contract KXManager is ReceiverTemplate {
     KXSessionRegistry public sessionRegistry;
     IERC20 public usdc;
     Listing[] public listings;
+    mapping(uint256 => uint256[]) private listingToSessionIds;
     address private _server;
 
     error AmountZero();
@@ -51,15 +52,17 @@ contract KXManager is ReceiverTemplate {
             address teacher_,
             address learner_,
             uint256 amount_,
-            string memory dataCID_
-        ) = abi.decode(report, (address, address, uint256, string));
+            string memory dataCID_,
+            uint256 listingIndex_
+        ) = abi.decode(report, (address, address, uint256, string, uint256));
 
-        sessionRegistry.registerSessionAsManager(
+        uint256 sessionId = sessionRegistry.registerSessionAsManager(
             teacher_,
             learner_,
             amount_,
             dataCID_
         );
+        listingToSessionIds[listingIndex_].push(sessionId);
     }
 
     function createListing(string memory dataCID_, uint256 price_) external {
@@ -104,5 +107,58 @@ contract KXManager is ReceiverTemplate {
             meetingLink_,
             listingIndex_
         );
+    }
+
+    function getListingsCount() external view returns (uint256) {
+        return listings.length;
+    }
+
+    function getListing(uint256 index_) external view returns (Listing memory) {
+        if (index_ >= listings.length) revert InvalidIndex();
+        return listings[index_];
+    }
+
+    function getListings(
+        uint256 offset_,
+        uint256 limit_
+    ) external view returns (Listing[] memory result) {
+        uint256 total = listings.length;
+        if (offset_ >= total || limit_ == 0) {
+            return new Listing[](0);
+        }
+
+        uint256 end = offset_ + limit_;
+        if (end > total) {
+            end = total;
+        }
+
+        result = new Listing[](end - offset_);
+        for (uint256 i = offset_; i < end; i++) {
+            result[i - offset_] = listings[i];
+        }
+    }
+
+    function getSessionIdsByListing(
+        uint256 listingIndex_,
+        uint256 offset_,
+        uint256 limit_
+    ) external view returns (uint256[] memory result) {
+        if (listingIndex_ >= listings.length) revert InvalidIndex();
+
+        uint256[] storage sessionIds = listingToSessionIds[listingIndex_];
+        uint256 total = sessionIds.length;
+        if (offset_ >= total || limit_ == 0) {
+            return new uint256[](0);
+        }
+
+        uint256 end = offset_ + limit_;
+        if (end > total) {
+            end = total;
+        }
+
+        result = new uint256[](end - offset_);
+        for (uint256 i = offset_; i < end; i++) {
+            result[i - offset_] = sessionIds[i];
+        }
     }
 }

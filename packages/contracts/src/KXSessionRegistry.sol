@@ -225,4 +225,27 @@ contract KXSessionRegistry is ReceiverTemplate, ReentrancyGuard {
 
         emit LearnerClaimed(id, msg.sender, amount);
     }
+
+    function getSessionCount() external view returns (uint256) {
+        return nextEscrowId;
+    }
+
+    function getSession(uint256 id) external view returns (Session memory) {
+        if (id >= nextEscrowId) revert InvalidSessionId(id);
+        return sessions[id];
+    }
+
+    function getDisputeDeadline(uint256 id) external view returns (uint256) {
+        if (id >= nextEscrowId) revert InvalidSessionId(id);
+        Session storage session = sessions[id];
+        if (session.evaluatedAt == 0) return 0;
+        return session.evaluatedAt + DISPUTE_WINDOW;
+    }
+
+    function isDisputeWindowOpen(uint256 id) external view returns (bool) {
+        if (id >= nextEscrowId) revert InvalidSessionId(id);
+        Session storage session = sessions[id];
+        if (session.status != Status.Evaluated) return false;
+        return block.timestamp <= session.evaluatedAt + DISPUTE_WINDOW;
+    }
 }
