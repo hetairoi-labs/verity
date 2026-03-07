@@ -3,7 +3,6 @@ import { useWriteContract } from "wagmi";
 import { TestCard } from "@/src/components/custom/test-card";
 import { Button } from "@/src/components/ui/button";
 import { Input } from "@/src/components/ui/input";
-import { useEvmContext } from "@/src/lib/context/evm-context";
 import { useUpdateSessionMutation } from "@/src/lib/hooks/api/use-sessions-api";
 import { useUploadToPinataMutation } from "@/src/lib/hooks/api/use-uploads-api";
 
@@ -22,8 +21,7 @@ const listingData = {
 	},
 };
 
-export function UpdateListing() {
-	const { contracts } = useEvmContext();
+export function UpdateListing({ contracts }: { contracts: KXContracts }) {
 	const writeContract = useWriteContract();
 	const upload = useUploadToPinataMutation();
 	const updateSession = useUpdateSessionMutation();

@@ -2,7 +2,7 @@ import { useWriteContract } from "wagmi";
 import type { ListingWithMetadata } from "@/api/handlers/sessions";
 import { TestCard } from "@/src/components/custom/test-card";
 import { Button } from "@/src/components/ui/button";
-import { useEvmContext } from "@/src/lib/context/evm-context";
+import type { KXContracts } from "@/src/lib/context/evm-context";
 import { useCreateSessionMutation } from "@/src/lib/hooks/api/use-sessions-api";
 import { useUploadToPinataMutation } from "@/src/lib/hooks/api/use-uploads-api";
 
@@ -21,8 +21,7 @@ const listingData: ListingWithMetadata = {
 	},
 };
 
-export function AddListing() {
-	const { contracts } = useEvmContext();
+export function AddListing({ contracts }: { contracts: KXContracts }) {
 	const writeContract = useWriteContract();
 	const upload = useUploadToPinataMutation();
 	const createSession = useCreateSessionMutation();

@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { maxUint256 } from "viem";
-import { useConnection, useWriteContract } from "wagmi";
+import { useConnection } from "wagmi";
 import { TestCard } from "@/src/components/custom/test-card";
 import { Button } from "@/src/components/ui/button";
 import { Input } from "@/src/components/ui/input";
 import { useEvmContext } from "@/src/lib/context/evm-context";
 import { useCreateMeetingMutation } from "@/src/lib/hooks/api/use-meetings-api";
+import { useGetSessionByIdQuery } from "@/src/lib/hooks/api/use-sessions-api";
 
 const SAMPLE_MEETING_DATA = {
 	summary: "Verity Session",
@@ -16,31 +17,40 @@ export function RequestMeeting() {
 	const [index, setIndex] = useState<number | undefined>(undefined);
 	const { contracts } = useEvmContext();
 	const connection = useConnection();
-	const writeContract = useWriteContract();
 	const createMeeting = useCreateMeetingMutation();
-	const isPending = writeContract.isPending || createMeeting.isPending;
+	const { data: session } = useGetSessionByIdQuery({
+		sessionId: index ? [String(index)] : "0",
+	});
+	const isPending = createMeeting.isPending;
 
 	async function handleSubmit() {
 		if (
 			!(
 				contracts?.Manager.address &&
 				contracts?.Manager.abi &&
-				index &&
-				connection.address
+				connection.address &&
+				session
 			)
 		) {
 			return;
 		}
 
+		console.log("session", session);
+
+		const balance = await contracts?.USDC.read.balanceOf([connection.address]);
+		if (balance < BigInt(session.price)) {
+			throw new Error("Insufficient balance");
+		}
+
 		const meetingResponse = await createMeeting.mutateAsync({
-			sessionId: index,
+			sessionId: index ?? 0,
 			summary: SAMPLE_MEETING_DATA.summary,
 			attendees: SAMPLE_MEETING_DATA.attendees,
 		});
 		const meetingUrl = meetingResponse?.meetingUrl;
 		const sessionPrice = meetingResponse?.sessionPrice;
 		if (!(meetingUrl && sessionPrice)) {
-			return;
+			throw new Error("Failed to create meeting");
 		}
 		console.log("create meeting completed", meetingUrl);
 
@@ -60,23 +70,20 @@ export function RequestMeeting() {
 
 		// approve USDC
 		if (allowance < amount) {
-			const approveTxHash = await writeContract.mutateAsync({
-				address: contracts.USDC.address,
-				abi: contracts.USDC.abi,
-				functionName: "approve",
-				args: [contracts.Manager.address, maxUint256],
-			});
+			const approveTxHash = await contracts.USDC.write.approve([
+				contracts.Manager.address,
+				maxUint256,
+			]);
 			console.log("approve USDC completed", approveTxHash);
 		}
 
 		// request session registration
-		const txHash = await writeContract.mutateAsync({
-			address: contracts.Manager.address,
-			abi: contracts.Manager.abi,
-			functionName: "requestSessionRegistration",
-			args: [BigInt(index), meetingUrl],
-			gas: 100_000n,
-		});
+		const txHash = await contracts.Manager.write.requestSessionRegistration(
+			[BigInt(index ?? 0), meetingUrl],
+			{
+				gas: 500_000n,
+			}
+		);
 		console.log("write contract completed", txHash);
 	}
 
@@ -84,7 +91,7 @@ export function RequestMeeting() {
 		<TestCard
 			data={JSON.stringify(
 				{
-					txHash: writeContract.data,
+					txHash: createMeeting.data,
 				},
 				null,
 				2
@@ -96,11 +103,7 @@ export function RequestMeeting() {
 				onChange={(e) => setIndex(Number(e.target.value))}
 				placeholder="Session Id"
 			/>
-			<Button
-				className="w-full"
-				disabled={isPending || !index}
-				onClick={handleSubmit}
-			>
+			<Button className="w-full" disabled={isPending} onClick={handleSubmit}>
 				{isPending ? "Requesting..." : "Request Meeting"}
 			</Button>
 		</TestCard>
