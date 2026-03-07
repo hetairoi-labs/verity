@@ -1,7 +1,8 @@
 import { StrictMode } from "react";
-import { createRoot, type Root } from "react-dom/client";
+import { createRoot } from "react-dom/client";
 import AppProviders from "@/src/lib/context";
 import { setupErrorListener } from "./lib/errors/listener";
+import { createHmrInstance } from "./lib/utils/hmr";
 import "@/src/globals.css";
 import { router } from "./router";
 
@@ -11,16 +12,7 @@ if (!rootElement) {
 }
 
 setupErrorListener();
-let root: Root;
-
-if (import.meta.hot) {
-	if (!import.meta.hot.data.root) {
-		import.meta.hot.data.root = createRoot(rootElement);
-	}
-	root = import.meta.hot.data.root;
-} else {
-	root = createRoot(rootElement);
-}
+const root = createHmrInstance("root", () => createRoot(rootElement));
 
 root.render(
 	<StrictMode>

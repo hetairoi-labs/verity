@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { zHex } from "@/api/lib/utils/zod";
 
 // env schema
 const clientEnvSchema = z.object({
@@ -39,6 +40,7 @@ const envSchema = z.object({
 
 	// Misc
 	CEREBRAS_API_KEY: z.string().min(1, "CEREBRAS_API_KEY is required"),
+	TESTNET_PRIVATE_KEY: zHex(),
 });
 type EnvSchema = z.infer<typeof envSchema>;
 

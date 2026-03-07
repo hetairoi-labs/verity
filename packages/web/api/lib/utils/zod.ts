@@ -32,7 +32,7 @@ export const zJsonString = () =>
 		})
 		.transform((value) => JSON.parse(value));
 
-export const zHexAddress = () =>
+export const zEvmAddress = () =>
 	z
 		.string()
 		.refine((value) => {
@@ -46,7 +46,9 @@ export const zHex = () =>
 		.refine((value) => isHex(value), "Invalid Ethereum address")
 		.transform((value) => value as Hex);
 
-export type ZHexAddress = z.infer<ReturnType<typeof zHexAddress>>;
+export const zBigInt = () => z.string().transform((value) => BigInt(value));
+
+export type ZEvmAddress = z.infer<ReturnType<typeof zEvmAddress>>;
 
 export const zIsoDate = () => z.iso.datetime().pipe(z.coerce.date());
 export type ZIsoDate = z.infer<ReturnType<typeof zIsoDate>>;
