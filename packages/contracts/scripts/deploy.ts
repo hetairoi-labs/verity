@@ -3,38 +3,44 @@ import { network } from "hardhat";
 import { isHex } from "viem";
 import env from "../env";
 
-export async function deploy(_network: string) {
-	const { viem, networkName } = await network.connect({
+type Deployment = {
+	USDC: { address: string; abi: unknown[] };
+	KXManager: { address: string; abi: unknown[] };
+	KXSessionRegistry: { address: string; abi: unknown[] };
+};
+
+const SUPPORTED_MAINNETS = [
+	{ id: 1, creName: "ethereum-mainnet" },
+	{ id: 10, creName: "ethereum-mainnet-optimism-1" },
+];
+const SUPPORTED_TESTNETS = [
+	{ id: 11155111, creName: "ethereum-testnet-sepolia" },
+	{ id: 11155420, creName: "ethereum-testnet-sepolia-optimism-1" },
+];
+const WORKFLOW_NAMES = [
+	{
+		folder: "settlement-workflow",
+		contractKey: "sessionRegistryAddress",
+		contract: "KXSessionRegistry",
+	},
+	{
+		folder: "initiation-workflow",
+		contractKey: "managerAddress",
+		contract: "KXManager",
+	},
+] as const;
+
+async function writeFiles(_network: string, deployment?: Deployment) {
+	if (!deployment) {
+		console.warn("No deployment data provided, skipping file writes");
+		return;
+	}
+
+	const { networkName, viem } = await network.connect({
 		network: _network ?? "hardhat",
 	});
 	const file = Bun.file("./definitions.gen.ts");
-
 	const chainId = (await viem.getPublicClient()).chain.id;
-
-	console.log(
-		`Deploying to network ${networkName} with chain ID ${chainId}...`,
-	);
-
-	const SUPPORTED_MAINNETS = [
-		{ id: 1, creName: "ethereum-mainnet" },
-		{ id: 10, creName: "ethereum-mainnet-optimism-1" },
-	];
-	const SUPPORTED_TESTNETS = [
-		{ id: 11155111, creName: "ethereum-testnet-sepolia" },
-		{ id: 11155420, creName: "ethereum-testnet-sepolia-optimism-1" },
-	];
-	const WORKFLOW_NAMES = [
-		{
-			folder: "settlement-workflow",
-			contractKey: "sessionRegistryAddress",
-			contract: "KXSessionRegistry",
-		},
-		{
-			folder: "initiation-workflow",
-			contractKey: "managerAddress",
-			contract: "KXManager",
-		},
-	] as const;
 
 	if (
 		![...SUPPORTED_MAINNETS, ...SUPPORTED_TESTNETS]
@@ -56,45 +62,6 @@ export async function deploy(_network: string) {
 			.replace(DEFINITIONS_FILE_SUFFIX, "") ?? "{}",
 	);
 
-	const usdc = await viem.deployContract("testUSDC", [
-		BigInt(1_000_000 * 10 ** 6),
-	]);
-
-	console.log("USDC deployed to:", usdc.address);
-
-	if (!isHex(env.TESTNET_FORWARDER_ADDRESS)) {
-		throw new Error("Invalid forwarder address in .env");
-	}
-
-	const manager = await viem.deployContract("KXManager", [
-		usdc.address,
-		env.TESTNET_FORWARDER_ADDRESS,
-	]);
-
-	await Bun.sleep(1000);
-	console.log("Manager deployed to:", manager.address);
-
-	const sessionRegistry = await viem.getContractAt(
-		"KXSessionRegistry",
-		await manager.read.sessionRegistry(),
-	);
-
-	console.log("SessionRegistry deployed to:", sessionRegistry.address);
-
-	const deployment = {
-		USDC: {
-			address: usdc.address,
-			abi: usdc.abi,
-		},
-		KXManager: {
-			address: manager.address,
-			abi: manager.abi,
-		},
-		KXSessionRegistry: {
-			address: sessionRegistry.address,
-			abi: sessionRegistry.abi,
-		},
-	};
 	definitions[networkName] = deployment;
 
 	await file.write(
@@ -139,6 +106,70 @@ export async function deploy(_network: string) {
 
 		await creConfigFile.write(JSON.stringify(creConfig, null, 2));
 	}
+}
+
+export async function deploy(_network: string) {
+	const { viem, networkName } = await network.connect({
+		network: _network ?? "hardhat",
+	});
+
+	const chainId = (await viem.getPublicClient()).chain.id;
+
+	console.log(
+		`Deploying to network ${networkName} with chain ID ${chainId}...`,
+	);
+
+	if (
+		![...SUPPORTED_MAINNETS, ...SUPPORTED_TESTNETS]
+			.map((c) => c.id)
+			.includes(chainId)
+	) {
+		throw new Error(
+			`Unsupported network with chain ID ${chainId}. Supported mainnets: ${SUPPORTED_MAINNETS.map((c) => c.creName).join(", ")}. Supported testnets: ${SUPPORTED_TESTNETS.map((c) => c.creName).join(", ")}.`,
+		);
+	}
+
+	const usdc = await viem.deployContract("testUSDC", [
+		BigInt(1_000_000_000 * 10 ** 6),
+	]);
+
+	console.log("USDC deployed to:", usdc.address);
+
+	if (!isHex(env.TESTNET_FORWARDER_ADDRESS)) {
+		throw new Error("Invalid forwarder address in .env");
+	}
+
+	const manager = await viem.deployContract("KXManager", [
+		usdc.address,
+		env.TESTNET_FORWARDER_ADDRESS,
+	]);
+
+	await Bun.sleep(1000);
+	console.log("Manager deployed to:", manager.address);
+
+	const sessionRegistry = await viem.getContractAt(
+		"KXSessionRegistry",
+		await manager.read.sessionRegistry(),
+	);
+
+	console.log("SessionRegistry deployed to:", sessionRegistry.address);
+
+	const deployment = {
+		USDC: {
+			address: usdc.address,
+			abi: usdc.abi,
+		},
+		KXManager: {
+			address: manager.address,
+			abi: manager.abi,
+		},
+		KXSessionRegistry: {
+			address: sessionRegistry.address,
+			abi: sessionRegistry.abi,
+		},
+	};
+
+	await writeFiles(_network, deployment);
 
 	return deployment;
 }
@@ -153,5 +184,5 @@ if (isMain) {
 		process.exit(1);
 	}
 
-	deploy(argv.network);
+	writeFiles(argv.network, undefined);
 }
