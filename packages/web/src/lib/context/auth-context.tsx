@@ -8,14 +8,14 @@ import {
 import { createContext, use, useState } from "react";
 import { useRegisterUserMutation } from "../hooks/api/use-user-api";
 
-interface LoginResult {
+export interface LoginResult {
 	isNewUser: boolean;
 	loginAccount: LinkedAccountWithMetadata | null;
 	loginMethod: string | null;
 	wasAlreadyAuthenticated: boolean;
 }
 
-interface AuthContextType {
+export interface AuthContextType {
 	authenticated: boolean;
 	isModalOpen: boolean;
 	login: {
