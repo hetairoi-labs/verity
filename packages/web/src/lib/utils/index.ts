@@ -15,3 +15,16 @@ export function truncateText(text: string, length = 20) {
 export function truncateAddress(address: string) {
 	return `${address.slice(0, 6)}...${address.slice(-4)}`;
 }
+
+export function serializeWithBigInt(obj: unknown): string {
+	return JSON.stringify(
+		obj,
+		(_key, value) => {
+			if (typeof value === "bigint") {
+				return value.toString();
+			}
+			return value;
+		},
+		2
+	);
+}

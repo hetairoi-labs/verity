@@ -4,7 +4,7 @@ import type { ListingWithMetadata } from "@/api/handlers/sessions";
 import { TestCard } from "@/src/components/custom/test-card";
 import { Input } from "@/src/components/ui/input";
 import type { KXContracts } from "@/src/lib/context/evm-context";
-import { formatUSDC } from "@/src/lib/utils/usdc";
+import { serializeWithBigInt } from "@/src/lib/utils";
 import { ReadDiv, useFetchFromCid } from "./utils";
 
 export function ReadAll({ contracts }: { contracts: KXContracts }) {
@@ -24,13 +24,6 @@ export function ReadAll({ contracts }: { contracts: KXContracts }) {
 		abi: contracts.Manager.abi,
 		functionName: "getListing",
 		args: [listingIndex],
-	});
-	const legacyListingIndex = 3n;
-	const { data: legacyListing, error: legacyListingError } = useReadContract({
-		address: contracts.Manager.address,
-		abi: contracts.Manager.abi,
-		functionName: "listings",
-		args: [legacyListingIndex],
 	});
 	const { data: listingPage, error: listingPageError } = useReadContract({
 		address: contracts.Manager.address,
@@ -81,9 +74,6 @@ export function ReadAll({ contracts }: { contracts: KXContracts }) {
 	const { data: metadata } = useFetchFromCid<ListingWithMetadata>(
 		listing?.dataCID?.toString()
 	);
-	const { data: legacyMetadata } = useFetchFromCid<ListingWithMetadata>(
-		legacyListing?.[2]?.toString()
-	);
 
 	const disputeWindowOpenLabel =
 		isDisputeWindowOpen === undefined ? "-" : isDisputeWindowOpen.toString();
@@ -109,33 +99,18 @@ export function ReadAll({ contracts }: { contracts: KXContracts }) {
 			</ReadDiv>
 
 			<ReadDiv title="manager.getListing(index)">
-				<pre>{JSON.stringify(listing, null, 2)}</pre>
-				<pre>Metadata: {JSON.stringify(metadata, null, 2)}</pre>
+				<pre>{serializeWithBigInt(listing)}</pre>
+				<pre>Metadata: {serializeWithBigInt(metadata)}</pre>
 				{listingError?.message && <p>{listingError.message}</p>}
 			</ReadDiv>
 
-			<ReadDiv title="manager.listings(index) - legacy example">
-				<p>Index: {legacyListingIndex.toString()}</p>
-				<p>Host: {legacyListing?.[0]?.toString() ?? "-"}</p>
-				<p>
-					Price:{" "}
-					{legacyListing?.[1]
-						? formatUSDC(BigInt(legacyListing[1].toString()))
-						: "-"}{" "}
-					USDC
-				</p>
-				<p>Data CID: {legacyListing?.[2]?.toString() ?? "-"}</p>
-				<pre>Metadata: {JSON.stringify(legacyMetadata, null, 2)}</pre>
-				{legacyListingError?.message && <p>{legacyListingError.message}</p>}
-			</ReadDiv>
-
 			<ReadDiv title="manager.getListings(0, 10)">
-				<pre>{JSON.stringify(listingPage, null, 2)}</pre>
+				<pre>{serializeWithBigInt(listingPage)}</pre>
 				{listingPageError?.message && <p>{listingPageError.message}</p>}
 			</ReadDiv>
 
 			<ReadDiv title="manager.getSessionIdsByListing(index, 0, 10)">
-				<pre>{JSON.stringify(sessionIdsByListing, null, 2)}</pre>
+				<pre>{serializeWithBigInt(sessionIdsByListing)}</pre>
 				{sessionIdsByListingError?.message && (
 					<p>{sessionIdsByListingError.message}</p>
 				)}
@@ -154,7 +129,7 @@ export function ReadAll({ contracts }: { contracts: KXContracts }) {
 			</ReadDiv>
 
 			<ReadDiv title="sessionRegistry.getSession(id)">
-				<pre>{JSON.stringify(session, null, 2)}</pre>
+				<pre>{serializeWithBigInt(session)}</pre>
 				{sessionError?.message && <p>{sessionError.message}</p>}
 			</ReadDiv>
 

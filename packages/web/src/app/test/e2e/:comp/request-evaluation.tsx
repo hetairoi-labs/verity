@@ -10,6 +10,7 @@ export function RequestEvaluation({ contracts }: { contracts: KXContracts }) {
 	const [sessionId, setSessionId] = useState<number | undefined>(undefined);
 
 	async function handleRequestEvaluation() {
+		console.log("requesting evaluation for session", sessionId);
 		if (
 			!(
 				contracts?.SessionRegistry.address &&
