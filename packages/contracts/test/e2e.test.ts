@@ -1,7 +1,6 @@
-/** biome-ignore-all lint/correctness/noUnusedVariables: <hatt> */
 import { describe, expect, it } from "bun:test";
 import hre from "hardhat";
-import { decodeEventLog } from "viem";
+import { parseEventLogs } from "viem";
 import { z } from "zod";
 import { deploy } from "../scripts/deploy";
 import { getContracts } from "../surface";
@@ -43,17 +42,25 @@ describe("E2E Test", () => {
 				Bun.randomUUIDv7().toString(),
 				100n,
 			]);
-			const receipt = await publicClient.waitForTransactionReceipt({
+
+			const registerTxReceipt = await publicClient.waitForTransactionReceipt({
 				hash: registerTx,
 			});
 
-			const wait = decodeEventLog({
+			const logs = parseEventLogs({
+				logs: registerTxReceipt.logs,
 				abi: contracts.Manager.abi,
-				data: receipt.logs[0].data,
-				topics: receipt.logs[0].topics,
 			});
+
+			const log = logs.find((log) => log.eventName === "ListingUpsert");
+			if (!log || log.eventName !== "ListingUpsert") {
+				throw new Error("ListingUpsert event not found");
+			}
+
+			const { dataCID, index } = log.args;
+
+			expect(dataCID).toBe(testCid);
+			expect(index).toBe(0n);
 		});
 	});
 });
-
-describe("Initiation Workflow", () => {});
