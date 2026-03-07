@@ -1,65 +1,167 @@
-import { useQuery } from "@tanstack/react-query";
+import { useState } from "react";
 import { useReadContract } from "wagmi";
 import type { ListingWithMetadata } from "@/api/handlers/sessions";
 import { TestCard } from "@/src/components/custom/test-card";
+import { Input } from "@/src/components/ui/input";
 import type { KXContracts } from "@/src/lib/context/evm-context";
-import { toGatewayUrl } from "@/src/lib/utils/pinata";
+import { ReadDiv, useFetchFromCid } from "./utils";
 
 export function ReadAll({ contracts }: { contracts: KXContracts }) {
-	const index = 3;
-	const { data: listings } = useReadContract({
+	const [listingIndexInput, setListingIndexInput] = useState("0");
+	const [sessionIdInput, setSessionIdInput] = useState("0");
+
+	const listingIndex = BigInt(Number(listingIndexInput) || 0);
+	const sessionId = BigInt(Number(sessionIdInput) || 0);
+
+	const { data: listingsCount, error: listingsCountError } = useReadContract({
+		address: contracts.Manager.address,
+		abi: contracts.Manager.abi,
+		functionName: "getListingsCount",
+	});
+	const { data: listing, error: listingError } = useReadContract({
+		address: contracts.Manager.address,
+		abi: contracts.Manager.abi,
+		functionName: "getListing",
+		args: [listingIndex],
+	});
+	const legacyListingIndex = 3n;
+	const { data: legacyListing, error: legacyListingError } = useReadContract({
 		address: contracts.Manager.address,
 		abi: contracts.Manager.abi,
 		functionName: "listings",
-		args: [BigInt(index)],
+		args: [legacyListingIndex],
 	});
+	const { data: listingPage, error: listingPageError } = useReadContract({
+		address: contracts.Manager.address,
+		abi: contracts.Manager.abi,
+		functionName: "getListings",
+		args: [0n, 10n],
+	});
+	const { data: sessionIdsByListing, error: sessionIdsByListingError } =
+		useReadContract({
+			address: contracts.Manager.address,
+			abi: contracts.Manager.abi,
+			functionName: "getSessionIdsByListing",
+			args: [listingIndex, 0n, 10n],
+		});
+	const { data: sessionRegistryAddress, error: sessionRegistryAddressError } =
+		useReadContract({
+			address: contracts.Manager.address,
+			abi: contracts.Manager.abi,
+			functionName: "sessionRegistry",
+		});
+
+	const { data: sessionCount, error: sessionCountError } = useReadContract({
+		address: contracts.SessionRegistry.address,
+		abi: contracts.SessionRegistry.abi,
+		functionName: "getSessionCount",
+	});
+	const { data: session, error: sessionError } = useReadContract({
+		address: contracts.SessionRegistry.address,
+		abi: contracts.SessionRegistry.abi,
+		functionName: "getSession",
+		args: [sessionId],
+	});
+	const { data: disputeDeadline, error: disputeDeadlineError } =
+		useReadContract({
+			address: contracts.SessionRegistry.address,
+			abi: contracts.SessionRegistry.abi,
+			functionName: "getDisputeDeadline",
+			args: [sessionId],
+		});
+	const { data: isDisputeWindowOpen, error: isDisputeWindowOpenError } =
+		useReadContract({
+			address: contracts.SessionRegistry.address,
+			abi: contracts.SessionRegistry.abi,
+			functionName: "isDisputeWindowOpen",
+			args: [sessionId],
+		});
+
 	const { data: metadata } = useFetchFromCid<ListingWithMetadata>(
-		listings?.[2]?.toString()
+		listing?.dataCID?.toString()
 	);
+	const { data: legacyMetadata } = useFetchFromCid<ListingWithMetadata>(
+		legacyListing?.[2]?.toString()
+	);
+
+	const disputeWindowOpenLabel =
+		isDisputeWindowOpen === undefined ? "-" : isDisputeWindowOpen.toString();
 
 	return (
 		<TestCard description="Read all" title="Read all contract data">
-			{listings && (
-				<ReadDiv title="listings">
-					<p>Index: {index}</p>
-					<p>Host: {listings[0]?.toString()}</p>
-					<p>Price: {listings[1]?.toString()}</p>
-					<p>Data CID: {listings[2]?.toString()}</p>
-					<pre>Metadata: {JSON.stringify(metadata, null, 2)}</pre>
-				</ReadDiv>
-			)}
+			<div className="grid gap-2 md:grid-cols-2">
+				<Input
+					onChange={(event) => setListingIndexInput(event.target.value)}
+					placeholder="Listing index"
+					value={listingIndexInput}
+				/>
+				<Input
+					onChange={(event) => setSessionIdInput(event.target.value)}
+					placeholder="Session id"
+					value={sessionIdInput}
+				/>
+			</div>
+
+			<ReadDiv title="manager.getListingsCount">
+				<p>{listingsCount?.toString() ?? "-"}</p>
+				{listingsCountError?.message && <p>{listingsCountError.message}</p>}
+			</ReadDiv>
+
+			<ReadDiv title="manager.getListing(index)">
+				<pre>{JSON.stringify(listing, null, 2)}</pre>
+				<pre>Metadata: {JSON.stringify(metadata, null, 2)}</pre>
+				{listingError?.message && <p>{listingError.message}</p>}
+			</ReadDiv>
+
+			<ReadDiv title="manager.listings(index) - legacy example">
+				<p>Index: {legacyListingIndex.toString()}</p>
+				<p>Host: {legacyListing?.[0]?.toString() ?? "-"}</p>
+				<p>Price: {legacyListing?.[1]?.toString() ?? "-"}</p>
+				<p>Data CID: {legacyListing?.[2]?.toString() ?? "-"}</p>
+				<pre>Metadata: {JSON.stringify(legacyMetadata, null, 2)}</pre>
+				{legacyListingError?.message && <p>{legacyListingError.message}</p>}
+			</ReadDiv>
+
+			<ReadDiv title="manager.getListings(0, 10)">
+				<pre>{JSON.stringify(listingPage, null, 2)}</pre>
+				{listingPageError?.message && <p>{listingPageError.message}</p>}
+			</ReadDiv>
+
+			<ReadDiv title="manager.getSessionIdsByListing(index, 0, 10)">
+				<pre>{JSON.stringify(sessionIdsByListing, null, 2)}</pre>
+				{sessionIdsByListingError?.message && (
+					<p>{sessionIdsByListingError.message}</p>
+				)}
+			</ReadDiv>
+
+			<ReadDiv title="manager.sessionRegistry">
+				<p>{sessionRegistryAddress?.toString() ?? "-"}</p>
+				{sessionRegistryAddressError?.message && (
+					<p>{sessionRegistryAddressError.message}</p>
+				)}
+			</ReadDiv>
+
+			<ReadDiv title="sessionRegistry.getSessionCount">
+				<p>{sessionCount?.toString() ?? "-"}</p>
+				{sessionCountError?.message && <p>{sessionCountError.message}</p>}
+			</ReadDiv>
+
+			<ReadDiv title="sessionRegistry.getSession(id)">
+				<pre>{JSON.stringify(session, null, 2)}</pre>
+				{sessionError?.message && <p>{sessionError.message}</p>}
+			</ReadDiv>
+
+			<ReadDiv title="sessionRegistry.getDisputeDeadline(id)">
+				<p>{disputeDeadline?.toString() ?? "-"}</p>
+				{disputeDeadlineError?.message && <p>{disputeDeadlineError.message}</p>}
+			</ReadDiv>
+
+			<ReadDiv title="sessionRegistry.isDisputeWindowOpen(id)">
+				<p>{disputeWindowOpenLabel}</p>
+				{isDisputeWindowOpenError?.message && (
+					<p>{isDisputeWindowOpenError.message}</p>
+				)}
+			</ReadDiv>
 		</TestCard>
 	);
-}
-
-function ReadDiv({
-	title,
-	children,
-}: {
-	title: string;
-	children: React.ReactNode;
-}) {
-	return (
-		<>
-			<p className="font-mono text-sm uppercase">{title}:</p>
-			<div className="flex flex-col gap-2 overflow-scroll rounded bg-background p-4">
-				{children}
-			</div>
-		</>
-	);
-}
-
-function useFetchFromCid<T>(cid: string | undefined) {
-	return useQuery({
-		queryKey: ["fetchFromCid", cid],
-		queryFn: async () => {
-			if (!cid) {
-				return undefined;
-			}
-			console.log("fetching from cid", cid);
-			const response = await fetch(toGatewayUrl(cid));
-			return response.json() as Promise<T>;
-		},
-		enabled: !!cid,
-	});
 }
