@@ -10,7 +10,7 @@ alwaysApply: true
 - In backend (API), Always throw `ApiError` over `Error`. Thrown errors are handled globally by `ErrorHandler`.
 - Frontend catches errors globally as well using the `setupErrorListener` function. No need to handle errors locally.
 - Middlewares: createMiddleware, c.set() for downstream. Providers: Context + useX, throw if used outside.
-- Reuse existing: safeQuery, buildWhereActive, cn, zHexAddress, etc. Check lib/ before adding.
+- Reuse existing: safeQuery, buildWhereActive, cn, zEvmAddress, etc. Check lib/ before adding.
 - Singleton for shared state (ErrorHandler). Factory for per-request (privy, logger).
 - Types from source: Always try to infer types from source schemas (z.input) and existing types. Use omit or extend to extract relevant parts. Never duplicate if possible.
 - One concerned domain per file: utils, hooks, providers separate. Try not to mix if it doesn't make sense.
