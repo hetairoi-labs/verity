@@ -9,22 +9,24 @@ import {
 } from "react";
 import { useWalletClient } from "wagmi";
 
-type KXContracts = ReturnType<typeof getContracts>;
+export type KXContracts = ReturnType<typeof getContracts>;
 
-interface IEvmContext {
-	contracts: KXContracts | null;
+export interface IEvmContext {
+	contracts: KXContracts | undefined;
 	ready: boolean;
 }
 
 const EvmContext = createContext<IEvmContext>({
-	contracts: null,
+	contracts: undefined,
 	ready: false,
 });
 
 export function EvmProvider(props: { children: React.ReactNode }) {
 	const { children } = props;
 
-	const [contracts, setContracts] = useState<KXContracts | null>(null);
+	const [contracts, setContracts] = useState<KXContracts | undefined>(
+		undefined
+	);
 	const [ready, setReady] = useState(false);
 
 	const { data: wallet } = useWalletClient();
