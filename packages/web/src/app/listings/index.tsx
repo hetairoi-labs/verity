@@ -5,6 +5,7 @@ import { Panel } from "@/src/app/dashboard/:components/panel";
 import { Button } from "@/src/components/ui/button";
 import { Input } from "@/src/components/ui/input";
 import { useGetAllSessionsQuery } from "@/src/lib/hooks/api/use-sessions-api";
+import { formatUSDC } from "@/src/lib/utils/usdc";
 
 const LISTINGS_PAGE_LIMIT = 10;
 
@@ -67,7 +68,7 @@ function ListingsPage() {
 										{listing.topic}
 									</p>
 									<p className="mt-1 text-muted-foreground text-xs">
-										Price: {listing.price}
+										Price: {formatUSDC(BigInt(listing.price))} USDC
 									</p>
 								</div>
 								<Link

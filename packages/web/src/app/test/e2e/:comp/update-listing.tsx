@@ -6,6 +6,7 @@ import { Input } from "@/src/components/ui/input";
 import type { KXContracts } from "@/src/lib/context/evm-context";
 import { useUpdateSessionMutation } from "@/src/lib/hooks/api/use-sessions-api";
 import { useUploadToPinataMutation } from "@/src/lib/hooks/api/use-uploads-api";
+import { parseUSDC } from "@/src/lib/utils/usdc";
 
 const listingData = {
 	goals: [
@@ -13,7 +14,7 @@ const listingData = {
 		{ name: "Updated: Understanding the contract's functionality", weight: 1 },
 		{ name: "Updated: Understanding the contract's ABI", weight: 1 },
 	],
-	price: 1_000_000_000,
+	price: "1000",
 	topic: "Updated: Blockchain development",
 	metadata: {
 		title: "Updated: Ethereum smart contracts",
@@ -36,20 +37,21 @@ export function UpdateListing({ contracts }: { contracts: KXContracts }) {
 			return;
 		}
 
+		const priceRaw = parseUSDC(listingData.price);
 		const uploadResponse = await upload.mutateAsync({
 			json: {
 				...listingData,
 				metadata: JSON.stringify(listingData.metadata),
+				price: Number(priceRaw),
 			},
 		});
 		const cid = uploadResponse.cid;
 		console.log("upload completed", cid);
-
 		const txHash = await writeContract.mutateAsync({
 			address: contracts.Manager.address,
 			abi: contracts.Manager.abi,
 			functionName: "updateListing",
-			args: [BigInt(index), cid, BigInt(listingData.price)],
+			args: [BigInt(index), cid, priceRaw],
 		});
 		console.log("write contract completed", txHash);
 
@@ -58,7 +60,7 @@ export function UpdateListing({ contracts }: { contracts: KXContracts }) {
 			txHash,
 			metadata: listingData.metadata,
 			topic: listingData.topic,
-			price: listingData.price,
+			price: Number(priceRaw),
 			goals: listingData.goals,
 		});
 	}

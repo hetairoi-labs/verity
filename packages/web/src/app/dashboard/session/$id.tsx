@@ -13,6 +13,7 @@ import {
 } from "@/src/lib/hooks/actions/use-session-actions";
 import { useGetSessionMeetingsQuery } from "@/src/lib/hooks/api/use-meetings-api";
 import { useGetSessionByIdQuery } from "@/src/lib/hooks/api/use-sessions-api";
+import { formatUSDC } from "@/src/lib/utils/usdc";
 
 export const Route = createFileRoute("/dashboard/session/$id")({
 	component: SessionDetailPage,
@@ -50,7 +51,9 @@ function SessionInfoPanel({
 			<p className="text-xl">{session?.title ?? "-"}</p>
 			<p className="text-muted-foreground text-sm">{session?.topic ?? "-"}</p>
 			<div className="grid gap-2 text-sm md:grid-cols-3">
-				<p>Price: {session?.price ?? "-"}</p>
+				<p>
+					Price: {session?.price ? formatUSDC(BigInt(session.price)) : "-"} USDC
+				</p>
 				<p>Meetings Count: {session?.meetingsCount ?? 0}</p>
 				<p>Host: {session?.hostId ?? "-"}</p>
 			</div>
@@ -89,10 +92,8 @@ function HostPanel({
 							email: session?.email ?? "",
 							topic: session?.topic ?? "",
 							description: session?.description ?? "",
-							price: Number(session?.price ?? 0),
-							goalOne: goalDefaults[0]?.name ?? "",
-							goalTwo: goalDefaults[1]?.name ?? "",
-							goalThree: goalDefaults[2]?.name ?? "",
+							price: session?.price ? formatUSDC(BigInt(session.price)) : "1",
+							goals: goalDefaults.map((g) => g.name),
 						}}
 						isPending={updateListing.isPending}
 						onSubmit={(value) => updateListing.execute(sessionId, value)}

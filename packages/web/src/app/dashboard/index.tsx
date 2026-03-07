@@ -6,6 +6,7 @@ import {
 	useGetDashboardMetricsQuery,
 	useGetHostSessionsQuery,
 } from "@/src/lib/hooks/api/use-sessions-api";
+import { formatUSDC } from "@/src/lib/utils/usdc";
 
 export const Route = createFileRoute("/dashboard/")({
 	component: DashboardPage,
@@ -30,15 +31,23 @@ function DashboardPage() {
 				<MetricCard label="Meetings Scheduled" value={metrics?.totalMeetings} />
 				<MetricCard
 					label="Earnings Potential"
-					value={metrics?.totalEarningsUSDC?.toFixed(2)}
+					value={
+						metrics?.totalEarningsUSDC != null
+							? formatUSDC(BigInt(Math.round(metrics.totalEarningsUSDC)))
+							: undefined
+					}
 				/>
 				<MetricCard
 					label="Average Listing Price"
-					value={metrics?.averagePriceUSDC?.toFixed(2)}
+					value={
+						metrics?.averagePriceUSDC != null
+							? formatUSDC(BigInt(Math.round(metrics.averagePriceUSDC)))
+							: undefined
+					}
 				/>
 			</section>
 
-			<Panel className="space-y-3">
+			<Panel className="h-full space-y-3">
 				<div className="flex items-center justify-between">
 					<h2 className="text-lg">Hosted Listings</h2>
 					<Link to="/listings/create">

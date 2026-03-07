@@ -1,20 +1,11 @@
-import {
-	type TopNavAction,
-	type TopNavTab,
-	topNavActions,
-	topNavTabs,
-} from "./mock";
+import { type TopNavAction, topNavActions } from "./mock";
 import { Panel } from "./panel";
 
-export function TopNavbar() {
+export function TopNavbar({ title }: { title: string }) {
 	return (
 		<Panel>
 			<div className="flex flex-wrap items-center justify-between gap-3">
-				<div className="flex items-center gap-5 text-muted-foreground text-sm md:text-base">
-					{topNavTabs.map((tab) => (
-						<TopTab key={tab.label} tab={tab} />
-					))}
-				</div>
+				<h1 className="text-2xl">{title}</h1>
 
 				<div className="flex items-center gap-2">
 					{topNavActions.map((action) => (
@@ -23,21 +14,6 @@ export function TopNavbar() {
 				</div>
 			</div>
 		</Panel>
-	);
-}
-
-function TopTab({ tab }: { tab: TopNavTab }) {
-	return (
-		<button
-			className={`transition-colors ${
-				tab.active
-					? "text-foreground hover:text-primary"
-					: "hover:text-foreground"
-			}`}
-			type="button"
-		>
-			{tab.label}
-		</button>
 	);
 }
 

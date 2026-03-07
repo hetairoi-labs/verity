@@ -1,18 +1,18 @@
 import { useWriteContract } from "wagmi";
-import type { ListingWithMetadata } from "@/api/handlers/sessions";
 import { TestCard } from "@/src/components/custom/test-card";
 import { Button } from "@/src/components/ui/button";
 import type { KXContracts } from "@/src/lib/context/evm-context";
 import { useCreateSessionMutation } from "@/src/lib/hooks/api/use-sessions-api";
 import { useUploadToPinataMutation } from "@/src/lib/hooks/api/use-uploads-api";
+import { parseUSDC } from "@/src/lib/utils/usdc";
 
-const listingData: ListingWithMetadata = {
+const listingData = {
 	goals: [
 		{ name: "Deploying a contract to a testnet", weight: 1 },
 		{ name: "Understanding the contract's functionality", weight: 1 },
 		{ name: "Understanding the contract's ABI", weight: 1 },
 	],
-	price: 1_000_000,
+	price: "1",
 	topic: "Blockchain development",
 	metadata: {
 		title: "Ethereum smart contracts",
@@ -34,20 +34,21 @@ export function AddListing({ contracts }: { contracts: KXContracts }) {
 			return;
 		}
 
+		const priceRaw = parseUSDC(listingData.price);
 		const uploadResponse = await upload.mutateAsync({
 			json: {
 				...listingData,
 				metadata: JSON.stringify(listingData.metadata),
+				price: Number(priceRaw),
 			},
 		});
 		const cid = uploadResponse.cid;
 		console.log("upload completed", cid);
-
 		const txHash = await writeContract.mutateAsync({
 			address: contracts.Manager.address,
 			abi: contracts.Manager.abi,
 			functionName: "createListing",
-			args: [cid, BigInt(listingData.price)],
+			args: [cid, priceRaw],
 		});
 		console.log("write contract completed", txHash);
 
@@ -55,7 +56,7 @@ export function AddListing({ contracts }: { contracts: KXContracts }) {
 			txHash,
 			metadata: listingData.metadata,
 			topic: listingData.topic,
-			price: listingData.price,
+			price: Number(priceRaw),
 			goals: listingData.goals,
 		});
 	}

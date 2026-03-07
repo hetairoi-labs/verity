@@ -3,6 +3,7 @@ import { toast } from "sonner";
 import { maxUint256 } from "viem";
 import { useAccount, usePublicClient } from "wagmi";
 import { useEvmContext } from "@/src/lib/context/evm-context";
+import { parseUSDC } from "@/src/lib/utils/usdc";
 import { useCreateMeetingMutation } from "../api/use-meetings-api";
 import {
 	useCreateSessionMutation,
@@ -18,7 +19,8 @@ export interface ListingFormInput {
 		email: string;
 		title: string;
 	};
-	price: number;
+	/** Human-readable USDC amount (e.g. "1", "10.50") */
+	price: string;
 	topic: string;
 }
 
@@ -50,27 +52,29 @@ export function useAddListing() {
 		try {
 			return await toast.promise(
 				(async () => {
+					const priceRaw = parseUSDC(input.price);
 					const uploadResponse = await upload.mutateAsync({
 						json: {
 							...input,
 							metadata: JSON.stringify(input.metadata),
+							price: Number(priceRaw),
 						},
 					});
 					const txHash = await kx.Manager.write.createListing([
 						uploadResponse.cid,
-						BigInt(input.price),
+						priceRaw,
 					]);
 					return createSession.mutateAsync({
 						txHash,
 						metadata: input.metadata,
 						topic: input.topic,
-						price: input.price,
+						price: Number(priceRaw),
 						goals: input.goals,
 					});
 				})(),
 				{
 					loading: "Creating listing...",
-					success: "Listing created",
+					success: "Listing creation queued",
 					error: (error) =>
 						error instanceof Error ? error.message : "Create listing failed",
 				}
@@ -99,29 +103,31 @@ export function useUpdateListing() {
 		try {
 			return await toast.promise(
 				(async () => {
+					const priceRaw = parseUSDC(input.price);
 					const uploadResponse = await upload.mutateAsync({
 						json: {
 							...input,
 							metadata: JSON.stringify(input.metadata),
+							price: Number(priceRaw),
 						},
 					});
 					const txHash = await kx.Manager.write.updateListing([
 						BigInt(sessionId),
 						uploadResponse.cid,
-						BigInt(input.price),
+						priceRaw,
 					]);
 					return updateSession.mutateAsync({
 						sessionId,
 						txHash,
 						metadata: input.metadata,
 						topic: input.topic,
-						price: input.price,
+						price: Number(priceRaw),
 						goals: input.goals,
 					});
 				})(),
 				{
 					loading: "Updating listing...",
-					success: "Listing updated",
+					success: "Listing update queued",
 					error: (error) =>
 						error instanceof Error ? error.message : "Update listing failed",
 				}
@@ -152,7 +158,7 @@ export function useRequestEvaluation() {
 				contracts.SessionRegistry.write.requestEvaluation([BigInt(sessionId)]),
 				{
 					loading: "Requesting evaluation...",
-					success: "Evaluation requested",
+					success: "Evaluation request queued",
 					error: (error) =>
 						error instanceof Error
 							? error.message
@@ -200,7 +206,7 @@ export function useRequestSessionRegistrationAndEnroll() {
 						throw new Error("Failed to create meeting");
 					}
 
-					const amount = BigInt(meeting.sessionPrice);
+					const amount = BigInt(meeting.sessionPrice); // API returns raw 6-decimal units
 					const balance = await kx.USDC.read.balanceOf([address]);
 					if (balance < amount) {
 						throw new Error("Insufficient balance");
@@ -234,7 +240,7 @@ export function useRequestSessionRegistrationAndEnroll() {
 				})(),
 				{
 					loading: "Requesting session...",
-					success: "Session requested and enrolled",
+					success: "Session request queued",
 					error: (error) =>
 						error instanceof Error ? error.message : "Session request failed",
 				}

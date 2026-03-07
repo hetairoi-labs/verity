@@ -21,7 +21,7 @@ export const createMeetingInputSchema = z.object({
 	startDate: z
 		.date()
 		.min(new Date(), "Start date must be in the future")
-		.default(() => new Date(Date.now())),
+		.default(() => new Date(Date.now() + 5 * 60_000)),
 	duration: z
 		.number()
 		.min(0.1, "Duration must be greater than 0")

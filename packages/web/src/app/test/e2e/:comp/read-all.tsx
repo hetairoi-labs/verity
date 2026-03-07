@@ -4,6 +4,7 @@ import type { ListingWithMetadata } from "@/api/handlers/sessions";
 import { TestCard } from "@/src/components/custom/test-card";
 import { Input } from "@/src/components/ui/input";
 import type { KXContracts } from "@/src/lib/context/evm-context";
+import { formatUSDC } from "@/src/lib/utils/usdc";
 import { ReadDiv, useFetchFromCid } from "./utils";
 
 export function ReadAll({ contracts }: { contracts: KXContracts }) {
@@ -116,7 +117,13 @@ export function ReadAll({ contracts }: { contracts: KXContracts }) {
 			<ReadDiv title="manager.listings(index) - legacy example">
 				<p>Index: {legacyListingIndex.toString()}</p>
 				<p>Host: {legacyListing?.[0]?.toString() ?? "-"}</p>
-				<p>Price: {legacyListing?.[1]?.toString() ?? "-"}</p>
+				<p>
+					Price:{" "}
+					{legacyListing?.[1]
+						? formatUSDC(BigInt(legacyListing[1].toString()))
+						: "-"}{" "}
+					USDC
+				</p>
 				<p>Data CID: {legacyListing?.[2]?.toString() ?? "-"}</p>
 				<pre>Metadata: {JSON.stringify(legacyMetadata, null, 2)}</pre>
 				{legacyListingError?.message && <p>{legacyListingError.message}</p>}

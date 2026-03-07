@@ -19,6 +19,9 @@
       "recommended": true,
       "correctness": {
         "noChildrenProp": "off"
+      },
+      "suspicious": {
+        "noArrayIndexKey": "off"
       }
     }
   },
