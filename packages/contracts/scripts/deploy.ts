@@ -184,5 +184,7 @@ if (isMain) {
 		process.exit(1);
 	}
 
-	writeFiles(argv.network, undefined);
+	const deployment = await deploy(argv.network);
+
+	writeFiles(argv.network, deployment);
 }

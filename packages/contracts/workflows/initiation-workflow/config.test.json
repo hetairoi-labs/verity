@@ -4,7 +4,7 @@
     {
       "on": "log",
       "contract": {
-        "address": "0xa6b427be0c60c2a61cd47ce231d129a8e8e720bb",
+        "address": "0x42c105b36825778ca323bf850df6e007b0407dca",
         "event": "SessionRegistrationRequested"
       }
     }
@@ -14,7 +14,7 @@
       "chainSelectorName": "ethereum-testnet-sepolia",
       "gasLimit": "1000000",
       "managerAddress": "0x6ee50eeafa56f269a8875bb09e2a3ab9608bdf4b",
-      "sessionRegistryAddress": "0xa6b427be0c60c2a61cd47ce231d129a8e8e720bb"
+      "sessionRegistryAddress": "0x42c105b36825778ca323bf850df6e007b0407dca"
     }
   ]
 }
