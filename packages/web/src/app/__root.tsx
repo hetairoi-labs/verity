@@ -1,8 +1,7 @@
 import { SpinnerBallIcon } from "@phosphor-icons/react";
-import { createRootRouteWithContext, Outlet } from "@tanstack/react-router";
+import { createRootRoute, Outlet } from "@tanstack/react-router";
 import { RootErrorComponent } from "@/src/components/custom/error";
 import NotFoundPage from "@/src/components/custom/not-found";
-import type { AuthContextType } from "@/src/lib/context/auth-context";
 
 function RootLayout() {
 	return (
@@ -14,11 +13,7 @@ function RootLayout() {
 	);
 }
 
-interface RouterContext {
-	auth: AuthContextType;
-}
-
-export const Route = createRootRouteWithContext<RouterContext>()({
+export const Route = createRootRoute({
 	component: RootLayout,
 	notFoundComponent: NotFoundPage,
 	errorComponent: RootErrorComponent,
