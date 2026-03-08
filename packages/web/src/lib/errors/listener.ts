@@ -19,6 +19,16 @@ export function setupErrorListener() {
 	handler.onError((err) => {
 		const parsed = parseError(err);
 		console.error("[ERROR] Processing error:", parsed);
-		toast.error(parsed.message);
+		showToast(parsed.message);
 	});
 }
+
+const showToast = (message: string) => {
+	let processedMsg: string;
+	if (message.includes("User rejected the request")) {
+		processedMsg = "Wallet connection rejected";
+	} else {
+		processedMsg = message;
+	}
+	toast.error(processedMsg);
+};

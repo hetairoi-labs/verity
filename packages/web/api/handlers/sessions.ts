@@ -304,7 +304,7 @@ export async function getAllSessions(
 
 	const result = await safeQuery(
 		db
-			.select()
+			.select({ id: sessions.id })
 			.from(sessions)
 			.where(buildWhereActive([{ table: sessions, filters: { hostId } }]))
 			.orderBy(desc(sessions.createdAt))
