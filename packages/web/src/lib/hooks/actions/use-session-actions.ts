@@ -206,6 +206,8 @@ export function useRequestSessionRegistrationAndEnroll() {
 						throw new Error("Failed to create meeting");
 					}
 
+					console.log("meeting", meeting.meetingUrl);
+
 					const amount = BigInt(meeting.sessionPrice); // API returns raw 6-decimal units
 					const balance = await kx.USDC.read.balanceOf([address]);
 					if (balance < amount) {

@@ -141,9 +141,17 @@ export const zRecallBotCreationResponse = () =>
 			z.object({
 				id: z.string(),
 				media_shortcuts: z.object({
-					transcript: z.object({
-						id: z.string(),
-					}),
+					transcript: z
+						.object({
+							id: z.string(),
+							data: z
+								.object({
+									download_url: z.string().nullable(),
+									provider_data_download_url: z.string().nullable(),
+								})
+								.optional(),
+						})
+						.nullable(),
 				}),
 			}),
 		),

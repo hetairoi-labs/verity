@@ -15,6 +15,9 @@ import {
 type RecallTranscriptResponse = {
 	raw: string;
 };
+type RecallBotTranscriptLookupResponse = {
+	transcriptUrl: string;
+};
 type RecallBotCreationResponse = {
 	transcriptId: string;
 };
@@ -30,13 +33,21 @@ export const getRecallTranscript = (
 
 	const httpClient = new cre.capabilities.HTTPClient();
 
+	const { transcriptUrl } = httpClient
+		.sendRequest(
+			runtime,
+			GetRecallBotTranscriptDownloadUrlData(
+				`${apiBaseUrl.value}/bot/${recallBotId}/`,
+				apiKey.value,
+			),
+			consensusIdenticalAggregation<RecallBotTranscriptLookupResponse>(),
+		)(runtime.config)
+		.result();
+
 	const result = httpClient
 		.sendRequest(
 			runtime,
-			GetRecallTranscriptData(
-				`${apiBaseUrl.value}/bot/${recallBotId}/transcript/`,
-				apiKey.value,
-			),
+			GetRecallTranscriptData(transcriptUrl),
 			consensusIdenticalAggregation<RecallTranscriptResponse>(),
 		)(runtime.config)
 		.result();
@@ -45,17 +56,13 @@ export const getRecallTranscript = (
 };
 
 const GetRecallTranscriptData =
-	(transcriptUrl: string, apiKey: string) =>
+	(transcriptUrl: string) =>
 	(
 		sendRequester: HTTPSendRequester,
 		_config: z.infer<ReturnType<typeof zConfig>>,
 	): RecallTranscriptResponse => {
 		const req: Parameters<typeof sendRequester.sendRequest>[0] = {
 			url: transcriptUrl,
-			headers: {
-				Authorization: `Token ${apiKey}`,
-				"Content-Type": "application/json",
-			},
 			method: "GET" as const,
 			cacheSettings: {
 				store: true,
@@ -78,6 +85,55 @@ const GetRecallTranscriptData =
 		return {
 			raw: compressTranscript(parsedResponse),
 		};
+	};
+
+const GetRecallBotTranscriptDownloadUrlData =
+	(botUrl: string, apiKey: string) =>
+	(
+		sendRequester: HTTPSendRequester,
+		_config: z.infer<ReturnType<typeof zConfig>>,
+	): RecallBotTranscriptLookupResponse => {
+		const req: Parameters<typeof sendRequester.sendRequest>[0] = {
+			url: botUrl,
+			headers: {
+				Authorization: `Token ${apiKey}`,
+				accept: "application/json",
+				"Content-Type": "application/json",
+			},
+			method: "GET" as const,
+			cacheSettings: {
+				store: true,
+				maxAge: "3600s",
+			},
+		};
+
+		const resp = sendRequester.sendRequest(req).result();
+		const bodyText = new TextDecoder().decode(resp.body);
+
+		if (!ok(resp))
+			throw new Error(
+				`HTTP request failed with status: ${resp.statusCode}. Error: ${bodyText}`,
+			);
+
+		const parsedResponse = zRecallBotCreationResponse().parse(
+			JSON.parse(bodyText),
+		);
+		const transcriptUrl = parsedResponse.recordings
+			.map(
+				(recording) =>
+					recording.media_shortcuts.transcript?.data?.download_url ??
+					recording.media_shortcuts.transcript?.data
+						?.provider_data_download_url,
+			)
+			.find((url): url is string => Boolean(url));
+
+		if (!transcriptUrl) {
+			throw new Error(
+				`Transcript download URL is missing for Recall bot ${parsedResponse.id}`,
+			);
+		}
+
+		return { transcriptUrl };
 	};
 
 export function compressTranscript(

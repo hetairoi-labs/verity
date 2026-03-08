@@ -13,12 +13,12 @@ export function RequestMeeting() {
 	const [index, setIndex] = useState<number | undefined>(undefined);
 	const requestMeeting = useRequestSessionRegistrationAndEnroll();
 
-	const handleSubmit = async () => {
+	const handleSubmit = () => {
 		if (!index) {
 			return;
 		}
 
-		await requestMeeting.execute({
+		requestMeeting.execute({
 			sessionId: index,
 			summary: SAMPLE_MEETING_DATA.summary,
 			attendees: SAMPLE_MEETING_DATA.attendees,

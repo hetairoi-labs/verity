@@ -36,3 +36,5 @@ report.[0-9]_.[0-9]_.[0-9]_.[0-9]_.json
 .DS_Store
 
 secrets/
+packages/contracts/workflows/initiation-workflow/.cre_build_tmp.js
+packages/contracts/workflows/settlement-workflow/.cre_build_tmp.js
