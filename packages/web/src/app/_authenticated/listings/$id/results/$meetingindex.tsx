@@ -110,7 +110,11 @@ function MeetingResultPage() {
 		>
 			<div className="space-y-4">
 				<Button nativeButton={false} variant="ghost">
-					<Link params={{ id: String(listingId) }} to="/listings/$id">
+					<Link
+						className="flex items-center gap-2"
+						params={{ id: String(listingId) }}
+						to="/listings/$id"
+					>
 						<ArrowLeftIcon size={16} />
 						Back to Listing
 					</Link>
@@ -143,7 +147,7 @@ function MeetingResultPage() {
 					<h3 className="font-medium text-lg">Evidence Data</h3>
 					{evidenceData ? (
 						<div className="space-y-3 rounded-xl border border-border/70 bg-background/60 p-4 text-sm">
-							<DataRow label="Score" value={String(evidenceData.score)} />
+							<p>Score: {evidenceData.score}</p>
 							<div>
 								<p className="font-medium text-muted-foreground text-xs uppercase">
 									Reasoning
