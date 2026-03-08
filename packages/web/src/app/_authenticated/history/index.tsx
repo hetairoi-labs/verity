@@ -39,10 +39,7 @@ function HistoryPage() {
 								Payout/Refund tracked on-chain
 							</p>
 						</div>
-						<Link
-							params={{ id: String(session.id) }}
-							to="/dashboard/session/$id"
-						>
+						<Link params={{ id: String(session.id) }} to="/listings/$id">
 							<Button size="sm" variant="outline">
 								Open Session
 							</Button>

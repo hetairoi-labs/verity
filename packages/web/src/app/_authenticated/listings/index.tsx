@@ -48,7 +48,7 @@ function ListingsPage() {
 						<Link
 							key={listing.id}
 							params={{ id: String(listing.id) }}
-							to="/dashboard/session/$id"
+							to="/listings/$id"
 						>
 							<ListingCard listingId={listing.id} />
 						</Link>

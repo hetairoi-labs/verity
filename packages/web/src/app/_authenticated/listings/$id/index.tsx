@@ -15,7 +15,7 @@ import { useGetSessionMeetingsQuery } from "@/src/lib/hooks/api/use-meetings-api
 import { useGetSessionByIdQuery } from "@/src/lib/hooks/api/use-sessions-api";
 import { formatUSDC } from "@/src/lib/utils/usdc";
 
-export const Route = createFileRoute("/_authenticated/dashboard/session/$id")({
+export const Route = createFileRoute("/_authenticated/listings/$id/")({
 	component: SessionDetailPage,
 });
 
