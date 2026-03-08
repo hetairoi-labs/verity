@@ -50,11 +50,15 @@ export function UserDropdown({ userImage }: UserDropdownProps) {
 
 	return (
 		<DropdownMenu onOpenChange={setOpen} open={open}>
-			<DropdownMenuTrigger className="outline-none">
-				<Avatar className="ml-2 cursor-pointer transition-opacity hover:opacity-80">
-					<AvatarImage src={userImage} />
-					<AvatarFallback>{initials}</AvatarFallback>
-				</Avatar>
+			<DropdownMenuTrigger
+				className="outline-none"
+				nativeButton={true}
+				render={
+					<Avatar className="ml-2 cursor-pointer transition-opacity hover:opacity-80" />
+				}
+			>
+				<AvatarImage src={userImage} />
+				<AvatarFallback>{initials}</AvatarFallback>
 			</DropdownMenuTrigger>
 			<DropdownMenuContent align="end" className="mt-2 w-56" sideOffset={4}>
 				<DropdownMenuGroup>

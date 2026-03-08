@@ -1,6 +1,5 @@
 import UserImage from "@assets/card.png";
 import { WalletIcon } from "@phosphor-icons/react";
-import { Loader } from "@/src/components/custom/loading";
 import ThemeSwitch from "@/src/components/custom/theme-switch";
 import { Button } from "@/src/components/ui/button";
 import { useUsdtBalance } from "@/src/lib/hooks/web3/use-usdt-balance";
@@ -26,7 +25,7 @@ export function TopNavbar({
 					<ThemeSwitch variant={"outline"} />
 
 					<Button className="cursor-default" variant="outline">
-						<WalletIcon /> {balance ? formatUSDC(balance) : <Loader />}{" "}
+						<WalletIcon /> {balance ? formatUSDC(balance) : undefined}{" "}
 						<span className="text-xs">USDC</span>
 					</Button>
 

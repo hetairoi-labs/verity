@@ -26,11 +26,14 @@ export function CreateListingModal() {
 
 	return (
 		<Dialog onOpenChange={setOpen} open={open}>
-			<DialogTrigger>
-				<Button size="lg" variant="default">
-					<PlusIcon /> Create new listing
-				</Button>
-			</DialogTrigger>
+			<DialogTrigger
+				nativeButton={true}
+				render={
+					<Button size="lg" variant="default">
+						<PlusIcon /> Create new listing
+					</Button>
+				}
+			/>
 			<DialogContent
 				className="max-h-[90vh] overflow-y-auto sm:max-w-lg"
 				showCloseButton
