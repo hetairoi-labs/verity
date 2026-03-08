@@ -81,11 +81,15 @@ export function ReadAll({ contracts }: { contracts: KXContracts }) {
 	return (
 		<TestCard description="Read all" title="Read all contract data">
 			<div className="grid gap-2 md:grid-cols-2">
+				<label htmlFor="listingIndexInput">Listing index</label>
 				<Input
+					id="listingIndexInput"
 					onChange={(event) => setListingIndexInput(event.target.value)}
 					placeholder="Listing index"
+					type="number"
 					value={listingIndexInput}
 				/>
+				<label htmlFor="sessionIdInput">Session id</label>
 				<Input
 					onChange={(event) => setSessionIdInput(event.target.value)}
 					placeholder="Session id"

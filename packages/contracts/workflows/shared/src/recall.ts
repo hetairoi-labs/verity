@@ -5,12 +5,12 @@ import {
 	ok,
 	type Runtime,
 } from "@chainlink/cre-sdk";
+import type z from "zod";
 import {
 	type zConfig,
 	zRecallBotCreationResponse,
 	zRecallTranscriptResponse,
 } from "./zod";
-import type z from "zod";
 
 type RecallTranscriptResponse = {
 	raw: string;
@@ -165,7 +165,7 @@ export const createRecallBot = (
 };
 
 const CreateRecallBotData =
-	(meetingUrl: string, liveUrl: string, apiBaseUrl: string, apiKey: string) =>
+	(meetingUrl: string, _liveUrl: string, apiBaseUrl: string, apiKey: string) =>
 	(
 		sendRequester: HTTPSendRequester,
 		_config: z.infer<ReturnType<typeof zConfig>>,
@@ -174,19 +174,19 @@ const CreateRecallBotData =
 			meeting_url: meetingUrl,
 			bot_name: "Verity Bot",
 			join_at: new Date(Date.now() + 0.5 * 60_000).toISOString(),
-			variant: {
-				zoom: "web_4_core",
-				google_meet: "web_4_core",
-				microsoft_teams: "web_4_core",
-			},
-			output_media: {
-				camera: {
-					kind: "webpage",
-					config: {
-						url: liveUrl,
-					},
-				},
-			},
+			// variant: {
+			// 	zoom: "web_4_core",
+			// 	google_meet: "web_4_core",
+			// 	microsoft_teams: "web_4_core",
+			// },
+			// output_media: {
+			// 	camera: {
+			// 		kind: "webpage",
+			// 		config: {
+			// 			url: liveUrl,
+			// 		},
+			// 	},
+			// },
 			recording_config: {
 				include_bot_in_recording: {
 					audio: true,

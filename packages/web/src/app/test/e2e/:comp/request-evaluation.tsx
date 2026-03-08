@@ -1,9 +1,17 @@
 import { useState } from "react";
+import { createPublicClient, http, parseEventLogs } from "viem";
+import { sepolia } from "viem/chains";
 import { useWriteContract } from "wagmi";
+import { safeAsync } from "@/lib/utils/safe";
 import { TestCard } from "@/src/components/custom/test-card";
 import { Button } from "@/src/components/ui/button";
 import { Input } from "@/src/components/ui/input";
 import type { KXContracts } from "@/src/lib/context/evm-context";
+
+export const publicClient = createPublicClient({
+	chain: sepolia,
+	transport: http(),
+});
 
 export function RequestEvaluation({ contracts }: { contracts: KXContracts }) {
 	const writeContract = useWriteContract();
@@ -28,7 +36,28 @@ export function RequestEvaluation({ contracts }: { contracts: KXContracts }) {
 			args: [BigInt(sessionId)],
 			gas: 500_000n,
 		});
-		console.log("requestEvaluation completed", txHash);
+
+		console.log("txHash", txHash);
+
+		const [receipt, _] = await safeAsync(
+			publicClient.waitForTransactionReceipt({
+				hash: txHash,
+			})
+		);
+
+		if (!receipt) {
+			throw new Error("Failed to get transaction receipt");
+		}
+
+		console.log("receipt", receipt);
+
+		const logs = parseEventLogs({
+			abi: contracts.SessionRegistry.abi,
+			logs: receipt.logs,
+			eventName: "EvaluationRequested",
+		});
+
+		console.log("logs", logs);
 	}
 
 	return (
