@@ -1,20 +1,31 @@
 #!/bin/bash
-clear;
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+ROOT_DIR="$(cd "$DIR/../.." && pwd)"
+cd "$ROOT_DIR"
+set -e
 
-echo "🔍 Installing project dependencies..."
-bun i
-echo
+source ~/.profile || true
+source ~/.bashrc || true
+export PATH="/root/.bun/bin:$PATH"
 
-echo "🔍 Linting and formatting code..."
-bun check
-echo
+echo "[1] Loading environment..."
 
-echo "🔍 Building project..."
+echo "[2] Pulling latest code..."
+git pull origin main
+
+echo "[3] Installing dependencies..."
+bun install
+
+echo "[4] Linting and checking types..."
+bun check && bun tsc
+
+echo "[5] Building project... (optionally for static builds)"
 bun run build
-echo
 
-echo "⚡ Spinning up production server..."
-bun start
-echo
+echo "[6] Starting PM2 process..."
+pm2 restart verity-web || pm2 start bun --name verity-web -- run server.ts
 
-echo "✅ Deployment completed successfully!"
+echo "Saving PM2 process list..."
+pm2 save
+
+echo "🚀 Server deployed successfully!"

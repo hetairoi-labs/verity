@@ -9,14 +9,17 @@
     "viem": "^2.46.3"
   },
   "scripts": {
-    "check": "ultracite fix",
-    "tsc": "clear && bunx --bun tsc --noEmit",
-    "purge": "./scripts/purge.sh",
     "contracts:compile": "bun run --filter @verity/contracts build",
     "contracts:test": "bun run --filter @verity/contracts test",
+
     "dev": "bun run --filter @verity/web dev",
     "test": "bun run --filter @verity/web test",
-    "prepare": "husky"
+    "deploy": "bun run --filter @verity/web deploy",
+
+    "prepare": "husky",
+    "check": "ultracite fix",
+    "tsc": "clear && bunx --bun tsc --noEmit",
+    "purge": "./scripts/purge.sh"
   },
   "devDependencies": {
     "@biomejs/biome": "2.4.0",
