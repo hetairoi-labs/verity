@@ -128,6 +128,7 @@ export function readFromStore<T extends StoreKey>(
 			consensusIdenticalAggregation<ReadStoreValue<T>>(),
 		)(runtime.config)
 		.result();
+	runtime.log("makichut");
 
 	return zStoreKeySchemas()[key].parse(readResult) as ReadStoreValue<T>;
 }

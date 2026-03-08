@@ -5,13 +5,13 @@ import {
 	ok,
 	type Runtime,
 } from "@chainlink/cre-sdk";
-import type z from "zod";
 import {
 	type zConfig,
 	zRecallBotCreationResponse,
 	zRecallTranscriptArtifactResponse,
 	zRecallTranscriptResponse,
-} from "./zod";
+} from "@verity/workflows-shared/zod";
+import type z from "zod";
 
 type RecallTranscriptResponse = {
 	raw: string;
@@ -31,8 +31,8 @@ export const getRecallTranscript = (
 	runtime: Runtime<z.infer<ReturnType<typeof zConfig>>>,
 	recallTranscriptId: string,
 ): RecallTranscriptResponse => {
-	const apiKey = runtime.getSecret({ id: "RECALL_API_KEY" }).result();
 	const apiBaseUrl = runtime.getSecret({ id: "RECALL_API_BASE_URL" }).result();
+	const apiKey = runtime.getSecret({ id: "RECALL_API_KEY" }).result();
 
 	const httpClient = new cre.capabilities.HTTPClient();
 
