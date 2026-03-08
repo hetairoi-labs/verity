@@ -1,8 +1,7 @@
 ---
-description: design con
-globs: ["**/*.tsx", "**/*.jsx", "**/*.css", "**/*.html"]
+description: design conventions for the web project
+alwaysApply: false
 ---
-
 ## General Design Rules
 - Always prefer standard design token (for colors, spacing, typography etc.) from global CSS variables over explicit values. Maintain consistency across the design.
 - Always prefer shadcn UI components over native HTML elements wherever possible (check shadcn registry and add using CLI if needed).
