@@ -1,6 +1,7 @@
 import BannerImage from "@assets/card.webp";
 import {
 	CalendarPlusIcon,
+	CopyIcon,
 	ListBulletsIcon,
 	PencilSimpleIcon,
 	UserCircleIcon,
@@ -300,15 +301,39 @@ function MeetingsPanel({
 							</div>
 							{meeting.meetingUrl === requestSessionRegistrationMeetingUrl &&
 								requestSessionRegistrationTxHash && (
-									<p className="text-muted-foreground text-xs">
-										Reg tx: {requestSessionRegistrationTxHash.slice(0, 12)}...
-									</p>
+									<div className="flex items-center gap-2">
+										<p className="text-muted-foreground text-xs">
+											Reg tx: {requestSessionRegistrationTxHash}
+										</p>
+										<Button
+											onClick={() =>
+												navigator.clipboard.writeText(
+													requestSessionRegistrationTxHash
+												)
+											}
+											size="icon"
+											variant="ghost"
+										>
+											<CopyIcon size={16} />
+										</Button>
+									</div>
 								)}
 							{meeting.meetingUrl === evaluationRequestMeetingUrl &&
 								evaluationRequestTxHash && (
-									<p className="text-muted-foreground text-xs">
-										Eval tx: {evaluationRequestTxHash.slice(0, 12)}...
-									</p>
+									<div className="flex items-center gap-2">
+										<p className="text-muted-foreground text-xs">
+											Eval tx: {evaluationRequestTxHash}
+										</p>
+										<Button
+											onClick={() =>
+												navigator.clipboard.writeText(evaluationRequestTxHash)
+											}
+											size="icon"
+											variant="ghost"
+										>
+											<CopyIcon size={16} />
+										</Button>
+									</div>
 								)}
 						</div>
 					</div>
