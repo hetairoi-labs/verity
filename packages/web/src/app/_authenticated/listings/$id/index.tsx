@@ -44,8 +44,7 @@ function SessionDetailPage() {
 			limit: "20",
 		});
 
-	const isHost =
-		user?.wallet?.address?.toLowerCase() === session?.hostId?.toLowerCase();
+	const isHost = user?.id === session?.hostId?.toLowerCase();
 
 	return (
 		<DashboardShell
