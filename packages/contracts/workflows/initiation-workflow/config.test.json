@@ -12,7 +12,7 @@
     "evms": [
         {
             "chainSelectorName": "ethereum-testnet-sepolia",
-            "gasLimit": "1000000",
+            "gasLimit": "5000000",
             "managerAddress": "0x42c105b36825778ca323bf850df6e007b0407dca",
             "sessionRegistryAddress": "0xB9f475C996A61c8BC9b2E72B7Df3de3017Dd3C76"
         }

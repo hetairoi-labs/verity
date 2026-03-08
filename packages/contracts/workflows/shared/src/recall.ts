@@ -8,18 +8,12 @@ import {
 import {
 	type zConfig,
 	zRecallBotCreationResponse,
-	zRecallTranscriptArtifactResponse,
 	zRecallTranscriptResponse,
-} from "@verity/workflows-shared/zod";
+} from "./zod";
 import type z from "zod";
 
 type RecallTranscriptResponse = {
 	raw: string;
-	// minutes: number; DOES RECALL GIVE THIS
-};
-type RecallTranscriptArtifactResponse = {
-	id: string;
-	downloadUrl: string;
 };
 type RecallBotCreationResponse = {
 	transcriptId: string;
@@ -29,29 +23,20 @@ const RETENTION_HOURS = 160;
 
 export const getRecallTranscript = (
 	runtime: Runtime<z.infer<ReturnType<typeof zConfig>>>,
-	recallTranscriptId: string,
+	recallBotId: string,
 ): RecallTranscriptResponse => {
 	const apiBaseUrl = runtime.getSecret({ id: "RECALL_API_BASE_URL" }).result();
 	const apiKey = runtime.getSecret({ id: "RECALL_API_KEY" }).result();
 
 	const httpClient = new cre.capabilities.HTTPClient();
 
-	const { downloadUrl } = httpClient
-		.sendRequest(
-			runtime,
-			RetrieveRecallTranscriptArtifactData(
-				recallTranscriptId,
-				apiBaseUrl.value,
-				apiKey.value,
-			),
-			consensusIdenticalAggregation<RecallTranscriptArtifactResponse>(),
-		)(runtime.config)
-		.result();
-
 	const result = httpClient
 		.sendRequest(
 			runtime,
-			GetRecallTranscriptData(downloadUrl, apiKey.value),
+			GetRecallTranscriptData(
+				`${apiBaseUrl.value}/bot/${recallBotId}/transcript/`,
+				apiKey.value,
+			),
 			consensusIdenticalAggregation<RecallTranscriptResponse>(),
 		)(runtime.config)
 		.result();
@@ -66,9 +51,9 @@ const GetRecallTranscriptData =
 		_config: z.infer<ReturnType<typeof zConfig>>,
 	): RecallTranscriptResponse => {
 		const req: Parameters<typeof sendRequester.sendRequest>[0] = {
-			url: `${transcriptUrl}`,
+			url: transcriptUrl,
 			headers: {
-				Authorization: `Bearer ${apiKey}`,
+				Authorization: `Token ${apiKey}`,
 				"Content-Type": "application/json",
 			},
 			method: "GET" as const,
@@ -92,50 +77,6 @@ const GetRecallTranscriptData =
 
 		return {
 			raw: compressTranscript(parsedResponse),
-		};
-	};
-
-const RetrieveRecallTranscriptArtifactData =
-	(transcriptId: string, apiBaseUrl: string, apiKey: string) =>
-	(
-		sendRequester: HTTPSendRequester,
-		_config: z.infer<ReturnType<typeof zConfig>>,
-	): RecallTranscriptArtifactResponse => {
-		const req: Parameters<typeof sendRequester.sendRequest>[0] = {
-			url: `${apiBaseUrl}/transcript/${transcriptId}`,
-			headers: {
-				Authorization: `Bearer ${apiKey}`,
-				"Content-Type": "application/json",
-			},
-			method: "GET" as const,
-			cacheSettings: {
-				store: true,
-				maxAge: "3600s",
-			},
-		};
-
-		const resp = sendRequester.sendRequest(req).result();
-		const bodyText = new TextDecoder().decode(resp.body);
-
-		if (!ok(resp))
-			throw new Error(
-				`HTTP request failed with status: ${resp.statusCode}. Error: ${bodyText}`,
-			);
-
-		const parsedResponse = zRecallTranscriptArtifactResponse().parse(
-			JSON.parse(bodyText),
-		);
-
-		const { download_url } = parsedResponse.data;
-		if (!download_url) {
-			throw new Error(
-				`Transcript artifact with id ${transcriptId} does not have a download URL`,
-			);
-		}
-
-		return {
-			id: parsedResponse.id,
-			downloadUrl: download_url,
 		};
 	};
 
@@ -271,7 +212,7 @@ const CreateRecallBotData =
 			url: `${apiBaseUrl}/bot`,
 			body: body,
 			headers: {
-				Authorization: `Bearer ${apiKey}`,
+				Authorization: `Token ${apiKey}`,
 				"Content-Type": "application/json",
 			},
 			method: "POST" as const,
@@ -292,16 +233,7 @@ const CreateRecallBotData =
 			JSON.parse(bodyText),
 		);
 
-		const transcriptId =
-			parsedResponse.recordings.at(0)?.media_shortcuts.transcript.id;
-
-		if (!transcriptId) {
-			throw new Error(
-				`No transcript ID found in Recall bot creation response: ${bodyText}`,
-			);
-		}
-
 		return {
-			transcriptId,
+			transcriptId: parsedResponse.id,
 		};
 	};

@@ -28,31 +28,29 @@ export function writeToStore<T extends StoreKey>(
 	const writeResult = httpClient
 		.sendRequest(
 			runtime,
-			// bhaai jagah chod do
-
 			(sendRequester: HTTPSendRequester, _config: Config) => {
-				const formData = new FormData();
-				const file = new File(
-					[JSON.stringify(zStoreKeySchemas()[key].parse(value))],
-					`${key}:${id}.json`,
-					{
-						type: "application/json",
-					},
+				const filename = `${key}:${id}.json`;
+				const jsonContent = JSON.stringify(
+					zStoreKeySchemas()[key].parse(value),
 				);
+				const boundary = "----CREFormBoundary7MA4YWxkTrZu0gW";
 
-				formData.append("file", file);
-				formData.append("network", "public");
-				formData.append("name", `${key}:${id}.json`);
-				formData.append(
-					"keyvalues",
-					JSON.stringify({
-						keyvalues: {
-							env: "prod",
-						},
-					}),
-				);
+				const multipart = [
+					`--${boundary}\r\n`,
+					`Content-Disposition: form-data; name="file"; filename="${filename}"\r\n`,
+					`Content-Type: application/json\r\n`,
+					`\r\n`,
+					jsonContent,
+					`\r\n`,
+					`--${boundary}\r\n`,
+					`Content-Disposition: form-data; name="name"\r\n`,
+					`\r\n`,
+					filename,
+					`\r\n`,
+					`--${boundary}--\r\n`,
+				].join("");
 
-				const bodyBytes = new TextEncoder().encode(JSON.stringify(formData));
+				const bodyBytes = new TextEncoder().encode(multipart);
 				const body = Buffer.from(bodyBytes).toString("base64");
 
 				const req: Parameters<typeof sendRequester.sendRequest>[0] = {
@@ -61,7 +59,7 @@ export function writeToStore<T extends StoreKey>(
 					body: body,
 					headers: {
 						Authorization: `Bearer ${pinataApiJwt.value}`,
-						"Content-Type": "application/json",
+						"Content-Type": `multipart/form-data; boundary=${boundary}`,
 					},
 					cacheSettings: {
 						store: true,
@@ -76,13 +74,10 @@ export function writeToStore<T extends StoreKey>(
 					);
 
 				const bodyText = new TextDecoder().decode(resp.body);
-				const externalResp = JSON.parse(bodyText);
-
-				return zWriteToStoreResponse().parse(externalResp);
+				// v3 response: { data: { cid, ... } }
+				return zWriteToStoreResponse().parse(JSON.parse(bodyText));
 			},
 
-			// Bhai yaha thodi aur jagah chodd do
-			// yaha bhi
 			consensusIdenticalAggregation<WriteToStoreResponse>(),
 		)(runtime.config)
 		.result();
@@ -128,7 +123,6 @@ export function readFromStore<T extends StoreKey>(
 			consensusIdenticalAggregation<ReadStoreValue<T>>(),
 		)(runtime.config)
 		.result();
-	runtime.log("makichut");
 
 	return zStoreKeySchemas()[key].parse(readResult) as ReadStoreValue<T>;
 }
