@@ -237,18 +237,9 @@ function MeetingsPanel({
 							)}
 							<div className="mt-4 flex items-center gap-2">
 								{isPending ? (
-									<div className="flex items-center gap-2">
-										<p className="text-muted-foreground text-sm italic">
-											Meeting URL will be available once ready
-										</p>
-										<Button
-											onClick={() => setSelectedPendingMeetingId(meeting.id)}
-											size="sm"
-											variant="outline"
-										>
-											Attach CRE Tx
-										</Button>
-									</div>
+									<p className="text-muted-foreground text-sm italic">
+										Meeting URL will be available once ready
+									</p>
 								) : (
 									<a
 										className="rounded-md bg-muted p-2 text-muted-foreground text-sm underline-offset-4 hover:underline"
@@ -299,6 +290,13 @@ function MeetingsPanel({
 										)}
 									</>
 								)}
+								<Button
+									onClick={() => setSelectedPendingMeetingId(meeting.id)}
+									size="sm"
+									variant="outline"
+								>
+									Attach CRE Tx
+								</Button>
 							</div>
 							{meeting.meetingUrl === requestSessionRegistrationMeetingUrl &&
 								requestSessionRegistrationTxHash && (
