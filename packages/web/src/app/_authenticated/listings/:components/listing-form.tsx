@@ -1,10 +1,12 @@
 import { XIcon } from "@phosphor-icons/react";
 import { useForm, useStore } from "@tanstack/react-form";
+import { useEffect } from "react";
 import { toast } from "sonner";
 import { Button } from "@/src/components/ui/button";
 import { Input } from "@/src/components/ui/input";
 import { Label } from "@/src/components/ui/label";
 import type { ListingFormInput } from "@/src/lib/hooks/actions/use-session-actions";
+import { useListingDraftStore } from "@/src/lib/store/use-listing-draft-store";
 import { parseUSDC } from "@/src/lib/utils/usdc";
 
 interface ListingFormValues {
@@ -17,14 +19,6 @@ interface ListingFormValues {
 }
 
 export interface ListingFormProps {
-	defaultValues?: Partial<{
-		description: string;
-		email: string;
-		goals: string[];
-		price: string;
-		title: string;
-		topic: string;
-	}>;
 	isPending?: boolean;
 	onSubmit: (value: ListingFormInput) => Promise<unknown>;
 	submitLabel: string;
@@ -62,31 +56,38 @@ const validateValues = (value: ListingFormValues) => {
 };
 
 export function ListingForm(props: ListingFormProps) {
+	const { draft, updateDraft } = useListingDraftStore();
+
 	const form = useForm({
-		defaultValues: {
-			title: props.defaultValues?.title ?? "",
-			email: props.defaultValues?.email ?? "",
-			topic: props.defaultValues?.topic ?? "",
-			description: props.defaultValues?.description ?? "",
-			price: props.defaultValues?.price ?? "1",
-			goals: props.defaultValues?.goals ?? [""],
-		} satisfies ListingFormValues,
+		defaultValues: draft,
 		onSubmit: async ({ value }) => {
 			validateValues(value);
 			await props.onSubmit(mapFormToListing(value));
 		},
 	});
 
+	const formValues = useStore(form.store, (state) => state.values);
+
+	useEffect(() => {
+		updateDraft(formValues);
+	}, [formValues, updateDraft]);
+
 	const isSubmitting = useStore(form.store, (state) => state.isSubmitting);
 	const disabled = props.isPending || isSubmitting;
 
 	return (
-		<div className="space-y-3">
+		<div className="space-y-4">
 			<form.Field name="title">
 				{(field) => (
-					<div className="space-y-1">
-						<Label htmlFor={field.name}>Title</Label>
+					<div className="space-y-1.5">
+						<Label
+							className="font-medium text-[#A1A1A1] text-xs uppercase tracking-wider"
+							htmlFor={field.name}
+						>
+							Title
+						</Label>
 						<Input
+							className="h-10 border-white/5 bg-[#141414] focus-visible:border-white/20 focus-visible:ring-0"
 							id={field.name}
 							name={field.name}
 							onBlur={field.handleBlur}
@@ -99,9 +100,15 @@ export function ListingForm(props: ListingFormProps) {
 			</form.Field>
 			<form.Field name="email">
 				{(field) => (
-					<div className="space-y-1">
-						<Label htmlFor={field.name}>Email</Label>
+					<div className="space-y-1.5">
+						<Label
+							className="font-medium text-[#A1A1A1] text-xs uppercase tracking-wider"
+							htmlFor={field.name}
+						>
+							Email
+						</Label>
 						<Input
+							className="h-10 border-white/5 bg-[#141414] focus-visible:border-white/20 focus-visible:ring-0"
 							id={field.name}
 							name={field.name}
 							onBlur={field.handleBlur}
@@ -114,9 +121,15 @@ export function ListingForm(props: ListingFormProps) {
 			</form.Field>
 			<form.Field name="topic">
 				{(field) => (
-					<div className="space-y-1">
-						<Label htmlFor={field.name}>Topic</Label>
+					<div className="space-y-1.5">
+						<Label
+							className="font-medium text-[#A1A1A1] text-xs uppercase tracking-wider"
+							htmlFor={field.name}
+						>
+							Topic
+						</Label>
 						<Input
+							className="h-10 border-white/5 bg-[#141414] focus-visible:border-white/20 focus-visible:ring-0"
 							id={field.name}
 							name={field.name}
 							onBlur={field.handleBlur}
@@ -129,9 +142,15 @@ export function ListingForm(props: ListingFormProps) {
 			</form.Field>
 			<form.Field name="description">
 				{(field) => (
-					<div className="space-y-1">
-						<Label htmlFor={field.name}>Description</Label>
+					<div className="space-y-1.5">
+						<Label
+							className="font-medium text-[#A1A1A1] text-xs uppercase tracking-wider"
+							htmlFor={field.name}
+						>
+							Description
+						</Label>
 						<Input
+							className="h-10 border-white/5 bg-[#141414] focus-visible:border-white/20 focus-visible:ring-0"
 							id={field.name}
 							name={field.name}
 							onBlur={field.handleBlur}
@@ -144,9 +163,15 @@ export function ListingForm(props: ListingFormProps) {
 			</form.Field>
 			<form.Field name="price">
 				{(field) => (
-					<div className="space-y-1">
-						<Label htmlFor={field.name}>Price (USDC)</Label>
+					<div className="space-y-1.5">
+						<Label
+							className="font-medium text-[#A1A1A1] text-xs uppercase tracking-wider"
+							htmlFor={field.name}
+						>
+							Price (USDC)
+						</Label>
 						<Input
+							className="h-10 border-white/5 bg-[#141414] focus-visible:border-white/20 focus-visible:ring-0"
 							id={field.name}
 							name={field.name}
 							onBlur={field.handleBlur}
@@ -160,7 +185,9 @@ export function ListingForm(props: ListingFormProps) {
 			</form.Field>
 
 			<div className="space-y-2">
-				<Label>Goals</Label>
+				<Label className="font-medium text-[#A1A1A1] text-xs uppercase tracking-wider">
+					Goals
+				</Label>
 				<form.Field mode="array" name="goals">
 					{(field) => (
 						<div className="space-y-2">
@@ -169,6 +196,7 @@ export function ListingForm(props: ListingFormProps) {
 									{(subField) => (
 										<div className="flex gap-2">
 											<Input
+												className="h-10 border-white/5 bg-[#141414] focus-visible:border-white/20 focus-visible:ring-0"
 												onBlur={subField.handleBlur}
 												onChange={(e) => subField.handleChange(e.target.value)}
 												placeholder={`Goal ${i + 1}`}
@@ -176,6 +204,7 @@ export function ListingForm(props: ListingFormProps) {
 											/>
 											{field.state.value.length > 1 && (
 												<Button
+													className="border-white/5 bg-[#141414] hover:bg-white/5"
 													onClick={() => field.removeValue(i)}
 													size="icon"
 													type="button"
@@ -189,7 +218,7 @@ export function ListingForm(props: ListingFormProps) {
 								</form.Field>
 							))}
 							<Button
-								className="w-full"
+								className="w-full border-white/5 bg-transparent text-[#A1A1A1] hover:bg-white/5"
 								onClick={() => field.pushValue("")}
 								size="sm"
 								type="button"
@@ -203,7 +232,7 @@ export function ListingForm(props: ListingFormProps) {
 			</div>
 
 			<Button
-				className="w-full"
+				className="mt-4 h-11 w-full rounded-lg bg-[#2546BE] font-medium text-white transition-colors hover:bg-[#2546BE]/90"
 				disabled={disabled}
 				onClick={() =>
 					toast.promise(form.handleSubmit(), {

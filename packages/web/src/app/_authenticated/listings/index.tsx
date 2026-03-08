@@ -1,11 +1,12 @@
+import { CaretLeftIcon, CaretRightIcon } from "@phosphor-icons/react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
 import { DashboardShell } from "@/src/app/_authenticated/dashboard/:components/dashboard-shell";
 import { Panel } from "@/src/app/_authenticated/dashboard/:components/panel";
 import { Button } from "@/src/components/ui/button";
-import { Input } from "@/src/components/ui/input";
 import { useGetAllSessionsQuery } from "@/src/lib/hooks/api/use-sessions-api";
-import { formatUSDC } from "@/src/lib/utils/usdc";
+import { CreateListingModal } from "./:components/create-listing-modal";
+import { ListingCard } from "./:components/listing-card";
 
 const LISTINGS_PAGE_LIMIT = 10;
 
@@ -15,24 +16,15 @@ export const Route = createFileRoute("/_authenticated/listings/")({
 
 function ListingsPage() {
 	const [page, setPage] = useState(1);
-	const [search, setSearch] = useState("");
+
 	const { data, isLoading } = useGetAllSessionsQuery({
 		page: String(page),
 		limit: String(LISTINGS_PAGE_LIMIT),
 	});
 
 	const filteredListings = useMemo(() => {
-		const searchQuery = search.trim().toLowerCase();
-		if (!searchQuery) {
-			return data ?? [];
-		}
-		return (data ?? []).filter((listing) => {
-			return (
-				listing.title.toLowerCase().includes(searchQuery) ||
-				listing.topic.toLowerCase().includes(searchQuery)
-			);
-		});
-	}, [data, search]);
+		return data ?? [];
+	}, [data]);
 
 	return (
 		<DashboardShell
@@ -40,47 +32,26 @@ function ListingsPage() {
 			title="Browse Listings"
 		>
 			<Panel className="space-y-4">
-				<div className="flex flex-col gap-2 md:flex-row">
-					<Input
-						onChange={(event) => setSearch(event.target.value)}
-						placeholder="Search by title or topic"
-						value={search}
-					/>
-					<Link to="/listings/create">
-						<Button className="w-full md:w-fit">Create Listing</Button>
-					</Link>
+				<div className="flex items-center justify-between">
+					<p className="text-muted-foreground text-sm">
+						Here are some popular listings for you!
+					</p>
+					<CreateListingModal />
 				</div>
 
 				{isLoading ? (
 					<p className="text-muted-foreground">Loading listings...</p>
 				) : null}
 
-				<div className="space-y-3">
+				<div className="grid grid-cols-2 gap-6 lg:grid-cols-3">
 					{filteredListings.map((listing) => (
-						<div
-							className="rounded-xl border border-border/70 bg-card/40 p-4"
+						<Link
 							key={listing.id}
+							params={{ id: String(listing.id) }}
+							to="/dashboard/session/$id"
 						>
-							<div className="flex flex-wrap items-start justify-between gap-3">
-								<div>
-									<p className="text-lg">{listing.title}</p>
-									<p className="text-muted-foreground text-sm">
-										{listing.topic}
-									</p>
-									<p className="mt-1 text-muted-foreground text-xs">
-										Price: {formatUSDC(BigInt(listing.price))} USDC
-									</p>
-								</div>
-								<Link
-									params={{ id: String(listing.id) }}
-									to="/dashboard/session/$id"
-								>
-									<Button size="sm" variant="outline">
-										Open
-									</Button>
-								</Link>
-							</div>
-						</div>
+							<ListingCard listingId={listing.id} />
+						</Link>
 					))}
 					{!isLoading && filteredListings.length === 0 ? (
 						<p className="text-muted-foreground text-sm">No listings found.</p>
@@ -93,15 +64,15 @@ function ListingsPage() {
 						onClick={() => setPage((current) => Math.max(1, current - 1))}
 						variant="outline"
 					>
-						Previous
+						<CaretLeftIcon />
 					</Button>
-					<p className="text-muted-foreground text-sm">Page {page}</p>
+					<p className="p-2 text-muted-foreground text-sm">{page}</p>
 					<Button
 						disabled={(data?.length ?? 0) < LISTINGS_PAGE_LIMIT}
 						onClick={() => setPage((current) => current + 1)}
 						variant="outline"
 					>
-						Next
+						<CaretRightIcon />
 					</Button>
 				</div>
 			</Panel>
