@@ -233,7 +233,7 @@ export function useEnrollParticipantMutation() {
 		},
 		onSuccess: (_data, variables) => {
 			queryClient.invalidateQueries({
-				queryKey: qk.sessions.byId(String(variables.sessionId)),
+				queryKey: qk.sessions.byId(Number(variables.sessionId)),
 			});
 			queryClient.invalidateQueries({ queryKey: qk.sessions.history() });
 			queryClient.invalidateQueries({ queryKey: qk.sessions.metrics() });

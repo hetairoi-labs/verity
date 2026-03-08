@@ -113,6 +113,40 @@ export function useDeleteMeetingMutation() {
 	});
 }
 
+// resolve meeting index from CRE tx hash
+type ResolveMeetingIndexRoute =
+	(typeof client.sessions.meetings.meeting)["$patch"];
+export type ResolveMeetingIndexInput =
+	InferRequestType<ResolveMeetingIndexRoute>["json"];
+
+export function useResolveMeetingIndexMutation() {
+	const token = usePrivyToken();
+	const queryClient = useQueryClient();
+	return useMutation({
+		mutationFn: async (json: ResolveMeetingIndexInput) => {
+			if (!token) {
+				throw new Error("Unauthorized: No auth token");
+			}
+			const result = await parseResponse(
+				client.sessions.meetings.meeting.$patch({ json }, getAuthHeaders(token))
+			);
+			return result.data;
+		},
+		onSuccess: (data, variables) => {
+			queryClient.invalidateQueries({
+				queryKey: qk.meetings.byId(variables.meetingId),
+			});
+			const sessionId = data?.meeting?.sessionId;
+			if (sessionId != null) {
+				queryClient.invalidateQueries({
+					queryKey: qk.meetings.bySession(sessionId),
+				});
+			}
+			queryClient.invalidateQueries({ queryKey: qk.sessions.metrics() });
+		},
+	});
+}
+
 export type CreateMeetingResponse = NonNullable<
 	Awaited<ReturnType<typeof useCreateMeetingMutation>>["data"]
 >;
@@ -124,4 +158,7 @@ export type GetMeetingByIdResponse = NonNullable<
 >;
 export type DeleteMeetingResponse = NonNullable<
 	Awaited<ReturnType<typeof useDeleteMeetingMutation>>["data"]
+>;
+export type ResolveMeetingIndexResponse = NonNullable<
+	Awaited<ReturnType<typeof useResolveMeetingIndexMutation>>["data"]
 >;

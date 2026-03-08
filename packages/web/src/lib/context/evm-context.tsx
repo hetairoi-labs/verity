@@ -29,6 +29,8 @@ export function EvmProvider(props: { children: React.ReactNode }) {
 	);
 	const [ready, setReady] = useState(false);
 
+	console.log(contracts?.Manager.address);
+
 	const { data: wallet } = useWalletClient();
 
 	const flag = useRef(false);

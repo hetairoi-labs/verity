@@ -1,12 +1,17 @@
+import { definitions } from "@verity/contracts";
 import { desc } from "drizzle-orm";
+import { parseEventLogs } from "viem";
 import { z } from "zod";
 import { db } from "../lib/db";
 import { schema } from "../lib/db/schema";
+import { isoNow } from "../lib/db/utils";
 import { buildWhereActive } from "../lib/db/utils/builders";
 import { softCascade } from "../lib/db/utils/cascade";
 import { requireAtLeastOne, safeQuery } from "../lib/db/utils/safe";
 import { createGoogleCalendarEvent } from "../lib/utils/calendar";
+import { waitForReceipt } from "../lib/utils/evm";
 import { ApiError } from "../lib/utils/hono/error";
+import { zHex } from "../lib/utils/zod";
 
 const { sessions, meetings } = schema;
 
@@ -43,6 +48,10 @@ export const getMeetingByIdInputSchema = z.object({
 export const deleteMeetingInputSchema = z.object({
 	meetingId: z.number().min(1, "Meeting ID is required"),
 });
+export const resolveMeetingIndexInputSchema = z.object({
+	meetingId: z.coerce.number().min(1, "Meeting ID is required"),
+	txHash: zHex(),
+});
 
 // Types
 export type CreateMeetingInput = z.input<typeof createMeetingInputSchema>;
@@ -51,6 +60,9 @@ export type GetSessionMeetingsInput = z.input<
 >;
 export type GetMeetingByIdInput = z.input<typeof getMeetingByIdInputSchema>;
 export type DeleteMeetingInput = z.input<typeof deleteMeetingInputSchema>;
+export type ResolveMeetingIndexInput = z.input<
+	typeof resolveMeetingIndexInputSchema
+>;
 
 // Handlers
 export async function createMeeting(json: CreateMeetingInput) {
@@ -160,4 +172,58 @@ export async function deleteMeeting(params: DeleteMeetingInput) {
 	const { meetingId } = deleteMeetingInputSchema.parse(params);
 	const result = await softCascade(db, meetings, meetingId, []);
 	return result;
+}
+
+export async function resolveMeetingIndex(params: ResolveMeetingIndexInput) {
+	const input = resolveMeetingIndexInputSchema.parse(params);
+
+	const [meeting] = await safeQuery(
+		db
+			.select()
+			.from(meetings)
+			.where(
+				buildWhereActive([
+					{ table: meetings, filters: { id: input.meetingId } },
+				])
+			)
+			.limit(1)
+	);
+	if (!meeting) {
+		throw new ApiError(404, "Meeting not found");
+	}
+
+	const receipt = await waitForReceipt(input.txHash);
+	if (receipt.status !== "success") {
+		throw new ApiError(400, "Transaction was not successful");
+	}
+
+	const logs = parseEventLogs({
+		abi: definitions.test.KXSessionRegistry.abi,
+		logs: receipt.logs,
+		eventName: "SessionRegistered",
+	});
+	const sessionId = logs[0]?.args.sessionId;
+	if (!sessionId) {
+		throw new ApiError(400, "Session registration event not found");
+	}
+
+	const [updatedMeeting] = await safeQuery(
+		db
+			.update(meetings)
+			.set({
+				meetingIndex: Number(sessionId),
+				updatedAt: isoNow(),
+			})
+			.where(
+				buildWhereActive([
+					{ table: meetings, filters: { id: input.meetingId } },
+				])
+			)
+			.returning()
+	);
+	if (!updatedMeeting) {
+		throw new ApiError(500, "Failed to update meeting index");
+	}
+
+	return updatedMeeting;
 }

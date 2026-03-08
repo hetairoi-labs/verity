@@ -45,6 +45,7 @@ export const meetings = sqliteTable(
 		id: integer().primaryKey({
 			autoIncrement: true,
 		}),
+		meetingIndex: integer("meeting_index"),
 		eventId: text("event_id").notNull(),
 		summary: text(),
 		meetingUrl: text("meeting_url").notNull(),

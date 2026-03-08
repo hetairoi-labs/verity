@@ -3,6 +3,7 @@ import { toast } from "sonner";
 import { maxUint256 } from "viem";
 import { useConnection, usePublicClient } from "wagmi";
 import { useEvmContext } from "@/src/lib/context/evm-context";
+import { useCreCliTxHashStore } from "@/src/lib/store/use-cre-cli-tx-hash-store";
 import { parseUSDC } from "@/src/lib/utils/usdc";
 import { useCreateMeetingMutation } from "../api/use-meetings-api";
 import {
@@ -45,12 +46,12 @@ export function useAddListing() {
 	const createSession = useCreateSessionMutation();
 	const [isRunning, setIsRunning] = useState(false);
 
-	const execute = async (input: ListingFormInput) => {
+	const execute = (input: ListingFormInput) => {
 		const kx = ensureContracts(contracts);
 		setIsRunning(true);
 
 		try {
-			return await toast.promise(
+			return toast.promise(
 				(async () => {
 					const priceRaw = parseUSDC(input.price);
 					const uploadResponse = await upload.mutateAsync({
@@ -96,12 +97,12 @@ export function useUpdateListing() {
 	const updateSession = useUpdateSessionMutation();
 	const [isRunning, setIsRunning] = useState(false);
 
-	const execute = async (sessionId: number, input: ListingFormInput) => {
+	const execute = (sessionId: number, input: ListingFormInput) => {
 		const kx = ensureContracts(contracts);
 		setIsRunning(true);
 
 		try {
-			return await toast.promise(
+			return toast.promise(
 				(async () => {
 					const priceRaw = parseUSDC(input.price);
 					const uploadResponse = await upload.mutateAsync({
@@ -145,17 +146,27 @@ export function useUpdateListing() {
 
 export function useRequestEvaluation() {
 	const { contracts } = useEvmContext();
+	const setEvaluationRequestTxHash = useCreCliTxHashStore(
+		(state) => state.setEvaluationRequestTxHash
+	);
 	const [isRunning, setIsRunning] = useState(false);
 
-	const execute = async (sessionId: number) => {
+	const execute = (meetingIndex: number) => {
 		if (!contracts?.SessionRegistry.address) {
 			throw new Error("Contracts are not ready");
 		}
 		setIsRunning(true);
 
 		try {
-			return await toast.promise(
-				contracts.SessionRegistry.write.requestEvaluation([BigInt(sessionId)]),
+			return toast.promise(
+				(async () => {
+					const txHash =
+						await contracts.SessionRegistry.write.requestEvaluation([
+							BigInt(meetingIndex),
+						]);
+					setEvaluationRequestTxHash(meetingIndex, txHash);
+					return txHash;
+				})(),
 				{
 					loading: "Requesting evaluation...",
 					success: "Evaluation request queued",
@@ -177,21 +188,28 @@ export function useRequestEvaluation() {
 }
 
 export function useRequestSessionRegistrationAndEnroll() {
-	const { contracts } = useEvmContext();
+	const { contracts, ready } = useEvmContext();
 	const { address } = useConnection();
 	const publicClient = usePublicClient();
+	const setRequestSessionRegistrationTxHash = useCreCliTxHashStore(
+		(state) => state.setRequestSessionRegistrationTxHash
+	);
 	const createMeeting = useCreateMeetingMutation();
 	const enroll = useEnrollParticipantMutation();
 	const [isRunning, setIsRunning] = useState(false);
+	const isContractsReady = ready && Boolean(contracts);
 
 	const execute = (input: RequestMeetingInput) => {
-		const kx = ensureContracts(contracts);
+		if (!isContractsReady) {
+			throw new Error("Contracts are not ready");
+		}
 		if (!address) {
 			throw new Error("Wallet not connected");
 		}
 		if (!publicClient) {
 			throw new Error("Public client is unavailable");
 		}
+		const kx = ensureContracts(contracts);
 		setIsRunning(true);
 
 		try {
@@ -208,7 +226,7 @@ export function useRequestSessionRegistrationAndEnroll() {
 
 					console.log("meeting", meeting.meetingUrl);
 
-					const amount = BigInt(meeting.sessionPrice); // API returns raw 6-decimal units
+					const amount = BigInt(meeting.sessionPrice);
 					const balance = await kx.USDC.read.balanceOf([address]);
 					if (balance < amount) {
 						throw new Error("Insufficient balance");
@@ -228,6 +246,7 @@ export function useRequestSessionRegistrationAndEnroll() {
 							gas: 500_000n,
 						}
 					);
+					setRequestSessionRegistrationTxHash(input.sessionId, txHash);
 
 					console.log("txHash for requestSessionRegistration", txHash);
 					const receipt = await publicClient.waitForTransactionReceipt({
@@ -260,5 +279,6 @@ export function useRequestSessionRegistrationAndEnroll() {
 	return {
 		execute,
 		isPending: isRunning,
+		isReady: isContractsReady,
 	};
 }

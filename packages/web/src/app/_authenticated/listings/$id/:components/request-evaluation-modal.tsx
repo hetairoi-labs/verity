@@ -10,15 +10,15 @@ import {
 import { useRequestEvaluation } from "@/src/lib/hooks/actions/use-session-actions";
 
 interface RequestEvaluationModalProps {
+	meetingIndex?: number;
 	onOpenChange: (open: boolean) => void;
 	open: boolean;
-	sessionId: number;
 }
 
 export function RequestEvaluationModal({
+	meetingIndex,
 	open,
 	onOpenChange,
-	sessionId,
 }: RequestEvaluationModalProps) {
 	const requestEvaluation = useRequestEvaluation();
 
@@ -28,15 +28,18 @@ export function RequestEvaluationModal({
 				<DialogHeader>
 					<DialogTitle>Request Evaluation</DialogTitle>
 					<DialogDescription>
-						Request AI evaluation for this funded session. This will analyze the
-						session goals and provide feedback.
+						Request AI evaluation for a registered meeting. This analyzes the
+						meeting transcript and session goals.
 					</DialogDescription>
 				</DialogHeader>
 				<DialogFooter showCloseButton>
 					<Button
-						disabled={requestEvaluation.isPending}
+						disabled={requestEvaluation.isPending || meetingIndex == null}
 						onClick={async () => {
-							await requestEvaluation.execute(sessionId);
+							if (meetingIndex == null) {
+								return;
+							}
+							await requestEvaluation.execute(meetingIndex);
 							onOpenChange(false);
 						}}
 					>

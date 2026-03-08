@@ -7,7 +7,7 @@ import { getContracts } from "../surface";
 import { zEvmAddress } from "../workflows/shared/src";
 
 const network = await hre.network.connect("test");
-const [wallet1, wallet2] = await network.viem.getWalletClients();
+const [wallet1, _wallet2] = await network.viem.getWalletClients();
 const publicClient = await network.viem.getPublicClient();
 
 const testCid = "bafybeig6w5o3j5gwg7so4ntza6wxg52hixwavzzxm3zaavazpzm35lyeha";

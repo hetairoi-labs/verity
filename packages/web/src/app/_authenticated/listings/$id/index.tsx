@@ -1,7 +1,6 @@
 import BannerImage from "@assets/card.webp";
 import {
 	CalendarPlusIcon,
-	ChartBarIcon,
 	ListBulletsIcon,
 	PencilSimpleIcon,
 	UserCircleIcon,
@@ -22,6 +21,7 @@ import { truncateAddress } from "@/src/lib/utils";
 import { formatUSDC } from "@/src/lib/utils/usdc";
 import { RequestEvaluationModal } from "./:components/request-evaluation-modal";
 import { RequestMeetingModal } from "./:components/request-meeting-modal";
+import { ResolveMeetingIndexModal } from "./:components/resolve-meeting-index-modal";
 import { UpdateListingModal } from "./:components/update-listing-modal";
 
 export const Route = createFileRoute("/_authenticated/listings/$id/")({
@@ -34,7 +34,6 @@ function SessionDetailPage() {
 	const { user } = useAuth();
 
 	const [showUpdateModal, setShowUpdateModal] = useState(false);
-	const [showEvalModal, setShowEvalModal] = useState(false);
 	const [showMeetingModal, setShowMeetingModal] = useState(false);
 
 	const { data: session } = useGetSessionByIdQuery({
@@ -81,6 +80,7 @@ function SessionDetailPage() {
 					<Panel className="space-y-4">
 						<h3 className="font-medium text-lg">Meetings</h3>
 						<MeetingsPanel
+							isHost={isHost}
 							isLoading={isMeetingsLoading}
 							meetings={meetings ?? []}
 						/>
@@ -93,28 +93,14 @@ function SessionDetailPage() {
 							<h3 className="font-medium text-lg">Actions</h3>
 							<div className="grid grid-cols-2 gap-2">
 								{isHost ? (
-									<>
-										<Button
-											className="flex h-24 flex-col gap-2 rounded-xl"
-											onClick={() => setShowUpdateModal(true)}
-											variant="outline"
-										>
-											<PencilSimpleIcon size={24} />
-											<span className="text-muted-foreground text-xs">
-												Edit
-											</span>
-										</Button>
-										<Button
-											className="flex h-24 flex-col gap-2 rounded-xl"
-											onClick={() => setShowEvalModal(true)}
-											variant="outline"
-										>
-											<ChartBarIcon size={24} />
-											<span className="text-center text-muted-foreground text-xs">
-												Evaluation
-											</span>
-										</Button>
-									</>
+									<Button
+										className="col-span-2 flex h-24 flex-col gap-2 rounded-xl"
+										onClick={() => setShowUpdateModal(true)}
+										variant="outline"
+									>
+										<PencilSimpleIcon size={24} />
+										<span className="text-muted-foreground text-xs">Edit</span>
+									</Button>
 								) : (
 									<Button
 										className="group/button col-span-2 flex h-24 gap-2 rounded-xl group-hover:text-foreground"
@@ -170,11 +156,6 @@ function SessionDetailPage() {
 				session={session}
 				sessionId={sessionId}
 			/>
-			<RequestEvaluationModal
-				onOpenChange={setShowEvalModal}
-				open={showEvalModal}
-				sessionId={sessionId}
-			/>
 			<RequestMeetingModal
 				onOpenChange={setShowMeetingModal}
 				open={showMeetingModal}
@@ -186,11 +167,19 @@ function SessionDetailPage() {
 
 function MeetingsPanel({
 	isLoading,
+	isHost,
 	meetings,
 }: {
 	isLoading: boolean;
+	isHost: boolean;
 	meetings: GetMeetingByIdResponse[];
 }) {
+	const [selectedEvaluationMeetingIndex, setSelectedEvaluationMeetingIndex] =
+		useState<number | null>(null);
+	const [selectedPendingMeetingId, setSelectedPendingMeetingId] = useState<
+		number | null
+	>(null);
+
 	if (isLoading) {
 		return <p className="text-muted-foreground">Loading meetings...</p>;
 	}
@@ -238,9 +227,18 @@ function MeetingsPanel({
 							)}
 							<div className="mt-4 flex items-center gap-2">
 								{isPending ? (
-									<p className="text-muted-foreground text-sm italic">
-										Meeting URL will be available once ready
-									</p>
+									<div className="flex items-center gap-2">
+										<p className="text-muted-foreground text-sm italic">
+											Meeting URL will be available once ready
+										</p>
+										<Button
+											onClick={() => setSelectedPendingMeetingId(meeting.id)}
+											size="sm"
+											variant="outline"
+										>
+											Attach CRE Tx
+										</Button>
+									</div>
 								) : (
 									<a
 										className="rounded-md bg-muted p-2 text-muted-foreground text-sm underline-offset-4 hover:underline"
@@ -252,30 +250,63 @@ function MeetingsPanel({
 									</a>
 								)}
 								{!isPending && (
-									<Button
-										disabled={isPending}
-										nativeButton={false}
-										render={
-											isPending ? (
-												<span>Join</span>
-											) : (
-												<a
-													href={meeting.meetingUrl}
-													rel="noopener"
-													target="_blank"
-												>
-													Join
-												</a>
-											)
-										}
-										variant="outline"
-									/>
+									<>
+										<Button
+											disabled={isPending}
+											nativeButton={false}
+											render={
+												isPending ? (
+													<span>Join</span>
+												) : (
+													<a
+														href={meeting.meetingUrl}
+														rel="noopener"
+														target="_blank"
+													>
+														Join
+													</a>
+												)
+											}
+											variant="outline"
+										/>
+										{isHost && (
+											<Button
+												disabled={meeting.meetingIndex == null}
+												onClick={() =>
+													setSelectedEvaluationMeetingIndex(
+														meeting.meetingIndex ?? null
+													)
+												}
+												variant="outline"
+											>
+												Evaluation
+											</Button>
+										)}
+									</>
 								)}
 							</div>
 						</div>
 					</div>
 				);
 			})}
+			<RequestEvaluationModal
+				meetingIndex={selectedEvaluationMeetingIndex ?? undefined}
+				onOpenChange={(open) => {
+					if (!open) {
+						setSelectedEvaluationMeetingIndex(null);
+					}
+				}}
+				open={selectedEvaluationMeetingIndex != null}
+			/>
+			<ResolveMeetingIndexModal
+				meetingId={selectedPendingMeetingId ?? 0}
+				onOpenChange={(open) => {
+					if (!open) {
+						setSelectedPendingMeetingId(null);
+					}
+				}}
+				open={selectedPendingMeetingId != null}
+			/>
 		</div>
 	);
 }

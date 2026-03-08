@@ -40,8 +40,8 @@ export function RequestMeetingModal({
 		validators: {
 			onChange: requestMeetingSchema,
 		},
-		onSubmit: async ({ value }) => {
-			await requestSession.execute({
+		onSubmit: ({ value }) => {
+			requestSession.execute({
 				sessionId,
 				summary: value.summary,
 				attendees: [value.attendeeEmail],
@@ -52,7 +52,8 @@ export function RequestMeetingModal({
 
 	const canSubmit = useStore(form.store, (state) => state.canSubmit);
 	const isSubmitting = useStore(form.store, (state) => state.isSubmitting);
-	const disabled = requestSession.isPending || isSubmitting;
+	const disabled =
+		requestSession.isPending || isSubmitting || !requestSession.isReady;
 
 	return (
 		<Dialog onOpenChange={onOpenChange} open={open}>
@@ -60,8 +61,7 @@ export function RequestMeetingModal({
 				<DialogHeader>
 					<DialogTitle>Request Meeting</DialogTitle>
 					<DialogDescription>
-						Create meeting &rarr; approve allowance &rarr; request registration
-						&rarr; wait tx receipt &rarr; enroll participant.
+						Request a meeting with the session host.
 					</DialogDescription>
 				</DialogHeader>
 				<div className="space-y-4 py-4">

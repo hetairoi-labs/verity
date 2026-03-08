@@ -8,6 +8,8 @@ import {
 	getMeetingByIdInputSchema,
 	getSessionMeetings,
 	getSessionMeetingsInputSchema,
+	resolveMeetingIndex,
+	resolveMeetingIndexInputSchema,
 } from "../handlers/meetings";
 import { requireAuth } from "../lib/middleware/auth";
 import { respond } from "../lib/utils/hono/respond";
@@ -32,6 +34,15 @@ const meetingsRoute = new Hono()
 		const meeting = await getMeetingById(c.req.valid("query"));
 		return respond.ok(c, 200, "Meeting fetched successfully", { meeting });
 	})
+
+	.patch(
+		"/meeting",
+		validator("json", resolveMeetingIndexInputSchema),
+		async (c) => {
+			const meeting = await resolveMeetingIndex(c.req.valid("json"));
+			return respond.ok(c, 200, "Meeting updated successfully", { meeting });
+		}
+	)
 
 	.delete("/", validator("json", deleteMeetingInputSchema), async (c) => {
 		const meeting = await deleteMeeting(c.req.valid("json"));
