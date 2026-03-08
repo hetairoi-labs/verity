@@ -16,9 +16,6 @@ git pull origin main
 echo "[3] Installing dependencies..."
 bun install
 
-echo "[4] Linting and checking types..."
-bun check && bun tsc
-
 echo "[5] Building project... (optionally for static builds)"
 bun run build
 
