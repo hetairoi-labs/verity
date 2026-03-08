@@ -23,7 +23,7 @@ echo "[5] Building project... (optionally for static builds)"
 bun run build
 
 echo "[6] Starting PM2 process..."
-pm2 restart verity-web || pm2 start bun --name verity-web -- run server.ts
+pm2 restart verity-web || pm2 start bun --name verity-web -- run start
 
 echo "Saving PM2 process list..."
 pm2 save
