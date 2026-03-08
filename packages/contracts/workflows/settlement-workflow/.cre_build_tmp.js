@@ -3814,7 +3814,7 @@ var Mode;
   Mode2[Mode2["NODE"] = 2] = "NODE";
 })(Mode || (Mode = {}));
 var file_tools_generator_v1alpha_cre_metadata = /* @__PURE__ */ fileDesc("Cip0b29scy9nZW5lcmF0b3IvdjFhbHBoYS9jcmVfbWV0YWRhdGEucHJvdG8SF3Rvb2xzLmdlbmVyYXRvci52MWFscGhhIoQBCgtTdHJpbmdMYWJlbBJECghkZWZhdWx0cxgBIAMoCzIyLnRvb2xzLmdlbmVyYXRvci52MWFscGhhLlN0cmluZ0xhYmVsLkRlZmF1bHRzRW50cnkaLwoNRGVmYXVsdHNFbnRyeRILCgNrZXkYASABKAkSDQoFdmFsdWUYAiABKAk6AjgBIogBCgtVaW50NjRMYWJlbBJECghkZWZhdWx0cxgBIAMoCzIyLnRvb2xzLmdlbmVyYXRvci52MWFscGhhLlVpbnQ2NExhYmVsLkRlZmF1bHRzRW50cnkaMwoNRGVmYXVsdHNFbnRyeRILCgNrZXkYASABKAkSEQoFdmFsdWUYAiABKARCAjAAOgI4ASKEAQoLVWludDMyTGFiZWwSRAoIZGVmYXVsdHMYASADKAsyMi50b29scy5nZW5lcmF0b3IudjFhbHBoYS5VaW50MzJMYWJlbC5EZWZhdWx0c0VudHJ5Gi8KDURlZmF1bHRzRW50cnkSCwoDa2V5GAEgASgJEg0KBXZhbHVlGAIgASgNOgI4ASKGAQoKSW50NjRMYWJlbBJDCghkZWZhdWx0cxgBIAMoCzIxLnRvb2xzLmdlbmVyYXRvci52MWFscGhhLkludDY0TGFiZWwuRGVmYXVsdHNFbnRyeRozCg1EZWZhdWx0c0VudHJ5EgsKA2tleRgBIAEoCRIRCgV2YWx1ZRgCIAEoA0ICMAA6AjgBIoIBCgpJbnQzMkxhYmVsEkMKCGRlZmF1bHRzGAEgAygLMjEudG9vbHMuZ2VuZXJhdG9yLnYxYWxwaGEuSW50MzJMYWJlbC5EZWZhdWx0c0VudHJ5Gi8KDURlZmF1bHRzRW50cnkSCwoDa2V5GAEgASgJEg0KBXZhbHVlGAIgASgFOgI4ASLBAgoFTGFiZWwSPAoMc3RyaW5nX2xhYmVsGAEgASgLMiQudG9vbHMuZ2VuZXJhdG9yLnYxYWxwaGEuU3RyaW5nTGFiZWxIABI8Cgx1aW50NjRfbGFiZWwYAiABKAsyJC50b29scy5nZW5lcmF0b3IudjFhbHBoYS5VaW50NjRMYWJlbEgAEjoKC2ludDY0X2xhYmVsGAMgASgLMiMudG9vbHMuZ2VuZXJhdG9yLnYxYWxwaGEuSW50NjRMYWJlbEgAEjwKDHVpbnQzMl9sYWJlbBgEIAEoCzIkLnRvb2xzLmdlbmVyYXRvci52MWFscGhhLlVpbnQzMkxhYmVsSAASOgoLaW50MzJfbGFiZWwYBSABKAsyIy50b29scy5nZW5lcmF0b3IudjFhbHBoYS5JbnQzMkxhYmVsSABCBgoEa2luZCLkAQoSQ2FwYWJpbGl0eU1ldGFkYXRhEh8KBG1vZGUYASABKA4yES5zZGsudjFhbHBoYS5Nb2RlEhUKDWNhcGFiaWxpdHlfaWQYAiABKAkSRwoGbGFiZWxzGAMgAygLMjcudG9vbHMuZ2VuZXJhdG9yLnYxYWxwaGEuQ2FwYWJpbGl0eU1ldGFkYXRhLkxhYmVsc0VudHJ5Gk0KC0xhYmVsc0VudHJ5EgsKA2tleRgBIAEoCRItCgV2YWx1ZRgCIAEoCzIeLnRvb2xzLmdlbmVyYXRvci52MWFscGhhLkxhYmVsOgI4ASI2ChhDYXBhYmlsaXR5TWV0aG9kTWV0YWRhdGESGgoSbWFwX3RvX3VudHlwZWRfYXBpGAEgASgIOm4KCmNhcGFiaWxpdHkSHy5nb29nbGUucHJvdG9idWYuU2VydmljZU9wdGlvbnMY0IYDIAEoCzIrLnRvb2xzLmdlbmVyYXRvci52MWFscGhhLkNhcGFiaWxpdHlNZXRhZGF0YVIKY2FwYWJpbGl0eTprCgZtZXRob2QSHi5nb29nbGUucHJvdG9idWYuTWV0aG9kT3B0aW9ucxjRhgMgASgLMjEudG9vbHMuZ2VuZXJhdG9yLnYxYWxwaGEuQ2FwYWJpbGl0eU1ldGhvZE1ldGFkYXRhUgZtZXRob2RCrwEKG2NvbS50b29scy5nZW5lcmF0b3IudjFhbHBoYUIQQ3JlTWV0YWRhdGFQcm90b1ABogIDVEdYqgIXVG9vbHMuR2VuZXJhdG9yLlYxYWxwaGHKAhhUb29sc1xHZW5lcmF0b3JfXFYxYWxwaGHiAiRUb29sc1xHZW5lcmF0b3JfXFYxYWxwaGFcR1BCTWV0YWRhdGHqAhlUb29sczo6R2VuZXJhdG9yOjpWMWFscGhhYgZwcm90bzM", [file_google_protobuf_descriptor, file_sdk_v1alpha_sdk]);
-var file_capabilities_blockchain_evm_v1alpha_client = /* @__PURE__ */ fileDesc("CjBjYXBhYmlsaXRpZXMvYmxvY2tjaGFpbi9ldm0vdjFhbHBoYS9jbGllbnQucHJvdG8SI2NhcGFiaWxpdGllcy5ibG9ja2NoYWluLmV2bS52MWFscGhhIh0KC1RvcGljVmFsdWVzEg4KBnZhbHVlcxgBIAMoDCK4AQoXRmlsdGVyTG9nVHJpZ2dlclJlcXVlc3QSEQoJYWRkcmVzc2VzGAEgAygMEkAKBnRvcGljcxgCIAMoCzIwLmNhcGFiaWxpdGllcy5ibG9ja2NoYWluLmV2bS52MWFscGhhLlRvcGljVmFsdWVzEkgKCmNvbmZpZGVuY2UYAyABKA4yNC5jYXBhYmlsaXRpZXMuYmxvY2tjaGFpbi5ldm0udjFhbHBoYS5Db25maWRlbmNlTGV2ZWwiegoTQ2FsbENvbnRyYWN0UmVxdWVzdBI6CgRjYWxsGAEgASgLMiwuY2FwYWJpbGl0aWVzLmJsb2NrY2hhaW4uZXZtLnYxYWxwaGEuQ2FsbE1zZxInCgxibG9ja19udW1iZXIYAiABKAsyES52YWx1ZXMudjEuQmlnSW50IiEKEUNhbGxDb250cmFjdFJlcGx5EgwKBGRhdGEYASABKAwiWwoRRmlsdGVyTG9nc1JlcXVlc3QSRgoMZmlsdGVyX3F1ZXJ5GAEgASgLMjAuY2FwYWJpbGl0aWVzLmJsb2NrY2hhaW4uZXZtLnYxYWxwaGEuRmlsdGVyUXVlcnkiSQoPRmlsdGVyTG9nc1JlcGx5EjYKBGxvZ3MYASADKAsyKC5jYXBhYmlsaXRpZXMuYmxvY2tjaGFpbi5ldm0udjFhbHBoYS5Mb2cixwEKA0xvZxIPCgdhZGRyZXNzGAEgASgMEg4KBnRvcGljcxgCIAMoDBIPCgd0eF9oYXNoGAMgASgMEhIKCmJsb2NrX2hhc2gYBCABKAwSDAoEZGF0YRgFIAEoDBIRCglldmVudF9zaWcYBiABKAwSJwoMYmxvY2tfbnVtYmVyGAcgASgLMhEudmFsdWVzLnYxLkJpZ0ludBIQCgh0eF9pbmRleBgIIAEoDRINCgVpbmRleBgJIAEoDRIPCgdyZW1vdmVkGAogASgIIjEKB0NhbGxNc2cSDAoEZnJvbRgBIAEoDBIKCgJ0bxgCIAEoDBIMCgRkYXRhGAMgASgMIr0BCgtGaWx0ZXJRdWVyeRISCgpibG9ja19oYXNoGAEgASgMEiUKCmZyb21fYmxvY2sYAiABKAsyES52YWx1ZXMudjEuQmlnSW50EiMKCHRvX2Jsb2NrGAMgASgLMhEudmFsdWVzLnYxLkJpZ0ludBIRCglhZGRyZXNzZXMYBCADKAwSOwoGdG9waWNzGAUgAygLMisuY2FwYWJpbGl0aWVzLmJsb2NrY2hhaW4uZXZtLnYxYWxwaGEuVG9waWNzIhcKBlRvcGljcxINCgV0b3BpYxgBIAMoDCJMChBCYWxhbmNlQXRSZXF1ZXN0Eg8KB2FjY291bnQYASABKAwSJwoMYmxvY2tfbnVtYmVyGAIgASgLMhEudmFsdWVzLnYxLkJpZ0ludCI0Cg5CYWxhbmNlQXRSZXBseRIiCgdiYWxhbmNlGAEgASgLMhEudmFsdWVzLnYxLkJpZ0ludCJPChJFc3RpbWF0ZUdhc1JlcXVlc3QSOQoDbXNnGAEgASgLMiwuY2FwYWJpbGl0aWVzLmJsb2NrY2hhaW4uZXZtLnYxYWxwaGEuQ2FsbE1zZyIjChBFc3RpbWF0ZUdhc1JlcGx5Eg8KA2dhcxgBIAEoBEICMAAiKwobR2V0VHJhbnNhY3Rpb25CeUhhc2hSZXF1ZXN0EgwKBGhhc2gYASABKAwiYgoZR2V0VHJhbnNhY3Rpb25CeUhhc2hSZXBseRJFCgt0cmFuc2FjdGlvbhgBIAEoCzIwLmNhcGFiaWxpdGllcy5ibG9ja2NoYWluLmV2bS52MWFscGhhLlRyYW5zYWN0aW9uIqEBCgtUcmFuc2FjdGlvbhIRCgVub25jZRgBIAEoBEICMAASDwoDZ2FzGAIgASgEQgIwABIKCgJ0bxgDIAEoDBIMCgRkYXRhGAQgASgMEgwKBGhhc2gYBSABKAwSIAoFdmFsdWUYBiABKAsyES52YWx1ZXMudjEuQmlnSW50EiQKCWdhc19wcmljZRgHIAEoCzIRLnZhbHVlcy52MS5CaWdJbnQiLAocR2V0VHJhbnNhY3Rpb25SZWNlaXB0UmVxdWVzdBIMCgRoYXNoGAEgASgMIlsKGkdldFRyYW5zYWN0aW9uUmVjZWlwdFJlcGx5Ej0KB3JlY2VpcHQYASABKAsyLC5jYXBhYmlsaXRpZXMuYmxvY2tjaGFpbi5ldm0udjFhbHBoYS5SZWNlaXB0IpkCCgdSZWNlaXB0EhIKBnN0YXR1cxgBIAEoBEICMAASFAoIZ2FzX3VzZWQYAiABKARCAjAAEhQKCHR4X2luZGV4GAMgASgEQgIwABISCgpibG9ja19oYXNoGAQgASgMEjYKBGxvZ3MYBiADKAsyKC5jYXBhYmlsaXRpZXMuYmxvY2tjaGFpbi5ldm0udjFhbHBoYS5Mb2cSDwoHdHhfaGFzaBgHIAEoDBIuChNlZmZlY3RpdmVfZ2FzX3ByaWNlGAggASgLMhEudmFsdWVzLnYxLkJpZ0ludBInCgxibG9ja19udW1iZXIYCSABKAsyES52YWx1ZXMudjEuQmlnSW50EhgKEGNvbnRyYWN0X2FkZHJlc3MYCiABKAwiQAoVSGVhZGVyQnlOdW1iZXJSZXF1ZXN0EicKDGJsb2NrX251bWJlchgBIAEoCzIRLnZhbHVlcy52MS5CaWdJbnQiUgoTSGVhZGVyQnlOdW1iZXJSZXBseRI7CgZoZWFkZXIYASABKAsyKy5jYXBhYmlsaXRpZXMuYmxvY2tjaGFpbi5ldm0udjFhbHBoYS5IZWFkZXIiawoGSGVhZGVyEhUKCXRpbWVzdGFtcBgBIAEoBEICMAASJwoMYmxvY2tfbnVtYmVyGAIgASgLMhEudmFsdWVzLnYxLkJpZ0ludBIMCgRoYXNoGAMgASgMEhMKC3BhcmVudF9oYXNoGAQgASgMIqsBChJXcml0ZVJlcG9ydFJlcXVlc3QSEAoIcmVjZWl2ZXIYASABKAwSKwoGcmVwb3J0GAIgASgLMhsuc2RrLnYxYWxwaGEuUmVwb3J0UmVzcG9uc2USRwoKZ2FzX2NvbmZpZxgDIAEoCzIuLmNhcGFiaWxpdGllcy5ibG9ja2NoYWluLmV2bS52MWFscGhhLkdhc0NvbmZpZ0gAiAEBQg0KC19nYXNfY29uZmlnIiIKCUdhc0NvbmZpZxIVCglnYXNfbGltaXQYASABKARCAjAAIocDChBXcml0ZVJlcG9ydFJlcGx5EkAKCXR4X3N0YXR1cxgBIAEoDjItLmNhcGFiaWxpdGllcy5ibG9ja2NoYWluLmV2bS52MWFscGhhLlR4U3RhdHVzEnUKInJlY2VpdmVyX2NvbnRyYWN0X2V4ZWN1dGlvbl9zdGF0dXMYAiABKA4yRC5jYXBhYmlsaXRpZXMuYmxvY2tjaGFpbi5ldm0udjFhbHBoYS5SZWNlaXZlckNvbnRyYWN0RXhlY3V0aW9uU3RhdHVzSACIAQESFAoHdHhfaGFzaBgDIAEoDEgBiAEBEi8KD3RyYW5zYWN0aW9uX2ZlZRgEIAEoCzIRLnZhbHVlcy52MS5CaWdJbnRIAogBARIaCg1lcnJvcl9tZXNzYWdlGAUgASgJSAOIAQFCJQojX3JlY2VpdmVyX2NvbnRyYWN0X2V4ZWN1dGlvbl9zdGF0dXNCCgoIX3R4X2hhc2hCEgoQX3RyYW5zYWN0aW9uX2ZlZUIQCg5fZXJyb3JfbWVzc2FnZSppCg9Db25maWRlbmNlTGV2ZWwSGQoVQ09ORklERU5DRV9MRVZFTF9TQUZFEAASGwoXQ09ORklERU5DRV9MRVZFTF9MQVRFU1QQARIeChpDT05GSURFTkNFX0xFVkVMX0ZJTkFMSVpFRBACKoIBCh9SZWNlaXZlckNvbnRyYWN0RXhlY3V0aW9uU3RhdHVzEi4KKlJFQ0VJVkVSX0NPTlRSQUNUX0VYRUNVVElPTl9TVEFUVVNfU1VDQ0VTUxAAEi8KK1JFQ0VJVkVSX0NPTlRSQUNUX0VYRUNVVElPTl9TVEFUVVNfUkVWRVJURUQQASpOCghUeFN0YXR1cxITCg9UWF9TVEFUVVNfRkFUQUwQABIWChJUWF9TVEFUVVNfUkVWRVJURUQQARIVChFUWF9TVEFUVVNfU1VDQ0VTUxACMqkSCgZDbGllbnQSgAEKDENhbGxDb250cmFjdBI4LmNhcGFiaWxpdGllcy5ibG9ja2NoYWluLmV2bS52MWFscGhhLkNhbGxDb250cmFjdFJlcXVlc3QaNi5jYXBhYmlsaXRpZXMuYmxvY2tjaGFpbi5ldm0udjFhbHBoYS5DYWxsQ29udHJhY3RSZXBseRJ6CgpGaWx0ZXJMb2dzEjYuY2FwYWJpbGl0aWVzLmJsb2NrY2hhaW4uZXZtLnYxYWxwaGEuRmlsdGVyTG9nc1JlcXVlc3QaNC5jYXBhYmlsaXRpZXMuYmxvY2tjaGFpbi5ldm0udjFhbHBoYS5GaWx0ZXJMb2dzUmVwbHkSdwoJQmFsYW5jZUF0EjUuY2FwYWJpbGl0aWVzLmJsb2NrY2hhaW4uZXZtLnYxYWxwaGEuQmFsYW5jZUF0UmVxdWVzdBozLmNhcGFiaWxpdGllcy5ibG9ja2NoYWluLmV2bS52MWFscGhhLkJhbGFuY2VBdFJlcGx5En0KC0VzdGltYXRlR2FzEjcuY2FwYWJpbGl0aWVzLmJsb2NrY2hhaW4uZXZtLnYxYWxwaGEuRXN0aW1hdGVHYXNSZXF1ZXN0GjUuY2FwYWJpbGl0aWVzLmJsb2NrY2hhaW4uZXZtLnYxYWxwaGEuRXN0aW1hdGVHYXNSZXBseRKYAQoUR2V0VHJhbnNhY3Rpb25CeUhhc2gSQC5jYXBhYmlsaXRpZXMuYmxvY2tjaGFpbi5ldm0udjFhbHBoYS5HZXRUcmFuc2FjdGlvbkJ5SGFzaFJlcXVlc3QaPi5jYXBhYmlsaXRpZXMuYmxvY2tjaGFpbi5ldm0udjFhbHBoYS5HZXRUcmFuc2FjdGlvbkJ5SGFzaFJlcGx5EpsBChVHZXRUcmFuc2FjdGlvblJlY2VpcHQSQS5jYXBhYmlsaXRpZXMuYmxvY2tjaGFpbi5ldm0udjFhbHBoYS5HZXRUcmFuc2FjdGlvblJlY2VpcHRSZXF1ZXN0Gj8uY2FwYWJpbGl0aWVzLmJsb2NrY2hhaW4uZXZtLnYxYWxwaGEuR2V0VHJhbnNhY3Rpb25SZWNlaXB0UmVwbHkShgEKDkhlYWRlckJ5TnVtYmVyEjouY2FwYWJpbGl0aWVzLmJsb2NrY2hhaW4uZXZtLnYxYWxwaGEuSGVhZGVyQnlOdW1iZXJSZXF1ZXN0GjguY2FwYWJpbGl0aWVzLmJsb2NrY2hhaW4uZXZtLnYxYWxwaGEuSGVhZGVyQnlOdW1iZXJSZXBseRJ2CgpMb2dUcmlnZ2VyEjwuY2FwYWJpbGl0aWVzLmJsb2NrY2hhaW4uZXZtLnYxYWxwaGEuRmlsdGVyTG9nVHJpZ2dlclJlcXVlc3QaKC5jYXBhYmlsaXRpZXMuYmxvY2tjaGFpbi5ldm0udjFhbHBoYS5Mb2cwARJ9CgtXcml0ZVJlcG9ydBI3LmNhcGFiaWxpdGllcy5ibG9ja2NoYWluLmV2bS52MWFscGhhLldyaXRlUmVwb3J0UmVxdWVzdBo1LmNhcGFiaWxpdGllcy5ibG9ja2NoYWluLmV2bS52MWFscGhhLldyaXRlUmVwb3J0UmVwbHka7giCtRjpCAgBEglldm1AMS4wLjAa2QgKDUNoYWluU2VsZWN0b3ISxwgSxAgKJAoXYXBlY2hhaW4tdGVzdG5ldC1jdXJ0aXMQwcO0+I3EkrKJAQoXCgthcmMtdGVzdG5ldBDnxoye19fQjSoKHQoRYXZhbGFuY2hlLW1haW5uZXQQ1eeKwOHVmKRZCiMKFmF2YWxhbmNoZS10ZXN0bmV0LWZ1amkQm/n8kKLjqPjMAQooChtiaW5hbmNlX3NtYXJ0X2NoYWluLW1haW5uZXQQz/eU8djtlbidAQooChtiaW5hbmNlX3NtYXJ0X2NoYWluLXRlc3RuZXQQ+62+nICu5Iq4AQocChBldGhlcmV1bS1tYWlubmV0EJX28eTPsqbCRQonChtldGhlcmV1bS1tYWlubmV0LWFyYml0cnVtLTEQxOiNzY6boddECiQKF2V0aGVyZXVtLW1haW5uZXQtYmFzZS0xEIL/q6L+uZDT3QEKJwobZXRoZXJldW0tbWFpbm5ldC1vcHRpbWlzbS0xELiVj8P3/tDpMwopCh1ldGhlcmV1bS1tYWlubmV0LXdvcmxkY2hhaW4tMRCH77q3xbbCuBwKJQoZZXRoZXJldW0tbWFpbm5ldC14bGF5ZXItMRCWpfycpqjv7SkKJQoZZXRoZXJldW0tbWFpbm5ldC16a3N5bmMtMRCU7pfZ7bSx1xUKJQoYZXRoZXJldW0tdGVzdG5ldC1zZXBvbGlhENm15M78ye6g3gEKLwojZXRoZXJldW0tdGVzdG5ldC1zZXBvbGlhLWFyYml0cnVtLTEQ6s7u/+q2hKMwCiwKH2V0aGVyZXVtLXRlc3RuZXQtc2Vwb2xpYS1iYXNlLTEQuMq57/aQrsiPAQosCiBldGhlcmV1bS10ZXN0bmV0LXNlcG9saWEtbGluZWEtMRDrqtT+gvnmr08KLwojZXRoZXJldW0tdGVzdG5ldC1zZXBvbGlhLW9wdGltaXNtLTEQn4bFob7Yw8BICjEKJWV0aGVyZXVtLXRlc3RuZXQtc2Vwb2xpYS13b3JsZGNoYWluLTEQut/gxcep88VJCi0KIWV0aGVyZXVtLXRlc3RuZXQtc2Vwb2xpYS16a3N5bmMtMRC3wfz98sSA3l8KHwoTaHlwZXJsaXF1aWQtdGVzdG5ldBCIzt3Il+DJvTsKIAoTaW5rLXRlc3RuZXQtc2Vwb2xpYRDo9Kel8+aWwIcBChkKDWpvdmF5LW1haW5uZXQQtcPEmqGA35IVChkKDWpvdmF5LXRlc3RuZXQQ5M+KhN6y3o4NChoKDnBoYXJvcy1tYWlubmV0EMjBh571782hbAoaCg5wbGFzbWEtdGVzdG5ldBDVm7+lw7SZhzcKGwoPcG9seWdvbi1tYWlubmV0ELGr5PCakoadOAohChRwb2x5Z29uLXRlc3RuZXQtYW1veRDNj9bf8ceQ+uEBCiQKGHByaXZhdGUtdGVzdG5ldC1hbmRlc2l0ZRDUppilwY/c/F9C5QEKJ2NvbS5jYXBhYmlsaXRpZXMuYmxvY2tjaGFpbi5ldm0udjFhbHBoYUILQ2xpZW50UHJvdG9QAaICA0NCRaoCI0NhcGFiaWxpdGllcy5CbG9ja2NoYWluLkV2bS5WMWFscGhhygIjQ2FwYWJpbGl0aWVzXEJsb2NrY2hhaW5cRXZtXFYxYWxwaGHiAi9DYXBhYmlsaXRpZXNcQmxvY2tjaGFpblxFdm1cVjFhbHBoYVxHUEJNZXRhZGF0YeoCJkNhcGFiaWxpdGllczo6QmxvY2tjaGFpbjo6RXZtOjpWMWFscGhhYgZwcm90bzM", [file_sdk_v1alpha_sdk, file_tools_generator_v1alpha_cre_metadata, file_values_v1_values]);
+var file_capabilities_blockchain_evm_v1alpha_client = /* @__PURE__ */ fileDesc("CjBjYXBhYmlsaXRpZXMvYmxvY2tjaGFpbi9ldm0vdjFhbHBoYS9jbGllbnQucHJvdG8SI2NhcGFiaWxpdGllcy5ibG9ja2NoYWluLmV2bS52MWFscGhhIh0KC1RvcGljVmFsdWVzEg4KBnZhbHVlcxgBIAMoDCK4AQoXRmlsdGVyTG9nVHJpZ2dlclJlcXVlc3QSEQoJYWRkcmVzc2VzGAEgAygMEkAKBnRvcGljcxgCIAMoCzIwLmNhcGFiaWxpdGllcy5ibG9ja2NoYWluLmV2bS52MWFscGhhLlRvcGljVmFsdWVzEkgKCmNvbmZpZGVuY2UYAyABKA4yNC5jYXBhYmlsaXRpZXMuYmxvY2tjaGFpbi5ldm0udjFhbHBoYS5Db25maWRlbmNlTGV2ZWwiegoTQ2FsbENvbnRyYWN0UmVxdWVzdBI6CgRjYWxsGAEgASgLMiwuY2FwYWJpbGl0aWVzLmJsb2NrY2hhaW4uZXZtLnYxYWxwaGEuQ2FsbE1zZxInCgxibG9ja19udW1iZXIYAiABKAsyES52YWx1ZXMudjEuQmlnSW50IiEKEUNhbGxDb250cmFjdFJlcGx5EgwKBGRhdGEYASABKAwiWwoRRmlsdGVyTG9nc1JlcXVlc3QSRgoMZmlsdGVyX3F1ZXJ5GAEgASgLMjAuY2FwYWJpbGl0aWVzLmJsb2NrY2hhaW4uZXZtLnYxYWxwaGEuRmlsdGVyUXVlcnkiSQoPRmlsdGVyTG9nc1JlcGx5EjYKBGxvZ3MYASADKAsyKC5jYXBhYmlsaXRpZXMuYmxvY2tjaGFpbi5ldm0udjFhbHBoYS5Mb2cixwEKA0xvZxIPCgdhZGRyZXNzGAEgASgMEg4KBnRvcGljcxgCIAMoDBIPCgd0eF9oYXNoGAMgASgMEhIKCmJsb2NrX2hhc2gYBCABKAwSDAoEZGF0YRgFIAEoDBIRCglldmVudF9zaWcYBiABKAwSJwoMYmxvY2tfbnVtYmVyGAcgASgLMhEudmFsdWVzLnYxLkJpZ0ludBIQCgh0eF9pbmRleBgIIAEoDRINCgVpbmRleBgJIAEoDRIPCgdyZW1vdmVkGAogASgIIjEKB0NhbGxNc2cSDAoEZnJvbRgBIAEoDBIKCgJ0bxgCIAEoDBIMCgRkYXRhGAMgASgMIr0BCgtGaWx0ZXJRdWVyeRISCgpibG9ja19oYXNoGAEgASgMEiUKCmZyb21fYmxvY2sYAiABKAsyES52YWx1ZXMudjEuQmlnSW50EiMKCHRvX2Jsb2NrGAMgASgLMhEudmFsdWVzLnYxLkJpZ0ludBIRCglhZGRyZXNzZXMYBCADKAwSOwoGdG9waWNzGAUgAygLMisuY2FwYWJpbGl0aWVzLmJsb2NrY2hhaW4uZXZtLnYxYWxwaGEuVG9waWNzIhcKBlRvcGljcxINCgV0b3BpYxgBIAMoDCJMChBCYWxhbmNlQXRSZXF1ZXN0Eg8KB2FjY291bnQYASABKAwSJwoMYmxvY2tfbnVtYmVyGAIgASgLMhEudmFsdWVzLnYxLkJpZ0ludCI0Cg5CYWxhbmNlQXRSZXBseRIiCgdiYWxhbmNlGAEgASgLMhEudmFsdWVzLnYxLkJpZ0ludCJPChJFc3RpbWF0ZUdhc1JlcXVlc3QSOQoDbXNnGAEgASgLMiwuY2FwYWJpbGl0aWVzLmJsb2NrY2hhaW4uZXZtLnYxYWxwaGEuQ2FsbE1zZyIjChBFc3RpbWF0ZUdhc1JlcGx5Eg8KA2dhcxgBIAEoBEICMAAiKwobR2V0VHJhbnNhY3Rpb25CeUhhc2hSZXF1ZXN0EgwKBGhhc2gYASABKAwiYgoZR2V0VHJhbnNhY3Rpb25CeUhhc2hSZXBseRJFCgt0cmFuc2FjdGlvbhgBIAEoCzIwLmNhcGFiaWxpdGllcy5ibG9ja2NoYWluLmV2bS52MWFscGhhLlRyYW5zYWN0aW9uIqEBCgtUcmFuc2FjdGlvbhIRCgVub25jZRgBIAEoBEICMAASDwoDZ2FzGAIgASgEQgIwABIKCgJ0bxgDIAEoDBIMCgRkYXRhGAQgASgMEgwKBGhhc2gYBSABKAwSIAoFdmFsdWUYBiABKAsyES52YWx1ZXMudjEuQmlnSW50EiQKCWdhc19wcmljZRgHIAEoCzIRLnZhbHVlcy52MS5CaWdJbnQiLAocR2V0VHJhbnNhY3Rpb25SZWNlaXB0UmVxdWVzdBIMCgRoYXNoGAEgASgMIlsKGkdldFRyYW5zYWN0aW9uUmVjZWlwdFJlcGx5Ej0KB3JlY2VpcHQYASABKAsyLC5jYXBhYmlsaXRpZXMuYmxvY2tjaGFpbi5ldm0udjFhbHBoYS5SZWNlaXB0IpkCCgdSZWNlaXB0EhIKBnN0YXR1cxgBIAEoBEICMAASFAoIZ2FzX3VzZWQYAiABKARCAjAAEhQKCHR4X2luZGV4GAMgASgEQgIwABISCgpibG9ja19oYXNoGAQgASgMEjYKBGxvZ3MYBiADKAsyKC5jYXBhYmlsaXRpZXMuYmxvY2tjaGFpbi5ldm0udjFhbHBoYS5Mb2cSDwoHdHhfaGFzaBgHIAEoDBIuChNlZmZlY3RpdmVfZ2FzX3ByaWNlGAggASgLMhEudmFsdWVzLnYxLkJpZ0ludBInCgxibG9ja19udW1iZXIYCSABKAsyES52YWx1ZXMudjEuQmlnSW50EhgKEGNvbnRyYWN0X2FkZHJlc3MYCiABKAwiQAoVSGVhZGVyQnlOdW1iZXJSZXF1ZXN0EicKDGJsb2NrX251bWJlchgBIAEoCzIRLnZhbHVlcy52MS5CaWdJbnQiUgoTSGVhZGVyQnlOdW1iZXJSZXBseRI7CgZoZWFkZXIYASABKAsyKy5jYXBhYmlsaXRpZXMuYmxvY2tjaGFpbi5ldm0udjFhbHBoYS5IZWFkZXIiawoGSGVhZGVyEhUKCXRpbWVzdGFtcBgBIAEoBEICMAASJwoMYmxvY2tfbnVtYmVyGAIgASgLMhEudmFsdWVzLnYxLkJpZ0ludBIMCgRoYXNoGAMgASgMEhMKC3BhcmVudF9oYXNoGAQgASgMIqsBChJXcml0ZVJlcG9ydFJlcXVlc3QSEAoIcmVjZWl2ZXIYASABKAwSKwoGcmVwb3J0GAIgASgLMhsuc2RrLnYxYWxwaGEuUmVwb3J0UmVzcG9uc2USRwoKZ2FzX2NvbmZpZxgDIAEoCzIuLmNhcGFiaWxpdGllcy5ibG9ja2NoYWluLmV2bS52MWFscGhhLkdhc0NvbmZpZ0gAiAEBQg0KC19nYXNfY29uZmlnIiIKCUdhc0NvbmZpZxIVCglnYXNfbGltaXQYASABKARCAjAAIocDChBXcml0ZVJlcG9ydFJlcGx5EkAKCXR4X3N0YXR1cxgBIAEoDjItLmNhcGFiaWxpdGllcy5ibG9ja2NoYWluLmV2bS52MWFscGhhLlR4U3RhdHVzEnUKInJlY2VpdmVyX2NvbnRyYWN0X2V4ZWN1dGlvbl9zdGF0dXMYAiABKA4yRC5jYXBhYmlsaXRpZXMuYmxvY2tjaGFpbi5ldm0udjFhbHBoYS5SZWNlaXZlckNvbnRyYWN0RXhlY3V0aW9uU3RhdHVzSACIAQESFAoHdHhfaGFzaBgDIAEoDEgBiAEBEi8KD3RyYW5zYWN0aW9uX2ZlZRgEIAEoCzIRLnZhbHVlcy52MS5CaWdJbnRIAogBARIaCg1lcnJvcl9tZXNzYWdlGAUgASgJSAOIAQFCJQojX3JlY2VpdmVyX2NvbnRyYWN0X2V4ZWN1dGlvbl9zdGF0dXNCCgoIX3R4X2hhc2hCEgoQX3RyYW5zYWN0aW9uX2ZlZUIQCg5fZXJyb3JfbWVzc2FnZSppCg9Db25maWRlbmNlTGV2ZWwSGQoVQ09ORklERU5DRV9MRVZFTF9TQUZFEAASGwoXQ09ORklERU5DRV9MRVZFTF9MQVRFU1QQARIeChpDT05GSURFTkNFX0xFVkVMX0ZJTkFMSVpFRBACKoIBCh9SZWNlaXZlckNvbnRyYWN0RXhlY3V0aW9uU3RhdHVzEi4KKlJFQ0VJVkVSX0NPTlRSQUNUX0VYRUNVVElPTl9TVEFUVVNfU1VDQ0VTUxAAEi8KK1JFQ0VJVkVSX0NPTlRSQUNUX0VYRUNVVElPTl9TVEFUVVNfUkVWRVJURUQQASpOCghUeFN0YXR1cxITCg9UWF9TVEFUVVNfRkFUQUwQABIWChJUWF9TVEFUVVNfUkVWRVJURUQQARIVChFUWF9TVEFUVVNfU1VDQ0VTUxACMs8SCgZDbGllbnQSgAEKDENhbGxDb250cmFjdBI4LmNhcGFiaWxpdGllcy5ibG9ja2NoYWluLmV2bS52MWFscGhhLkNhbGxDb250cmFjdFJlcXVlc3QaNi5jYXBhYmlsaXRpZXMuYmxvY2tjaGFpbi5ldm0udjFhbHBoYS5DYWxsQ29udHJhY3RSZXBseRJ6CgpGaWx0ZXJMb2dzEjYuY2FwYWJpbGl0aWVzLmJsb2NrY2hhaW4uZXZtLnYxYWxwaGEuRmlsdGVyTG9nc1JlcXVlc3QaNC5jYXBhYmlsaXRpZXMuYmxvY2tjaGFpbi5ldm0udjFhbHBoYS5GaWx0ZXJMb2dzUmVwbHkSdwoJQmFsYW5jZUF0EjUuY2FwYWJpbGl0aWVzLmJsb2NrY2hhaW4uZXZtLnYxYWxwaGEuQmFsYW5jZUF0UmVxdWVzdBozLmNhcGFiaWxpdGllcy5ibG9ja2NoYWluLmV2bS52MWFscGhhLkJhbGFuY2VBdFJlcGx5En0KC0VzdGltYXRlR2FzEjcuY2FwYWJpbGl0aWVzLmJsb2NrY2hhaW4uZXZtLnYxYWxwaGEuRXN0aW1hdGVHYXNSZXF1ZXN0GjUuY2FwYWJpbGl0aWVzLmJsb2NrY2hhaW4uZXZtLnYxYWxwaGEuRXN0aW1hdGVHYXNSZXBseRKYAQoUR2V0VHJhbnNhY3Rpb25CeUhhc2gSQC5jYXBhYmlsaXRpZXMuYmxvY2tjaGFpbi5ldm0udjFhbHBoYS5HZXRUcmFuc2FjdGlvbkJ5SGFzaFJlcXVlc3QaPi5jYXBhYmlsaXRpZXMuYmxvY2tjaGFpbi5ldm0udjFhbHBoYS5HZXRUcmFuc2FjdGlvbkJ5SGFzaFJlcGx5EpsBChVHZXRUcmFuc2FjdGlvblJlY2VpcHQSQS5jYXBhYmlsaXRpZXMuYmxvY2tjaGFpbi5ldm0udjFhbHBoYS5HZXRUcmFuc2FjdGlvblJlY2VpcHRSZXF1ZXN0Gj8uY2FwYWJpbGl0aWVzLmJsb2NrY2hhaW4uZXZtLnYxYWxwaGEuR2V0VHJhbnNhY3Rpb25SZWNlaXB0UmVwbHkShgEKDkhlYWRlckJ5TnVtYmVyEjouY2FwYWJpbGl0aWVzLmJsb2NrY2hhaW4uZXZtLnYxYWxwaGEuSGVhZGVyQnlOdW1iZXJSZXF1ZXN0GjguY2FwYWJpbGl0aWVzLmJsb2NrY2hhaW4uZXZtLnYxYWxwaGEuSGVhZGVyQnlOdW1iZXJSZXBseRJ2CgpMb2dUcmlnZ2VyEjwuY2FwYWJpbGl0aWVzLmJsb2NrY2hhaW4uZXZtLnYxYWxwaGEuRmlsdGVyTG9nVHJpZ2dlclJlcXVlc3QaKC5jYXBhYmlsaXRpZXMuYmxvY2tjaGFpbi5ldm0udjFhbHBoYS5Mb2cwARJ9CgtXcml0ZVJlcG9ydBI3LmNhcGFiaWxpdGllcy5ibG9ja2NoYWluLmV2bS52MWFscGhhLldyaXRlUmVwb3J0UmVxdWVzdBo1LmNhcGFiaWxpdGllcy5ibG9ja2NoYWluLmV2bS52MWFscGhhLldyaXRlUmVwb3J0UmVwbHkalAmCtRiPCQgBEglldm1AMS4wLjAa/wgKDUNoYWluU2VsZWN0b3IS7QgS6ggKJAoXYXBlY2hhaW4tdGVzdG5ldC1jdXJ0aXMQwcO0+I3EkrKJAQoXCgthcmMtdGVzdG5ldBDnxoye19fQjSoKHQoRYXZhbGFuY2hlLW1haW5uZXQQ1eeKwOHVmKRZCiMKFmF2YWxhbmNoZS10ZXN0bmV0LWZ1amkQm/n8kKLjqPjMAQooChtiaW5hbmNlX3NtYXJ0X2NoYWluLW1haW5uZXQQz/eU8djtlbidAQooChtiaW5hbmNlX3NtYXJ0X2NoYWluLXRlc3RuZXQQ+62+nICu5Iq4AQocChBldGhlcmV1bS1tYWlubmV0EJX28eTPsqbCRQonChtldGhlcmV1bS1tYWlubmV0LWFyYml0cnVtLTEQxOiNzY6boddECiQKF2V0aGVyZXVtLW1haW5uZXQtYmFzZS0xEIL/q6L+uZDT3QEKJwobZXRoZXJldW0tbWFpbm5ldC1vcHRpbWlzbS0xELiVj8P3/tDpMwopCh1ldGhlcmV1bS1tYWlubmV0LXdvcmxkY2hhaW4tMRCH77q3xbbCuBwKJQoZZXRoZXJldW0tbWFpbm5ldC14bGF5ZXItMRCWpfycpqjv7SkKJQoZZXRoZXJldW0tbWFpbm5ldC16a3N5bmMtMRCU7pfZ7bSx1xUKJQoYZXRoZXJldW0tdGVzdG5ldC1zZXBvbGlhENm15M78ye6g3gEKLwojZXRoZXJldW0tdGVzdG5ldC1zZXBvbGlhLWFyYml0cnVtLTEQ6s7u/+q2hKMwCiwKH2V0aGVyZXVtLXRlc3RuZXQtc2Vwb2xpYS1iYXNlLTEQuMq57/aQrsiPAQosCiBldGhlcmV1bS10ZXN0bmV0LXNlcG9saWEtbGluZWEtMRDrqtT+gvnmr08KLwojZXRoZXJldW0tdGVzdG5ldC1zZXBvbGlhLW9wdGltaXNtLTEQn4bFob7Yw8BICjEKJWV0aGVyZXVtLXRlc3RuZXQtc2Vwb2xpYS13b3JsZGNoYWluLTEQut/gxcep88VJCi0KIWV0aGVyZXVtLXRlc3RuZXQtc2Vwb2xpYS16a3N5bmMtMRC3wfz98sSA3l8KHwoTaHlwZXJsaXF1aWQtdGVzdG5ldBCIzt3Il+DJvTsKIAoTaW5rLXRlc3RuZXQtc2Vwb2xpYRDo9Kel8+aWwIcBChkKDWpvdmF5LW1haW5uZXQQtcPEmqGA35IVChkKDWpvdmF5LXRlc3RuZXQQ5M+KhN6y3o4NCiQKF3BoYXJvcy1hdGxhbnRpYy10ZXN0bmV0EMyZ7eDOvK+03wEKGgoOcGhhcm9zLW1haW5uZXQQyMGHnvXvzaFsChoKDnBsYXNtYS10ZXN0bmV0ENWbv6XDtJmHNwobCg9wb2x5Z29uLW1haW5uZXQQsavk8JqShp04CiEKFHBvbHlnb24tdGVzdG5ldC1hbW95EM2P1t/xx5D64QEKJAoYcHJpdmF0ZS10ZXN0bmV0LWFuZGVzaXRlENSmmKXBj9z8X0LlAQonY29tLmNhcGFiaWxpdGllcy5ibG9ja2NoYWluLmV2bS52MWFscGhhQgtDbGllbnRQcm90b1ABogIDQ0JFqgIjQ2FwYWJpbGl0aWVzLkJsb2NrY2hhaW4uRXZtLlYxYWxwaGHKAiNDYXBhYmlsaXRpZXNcQmxvY2tjaGFpblxFdm1cVjFhbHBoYeICL0NhcGFiaWxpdGllc1xCbG9ja2NoYWluXEV2bVxWMWFscGhhXEdQQk1ldGFkYXRh6gImQ2FwYWJpbGl0aWVzOjpCbG9ja2NoYWluOjpFdm06OlYxYWxwaGFiBnByb3RvMw", [file_sdk_v1alpha_sdk, file_tools_generator_v1alpha_cre_metadata, file_values_v1_values]);
 var FilterLogTriggerRequestSchema = /* @__PURE__ */ messageDesc(file_capabilities_blockchain_evm_v1alpha_client, 1);
 var CallContractRequestSchema = /* @__PURE__ */ messageDesc(file_capabilities_blockchain_evm_v1alpha_client, 2);
 var CallContractReplySchema = /* @__PURE__ */ messageDesc(file_capabilities_blockchain_evm_v1alpha_client, 3);
@@ -3940,6 +3940,7 @@ class ClientCapability {
     "ink-testnet-sepolia": 9763904284804119144n,
     "jovay-mainnet": 1523760397290643893n,
     "jovay-testnet": 945045181441419236n,
+    "pharos-atlantic-testnet": 16098325658947243212n,
     "pharos-mainnet": 7801139999541420232n,
     "plasma-testnet": 3967220077692964309n,
     "polygon-mainnet": 4051577828743386545n,
@@ -13652,7 +13653,6 @@ var coerce = {
   date: (arg) => ZodDate.create({ ...arg, coerce: true })
 };
 var NEVER = INVALID;
-var zod_default = exports_external;
 var globalHostBindingsSchema = exports_external.object({
   switchModes: exports_external.function().args(exports_external.nativeEnum(Mode)).returns(exports_external.void()),
   log: exports_external.function().args(exports_external.string()).returns(exports_external.void()),
@@ -14234,12010 +14234,2469 @@ var sendErrorResponse = (error) => {
   }
   hostBindings.sendResponse(payload);
 };
-function isMessage2(arg, schema) {
-  const isMessage3 = arg !== null && typeof arg == "object" && "$typeName" in arg && typeof arg.$typeName == "string";
-  if (!isMessage3) {
-    return false;
-  }
-  if (schema === undefined) {
-    return true;
-  }
-  return schema.typeName === arg.$typeName;
+function execTyped(regex, string) {
+  const match = regex.exec(string);
+  return match?.groups;
 }
-var ScalarType2;
-(function(ScalarType3) {
-  ScalarType3[ScalarType3["DOUBLE"] = 1] = "DOUBLE";
-  ScalarType3[ScalarType3["FLOAT"] = 2] = "FLOAT";
-  ScalarType3[ScalarType3["INT64"] = 3] = "INT64";
-  ScalarType3[ScalarType3["UINT64"] = 4] = "UINT64";
-  ScalarType3[ScalarType3["INT32"] = 5] = "INT32";
-  ScalarType3[ScalarType3["FIXED64"] = 6] = "FIXED64";
-  ScalarType3[ScalarType3["FIXED32"] = 7] = "FIXED32";
-  ScalarType3[ScalarType3["BOOL"] = 8] = "BOOL";
-  ScalarType3[ScalarType3["STRING"] = 9] = "STRING";
-  ScalarType3[ScalarType3["BYTES"] = 12] = "BYTES";
-  ScalarType3[ScalarType3["UINT32"] = 13] = "UINT32";
-  ScalarType3[ScalarType3["SFIXED32"] = 15] = "SFIXED32";
-  ScalarType3[ScalarType3["SFIXED64"] = 16] = "SFIXED64";
-  ScalarType3[ScalarType3["SINT32"] = 17] = "SINT32";
-  ScalarType3[ScalarType3["SINT64"] = 18] = "SINT64";
-})(ScalarType2 || (ScalarType2 = {}));
-function varint64read2() {
-  let lowBits = 0;
-  let highBits = 0;
-  for (let shift = 0;shift < 28; shift += 7) {
-    let b = this.buf[this.pos++];
-    lowBits |= (b & 127) << shift;
-    if ((b & 128) == 0) {
-      this.assertBounds();
-      return [lowBits, highBits];
+var bytesRegex = /^bytes([1-9]|1[0-9]|2[0-9]|3[0-2])?$/;
+var integerRegex = /^u?int(8|16|24|32|40|48|56|64|72|80|88|96|104|112|120|128|136|144|152|160|168|176|184|192|200|208|216|224|232|240|248|256)?$/;
+var isTupleRegex = /^\(.+?\).*?$/;
+var tupleRegex = /^tuple(?<array>(\[(\d*)\])*)$/;
+function formatAbiParameter(abiParameter) {
+  let type = abiParameter.type;
+  if (tupleRegex.test(abiParameter.type) && "components" in abiParameter) {
+    type = "(";
+    const length = abiParameter.components.length;
+    for (let i2 = 0;i2 < length; i2++) {
+      const component = abiParameter.components[i2];
+      type += formatAbiParameter(component);
+      if (i2 < length - 1)
+        type += ", ";
     }
+    const result = execTyped(tupleRegex, abiParameter.type);
+    type += `)${result?.array || ""}`;
+    return formatAbiParameter({
+      ...abiParameter,
+      type
+    });
   }
-  let middleByte = this.buf[this.pos++];
-  lowBits |= (middleByte & 15) << 28;
-  highBits = (middleByte & 112) >> 4;
-  if ((middleByte & 128) == 0) {
-    this.assertBounds();
-    return [lowBits, highBits];
-  }
-  for (let shift = 3;shift <= 31; shift += 7) {
-    let b = this.buf[this.pos++];
-    highBits |= (b & 127) << shift;
-    if ((b & 128) == 0) {
-      this.assertBounds();
-      return [lowBits, highBits];
-    }
-  }
-  throw new Error("invalid varint");
+  if ("indexed" in abiParameter && abiParameter.indexed)
+    type = `${type} indexed`;
+  if (abiParameter.name)
+    return `${type} ${abiParameter.name}`;
+  return type;
 }
-function varint64write2(lo, hi, bytes) {
-  for (let i2 = 0;i2 < 28; i2 = i2 + 7) {
-    const shift = lo >>> i2;
-    const hasNext = !(shift >>> 7 == 0 && hi == 0);
-    const byte = (hasNext ? shift | 128 : shift) & 255;
-    bytes.push(byte);
-    if (!hasNext) {
-      return;
-    }
+function formatAbiParameters(abiParameters) {
+  let params = "";
+  const length = abiParameters.length;
+  for (let i2 = 0;i2 < length; i2++) {
+    const abiParameter = abiParameters[i2];
+    params += formatAbiParameter(abiParameter);
+    if (i2 !== length - 1)
+      params += ", ";
   }
-  const splitBits = lo >>> 28 & 15 | (hi & 7) << 4;
-  const hasMoreBits = !(hi >> 3 == 0);
-  bytes.push((hasMoreBits ? splitBits | 128 : splitBits) & 255);
-  if (!hasMoreBits) {
-    return;
-  }
-  for (let i2 = 3;i2 < 31; i2 = i2 + 7) {
-    const shift = hi >>> i2;
-    const hasNext = !(shift >>> 7 == 0);
-    const byte = (hasNext ? shift | 128 : shift) & 255;
-    bytes.push(byte);
-    if (!hasNext) {
-      return;
-    }
-  }
-  bytes.push(hi >>> 31 & 1);
+  return params;
 }
-var TWO_PWR_32_DBL2 = 4294967296;
-function int64FromString2(dec) {
-  const minus = dec[0] === "-";
-  if (minus) {
-    dec = dec.slice(1);
-  }
-  const base = 1e6;
-  let lowBits = 0;
-  let highBits = 0;
-  function add1e6digit(begin, end) {
-    const digit1e6 = Number(dec.slice(begin, end));
-    highBits *= base;
-    lowBits = lowBits * base + digit1e6;
-    if (lowBits >= TWO_PWR_32_DBL2) {
-      highBits = highBits + (lowBits / TWO_PWR_32_DBL2 | 0);
-      lowBits = lowBits % TWO_PWR_32_DBL2;
-    }
-  }
-  add1e6digit(-24, -18);
-  add1e6digit(-18, -12);
-  add1e6digit(-12, -6);
-  add1e6digit(-6);
-  return minus ? negate2(lowBits, highBits) : newBits2(lowBits, highBits);
+function formatAbiItem(abiItem) {
+  if (abiItem.type === "function")
+    return `function ${abiItem.name}(${formatAbiParameters(abiItem.inputs)})${abiItem.stateMutability && abiItem.stateMutability !== "nonpayable" ? ` ${abiItem.stateMutability}` : ""}${abiItem.outputs?.length ? ` returns (${formatAbiParameters(abiItem.outputs)})` : ""}`;
+  if (abiItem.type === "event")
+    return `event ${abiItem.name}(${formatAbiParameters(abiItem.inputs)})`;
+  if (abiItem.type === "error")
+    return `error ${abiItem.name}(${formatAbiParameters(abiItem.inputs)})`;
+  if (abiItem.type === "constructor")
+    return `constructor(${formatAbiParameters(abiItem.inputs)})${abiItem.stateMutability === "payable" ? " payable" : ""}`;
+  if (abiItem.type === "fallback")
+    return `fallback() external${abiItem.stateMutability === "payable" ? " payable" : ""}`;
+  return "receive() external payable";
 }
-function int64ToString2(lo, hi) {
-  let bits = newBits2(lo, hi);
-  const negative = bits.hi & 2147483648;
-  if (negative) {
-    bits = negate2(bits.lo, bits.hi);
-  }
-  const result = uInt64ToString2(bits.lo, bits.hi);
-  return negative ? "-" + result : result;
+var errorSignatureRegex = /^error (?<name>[a-zA-Z$_][a-zA-Z0-9$_]*)\((?<parameters>.*?)\)$/;
+function isErrorSignature(signature) {
+  return errorSignatureRegex.test(signature);
 }
-function uInt64ToString2(lo, hi) {
-  ({ lo, hi } = toUnsigned2(lo, hi));
-  if (hi <= 2097151) {
-    return String(TWO_PWR_32_DBL2 * hi + lo);
-  }
-  const low = lo & 16777215;
-  const mid = (lo >>> 24 | hi << 8) & 16777215;
-  const high = hi >> 16 & 65535;
-  let digitA = low + mid * 6777216 + high * 6710656;
-  let digitB = mid + high * 8147497;
-  let digitC = high * 2;
-  const base = 1e7;
-  if (digitA >= base) {
-    digitB += Math.floor(digitA / base);
-    digitA %= base;
-  }
-  if (digitB >= base) {
-    digitC += Math.floor(digitB / base);
-    digitB %= base;
-  }
-  return digitC.toString() + decimalFrom1e7WithLeadingZeros2(digitB) + decimalFrom1e7WithLeadingZeros2(digitA);
+function execErrorSignature(signature) {
+  return execTyped(errorSignatureRegex, signature);
 }
-function toUnsigned2(lo, hi) {
-  return { lo: lo >>> 0, hi: hi >>> 0 };
+var eventSignatureRegex = /^event (?<name>[a-zA-Z$_][a-zA-Z0-9$_]*)\((?<parameters>.*?)\)$/;
+function isEventSignature(signature) {
+  return eventSignatureRegex.test(signature);
 }
-function newBits2(lo, hi) {
-  return { lo: lo | 0, hi: hi | 0 };
+function execEventSignature(signature) {
+  return execTyped(eventSignatureRegex, signature);
 }
-function negate2(lowBits, highBits) {
-  highBits = ~highBits;
-  if (lowBits) {
-    lowBits = ~lowBits + 1;
-  } else {
-    highBits += 1;
-  }
-  return newBits2(lowBits, highBits);
+var functionSignatureRegex = /^function (?<name>[a-zA-Z$_][a-zA-Z0-9$_]*)\((?<parameters>.*?)\)(?: (?<scope>external|public{1}))?(?: (?<stateMutability>pure|view|nonpayable|payable{1}))?(?: returns\s?\((?<returns>.*?)\))?$/;
+function isFunctionSignature(signature) {
+  return functionSignatureRegex.test(signature);
 }
-var decimalFrom1e7WithLeadingZeros2 = (digit1e7) => {
-  const partial = String(digit1e7);
-  return "0000000".slice(partial.length) + partial;
-};
-function varint32write2(value2, bytes) {
-  if (value2 >= 0) {
-    while (value2 > 127) {
-      bytes.push(value2 & 127 | 128);
-      value2 = value2 >>> 7;
-    }
-    bytes.push(value2);
-  } else {
-    for (let i2 = 0;i2 < 9; i2++) {
-      bytes.push(value2 & 127 | 128);
-      value2 = value2 >> 7;
-    }
-    bytes.push(1);
-  }
+function execFunctionSignature(signature) {
+  return execTyped(functionSignatureRegex, signature);
 }
-function varint32read2() {
-  let b = this.buf[this.pos++];
-  let result = b & 127;
-  if ((b & 128) == 0) {
-    this.assertBounds();
-    return result;
-  }
-  b = this.buf[this.pos++];
-  result |= (b & 127) << 7;
-  if ((b & 128) == 0) {
-    this.assertBounds();
-    return result;
-  }
-  b = this.buf[this.pos++];
-  result |= (b & 127) << 14;
-  if ((b & 128) == 0) {
-    this.assertBounds();
-    return result;
-  }
-  b = this.buf[this.pos++];
-  result |= (b & 127) << 21;
-  if ((b & 128) == 0) {
-    this.assertBounds();
-    return result;
-  }
-  b = this.buf[this.pos++];
-  result |= (b & 15) << 28;
-  for (let readBytes = 5;(b & 128) !== 0 && readBytes < 10; readBytes++)
-    b = this.buf[this.pos++];
-  if ((b & 128) != 0)
-    throw new Error("invalid varint");
-  this.assertBounds();
-  return result >>> 0;
+var structSignatureRegex = /^struct (?<name>[a-zA-Z$_][a-zA-Z0-9$_]*) \{(?<properties>.*?)\}$/;
+function isStructSignature(signature) {
+  return structSignatureRegex.test(signature);
 }
-var protoInt642 = /* @__PURE__ */ makeInt64Support2();
-function makeInt64Support2() {
-  const dv = new DataView(new ArrayBuffer(8));
-  const ok2 = typeof BigInt === "function" && typeof dv.getBigInt64 === "function" && typeof dv.getBigUint64 === "function" && typeof dv.setBigInt64 === "function" && typeof dv.setBigUint64 === "function" && (typeof process != "object" || typeof process.env != "object" || process.env.BUF_BIGINT_DISABLE !== "1");
-  if (ok2) {
-    const MIN = BigInt("-9223372036854775808");
-    const MAX = BigInt("9223372036854775807");
-    const UMIN = BigInt("0");
-    const UMAX = BigInt("18446744073709551615");
-    return {
-      zero: BigInt(0),
-      supported: true,
-      parse(value2) {
-        const bi = typeof value2 == "bigint" ? value2 : BigInt(value2);
-        if (bi > MAX || bi < MIN) {
-          throw new Error(`invalid int64: ${value2}`);
-        }
-        return bi;
-      },
-      uParse(value2) {
-        const bi = typeof value2 == "bigint" ? value2 : BigInt(value2);
-        if (bi > UMAX || bi < UMIN) {
-          throw new Error(`invalid uint64: ${value2}`);
-        }
-        return bi;
-      },
-      enc(value2) {
-        dv.setBigInt64(0, this.parse(value2), true);
-        return {
-          lo: dv.getInt32(0, true),
-          hi: dv.getInt32(4, true)
-        };
-      },
-      uEnc(value2) {
-        dv.setBigInt64(0, this.uParse(value2), true);
-        return {
-          lo: dv.getInt32(0, true),
-          hi: dv.getInt32(4, true)
-        };
-      },
-      dec(lo, hi) {
-        dv.setInt32(0, lo, true);
-        dv.setInt32(4, hi, true);
-        return dv.getBigInt64(0, true);
-      },
-      uDec(lo, hi) {
-        dv.setInt32(0, lo, true);
-        dv.setInt32(4, hi, true);
-        return dv.getBigUint64(0, true);
-      }
-    };
-  }
-  return {
-    zero: "0",
-    supported: false,
-    parse(value2) {
-      if (typeof value2 != "string") {
-        value2 = value2.toString();
-      }
-      assertInt64String2(value2);
-      return value2;
-    },
-    uParse(value2) {
-      if (typeof value2 != "string") {
-        value2 = value2.toString();
-      }
-      assertUInt64String2(value2);
-      return value2;
-    },
-    enc(value2) {
-      if (typeof value2 != "string") {
-        value2 = value2.toString();
-      }
-      assertInt64String2(value2);
-      return int64FromString2(value2);
-    },
-    uEnc(value2) {
-      if (typeof value2 != "string") {
-        value2 = value2.toString();
-      }
-      assertUInt64String2(value2);
-      return int64FromString2(value2);
-    },
-    dec(lo, hi) {
-      return int64ToString2(lo, hi);
-    },
-    uDec(lo, hi) {
-      return uInt64ToString2(lo, hi);
-    }
-  };
+function execStructSignature(signature) {
+  return execTyped(structSignatureRegex, signature);
 }
-function assertInt64String2(value2) {
-  if (!/^-?[0-9]+$/.test(value2)) {
-    throw new Error("invalid int64: " + value2);
-  }
+var constructorSignatureRegex = /^constructor\((?<parameters>.*?)\)(?:\s(?<stateMutability>payable{1}))?$/;
+function isConstructorSignature(signature) {
+  return constructorSignatureRegex.test(signature);
 }
-function assertUInt64String2(value2) {
-  if (!/^[0-9]+$/.test(value2)) {
-    throw new Error("invalid uint64: " + value2);
-  }
+function execConstructorSignature(signature) {
+  return execTyped(constructorSignatureRegex, signature);
 }
-function scalarZeroValue2(type, longAsString) {
-  switch (type) {
-    case ScalarType2.STRING:
-      return "";
-    case ScalarType2.BOOL:
-      return false;
-    case ScalarType2.DOUBLE:
-    case ScalarType2.FLOAT:
-      return 0;
-    case ScalarType2.INT64:
-    case ScalarType2.UINT64:
-    case ScalarType2.SFIXED64:
-    case ScalarType2.FIXED64:
-    case ScalarType2.SINT64:
-      return longAsString ? "0" : protoInt642.zero;
-    case ScalarType2.BYTES:
-      return new Uint8Array(0);
-    default:
-      return 0;
-  }
+var fallbackSignatureRegex = /^fallback\(\) external(?:\s(?<stateMutability>payable{1}))?$/;
+function isFallbackSignature(signature) {
+  return fallbackSignatureRegex.test(signature);
 }
-function isScalarZeroValue2(type, value2) {
-  switch (type) {
-    case ScalarType2.BOOL:
-      return value2 === false;
-    case ScalarType2.STRING:
-      return value2 === "";
-    case ScalarType2.BYTES:
-      return value2 instanceof Uint8Array && !value2.byteLength;
-    default:
-      return value2 == 0;
-  }
+function execFallbackSignature(signature) {
+  return execTyped(fallbackSignatureRegex, signature);
 }
-var IMPLICIT4 = 2;
-var unsafeLocal2 = Symbol.for("reflect unsafe local");
-function unsafeOneofCase2(target, oneof) {
-  const c = target[oneof.localName].case;
-  if (c === undefined) {
-    return c;
-  }
-  return oneof.fields.find((f) => f.localName === c);
+var receiveSignatureRegex = /^receive\(\) external payable$/;
+function isReceiveSignature(signature) {
+  return receiveSignatureRegex.test(signature);
 }
-function unsafeIsSet2(target, field) {
-  const name = field.localName;
-  if (field.oneof) {
-    return target[field.oneof.localName].case === name;
-  }
-  if (field.presence != IMPLICIT4) {
-    return target[name] !== undefined && Object.prototype.hasOwnProperty.call(target, name);
-  }
-  switch (field.fieldKind) {
-    case "list":
-      return target[name].length > 0;
-    case "map":
-      return Object.keys(target[name]).length > 0;
-    case "scalar":
-      return !isScalarZeroValue2(field.scalar, target[name]);
-    case "enum":
-      return target[name] !== field.enum.values[0].number;
-  }
-  throw new Error("message field with implicit presence");
-}
-function unsafeIsSetExplicit2(target, localName) {
-  return Object.prototype.hasOwnProperty.call(target, localName) && target[localName] !== undefined;
-}
-function unsafeGet2(target, field) {
-  if (field.oneof) {
-    const oneof = target[field.oneof.localName];
-    if (oneof.case === field.localName) {
-      return oneof.value;
-    }
-    return;
-  }
-  return target[field.localName];
-}
-function unsafeSet2(target, field, value2) {
-  if (field.oneof) {
-    target[field.oneof.localName] = {
-      case: field.localName,
-      value: value2
-    };
-  } else {
-    target[field.localName] = value2;
-  }
-}
-function unsafeClear2(target, field) {
-  const name = field.localName;
-  if (field.oneof) {
-    const oneofLocalName = field.oneof.localName;
-    if (target[oneofLocalName].case === name) {
-      target[oneofLocalName] = { case: undefined };
-    }
-  } else if (field.presence != IMPLICIT4) {
-    delete target[name];
-  } else {
-    switch (field.fieldKind) {
-      case "map":
-        target[name] = {};
-        break;
-      case "list":
-        target[name] = [];
-        break;
-      case "enum":
-        target[name] = field.enum.values[0].number;
-        break;
-      case "scalar":
-        target[name] = scalarZeroValue2(field.scalar, field.longAsString);
-        break;
-    }
-  }
-}
-function isObject2(arg) {
-  return arg !== null && typeof arg == "object" && !Array.isArray(arg);
-}
-function isReflectList2(arg, field) {
-  var _a, _b, _c, _d;
-  if (isObject2(arg) && unsafeLocal2 in arg && "add" in arg && "field" in arg && typeof arg.field == "function") {
-    if (field !== undefined) {
-      const a = field;
-      const b = arg.field();
-      return a.listKind == b.listKind && a.scalar === b.scalar && ((_a = a.message) === null || _a === undefined ? undefined : _a.typeName) === ((_b = b.message) === null || _b === undefined ? undefined : _b.typeName) && ((_c = a.enum) === null || _c === undefined ? undefined : _c.typeName) === ((_d = b.enum) === null || _d === undefined ? undefined : _d.typeName);
-    }
-    return true;
-  }
-  return false;
-}
-function isReflectMap2(arg, field) {
-  var _a, _b, _c, _d;
-  if (isObject2(arg) && unsafeLocal2 in arg && "has" in arg && "field" in arg && typeof arg.field == "function") {
-    if (field !== undefined) {
-      const a = field, b = arg.field();
-      return a.mapKey === b.mapKey && a.mapKind == b.mapKind && a.scalar === b.scalar && ((_a = a.message) === null || _a === undefined ? undefined : _a.typeName) === ((_b = b.message) === null || _b === undefined ? undefined : _b.typeName) && ((_c = a.enum) === null || _c === undefined ? undefined : _c.typeName) === ((_d = b.enum) === null || _d === undefined ? undefined : _d.typeName);
-    }
-    return true;
-  }
-  return false;
-}
-function isReflectMessage2(arg, messageDesc2) {
-  return isObject2(arg) && unsafeLocal2 in arg && "desc" in arg && isObject2(arg.desc) && arg.desc.kind === "message" && (messageDesc2 === undefined || arg.desc.typeName == messageDesc2.typeName);
-}
-function isWrapper2(arg) {
-  return isWrapperTypeName2(arg.$typeName);
-}
-function isWrapperDesc2(messageDesc2) {
-  const f = messageDesc2.fields[0];
-  return isWrapperTypeName2(messageDesc2.typeName) && f !== undefined && f.fieldKind == "scalar" && f.name == "value" && f.number == 1;
-}
-function isWrapperTypeName2(name) {
-  return name.startsWith("google.protobuf.") && [
-    "DoubleValue",
-    "FloatValue",
-    "Int64Value",
-    "UInt64Value",
-    "Int32Value",
-    "UInt32Value",
-    "BoolValue",
-    "StringValue",
-    "BytesValue"
-  ].includes(name.substring(16));
-}
-var EDITION_PROTO33 = 999;
-var EDITION_PROTO23 = 998;
-var IMPLICIT5 = 2;
-function create3(schema, init) {
-  if (isMessage2(init, schema)) {
-    return init;
-  }
-  const message = createZeroMessage2(schema);
-  if (init !== undefined) {
-    initMessage2(schema, message, init);
-  }
-  return message;
-}
-function initMessage2(messageDesc2, message, init) {
-  for (const member of messageDesc2.members) {
-    let value2 = init[member.localName];
-    if (value2 == null) {
-      continue;
-    }
-    let field;
-    if (member.kind == "oneof") {
-      const oneofField = unsafeOneofCase2(init, member);
-      if (!oneofField) {
-        continue;
-      }
-      field = oneofField;
-      value2 = unsafeGet2(init, oneofField);
-    } else {
-      field = member;
-    }
-    switch (field.fieldKind) {
-      case "message":
-        value2 = toMessage2(field, value2);
-        break;
-      case "scalar":
-        value2 = initScalar2(field, value2);
-        break;
-      case "list":
-        value2 = initList2(field, value2);
-        break;
-      case "map":
-        value2 = initMap2(field, value2);
-        break;
-    }
-    unsafeSet2(message, field, value2);
-  }
-  return message;
-}
-function initScalar2(field, value2) {
-  if (field.scalar == ScalarType2.BYTES) {
-    return toU8Arr2(value2);
-  }
-  return value2;
-}
-function initMap2(field, value2) {
-  if (isObject2(value2)) {
-    if (field.scalar == ScalarType2.BYTES) {
-      return convertObjectValues2(value2, toU8Arr2);
-    }
-    if (field.mapKind == "message") {
-      return convertObjectValues2(value2, (val) => toMessage2(field, val));
-    }
-  }
-  return value2;
-}
-function initList2(field, value2) {
-  if (Array.isArray(value2)) {
-    if (field.scalar == ScalarType2.BYTES) {
-      return value2.map(toU8Arr2);
-    }
-    if (field.listKind == "message") {
-      return value2.map((item) => toMessage2(field, item));
-    }
-  }
-  return value2;
-}
-function toMessage2(field, value2) {
-  if (field.fieldKind == "message" && !field.oneof && isWrapperDesc2(field.message)) {
-    return initScalar2(field.message.fields[0], value2);
-  }
-  if (isObject2(value2)) {
-    if (field.message.typeName == "google.protobuf.Struct" && field.parent.typeName !== "google.protobuf.Value") {
-      return value2;
-    }
-    if (!isMessage2(value2, field.message)) {
-      return create3(field.message, value2);
-    }
-  }
-  return value2;
-}
-function toU8Arr2(value2) {
-  return Array.isArray(value2) ? new Uint8Array(value2) : value2;
-}
-function convertObjectValues2(obj, fn) {
-  const ret = {};
-  for (const entry of Object.entries(obj)) {
-    ret[entry[0]] = fn(entry[1]);
-  }
-  return ret;
-}
-var tokenZeroMessageField2 = Symbol();
-var messagePrototypes2 = new WeakMap;
-function createZeroMessage2(desc) {
-  let msg;
-  if (!needsPrototypeChain2(desc)) {
-    msg = {
-      $typeName: desc.typeName
-    };
-    for (const member of desc.members) {
-      if (member.kind == "oneof" || member.presence == IMPLICIT5) {
-        msg[member.localName] = createZeroField2(member);
-      }
-    }
-  } else {
-    const cached = messagePrototypes2.get(desc);
-    let prototype;
-    let members;
-    if (cached) {
-      ({ prototype, members } = cached);
-    } else {
-      prototype = {};
-      members = new Set;
-      for (const member of desc.members) {
-        if (member.kind == "oneof") {
-          continue;
-        }
-        if (member.fieldKind != "scalar" && member.fieldKind != "enum") {
-          continue;
-        }
-        if (member.presence == IMPLICIT5) {
-          continue;
-        }
-        members.add(member);
-        prototype[member.localName] = createZeroField2(member);
-      }
-      messagePrototypes2.set(desc, { prototype, members });
-    }
-    msg = Object.create(prototype);
-    msg.$typeName = desc.typeName;
-    for (const member of desc.members) {
-      if (members.has(member)) {
-        continue;
-      }
-      if (member.kind == "field") {
-        if (member.fieldKind == "message") {
-          continue;
-        }
-        if (member.fieldKind == "scalar" || member.fieldKind == "enum") {
-          if (member.presence != IMPLICIT5) {
-            continue;
-          }
-        }
-      }
-      msg[member.localName] = createZeroField2(member);
-    }
-  }
-  return msg;
-}
-function needsPrototypeChain2(desc) {
-  switch (desc.file.edition) {
-    case EDITION_PROTO33:
-      return false;
-    case EDITION_PROTO23:
-      return true;
-    default:
-      return desc.fields.some((f) => f.presence != IMPLICIT5 && f.fieldKind != "message" && !f.oneof);
-  }
-}
-function createZeroField2(field) {
-  if (field.kind == "oneof") {
-    return { case: undefined };
-  }
-  if (field.fieldKind == "list") {
-    return [];
-  }
-  if (field.fieldKind == "map") {
-    return {};
-  }
-  if (field.fieldKind == "message") {
-    return tokenZeroMessageField2;
-  }
-  const defaultValue = field.getDefaultValue();
-  if (defaultValue !== undefined) {
-    return field.fieldKind == "scalar" && field.longAsString ? defaultValue.toString() : defaultValue;
-  }
-  return field.fieldKind == "scalar" ? scalarZeroValue2(field.scalar, field.longAsString) : field.enum.values[0].number;
-}
-var errorNames2 = [
-  "FieldValueInvalidError",
-  "FieldListRangeError",
-  "ForeignFieldError"
-];
+var modifiers = new Set([
+  "memory",
+  "indexed",
+  "storage",
+  "calldata"
+]);
+var eventModifiers = new Set(["indexed"]);
+var functionModifiers = new Set([
+  "calldata",
+  "memory",
+  "storage"
+]);
+var version = "1.2.3";
 
-class FieldError2 extends Error {
-  constructor(fieldOrOneof, message, name = "FieldValueInvalidError") {
+class BaseError extends Error {
+  constructor(shortMessage, args = {}) {
+    const details = args.cause instanceof BaseError ? args.cause.details : args.cause?.message ? args.cause.message : args.details;
+    const docsPath = args.cause instanceof BaseError ? args.cause.docsPath || args.docsPath : args.docsPath;
+    const message = [
+      shortMessage || "An error occurred.",
+      "",
+      ...args.metaMessages ? [...args.metaMessages, ""] : [],
+      ...docsPath ? [`Docs: https://abitype.dev${docsPath}`] : [],
+      ...details ? [`Details: ${details}`] : [],
+      `Version: abitype@${version}`
+    ].join(`
+`);
     super(message);
-    this.name = name;
-    this.field = () => fieldOrOneof;
-  }
-}
-function isFieldError2(arg) {
-  return arg instanceof Error && errorNames2.includes(arg.name) && "field" in arg && typeof arg.field == "function";
-}
-var symbol2 = Symbol.for("@bufbuild/protobuf/text-encoding");
-function getTextEncoding2() {
-  if (globalThis[symbol2] == undefined) {
-    const te = new globalThis.TextEncoder;
-    const td = new globalThis.TextDecoder;
-    globalThis[symbol2] = {
-      encodeUtf8(text) {
-        return te.encode(text);
-      },
-      decodeUtf8(bytes) {
-        return td.decode(bytes);
-      },
-      checkUtf8(text) {
-        try {
-          encodeURIComponent(text);
-          return true;
-        } catch (_) {
-          return false;
-        }
-      }
-    };
-  }
-  return globalThis[symbol2];
-}
-var WireType2;
-(function(WireType3) {
-  WireType3[WireType3["Varint"] = 0] = "Varint";
-  WireType3[WireType3["Bit64"] = 1] = "Bit64";
-  WireType3[WireType3["LengthDelimited"] = 2] = "LengthDelimited";
-  WireType3[WireType3["StartGroup"] = 3] = "StartGroup";
-  WireType3[WireType3["EndGroup"] = 4] = "EndGroup";
-  WireType3[WireType3["Bit32"] = 5] = "Bit32";
-})(WireType2 || (WireType2 = {}));
-var FLOAT32_MAX2 = 340282346638528860000000000000000000000;
-var FLOAT32_MIN2 = -340282346638528860000000000000000000000;
-var UINT32_MAX2 = 4294967295;
-var INT32_MAX2 = 2147483647;
-var INT32_MIN2 = -2147483648;
-
-class BinaryWriter2 {
-  constructor(encodeUtf8 = getTextEncoding2().encodeUtf8) {
-    this.encodeUtf8 = encodeUtf8;
-    this.stack = [];
-    this.chunks = [];
-    this.buf = [];
-  }
-  finish() {
-    if (this.buf.length) {
-      this.chunks.push(new Uint8Array(this.buf));
-      this.buf = [];
-    }
-    let len2 = 0;
-    for (let i2 = 0;i2 < this.chunks.length; i2++)
-      len2 += this.chunks[i2].length;
-    let bytes = new Uint8Array(len2);
-    let offset = 0;
-    for (let i2 = 0;i2 < this.chunks.length; i2++) {
-      bytes.set(this.chunks[i2], offset);
-      offset += this.chunks[i2].length;
-    }
-    this.chunks = [];
-    return bytes;
-  }
-  fork() {
-    this.stack.push({ chunks: this.chunks, buf: this.buf });
-    this.chunks = [];
-    this.buf = [];
-    return this;
-  }
-  join() {
-    let chunk = this.finish();
-    let prev = this.stack.pop();
-    if (!prev)
-      throw new Error("invalid state, fork stack empty");
-    this.chunks = prev.chunks;
-    this.buf = prev.buf;
-    this.uint32(chunk.byteLength);
-    return this.raw(chunk);
-  }
-  tag(fieldNo, type) {
-    return this.uint32((fieldNo << 3 | type) >>> 0);
-  }
-  raw(chunk) {
-    if (this.buf.length) {
-      this.chunks.push(new Uint8Array(this.buf));
-      this.buf = [];
-    }
-    this.chunks.push(chunk);
-    return this;
-  }
-  uint32(value2) {
-    assertUInt322(value2);
-    while (value2 > 127) {
-      this.buf.push(value2 & 127 | 128);
-      value2 = value2 >>> 7;
-    }
-    this.buf.push(value2);
-    return this;
-  }
-  int32(value2) {
-    assertInt322(value2);
-    varint32write2(value2, this.buf);
-    return this;
-  }
-  bool(value2) {
-    this.buf.push(value2 ? 1 : 0);
-    return this;
-  }
-  bytes(value2) {
-    this.uint32(value2.byteLength);
-    return this.raw(value2);
-  }
-  string(value2) {
-    let chunk = this.encodeUtf8(value2);
-    this.uint32(chunk.byteLength);
-    return this.raw(chunk);
-  }
-  float(value2) {
-    assertFloat322(value2);
-    let chunk = new Uint8Array(4);
-    new DataView(chunk.buffer).setFloat32(0, value2, true);
-    return this.raw(chunk);
-  }
-  double(value2) {
-    let chunk = new Uint8Array(8);
-    new DataView(chunk.buffer).setFloat64(0, value2, true);
-    return this.raw(chunk);
-  }
-  fixed32(value2) {
-    assertUInt322(value2);
-    let chunk = new Uint8Array(4);
-    new DataView(chunk.buffer).setUint32(0, value2, true);
-    return this.raw(chunk);
-  }
-  sfixed32(value2) {
-    assertInt322(value2);
-    let chunk = new Uint8Array(4);
-    new DataView(chunk.buffer).setInt32(0, value2, true);
-    return this.raw(chunk);
-  }
-  sint32(value2) {
-    assertInt322(value2);
-    value2 = (value2 << 1 ^ value2 >> 31) >>> 0;
-    varint32write2(value2, this.buf);
-    return this;
-  }
-  sfixed64(value2) {
-    let chunk = new Uint8Array(8), view = new DataView(chunk.buffer), tc = protoInt642.enc(value2);
-    view.setInt32(0, tc.lo, true);
-    view.setInt32(4, tc.hi, true);
-    return this.raw(chunk);
-  }
-  fixed64(value2) {
-    let chunk = new Uint8Array(8), view = new DataView(chunk.buffer), tc = protoInt642.uEnc(value2);
-    view.setInt32(0, tc.lo, true);
-    view.setInt32(4, tc.hi, true);
-    return this.raw(chunk);
-  }
-  int64(value2) {
-    let tc = protoInt642.enc(value2);
-    varint64write2(tc.lo, tc.hi, this.buf);
-    return this;
-  }
-  sint64(value2) {
-    const tc = protoInt642.enc(value2), sign = tc.hi >> 31, lo = tc.lo << 1 ^ sign, hi = (tc.hi << 1 | tc.lo >>> 31) ^ sign;
-    varint64write2(lo, hi, this.buf);
-    return this;
-  }
-  uint64(value2) {
-    const tc = protoInt642.uEnc(value2);
-    varint64write2(tc.lo, tc.hi, this.buf);
-    return this;
+    Object.defineProperty(this, "details", {
+      enumerable: true,
+      configurable: true,
+      writable: true,
+      value: undefined
+    });
+    Object.defineProperty(this, "docsPath", {
+      enumerable: true,
+      configurable: true,
+      writable: true,
+      value: undefined
+    });
+    Object.defineProperty(this, "metaMessages", {
+      enumerable: true,
+      configurable: true,
+      writable: true,
+      value: undefined
+    });
+    Object.defineProperty(this, "shortMessage", {
+      enumerable: true,
+      configurable: true,
+      writable: true,
+      value: undefined
+    });
+    Object.defineProperty(this, "name", {
+      enumerable: true,
+      configurable: true,
+      writable: true,
+      value: "AbiTypeError"
+    });
+    if (args.cause)
+      this.cause = args.cause;
+    this.details = details;
+    this.docsPath = docsPath;
+    this.metaMessages = args.metaMessages;
+    this.shortMessage = shortMessage;
   }
 }
 
-class BinaryReader2 {
-  constructor(buf, decodeUtf8 = getTextEncoding2().decodeUtf8) {
-    this.decodeUtf8 = decodeUtf8;
-    this.varint64 = varint64read2;
-    this.uint32 = varint32read2;
-    this.buf = buf;
-    this.len = buf.length;
-    this.pos = 0;
-    this.view = new DataView(buf.buffer, buf.byteOffset, buf.byteLength);
-  }
-  tag() {
-    let tag = this.uint32(), fieldNo = tag >>> 3, wireType = tag & 7;
-    if (fieldNo <= 0 || wireType < 0 || wireType > 5)
-      throw new Error("illegal tag: field no " + fieldNo + " wire type " + wireType);
-    return [fieldNo, wireType];
-  }
-  skip(wireType, fieldNo) {
-    let start = this.pos;
-    switch (wireType) {
-      case WireType2.Varint:
-        while (this.buf[this.pos++] & 128) {}
-        break;
-      case WireType2.Bit64:
-        this.pos += 4;
-      case WireType2.Bit32:
-        this.pos += 4;
-        break;
-      case WireType2.LengthDelimited:
-        let len2 = this.uint32();
-        this.pos += len2;
-        break;
-      case WireType2.StartGroup:
-        for (;; ) {
-          const [fn, wt] = this.tag();
-          if (wt === WireType2.EndGroup) {
-            if (fieldNo !== undefined && fn !== fieldNo) {
-              throw new Error("invalid end group tag");
-            }
-            break;
-          }
-          this.skip(wt, fn);
-        }
-        break;
-      default:
-        throw new Error("cant skip wire type " + wireType);
-    }
-    this.assertBounds();
-    return this.buf.subarray(start, this.pos);
-  }
-  assertBounds() {
-    if (this.pos > this.len)
-      throw new RangeError("premature EOF");
-  }
-  int32() {
-    return this.uint32() | 0;
-  }
-  sint32() {
-    let zze = this.uint32();
-    return zze >>> 1 ^ -(zze & 1);
-  }
-  int64() {
-    return protoInt642.dec(...this.varint64());
-  }
-  uint64() {
-    return protoInt642.uDec(...this.varint64());
-  }
-  sint64() {
-    let [lo, hi] = this.varint64();
-    let s = -(lo & 1);
-    lo = (lo >>> 1 | (hi & 1) << 31) ^ s;
-    hi = hi >>> 1 ^ s;
-    return protoInt642.dec(lo, hi);
-  }
-  bool() {
-    let [lo, hi] = this.varint64();
-    return lo !== 0 || hi !== 0;
-  }
-  fixed32() {
-    return this.view.getUint32((this.pos += 4) - 4, true);
-  }
-  sfixed32() {
-    return this.view.getInt32((this.pos += 4) - 4, true);
-  }
-  fixed64() {
-    return protoInt642.uDec(this.sfixed32(), this.sfixed32());
-  }
-  sfixed64() {
-    return protoInt642.dec(this.sfixed32(), this.sfixed32());
-  }
-  float() {
-    return this.view.getFloat32((this.pos += 4) - 4, true);
-  }
-  double() {
-    return this.view.getFloat64((this.pos += 8) - 8, true);
-  }
-  bytes() {
-    let len2 = this.uint32(), start = this.pos;
-    this.pos += len2;
-    this.assertBounds();
-    return this.buf.subarray(start, start + len2);
-  }
-  string() {
-    return this.decodeUtf8(this.bytes());
-  }
-}
-function assertInt322(arg) {
-  if (typeof arg == "string") {
-    arg = Number(arg);
-  } else if (typeof arg != "number") {
-    throw new Error("invalid int32: " + typeof arg);
-  }
-  if (!Number.isInteger(arg) || arg > INT32_MAX2 || arg < INT32_MIN2)
-    throw new Error("invalid int32: " + arg);
-}
-function assertUInt322(arg) {
-  if (typeof arg == "string") {
-    arg = Number(arg);
-  } else if (typeof arg != "number") {
-    throw new Error("invalid uint32: " + typeof arg);
-  }
-  if (!Number.isInteger(arg) || arg > UINT32_MAX2 || arg < 0)
-    throw new Error("invalid uint32: " + arg);
-}
-function assertFloat322(arg) {
-  if (typeof arg == "string") {
-    const o = arg;
-    arg = Number(arg);
-    if (Number.isNaN(arg) && o !== "NaN") {
-      throw new Error("invalid float32: " + o);
-    }
-  } else if (typeof arg != "number") {
-    throw new Error("invalid float32: " + typeof arg);
-  }
-  if (Number.isFinite(arg) && (arg > FLOAT32_MAX2 || arg < FLOAT32_MIN2))
-    throw new Error("invalid float32: " + arg);
-}
-function checkField2(field, value2) {
-  const check = field.fieldKind == "list" ? isReflectList2(value2, field) : field.fieldKind == "map" ? isReflectMap2(value2, field) : checkSingular2(field, value2);
-  if (check === true) {
-    return;
-  }
-  let reason;
-  switch (field.fieldKind) {
-    case "list":
-      reason = `expected ${formatReflectList2(field)}, got ${formatVal2(value2)}`;
-      break;
-    case "map":
-      reason = `expected ${formatReflectMap2(field)}, got ${formatVal2(value2)}`;
-      break;
-    default: {
-      reason = reasonSingular2(field, value2, check);
-    }
-  }
-  return new FieldError2(field, reason);
-}
-function checkListItem2(field, index, value2) {
-  const check = checkSingular2(field, value2);
-  if (check !== true) {
-    return new FieldError2(field, `list item #${index + 1}: ${reasonSingular2(field, value2, check)}`);
-  }
-  return;
-}
-function checkMapEntry2(field, key, value2) {
-  const checkKey = checkScalarValue2(key, field.mapKey);
-  if (checkKey !== true) {
-    return new FieldError2(field, `invalid map key: ${reasonSingular2({ scalar: field.mapKey }, key, checkKey)}`);
-  }
-  const checkVal = checkSingular2(field, value2);
-  if (checkVal !== true) {
-    return new FieldError2(field, `map entry ${formatVal2(key)}: ${reasonSingular2(field, value2, checkVal)}`);
-  }
-  return;
-}
-function checkSingular2(field, value2) {
-  if (field.scalar !== undefined) {
-    return checkScalarValue2(value2, field.scalar);
-  }
-  if (field.enum !== undefined) {
-    if (field.enum.open) {
-      return Number.isInteger(value2);
-    }
-    return field.enum.values.some((v) => v.number === value2);
-  }
-  return isReflectMessage2(value2, field.message);
-}
-function checkScalarValue2(value2, scalar) {
-  switch (scalar) {
-    case ScalarType2.DOUBLE:
-      return typeof value2 == "number";
-    case ScalarType2.FLOAT:
-      if (typeof value2 != "number") {
-        return false;
-      }
-      if (Number.isNaN(value2) || !Number.isFinite(value2)) {
-        return true;
-      }
-      if (value2 > FLOAT32_MAX2 || value2 < FLOAT32_MIN2) {
-        return `${value2.toFixed()} out of range`;
-      }
-      return true;
-    case ScalarType2.INT32:
-    case ScalarType2.SFIXED32:
-    case ScalarType2.SINT32:
-      if (typeof value2 !== "number" || !Number.isInteger(value2)) {
-        return false;
-      }
-      if (value2 > INT32_MAX2 || value2 < INT32_MIN2) {
-        return `${value2.toFixed()} out of range`;
-      }
-      return true;
-    case ScalarType2.FIXED32:
-    case ScalarType2.UINT32:
-      if (typeof value2 !== "number" || !Number.isInteger(value2)) {
-        return false;
-      }
-      if (value2 > UINT32_MAX2 || value2 < 0) {
-        return `${value2.toFixed()} out of range`;
-      }
-      return true;
-    case ScalarType2.BOOL:
-      return typeof value2 == "boolean";
-    case ScalarType2.STRING:
-      if (typeof value2 != "string") {
-        return false;
-      }
-      return getTextEncoding2().checkUtf8(value2) || "invalid UTF8";
-    case ScalarType2.BYTES:
-      return value2 instanceof Uint8Array;
-    case ScalarType2.INT64:
-    case ScalarType2.SFIXED64:
-    case ScalarType2.SINT64:
-      if (typeof value2 == "bigint" || typeof value2 == "number" || typeof value2 == "string" && value2.length > 0) {
-        try {
-          protoInt642.parse(value2);
-          return true;
-        } catch (_) {
-          return `${value2} out of range`;
-        }
-      }
-      return false;
-    case ScalarType2.FIXED64:
-    case ScalarType2.UINT64:
-      if (typeof value2 == "bigint" || typeof value2 == "number" || typeof value2 == "string" && value2.length > 0) {
-        try {
-          protoInt642.uParse(value2);
-          return true;
-        } catch (_) {
-          return `${value2} out of range`;
-        }
-      }
-      return false;
-  }
-}
-function reasonSingular2(field, val, details) {
-  details = typeof details == "string" ? `: ${details}` : `, got ${formatVal2(val)}`;
-  if (field.scalar !== undefined) {
-    return `expected ${scalarTypeDescription2(field.scalar)}` + details;
-  }
-  if (field.enum !== undefined) {
-    return `expected ${field.enum.toString()}` + details;
-  }
-  return `expected ${formatReflectMessage2(field.message)}` + details;
-}
-function formatVal2(val) {
-  switch (typeof val) {
-    case "object":
-      if (val === null) {
-        return "null";
-      }
-      if (val instanceof Uint8Array) {
-        return `Uint8Array(${val.length})`;
-      }
-      if (Array.isArray(val)) {
-        return `Array(${val.length})`;
-      }
-      if (isReflectList2(val)) {
-        return formatReflectList2(val.field());
-      }
-      if (isReflectMap2(val)) {
-        return formatReflectMap2(val.field());
-      }
-      if (isReflectMessage2(val)) {
-        return formatReflectMessage2(val.desc);
-      }
-      if (isMessage2(val)) {
-        return `message ${val.$typeName}`;
-      }
-      return "object";
-    case "string":
-      return val.length > 30 ? "string" : `"${val.split('"').join("\\\"")}"`;
-    case "boolean":
-      return String(val);
-    case "number":
-      return String(val);
-    case "bigint":
-      return String(val) + "n";
-    default:
-      return typeof val;
-  }
-}
-function formatReflectMessage2(desc) {
-  return `ReflectMessage (${desc.typeName})`;
-}
-function formatReflectList2(field) {
-  switch (field.listKind) {
-    case "message":
-      return `ReflectList (${field.message.toString()})`;
-    case "enum":
-      return `ReflectList (${field.enum.toString()})`;
-    case "scalar":
-      return `ReflectList (${ScalarType2[field.scalar]})`;
-  }
-}
-function formatReflectMap2(field) {
-  switch (field.mapKind) {
-    case "message":
-      return `ReflectMap (${ScalarType2[field.mapKey]}, ${field.message.toString()})`;
-    case "enum":
-      return `ReflectMap (${ScalarType2[field.mapKey]}, ${field.enum.toString()})`;
-    case "scalar":
-      return `ReflectMap (${ScalarType2[field.mapKey]}, ${ScalarType2[field.scalar]})`;
-  }
-}
-function scalarTypeDescription2(scalar) {
-  switch (scalar) {
-    case ScalarType2.STRING:
-      return "string";
-    case ScalarType2.BOOL:
-      return "boolean";
-    case ScalarType2.INT64:
-    case ScalarType2.SINT64:
-    case ScalarType2.SFIXED64:
-      return "bigint (int64)";
-    case ScalarType2.UINT64:
-    case ScalarType2.FIXED64:
-      return "bigint (uint64)";
-    case ScalarType2.BYTES:
-      return "Uint8Array";
-    case ScalarType2.DOUBLE:
-      return "number (float64)";
-    case ScalarType2.FLOAT:
-      return "number (float32)";
-    case ScalarType2.FIXED32:
-    case ScalarType2.UINT32:
-      return "number (uint32)";
-    case ScalarType2.INT32:
-    case ScalarType2.SFIXED32:
-    case ScalarType2.SINT32:
-      return "number (int32)";
-  }
-}
-function reflect2(messageDesc2, message, check = true) {
-  return new ReflectMessageImpl2(messageDesc2, message, check);
-}
-
-class ReflectMessageImpl2 {
-  get sortedFields() {
-    var _a;
-    return (_a = this._sortedFields) !== null && _a !== undefined ? _a : this._sortedFields = this.desc.fields.concat().sort((a, b) => a.number - b.number);
-  }
-  constructor(messageDesc2, message, check = true) {
-    this.lists = new Map;
-    this.maps = new Map;
-    this.check = check;
-    this.desc = messageDesc2;
-    this.message = this[unsafeLocal2] = message !== null && message !== undefined ? message : create3(messageDesc2);
-    this.fields = messageDesc2.fields;
-    this.oneofs = messageDesc2.oneofs;
-    this.members = messageDesc2.members;
-  }
-  findNumber(number) {
-    if (!this._fieldsByNumber) {
-      this._fieldsByNumber = new Map(this.desc.fields.map((f) => [f.number, f]));
-    }
-    return this._fieldsByNumber.get(number);
-  }
-  oneofCase(oneof) {
-    assertOwn2(this.message, oneof);
-    return unsafeOneofCase2(this.message, oneof);
-  }
-  isSet(field) {
-    assertOwn2(this.message, field);
-    return unsafeIsSet2(this.message, field);
-  }
-  clear(field) {
-    assertOwn2(this.message, field);
-    unsafeClear2(this.message, field);
-  }
-  get(field) {
-    assertOwn2(this.message, field);
-    const value2 = unsafeGet2(this.message, field);
-    switch (field.fieldKind) {
-      case "list":
-        let list = this.lists.get(field);
-        if (!list || list[unsafeLocal2] !== value2) {
-          this.lists.set(field, list = new ReflectListImpl2(field, value2, this.check));
-        }
-        return list;
-      case "map":
-        let map = this.maps.get(field);
-        if (!map || map[unsafeLocal2] !== value2) {
-          this.maps.set(field, map = new ReflectMapImpl2(field, value2, this.check));
-        }
-        return map;
-      case "message":
-        return messageToReflect2(field, value2, this.check);
-      case "scalar":
-        return value2 === undefined ? scalarZeroValue2(field.scalar, false) : longToReflect2(field, value2);
-      case "enum":
-        return value2 !== null && value2 !== undefined ? value2 : field.enum.values[0].number;
-    }
-  }
-  set(field, value2) {
-    assertOwn2(this.message, field);
-    if (this.check) {
-      const err = checkField2(field, value2);
-      if (err) {
-        throw err;
-      }
-    }
-    let local;
-    if (field.fieldKind == "message") {
-      local = messageToLocal2(field, value2);
-    } else if (isReflectMap2(value2) || isReflectList2(value2)) {
-      local = value2[unsafeLocal2];
-    } else {
-      local = longToLocal2(field, value2);
-    }
-    unsafeSet2(this.message, field, local);
-  }
-  getUnknown() {
-    return this.message.$unknown;
-  }
-  setUnknown(value2) {
-    this.message.$unknown = value2;
-  }
-}
-function assertOwn2(owner, member) {
-  if (member.parent.typeName !== owner.$typeName) {
-    throw new FieldError2(member, `cannot use ${member.toString()} with message ${owner.$typeName}`, "ForeignFieldError");
-  }
-}
-
-class ReflectListImpl2 {
-  field() {
-    return this._field;
-  }
-  get size() {
-    return this._arr.length;
-  }
-  constructor(field, unsafeInput, check) {
-    this._field = field;
-    this._arr = this[unsafeLocal2] = unsafeInput;
-    this.check = check;
-  }
-  get(index) {
-    const item = this._arr[index];
-    return item === undefined ? undefined : listItemToReflect2(this._field, item, this.check);
-  }
-  set(index, item) {
-    if (index < 0 || index >= this._arr.length) {
-      throw new FieldError2(this._field, `list item #${index + 1}: out of range`);
-    }
-    if (this.check) {
-      const err = checkListItem2(this._field, index, item);
-      if (err) {
-        throw err;
-      }
-    }
-    this._arr[index] = listItemToLocal2(this._field, item);
-  }
-  add(item) {
-    if (this.check) {
-      const err = checkListItem2(this._field, this._arr.length, item);
-      if (err) {
-        throw err;
-      }
-    }
-    this._arr.push(listItemToLocal2(this._field, item));
-    return;
-  }
-  clear() {
-    this._arr.splice(0, this._arr.length);
-  }
-  [Symbol.iterator]() {
-    return this.values();
-  }
-  keys() {
-    return this._arr.keys();
-  }
-  *values() {
-    for (const item of this._arr) {
-      yield listItemToReflect2(this._field, item, this.check);
-    }
-  }
-  *entries() {
-    for (let i2 = 0;i2 < this._arr.length; i2++) {
-      yield [i2, listItemToReflect2(this._field, this._arr[i2], this.check)];
-    }
-  }
-}
-
-class ReflectMapImpl2 {
-  constructor(field, unsafeInput, check = true) {
-    this.obj = this[unsafeLocal2] = unsafeInput !== null && unsafeInput !== undefined ? unsafeInput : {};
-    this.check = check;
-    this._field = field;
-  }
-  field() {
-    return this._field;
-  }
-  set(key, value2) {
-    if (this.check) {
-      const err = checkMapEntry2(this._field, key, value2);
-      if (err) {
-        throw err;
-      }
-    }
-    this.obj[mapKeyToLocal2(key)] = mapValueToLocal2(this._field, value2);
-    return this;
-  }
-  delete(key) {
-    const k = mapKeyToLocal2(key);
-    const has = Object.prototype.hasOwnProperty.call(this.obj, k);
-    if (has) {
-      delete this.obj[k];
-    }
-    return has;
-  }
-  clear() {
-    for (const key of Object.keys(this.obj)) {
-      delete this.obj[key];
-    }
-  }
-  get(key) {
-    let val = this.obj[mapKeyToLocal2(key)];
-    if (val !== undefined) {
-      val = mapValueToReflect2(this._field, val, this.check);
-    }
-    return val;
-  }
-  has(key) {
-    return Object.prototype.hasOwnProperty.call(this.obj, mapKeyToLocal2(key));
-  }
-  *keys() {
-    for (const objKey of Object.keys(this.obj)) {
-      yield mapKeyToReflect2(objKey, this._field.mapKey);
-    }
-  }
-  *entries() {
-    for (const objEntry of Object.entries(this.obj)) {
-      yield [
-        mapKeyToReflect2(objEntry[0], this._field.mapKey),
-        mapValueToReflect2(this._field, objEntry[1], this.check)
-      ];
-    }
-  }
-  [Symbol.iterator]() {
-    return this.entries();
-  }
-  get size() {
-    return Object.keys(this.obj).length;
-  }
-  *values() {
-    for (const val of Object.values(this.obj)) {
-      yield mapValueToReflect2(this._field, val, this.check);
-    }
-  }
-  forEach(callbackfn, thisArg) {
-    for (const mapEntry of this.entries()) {
-      callbackfn.call(thisArg, mapEntry[1], mapEntry[0], this);
-    }
-  }
-}
-function messageToLocal2(field, value2) {
-  if (!isReflectMessage2(value2)) {
-    return value2;
-  }
-  if (isWrapper2(value2.message) && !field.oneof && field.fieldKind == "message") {
-    return value2.message.value;
-  }
-  if (value2.desc.typeName == "google.protobuf.Struct" && field.parent.typeName != "google.protobuf.Value") {
-    return wktStructToLocal2(value2.message);
-  }
-  return value2.message;
-}
-function messageToReflect2(field, value2, check) {
-  if (value2 !== undefined) {
-    if (isWrapperDesc2(field.message) && !field.oneof && field.fieldKind == "message") {
-      value2 = {
-        $typeName: field.message.typeName,
-        value: longToReflect2(field.message.fields[0], value2)
-      };
-    } else if (field.message.typeName == "google.protobuf.Struct" && field.parent.typeName != "google.protobuf.Value" && isObject2(value2)) {
-      value2 = wktStructToReflect2(value2);
-    }
-  }
-  return new ReflectMessageImpl2(field.message, value2, check);
-}
-function listItemToLocal2(field, value2) {
-  if (field.listKind == "message") {
-    return messageToLocal2(field, value2);
-  }
-  return longToLocal2(field, value2);
-}
-function listItemToReflect2(field, value2, check) {
-  if (field.listKind == "message") {
-    return messageToReflect2(field, value2, check);
-  }
-  return longToReflect2(field, value2);
-}
-function mapValueToLocal2(field, value2) {
-  if (field.mapKind == "message") {
-    return messageToLocal2(field, value2);
-  }
-  return longToLocal2(field, value2);
-}
-function mapValueToReflect2(field, value2, check) {
-  if (field.mapKind == "message") {
-    return messageToReflect2(field, value2, check);
-  }
-  return value2;
-}
-function mapKeyToLocal2(key) {
-  return typeof key == "string" || typeof key == "number" ? key : String(key);
-}
-function mapKeyToReflect2(key, type) {
-  switch (type) {
-    case ScalarType2.STRING:
-      return key;
-    case ScalarType2.INT32:
-    case ScalarType2.FIXED32:
-    case ScalarType2.UINT32:
-    case ScalarType2.SFIXED32:
-    case ScalarType2.SINT32: {
-      const n = Number.parseInt(key);
-      if (Number.isFinite(n)) {
-        return n;
-      }
-      break;
-    }
-    case ScalarType2.BOOL:
-      switch (key) {
-        case "true":
-          return true;
-        case "false":
-          return false;
-      }
-      break;
-    case ScalarType2.UINT64:
-    case ScalarType2.FIXED64:
-      try {
-        return protoInt642.uParse(key);
-      } catch (_a) {}
-      break;
-    default:
-      try {
-        return protoInt642.parse(key);
-      } catch (_b) {}
-      break;
-  }
-  return key;
-}
-function longToReflect2(field, value2) {
-  switch (field.scalar) {
-    case ScalarType2.INT64:
-    case ScalarType2.SFIXED64:
-    case ScalarType2.SINT64:
-      if ("longAsString" in field && field.longAsString && typeof value2 == "string") {
-        value2 = protoInt642.parse(value2);
-      }
-      break;
-    case ScalarType2.FIXED64:
-    case ScalarType2.UINT64:
-      if ("longAsString" in field && field.longAsString && typeof value2 == "string") {
-        value2 = protoInt642.uParse(value2);
-      }
-      break;
-  }
-  return value2;
-}
-function longToLocal2(field, value2) {
-  switch (field.scalar) {
-    case ScalarType2.INT64:
-    case ScalarType2.SFIXED64:
-    case ScalarType2.SINT64:
-      if ("longAsString" in field && field.longAsString) {
-        value2 = String(value2);
-      } else if (typeof value2 == "string" || typeof value2 == "number") {
-        value2 = protoInt642.parse(value2);
-      }
-      break;
-    case ScalarType2.FIXED64:
-    case ScalarType2.UINT64:
-      if ("longAsString" in field && field.longAsString) {
-        value2 = String(value2);
-      } else if (typeof value2 == "string" || typeof value2 == "number") {
-        value2 = protoInt642.uParse(value2);
-      }
-      break;
-  }
-  return value2;
-}
-function wktStructToReflect2(json) {
-  const struct = {
-    $typeName: "google.protobuf.Struct",
-    fields: {}
-  };
-  if (isObject2(json)) {
-    for (const [k, v] of Object.entries(json)) {
-      struct.fields[k] = wktValueToReflect2(v);
-    }
-  }
-  return struct;
-}
-function wktStructToLocal2(val) {
-  const json = {};
-  for (const [k, v] of Object.entries(val.fields)) {
-    json[k] = wktValueToLocal2(v);
-  }
-  return json;
-}
-function wktValueToLocal2(val) {
-  switch (val.kind.case) {
-    case "structValue":
-      return wktStructToLocal2(val.kind.value);
-    case "listValue":
-      return val.kind.value.values.map(wktValueToLocal2);
-    case "nullValue":
-    case undefined:
-      return null;
-    default:
-      return val.kind.value;
-  }
-}
-function wktValueToReflect2(json) {
-  const value2 = {
-    $typeName: "google.protobuf.Value",
-    kind: { case: undefined }
-  };
-  switch (typeof json) {
-    case "number":
-      value2.kind = { case: "numberValue", value: json };
-      break;
-    case "string":
-      value2.kind = { case: "stringValue", value: json };
-      break;
-    case "boolean":
-      value2.kind = { case: "boolValue", value: json };
-      break;
-    case "object":
-      if (json === null) {
-        const nullValue = 0;
-        value2.kind = { case: "nullValue", value: nullValue };
-      } else if (Array.isArray(json)) {
-        const listValue = {
-          $typeName: "google.protobuf.ListValue",
-          values: []
-        };
-        if (Array.isArray(json)) {
-          for (const e of json) {
-            listValue.values.push(wktValueToReflect2(e));
-          }
-        }
-        value2.kind = {
-          case: "listValue",
-          value: listValue
-        };
-      } else {
-        value2.kind = {
-          case: "structValue",
-          value: wktStructToReflect2(json)
-        };
-      }
-      break;
-  }
-  return value2;
-}
-function base64Decode2(base64Str) {
-  const table = getDecodeTable2();
-  let es = base64Str.length * 3 / 4;
-  if (base64Str[base64Str.length - 2] == "=")
-    es -= 2;
-  else if (base64Str[base64Str.length - 1] == "=")
-    es -= 1;
-  let bytes = new Uint8Array(es), bytePos = 0, groupPos = 0, b, p = 0;
-  for (let i2 = 0;i2 < base64Str.length; i2++) {
-    b = table[base64Str.charCodeAt(i2)];
-    if (b === undefined) {
-      switch (base64Str[i2]) {
-        case "=":
-          groupPos = 0;
-        case `
-`:
-        case "\r":
-        case "\t":
-        case " ":
-          continue;
-        default:
-          throw Error("invalid base64 string");
-      }
-    }
-    switch (groupPos) {
-      case 0:
-        p = b;
-        groupPos = 1;
-        break;
-      case 1:
-        bytes[bytePos++] = p << 2 | (b & 48) >> 4;
-        p = b;
-        groupPos = 2;
-        break;
-      case 2:
-        bytes[bytePos++] = (p & 15) << 4 | (b & 60) >> 2;
-        p = b;
-        groupPos = 3;
-        break;
-      case 3:
-        bytes[bytePos++] = (p & 3) << 6 | b;
-        groupPos = 0;
-        break;
-    }
-  }
-  if (groupPos == 1)
-    throw Error("invalid base64 string");
-  return bytes.subarray(0, bytePos);
-}
-var encodeTableStd2;
-var encodeTableUrl2;
-var decodeTable2;
-function getEncodeTable2(encoding) {
-  if (!encodeTableStd2) {
-    encodeTableStd2 = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/".split("");
-    encodeTableUrl2 = encodeTableStd2.slice(0, -2).concat("-", "_");
-  }
-  return encoding == "url" ? encodeTableUrl2 : encodeTableStd2;
-}
-function getDecodeTable2() {
-  if (!decodeTable2) {
-    decodeTable2 = [];
-    const encodeTable = getEncodeTable2("std");
-    for (let i2 = 0;i2 < encodeTable.length; i2++)
-      decodeTable2[encodeTable[i2].charCodeAt(0)] = i2;
-    decodeTable2[45] = encodeTable.indexOf("+");
-    decodeTable2[95] = encodeTable.indexOf("/");
-  }
-  return decodeTable2;
-}
-function protoCamelCase2(snakeCase) {
-  let capNext = false;
-  const b = [];
-  for (let i2 = 0;i2 < snakeCase.length; i2++) {
-    let c = snakeCase.charAt(i2);
-    switch (c) {
-      case "_":
-        capNext = true;
-        break;
-      case "0":
-      case "1":
-      case "2":
-      case "3":
-      case "4":
-      case "5":
-      case "6":
-      case "7":
-      case "8":
-      case "9":
-        b.push(c);
-        capNext = false;
-        break;
-      default:
-        if (capNext) {
-          capNext = false;
-          c = c.toUpperCase();
-        }
-        b.push(c);
-        break;
-    }
-  }
-  return b.join("");
-}
-var reservedObjectProperties2 = new Set([
-  "constructor",
-  "toString",
-  "toJSON",
-  "valueOf"
-]);
-function safeObjectProperty2(name) {
-  return reservedObjectProperties2.has(name) ? name + "$" : name;
-}
-function restoreJsonNames2(message) {
-  for (const f of message.field) {
-    if (!unsafeIsSetExplicit2(f, "jsonName")) {
-      f.jsonName = protoCamelCase2(f.name);
-    }
-  }
-  message.nestedType.forEach(restoreJsonNames2);
-}
-function parseTextFormatEnumValue2(descEnum, value2) {
-  const enumValue = descEnum.values.find((v) => v.name === value2);
-  if (!enumValue) {
-    throw new Error(`cannot parse ${descEnum} default value: ${value2}`);
-  }
-  return enumValue.number;
-}
-function parseTextFormatScalarValue2(type, value2) {
-  switch (type) {
-    case ScalarType2.STRING:
-      return value2;
-    case ScalarType2.BYTES: {
-      const u = unescapeBytesDefaultValue2(value2);
-      if (u === false) {
-        throw new Error(`cannot parse ${ScalarType2[type]} default value: ${value2}`);
-      }
-      return u;
-    }
-    case ScalarType2.INT64:
-    case ScalarType2.SFIXED64:
-    case ScalarType2.SINT64:
-      return protoInt642.parse(value2);
-    case ScalarType2.UINT64:
-    case ScalarType2.FIXED64:
-      return protoInt642.uParse(value2);
-    case ScalarType2.DOUBLE:
-    case ScalarType2.FLOAT:
-      switch (value2) {
-        case "inf":
-          return Number.POSITIVE_INFINITY;
-        case "-inf":
-          return Number.NEGATIVE_INFINITY;
-        case "nan":
-          return Number.NaN;
-        default:
-          return parseFloat(value2);
-      }
-    case ScalarType2.BOOL:
-      return value2 === "true";
-    case ScalarType2.INT32:
-    case ScalarType2.UINT32:
-    case ScalarType2.SINT32:
-    case ScalarType2.FIXED32:
-    case ScalarType2.SFIXED32:
-      return parseInt(value2, 10);
-  }
-}
-function unescapeBytesDefaultValue2(str) {
-  const b = [];
-  const input = {
-    tail: str,
-    c: "",
-    next() {
-      if (this.tail.length == 0) {
-        return false;
-      }
-      this.c = this.tail[0];
-      this.tail = this.tail.substring(1);
-      return true;
-    },
-    take(n) {
-      if (this.tail.length >= n) {
-        const r = this.tail.substring(0, n);
-        this.tail = this.tail.substring(n);
-        return r;
-      }
-      return false;
-    }
-  };
-  while (input.next()) {
-    switch (input.c) {
-      case "\\":
-        if (input.next()) {
-          switch (input.c) {
-            case "\\":
-              b.push(input.c.charCodeAt(0));
-              break;
-            case "b":
-              b.push(8);
-              break;
-            case "f":
-              b.push(12);
-              break;
-            case "n":
-              b.push(10);
-              break;
-            case "r":
-              b.push(13);
-              break;
-            case "t":
-              b.push(9);
-              break;
-            case "v":
-              b.push(11);
-              break;
-            case "0":
-            case "1":
-            case "2":
-            case "3":
-            case "4":
-            case "5":
-            case "6":
-            case "7": {
-              const s = input.c;
-              const t = input.take(2);
-              if (t === false) {
-                return false;
-              }
-              const n = parseInt(s + t, 8);
-              if (Number.isNaN(n)) {
-                return false;
-              }
-              b.push(n);
-              break;
-            }
-            case "x": {
-              const s = input.c;
-              const t = input.take(2);
-              if (t === false) {
-                return false;
-              }
-              const n = parseInt(s + t, 16);
-              if (Number.isNaN(n)) {
-                return false;
-              }
-              b.push(n);
-              break;
-            }
-            case "u": {
-              const s = input.c;
-              const t = input.take(4);
-              if (t === false) {
-                return false;
-              }
-              const n = parseInt(s + t, 16);
-              if (Number.isNaN(n)) {
-                return false;
-              }
-              const chunk = new Uint8Array(4);
-              const view = new DataView(chunk.buffer);
-              view.setInt32(0, n, true);
-              b.push(chunk[0], chunk[1], chunk[2], chunk[3]);
-              break;
-            }
-            case "U": {
-              const s = input.c;
-              const t = input.take(8);
-              if (t === false) {
-                return false;
-              }
-              const tc = protoInt642.uEnc(s + t);
-              const chunk = new Uint8Array(8);
-              const view = new DataView(chunk.buffer);
-              view.setInt32(0, tc.lo, true);
-              view.setInt32(4, tc.hi, true);
-              b.push(chunk[0], chunk[1], chunk[2], chunk[3], chunk[4], chunk[5], chunk[6], chunk[7]);
-              break;
-            }
-          }
-        }
-        break;
-      default:
-        b.push(input.c.charCodeAt(0));
-    }
-  }
-  return new Uint8Array(b);
-}
-function* nestedTypes2(desc) {
-  switch (desc.kind) {
-    case "file":
-      for (const message of desc.messages) {
-        yield message;
-        yield* nestedTypes2(message);
-      }
-      yield* desc.enums;
-      yield* desc.services;
-      yield* desc.extensions;
-      break;
-    case "message":
-      for (const message of desc.nestedMessages) {
-        yield message;
-        yield* nestedTypes2(message);
-      }
-      yield* desc.nestedEnums;
-      yield* desc.nestedExtensions;
-      break;
-  }
-}
-function createFileRegistry2(...args) {
-  const registry2 = createBaseRegistry2();
-  if (!args.length) {
-    return registry2;
-  }
-  if ("$typeName" in args[0] && args[0].$typeName == "google.protobuf.FileDescriptorSet") {
-    for (const file of args[0].file) {
-      addFile2(file, registry2);
-    }
-    return registry2;
-  }
-  if ("$typeName" in args[0]) {
-    let recurseDeps = function(file) {
-      const deps = [];
-      for (const protoFileName of file.dependency) {
-        if (registry2.getFile(protoFileName) != null) {
-          continue;
-        }
-        if (seen.has(protoFileName)) {
-          continue;
-        }
-        const dep = resolve(protoFileName);
-        if (!dep) {
-          throw new Error(`Unable to resolve ${protoFileName}, imported by ${file.name}`);
-        }
-        if ("kind" in dep) {
-          registry2.addFile(dep, false, true);
-        } else {
-          seen.add(dep.name);
-          deps.push(dep);
-        }
-      }
-      return deps.concat(...deps.map(recurseDeps));
-    };
-    const input = args[0];
-    const resolve = args[1];
-    const seen = new Set;
-    for (const file of [input, ...recurseDeps(input)].reverse()) {
-      addFile2(file, registry2);
-    }
-  } else {
-    for (const fileReg of args) {
-      for (const file of fileReg.files) {
-        registry2.addFile(file);
-      }
-    }
-  }
-  return registry2;
-}
-function createBaseRegistry2() {
-  const types4 = new Map;
-  const extendees = new Map;
-  const files = new Map;
-  return {
-    kind: "registry",
-    types: types4,
-    extendees,
-    [Symbol.iterator]() {
-      return types4.values();
-    },
-    get files() {
-      return files.values();
-    },
-    addFile(file, skipTypes, withDeps) {
-      files.set(file.proto.name, file);
-      if (!skipTypes) {
-        for (const type of nestedTypes2(file)) {
-          this.add(type);
-        }
-      }
-      if (withDeps) {
-        for (const f of file.dependencies) {
-          this.addFile(f, skipTypes, withDeps);
-        }
-      }
-    },
-    add(desc) {
-      if (desc.kind == "extension") {
-        let numberToExt = extendees.get(desc.extendee.typeName);
-        if (!numberToExt) {
-          extendees.set(desc.extendee.typeName, numberToExt = new Map);
-        }
-        numberToExt.set(desc.number, desc);
-      }
-      types4.set(desc.typeName, desc);
-    },
-    get(typeName) {
-      return types4.get(typeName);
-    },
-    getFile(fileName) {
-      return files.get(fileName);
-    },
-    getMessage(typeName) {
-      const t = types4.get(typeName);
-      return (t === null || t === undefined ? undefined : t.kind) == "message" ? t : undefined;
-    },
-    getEnum(typeName) {
-      const t = types4.get(typeName);
-      return (t === null || t === undefined ? undefined : t.kind) == "enum" ? t : undefined;
-    },
-    getExtension(typeName) {
-      const t = types4.get(typeName);
-      return (t === null || t === undefined ? undefined : t.kind) == "extension" ? t : undefined;
-    },
-    getExtensionFor(extendee, no) {
-      var _a;
-      return (_a = extendees.get(extendee.typeName)) === null || _a === undefined ? undefined : _a.get(no);
-    },
-    getService(typeName) {
-      const t = types4.get(typeName);
-      return (t === null || t === undefined ? undefined : t.kind) == "service" ? t : undefined;
-    }
-  };
-}
-var EDITION_PROTO24 = 998;
-var EDITION_PROTO34 = 999;
-var TYPE_STRING2 = 9;
-var TYPE_GROUP2 = 10;
-var TYPE_MESSAGE2 = 11;
-var TYPE_BYTES2 = 12;
-var TYPE_ENUM2 = 14;
-var LABEL_REPEATED2 = 3;
-var LABEL_REQUIRED2 = 2;
-var JS_STRING2 = 1;
-var IDEMPOTENCY_UNKNOWN2 = 0;
-var EXPLICIT2 = 1;
-var IMPLICIT6 = 2;
-var LEGACY_REQUIRED3 = 3;
-var PACKED2 = 1;
-var DELIMITED2 = 2;
-var OPEN2 = 1;
-var featureDefaults2 = {
-  998: {
-    fieldPresence: 1,
-    enumType: 2,
-    repeatedFieldEncoding: 2,
-    utf8Validation: 3,
-    messageEncoding: 1,
-    jsonFormat: 2,
-    enforceNamingStyle: 2,
-    defaultSymbolVisibility: 1
-  },
-  999: {
-    fieldPresence: 2,
-    enumType: 1,
-    repeatedFieldEncoding: 1,
-    utf8Validation: 2,
-    messageEncoding: 1,
-    jsonFormat: 1,
-    enforceNamingStyle: 2,
-    defaultSymbolVisibility: 1
-  },
-  1000: {
-    fieldPresence: 1,
-    enumType: 1,
-    repeatedFieldEncoding: 1,
-    utf8Validation: 2,
-    messageEncoding: 1,
-    jsonFormat: 1,
-    enforceNamingStyle: 2,
-    defaultSymbolVisibility: 1
-  }
-};
-function addFile2(proto, reg) {
-  var _a, _b;
-  const file = {
-    kind: "file",
-    proto,
-    deprecated: (_b = (_a = proto.options) === null || _a === undefined ? undefined : _a.deprecated) !== null && _b !== undefined ? _b : false,
-    edition: getFileEdition2(proto),
-    name: proto.name.replace(/\.proto$/, ""),
-    dependencies: findFileDependencies2(proto, reg),
-    enums: [],
-    messages: [],
-    extensions: [],
-    services: [],
-    toString() {
-      return `file ${proto.name}`;
-    }
-  };
-  const mapEntriesStore = new Map;
-  const mapEntries = {
-    get(typeName) {
-      return mapEntriesStore.get(typeName);
-    },
-    add(desc) {
-      var _a2;
-      assert2(((_a2 = desc.proto.options) === null || _a2 === undefined ? undefined : _a2.mapEntry) === true);
-      mapEntriesStore.set(desc.typeName, desc);
-    }
-  };
-  for (const enumProto of proto.enumType) {
-    addEnum2(enumProto, file, undefined, reg);
-  }
-  for (const messageProto of proto.messageType) {
-    addMessage2(messageProto, file, undefined, reg, mapEntries);
-  }
-  for (const serviceProto of proto.service) {
-    addService2(serviceProto, file, reg);
-  }
-  addExtensions2(file, reg);
-  for (const mapEntry of mapEntriesStore.values()) {
-    addFields2(mapEntry, reg, mapEntries);
-  }
-  for (const message of file.messages) {
-    addFields2(message, reg, mapEntries);
-    addExtensions2(message, reg);
-  }
-  reg.addFile(file, true);
-}
-function addExtensions2(desc, reg) {
-  switch (desc.kind) {
-    case "file":
-      for (const proto of desc.proto.extension) {
-        const ext = newField2(proto, desc, reg);
-        desc.extensions.push(ext);
-        reg.add(ext);
-      }
-      break;
-    case "message":
-      for (const proto of desc.proto.extension) {
-        const ext = newField2(proto, desc, reg);
-        desc.nestedExtensions.push(ext);
-        reg.add(ext);
-      }
-      for (const message of desc.nestedMessages) {
-        addExtensions2(message, reg);
-      }
-      break;
-  }
-}
-function addFields2(message, reg, mapEntries) {
-  const allOneofs = message.proto.oneofDecl.map((proto) => newOneof2(proto, message));
-  const oneofsSeen = new Set;
-  for (const proto of message.proto.field) {
-    const oneof = findOneof2(proto, allOneofs);
-    const field = newField2(proto, message, reg, oneof, mapEntries);
-    message.fields.push(field);
-    message.field[field.localName] = field;
-    if (oneof === undefined) {
-      message.members.push(field);
-    } else {
-      oneof.fields.push(field);
-      if (!oneofsSeen.has(oneof)) {
-        oneofsSeen.add(oneof);
-        message.members.push(oneof);
-      }
-    }
-  }
-  for (const oneof of allOneofs.filter((o) => oneofsSeen.has(o))) {
-    message.oneofs.push(oneof);
-  }
-  for (const child of message.nestedMessages) {
-    addFields2(child, reg, mapEntries);
-  }
-}
-function addEnum2(proto, file, parent, reg) {
-  var _a, _b, _c, _d, _e;
-  const sharedPrefix = findEnumSharedPrefix2(proto.name, proto.value);
-  const desc = {
-    kind: "enum",
-    proto,
-    deprecated: (_b = (_a = proto.options) === null || _a === undefined ? undefined : _a.deprecated) !== null && _b !== undefined ? _b : false,
-    file,
-    parent,
-    open: true,
-    name: proto.name,
-    typeName: makeTypeName2(proto, parent, file),
-    value: {},
-    values: [],
-    sharedPrefix,
-    toString() {
-      return `enum ${this.typeName}`;
-    }
-  };
-  desc.open = isEnumOpen2(desc);
-  reg.add(desc);
-  for (const p of proto.value) {
-    const name = p.name;
-    desc.values.push(desc.value[p.number] = {
-      kind: "enum_value",
-      proto: p,
-      deprecated: (_d = (_c = p.options) === null || _c === undefined ? undefined : _c.deprecated) !== null && _d !== undefined ? _d : false,
-      parent: desc,
-      name,
-      localName: safeObjectProperty2(sharedPrefix == undefined ? name : name.substring(sharedPrefix.length)),
-      number: p.number,
-      toString() {
-        return `enum value ${desc.typeName}.${name}`;
-      }
-    });
-  }
-  ((_e = parent === null || parent === undefined ? undefined : parent.nestedEnums) !== null && _e !== undefined ? _e : file.enums).push(desc);
-}
-function addMessage2(proto, file, parent, reg, mapEntries) {
-  var _a, _b, _c, _d;
-  const desc = {
-    kind: "message",
-    proto,
-    deprecated: (_b = (_a = proto.options) === null || _a === undefined ? undefined : _a.deprecated) !== null && _b !== undefined ? _b : false,
-    file,
-    parent,
-    name: proto.name,
-    typeName: makeTypeName2(proto, parent, file),
-    fields: [],
-    field: {},
-    oneofs: [],
-    members: [],
-    nestedEnums: [],
-    nestedMessages: [],
-    nestedExtensions: [],
-    toString() {
-      return `message ${this.typeName}`;
-    }
-  };
-  if (((_c = proto.options) === null || _c === undefined ? undefined : _c.mapEntry) === true) {
-    mapEntries.add(desc);
-  } else {
-    ((_d = parent === null || parent === undefined ? undefined : parent.nestedMessages) !== null && _d !== undefined ? _d : file.messages).push(desc);
-    reg.add(desc);
-  }
-  for (const enumProto of proto.enumType) {
-    addEnum2(enumProto, file, desc, reg);
-  }
-  for (const messageProto of proto.nestedType) {
-    addMessage2(messageProto, file, desc, reg, mapEntries);
-  }
-}
-function addService2(proto, file, reg) {
-  var _a, _b;
-  const desc = {
-    kind: "service",
-    proto,
-    deprecated: (_b = (_a = proto.options) === null || _a === undefined ? undefined : _a.deprecated) !== null && _b !== undefined ? _b : false,
-    file,
-    name: proto.name,
-    typeName: makeTypeName2(proto, undefined, file),
-    methods: [],
-    method: {},
-    toString() {
-      return `service ${this.typeName}`;
-    }
-  };
-  file.services.push(desc);
-  reg.add(desc);
-  for (const methodProto of proto.method) {
-    const method = newMethod2(methodProto, desc, reg);
-    desc.methods.push(method);
-    desc.method[method.localName] = method;
-  }
-}
-function newMethod2(proto, parent, reg) {
-  var _a, _b, _c, _d;
-  let methodKind;
-  if (proto.clientStreaming && proto.serverStreaming) {
-    methodKind = "bidi_streaming";
-  } else if (proto.clientStreaming) {
-    methodKind = "client_streaming";
-  } else if (proto.serverStreaming) {
-    methodKind = "server_streaming";
-  } else {
-    methodKind = "unary";
-  }
-  const input = reg.getMessage(trimLeadingDot2(proto.inputType));
-  const output = reg.getMessage(trimLeadingDot2(proto.outputType));
-  assert2(input, `invalid MethodDescriptorProto: input_type ${proto.inputType} not found`);
-  assert2(output, `invalid MethodDescriptorProto: output_type ${proto.inputType} not found`);
-  const name = proto.name;
-  return {
-    kind: "rpc",
-    proto,
-    deprecated: (_b = (_a = proto.options) === null || _a === undefined ? undefined : _a.deprecated) !== null && _b !== undefined ? _b : false,
-    parent,
-    name,
-    localName: safeObjectProperty2(name.length ? safeObjectProperty2(name[0].toLowerCase() + name.substring(1)) : name),
-    methodKind,
-    input,
-    output,
-    idempotency: (_d = (_c = proto.options) === null || _c === undefined ? undefined : _c.idempotencyLevel) !== null && _d !== undefined ? _d : IDEMPOTENCY_UNKNOWN2,
-    toString() {
-      return `rpc ${parent.typeName}.${name}`;
-    }
-  };
-}
-function newOneof2(proto, parent) {
-  return {
-    kind: "oneof",
-    proto,
-    deprecated: false,
-    parent,
-    fields: [],
-    name: proto.name,
-    localName: safeObjectProperty2(protoCamelCase2(proto.name)),
-    toString() {
-      return `oneof ${parent.typeName}.${this.name}`;
-    }
-  };
-}
-function newField2(proto, parentOrFile, reg, oneof, mapEntries) {
-  var _a, _b, _c;
-  const isExtension = mapEntries === undefined;
-  const field = {
-    kind: "field",
-    proto,
-    deprecated: (_b = (_a = proto.options) === null || _a === undefined ? undefined : _a.deprecated) !== null && _b !== undefined ? _b : false,
-    name: proto.name,
-    number: proto.number,
-    scalar: undefined,
-    message: undefined,
-    enum: undefined,
-    presence: getFieldPresence2(proto, oneof, isExtension, parentOrFile),
-    listKind: undefined,
-    mapKind: undefined,
-    mapKey: undefined,
-    delimitedEncoding: undefined,
-    packed: undefined,
-    longAsString: false,
-    getDefaultValue: undefined
-  };
-  if (isExtension) {
-    const file = parentOrFile.kind == "file" ? parentOrFile : parentOrFile.file;
-    const parent = parentOrFile.kind == "file" ? undefined : parentOrFile;
-    const typeName = makeTypeName2(proto, parent, file);
-    field.kind = "extension";
-    field.file = file;
-    field.parent = parent;
-    field.oneof = undefined;
-    field.typeName = typeName;
-    field.jsonName = `[${typeName}]`;
-    field.toString = () => `extension ${typeName}`;
-    const extendee = reg.getMessage(trimLeadingDot2(proto.extendee));
-    assert2(extendee, `invalid FieldDescriptorProto: extendee ${proto.extendee} not found`);
-    field.extendee = extendee;
-  } else {
-    const parent = parentOrFile;
-    assert2(parent.kind == "message");
-    field.parent = parent;
-    field.oneof = oneof;
-    field.localName = oneof ? protoCamelCase2(proto.name) : safeObjectProperty2(protoCamelCase2(proto.name));
-    field.jsonName = proto.jsonName;
-    field.toString = () => `field ${parent.typeName}.${proto.name}`;
-  }
-  const label = proto.label;
-  const type = proto.type;
-  const jstype = (_c = proto.options) === null || _c === undefined ? undefined : _c.jstype;
-  if (label === LABEL_REPEATED2) {
-    const mapEntry = type == TYPE_MESSAGE2 ? mapEntries === null || mapEntries === undefined ? undefined : mapEntries.get(trimLeadingDot2(proto.typeName)) : undefined;
-    if (mapEntry) {
-      field.fieldKind = "map";
-      const { key, value: value2 } = findMapEntryFields2(mapEntry);
-      field.mapKey = key.scalar;
-      field.mapKind = value2.fieldKind;
-      field.message = value2.message;
-      field.delimitedEncoding = false;
-      field.enum = value2.enum;
-      field.scalar = value2.scalar;
-      return field;
-    }
-    field.fieldKind = "list";
-    switch (type) {
-      case TYPE_MESSAGE2:
-      case TYPE_GROUP2:
-        field.listKind = "message";
-        field.message = reg.getMessage(trimLeadingDot2(proto.typeName));
-        assert2(field.message);
-        field.delimitedEncoding = isDelimitedEncoding2(proto, parentOrFile);
-        break;
-      case TYPE_ENUM2:
-        field.listKind = "enum";
-        field.enum = reg.getEnum(trimLeadingDot2(proto.typeName));
-        assert2(field.enum);
-        break;
-      default:
-        field.listKind = "scalar";
-        field.scalar = type;
-        field.longAsString = jstype == JS_STRING2;
-        break;
-    }
-    field.packed = isPackedField2(proto, parentOrFile);
-    return field;
-  }
-  switch (type) {
-    case TYPE_MESSAGE2:
-    case TYPE_GROUP2:
-      field.fieldKind = "message";
-      field.message = reg.getMessage(trimLeadingDot2(proto.typeName));
-      assert2(field.message, `invalid FieldDescriptorProto: type_name ${proto.typeName} not found`);
-      field.delimitedEncoding = isDelimitedEncoding2(proto, parentOrFile);
-      field.getDefaultValue = () => {
-        return;
-      };
-      break;
-    case TYPE_ENUM2: {
-      const enumeration = reg.getEnum(trimLeadingDot2(proto.typeName));
-      assert2(enumeration !== undefined, `invalid FieldDescriptorProto: type_name ${proto.typeName} not found`);
-      field.fieldKind = "enum";
-      field.enum = reg.getEnum(trimLeadingDot2(proto.typeName));
-      field.getDefaultValue = () => {
-        return unsafeIsSetExplicit2(proto, "defaultValue") ? parseTextFormatEnumValue2(enumeration, proto.defaultValue) : undefined;
-      };
-      break;
-    }
-    default: {
-      field.fieldKind = "scalar";
-      field.scalar = type;
-      field.longAsString = jstype == JS_STRING2;
-      field.getDefaultValue = () => {
-        return unsafeIsSetExplicit2(proto, "defaultValue") ? parseTextFormatScalarValue2(type, proto.defaultValue) : undefined;
-      };
-      break;
-    }
-  }
-  return field;
-}
-function getFileEdition2(proto) {
-  switch (proto.syntax) {
-    case "":
-    case "proto2":
-      return EDITION_PROTO24;
-    case "proto3":
-      return EDITION_PROTO34;
-    case "editions":
-      if (proto.edition in featureDefaults2) {
-        return proto.edition;
-      }
-      throw new Error(`${proto.name}: unsupported edition`);
-    default:
-      throw new Error(`${proto.name}: unsupported syntax "${proto.syntax}"`);
-  }
-}
-function findFileDependencies2(proto, reg) {
-  return proto.dependency.map((wantName) => {
-    const dep = reg.getFile(wantName);
-    if (!dep) {
-      throw new Error(`Cannot find ${wantName}, imported by ${proto.name}`);
-    }
-    return dep;
-  });
-}
-function findEnumSharedPrefix2(enumName, values) {
-  const prefix = camelToSnakeCase2(enumName) + "_";
-  for (const value2 of values) {
-    if (!value2.name.toLowerCase().startsWith(prefix)) {
-      return;
-    }
-    const shortName = value2.name.substring(prefix.length);
-    if (shortName.length == 0) {
-      return;
-    }
-    if (/^\d/.test(shortName)) {
-      return;
-    }
-  }
-  return prefix;
-}
-function camelToSnakeCase2(camel) {
-  return (camel.substring(0, 1) + camel.substring(1).replace(/[A-Z]/g, (c) => "_" + c)).toLowerCase();
-}
-function makeTypeName2(proto, parent, file) {
-  let typeName;
-  if (parent) {
-    typeName = `${parent.typeName}.${proto.name}`;
-  } else if (file.proto.package.length > 0) {
-    typeName = `${file.proto.package}.${proto.name}`;
-  } else {
-    typeName = `${proto.name}`;
-  }
-  return typeName;
-}
-function trimLeadingDot2(typeName) {
-  return typeName.startsWith(".") ? typeName.substring(1) : typeName;
-}
-function findOneof2(proto, allOneofs) {
-  if (!unsafeIsSetExplicit2(proto, "oneofIndex")) {
-    return;
-  }
-  if (proto.proto3Optional) {
-    return;
-  }
-  const oneof = allOneofs[proto.oneofIndex];
-  assert2(oneof, `invalid FieldDescriptorProto: oneof #${proto.oneofIndex} for field #${proto.number} not found`);
-  return oneof;
-}
-function getFieldPresence2(proto, oneof, isExtension, parent) {
-  if (proto.label == LABEL_REQUIRED2) {
-    return LEGACY_REQUIRED3;
-  }
-  if (proto.label == LABEL_REPEATED2) {
-    return IMPLICIT6;
-  }
-  if (!!oneof || proto.proto3Optional) {
-    return EXPLICIT2;
-  }
-  if (isExtension) {
-    return EXPLICIT2;
-  }
-  const resolved = resolveFeature2("fieldPresence", { proto, parent });
-  if (resolved == IMPLICIT6 && (proto.type == TYPE_MESSAGE2 || proto.type == TYPE_GROUP2)) {
-    return EXPLICIT2;
-  }
-  return resolved;
-}
-function isPackedField2(proto, parent) {
-  if (proto.label != LABEL_REPEATED2) {
-    return false;
-  }
-  switch (proto.type) {
-    case TYPE_STRING2:
-    case TYPE_BYTES2:
-    case TYPE_GROUP2:
-    case TYPE_MESSAGE2:
-      return false;
-  }
-  const o = proto.options;
-  if (o && unsafeIsSetExplicit2(o, "packed")) {
-    return o.packed;
-  }
-  return PACKED2 == resolveFeature2("repeatedFieldEncoding", {
-    proto,
-    parent
-  });
-}
-function findMapEntryFields2(mapEntry) {
-  const key = mapEntry.fields.find((f) => f.number === 1);
-  const value2 = mapEntry.fields.find((f) => f.number === 2);
-  assert2(key && key.fieldKind == "scalar" && key.scalar != ScalarType2.BYTES && key.scalar != ScalarType2.FLOAT && key.scalar != ScalarType2.DOUBLE && value2 && value2.fieldKind != "list" && value2.fieldKind != "map");
-  return { key, value: value2 };
-}
-function isEnumOpen2(desc) {
-  var _a;
-  return OPEN2 == resolveFeature2("enumType", {
-    proto: desc.proto,
-    parent: (_a = desc.parent) !== null && _a !== undefined ? _a : desc.file
-  });
-}
-function isDelimitedEncoding2(proto, parent) {
-  if (proto.type == TYPE_GROUP2) {
-    return true;
-  }
-  return DELIMITED2 == resolveFeature2("messageEncoding", {
-    proto,
-    parent
-  });
-}
-function resolveFeature2(name, ref) {
-  var _a, _b;
-  const featureSet = (_a = ref.proto.options) === null || _a === undefined ? undefined : _a.features;
-  if (featureSet) {
-    const val = featureSet[name];
-    if (val != 0) {
-      return val;
-    }
-  }
-  if ("kind" in ref) {
-    if (ref.kind == "message") {
-      return resolveFeature2(name, (_b = ref.parent) !== null && _b !== undefined ? _b : ref.file);
-    }
-    const editionDefaults = featureDefaults2[ref.edition];
-    if (!editionDefaults) {
-      throw new Error(`feature default for edition ${ref.edition} not found`);
-    }
-    return editionDefaults[name];
-  }
-  return resolveFeature2(name, ref.parent);
-}
-function assert2(condition, msg) {
-  if (!condition) {
-    throw new Error(msg);
-  }
-}
-function boot2(boot3) {
-  const root = bootFileDescriptorProto2(boot3);
-  root.messageType.forEach(restoreJsonNames2);
-  const reg = createFileRegistry2(root, () => {
-    return;
-  });
-  return reg.getFile(root.name);
-}
-function bootFileDescriptorProto2(init) {
-  const proto = Object.create({
-    syntax: "",
-    edition: 0
-  });
-  return Object.assign(proto, Object.assign(Object.assign({ $typeName: "google.protobuf.FileDescriptorProto", dependency: [], publicDependency: [], weakDependency: [], optionDependency: [], service: [], extension: [] }, init), { messageType: init.messageType.map(bootDescriptorProto2), enumType: init.enumType.map(bootEnumDescriptorProto2) }));
-}
-function bootDescriptorProto2(init) {
-  var _a, _b, _c, _d, _e, _f, _g, _h;
-  const proto = Object.create({
-    visibility: 0
-  });
-  return Object.assign(proto, {
-    $typeName: "google.protobuf.DescriptorProto",
-    name: init.name,
-    field: (_b = (_a = init.field) === null || _a === undefined ? undefined : _a.map(bootFieldDescriptorProto2)) !== null && _b !== undefined ? _b : [],
-    extension: [],
-    nestedType: (_d = (_c = init.nestedType) === null || _c === undefined ? undefined : _c.map(bootDescriptorProto2)) !== null && _d !== undefined ? _d : [],
-    enumType: (_f = (_e = init.enumType) === null || _e === undefined ? undefined : _e.map(bootEnumDescriptorProto2)) !== null && _f !== undefined ? _f : [],
-    extensionRange: (_h = (_g = init.extensionRange) === null || _g === undefined ? undefined : _g.map((e) => Object.assign({ $typeName: "google.protobuf.DescriptorProto.ExtensionRange" }, e))) !== null && _h !== undefined ? _h : [],
-    oneofDecl: [],
-    reservedRange: [],
-    reservedName: []
-  });
-}
-function bootFieldDescriptorProto2(init) {
-  const proto = Object.create({
-    label: 1,
-    typeName: "",
-    extendee: "",
-    defaultValue: "",
-    oneofIndex: 0,
-    jsonName: "",
-    proto3Optional: false
-  });
-  return Object.assign(proto, Object.assign(Object.assign({ $typeName: "google.protobuf.FieldDescriptorProto" }, init), { options: init.options ? bootFieldOptions2(init.options) : undefined }));
-}
-function bootFieldOptions2(init) {
-  var _a, _b, _c;
-  const proto = Object.create({
-    ctype: 0,
-    packed: false,
-    jstype: 0,
-    lazy: false,
-    unverifiedLazy: false,
-    deprecated: false,
-    weak: false,
-    debugRedact: false,
-    retention: 0
-  });
-  return Object.assign(proto, Object.assign(Object.assign({ $typeName: "google.protobuf.FieldOptions" }, init), { targets: (_a = init.targets) !== null && _a !== undefined ? _a : [], editionDefaults: (_c = (_b = init.editionDefaults) === null || _b === undefined ? undefined : _b.map((e) => Object.assign({ $typeName: "google.protobuf.FieldOptions.EditionDefault" }, e))) !== null && _c !== undefined ? _c : [], uninterpretedOption: [] }));
-}
-function bootEnumDescriptorProto2(init) {
-  const proto = Object.create({
-    visibility: 0
-  });
-  return Object.assign(proto, {
-    $typeName: "google.protobuf.EnumDescriptorProto",
-    name: init.name,
-    reservedName: [],
-    reservedRange: [],
-    value: init.value.map((e) => Object.assign({ $typeName: "google.protobuf.EnumValueDescriptorProto" }, e))
-  });
-}
-function messageDesc2(file, path, ...paths) {
-  return paths.reduce((acc, cur) => acc.nestedMessages[cur], file.messages[path]);
-}
-var file_google_protobuf_descriptor2 = /* @__PURE__ */ boot2({ name: "google/protobuf/descriptor.proto", package: "google.protobuf", messageType: [{ name: "FileDescriptorSet", field: [{ name: "file", number: 1, type: 11, label: 3, typeName: ".google.protobuf.FileDescriptorProto" }], extensionRange: [{ start: 536000000, end: 536000001 }] }, { name: "FileDescriptorProto", field: [{ name: "name", number: 1, type: 9, label: 1 }, { name: "package", number: 2, type: 9, label: 1 }, { name: "dependency", number: 3, type: 9, label: 3 }, { name: "public_dependency", number: 10, type: 5, label: 3 }, { name: "weak_dependency", number: 11, type: 5, label: 3 }, { name: "option_dependency", number: 15, type: 9, label: 3 }, { name: "message_type", number: 4, type: 11, label: 3, typeName: ".google.protobuf.DescriptorProto" }, { name: "enum_type", number: 5, type: 11, label: 3, typeName: ".google.protobuf.EnumDescriptorProto" }, { name: "service", number: 6, type: 11, label: 3, typeName: ".google.protobuf.ServiceDescriptorProto" }, { name: "extension", number: 7, type: 11, label: 3, typeName: ".google.protobuf.FieldDescriptorProto" }, { name: "options", number: 8, type: 11, label: 1, typeName: ".google.protobuf.FileOptions" }, { name: "source_code_info", number: 9, type: 11, label: 1, typeName: ".google.protobuf.SourceCodeInfo" }, { name: "syntax", number: 12, type: 9, label: 1 }, { name: "edition", number: 14, type: 14, label: 1, typeName: ".google.protobuf.Edition" }] }, { name: "DescriptorProto", field: [{ name: "name", number: 1, type: 9, label: 1 }, { name: "field", number: 2, type: 11, label: 3, typeName: ".google.protobuf.FieldDescriptorProto" }, { name: "extension", number: 6, type: 11, label: 3, typeName: ".google.protobuf.FieldDescriptorProto" }, { name: "nested_type", number: 3, type: 11, label: 3, typeName: ".google.protobuf.DescriptorProto" }, { name: "enum_type", number: 4, type: 11, label: 3, typeName: ".google.protobuf.EnumDescriptorProto" }, { name: "extension_range", number: 5, type: 11, label: 3, typeName: ".google.protobuf.DescriptorProto.ExtensionRange" }, { name: "oneof_decl", number: 8, type: 11, label: 3, typeName: ".google.protobuf.OneofDescriptorProto" }, { name: "options", number: 7, type: 11, label: 1, typeName: ".google.protobuf.MessageOptions" }, { name: "reserved_range", number: 9, type: 11, label: 3, typeName: ".google.protobuf.DescriptorProto.ReservedRange" }, { name: "reserved_name", number: 10, type: 9, label: 3 }, { name: "visibility", number: 11, type: 14, label: 1, typeName: ".google.protobuf.SymbolVisibility" }], nestedType: [{ name: "ExtensionRange", field: [{ name: "start", number: 1, type: 5, label: 1 }, { name: "end", number: 2, type: 5, label: 1 }, { name: "options", number: 3, type: 11, label: 1, typeName: ".google.protobuf.ExtensionRangeOptions" }] }, { name: "ReservedRange", field: [{ name: "start", number: 1, type: 5, label: 1 }, { name: "end", number: 2, type: 5, label: 1 }] }] }, { name: "ExtensionRangeOptions", field: [{ name: "uninterpreted_option", number: 999, type: 11, label: 3, typeName: ".google.protobuf.UninterpretedOption" }, { name: "declaration", number: 2, type: 11, label: 3, typeName: ".google.protobuf.ExtensionRangeOptions.Declaration", options: { retention: 2 } }, { name: "features", number: 50, type: 11, label: 1, typeName: ".google.protobuf.FeatureSet" }, { name: "verification", number: 3, type: 14, label: 1, typeName: ".google.protobuf.ExtensionRangeOptions.VerificationState", defaultValue: "UNVERIFIED", options: { retention: 2 } }], nestedType: [{ name: "Declaration", field: [{ name: "number", number: 1, type: 5, label: 1 }, { name: "full_name", number: 2, type: 9, label: 1 }, { name: "type", number: 3, type: 9, label: 1 }, { name: "reserved", number: 5, type: 8, label: 1 }, { name: "repeated", number: 6, type: 8, label: 1 }] }], enumType: [{ name: "VerificationState", value: [{ name: "DECLARATION", number: 0 }, { name: "UNVERIFIED", number: 1 }] }], extensionRange: [{ start: 1000, end: 536870912 }] }, { name: "FieldDescriptorProto", field: [{ name: "name", number: 1, type: 9, label: 1 }, { name: "number", number: 3, type: 5, label: 1 }, { name: "label", number: 4, type: 14, label: 1, typeName: ".google.protobuf.FieldDescriptorProto.Label" }, { name: "type", number: 5, type: 14, label: 1, typeName: ".google.protobuf.FieldDescriptorProto.Type" }, { name: "type_name", number: 6, type: 9, label: 1 }, { name: "extendee", number: 2, type: 9, label: 1 }, { name: "default_value", number: 7, type: 9, label: 1 }, { name: "oneof_index", number: 9, type: 5, label: 1 }, { name: "json_name", number: 10, type: 9, label: 1 }, { name: "options", number: 8, type: 11, label: 1, typeName: ".google.protobuf.FieldOptions" }, { name: "proto3_optional", number: 17, type: 8, label: 1 }], enumType: [{ name: "Type", value: [{ name: "TYPE_DOUBLE", number: 1 }, { name: "TYPE_FLOAT", number: 2 }, { name: "TYPE_INT64", number: 3 }, { name: "TYPE_UINT64", number: 4 }, { name: "TYPE_INT32", number: 5 }, { name: "TYPE_FIXED64", number: 6 }, { name: "TYPE_FIXED32", number: 7 }, { name: "TYPE_BOOL", number: 8 }, { name: "TYPE_STRING", number: 9 }, { name: "TYPE_GROUP", number: 10 }, { name: "TYPE_MESSAGE", number: 11 }, { name: "TYPE_BYTES", number: 12 }, { name: "TYPE_UINT32", number: 13 }, { name: "TYPE_ENUM", number: 14 }, { name: "TYPE_SFIXED32", number: 15 }, { name: "TYPE_SFIXED64", number: 16 }, { name: "TYPE_SINT32", number: 17 }, { name: "TYPE_SINT64", number: 18 }] }, { name: "Label", value: [{ name: "LABEL_OPTIONAL", number: 1 }, { name: "LABEL_REPEATED", number: 3 }, { name: "LABEL_REQUIRED", number: 2 }] }] }, { name: "OneofDescriptorProto", field: [{ name: "name", number: 1, type: 9, label: 1 }, { name: "options", number: 2, type: 11, label: 1, typeName: ".google.protobuf.OneofOptions" }] }, { name: "EnumDescriptorProto", field: [{ name: "name", number: 1, type: 9, label: 1 }, { name: "value", number: 2, type: 11, label: 3, typeName: ".google.protobuf.EnumValueDescriptorProto" }, { name: "options", number: 3, type: 11, label: 1, typeName: ".google.protobuf.EnumOptions" }, { name: "reserved_range", number: 4, type: 11, label: 3, typeName: ".google.protobuf.EnumDescriptorProto.EnumReservedRange" }, { name: "reserved_name", number: 5, type: 9, label: 3 }, { name: "visibility", number: 6, type: 14, label: 1, typeName: ".google.protobuf.SymbolVisibility" }], nestedType: [{ name: "EnumReservedRange", field: [{ name: "start", number: 1, type: 5, label: 1 }, { name: "end", number: 2, type: 5, label: 1 }] }] }, { name: "EnumValueDescriptorProto", field: [{ name: "name", number: 1, type: 9, label: 1 }, { name: "number", number: 2, type: 5, label: 1 }, { name: "options", number: 3, type: 11, label: 1, typeName: ".google.protobuf.EnumValueOptions" }] }, { name: "ServiceDescriptorProto", field: [{ name: "name", number: 1, type: 9, label: 1 }, { name: "method", number: 2, type: 11, label: 3, typeName: ".google.protobuf.MethodDescriptorProto" }, { name: "options", number: 3, type: 11, label: 1, typeName: ".google.protobuf.ServiceOptions" }] }, { name: "MethodDescriptorProto", field: [{ name: "name", number: 1, type: 9, label: 1 }, { name: "input_type", number: 2, type: 9, label: 1 }, { name: "output_type", number: 3, type: 9, label: 1 }, { name: "options", number: 4, type: 11, label: 1, typeName: ".google.protobuf.MethodOptions" }, { name: "client_streaming", number: 5, type: 8, label: 1, defaultValue: "false" }, { name: "server_streaming", number: 6, type: 8, label: 1, defaultValue: "false" }] }, { name: "FileOptions", field: [{ name: "java_package", number: 1, type: 9, label: 1 }, { name: "java_outer_classname", number: 8, type: 9, label: 1 }, { name: "java_multiple_files", number: 10, type: 8, label: 1, defaultValue: "false" }, { name: "java_generate_equals_and_hash", number: 20, type: 8, label: 1, options: { deprecated: true } }, { name: "java_string_check_utf8", number: 27, type: 8, label: 1, defaultValue: "false" }, { name: "optimize_for", number: 9, type: 14, label: 1, typeName: ".google.protobuf.FileOptions.OptimizeMode", defaultValue: "SPEED" }, { name: "go_package", number: 11, type: 9, label: 1 }, { name: "cc_generic_services", number: 16, type: 8, label: 1, defaultValue: "false" }, { name: "java_generic_services", number: 17, type: 8, label: 1, defaultValue: "false" }, { name: "py_generic_services", number: 18, type: 8, label: 1, defaultValue: "false" }, { name: "deprecated", number: 23, type: 8, label: 1, defaultValue: "false" }, { name: "cc_enable_arenas", number: 31, type: 8, label: 1, defaultValue: "true" }, { name: "objc_class_prefix", number: 36, type: 9, label: 1 }, { name: "csharp_namespace", number: 37, type: 9, label: 1 }, { name: "swift_prefix", number: 39, type: 9, label: 1 }, { name: "php_class_prefix", number: 40, type: 9, label: 1 }, { name: "php_namespace", number: 41, type: 9, label: 1 }, { name: "php_metadata_namespace", number: 44, type: 9, label: 1 }, { name: "ruby_package", number: 45, type: 9, label: 1 }, { name: "features", number: 50, type: 11, label: 1, typeName: ".google.protobuf.FeatureSet" }, { name: "uninterpreted_option", number: 999, type: 11, label: 3, typeName: ".google.protobuf.UninterpretedOption" }], enumType: [{ name: "OptimizeMode", value: [{ name: "SPEED", number: 1 }, { name: "CODE_SIZE", number: 2 }, { name: "LITE_RUNTIME", number: 3 }] }], extensionRange: [{ start: 1000, end: 536870912 }] }, { name: "MessageOptions", field: [{ name: "message_set_wire_format", number: 1, type: 8, label: 1, defaultValue: "false" }, { name: "no_standard_descriptor_accessor", number: 2, type: 8, label: 1, defaultValue: "false" }, { name: "deprecated", number: 3, type: 8, label: 1, defaultValue: "false" }, { name: "map_entry", number: 7, type: 8, label: 1 }, { name: "deprecated_legacy_json_field_conflicts", number: 11, type: 8, label: 1, options: { deprecated: true } }, { name: "features", number: 12, type: 11, label: 1, typeName: ".google.protobuf.FeatureSet" }, { name: "uninterpreted_option", number: 999, type: 11, label: 3, typeName: ".google.protobuf.UninterpretedOption" }], extensionRange: [{ start: 1000, end: 536870912 }] }, { name: "FieldOptions", field: [{ name: "ctype", number: 1, type: 14, label: 1, typeName: ".google.protobuf.FieldOptions.CType", defaultValue: "STRING" }, { name: "packed", number: 2, type: 8, label: 1 }, { name: "jstype", number: 6, type: 14, label: 1, typeName: ".google.protobuf.FieldOptions.JSType", defaultValue: "JS_NORMAL" }, { name: "lazy", number: 5, type: 8, label: 1, defaultValue: "false" }, { name: "unverified_lazy", number: 15, type: 8, label: 1, defaultValue: "false" }, { name: "deprecated", number: 3, type: 8, label: 1, defaultValue: "false" }, { name: "weak", number: 10, type: 8, label: 1, defaultValue: "false" }, { name: "debug_redact", number: 16, type: 8, label: 1, defaultValue: "false" }, { name: "retention", number: 17, type: 14, label: 1, typeName: ".google.protobuf.FieldOptions.OptionRetention" }, { name: "targets", number: 19, type: 14, label: 3, typeName: ".google.protobuf.FieldOptions.OptionTargetType" }, { name: "edition_defaults", number: 20, type: 11, label: 3, typeName: ".google.protobuf.FieldOptions.EditionDefault" }, { name: "features", number: 21, type: 11, label: 1, typeName: ".google.protobuf.FeatureSet" }, { name: "feature_support", number: 22, type: 11, label: 1, typeName: ".google.protobuf.FieldOptions.FeatureSupport" }, { name: "uninterpreted_option", number: 999, type: 11, label: 3, typeName: ".google.protobuf.UninterpretedOption" }], nestedType: [{ name: "EditionDefault", field: [{ name: "edition", number: 3, type: 14, label: 1, typeName: ".google.protobuf.Edition" }, { name: "value", number: 2, type: 9, label: 1 }] }, { name: "FeatureSupport", field: [{ name: "edition_introduced", number: 1, type: 14, label: 1, typeName: ".google.protobuf.Edition" }, { name: "edition_deprecated", number: 2, type: 14, label: 1, typeName: ".google.protobuf.Edition" }, { name: "deprecation_warning", number: 3, type: 9, label: 1 }, { name: "edition_removed", number: 4, type: 14, label: 1, typeName: ".google.protobuf.Edition" }] }], enumType: [{ name: "CType", value: [{ name: "STRING", number: 0 }, { name: "CORD", number: 1 }, { name: "STRING_PIECE", number: 2 }] }, { name: "JSType", value: [{ name: "JS_NORMAL", number: 0 }, { name: "JS_STRING", number: 1 }, { name: "JS_NUMBER", number: 2 }] }, { name: "OptionRetention", value: [{ name: "RETENTION_UNKNOWN", number: 0 }, { name: "RETENTION_RUNTIME", number: 1 }, { name: "RETENTION_SOURCE", number: 2 }] }, { name: "OptionTargetType", value: [{ name: "TARGET_TYPE_UNKNOWN", number: 0 }, { name: "TARGET_TYPE_FILE", number: 1 }, { name: "TARGET_TYPE_EXTENSION_RANGE", number: 2 }, { name: "TARGET_TYPE_MESSAGE", number: 3 }, { name: "TARGET_TYPE_FIELD", number: 4 }, { name: "TARGET_TYPE_ONEOF", number: 5 }, { name: "TARGET_TYPE_ENUM", number: 6 }, { name: "TARGET_TYPE_ENUM_ENTRY", number: 7 }, { name: "TARGET_TYPE_SERVICE", number: 8 }, { name: "TARGET_TYPE_METHOD", number: 9 }] }], extensionRange: [{ start: 1000, end: 536870912 }] }, { name: "OneofOptions", field: [{ name: "features", number: 1, type: 11, label: 1, typeName: ".google.protobuf.FeatureSet" }, { name: "uninterpreted_option", number: 999, type: 11, label: 3, typeName: ".google.protobuf.UninterpretedOption" }], extensionRange: [{ start: 1000, end: 536870912 }] }, { name: "EnumOptions", field: [{ name: "allow_alias", number: 2, type: 8, label: 1 }, { name: "deprecated", number: 3, type: 8, label: 1, defaultValue: "false" }, { name: "deprecated_legacy_json_field_conflicts", number: 6, type: 8, label: 1, options: { deprecated: true } }, { name: "features", number: 7, type: 11, label: 1, typeName: ".google.protobuf.FeatureSet" }, { name: "uninterpreted_option", number: 999, type: 11, label: 3, typeName: ".google.protobuf.UninterpretedOption" }], extensionRange: [{ start: 1000, end: 536870912 }] }, { name: "EnumValueOptions", field: [{ name: "deprecated", number: 1, type: 8, label: 1, defaultValue: "false" }, { name: "features", number: 2, type: 11, label: 1, typeName: ".google.protobuf.FeatureSet" }, { name: "debug_redact", number: 3, type: 8, label: 1, defaultValue: "false" }, { name: "feature_support", number: 4, type: 11, label: 1, typeName: ".google.protobuf.FieldOptions.FeatureSupport" }, { name: "uninterpreted_option", number: 999, type: 11, label: 3, typeName: ".google.protobuf.UninterpretedOption" }], extensionRange: [{ start: 1000, end: 536870912 }] }, { name: "ServiceOptions", field: [{ name: "features", number: 34, type: 11, label: 1, typeName: ".google.protobuf.FeatureSet" }, { name: "deprecated", number: 33, type: 8, label: 1, defaultValue: "false" }, { name: "uninterpreted_option", number: 999, type: 11, label: 3, typeName: ".google.protobuf.UninterpretedOption" }], extensionRange: [{ start: 1000, end: 536870912 }] }, { name: "MethodOptions", field: [{ name: "deprecated", number: 33, type: 8, label: 1, defaultValue: "false" }, { name: "idempotency_level", number: 34, type: 14, label: 1, typeName: ".google.protobuf.MethodOptions.IdempotencyLevel", defaultValue: "IDEMPOTENCY_UNKNOWN" }, { name: "features", number: 35, type: 11, label: 1, typeName: ".google.protobuf.FeatureSet" }, { name: "uninterpreted_option", number: 999, type: 11, label: 3, typeName: ".google.protobuf.UninterpretedOption" }], enumType: [{ name: "IdempotencyLevel", value: [{ name: "IDEMPOTENCY_UNKNOWN", number: 0 }, { name: "NO_SIDE_EFFECTS", number: 1 }, { name: "IDEMPOTENT", number: 2 }] }], extensionRange: [{ start: 1000, end: 536870912 }] }, { name: "UninterpretedOption", field: [{ name: "name", number: 2, type: 11, label: 3, typeName: ".google.protobuf.UninterpretedOption.NamePart" }, { name: "identifier_value", number: 3, type: 9, label: 1 }, { name: "positive_int_value", number: 4, type: 4, label: 1 }, { name: "negative_int_value", number: 5, type: 3, label: 1 }, { name: "double_value", number: 6, type: 1, label: 1 }, { name: "string_value", number: 7, type: 12, label: 1 }, { name: "aggregate_value", number: 8, type: 9, label: 1 }], nestedType: [{ name: "NamePart", field: [{ name: "name_part", number: 1, type: 9, label: 2 }, { name: "is_extension", number: 2, type: 8, label: 2 }] }] }, { name: "FeatureSet", field: [{ name: "field_presence", number: 1, type: 14, label: 1, typeName: ".google.protobuf.FeatureSet.FieldPresence", options: { retention: 1, targets: [4, 1], editionDefaults: [{ value: "EXPLICIT", edition: 900 }, { value: "IMPLICIT", edition: 999 }, { value: "EXPLICIT", edition: 1000 }] } }, { name: "enum_type", number: 2, type: 14, label: 1, typeName: ".google.protobuf.FeatureSet.EnumType", options: { retention: 1, targets: [6, 1], editionDefaults: [{ value: "CLOSED", edition: 900 }, { value: "OPEN", edition: 999 }] } }, { name: "repeated_field_encoding", number: 3, type: 14, label: 1, typeName: ".google.protobuf.FeatureSet.RepeatedFieldEncoding", options: { retention: 1, targets: [4, 1], editionDefaults: [{ value: "EXPANDED", edition: 900 }, { value: "PACKED", edition: 999 }] } }, { name: "utf8_validation", number: 4, type: 14, label: 1, typeName: ".google.protobuf.FeatureSet.Utf8Validation", options: { retention: 1, targets: [4, 1], editionDefaults: [{ value: "NONE", edition: 900 }, { value: "VERIFY", edition: 999 }] } }, { name: "message_encoding", number: 5, type: 14, label: 1, typeName: ".google.protobuf.FeatureSet.MessageEncoding", options: { retention: 1, targets: [4, 1], editionDefaults: [{ value: "LENGTH_PREFIXED", edition: 900 }] } }, { name: "json_format", number: 6, type: 14, label: 1, typeName: ".google.protobuf.FeatureSet.JsonFormat", options: { retention: 1, targets: [3, 6, 1], editionDefaults: [{ value: "LEGACY_BEST_EFFORT", edition: 900 }, { value: "ALLOW", edition: 999 }] } }, { name: "enforce_naming_style", number: 7, type: 14, label: 1, typeName: ".google.protobuf.FeatureSet.EnforceNamingStyle", options: { retention: 2, targets: [1, 2, 3, 4, 5, 6, 7, 8, 9], editionDefaults: [{ value: "STYLE_LEGACY", edition: 900 }, { value: "STYLE2024", edition: 1001 }] } }, { name: "default_symbol_visibility", number: 8, type: 14, label: 1, typeName: ".google.protobuf.FeatureSet.VisibilityFeature.DefaultSymbolVisibility", options: { retention: 2, targets: [1], editionDefaults: [{ value: "EXPORT_ALL", edition: 900 }, { value: "EXPORT_TOP_LEVEL", edition: 1001 }] } }], nestedType: [{ name: "VisibilityFeature", enumType: [{ name: "DefaultSymbolVisibility", value: [{ name: "DEFAULT_SYMBOL_VISIBILITY_UNKNOWN", number: 0 }, { name: "EXPORT_ALL", number: 1 }, { name: "EXPORT_TOP_LEVEL", number: 2 }, { name: "LOCAL_ALL", number: 3 }, { name: "STRICT", number: 4 }] }] }], enumType: [{ name: "FieldPresence", value: [{ name: "FIELD_PRESENCE_UNKNOWN", number: 0 }, { name: "EXPLICIT", number: 1 }, { name: "IMPLICIT", number: 2 }, { name: "LEGACY_REQUIRED", number: 3 }] }, { name: "EnumType", value: [{ name: "ENUM_TYPE_UNKNOWN", number: 0 }, { name: "OPEN", number: 1 }, { name: "CLOSED", number: 2 }] }, { name: "RepeatedFieldEncoding", value: [{ name: "REPEATED_FIELD_ENCODING_UNKNOWN", number: 0 }, { name: "PACKED", number: 1 }, { name: "EXPANDED", number: 2 }] }, { name: "Utf8Validation", value: [{ name: "UTF8_VALIDATION_UNKNOWN", number: 0 }, { name: "VERIFY", number: 2 }, { name: "NONE", number: 3 }] }, { name: "MessageEncoding", value: [{ name: "MESSAGE_ENCODING_UNKNOWN", number: 0 }, { name: "LENGTH_PREFIXED", number: 1 }, { name: "DELIMITED", number: 2 }] }, { name: "JsonFormat", value: [{ name: "JSON_FORMAT_UNKNOWN", number: 0 }, { name: "ALLOW", number: 1 }, { name: "LEGACY_BEST_EFFORT", number: 2 }] }, { name: "EnforceNamingStyle", value: [{ name: "ENFORCE_NAMING_STYLE_UNKNOWN", number: 0 }, { name: "STYLE2024", number: 1 }, { name: "STYLE_LEGACY", number: 2 }] }], extensionRange: [{ start: 1000, end: 9995 }, { start: 9995, end: 1e4 }, { start: 1e4, end: 10001 }] }, { name: "FeatureSetDefaults", field: [{ name: "defaults", number: 1, type: 11, label: 3, typeName: ".google.protobuf.FeatureSetDefaults.FeatureSetEditionDefault" }, { name: "minimum_edition", number: 4, type: 14, label: 1, typeName: ".google.protobuf.Edition" }, { name: "maximum_edition", number: 5, type: 14, label: 1, typeName: ".google.protobuf.Edition" }], nestedType: [{ name: "FeatureSetEditionDefault", field: [{ name: "edition", number: 3, type: 14, label: 1, typeName: ".google.protobuf.Edition" }, { name: "overridable_features", number: 4, type: 11, label: 1, typeName: ".google.protobuf.FeatureSet" }, { name: "fixed_features", number: 5, type: 11, label: 1, typeName: ".google.protobuf.FeatureSet" }] }] }, { name: "SourceCodeInfo", field: [{ name: "location", number: 1, type: 11, label: 3, typeName: ".google.protobuf.SourceCodeInfo.Location" }], nestedType: [{ name: "Location", field: [{ name: "path", number: 1, type: 5, label: 3, options: { packed: true } }, { name: "span", number: 2, type: 5, label: 3, options: { packed: true } }, { name: "leading_comments", number: 3, type: 9, label: 1 }, { name: "trailing_comments", number: 4, type: 9, label: 1 }, { name: "leading_detached_comments", number: 6, type: 9, label: 3 }] }], extensionRange: [{ start: 536000000, end: 536000001 }] }, { name: "GeneratedCodeInfo", field: [{ name: "annotation", number: 1, type: 11, label: 3, typeName: ".google.protobuf.GeneratedCodeInfo.Annotation" }], nestedType: [{ name: "Annotation", field: [{ name: "path", number: 1, type: 5, label: 3, options: { packed: true } }, { name: "source_file", number: 2, type: 9, label: 1 }, { name: "begin", number: 3, type: 5, label: 1 }, { name: "end", number: 4, type: 5, label: 1 }, { name: "semantic", number: 5, type: 14, label: 1, typeName: ".google.protobuf.GeneratedCodeInfo.Annotation.Semantic" }], enumType: [{ name: "Semantic", value: [{ name: "NONE", number: 0 }, { name: "SET", number: 1 }, { name: "ALIAS", number: 2 }] }] }] }], enumType: [{ name: "Edition", value: [{ name: "EDITION_UNKNOWN", number: 0 }, { name: "EDITION_LEGACY", number: 900 }, { name: "EDITION_PROTO2", number: 998 }, { name: "EDITION_PROTO3", number: 999 }, { name: "EDITION_2023", number: 1000 }, { name: "EDITION_2024", number: 1001 }, { name: "EDITION_1_TEST_ONLY", number: 1 }, { name: "EDITION_2_TEST_ONLY", number: 2 }, { name: "EDITION_99997_TEST_ONLY", number: 99997 }, { name: "EDITION_99998_TEST_ONLY", number: 99998 }, { name: "EDITION_99999_TEST_ONLY", number: 99999 }, { name: "EDITION_MAX", number: 2147483647 }] }, { name: "SymbolVisibility", value: [{ name: "VISIBILITY_UNSET", number: 0 }, { name: "VISIBILITY_LOCAL", number: 1 }, { name: "VISIBILITY_EXPORT", number: 2 }] }] });
-var FileDescriptorProtoSchema2 = /* @__PURE__ */ messageDesc2(file_google_protobuf_descriptor2, 1);
-var ExtensionRangeOptions_VerificationState2;
-(function(ExtensionRangeOptions_VerificationState3) {
-  ExtensionRangeOptions_VerificationState3[ExtensionRangeOptions_VerificationState3["DECLARATION"] = 0] = "DECLARATION";
-  ExtensionRangeOptions_VerificationState3[ExtensionRangeOptions_VerificationState3["UNVERIFIED"] = 1] = "UNVERIFIED";
-})(ExtensionRangeOptions_VerificationState2 || (ExtensionRangeOptions_VerificationState2 = {}));
-var FieldDescriptorProto_Type2;
-(function(FieldDescriptorProto_Type3) {
-  FieldDescriptorProto_Type3[FieldDescriptorProto_Type3["DOUBLE"] = 1] = "DOUBLE";
-  FieldDescriptorProto_Type3[FieldDescriptorProto_Type3["FLOAT"] = 2] = "FLOAT";
-  FieldDescriptorProto_Type3[FieldDescriptorProto_Type3["INT64"] = 3] = "INT64";
-  FieldDescriptorProto_Type3[FieldDescriptorProto_Type3["UINT64"] = 4] = "UINT64";
-  FieldDescriptorProto_Type3[FieldDescriptorProto_Type3["INT32"] = 5] = "INT32";
-  FieldDescriptorProto_Type3[FieldDescriptorProto_Type3["FIXED64"] = 6] = "FIXED64";
-  FieldDescriptorProto_Type3[FieldDescriptorProto_Type3["FIXED32"] = 7] = "FIXED32";
-  FieldDescriptorProto_Type3[FieldDescriptorProto_Type3["BOOL"] = 8] = "BOOL";
-  FieldDescriptorProto_Type3[FieldDescriptorProto_Type3["STRING"] = 9] = "STRING";
-  FieldDescriptorProto_Type3[FieldDescriptorProto_Type3["GROUP"] = 10] = "GROUP";
-  FieldDescriptorProto_Type3[FieldDescriptorProto_Type3["MESSAGE"] = 11] = "MESSAGE";
-  FieldDescriptorProto_Type3[FieldDescriptorProto_Type3["BYTES"] = 12] = "BYTES";
-  FieldDescriptorProto_Type3[FieldDescriptorProto_Type3["UINT32"] = 13] = "UINT32";
-  FieldDescriptorProto_Type3[FieldDescriptorProto_Type3["ENUM"] = 14] = "ENUM";
-  FieldDescriptorProto_Type3[FieldDescriptorProto_Type3["SFIXED32"] = 15] = "SFIXED32";
-  FieldDescriptorProto_Type3[FieldDescriptorProto_Type3["SFIXED64"] = 16] = "SFIXED64";
-  FieldDescriptorProto_Type3[FieldDescriptorProto_Type3["SINT32"] = 17] = "SINT32";
-  FieldDescriptorProto_Type3[FieldDescriptorProto_Type3["SINT64"] = 18] = "SINT64";
-})(FieldDescriptorProto_Type2 || (FieldDescriptorProto_Type2 = {}));
-var FieldDescriptorProto_Label2;
-(function(FieldDescriptorProto_Label3) {
-  FieldDescriptorProto_Label3[FieldDescriptorProto_Label3["OPTIONAL"] = 1] = "OPTIONAL";
-  FieldDescriptorProto_Label3[FieldDescriptorProto_Label3["REPEATED"] = 3] = "REPEATED";
-  FieldDescriptorProto_Label3[FieldDescriptorProto_Label3["REQUIRED"] = 2] = "REQUIRED";
-})(FieldDescriptorProto_Label2 || (FieldDescriptorProto_Label2 = {}));
-var FileOptions_OptimizeMode2;
-(function(FileOptions_OptimizeMode3) {
-  FileOptions_OptimizeMode3[FileOptions_OptimizeMode3["SPEED"] = 1] = "SPEED";
-  FileOptions_OptimizeMode3[FileOptions_OptimizeMode3["CODE_SIZE"] = 2] = "CODE_SIZE";
-  FileOptions_OptimizeMode3[FileOptions_OptimizeMode3["LITE_RUNTIME"] = 3] = "LITE_RUNTIME";
-})(FileOptions_OptimizeMode2 || (FileOptions_OptimizeMode2 = {}));
-var FieldOptions_CType2;
-(function(FieldOptions_CType3) {
-  FieldOptions_CType3[FieldOptions_CType3["STRING"] = 0] = "STRING";
-  FieldOptions_CType3[FieldOptions_CType3["CORD"] = 1] = "CORD";
-  FieldOptions_CType3[FieldOptions_CType3["STRING_PIECE"] = 2] = "STRING_PIECE";
-})(FieldOptions_CType2 || (FieldOptions_CType2 = {}));
-var FieldOptions_JSType2;
-(function(FieldOptions_JSType3) {
-  FieldOptions_JSType3[FieldOptions_JSType3["JS_NORMAL"] = 0] = "JS_NORMAL";
-  FieldOptions_JSType3[FieldOptions_JSType3["JS_STRING"] = 1] = "JS_STRING";
-  FieldOptions_JSType3[FieldOptions_JSType3["JS_NUMBER"] = 2] = "JS_NUMBER";
-})(FieldOptions_JSType2 || (FieldOptions_JSType2 = {}));
-var FieldOptions_OptionRetention2;
-(function(FieldOptions_OptionRetention3) {
-  FieldOptions_OptionRetention3[FieldOptions_OptionRetention3["RETENTION_UNKNOWN"] = 0] = "RETENTION_UNKNOWN";
-  FieldOptions_OptionRetention3[FieldOptions_OptionRetention3["RETENTION_RUNTIME"] = 1] = "RETENTION_RUNTIME";
-  FieldOptions_OptionRetention3[FieldOptions_OptionRetention3["RETENTION_SOURCE"] = 2] = "RETENTION_SOURCE";
-})(FieldOptions_OptionRetention2 || (FieldOptions_OptionRetention2 = {}));
-var FieldOptions_OptionTargetType2;
-(function(FieldOptions_OptionTargetType3) {
-  FieldOptions_OptionTargetType3[FieldOptions_OptionTargetType3["TARGET_TYPE_UNKNOWN"] = 0] = "TARGET_TYPE_UNKNOWN";
-  FieldOptions_OptionTargetType3[FieldOptions_OptionTargetType3["TARGET_TYPE_FILE"] = 1] = "TARGET_TYPE_FILE";
-  FieldOptions_OptionTargetType3[FieldOptions_OptionTargetType3["TARGET_TYPE_EXTENSION_RANGE"] = 2] = "TARGET_TYPE_EXTENSION_RANGE";
-  FieldOptions_OptionTargetType3[FieldOptions_OptionTargetType3["TARGET_TYPE_MESSAGE"] = 3] = "TARGET_TYPE_MESSAGE";
-  FieldOptions_OptionTargetType3[FieldOptions_OptionTargetType3["TARGET_TYPE_FIELD"] = 4] = "TARGET_TYPE_FIELD";
-  FieldOptions_OptionTargetType3[FieldOptions_OptionTargetType3["TARGET_TYPE_ONEOF"] = 5] = "TARGET_TYPE_ONEOF";
-  FieldOptions_OptionTargetType3[FieldOptions_OptionTargetType3["TARGET_TYPE_ENUM"] = 6] = "TARGET_TYPE_ENUM";
-  FieldOptions_OptionTargetType3[FieldOptions_OptionTargetType3["TARGET_TYPE_ENUM_ENTRY"] = 7] = "TARGET_TYPE_ENUM_ENTRY";
-  FieldOptions_OptionTargetType3[FieldOptions_OptionTargetType3["TARGET_TYPE_SERVICE"] = 8] = "TARGET_TYPE_SERVICE";
-  FieldOptions_OptionTargetType3[FieldOptions_OptionTargetType3["TARGET_TYPE_METHOD"] = 9] = "TARGET_TYPE_METHOD";
-})(FieldOptions_OptionTargetType2 || (FieldOptions_OptionTargetType2 = {}));
-var MethodOptions_IdempotencyLevel2;
-(function(MethodOptions_IdempotencyLevel3) {
-  MethodOptions_IdempotencyLevel3[MethodOptions_IdempotencyLevel3["IDEMPOTENCY_UNKNOWN"] = 0] = "IDEMPOTENCY_UNKNOWN";
-  MethodOptions_IdempotencyLevel3[MethodOptions_IdempotencyLevel3["NO_SIDE_EFFECTS"] = 1] = "NO_SIDE_EFFECTS";
-  MethodOptions_IdempotencyLevel3[MethodOptions_IdempotencyLevel3["IDEMPOTENT"] = 2] = "IDEMPOTENT";
-})(MethodOptions_IdempotencyLevel2 || (MethodOptions_IdempotencyLevel2 = {}));
-var FeatureSet_VisibilityFeature_DefaultSymbolVisibility2;
-(function(FeatureSet_VisibilityFeature_DefaultSymbolVisibility3) {
-  FeatureSet_VisibilityFeature_DefaultSymbolVisibility3[FeatureSet_VisibilityFeature_DefaultSymbolVisibility3["DEFAULT_SYMBOL_VISIBILITY_UNKNOWN"] = 0] = "DEFAULT_SYMBOL_VISIBILITY_UNKNOWN";
-  FeatureSet_VisibilityFeature_DefaultSymbolVisibility3[FeatureSet_VisibilityFeature_DefaultSymbolVisibility3["EXPORT_ALL"] = 1] = "EXPORT_ALL";
-  FeatureSet_VisibilityFeature_DefaultSymbolVisibility3[FeatureSet_VisibilityFeature_DefaultSymbolVisibility3["EXPORT_TOP_LEVEL"] = 2] = "EXPORT_TOP_LEVEL";
-  FeatureSet_VisibilityFeature_DefaultSymbolVisibility3[FeatureSet_VisibilityFeature_DefaultSymbolVisibility3["LOCAL_ALL"] = 3] = "LOCAL_ALL";
-  FeatureSet_VisibilityFeature_DefaultSymbolVisibility3[FeatureSet_VisibilityFeature_DefaultSymbolVisibility3["STRICT"] = 4] = "STRICT";
-})(FeatureSet_VisibilityFeature_DefaultSymbolVisibility2 || (FeatureSet_VisibilityFeature_DefaultSymbolVisibility2 = {}));
-var FeatureSet_FieldPresence2;
-(function(FeatureSet_FieldPresence3) {
-  FeatureSet_FieldPresence3[FeatureSet_FieldPresence3["FIELD_PRESENCE_UNKNOWN"] = 0] = "FIELD_PRESENCE_UNKNOWN";
-  FeatureSet_FieldPresence3[FeatureSet_FieldPresence3["EXPLICIT"] = 1] = "EXPLICIT";
-  FeatureSet_FieldPresence3[FeatureSet_FieldPresence3["IMPLICIT"] = 2] = "IMPLICIT";
-  FeatureSet_FieldPresence3[FeatureSet_FieldPresence3["LEGACY_REQUIRED"] = 3] = "LEGACY_REQUIRED";
-})(FeatureSet_FieldPresence2 || (FeatureSet_FieldPresence2 = {}));
-var FeatureSet_EnumType2;
-(function(FeatureSet_EnumType3) {
-  FeatureSet_EnumType3[FeatureSet_EnumType3["ENUM_TYPE_UNKNOWN"] = 0] = "ENUM_TYPE_UNKNOWN";
-  FeatureSet_EnumType3[FeatureSet_EnumType3["OPEN"] = 1] = "OPEN";
-  FeatureSet_EnumType3[FeatureSet_EnumType3["CLOSED"] = 2] = "CLOSED";
-})(FeatureSet_EnumType2 || (FeatureSet_EnumType2 = {}));
-var FeatureSet_RepeatedFieldEncoding2;
-(function(FeatureSet_RepeatedFieldEncoding3) {
-  FeatureSet_RepeatedFieldEncoding3[FeatureSet_RepeatedFieldEncoding3["REPEATED_FIELD_ENCODING_UNKNOWN"] = 0] = "REPEATED_FIELD_ENCODING_UNKNOWN";
-  FeatureSet_RepeatedFieldEncoding3[FeatureSet_RepeatedFieldEncoding3["PACKED"] = 1] = "PACKED";
-  FeatureSet_RepeatedFieldEncoding3[FeatureSet_RepeatedFieldEncoding3["EXPANDED"] = 2] = "EXPANDED";
-})(FeatureSet_RepeatedFieldEncoding2 || (FeatureSet_RepeatedFieldEncoding2 = {}));
-var FeatureSet_Utf8Validation2;
-(function(FeatureSet_Utf8Validation3) {
-  FeatureSet_Utf8Validation3[FeatureSet_Utf8Validation3["UTF8_VALIDATION_UNKNOWN"] = 0] = "UTF8_VALIDATION_UNKNOWN";
-  FeatureSet_Utf8Validation3[FeatureSet_Utf8Validation3["VERIFY"] = 2] = "VERIFY";
-  FeatureSet_Utf8Validation3[FeatureSet_Utf8Validation3["NONE"] = 3] = "NONE";
-})(FeatureSet_Utf8Validation2 || (FeatureSet_Utf8Validation2 = {}));
-var FeatureSet_MessageEncoding2;
-(function(FeatureSet_MessageEncoding3) {
-  FeatureSet_MessageEncoding3[FeatureSet_MessageEncoding3["MESSAGE_ENCODING_UNKNOWN"] = 0] = "MESSAGE_ENCODING_UNKNOWN";
-  FeatureSet_MessageEncoding3[FeatureSet_MessageEncoding3["LENGTH_PREFIXED"] = 1] = "LENGTH_PREFIXED";
-  FeatureSet_MessageEncoding3[FeatureSet_MessageEncoding3["DELIMITED"] = 2] = "DELIMITED";
-})(FeatureSet_MessageEncoding2 || (FeatureSet_MessageEncoding2 = {}));
-var FeatureSet_JsonFormat2;
-(function(FeatureSet_JsonFormat3) {
-  FeatureSet_JsonFormat3[FeatureSet_JsonFormat3["JSON_FORMAT_UNKNOWN"] = 0] = "JSON_FORMAT_UNKNOWN";
-  FeatureSet_JsonFormat3[FeatureSet_JsonFormat3["ALLOW"] = 1] = "ALLOW";
-  FeatureSet_JsonFormat3[FeatureSet_JsonFormat3["LEGACY_BEST_EFFORT"] = 2] = "LEGACY_BEST_EFFORT";
-})(FeatureSet_JsonFormat2 || (FeatureSet_JsonFormat2 = {}));
-var FeatureSet_EnforceNamingStyle2;
-(function(FeatureSet_EnforceNamingStyle3) {
-  FeatureSet_EnforceNamingStyle3[FeatureSet_EnforceNamingStyle3["ENFORCE_NAMING_STYLE_UNKNOWN"] = 0] = "ENFORCE_NAMING_STYLE_UNKNOWN";
-  FeatureSet_EnforceNamingStyle3[FeatureSet_EnforceNamingStyle3["STYLE2024"] = 1] = "STYLE2024";
-  FeatureSet_EnforceNamingStyle3[FeatureSet_EnforceNamingStyle3["STYLE_LEGACY"] = 2] = "STYLE_LEGACY";
-})(FeatureSet_EnforceNamingStyle2 || (FeatureSet_EnforceNamingStyle2 = {}));
-var GeneratedCodeInfo_Annotation_Semantic2;
-(function(GeneratedCodeInfo_Annotation_Semantic3) {
-  GeneratedCodeInfo_Annotation_Semantic3[GeneratedCodeInfo_Annotation_Semantic3["NONE"] = 0] = "NONE";
-  GeneratedCodeInfo_Annotation_Semantic3[GeneratedCodeInfo_Annotation_Semantic3["SET"] = 1] = "SET";
-  GeneratedCodeInfo_Annotation_Semantic3[GeneratedCodeInfo_Annotation_Semantic3["ALIAS"] = 2] = "ALIAS";
-})(GeneratedCodeInfo_Annotation_Semantic2 || (GeneratedCodeInfo_Annotation_Semantic2 = {}));
-var Edition2;
-(function(Edition3) {
-  Edition3[Edition3["EDITION_UNKNOWN"] = 0] = "EDITION_UNKNOWN";
-  Edition3[Edition3["EDITION_LEGACY"] = 900] = "EDITION_LEGACY";
-  Edition3[Edition3["EDITION_PROTO2"] = 998] = "EDITION_PROTO2";
-  Edition3[Edition3["EDITION_PROTO3"] = 999] = "EDITION_PROTO3";
-  Edition3[Edition3["EDITION_2023"] = 1000] = "EDITION_2023";
-  Edition3[Edition3["EDITION_2024"] = 1001] = "EDITION_2024";
-  Edition3[Edition3["EDITION_1_TEST_ONLY"] = 1] = "EDITION_1_TEST_ONLY";
-  Edition3[Edition3["EDITION_2_TEST_ONLY"] = 2] = "EDITION_2_TEST_ONLY";
-  Edition3[Edition3["EDITION_99997_TEST_ONLY"] = 99997] = "EDITION_99997_TEST_ONLY";
-  Edition3[Edition3["EDITION_99998_TEST_ONLY"] = 99998] = "EDITION_99998_TEST_ONLY";
-  Edition3[Edition3["EDITION_99999_TEST_ONLY"] = 99999] = "EDITION_99999_TEST_ONLY";
-  Edition3[Edition3["EDITION_MAX"] = 2147483647] = "EDITION_MAX";
-})(Edition2 || (Edition2 = {}));
-var SymbolVisibility2;
-(function(SymbolVisibility3) {
-  SymbolVisibility3[SymbolVisibility3["VISIBILITY_UNSET"] = 0] = "VISIBILITY_UNSET";
-  SymbolVisibility3[SymbolVisibility3["VISIBILITY_LOCAL"] = 1] = "VISIBILITY_LOCAL";
-  SymbolVisibility3[SymbolVisibility3["VISIBILITY_EXPORT"] = 2] = "VISIBILITY_EXPORT";
-})(SymbolVisibility2 || (SymbolVisibility2 = {}));
-var readDefaults2 = {
-  readUnknownFields: true
-};
-function makeReadOptions3(options) {
-  return options ? Object.assign(Object.assign({}, readDefaults2), options) : readDefaults2;
-}
-function fromBinary2(schema, bytes, options) {
-  const msg = reflect2(schema, undefined, false);
-  readMessage3(msg, new BinaryReader2(bytes), makeReadOptions3(options), false, bytes.byteLength);
-  return msg.message;
-}
-function readMessage3(message, reader, options, delimited, lengthOrDelimitedFieldNo) {
-  var _a;
-  const end = delimited ? reader.len : reader.pos + lengthOrDelimitedFieldNo;
-  let fieldNo;
-  let wireType;
-  const unknownFields = (_a = message.getUnknown()) !== null && _a !== undefined ? _a : [];
-  while (reader.pos < end) {
-    [fieldNo, wireType] = reader.tag();
-    if (delimited && wireType == WireType2.EndGroup) {
-      break;
-    }
-    const field = message.findNumber(fieldNo);
-    if (!field) {
-      const data = reader.skip(wireType, fieldNo);
-      if (options.readUnknownFields) {
-        unknownFields.push({ no: fieldNo, wireType, data });
-      }
-      continue;
-    }
-    readField3(message, reader, field, wireType, options);
-  }
-  if (delimited) {
-    if (wireType != WireType2.EndGroup || fieldNo !== lengthOrDelimitedFieldNo) {
-      throw new Error("invalid end group tag");
-    }
-  }
-  if (unknownFields.length > 0) {
-    message.setUnknown(unknownFields);
-  }
-}
-function readField3(message, reader, field, wireType, options) {
-  var _a;
-  switch (field.fieldKind) {
-    case "scalar":
-      message.set(field, readScalar2(reader, field.scalar));
-      break;
-    case "enum":
-      const val = readScalar2(reader, ScalarType2.INT32);
-      if (field.enum.open) {
-        message.set(field, val);
-      } else {
-        const ok2 = field.enum.values.some((v) => v.number === val);
-        if (ok2) {
-          message.set(field, val);
-        } else if (options.readUnknownFields) {
-          const data = new BinaryWriter2().int32(val).finish();
-          const unknownFields = (_a = message.getUnknown()) !== null && _a !== undefined ? _a : [];
-          unknownFields.push({ no: field.number, wireType, data });
-          message.setUnknown(unknownFields);
-        }
-      }
-      break;
-    case "message":
-      message.set(field, readMessageField3(reader, options, field, message.get(field)));
-      break;
-    case "list":
-      readListField3(reader, wireType, message.get(field), options);
-      break;
-    case "map":
-      readMapEntry2(reader, message.get(field), options);
-      break;
-  }
-}
-function readMapEntry2(reader, map, options) {
-  const field = map.field();
-  let key;
-  let val;
-  const len2 = reader.uint32();
-  const end = reader.pos + len2;
-  while (reader.pos < end) {
-    const [fieldNo] = reader.tag();
-    switch (fieldNo) {
-      case 1:
-        key = readScalar2(reader, field.mapKey);
-        break;
-      case 2:
-        switch (field.mapKind) {
-          case "scalar":
-            val = readScalar2(reader, field.scalar);
-            break;
-          case "enum":
-            val = reader.int32();
-            break;
-          case "message":
-            val = readMessageField3(reader, options, field);
-            break;
-        }
-        break;
-    }
-  }
-  if (key === undefined) {
-    key = scalarZeroValue2(field.mapKey, false);
-  }
-  if (val === undefined) {
-    switch (field.mapKind) {
-      case "scalar":
-        val = scalarZeroValue2(field.scalar, false);
-        break;
-      case "enum":
-        val = field.enum.values[0].number;
-        break;
-      case "message":
-        val = reflect2(field.message, undefined, false);
-        break;
-    }
-  }
-  map.set(key, val);
-}
-function readListField3(reader, wireType, list, options) {
-  var _a;
-  const field = list.field();
-  if (field.listKind === "message") {
-    list.add(readMessageField3(reader, options, field));
-    return;
-  }
-  const scalarType = (_a = field.scalar) !== null && _a !== undefined ? _a : ScalarType2.INT32;
-  const packed = wireType == WireType2.LengthDelimited && scalarType != ScalarType2.STRING && scalarType != ScalarType2.BYTES;
-  if (!packed) {
-    list.add(readScalar2(reader, scalarType));
-    return;
-  }
-  const e = reader.uint32() + reader.pos;
-  while (reader.pos < e) {
-    list.add(readScalar2(reader, scalarType));
-  }
-}
-function readMessageField3(reader, options, field, mergeMessage) {
-  const delimited = field.delimitedEncoding;
-  const message = mergeMessage !== null && mergeMessage !== undefined ? mergeMessage : reflect2(field.message, undefined, false);
-  readMessage3(message, reader, options, delimited, delimited ? field.number : reader.uint32());
-  return message;
-}
-function readScalar2(reader, type) {
-  switch (type) {
-    case ScalarType2.STRING:
-      return reader.string();
-    case ScalarType2.BOOL:
-      return reader.bool();
-    case ScalarType2.DOUBLE:
-      return reader.double();
-    case ScalarType2.FLOAT:
-      return reader.float();
-    case ScalarType2.INT32:
-      return reader.int32();
-    case ScalarType2.INT64:
-      return reader.int64();
-    case ScalarType2.UINT64:
-      return reader.uint64();
-    case ScalarType2.FIXED64:
-      return reader.fixed64();
-    case ScalarType2.BYTES:
-      return reader.bytes();
-    case ScalarType2.FIXED32:
-      return reader.fixed32();
-    case ScalarType2.SFIXED32:
-      return reader.sfixed32();
-    case ScalarType2.SFIXED64:
-      return reader.sfixed64();
-    case ScalarType2.SINT64:
-      return reader.sint64();
-    case ScalarType2.UINT32:
-      return reader.uint32();
-    case ScalarType2.SINT32:
-      return reader.sint32();
-  }
-}
-function fileDesc2(b64, imports) {
-  var _a;
-  const root = fromBinary2(FileDescriptorProtoSchema2, base64Decode2(b64));
-  root.messageType.forEach(restoreJsonNames2);
-  root.dependency = (_a = imports === null || imports === undefined ? undefined : imports.map((f) => f.proto.name)) !== null && _a !== undefined ? _a : [];
-  const reg = createFileRegistry2(root, (protoFileName) => imports === null || imports === undefined ? undefined : imports.find((f) => f.proto.name === protoFileName));
-  return reg.getFile(root.name);
-}
-var file_google_protobuf_timestamp2 = /* @__PURE__ */ fileDesc2("Ch9nb29nbGUvcHJvdG9idWYvdGltZXN0YW1wLnByb3RvEg9nb29nbGUucHJvdG9idWYiKwoJVGltZXN0YW1wEg8KB3NlY29uZHMYASABKAMSDQoFbmFub3MYAiABKAVChQEKE2NvbS5nb29nbGUucHJvdG9idWZCDlRpbWVzdGFtcFByb3RvUAFaMmdvb2dsZS5nb2xhbmcub3JnL3Byb3RvYnVmL3R5cGVzL2tub3duL3RpbWVzdGFtcHBi+AEBogIDR1BCqgIeR29vZ2xlLlByb3RvYnVmLldlbGxLbm93blR5cGVzYgZwcm90bzM");
-var file_google_protobuf_any2 = /* @__PURE__ */ fileDesc2("Chlnb29nbGUvcHJvdG9idWYvYW55LnByb3RvEg9nb29nbGUucHJvdG9idWYiJgoDQW55EhAKCHR5cGVfdXJsGAEgASgJEg0KBXZhbHVlGAIgASgMQnYKE2NvbS5nb29nbGUucHJvdG9idWZCCEFueVByb3RvUAFaLGdvb2dsZS5nb2xhbmcub3JnL3Byb3RvYnVmL3R5cGVzL2tub3duL2FueXBiogIDR1BCqgIeR29vZ2xlLlByb3RvYnVmLldlbGxLbm93blR5cGVzYgZwcm90bzM");
-var AnySchema2 = /* @__PURE__ */ messageDesc2(file_google_protobuf_any2, 0);
-var LEGACY_REQUIRED4 = 3;
-var writeDefaults2 = {
-  writeUnknownFields: true
-};
-function makeWriteOptions2(options) {
-  return options ? Object.assign(Object.assign({}, writeDefaults2), options) : writeDefaults2;
-}
-function toBinary2(schema, message, options) {
-  return writeFields2(new BinaryWriter2, makeWriteOptions2(options), reflect2(schema, message)).finish();
-}
-function writeFields2(writer, opts, msg) {
-  var _a;
-  for (const f of msg.sortedFields) {
-    if (!msg.isSet(f)) {
-      if (f.presence == LEGACY_REQUIRED4) {
-        throw new Error(`cannot encode ${f} to binary: required field not set`);
-      }
-      continue;
-    }
-    writeField2(writer, opts, msg, f);
-  }
-  if (opts.writeUnknownFields) {
-    for (const { no, wireType, data } of (_a = msg.getUnknown()) !== null && _a !== undefined ? _a : []) {
-      writer.tag(no, wireType).raw(data);
-    }
-  }
-  return writer;
-}
-function writeField2(writer, opts, msg, field) {
-  var _a;
-  switch (field.fieldKind) {
-    case "scalar":
-    case "enum":
-      writeScalar2(writer, msg.desc.typeName, field.name, (_a = field.scalar) !== null && _a !== undefined ? _a : ScalarType2.INT32, field.number, msg.get(field));
-      break;
-    case "list":
-      writeListField2(writer, opts, field, msg.get(field));
-      break;
-    case "message":
-      writeMessageField2(writer, opts, field, msg.get(field));
-      break;
-    case "map":
-      for (const [key, val] of msg.get(field)) {
-        writeMapEntry2(writer, opts, field, key, val);
-      }
-      break;
-  }
-}
-function writeScalar2(writer, msgName, fieldName, scalarType, fieldNo, value2) {
-  writeScalarValue2(writer.tag(fieldNo, writeTypeOfScalar2(scalarType)), msgName, fieldName, scalarType, value2);
-}
-function writeMessageField2(writer, opts, field, message) {
-  if (field.delimitedEncoding) {
-    writeFields2(writer.tag(field.number, WireType2.StartGroup), opts, message).tag(field.number, WireType2.EndGroup);
-  } else {
-    writeFields2(writer.tag(field.number, WireType2.LengthDelimited).fork(), opts, message).join();
-  }
-}
-function writeListField2(writer, opts, field, list) {
-  var _a;
-  if (field.listKind == "message") {
-    for (const item of list) {
-      writeMessageField2(writer, opts, field, item);
-    }
-    return;
-  }
-  const scalarType = (_a = field.scalar) !== null && _a !== undefined ? _a : ScalarType2.INT32;
-  if (field.packed) {
-    if (!list.size) {
-      return;
-    }
-    writer.tag(field.number, WireType2.LengthDelimited).fork();
-    for (const item of list) {
-      writeScalarValue2(writer, field.parent.typeName, field.name, scalarType, item);
-    }
-    writer.join();
-    return;
-  }
-  for (const item of list) {
-    writeScalar2(writer, field.parent.typeName, field.name, scalarType, field.number, item);
-  }
-}
-function writeMapEntry2(writer, opts, field, key, value2) {
-  var _a;
-  writer.tag(field.number, WireType2.LengthDelimited).fork();
-  writeScalar2(writer, field.parent.typeName, field.name, field.mapKey, 1, key);
-  switch (field.mapKind) {
-    case "scalar":
-    case "enum":
-      writeScalar2(writer, field.parent.typeName, field.name, (_a = field.scalar) !== null && _a !== undefined ? _a : ScalarType2.INT32, 2, value2);
-      break;
-    case "message":
-      writeFields2(writer.tag(2, WireType2.LengthDelimited).fork(), opts, value2).join();
-      break;
-  }
-  writer.join();
-}
-function writeScalarValue2(writer, msgName, fieldName, type, value2) {
-  try {
-    switch (type) {
-      case ScalarType2.STRING:
-        writer.string(value2);
-        break;
-      case ScalarType2.BOOL:
-        writer.bool(value2);
-        break;
-      case ScalarType2.DOUBLE:
-        writer.double(value2);
-        break;
-      case ScalarType2.FLOAT:
-        writer.float(value2);
-        break;
-      case ScalarType2.INT32:
-        writer.int32(value2);
-        break;
-      case ScalarType2.INT64:
-        writer.int64(value2);
-        break;
-      case ScalarType2.UINT64:
-        writer.uint64(value2);
-        break;
-      case ScalarType2.FIXED64:
-        writer.fixed64(value2);
-        break;
-      case ScalarType2.BYTES:
-        writer.bytes(value2);
-        break;
-      case ScalarType2.FIXED32:
-        writer.fixed32(value2);
-        break;
-      case ScalarType2.SFIXED32:
-        writer.sfixed32(value2);
-        break;
-      case ScalarType2.SFIXED64:
-        writer.sfixed64(value2);
-        break;
-      case ScalarType2.SINT64:
-        writer.sint64(value2);
-        break;
-      case ScalarType2.UINT32:
-        writer.uint32(value2);
-        break;
-      case ScalarType2.SINT32:
-        writer.sint32(value2);
-        break;
-    }
-  } catch (e) {
-    if (e instanceof Error) {
-      throw new Error(`cannot encode field ${msgName}.${fieldName} to binary: ${e.message}`);
-    }
-    throw e;
-  }
-}
-function writeTypeOfScalar2(type) {
-  switch (type) {
-    case ScalarType2.BYTES:
-    case ScalarType2.STRING:
-      return WireType2.LengthDelimited;
-    case ScalarType2.DOUBLE:
-    case ScalarType2.FIXED64:
-    case ScalarType2.SFIXED64:
-      return WireType2.Bit64;
-    case ScalarType2.FIXED32:
-    case ScalarType2.SFIXED32:
-    case ScalarType2.FLOAT:
-      return WireType2.Bit32;
-    default:
-      return WireType2.Varint;
-  }
-}
-function anyPack2(schema, message, into) {
-  let ret = false;
-  if (!into) {
-    into = create3(AnySchema2);
-    ret = true;
-  }
-  into.value = toBinary2(schema, message);
-  into.typeUrl = typeNameToUrl2(message.$typeName);
-  return ret ? into : undefined;
-}
-function typeNameToUrl2(name) {
-  return `type.googleapis.com/${name}`;
-}
-var file_google_protobuf_duration2 = /* @__PURE__ */ fileDesc2("Ch5nb29nbGUvcHJvdG9idWYvZHVyYXRpb24ucHJvdG8SD2dvb2dsZS5wcm90b2J1ZiIqCghEdXJhdGlvbhIPCgdzZWNvbmRzGAEgASgDEg0KBW5hbm9zGAIgASgFQoMBChNjb20uZ29vZ2xlLnByb3RvYnVmQg1EdXJhdGlvblByb3RvUAFaMWdvb2dsZS5nb2xhbmcub3JnL3Byb3RvYnVmL3R5cGVzL2tub3duL2R1cmF0aW9ucGL4AQGiAgNHUEKqAh5Hb29nbGUuUHJvdG9idWYuV2VsbEtub3duVHlwZXNiBnByb3RvMw");
-var file_google_protobuf_empty2 = /* @__PURE__ */ fileDesc2("Chtnb29nbGUvcHJvdG9idWYvZW1wdHkucHJvdG8SD2dvb2dsZS5wcm90b2J1ZiIHCgVFbXB0eUJ9ChNjb20uZ29vZ2xlLnByb3RvYnVmQgpFbXB0eVByb3RvUAFaLmdvb2dsZS5nb2xhbmcub3JnL3Byb3RvYnVmL3R5cGVzL2tub3duL2VtcHR5cGL4AQGiAgNHUEKqAh5Hb29nbGUuUHJvdG9idWYuV2VsbEtub3duVHlwZXNiBnByb3RvMw");
-var file_google_protobuf_struct2 = /* @__PURE__ */ fileDesc2("Chxnb29nbGUvcHJvdG9idWYvc3RydWN0LnByb3RvEg9nb29nbGUucHJvdG9idWYihAEKBlN0cnVjdBIzCgZmaWVsZHMYASADKAsyIy5nb29nbGUucHJvdG9idWYuU3RydWN0LkZpZWxkc0VudHJ5GkUKC0ZpZWxkc0VudHJ5EgsKA2tleRgBIAEoCRIlCgV2YWx1ZRgCIAEoCzIWLmdvb2dsZS5wcm90b2J1Zi5WYWx1ZToCOAEi6gEKBVZhbHVlEjAKCm51bGxfdmFsdWUYASABKA4yGi5nb29nbGUucHJvdG9idWYuTnVsbFZhbHVlSAASFgoMbnVtYmVyX3ZhbHVlGAIgASgBSAASFgoMc3RyaW5nX3ZhbHVlGAMgASgJSAASFAoKYm9vbF92YWx1ZRgEIAEoCEgAEi8KDHN0cnVjdF92YWx1ZRgFIAEoCzIXLmdvb2dsZS5wcm90b2J1Zi5TdHJ1Y3RIABIwCgpsaXN0X3ZhbHVlGAYgASgLMhouZ29vZ2xlLnByb3RvYnVmLkxpc3RWYWx1ZUgAQgYKBGtpbmQiMwoJTGlzdFZhbHVlEiYKBnZhbHVlcxgBIAMoCzIWLmdvb2dsZS5wcm90b2J1Zi5WYWx1ZSobCglOdWxsVmFsdWUSDgoKTlVMTF9WQUxVRRAAQn8KE2NvbS5nb29nbGUucHJvdG9idWZCC1N0cnVjdFByb3RvUAFaL2dvb2dsZS5nb2xhbmcub3JnL3Byb3RvYnVmL3R5cGVzL2tub3duL3N0cnVjdHBi+AEBogIDR1BCqgIeR29vZ2xlLlByb3RvYnVmLldlbGxLbm93blR5cGVzYgZwcm90bzM");
-var StructSchema2 = /* @__PURE__ */ messageDesc2(file_google_protobuf_struct2, 0);
-var ValueSchema3 = /* @__PURE__ */ messageDesc2(file_google_protobuf_struct2, 1);
-var ListValueSchema2 = /* @__PURE__ */ messageDesc2(file_google_protobuf_struct2, 2);
-var NullValue2;
-(function(NullValue3) {
-  NullValue3[NullValue3["NULL_VALUE"] = 0] = "NULL_VALUE";
-})(NullValue2 || (NullValue2 = {}));
-function setExtension3(message, extension, value2) {
-  var _a;
-  assertExtendee2(extension, message);
-  const ufs = ((_a = message.$unknown) !== null && _a !== undefined ? _a : []).filter((uf) => uf.no !== extension.number);
-  const [container, field] = createExtensionContainer2(extension, value2);
-  const writer = new BinaryWriter2;
-  writeField2(writer, { writeUnknownFields: true }, container, field);
-  const reader = new BinaryReader2(writer.finish());
-  while (reader.pos < reader.len) {
-    const [no, wireType] = reader.tag();
-    const data = reader.skip(wireType, no);
-    ufs.push({ no, wireType, data });
-  }
-  message.$unknown = ufs;
-}
-function createExtensionContainer2(extension, value2) {
-  const localName = extension.typeName;
-  const field = Object.assign(Object.assign({}, extension), { kind: "field", parent: extension.extendee, localName });
-  const desc = Object.assign(Object.assign({}, extension.extendee), { fields: [field], members: [field], oneofs: [] });
-  const container = create3(desc, value2 !== undefined ? { [localName]: value2 } : undefined);
-  return [
-    reflect2(desc, container),
-    field,
-    () => {
-      const value3 = container[localName];
-      if (value3 === undefined) {
-        const desc2 = extension.message;
-        if (isWrapperDesc2(desc2)) {
-          return scalarZeroValue2(desc2.fields[0].scalar, desc2.fields[0].longAsString);
-        }
-        return create3(desc2);
-      }
-      return value3;
-    }
-  ];
-}
-function assertExtendee2(extension, message) {
-  if (extension.extendee.typeName != message.$typeName) {
-    throw new Error(`extension ${extension.typeName} can only be applied to message ${extension.extendee.typeName}`);
-  }
-}
-var jsonReadDefaults2 = {
-  ignoreUnknownFields: false
-};
-function makeReadOptions4(options) {
-  return options ? Object.assign(Object.assign({}, jsonReadDefaults2), options) : jsonReadDefaults2;
-}
-function fromJson2(schema, json, options) {
-  const msg = reflect2(schema);
-  try {
-    readMessage4(msg, json, makeReadOptions4(options));
-  } catch (e) {
-    if (isFieldError2(e)) {
-      throw new Error(`cannot decode ${e.field()} from JSON: ${e.message}`, {
-        cause: e
-      });
-    }
-    throw e;
-  }
-  return msg.message;
-}
-function readMessage4(msg, json, opts) {
-  var _a;
-  if (tryWktFromJson2(msg, json, opts)) {
-    return;
-  }
-  if (json == null || Array.isArray(json) || typeof json != "object") {
-    throw new Error(`cannot decode ${msg.desc} from JSON: ${formatVal2(json)}`);
-  }
-  const oneofSeen = new Map;
-  const jsonNames = new Map;
-  for (const field of msg.desc.fields) {
-    jsonNames.set(field.name, field).set(field.jsonName, field);
-  }
-  for (const [jsonKey, jsonValue] of Object.entries(json)) {
-    const field = jsonNames.get(jsonKey);
-    if (field) {
-      if (field.oneof) {
-        if (jsonValue === null && field.fieldKind == "scalar") {
-          continue;
-        }
-        const seen = oneofSeen.get(field.oneof);
-        if (seen !== undefined) {
-          throw new FieldError2(field.oneof, `oneof set multiple times by ${seen.name} and ${field.name}`);
-        }
-        oneofSeen.set(field.oneof, field);
-      }
-      readField4(msg, field, jsonValue, opts);
-    } else {
-      let extension = undefined;
-      if (jsonKey.startsWith("[") && jsonKey.endsWith("]") && (extension = (_a = opts.registry) === null || _a === undefined ? undefined : _a.getExtension(jsonKey.substring(1, jsonKey.length - 1))) && extension.extendee.typeName === msg.desc.typeName) {
-        const [container, field2, get] = createExtensionContainer2(extension);
-        readField4(container, field2, jsonValue, opts);
-        setExtension3(msg.message, extension, get());
-      }
-      if (!extension && !opts.ignoreUnknownFields) {
-        throw new Error(`cannot decode ${msg.desc} from JSON: key "${jsonKey}" is unknown`);
-      }
-    }
-  }
-}
-function readField4(msg, field, json, opts) {
-  switch (field.fieldKind) {
-    case "scalar":
-      readScalarField2(msg, field, json);
-      break;
-    case "enum":
-      readEnumField2(msg, field, json, opts);
-      break;
-    case "message":
-      readMessageField4(msg, field, json, opts);
-      break;
-    case "list":
-      readListField4(msg.get(field), json, opts);
-      break;
-    case "map":
-      readMapField2(msg.get(field), json, opts);
-      break;
-  }
-}
-function readMapField2(map, json, opts) {
-  if (json === null) {
-    return;
-  }
-  const field = map.field();
-  if (typeof json != "object" || Array.isArray(json)) {
-    throw new FieldError2(field, "expected object, got " + formatVal2(json));
-  }
-  for (const [jsonMapKey, jsonMapValue] of Object.entries(json)) {
-    if (jsonMapValue === null) {
-      throw new FieldError2(field, "map value must not be null");
-    }
-    let value2;
-    switch (field.mapKind) {
-      case "message":
-        const msgValue = reflect2(field.message);
-        readMessage4(msgValue, jsonMapValue, opts);
-        value2 = msgValue;
-        break;
-      case "enum":
-        value2 = readEnum2(field.enum, jsonMapValue, opts.ignoreUnknownFields, true);
-        if (value2 === tokenIgnoredUnknownEnum2) {
-          return;
-        }
-        break;
-      case "scalar":
-        value2 = scalarFromJson2(field, jsonMapValue, true);
-        break;
-    }
-    const key = mapKeyFromJson2(field.mapKey, jsonMapKey);
-    map.set(key, value2);
-  }
-}
-function readListField4(list, json, opts) {
-  if (json === null) {
-    return;
-  }
-  const field = list.field();
-  if (!Array.isArray(json)) {
-    throw new FieldError2(field, "expected Array, got " + formatVal2(json));
-  }
-  for (const jsonItem of json) {
-    if (jsonItem === null) {
-      throw new FieldError2(field, "list item must not be null");
-    }
-    switch (field.listKind) {
-      case "message":
-        const msgValue = reflect2(field.message);
-        readMessage4(msgValue, jsonItem, opts);
-        list.add(msgValue);
-        break;
-      case "enum":
-        const enumValue = readEnum2(field.enum, jsonItem, opts.ignoreUnknownFields, true);
-        if (enumValue !== tokenIgnoredUnknownEnum2) {
-          list.add(enumValue);
-        }
-        break;
-      case "scalar":
-        list.add(scalarFromJson2(field, jsonItem, true));
-        break;
-    }
-  }
-}
-function readMessageField4(msg, field, json, opts) {
-  if (json === null && field.message.typeName != "google.protobuf.Value") {
-    msg.clear(field);
-    return;
-  }
-  const msgValue = msg.isSet(field) ? msg.get(field) : reflect2(field.message);
-  readMessage4(msgValue, json, opts);
-  msg.set(field, msgValue);
-}
-function readEnumField2(msg, field, json, opts) {
-  const enumValue = readEnum2(field.enum, json, opts.ignoreUnknownFields, false);
-  if (enumValue === tokenNull2) {
-    msg.clear(field);
-  } else if (enumValue !== tokenIgnoredUnknownEnum2) {
-    msg.set(field, enumValue);
-  }
-}
-function readScalarField2(msg, field, json) {
-  const scalarValue = scalarFromJson2(field, json, false);
-  if (scalarValue === tokenNull2) {
-    msg.clear(field);
-  } else {
-    msg.set(field, scalarValue);
-  }
-}
-var tokenIgnoredUnknownEnum2 = Symbol();
-function readEnum2(desc, json, ignoreUnknownFields, nullAsZeroValue) {
-  if (json === null) {
-    if (desc.typeName == "google.protobuf.NullValue") {
-      return 0;
-    }
-    return nullAsZeroValue ? desc.values[0].number : tokenNull2;
-  }
-  switch (typeof json) {
-    case "number":
-      if (Number.isInteger(json)) {
-        return json;
-      }
-      break;
-    case "string":
-      const value2 = desc.values.find((ev) => ev.name === json);
-      if (value2 !== undefined) {
-        return value2.number;
-      }
-      if (ignoreUnknownFields) {
-        return tokenIgnoredUnknownEnum2;
-      }
-      break;
-  }
-  throw new Error(`cannot decode ${desc} from JSON: ${formatVal2(json)}`);
-}
-var tokenNull2 = Symbol();
-function scalarFromJson2(field, json, nullAsZeroValue) {
-  if (json === null) {
-    if (nullAsZeroValue) {
-      return scalarZeroValue2(field.scalar, false);
-    }
-    return tokenNull2;
-  }
-  switch (field.scalar) {
-    case ScalarType2.DOUBLE:
-    case ScalarType2.FLOAT:
-      if (json === "NaN")
-        return NaN;
-      if (json === "Infinity")
-        return Number.POSITIVE_INFINITY;
-      if (json === "-Infinity")
-        return Number.NEGATIVE_INFINITY;
-      if (typeof json == "number") {
-        if (Number.isNaN(json)) {
-          throw new FieldError2(field, "unexpected NaN number");
-        }
-        if (!Number.isFinite(json)) {
-          throw new FieldError2(field, "unexpected infinite number");
-        }
-        break;
-      }
-      if (typeof json == "string") {
-        if (json === "") {
-          break;
-        }
-        if (json.trim().length !== json.length) {
-          break;
-        }
-        const float = Number(json);
-        if (!Number.isFinite(float)) {
-          break;
-        }
-        return float;
-      }
-      break;
-    case ScalarType2.INT32:
-    case ScalarType2.FIXED32:
-    case ScalarType2.SFIXED32:
-    case ScalarType2.SINT32:
-    case ScalarType2.UINT32:
-      return int32FromJson2(json);
-    case ScalarType2.BYTES:
-      if (typeof json == "string") {
-        if (json === "") {
-          return new Uint8Array(0);
-        }
-        try {
-          return base64Decode2(json);
-        } catch (e) {
-          const message = e instanceof Error ? e.message : String(e);
-          throw new FieldError2(field, message);
-        }
-      }
-      break;
-  }
-  return json;
-}
-function mapKeyFromJson2(type, json) {
-  switch (type) {
-    case ScalarType2.BOOL:
-      switch (json) {
-        case "true":
-          return true;
-        case "false":
-          return false;
-      }
-      return json;
-    case ScalarType2.INT32:
-    case ScalarType2.FIXED32:
-    case ScalarType2.UINT32:
-    case ScalarType2.SFIXED32:
-    case ScalarType2.SINT32:
-      return int32FromJson2(json);
-    default:
-      return json;
-  }
-}
-function int32FromJson2(json) {
-  if (typeof json == "string") {
-    if (json === "") {
-      return json;
-    }
-    if (json.trim().length !== json.length) {
-      return json;
-    }
-    const num = Number(json);
-    if (Number.isNaN(num)) {
-      return json;
-    }
-    return num;
-  }
-  return json;
-}
-function tryWktFromJson2(msg, jsonValue, opts) {
-  if (!msg.desc.typeName.startsWith("google.protobuf.")) {
-    return false;
-  }
-  switch (msg.desc.typeName) {
-    case "google.protobuf.Any":
-      anyFromJson2(msg.message, jsonValue, opts);
-      return true;
-    case "google.protobuf.Timestamp":
-      timestampFromJson2(msg.message, jsonValue);
-      return true;
-    case "google.protobuf.Duration":
-      durationFromJson2(msg.message, jsonValue);
-      return true;
-    case "google.protobuf.FieldMask":
-      fieldMaskFromJson2(msg.message, jsonValue);
-      return true;
-    case "google.protobuf.Struct":
-      structFromJson2(msg.message, jsonValue);
-      return true;
-    case "google.protobuf.Value":
-      valueFromJson2(msg.message, jsonValue);
-      return true;
-    case "google.protobuf.ListValue":
-      listValueFromJson2(msg.message, jsonValue);
-      return true;
-    default:
-      if (isWrapperDesc2(msg.desc)) {
-        const valueField = msg.desc.fields[0];
-        if (jsonValue === null) {
-          msg.clear(valueField);
-        } else {
-          msg.set(valueField, scalarFromJson2(valueField, jsonValue, true));
-        }
-        return true;
-      }
-      return false;
-  }
-}
-function anyFromJson2(any, json, opts) {
-  var _a;
-  if (json === null || Array.isArray(json) || typeof json != "object") {
-    throw new Error(`cannot decode message ${any.$typeName} from JSON: expected object but got ${formatVal2(json)}`);
-  }
-  if (Object.keys(json).length == 0) {
-    return;
-  }
-  const typeUrl = json["@type"];
-  if (typeof typeUrl != "string" || typeUrl == "") {
-    throw new Error(`cannot decode message ${any.$typeName} from JSON: "@type" is empty`);
-  }
-  const typeName = typeUrl.includes("/") ? typeUrl.substring(typeUrl.lastIndexOf("/") + 1) : typeUrl;
-  if (!typeName.length) {
-    throw new Error(`cannot decode message ${any.$typeName} from JSON: "@type" is invalid`);
-  }
-  const desc = (_a = opts.registry) === null || _a === undefined ? undefined : _a.getMessage(typeName);
-  if (!desc) {
-    throw new Error(`cannot decode message ${any.$typeName} from JSON: ${typeUrl} is not in the type registry`);
-  }
-  const msg = reflect2(desc);
-  if (typeName.startsWith("google.protobuf.") && Object.prototype.hasOwnProperty.call(json, "value")) {
-    const value2 = json.value;
-    readMessage4(msg, value2, opts);
-  } else {
-    const copy = Object.assign({}, json);
-    delete copy["@type"];
-    readMessage4(msg, copy, opts);
-  }
-  anyPack2(msg.desc, msg.message, any);
-}
-function timestampFromJson2(timestamp, json) {
-  if (typeof json !== "string") {
-    throw new Error(`cannot decode message ${timestamp.$typeName} from JSON: ${formatVal2(json)}`);
-  }
-  const matches = json.match(/^([0-9]{4})-([0-9]{2})-([0-9]{2})T([0-9]{2}):([0-9]{2}):([0-9]{2})(?:\.([0-9]{1,9}))?(?:Z|([+-][0-9][0-9]:[0-9][0-9]))$/);
-  if (!matches) {
-    throw new Error(`cannot decode message ${timestamp.$typeName} from JSON: invalid RFC 3339 string`);
-  }
-  const ms = Date.parse(matches[1] + "-" + matches[2] + "-" + matches[3] + "T" + matches[4] + ":" + matches[5] + ":" + matches[6] + (matches[8] ? matches[8] : "Z"));
-  if (Number.isNaN(ms)) {
-    throw new Error(`cannot decode message ${timestamp.$typeName} from JSON: invalid RFC 3339 string`);
-  }
-  if (ms < Date.parse("0001-01-01T00:00:00Z") || ms > Date.parse("9999-12-31T23:59:59Z")) {
-    throw new Error(`cannot decode message ${timestamp.$typeName} from JSON: must be from 0001-01-01T00:00:00Z to 9999-12-31T23:59:59Z inclusive`);
-  }
-  timestamp.seconds = protoInt642.parse(ms / 1000);
-  timestamp.nanos = 0;
-  if (matches[7]) {
-    timestamp.nanos = parseInt("1" + matches[7] + "0".repeat(9 - matches[7].length)) - 1e9;
-  }
-}
-function durationFromJson2(duration, json) {
-  if (typeof json !== "string") {
-    throw new Error(`cannot decode message ${duration.$typeName} from JSON: ${formatVal2(json)}`);
-  }
-  const match = json.match(/^(-?[0-9]+)(?:\.([0-9]+))?s/);
-  if (match === null) {
-    throw new Error(`cannot decode message ${duration.$typeName} from JSON: ${formatVal2(json)}`);
-  }
-  const longSeconds = Number(match[1]);
-  if (longSeconds > 315576000000 || longSeconds < -315576000000) {
-    throw new Error(`cannot decode message ${duration.$typeName} from JSON: ${formatVal2(json)}`);
-  }
-  duration.seconds = protoInt642.parse(longSeconds);
-  if (typeof match[2] !== "string") {
-    return;
-  }
-  const nanosStr = match[2] + "0".repeat(9 - match[2].length);
-  duration.nanos = parseInt(nanosStr);
-  if (longSeconds < 0 || Object.is(longSeconds, -0)) {
-    duration.nanos = -duration.nanos;
-  }
-}
-function fieldMaskFromJson2(fieldMask, json) {
-  if (typeof json !== "string") {
-    throw new Error(`cannot decode message ${fieldMask.$typeName} from JSON: ${formatVal2(json)}`);
-  }
-  if (json === "") {
-    return;
-  }
-  function camelToSnake(str) {
-    if (str.includes("_")) {
-      throw new Error(`cannot decode message ${fieldMask.$typeName} from JSON: path names must be lowerCamelCase`);
-    }
-    const sc = str.replace(/[A-Z]/g, (letter) => "_" + letter.toLowerCase());
-    return sc[0] === "_" ? sc.substring(1) : sc;
-  }
-  fieldMask.paths = json.split(",").map(camelToSnake);
-}
-function structFromJson2(struct, json) {
-  if (typeof json != "object" || json == null || Array.isArray(json)) {
-    throw new Error(`cannot decode message ${struct.$typeName} from JSON ${formatVal2(json)}`);
-  }
-  for (const [k, v] of Object.entries(json)) {
-    const parsedV = create3(ValueSchema3);
-    valueFromJson2(parsedV, v);
-    struct.fields[k] = parsedV;
-  }
-}
-function valueFromJson2(value2, json) {
-  switch (typeof json) {
-    case "number":
-      value2.kind = { case: "numberValue", value: json };
-      break;
-    case "string":
-      value2.kind = { case: "stringValue", value: json };
-      break;
-    case "boolean":
-      value2.kind = { case: "boolValue", value: json };
-      break;
-    case "object":
-      if (json === null) {
-        value2.kind = { case: "nullValue", value: NullValue2.NULL_VALUE };
-      } else if (Array.isArray(json)) {
-        const listValue = create3(ListValueSchema2);
-        listValueFromJson2(listValue, json);
-        value2.kind = { case: "listValue", value: listValue };
-      } else {
-        const struct = create3(StructSchema2);
-        structFromJson2(struct, json);
-        value2.kind = { case: "structValue", value: struct };
-      }
-      break;
-    default:
-      throw new Error(`cannot decode message ${value2.$typeName} from JSON ${formatVal2(json)}`);
-  }
-  return value2;
-}
-function listValueFromJson2(listValue, json) {
-  if (!Array.isArray(json)) {
-    throw new Error(`cannot decode message ${listValue.$typeName} from JSON ${formatVal2(json)}`);
-  }
-  for (const e of json) {
-    const value2 = create3(ValueSchema3);
-    valueFromJson2(value2, e);
-    listValue.values.push(value2);
-  }
-}
-var file_values_v1_values2 = /* @__PURE__ */ fileDesc2("ChZ2YWx1ZXMvdjEvdmFsdWVzLnByb3RvEgl2YWx1ZXMudjEigQMKBVZhbHVlEhYKDHN0cmluZ192YWx1ZRgBIAEoCUgAEhQKCmJvb2xfdmFsdWUYAiABKAhIABIVCgtieXRlc192YWx1ZRgDIAEoDEgAEiMKCW1hcF92YWx1ZRgEIAEoCzIOLnZhbHVlcy52MS5NYXBIABIlCgpsaXN0X3ZhbHVlGAUgASgLMg8udmFsdWVzLnYxLkxpc3RIABIrCg1kZWNpbWFsX3ZhbHVlGAYgASgLMhIudmFsdWVzLnYxLkRlY2ltYWxIABIZCgtpbnQ2NF92YWx1ZRgHIAEoA0ICMABIABIpCgxiaWdpbnRfdmFsdWUYCSABKAsyES52YWx1ZXMudjEuQmlnSW50SAASMAoKdGltZV92YWx1ZRgKIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBIABIXCg1mbG9hdDY0X3ZhbHVlGAsgASgBSAASGgoMdWludDY0X3ZhbHVlGAwgASgEQgIwAEgAQgcKBXZhbHVlSgQICBAJIisKBkJpZ0ludBIPCgdhYnNfdmFsGAEgASgMEhAKBHNpZ24YAiABKANCAjAAInIKA01hcBIqCgZmaWVsZHMYASADKAsyGi52YWx1ZXMudjEuTWFwLkZpZWxkc0VudHJ5Gj8KC0ZpZWxkc0VudHJ5EgsKA2tleRgBIAEoCRIfCgV2YWx1ZRgCIAEoCzIQLnZhbHVlcy52MS5WYWx1ZToCOAEiKAoETGlzdBIgCgZmaWVsZHMYAiADKAsyEC52YWx1ZXMudjEuVmFsdWUiQwoHRGVjaW1hbBImCgtjb2VmZmljaWVudBgBIAEoCzIRLnZhbHVlcy52MS5CaWdJbnQSEAoIZXhwb25lbnQYAiABKAVCYQoNY29tLnZhbHVlcy52MUILVmFsdWVzUHJvdG9QAaICA1ZYWKoCCVZhbHVlcy5WMcoCCVZhbHVlc1xWMeICFVZhbHVlc1xWMVxHUEJNZXRhZGF0YeoCClZhbHVlczo6VjFiBnByb3RvMw", [file_google_protobuf_timestamp2]);
-var file_sdk_v1alpha_sdk2 = /* @__PURE__ */ fileDesc2("ChVzZGsvdjFhbHBoYS9zZGsucHJvdG8SC3Nkay52MWFscGhhIrQBChVTaW1wbGVDb25zZW5zdXNJbnB1dHMSIQoFdmFsdWUYASABKAsyEC52YWx1ZXMudjEuVmFsdWVIABIPCgVlcnJvchgCIAEoCUgAEjUKC2Rlc2NyaXB0b3JzGAMgASgLMiAuc2RrLnYxYWxwaGEuQ29uc2Vuc3VzRGVzY3JpcHRvchIhCgdkZWZhdWx0GAQgASgLMhAudmFsdWVzLnYxLlZhbHVlQg0KC29ic2VydmF0aW9uIpABCglGaWVsZHNNYXASMgoGZmllbGRzGAEgAygLMiIuc2RrLnYxYWxwaGEuRmllbGRzTWFwLkZpZWxkc0VudHJ5Gk8KC0ZpZWxkc0VudHJ5EgsKA2tleRgBIAEoCRIvCgV2YWx1ZRgCIAEoCzIgLnNkay52MWFscGhhLkNvbnNlbnN1c0Rlc2NyaXB0b3I6AjgBIoYBChNDb25zZW5zdXNEZXNjcmlwdG9yEjMKC2FnZ3JlZ2F0aW9uGAEgASgOMhwuc2RrLnYxYWxwaGEuQWdncmVnYXRpb25UeXBlSAASLAoKZmllbGRzX21hcBgCIAEoCzIWLnNkay52MWFscGhhLkZpZWxkc01hcEgAQgwKCmRlc2NyaXB0b3IiagoNUmVwb3J0UmVxdWVzdBIXCg9lbmNvZGVkX3BheWxvYWQYASABKAwSFAoMZW5jb2Rlcl9uYW1lGAIgASgJEhQKDHNpZ25pbmdfYWxnbxgDIAEoCRIUCgxoYXNoaW5nX2FsZ28YBCABKAkilwEKDlJlcG9ydFJlc3BvbnNlEhUKDWNvbmZpZ19kaWdlc3QYASABKAwSEgoGc2VxX25yGAIgASgEQgIwABIWCg5yZXBvcnRfY29udGV4dBgDIAEoDBISCgpyYXdfcmVwb3J0GAQgASgMEi4KBHNpZ3MYBSADKAsyIC5zZGsudjFhbHBoYS5BdHRyaWJ1dGVkU2lnbmF0dXJlIjsKE0F0dHJpYnV0ZWRTaWduYXR1cmUSEQoJc2lnbmF0dXJlGAEgASgMEhEKCXNpZ25lcl9pZBgCIAEoDSJrChFDYXBhYmlsaXR5UmVxdWVzdBIKCgJpZBgBIAEoCRIlCgdwYXlsb2FkGAIgASgLMhQuZ29vZ2xlLnByb3RvYnVmLkFueRIOCgZtZXRob2QYAyABKAkSEwoLY2FsbGJhY2tfaWQYBCABKAUiWgoSQ2FwYWJpbGl0eVJlc3BvbnNlEicKB3BheWxvYWQYASABKAsyFC5nb29nbGUucHJvdG9idWYuQW55SAASDwoFZXJyb3IYAiABKAlIAEIKCghyZXNwb25zZSJYChNUcmlnZ2VyU3Vic2NyaXB0aW9uEgoKAmlkGAEgASgJEiUKB3BheWxvYWQYAiABKAsyFC5nb29nbGUucHJvdG9idWYuQW55Eg4KBm1ldGhvZBgDIAEoCSJVChpUcmlnZ2VyU3Vic2NyaXB0aW9uUmVxdWVzdBI3Cg1zdWJzY3JpcHRpb25zGAEgAygLMiAuc2RrLnYxYWxwaGEuVHJpZ2dlclN1YnNjcmlwdGlvbiJACgdUcmlnZ2VyEg4KAmlkGAEgASgEQgIwABIlCgdwYXlsb2FkGAIgASgLMhQuZ29vZ2xlLnByb3RvYnVmLkFueSInChhBd2FpdENhcGFiaWxpdGllc1JlcXVlc3QSCwoDaWRzGAEgAygFIrgBChlBd2FpdENhcGFiaWxpdGllc1Jlc3BvbnNlEkgKCXJlc3BvbnNlcxgBIAMoCzI1LnNkay52MWFscGhhLkF3YWl0Q2FwYWJpbGl0aWVzUmVzcG9uc2UuUmVzcG9uc2VzRW50cnkaUQoOUmVzcG9uc2VzRW50cnkSCwoDa2V5GAEgASgFEi4KBXZhbHVlGAIgASgLMh8uc2RrLnYxYWxwaGEuQ2FwYWJpbGl0eVJlc3BvbnNlOgI4ASKgAQoORXhlY3V0ZVJlcXVlc3QSDgoGY29uZmlnGAEgASgMEisKCXN1YnNjcmliZRgCIAEoCzIWLmdvb2dsZS5wcm90b2J1Zi5FbXB0eUgAEicKB3RyaWdnZXIYAyABKAsyFC5zZGsudjFhbHBoYS5UcmlnZ2VySAASHQoRbWF4X3Jlc3BvbnNlX3NpemUYBCABKARCAjAAQgkKB3JlcXVlc3QimQEKD0V4ZWN1dGlvblJlc3VsdBIhCgV2YWx1ZRgBIAEoCzIQLnZhbHVlcy52MS5WYWx1ZUgAEg8KBWVycm9yGAIgASgJSAASSAoVdHJpZ2dlcl9zdWJzY3JpcHRpb25zGAMgASgLMicuc2RrLnYxYWxwaGEuVHJpZ2dlclN1YnNjcmlwdGlvblJlcXVlc3RIAEIICgZyZXN1bHQiVgoRR2V0U2VjcmV0c1JlcXVlc3QSLAoIcmVxdWVzdHMYASADKAsyGi5zZGsudjFhbHBoYS5TZWNyZXRSZXF1ZXN0EhMKC2NhbGxiYWNrX2lkGAIgASgFIiIKE0F3YWl0U2VjcmV0c1JlcXVlc3QSCwoDaWRzGAEgAygFIqsBChRBd2FpdFNlY3JldHNSZXNwb25zZRJDCglyZXNwb25zZXMYASADKAsyMC5zZGsudjFhbHBoYS5Bd2FpdFNlY3JldHNSZXNwb25zZS5SZXNwb25zZXNFbnRyeRpOCg5SZXNwb25zZXNFbnRyeRILCgNrZXkYASABKAUSKwoFdmFsdWUYAiABKAsyHC5zZGsudjFhbHBoYS5TZWNyZXRSZXNwb25zZXM6AjgBIi4KDVNlY3JldFJlcXVlc3QSCgoCaWQYASABKAkSEQoJbmFtZXNwYWNlGAIgASgJIkUKBlNlY3JldBIKCgJpZBgBIAEoCRIRCgluYW1lc3BhY2UYAiABKAkSDQoFb3duZXIYAyABKAkSDQoFdmFsdWUYBCABKAkiSgoLU2VjcmV0RXJyb3ISCgoCaWQYASABKAkSEQoJbmFtZXNwYWNlGAIgASgJEg0KBW93bmVyGAMgASgJEg0KBWVycm9yGAQgASgJIm4KDlNlY3JldFJlc3BvbnNlEiUKBnNlY3JldBgBIAEoCzITLnNkay52MWFscGhhLlNlY3JldEgAEikKBWVycm9yGAIgASgLMhguc2RrLnYxYWxwaGEuU2VjcmV0RXJyb3JIAEIKCghyZXNwb25zZSJBCg9TZWNyZXRSZXNwb25zZXMSLgoJcmVzcG9uc2VzGAEgAygLMhsuc2RrLnYxYWxwaGEuU2VjcmV0UmVzcG9uc2UquAEKD0FnZ3JlZ2F0aW9uVHlwZRIgChxBR0dSRUdBVElPTl9UWVBFX1VOU1BFQ0lGSUVEEAASGwoXQUdHUkVHQVRJT05fVFlQRV9NRURJQU4QARIeChpBR0dSRUdBVElPTl9UWVBFX0lERU5USUNBTBACEiIKHkFHR1JFR0FUSU9OX1RZUEVfQ09NTU9OX1BSRUZJWBADEiIKHkFHR1JFR0FUSU9OX1RZUEVfQ09NTU9OX1NVRkZJWBAEKjkKBE1vZGUSFAoQTU9ERV9VTlNQRUNJRklFRBAAEgwKCE1PREVfRE9OEAESDQoJTU9ERV9OT0RFEAJCaAoPY29tLnNkay52MWFscGhhQghTZGtQcm90b1ABogIDU1hYqgILU2RrLlYxYWxwaGHKAgtTZGtcVjFhbHBoYeICF1Nka1xWMWFscGhhXEdQQk1ldGFkYXRh6gIMU2RrOjpWMWFscGhhYgZwcm90bzM", [file_google_protobuf_any2, file_google_protobuf_empty2, file_values_v1_values2]);
-var ConsensusDescriptorSchema2 = /* @__PURE__ */ messageDesc2(file_sdk_v1alpha_sdk2, 2);
-var AggregationType2;
-(function(AggregationType3) {
-  AggregationType3[AggregationType3["UNSPECIFIED"] = 0] = "UNSPECIFIED";
-  AggregationType3[AggregationType3["MEDIAN"] = 1] = "MEDIAN";
-  AggregationType3[AggregationType3["IDENTICAL"] = 2] = "IDENTICAL";
-  AggregationType3[AggregationType3["COMMON_PREFIX"] = 3] = "COMMON_PREFIX";
-  AggregationType3[AggregationType3["COMMON_SUFFIX"] = 4] = "COMMON_SUFFIX";
-})(AggregationType2 || (AggregationType2 = {}));
-var Mode2;
-(function(Mode3) {
-  Mode3[Mode3["UNSPECIFIED"] = 0] = "UNSPECIFIED";
-  Mode3[Mode3["DON"] = 1] = "DON";
-  Mode3[Mode3["NODE"] = 2] = "NODE";
-})(Mode2 || (Mode2 = {}));
-var file_tools_generator_v1alpha_cre_metadata2 = /* @__PURE__ */ fileDesc2("Cip0b29scy9nZW5lcmF0b3IvdjFhbHBoYS9jcmVfbWV0YWRhdGEucHJvdG8SF3Rvb2xzLmdlbmVyYXRvci52MWFscGhhIoQBCgtTdHJpbmdMYWJlbBJECghkZWZhdWx0cxgBIAMoCzIyLnRvb2xzLmdlbmVyYXRvci52MWFscGhhLlN0cmluZ0xhYmVsLkRlZmF1bHRzRW50cnkaLwoNRGVmYXVsdHNFbnRyeRILCgNrZXkYASABKAkSDQoFdmFsdWUYAiABKAk6AjgBIogBCgtVaW50NjRMYWJlbBJECghkZWZhdWx0cxgBIAMoCzIyLnRvb2xzLmdlbmVyYXRvci52MWFscGhhLlVpbnQ2NExhYmVsLkRlZmF1bHRzRW50cnkaMwoNRGVmYXVsdHNFbnRyeRILCgNrZXkYASABKAkSEQoFdmFsdWUYAiABKARCAjAAOgI4ASKEAQoLVWludDMyTGFiZWwSRAoIZGVmYXVsdHMYASADKAsyMi50b29scy5nZW5lcmF0b3IudjFhbHBoYS5VaW50MzJMYWJlbC5EZWZhdWx0c0VudHJ5Gi8KDURlZmF1bHRzRW50cnkSCwoDa2V5GAEgASgJEg0KBXZhbHVlGAIgASgNOgI4ASKGAQoKSW50NjRMYWJlbBJDCghkZWZhdWx0cxgBIAMoCzIxLnRvb2xzLmdlbmVyYXRvci52MWFscGhhLkludDY0TGFiZWwuRGVmYXVsdHNFbnRyeRozCg1EZWZhdWx0c0VudHJ5EgsKA2tleRgBIAEoCRIRCgV2YWx1ZRgCIAEoA0ICMAA6AjgBIoIBCgpJbnQzMkxhYmVsEkMKCGRlZmF1bHRzGAEgAygLMjEudG9vbHMuZ2VuZXJhdG9yLnYxYWxwaGEuSW50MzJMYWJlbC5EZWZhdWx0c0VudHJ5Gi8KDURlZmF1bHRzRW50cnkSCwoDa2V5GAEgASgJEg0KBXZhbHVlGAIgASgFOgI4ASLBAgoFTGFiZWwSPAoMc3RyaW5nX2xhYmVsGAEgASgLMiQudG9vbHMuZ2VuZXJhdG9yLnYxYWxwaGEuU3RyaW5nTGFiZWxIABI8Cgx1aW50NjRfbGFiZWwYAiABKAsyJC50b29scy5nZW5lcmF0b3IudjFhbHBoYS5VaW50NjRMYWJlbEgAEjoKC2ludDY0X2xhYmVsGAMgASgLMiMudG9vbHMuZ2VuZXJhdG9yLnYxYWxwaGEuSW50NjRMYWJlbEgAEjwKDHVpbnQzMl9sYWJlbBgEIAEoCzIkLnRvb2xzLmdlbmVyYXRvci52MWFscGhhLlVpbnQzMkxhYmVsSAASOgoLaW50MzJfbGFiZWwYBSABKAsyIy50b29scy5nZW5lcmF0b3IudjFhbHBoYS5JbnQzMkxhYmVsSABCBgoEa2luZCLkAQoSQ2FwYWJpbGl0eU1ldGFkYXRhEh8KBG1vZGUYASABKA4yES5zZGsudjFhbHBoYS5Nb2RlEhUKDWNhcGFiaWxpdHlfaWQYAiABKAkSRwoGbGFiZWxzGAMgAygLMjcudG9vbHMuZ2VuZXJhdG9yLnYxYWxwaGEuQ2FwYWJpbGl0eU1ldGFkYXRhLkxhYmVsc0VudHJ5Gk0KC0xhYmVsc0VudHJ5EgsKA2tleRgBIAEoCRItCgV2YWx1ZRgCIAEoCzIeLnRvb2xzLmdlbmVyYXRvci52MWFscGhhLkxhYmVsOgI4ASI2ChhDYXBhYmlsaXR5TWV0aG9kTWV0YWRhdGESGgoSbWFwX3RvX3VudHlwZWRfYXBpGAEgASgIOm4KCmNhcGFiaWxpdHkSHy5nb29nbGUucHJvdG9idWYuU2VydmljZU9wdGlvbnMY0IYDIAEoCzIrLnRvb2xzLmdlbmVyYXRvci52MWFscGhhLkNhcGFiaWxpdHlNZXRhZGF0YVIKY2FwYWJpbGl0eTprCgZtZXRob2QSHi5nb29nbGUucHJvdG9idWYuTWV0aG9kT3B0aW9ucxjRhgMgASgLMjEudG9vbHMuZ2VuZXJhdG9yLnYxYWxwaGEuQ2FwYWJpbGl0eU1ldGhvZE1ldGFkYXRhUgZtZXRob2RCrwEKG2NvbS50b29scy5nZW5lcmF0b3IudjFhbHBoYUIQQ3JlTWV0YWRhdGFQcm90b1ABogIDVEdYqgIXVG9vbHMuR2VuZXJhdG9yLlYxYWxwaGHKAhhUb29sc1xHZW5lcmF0b3JfXFYxYWxwaGHiAiRUb29sc1xHZW5lcmF0b3JfXFYxYWxwaGFcR1BCTWV0YWRhdGHqAhlUb29sczo6R2VuZXJhdG9yOjpWMWFscGhhYgZwcm90bzM", [file_google_protobuf_descriptor2, file_sdk_v1alpha_sdk2]);
-var file_capabilities_blockchain_evm_v1alpha_client2 = /* @__PURE__ */ fileDesc2("CjBjYXBhYmlsaXRpZXMvYmxvY2tjaGFpbi9ldm0vdjFhbHBoYS9jbGllbnQucHJvdG8SI2NhcGFiaWxpdGllcy5ibG9ja2NoYWluLmV2bS52MWFscGhhIh0KC1RvcGljVmFsdWVzEg4KBnZhbHVlcxgBIAMoDCK4AQoXRmlsdGVyTG9nVHJpZ2dlclJlcXVlc3QSEQoJYWRkcmVzc2VzGAEgAygMEkAKBnRvcGljcxgCIAMoCzIwLmNhcGFiaWxpdGllcy5ibG9ja2NoYWluLmV2bS52MWFscGhhLlRvcGljVmFsdWVzEkgKCmNvbmZpZGVuY2UYAyABKA4yNC5jYXBhYmlsaXRpZXMuYmxvY2tjaGFpbi5ldm0udjFhbHBoYS5Db25maWRlbmNlTGV2ZWwiegoTQ2FsbENvbnRyYWN0UmVxdWVzdBI6CgRjYWxsGAEgASgLMiwuY2FwYWJpbGl0aWVzLmJsb2NrY2hhaW4uZXZtLnYxYWxwaGEuQ2FsbE1zZxInCgxibG9ja19udW1iZXIYAiABKAsyES52YWx1ZXMudjEuQmlnSW50IiEKEUNhbGxDb250cmFjdFJlcGx5EgwKBGRhdGEYASABKAwiWwoRRmlsdGVyTG9nc1JlcXVlc3QSRgoMZmlsdGVyX3F1ZXJ5GAEgASgLMjAuY2FwYWJpbGl0aWVzLmJsb2NrY2hhaW4uZXZtLnYxYWxwaGEuRmlsdGVyUXVlcnkiSQoPRmlsdGVyTG9nc1JlcGx5EjYKBGxvZ3MYASADKAsyKC5jYXBhYmlsaXRpZXMuYmxvY2tjaGFpbi5ldm0udjFhbHBoYS5Mb2cixwEKA0xvZxIPCgdhZGRyZXNzGAEgASgMEg4KBnRvcGljcxgCIAMoDBIPCgd0eF9oYXNoGAMgASgMEhIKCmJsb2NrX2hhc2gYBCABKAwSDAoEZGF0YRgFIAEoDBIRCglldmVudF9zaWcYBiABKAwSJwoMYmxvY2tfbnVtYmVyGAcgASgLMhEudmFsdWVzLnYxLkJpZ0ludBIQCgh0eF9pbmRleBgIIAEoDRINCgVpbmRleBgJIAEoDRIPCgdyZW1vdmVkGAogASgIIjEKB0NhbGxNc2cSDAoEZnJvbRgBIAEoDBIKCgJ0bxgCIAEoDBIMCgRkYXRhGAMgASgMIr0BCgtGaWx0ZXJRdWVyeRISCgpibG9ja19oYXNoGAEgASgMEiUKCmZyb21fYmxvY2sYAiABKAsyES52YWx1ZXMudjEuQmlnSW50EiMKCHRvX2Jsb2NrGAMgASgLMhEudmFsdWVzLnYxLkJpZ0ludBIRCglhZGRyZXNzZXMYBCADKAwSOwoGdG9waWNzGAUgAygLMisuY2FwYWJpbGl0aWVzLmJsb2NrY2hhaW4uZXZtLnYxYWxwaGEuVG9waWNzIhcKBlRvcGljcxINCgV0b3BpYxgBIAMoDCJMChBCYWxhbmNlQXRSZXF1ZXN0Eg8KB2FjY291bnQYASABKAwSJwoMYmxvY2tfbnVtYmVyGAIgASgLMhEudmFsdWVzLnYxLkJpZ0ludCI0Cg5CYWxhbmNlQXRSZXBseRIiCgdiYWxhbmNlGAEgASgLMhEudmFsdWVzLnYxLkJpZ0ludCJPChJFc3RpbWF0ZUdhc1JlcXVlc3QSOQoDbXNnGAEgASgLMiwuY2FwYWJpbGl0aWVzLmJsb2NrY2hhaW4uZXZtLnYxYWxwaGEuQ2FsbE1zZyIjChBFc3RpbWF0ZUdhc1JlcGx5Eg8KA2dhcxgBIAEoBEICMAAiKwobR2V0VHJhbnNhY3Rpb25CeUhhc2hSZXF1ZXN0EgwKBGhhc2gYASABKAwiYgoZR2V0VHJhbnNhY3Rpb25CeUhhc2hSZXBseRJFCgt0cmFuc2FjdGlvbhgBIAEoCzIwLmNhcGFiaWxpdGllcy5ibG9ja2NoYWluLmV2bS52MWFscGhhLlRyYW5zYWN0aW9uIqEBCgtUcmFuc2FjdGlvbhIRCgVub25jZRgBIAEoBEICMAASDwoDZ2FzGAIgASgEQgIwABIKCgJ0bxgDIAEoDBIMCgRkYXRhGAQgASgMEgwKBGhhc2gYBSABKAwSIAoFdmFsdWUYBiABKAsyES52YWx1ZXMudjEuQmlnSW50EiQKCWdhc19wcmljZRgHIAEoCzIRLnZhbHVlcy52MS5CaWdJbnQiLAocR2V0VHJhbnNhY3Rpb25SZWNlaXB0UmVxdWVzdBIMCgRoYXNoGAEgASgMIlsKGkdldFRyYW5zYWN0aW9uUmVjZWlwdFJlcGx5Ej0KB3JlY2VpcHQYASABKAsyLC5jYXBhYmlsaXRpZXMuYmxvY2tjaGFpbi5ldm0udjFhbHBoYS5SZWNlaXB0IpkCCgdSZWNlaXB0EhIKBnN0YXR1cxgBIAEoBEICMAASFAoIZ2FzX3VzZWQYAiABKARCAjAAEhQKCHR4X2luZGV4GAMgASgEQgIwABISCgpibG9ja19oYXNoGAQgASgMEjYKBGxvZ3MYBiADKAsyKC5jYXBhYmlsaXRpZXMuYmxvY2tjaGFpbi5ldm0udjFhbHBoYS5Mb2cSDwoHdHhfaGFzaBgHIAEoDBIuChNlZmZlY3RpdmVfZ2FzX3ByaWNlGAggASgLMhEudmFsdWVzLnYxLkJpZ0ludBInCgxibG9ja19udW1iZXIYCSABKAsyES52YWx1ZXMudjEuQmlnSW50EhgKEGNvbnRyYWN0X2FkZHJlc3MYCiABKAwiQAoVSGVhZGVyQnlOdW1iZXJSZXF1ZXN0EicKDGJsb2NrX251bWJlchgBIAEoCzIRLnZhbHVlcy52MS5CaWdJbnQiUgoTSGVhZGVyQnlOdW1iZXJSZXBseRI7CgZoZWFkZXIYASABKAsyKy5jYXBhYmlsaXRpZXMuYmxvY2tjaGFpbi5ldm0udjFhbHBoYS5IZWFkZXIiawoGSGVhZGVyEhUKCXRpbWVzdGFtcBgBIAEoBEICMAASJwoMYmxvY2tfbnVtYmVyGAIgASgLMhEudmFsdWVzLnYxLkJpZ0ludBIMCgRoYXNoGAMgASgMEhMKC3BhcmVudF9oYXNoGAQgASgMIqsBChJXcml0ZVJlcG9ydFJlcXVlc3QSEAoIcmVjZWl2ZXIYASABKAwSKwoGcmVwb3J0GAIgASgLMhsuc2RrLnYxYWxwaGEuUmVwb3J0UmVzcG9uc2USRwoKZ2FzX2NvbmZpZxgDIAEoCzIuLmNhcGFiaWxpdGllcy5ibG9ja2NoYWluLmV2bS52MWFscGhhLkdhc0NvbmZpZ0gAiAEBQg0KC19nYXNfY29uZmlnIiIKCUdhc0NvbmZpZxIVCglnYXNfbGltaXQYASABKARCAjAAIocDChBXcml0ZVJlcG9ydFJlcGx5EkAKCXR4X3N0YXR1cxgBIAEoDjItLmNhcGFiaWxpdGllcy5ibG9ja2NoYWluLmV2bS52MWFscGhhLlR4U3RhdHVzEnUKInJlY2VpdmVyX2NvbnRyYWN0X2V4ZWN1dGlvbl9zdGF0dXMYAiABKA4yRC5jYXBhYmlsaXRpZXMuYmxvY2tjaGFpbi5ldm0udjFhbHBoYS5SZWNlaXZlckNvbnRyYWN0RXhlY3V0aW9uU3RhdHVzSACIAQESFAoHdHhfaGFzaBgDIAEoDEgBiAEBEi8KD3RyYW5zYWN0aW9uX2ZlZRgEIAEoCzIRLnZhbHVlcy52MS5CaWdJbnRIAogBARIaCg1lcnJvcl9tZXNzYWdlGAUgASgJSAOIAQFCJQojX3JlY2VpdmVyX2NvbnRyYWN0X2V4ZWN1dGlvbl9zdGF0dXNCCgoIX3R4X2hhc2hCEgoQX3RyYW5zYWN0aW9uX2ZlZUIQCg5fZXJyb3JfbWVzc2FnZSppCg9Db25maWRlbmNlTGV2ZWwSGQoVQ09ORklERU5DRV9MRVZFTF9TQUZFEAASGwoXQ09ORklERU5DRV9MRVZFTF9MQVRFU1QQARIeChpDT05GSURFTkNFX0xFVkVMX0ZJTkFMSVpFRBACKoIBCh9SZWNlaXZlckNvbnRyYWN0RXhlY3V0aW9uU3RhdHVzEi4KKlJFQ0VJVkVSX0NPTlRSQUNUX0VYRUNVVElPTl9TVEFUVVNfU1VDQ0VTUxAAEi8KK1JFQ0VJVkVSX0NPTlRSQUNUX0VYRUNVVElPTl9TVEFUVVNfUkVWRVJURUQQASpOCghUeFN0YXR1cxITCg9UWF9TVEFUVVNfRkFUQUwQABIWChJUWF9TVEFUVVNfUkVWRVJURUQQARIVChFUWF9TVEFUVVNfU1VDQ0VTUxACMqkSCgZDbGllbnQSgAEKDENhbGxDb250cmFjdBI4LmNhcGFiaWxpdGllcy5ibG9ja2NoYWluLmV2bS52MWFscGhhLkNhbGxDb250cmFjdFJlcXVlc3QaNi5jYXBhYmlsaXRpZXMuYmxvY2tjaGFpbi5ldm0udjFhbHBoYS5DYWxsQ29udHJhY3RSZXBseRJ6CgpGaWx0ZXJMb2dzEjYuY2FwYWJpbGl0aWVzLmJsb2NrY2hhaW4uZXZtLnYxYWxwaGEuRmlsdGVyTG9nc1JlcXVlc3QaNC5jYXBhYmlsaXRpZXMuYmxvY2tjaGFpbi5ldm0udjFhbHBoYS5GaWx0ZXJMb2dzUmVwbHkSdwoJQmFsYW5jZUF0EjUuY2FwYWJpbGl0aWVzLmJsb2NrY2hhaW4uZXZtLnYxYWxwaGEuQmFsYW5jZUF0UmVxdWVzdBozLmNhcGFiaWxpdGllcy5ibG9ja2NoYWluLmV2bS52MWFscGhhLkJhbGFuY2VBdFJlcGx5En0KC0VzdGltYXRlR2FzEjcuY2FwYWJpbGl0aWVzLmJsb2NrY2hhaW4uZXZtLnYxYWxwaGEuRXN0aW1hdGVHYXNSZXF1ZXN0GjUuY2FwYWJpbGl0aWVzLmJsb2NrY2hhaW4uZXZtLnYxYWxwaGEuRXN0aW1hdGVHYXNSZXBseRKYAQoUR2V0VHJhbnNhY3Rpb25CeUhhc2gSQC5jYXBhYmlsaXRpZXMuYmxvY2tjaGFpbi5ldm0udjFhbHBoYS5HZXRUcmFuc2FjdGlvbkJ5SGFzaFJlcXVlc3QaPi5jYXBhYmlsaXRpZXMuYmxvY2tjaGFpbi5ldm0udjFhbHBoYS5HZXRUcmFuc2FjdGlvbkJ5SGFzaFJlcGx5EpsBChVHZXRUcmFuc2FjdGlvblJlY2VpcHQSQS5jYXBhYmlsaXRpZXMuYmxvY2tjaGFpbi5ldm0udjFhbHBoYS5HZXRUcmFuc2FjdGlvblJlY2VpcHRSZXF1ZXN0Gj8uY2FwYWJpbGl0aWVzLmJsb2NrY2hhaW4uZXZtLnYxYWxwaGEuR2V0VHJhbnNhY3Rpb25SZWNlaXB0UmVwbHkShgEKDkhlYWRlckJ5TnVtYmVyEjouY2FwYWJpbGl0aWVzLmJsb2NrY2hhaW4uZXZtLnYxYWxwaGEuSGVhZGVyQnlOdW1iZXJSZXF1ZXN0GjguY2FwYWJpbGl0aWVzLmJsb2NrY2hhaW4uZXZtLnYxYWxwaGEuSGVhZGVyQnlOdW1iZXJSZXBseRJ2CgpMb2dUcmlnZ2VyEjwuY2FwYWJpbGl0aWVzLmJsb2NrY2hhaW4uZXZtLnYxYWxwaGEuRmlsdGVyTG9nVHJpZ2dlclJlcXVlc3QaKC5jYXBhYmlsaXRpZXMuYmxvY2tjaGFpbi5ldm0udjFhbHBoYS5Mb2cwARJ9CgtXcml0ZVJlcG9ydBI3LmNhcGFiaWxpdGllcy5ibG9ja2NoYWluLmV2bS52MWFscGhhLldyaXRlUmVwb3J0UmVxdWVzdBo1LmNhcGFiaWxpdGllcy5ibG9ja2NoYWluLmV2bS52MWFscGhhLldyaXRlUmVwb3J0UmVwbHka7giCtRjpCAgBEglldm1AMS4wLjAa2QgKDUNoYWluU2VsZWN0b3ISxwgSxAgKJAoXYXBlY2hhaW4tdGVzdG5ldC1jdXJ0aXMQwcO0+I3EkrKJAQoXCgthcmMtdGVzdG5ldBDnxoye19fQjSoKHQoRYXZhbGFuY2hlLW1haW5uZXQQ1eeKwOHVmKRZCiMKFmF2YWxhbmNoZS10ZXN0bmV0LWZ1amkQm/n8kKLjqPjMAQooChtiaW5hbmNlX3NtYXJ0X2NoYWluLW1haW5uZXQQz/eU8djtlbidAQooChtiaW5hbmNlX3NtYXJ0X2NoYWluLXRlc3RuZXQQ+62+nICu5Iq4AQocChBldGhlcmV1bS1tYWlubmV0EJX28eTPsqbCRQonChtldGhlcmV1bS1tYWlubmV0LWFyYml0cnVtLTEQxOiNzY6boddECiQKF2V0aGVyZXVtLW1haW5uZXQtYmFzZS0xEIL/q6L+uZDT3QEKJwobZXRoZXJldW0tbWFpbm5ldC1vcHRpbWlzbS0xELiVj8P3/tDpMwopCh1ldGhlcmV1bS1tYWlubmV0LXdvcmxkY2hhaW4tMRCH77q3xbbCuBwKJQoZZXRoZXJldW0tbWFpbm5ldC14bGF5ZXItMRCWpfycpqjv7SkKJQoZZXRoZXJldW0tbWFpbm5ldC16a3N5bmMtMRCU7pfZ7bSx1xUKJQoYZXRoZXJldW0tdGVzdG5ldC1zZXBvbGlhENm15M78ye6g3gEKLwojZXRoZXJldW0tdGVzdG5ldC1zZXBvbGlhLWFyYml0cnVtLTEQ6s7u/+q2hKMwCiwKH2V0aGVyZXVtLXRlc3RuZXQtc2Vwb2xpYS1iYXNlLTEQuMq57/aQrsiPAQosCiBldGhlcmV1bS10ZXN0bmV0LXNlcG9saWEtbGluZWEtMRDrqtT+gvnmr08KLwojZXRoZXJldW0tdGVzdG5ldC1zZXBvbGlhLW9wdGltaXNtLTEQn4bFob7Yw8BICjEKJWV0aGVyZXVtLXRlc3RuZXQtc2Vwb2xpYS13b3JsZGNoYWluLTEQut/gxcep88VJCi0KIWV0aGVyZXVtLXRlc3RuZXQtc2Vwb2xpYS16a3N5bmMtMRC3wfz98sSA3l8KHwoTaHlwZXJsaXF1aWQtdGVzdG5ldBCIzt3Il+DJvTsKIAoTaW5rLXRlc3RuZXQtc2Vwb2xpYRDo9Kel8+aWwIcBChkKDWpvdmF5LW1haW5uZXQQtcPEmqGA35IVChkKDWpvdmF5LXRlc3RuZXQQ5M+KhN6y3o4NChoKDnBoYXJvcy1tYWlubmV0EMjBh571782hbAoaCg5wbGFzbWEtdGVzdG5ldBDVm7+lw7SZhzcKGwoPcG9seWdvbi1tYWlubmV0ELGr5PCakoadOAohChRwb2x5Z29uLXRlc3RuZXQtYW1veRDNj9bf8ceQ+uEBCiQKGHByaXZhdGUtdGVzdG5ldC1hbmRlc2l0ZRDUppilwY/c/F9C5QEKJ2NvbS5jYXBhYmlsaXRpZXMuYmxvY2tjaGFpbi5ldm0udjFhbHBoYUILQ2xpZW50UHJvdG9QAaICA0NCRaoCI0NhcGFiaWxpdGllcy5CbG9ja2NoYWluLkV2bS5WMWFscGhhygIjQ2FwYWJpbGl0aWVzXEJsb2NrY2hhaW5cRXZtXFYxYWxwaGHiAi9DYXBhYmlsaXRpZXNcQmxvY2tjaGFpblxFdm1cVjFhbHBoYVxHUEJNZXRhZGF0YeoCJkNhcGFiaWxpdGllczo6QmxvY2tjaGFpbjo6RXZtOjpWMWFscGhhYgZwcm90bzM", [file_sdk_v1alpha_sdk2, file_tools_generator_v1alpha_cre_metadata2, file_values_v1_values2]);
-var FilterLogTriggerRequestSchema2 = /* @__PURE__ */ messageDesc2(file_capabilities_blockchain_evm_v1alpha_client2, 1);
-var CallContractRequestSchema2 = /* @__PURE__ */ messageDesc2(file_capabilities_blockchain_evm_v1alpha_client2, 2);
-var CallContractReplySchema2 = /* @__PURE__ */ messageDesc2(file_capabilities_blockchain_evm_v1alpha_client2, 3);
-var FilterLogsRequestSchema2 = /* @__PURE__ */ messageDesc2(file_capabilities_blockchain_evm_v1alpha_client2, 4);
-var FilterLogsReplySchema2 = /* @__PURE__ */ messageDesc2(file_capabilities_blockchain_evm_v1alpha_client2, 5);
-var LogSchema2 = /* @__PURE__ */ messageDesc2(file_capabilities_blockchain_evm_v1alpha_client2, 6);
-var BalanceAtRequestSchema2 = /* @__PURE__ */ messageDesc2(file_capabilities_blockchain_evm_v1alpha_client2, 10);
-var BalanceAtReplySchema2 = /* @__PURE__ */ messageDesc2(file_capabilities_blockchain_evm_v1alpha_client2, 11);
-var EstimateGasRequestSchema2 = /* @__PURE__ */ messageDesc2(file_capabilities_blockchain_evm_v1alpha_client2, 12);
-var EstimateGasReplySchema2 = /* @__PURE__ */ messageDesc2(file_capabilities_blockchain_evm_v1alpha_client2, 13);
-var GetTransactionByHashRequestSchema2 = /* @__PURE__ */ messageDesc2(file_capabilities_blockchain_evm_v1alpha_client2, 14);
-var GetTransactionByHashReplySchema2 = /* @__PURE__ */ messageDesc2(file_capabilities_blockchain_evm_v1alpha_client2, 15);
-var GetTransactionReceiptRequestSchema2 = /* @__PURE__ */ messageDesc2(file_capabilities_blockchain_evm_v1alpha_client2, 17);
-var GetTransactionReceiptReplySchema2 = /* @__PURE__ */ messageDesc2(file_capabilities_blockchain_evm_v1alpha_client2, 18);
-var HeaderByNumberRequestSchema2 = /* @__PURE__ */ messageDesc2(file_capabilities_blockchain_evm_v1alpha_client2, 20);
-var HeaderByNumberReplySchema2 = /* @__PURE__ */ messageDesc2(file_capabilities_blockchain_evm_v1alpha_client2, 21);
-var WriteReportRequestSchema2 = /* @__PURE__ */ messageDesc2(file_capabilities_blockchain_evm_v1alpha_client2, 23);
-var GasConfigSchema2 = /* @__PURE__ */ messageDesc2(file_capabilities_blockchain_evm_v1alpha_client2, 24);
-var WriteReportReplySchema2 = /* @__PURE__ */ messageDesc2(file_capabilities_blockchain_evm_v1alpha_client2, 25);
-var ConfidenceLevel2;
-(function(ConfidenceLevel3) {
-  ConfidenceLevel3[ConfidenceLevel3["SAFE"] = 0] = "SAFE";
-  ConfidenceLevel3[ConfidenceLevel3["LATEST"] = 1] = "LATEST";
-  ConfidenceLevel3[ConfidenceLevel3["FINALIZED"] = 2] = "FINALIZED";
-})(ConfidenceLevel2 || (ConfidenceLevel2 = {}));
-var ReceiverContractExecutionStatus2;
-(function(ReceiverContractExecutionStatus3) {
-  ReceiverContractExecutionStatus3[ReceiverContractExecutionStatus3["SUCCESS"] = 0] = "SUCCESS";
-  ReceiverContractExecutionStatus3[ReceiverContractExecutionStatus3["REVERTED"] = 1] = "REVERTED";
-})(ReceiverContractExecutionStatus2 || (ReceiverContractExecutionStatus2 = {}));
-var TxStatus2;
-(function(TxStatus3) {
-  TxStatus3[TxStatus3["FATAL"] = 0] = "FATAL";
-  TxStatus3[TxStatus3["REVERTED"] = 1] = "REVERTED";
-  TxStatus3[TxStatus3["SUCCESS"] = 2] = "SUCCESS";
-})(TxStatus2 || (TxStatus2 = {}));
-var hexToBytes2 = (hexStr) => {
-  if (!hexStr.startsWith("0x")) {
-    throw new Error(`Invalid hex string: ${hexStr}`);
-  }
-  if (!/^0x[0-9a-fA-F]*$/.test(hexStr)) {
-    throw new Error(`Invalid hex string: ${hexStr}`);
-  }
-  if ((hexStr.length - 2) % 2 !== 0) {
-    throw new Error(`Hex string must have an even number of characters: ${hexStr}`);
-  }
-  const hex = hexStr.slice(2);
-  const bytes = new Uint8Array(hex.length / 2);
-  for (let i2 = 0;i2 < hex.length; i2 += 2) {
-    bytes[i2 / 2] = Number.parseInt(hex.slice(i2, i2 + 2), 16);
-  }
-  return bytes;
-};
-function createWriteCreReportRequest2(input) {
-  return {
-    receiver: hexToBytes2(input.receiver),
-    report: input.report,
-    gasConfig: input.gasConfig !== undefined ? fromJson2(GasConfigSchema2, input.gasConfig) : undefined,
-    $report: true
-  };
-}
-function x_generatedCodeOnly_unwrap_WriteCreReportRequest2(input) {
-  return create3(WriteReportRequestSchema2, {
-    receiver: input.receiver,
-    report: input.report !== undefined ? input.report.x_generatedCodeOnly_unwrap() : undefined,
-    gasConfig: input.gasConfig
-  });
-}
-
-class ClientCapability4 {
-  ChainSelector;
-  static CAPABILITY_ID = "evm@1.0.0";
-  static CAPABILITY_NAME = "evm";
-  static CAPABILITY_VERSION = "1.0.0";
-  static SUPPORTED_CHAIN_SELECTORS = {
-    "apechain-testnet-curtis": 9900119385908781505n,
-    "arc-testnet": 3034092155422581607n,
-    "avalanche-mainnet": 6433500567565415381n,
-    "avalanche-testnet-fuji": 14767482510784806043n,
-    "binance_smart_chain-mainnet": 11344663589394136015n,
-    "binance_smart_chain-testnet": 13264668187771770619n,
-    "ethereum-mainnet": 5009297550715157269n,
-    "ethereum-mainnet-arbitrum-1": 4949039107694359620n,
-    "ethereum-mainnet-base-1": 15971525489660198786n,
-    "ethereum-mainnet-optimism-1": 3734403246176062136n,
-    "ethereum-mainnet-worldchain-1": 2049429975587534727n,
-    "ethereum-mainnet-xlayer-1": 3016212468291539606n,
-    "ethereum-mainnet-zksync-1": 1562403441176082196n,
-    "ethereum-testnet-sepolia": 16015286601757825753n,
-    "ethereum-testnet-sepolia-arbitrum-1": 3478487238524512106n,
-    "ethereum-testnet-sepolia-base-1": 10344971235874465080n,
-    "ethereum-testnet-sepolia-linea-1": 5719461335882077547n,
-    "ethereum-testnet-sepolia-optimism-1": 5224473277236331295n,
-    "ethereum-testnet-sepolia-worldchain-1": 5299555114858065850n,
-    "ethereum-testnet-sepolia-zksync-1": 6898391096552792247n,
-    "hyperliquid-testnet": 4286062357653186312n,
-    "ink-testnet-sepolia": 9763904284804119144n,
-    "jovay-mainnet": 1523760397290643893n,
-    "jovay-testnet": 945045181441419236n,
-    "pharos-mainnet": 7801139999541420232n,
-    "plasma-testnet": 3967220077692964309n,
-    "polygon-mainnet": 4051577828743386545n,
-    "polygon-testnet-amoy": 16281711391670634445n,
-    "private-testnet-andesite": 6915682381028791124n
-  };
-  constructor(ChainSelector) {
-    this.ChainSelector = ChainSelector;
-  }
-  callContract(runtime2, input) {
-    let payload;
-    if (input.$typeName) {
-      payload = input;
-    } else {
-      payload = fromJson2(CallContractRequestSchema2, input);
-    }
-    const capabilityId = `${ClientCapability4.CAPABILITY_NAME}:ChainSelector:${this.ChainSelector}@${ClientCapability4.CAPABILITY_VERSION}`;
-    const capabilityResponse = runtime2.callCapability({
-      capabilityId,
-      method: "CallContract",
-      payload,
-      inputSchema: CallContractRequestSchema2,
-      outputSchema: CallContractReplySchema2
-    });
-    return {
-      result: () => {
-        const result = capabilityResponse.result();
-        return result;
-      }
-    };
-  }
-  filterLogs(runtime2, input) {
-    let payload;
-    if (input.$typeName) {
-      payload = input;
-    } else {
-      payload = fromJson2(FilterLogsRequestSchema2, input);
-    }
-    const capabilityId = `${ClientCapability4.CAPABILITY_NAME}:ChainSelector:${this.ChainSelector}@${ClientCapability4.CAPABILITY_VERSION}`;
-    const capabilityResponse = runtime2.callCapability({
-      capabilityId,
-      method: "FilterLogs",
-      payload,
-      inputSchema: FilterLogsRequestSchema2,
-      outputSchema: FilterLogsReplySchema2
-    });
-    return {
-      result: () => {
-        const result = capabilityResponse.result();
-        return result;
-      }
-    };
-  }
-  balanceAt(runtime2, input) {
-    let payload;
-    if (input.$typeName) {
-      payload = input;
-    } else {
-      payload = fromJson2(BalanceAtRequestSchema2, input);
-    }
-    const capabilityId = `${ClientCapability4.CAPABILITY_NAME}:ChainSelector:${this.ChainSelector}@${ClientCapability4.CAPABILITY_VERSION}`;
-    const capabilityResponse = runtime2.callCapability({
-      capabilityId,
-      method: "BalanceAt",
-      payload,
-      inputSchema: BalanceAtRequestSchema2,
-      outputSchema: BalanceAtReplySchema2
-    });
-    return {
-      result: () => {
-        const result = capabilityResponse.result();
-        return result;
-      }
-    };
-  }
-  estimateGas(runtime2, input) {
-    let payload;
-    if (input.$typeName) {
-      payload = input;
-    } else {
-      payload = fromJson2(EstimateGasRequestSchema2, input);
-    }
-    const capabilityId = `${ClientCapability4.CAPABILITY_NAME}:ChainSelector:${this.ChainSelector}@${ClientCapability4.CAPABILITY_VERSION}`;
-    const capabilityResponse = runtime2.callCapability({
-      capabilityId,
-      method: "EstimateGas",
-      payload,
-      inputSchema: EstimateGasRequestSchema2,
-      outputSchema: EstimateGasReplySchema2
-    });
-    return {
-      result: () => {
-        const result = capabilityResponse.result();
-        return result;
-      }
-    };
-  }
-  getTransactionByHash(runtime2, input) {
-    let payload;
-    if (input.$typeName) {
-      payload = input;
-    } else {
-      payload = fromJson2(GetTransactionByHashRequestSchema2, input);
-    }
-    const capabilityId = `${ClientCapability4.CAPABILITY_NAME}:ChainSelector:${this.ChainSelector}@${ClientCapability4.CAPABILITY_VERSION}`;
-    const capabilityResponse = runtime2.callCapability({
-      capabilityId,
-      method: "GetTransactionByHash",
-      payload,
-      inputSchema: GetTransactionByHashRequestSchema2,
-      outputSchema: GetTransactionByHashReplySchema2
-    });
-    return {
-      result: () => {
-        const result = capabilityResponse.result();
-        return result;
-      }
-    };
-  }
-  getTransactionReceipt(runtime2, input) {
-    let payload;
-    if (input.$typeName) {
-      payload = input;
-    } else {
-      payload = fromJson2(GetTransactionReceiptRequestSchema2, input);
-    }
-    const capabilityId = `${ClientCapability4.CAPABILITY_NAME}:ChainSelector:${this.ChainSelector}@${ClientCapability4.CAPABILITY_VERSION}`;
-    const capabilityResponse = runtime2.callCapability({
-      capabilityId,
-      method: "GetTransactionReceipt",
-      payload,
-      inputSchema: GetTransactionReceiptRequestSchema2,
-      outputSchema: GetTransactionReceiptReplySchema2
-    });
-    return {
-      result: () => {
-        const result = capabilityResponse.result();
-        return result;
-      }
-    };
-  }
-  headerByNumber(runtime2, input) {
-    let payload;
-    if (input.$typeName) {
-      payload = input;
-    } else {
-      payload = fromJson2(HeaderByNumberRequestSchema2, input);
-    }
-    const capabilityId = `${ClientCapability4.CAPABILITY_NAME}:ChainSelector:${this.ChainSelector}@${ClientCapability4.CAPABILITY_VERSION}`;
-    const capabilityResponse = runtime2.callCapability({
-      capabilityId,
-      method: "HeaderByNumber",
-      payload,
-      inputSchema: HeaderByNumberRequestSchema2,
-      outputSchema: HeaderByNumberReplySchema2
-    });
-    return {
-      result: () => {
-        const result = capabilityResponse.result();
-        return result;
-      }
-    };
-  }
-  logTrigger(config) {
-    const capabilityId = `${ClientCapability4.CAPABILITY_NAME}:ChainSelector:${this.ChainSelector}@${ClientCapability4.CAPABILITY_VERSION}`;
-    return new ClientLogTrigger2(config, capabilityId, "LogTrigger", this.ChainSelector);
-  }
-  writeReport(runtime2, input) {
-    let payload;
-    if (input.$report) {
-      payload = x_generatedCodeOnly_unwrap_WriteCreReportRequest2(input);
-    } else {
-      payload = x_generatedCodeOnly_unwrap_WriteCreReportRequest2(createWriteCreReportRequest2(input));
-    }
-    const capabilityId = `${ClientCapability4.CAPABILITY_NAME}:ChainSelector:${this.ChainSelector}@${ClientCapability4.CAPABILITY_VERSION}`;
-    const capabilityResponse = runtime2.callCapability({
-      capabilityId,
-      method: "WriteReport",
-      payload,
-      inputSchema: WriteReportRequestSchema2,
-      outputSchema: WriteReportReplySchema2
-    });
-    return {
-      result: () => {
-        const result = capabilityResponse.result();
-        return result;
-      }
-    };
-  }
-}
-
-class ClientLogTrigger2 {
-  _capabilityId;
-  _method;
-  ChainSelector;
-  config;
-  constructor(config, _capabilityId, _method, ChainSelector) {
-    this._capabilityId = _capabilityId;
-    this._method = _method;
-    this.ChainSelector = ChainSelector;
-    this.config = config.$typeName ? config : fromJson2(FilterLogTriggerRequestSchema2, config);
-  }
-  capabilityId() {
-    return this._capabilityId;
-  }
-  method() {
-    return this._method;
-  }
-  outputSchema() {
-    return LogSchema2;
-  }
-  configAsAny() {
-    return anyPack2(FilterLogTriggerRequestSchema2, this.config);
-  }
-  adapt(rawOutput) {
-    return rawOutput;
-  }
-}
-var file_capabilities_networking_confidentialhttp_v1alpha_client2 = /* @__PURE__ */ fileDesc2("Cj1jYXBhYmlsaXRpZXMvbmV0d29ya2luZy9jb25maWRlbnRpYWxodHRwL3YxYWxwaGEvY2xpZW50LnByb3RvEjBjYXBhYmlsaXRpZXMubmV0d29ya2luZy5jb25maWRlbnRpYWxodHRwLnYxYWxwaGEiUAoQU2VjcmV0SWRlbnRpZmllchILCgNrZXkYASABKAkSEQoJbmFtZXNwYWNlGAIgASgJEhIKBW93bmVyGAMgASgJSACIAQFCCAoGX293bmVyIh4KDEhlYWRlclZhbHVlcxIOCgZ2YWx1ZXMYASADKAki1wQKC0hUVFBSZXF1ZXN0EgsKA3VybBgBIAEoCRIOCgZtZXRob2QYAiABKAkSFQoLYm9keV9zdHJpbmcYAyABKAlIABIUCgpib2R5X2J5dGVzGAggASgMSAASZgoNbXVsdGlfaGVhZGVycxgEIAMoCzJPLmNhcGFiaWxpdGllcy5uZXR3b3JraW5nLmNvbmZpZGVudGlhbGh0dHAudjFhbHBoYS5IVFRQUmVxdWVzdC5NdWx0aUhlYWRlcnNFbnRyeRJ3ChZ0ZW1wbGF0ZV9wdWJsaWNfdmFsdWVzGAUgAygLMlcuY2FwYWJpbGl0aWVzLm5ldHdvcmtpbmcuY29uZmlkZW50aWFsaHR0cC52MWFscGhhLkhUVFBSZXF1ZXN0LlRlbXBsYXRlUHVibGljVmFsdWVzRW50cnkSHwoXY3VzdG9tX3Jvb3RfY2FfY2VydF9wZW0YBiABKAwSKgoHdGltZW91dBgHIAEoCzIZLmdvb2dsZS5wcm90b2J1Zi5EdXJhdGlvbhIWCg5lbmNyeXB0X291dHB1dBgJIAEoCBpzChFNdWx0aUhlYWRlcnNFbnRyeRILCgNrZXkYASABKAkSTQoFdmFsdWUYAiABKAsyPi5jYXBhYmlsaXRpZXMubmV0d29ya2luZy5jb25maWRlbnRpYWxodHRwLnYxYWxwaGEuSGVhZGVyVmFsdWVzOgI4ARo7ChlUZW1wbGF0ZVB1YmxpY1ZhbHVlc0VudHJ5EgsKA2tleRgBIAEoCRINCgV2YWx1ZRgCIAEoCToCOAFCBgoEYm9keSKPAgoMSFRUUFJlc3BvbnNlEhMKC3N0YXR1c19jb2RlGAEgASgNEgwKBGJvZHkYAiABKAwSZwoNbXVsdGlfaGVhZGVycxgDIAMoCzJQLmNhcGFiaWxpdGllcy5uZXR3b3JraW5nLmNvbmZpZGVudGlhbGh0dHAudjFhbHBoYS5IVFRQUmVzcG9uc2UuTXVsdGlIZWFkZXJzRW50cnkacwoRTXVsdGlIZWFkZXJzRW50cnkSCwoDa2V5GAEgASgJEk0KBXZhbHVlGAIgASgLMj4uY2FwYWJpbGl0aWVzLm5ldHdvcmtpbmcuY29uZmlkZW50aWFsaHR0cC52MWFscGhhLkhlYWRlclZhbHVlczoCOAEiyAEKF0NvbmZpZGVudGlhbEhUVFBSZXF1ZXN0El0KEXZhdWx0X2Rvbl9zZWNyZXRzGAEgAygLMkIuY2FwYWJpbGl0aWVzLm5ldHdvcmtpbmcuY29uZmlkZW50aWFsaHR0cC52MWFscGhhLlNlY3JldElkZW50aWZpZXISTgoHcmVxdWVzdBgCIAEoCzI9LmNhcGFiaWxpdGllcy5uZXR3b3JraW5nLmNvbmZpZGVudGlhbGh0dHAudjFhbHBoYS5IVFRQUmVxdWVzdDLKAQoGQ2xpZW50EpgBCgtTZW5kUmVxdWVzdBJJLmNhcGFiaWxpdGllcy5uZXR3b3JraW5nLmNvbmZpZGVudGlhbGh0dHAudjFhbHBoYS5Db25maWRlbnRpYWxIVFRQUmVxdWVzdBo+LmNhcGFiaWxpdGllcy5uZXR3b3JraW5nLmNvbmZpZGVudGlhbGh0dHAudjFhbHBoYS5IVFRQUmVzcG9uc2UaJYK1GCEIARIdY29uZmlkZW50aWFsLWh0dHBAMS4wLjAtYWxwaGFCpgIKNGNvbS5jYXBhYmlsaXRpZXMubmV0d29ya2luZy5jb25maWRlbnRpYWxodHRwLnYxYWxwaGFCC0NsaWVudFByb3RvUAGiAgNDTkOqAjBDYXBhYmlsaXRpZXMuTmV0d29ya2luZy5Db25maWRlbnRpYWxodHRwLlYxYWxwaGHKAjBDYXBhYmlsaXRpZXNcTmV0d29ya2luZ1xDb25maWRlbnRpYWxodHRwXFYxYWxwaGHiAjxDYXBhYmlsaXRpZXNcTmV0d29ya2luZ1xDb25maWRlbnRpYWxodHRwXFYxYWxwaGFcR1BCTWV0YWRhdGHqAjNDYXBhYmlsaXRpZXM6Ok5ldHdvcmtpbmc6OkNvbmZpZGVudGlhbGh0dHA6OlYxYWxwaGFiBnByb3RvMw", [file_google_protobuf_duration2, file_tools_generator_v1alpha_cre_metadata2]);
-var HTTPResponseSchema2 = /* @__PURE__ */ messageDesc2(file_capabilities_networking_confidentialhttp_v1alpha_client2, 3);
-var ConfidentialHTTPRequestSchema2 = /* @__PURE__ */ messageDesc2(file_capabilities_networking_confidentialhttp_v1alpha_client2, 4);
-
-class ClientCapability5 {
-  static CAPABILITY_ID = "confidential-http@1.0.0-alpha";
-  static CAPABILITY_NAME = "confidential-http";
-  static CAPABILITY_VERSION = "1.0.0-alpha";
-  sendRequest(runtime2, input) {
-    let payload;
-    if (input.$typeName) {
-      payload = input;
-    } else {
-      payload = fromJson2(ConfidentialHTTPRequestSchema2, input);
-    }
-    const capabilityId = ClientCapability5.CAPABILITY_ID;
-    const capabilityResponse = runtime2.callCapability({
-      capabilityId,
-      method: "SendRequest",
-      payload,
-      inputSchema: ConfidentialHTTPRequestSchema2,
-      outputSchema: HTTPResponseSchema2
-    });
-    return {
-      result: () => {
-        const result = capabilityResponse.result();
-        return result;
-      }
-    };
-  }
-}
-var file_capabilities_networking_http_v1alpha_client2 = /* @__PURE__ */ fileDesc2("CjFjYXBhYmlsaXRpZXMvbmV0d29ya2luZy9odHRwL3YxYWxwaGEvY2xpZW50LnByb3RvEiRjYXBhYmlsaXRpZXMubmV0d29ya2luZy5odHRwLnYxYWxwaGEiSgoNQ2FjaGVTZXR0aW5ncxINCgVzdG9yZRgBIAEoCBIqCgdtYXhfYWdlGAIgASgLMhkuZ29vZ2xlLnByb3RvYnVmLkR1cmF0aW9uIh4KDEhlYWRlclZhbHVlcxIOCgZ2YWx1ZXMYASADKAki7wMKB1JlcXVlc3QSCwoDdXJsGAEgASgJEg4KBm1ldGhvZBgCIAEoCRJPCgdoZWFkZXJzGAMgAygLMjouY2FwYWJpbGl0aWVzLm5ldHdvcmtpbmcuaHR0cC52MWFscGhhLlJlcXVlc3QuSGVhZGVyc0VudHJ5QgIYARIMCgRib2R5GAQgASgMEioKB3RpbWVvdXQYBSABKAsyGS5nb29nbGUucHJvdG9idWYuRHVyYXRpb24SSwoOY2FjaGVfc2V0dGluZ3MYBiABKAsyMy5jYXBhYmlsaXRpZXMubmV0d29ya2luZy5odHRwLnYxYWxwaGEuQ2FjaGVTZXR0aW5ncxJWCg1tdWx0aV9oZWFkZXJzGAcgAygLMj8uY2FwYWJpbGl0aWVzLm5ldHdvcmtpbmcuaHR0cC52MWFscGhhLlJlcXVlc3QuTXVsdGlIZWFkZXJzRW50cnkaLgoMSGVhZGVyc0VudHJ5EgsKA2tleRgBIAEoCRINCgV2YWx1ZRgCIAEoCToCOAEaZwoRTXVsdGlIZWFkZXJzRW50cnkSCwoDa2V5GAEgASgJEkEKBXZhbHVlGAIgASgLMjIuY2FwYWJpbGl0aWVzLm5ldHdvcmtpbmcuaHR0cC52MWFscGhhLkhlYWRlclZhbHVlczoCOAEi8QIKCFJlc3BvbnNlEhMKC3N0YXR1c19jb2RlGAEgASgNElAKB2hlYWRlcnMYAiADKAsyOy5jYXBhYmlsaXRpZXMubmV0d29ya2luZy5odHRwLnYxYWxwaGEuUmVzcG9uc2UuSGVhZGVyc0VudHJ5QgIYARIMCgRib2R5GAMgASgMElcKDW11bHRpX2hlYWRlcnMYBCADKAsyQC5jYXBhYmlsaXRpZXMubmV0d29ya2luZy5odHRwLnYxYWxwaGEuUmVzcG9uc2UuTXVsdGlIZWFkZXJzRW50cnkaLgoMSGVhZGVyc0VudHJ5EgsKA2tleRgBIAEoCRINCgV2YWx1ZRgCIAEoCToCOAEaZwoRTXVsdGlIZWFkZXJzRW50cnkSCwoDa2V5GAEgASgJEkEKBXZhbHVlGAIgASgLMjIuY2FwYWJpbGl0aWVzLm5ldHdvcmtpbmcuaHR0cC52MWFscGhhLkhlYWRlclZhbHVlczoCOAEymAEKBkNsaWVudBJsCgtTZW5kUmVxdWVzdBItLmNhcGFiaWxpdGllcy5uZXR3b3JraW5nLmh0dHAudjFhbHBoYS5SZXF1ZXN0Gi4uY2FwYWJpbGl0aWVzLm5ldHdvcmtpbmcuaHR0cC52MWFscGhhLlJlc3BvbnNlGiCCtRgcCAISGGh0dHAtYWN0aW9uc0AxLjAuMC1hbHBoYULqAQooY29tLmNhcGFiaWxpdGllcy5uZXR3b3JraW5nLmh0dHAudjFhbHBoYUILQ2xpZW50UHJvdG9QAaICA0NOSKoCJENhcGFiaWxpdGllcy5OZXR3b3JraW5nLkh0dHAuVjFhbHBoYcoCJENhcGFiaWxpdGllc1xOZXR3b3JraW5nXEh0dHBcVjFhbHBoYeICMENhcGFiaWxpdGllc1xOZXR3b3JraW5nXEh0dHBcVjFhbHBoYVxHUEJNZXRhZGF0YeoCJ0NhcGFiaWxpdGllczo6TmV0d29ya2luZzo6SHR0cDo6VjFhbHBoYWIGcHJvdG8z", [file_google_protobuf_duration2, file_tools_generator_v1alpha_cre_metadata2]);
-var RequestSchema2 = /* @__PURE__ */ messageDesc2(file_capabilities_networking_http_v1alpha_client2, 2);
-var ResponseSchema2 = /* @__PURE__ */ messageDesc2(file_capabilities_networking_http_v1alpha_client2, 3);
-
-class SendRequester2 {
-  runtime;
-  client;
-  constructor(runtime2, client) {
-    this.runtime = runtime2;
-    this.client = client;
-  }
-  sendRequest(input) {
-    return this.client.sendRequest(this.runtime, input);
-  }
-}
-
-class ClientCapability6 {
-  static CAPABILITY_ID = "http-actions@1.0.0-alpha";
-  static CAPABILITY_NAME = "http-actions";
-  static CAPABILITY_VERSION = "1.0.0-alpha";
-  sendRequest(...args) {
-    if (typeof args[1] === "function") {
-      const [runtime3, fn, consensusAggregation, unwrapOptions] = args;
-      return this.sendRequestSugarHelper(runtime3, fn, consensusAggregation, unwrapOptions);
-    }
-    const [runtime2, input] = args;
-    return this.sendRequestCallHelper(runtime2, input);
-  }
-  sendRequestCallHelper(runtime2, input) {
-    let payload;
-    if (input.$typeName) {
-      payload = input;
-    } else {
-      payload = fromJson2(RequestSchema2, input);
-    }
-    const capabilityId = ClientCapability6.CAPABILITY_ID;
-    const capabilityResponse = runtime2.callCapability({
-      capabilityId,
-      method: "SendRequest",
-      payload,
-      inputSchema: RequestSchema2,
-      outputSchema: ResponseSchema2
-    });
-    return {
-      result: () => {
-        const result = capabilityResponse.result();
-        return result;
-      }
-    };
-  }
-  sendRequestSugarHelper(runtime2, fn, consensusAggregation, unwrapOptions) {
-    const wrappedFn = (runtime3, ...args) => {
-      const sendRequester = new SendRequester2(runtime3, this);
-      return fn(sendRequester, ...args);
-    };
-    return runtime2.runInNodeMode(wrappedFn, consensusAggregation, unwrapOptions);
-  }
-}
-var file_capabilities_networking_http_v1alpha_trigger2 = /* @__PURE__ */ fileDesc2("CjJjYXBhYmlsaXRpZXMvbmV0d29ya2luZy9odHRwL3YxYWxwaGEvdHJpZ2dlci5wcm90bxIkY2FwYWJpbGl0aWVzLm5ldHdvcmtpbmcuaHR0cC52MWFscGhhIlYKBkNvbmZpZxJMCg9hdXRob3JpemVkX2tleXMYASADKAsyMy5jYXBhYmlsaXRpZXMubmV0d29ya2luZy5odHRwLnYxYWxwaGEuQXV0aG9yaXplZEtleSJaCgdQYXlsb2FkEg0KBWlucHV0GAEgASgMEkAKA2tleRgCIAEoCzIzLmNhcGFiaWxpdGllcy5uZXR3b3JraW5nLmh0dHAudjFhbHBoYS5BdXRob3JpemVkS2V5ImAKDUF1dGhvcml6ZWRLZXkSOwoEdHlwZRgBIAEoDjItLmNhcGFiaWxpdGllcy5uZXR3b3JraW5nLmh0dHAudjFhbHBoYS5LZXlUeXBlEhIKCnB1YmxpY19rZXkYAiABKAkqOwoHS2V5VHlwZRIYChRLRVlfVFlQRV9VTlNQRUNJRklFRBAAEhYKEktFWV9UWVBFX0VDRFNBX0VWTRABMpIBCgRIVFRQEmgKB1RyaWdnZXISLC5jYXBhYmlsaXRpZXMubmV0d29ya2luZy5odHRwLnYxYWxwaGEuQ29uZmlnGi0uY2FwYWJpbGl0aWVzLm5ldHdvcmtpbmcuaHR0cC52MWFscGhhLlBheWxvYWQwARoggrUYHAgBEhhodHRwLXRyaWdnZXJAMS4wLjAtYWxwaGFC6wEKKGNvbS5jYXBhYmlsaXRpZXMubmV0d29ya2luZy5odHRwLnYxYWxwaGFCDFRyaWdnZXJQcm90b1ABogIDQ05IqgIkQ2FwYWJpbGl0aWVzLk5ldHdvcmtpbmcuSHR0cC5WMWFscGhhygIkQ2FwYWJpbGl0aWVzXE5ldHdvcmtpbmdcSHR0cFxWMWFscGhh4gIwQ2FwYWJpbGl0aWVzXE5ldHdvcmtpbmdcSHR0cFxWMWFscGhhXEdQQk1ldGFkYXRh6gInQ2FwYWJpbGl0aWVzOjpOZXR3b3JraW5nOjpIdHRwOjpWMWFscGhhYgZwcm90bzM", [file_tools_generator_v1alpha_cre_metadata2]);
-var ConfigSchema3 = /* @__PURE__ */ messageDesc2(file_capabilities_networking_http_v1alpha_trigger2, 0);
-var PayloadSchema3 = /* @__PURE__ */ messageDesc2(file_capabilities_networking_http_v1alpha_trigger2, 1);
-var KeyType2;
-(function(KeyType3) {
-  KeyType3[KeyType3["UNSPECIFIED"] = 0] = "UNSPECIFIED";
-  KeyType3[KeyType3["ECDSA_EVM"] = 1] = "ECDSA_EVM";
-})(KeyType2 || (KeyType2 = {}));
-
-class HTTPCapability2 {
-  static CAPABILITY_ID = "http-trigger@1.0.0-alpha";
-  static CAPABILITY_NAME = "http-trigger";
-  static CAPABILITY_VERSION = "1.0.0-alpha";
-  trigger(config) {
-    const capabilityId = HTTPCapability2.CAPABILITY_ID;
-    return new HTTPTrigger2(config, capabilityId, "Trigger");
-  }
-}
-
-class HTTPTrigger2 {
-  _capabilityId;
-  _method;
-  config;
-  constructor(config, _capabilityId, _method) {
-    this._capabilityId = _capabilityId;
-    this._method = _method;
-    this.config = config.$typeName ? config : fromJson2(ConfigSchema3, config);
-  }
-  capabilityId() {
-    return this._capabilityId;
-  }
-  method() {
-    return this._method;
-  }
-  outputSchema() {
-    return PayloadSchema3;
-  }
-  configAsAny() {
-    return anyPack2(ConfigSchema3, this.config);
-  }
-  adapt(rawOutput) {
-    return rawOutput;
-  }
-}
-var file_capabilities_scheduler_cron_v1_trigger2 = /* @__PURE__ */ fileDesc2("CixjYXBhYmlsaXRpZXMvc2NoZWR1bGVyL2Nyb24vdjEvdHJpZ2dlci5wcm90bxIeY2FwYWJpbGl0aWVzLnNjaGVkdWxlci5jcm9uLnYxIhoKBkNvbmZpZxIQCghzY2hlZHVsZRgBIAEoCSJHCgdQYXlsb2FkEjwKGHNjaGVkdWxlZF9leGVjdXRpb25fdGltZRgBIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXAiNQoNTGVnYWN5UGF5bG9hZBIgChhzY2hlZHVsZWRfZXhlY3V0aW9uX3RpbWUYASABKAk6AhgBMvUBCgRDcm9uElwKB1RyaWdnZXISJi5jYXBhYmlsaXRpZXMuc2NoZWR1bGVyLmNyb24udjEuQ29uZmlnGicuY2FwYWJpbGl0aWVzLnNjaGVkdWxlci5jcm9uLnYxLlBheWxvYWQwARJzCg1MZWdhY3lUcmlnZ2VyEiYuY2FwYWJpbGl0aWVzLnNjaGVkdWxlci5jcm9uLnYxLkNvbmZpZxotLmNhcGFiaWxpdGllcy5zY2hlZHVsZXIuY3Jvbi52MS5MZWdhY3lQYXlsb2FkIgmIAgGKtRgCCAEwARoagrUYFggBEhJjcm9uLXRyaWdnZXJAMS4wLjBCzQEKImNvbS5jYXBhYmlsaXRpZXMuc2NoZWR1bGVyLmNyb24udjFCDFRyaWdnZXJQcm90b1ABogIDQ1NDqgIeQ2FwYWJpbGl0aWVzLlNjaGVkdWxlci5Dcm9uLlYxygIeQ2FwYWJpbGl0aWVzXFNjaGVkdWxlclxDcm9uXFYx4gIqQ2FwYWJpbGl0aWVzXFNjaGVkdWxlclxDcm9uXFYxXEdQQk1ldGFkYXRh6gIhQ2FwYWJpbGl0aWVzOjpTY2hlZHVsZXI6OkNyb246OlYxYgZwcm90bzM", [file_google_protobuf_timestamp2, file_tools_generator_v1alpha_cre_metadata2]);
-var ConfigSchema4 = /* @__PURE__ */ messageDesc2(file_capabilities_scheduler_cron_v1_trigger2, 0);
-var PayloadSchema4 = /* @__PURE__ */ messageDesc2(file_capabilities_scheduler_cron_v1_trigger2, 1);
-
-class CronCapability2 {
-  static CAPABILITY_ID = "cron-trigger@1.0.0";
-  static CAPABILITY_NAME = "cron-trigger";
-  static CAPABILITY_VERSION = "1.0.0";
-  trigger(config) {
-    const capabilityId = CronCapability2.CAPABILITY_ID;
-    return new CronTrigger2(config, capabilityId, "Trigger");
-  }
-}
-
-class CronTrigger2 {
-  _capabilityId;
-  _method;
-  config;
-  constructor(config, _capabilityId, _method) {
-    this._capabilityId = _capabilityId;
-    this._method = _method;
-    this.config = config.$typeName ? config : fromJson2(ConfigSchema4, config);
-  }
-  capabilityId() {
-    return this._capabilityId;
-  }
-  method() {
-    return this._method;
-  }
-  outputSchema() {
-    return PayloadSchema4;
-  }
-  configAsAny() {
-    return anyPack2(ConfigSchema4, this.config);
-  }
-  adapt(rawOutput) {
-    return rawOutput;
-  }
-}
-var prepareRuntime2 = () => {
-  globalThis.Buffer = Buffer2;
-};
-var handler2 = (trigger, fn) => ({
-  trigger,
-  fn
-});
-prepareRuntime2();
-var cre3 = {
-  capabilities: {
-    CronCapability: CronCapability2,
-    HTTPCapability: HTTPCapability2,
-    ConfidentialHTTPClient: ClientCapability5,
-    HTTPClient: ClientCapability6,
-    EVMClient: ClientCapability4
-  },
-  handler: handler2
-};
-var LAST_FINALIZED_BLOCK_NUMBER2 = {
-  absVal: Buffer.from([3]).toString("base64"),
-  sign: "-1"
-};
-var LATEST_BLOCK_NUMBER2 = {
-  absVal: Buffer.from([2]).toString("base64"),
-  sign: "-1"
-};
-function ok2(responseOrFn) {
-  if (typeof responseOrFn === "function") {
-    return {
-      result: () => ok2(responseOrFn().result)
-    };
-  } else {
-    return responseOrFn.statusCode >= 200 && responseOrFn.statusCode < 300;
-  }
-}
-function sendReport2(runtime2, report2, fn) {
-  const rawReport = report2.x_generatedCodeOnly_unwrap();
-  const request = fn(rawReport);
-  return this.sendRequest(runtime2, request);
-}
-function sendRequesterSendReport2(report2, fn) {
-  const rawReport = report2.x_generatedCodeOnly_unwrap();
-  const request = fn(rawReport);
-  return this.sendRequest(request);
-}
-ClientCapability6.prototype.sendReport = sendReport2;
-SendRequester2.prototype.sendReport = sendRequesterSendReport2;
-var network248 = {
-  chainId: "1",
-  chainSelector: {
-    name: "aptos-mainnet",
-    selector: 4741433654826277614n
-  },
-  chainFamily: "aptos",
-  networkType: "mainnet"
-};
-var aptos_mainnet_default2 = network248;
-var network249 = {
-  chainId: "16661",
-  chainSelector: {
-    name: "0g-mainnet",
-    selector: 4426351306075016396n
-  },
-  chainFamily: "evm",
-  networkType: "mainnet"
-};
-var _0g_mainnet_default2 = network249;
-var network250 = {
-  chainId: "2741",
-  chainSelector: {
-    name: "abstract-mainnet",
-    selector: 3577778157919314504n
-  },
-  chainFamily: "evm",
-  networkType: "mainnet"
-};
-var abstract_mainnet_default2 = network250;
-var network251 = {
-  chainId: "33139",
-  chainSelector: {
-    name: "apechain-mainnet",
-    selector: 14894068710063348487n
-  },
-  chainFamily: "evm",
-  networkType: "mainnet"
-};
-var apechain_mainnet_default2 = network251;
-var network252 = {
-  chainId: "463",
-  chainSelector: {
-    name: "areon-mainnet",
-    selector: 1939936305787790600n
-  },
-  chainFamily: "evm",
-  networkType: "mainnet"
-};
-var areon_mainnet_default2 = network252;
-var network253 = {
-  chainId: "43114",
-  chainSelector: {
-    name: "avalanche-mainnet",
-    selector: 6433500567565415381n
-  },
-  chainFamily: "evm",
-  networkType: "mainnet"
-};
-var avalanche_mainnet_default2 = network253;
-var network254 = {
-  chainId: "432204",
-  chainSelector: {
-    name: "avalanche-subnet-dexalot-mainnet",
-    selector: 5463201557265485081n
-  },
-  chainFamily: "evm",
-  networkType: "mainnet"
-};
-var avalanche_subnet_dexalot_mainnet_default2 = network254;
-var network255 = {
-  chainId: "80094",
-  chainSelector: {
-    name: "berachain-mainnet",
-    selector: 1294465214383781161n
-  },
-  chainFamily: "evm",
-  networkType: "mainnet"
-};
-var berachain_mainnet_default2 = network255;
-var network256 = {
-  chainId: "56",
-  chainSelector: {
-    name: "binance_smart_chain-mainnet",
-    selector: 11344663589394136015n
-  },
-  chainFamily: "evm",
-  networkType: "mainnet"
-};
-var binance_smart_chain_mainnet_default2 = network256;
-var network257 = {
-  chainId: "204",
-  chainSelector: {
-    name: "binance_smart_chain-mainnet-opbnb-1",
-    selector: 465944652040885897n
-  },
-  chainFamily: "evm",
-  networkType: "mainnet"
-};
-var binance_smart_chain_mainnet_opbnb_1_default2 = network257;
-var network258 = {
-  chainId: "1907",
-  chainSelector: {
-    name: "bitcichain-mainnet",
-    selector: 4874388048629246000n
-  },
-  chainFamily: "evm",
-  networkType: "mainnet"
-};
-var bitcichain_mainnet_default2 = network258;
-var network259 = {
-  chainId: "200901",
-  chainSelector: {
-    name: "bitcoin-mainnet-bitlayer-1",
-    selector: 7937294810946806131n
-  },
-  chainFamily: "evm",
-  networkType: "mainnet"
-};
-var bitcoin_mainnet_bitlayer_1_default2 = network259;
-var network260 = {
-  chainId: "60808",
-  chainSelector: {
-    name: "bitcoin-mainnet-bob-1",
-    selector: 3849287863852499584n
-  },
-  chainFamily: "evm",
-  networkType: "mainnet"
-};
-var bitcoin_mainnet_bob_1_default2 = network260;
-var network261 = {
-  chainId: "3637",
-  chainSelector: {
-    name: "bitcoin-mainnet-botanix",
-    selector: 4560701533377838164n
-  },
-  chainFamily: "evm",
-  networkType: "mainnet"
-};
-var bitcoin_mainnet_botanix_default2 = network261;
-var network262 = {
-  chainId: "223",
-  chainSelector: {
-    name: "bitcoin-mainnet-bsquared-1",
-    selector: 5406759801798337480n
-  },
-  chainFamily: "evm",
-  networkType: "mainnet"
-};
-var bitcoin_mainnet_bsquared_1_default2 = network262;
-var network263 = {
-  chainId: "4200",
-  chainSelector: {
-    name: "bitcoin-merlin-mainnet",
-    selector: 241851231317828981n
-  },
-  chainFamily: "evm",
-  networkType: "mainnet"
-};
-var bitcoin_merlin_mainnet_default2 = network263;
-var network264 = {
-  chainId: "964",
-  chainSelector: {
-    name: "bittensor-mainnet",
-    selector: 2135107236357186872n
-  },
-  chainFamily: "evm",
-  networkType: "mainnet"
-};
-var bittensor_mainnet_default2 = network264;
-var network265 = {
-  chainId: "199",
-  chainSelector: {
-    name: "bittorrent_chain-mainnet",
-    selector: 3776006016387883143n
-  },
-  chainFamily: "evm",
-  networkType: "mainnet"
-};
-var bittorrent_chain_mainnet_default2 = network265;
-var network266 = {
-  chainId: "42220",
-  chainSelector: {
-    name: "celo-mainnet",
-    selector: 1346049177634351622n
-  },
-  chainFamily: "evm",
-  networkType: "mainnet"
-};
-var celo_mainnet_default2 = network266;
-var network267 = {
-  chainId: "81224",
-  chainSelector: {
-    name: "codex-mainnet",
-    selector: 9478124434908827753n
-  },
-  chainFamily: "evm",
-  networkType: "mainnet"
-};
-var codex_mainnet_default2 = network267;
-var network268 = {
-  chainId: "52",
-  chainSelector: {
-    name: "coinex_smart_chain-mainnet",
-    selector: 1761333065194157300n
-  },
-  chainFamily: "evm",
-  networkType: "mainnet"
-};
-var coinex_smart_chain_mainnet_default2 = network268;
-var network269 = {
-  chainId: "1030",
-  chainSelector: {
-    name: "conflux-mainnet",
-    selector: 3358365939762719202n
-  },
-  chainFamily: "evm",
-  networkType: "mainnet"
-};
-var conflux_mainnet_default2 = network269;
-var network270 = {
-  chainId: "1116",
-  chainSelector: {
-    name: "core-mainnet",
-    selector: 1224752112135636129n
-  },
-  chainFamily: "evm",
-  networkType: "mainnet"
-};
-var core_mainnet_default2 = network270;
-var network271 = {
-  chainId: "21000000",
-  chainSelector: {
-    name: "corn-mainnet",
-    selector: 9043146809313071210n
-  },
-  chainFamily: "evm",
-  networkType: "mainnet"
-};
-var corn_mainnet_default2 = network271;
-var network272 = {
-  chainId: "25",
-  chainSelector: {
-    name: "cronos-mainnet",
-    selector: 1456215246176062136n
-  },
-  chainFamily: "evm",
-  networkType: "mainnet"
-};
-var cronos_mainnet_default2 = network272;
-var network273 = {
-  chainId: "388",
-  chainSelector: {
-    name: "cronos-zkevm-mainnet",
-    selector: 8788096068760390840n
-  },
-  chainFamily: "evm",
-  networkType: "mainnet"
-};
-var cronos_zkevm_mainnet_default2 = network273;
-var network274 = {
-  chainId: "1",
-  chainSelector: {
-    name: "ethereum-mainnet",
-    selector: 5009297550715157269n
-  },
-  chainFamily: "evm",
-  networkType: "mainnet"
-};
-var ethereum_mainnet_default2 = network274;
-var network275 = {
-  chainId: "42161",
-  chainSelector: {
-    name: "ethereum-mainnet-arbitrum-1",
-    selector: 4949039107694359620n
-  },
-  chainFamily: "evm",
-  networkType: "mainnet"
-};
-var ethereum_mainnet_arbitrum_1_default2 = network275;
-var network276 = {
-  chainId: "12324",
-  chainSelector: {
-    name: "ethereum-mainnet-arbitrum-1-l3x-1",
-    selector: 3162193654116181371n
-  },
-  chainFamily: "evm",
-  networkType: "mainnet"
-};
-var ethereum_mainnet_arbitrum_1_l3x_1_default2 = network276;
-var network277 = {
-  chainId: "978670",
-  chainSelector: {
-    name: "ethereum-mainnet-arbitrum-1-treasure-1",
-    selector: 1010349088906777999n
-  },
-  chainFamily: "evm",
-  networkType: "mainnet"
-};
-var ethereum_mainnet_arbitrum_1_treasure_1_default2 = network277;
-var network278 = {
-  chainId: "3776",
-  chainSelector: {
-    name: "ethereum-mainnet-astar-zkevm-1",
-    selector: 1540201334317828111n
-  },
-  chainFamily: "evm",
-  networkType: "mainnet"
-};
-var ethereum_mainnet_astar_zkevm_1_default2 = network278;
-var network279 = {
-  chainId: "8453",
-  chainSelector: {
-    name: "ethereum-mainnet-base-1",
-    selector: 15971525489660198786n
-  },
-  chainFamily: "evm",
-  networkType: "mainnet"
-};
-var ethereum_mainnet_base_1_default2 = network279;
-var network280 = {
-  chainId: "81457",
-  chainSelector: {
-    name: "ethereum-mainnet-blast-1",
-    selector: 4411394078118774322n
-  },
-  chainFamily: "evm",
-  networkType: "mainnet"
-};
-var ethereum_mainnet_blast_1_default2 = network280;
-var network281 = {
-  chainId: "177",
-  chainSelector: {
-    name: "ethereum-mainnet-hashkey-1",
-    selector: 7613811247471741961n
-  },
-  chainFamily: "evm",
-  networkType: "mainnet"
-};
-var ethereum_mainnet_hashkey_1_default2 = network281;
-var network282 = {
-  chainId: "13371",
-  chainSelector: {
-    name: "ethereum-mainnet-immutable-zkevm-1",
-    selector: 1237925231416731909n
-  },
-  chainFamily: "evm",
-  networkType: "mainnet"
-};
-var ethereum_mainnet_immutable_zkevm_1_default2 = network282;
-var network283 = {
-  chainId: "57073",
-  chainSelector: {
-    name: "ethereum-mainnet-ink-1",
-    selector: 3461204551265785888n
-  },
-  chainFamily: "evm",
-  networkType: "mainnet"
-};
-var ethereum_mainnet_ink_1_default2 = network283;
-var network284 = {
-  chainId: "255",
-  chainSelector: {
-    name: "ethereum-mainnet-kroma-1",
-    selector: 3719320017875267166n
-  },
-  chainFamily: "evm",
-  networkType: "mainnet"
-};
-var ethereum_mainnet_kroma_1_default2 = network284;
-var network285 = {
-  chainId: "59144",
-  chainSelector: {
-    name: "ethereum-mainnet-linea-1",
-    selector: 4627098889531055414n
-  },
-  chainFamily: "evm",
-  networkType: "mainnet"
-};
-var ethereum_mainnet_linea_1_default2 = network285;
-var network286 = {
-  chainId: "5000",
-  chainSelector: {
-    name: "ethereum-mainnet-mantle-1",
-    selector: 1556008542357238666n
-  },
-  chainFamily: "evm",
-  networkType: "mainnet"
-};
-var ethereum_mainnet_mantle_1_default2 = network286;
-var network287 = {
-  chainId: "1088",
-  chainSelector: {
-    name: "ethereum-mainnet-metis-1",
-    selector: 8805746078405598895n
-  },
-  chainFamily: "evm",
-  networkType: "mainnet"
-};
-var ethereum_mainnet_metis_1_default2 = network287;
-var network288 = {
-  chainId: "34443",
-  chainSelector: {
-    name: "ethereum-mainnet-mode-1",
-    selector: 7264351850409363825n
-  },
-  chainFamily: "evm",
-  networkType: "mainnet"
-};
-var ethereum_mainnet_mode_1_default2 = network288;
-var network289 = {
-  chainId: "10",
-  chainSelector: {
-    name: "ethereum-mainnet-optimism-1",
-    selector: 3734403246176062136n
-  },
-  chainFamily: "evm",
-  networkType: "mainnet"
-};
-var ethereum_mainnet_optimism_1_default2 = network289;
-var network290 = {
-  chainId: "1101",
-  chainSelector: {
-    name: "ethereum-mainnet-polygon-zkevm-1",
-    selector: 4348158687435793198n
-  },
-  chainFamily: "evm",
-  networkType: "mainnet"
-};
-var ethereum_mainnet_polygon_zkevm_1_default2 = network290;
-var network291 = {
-  chainId: "534352",
-  chainSelector: {
-    name: "ethereum-mainnet-scroll-1",
-    selector: 13204309965629103672n
-  },
-  chainFamily: "evm",
-  networkType: "mainnet"
-};
-var ethereum_mainnet_scroll_1_default2 = network291;
-var network292 = {
-  chainId: "167000",
-  chainSelector: {
-    name: "ethereum-mainnet-taiko-1",
-    selector: 16468599424800719238n
-  },
-  chainFamily: "evm",
-  networkType: "mainnet"
-};
-var ethereum_mainnet_taiko_1_default2 = network292;
-var network293 = {
-  chainId: "130",
-  chainSelector: {
-    name: "ethereum-mainnet-unichain-1",
-    selector: 1923510103922296319n
-  },
-  chainFamily: "evm",
-  networkType: "mainnet"
-};
-var ethereum_mainnet_unichain_1_default2 = network293;
-var network294 = {
-  chainId: "480",
-  chainSelector: {
-    name: "ethereum-mainnet-worldchain-1",
-    selector: 2049429975587534727n
-  },
-  chainFamily: "evm",
-  networkType: "mainnet"
-};
-var ethereum_mainnet_worldchain_1_default2 = network294;
-var network295 = {
-  chainId: "196",
-  chainSelector: {
-    name: "ethereum-mainnet-xlayer-1",
-    selector: 3016212468291539606n
-  },
-  chainFamily: "evm",
-  networkType: "mainnet"
-};
-var ethereum_mainnet_xlayer_1_default2 = network295;
-var network296 = {
-  chainId: "48900",
-  chainSelector: {
-    name: "ethereum-mainnet-zircuit-1",
-    selector: 17198166215261833993n
-  },
-  chainFamily: "evm",
-  networkType: "mainnet"
-};
-var ethereum_mainnet_zircuit_1_default2 = network296;
-var network297 = {
-  chainId: "324",
-  chainSelector: {
-    name: "ethereum-mainnet-zksync-1",
-    selector: 1562403441176082196n
-  },
-  chainFamily: "evm",
-  networkType: "mainnet"
-};
-var ethereum_mainnet_zksync_1_default2 = network297;
-var network298 = {
-  chainId: "42793",
-  chainSelector: {
-    name: "etherlink-mainnet",
-    selector: 13624601974233774587n
-  },
-  chainFamily: "evm",
-  networkType: "mainnet"
-};
-var etherlink_mainnet_default2 = network298;
-var network299 = {
-  chainId: "250",
-  chainSelector: {
-    name: "fantom-mainnet",
-    selector: 3768048213127883732n
-  },
-  chainFamily: "evm",
-  networkType: "mainnet"
-};
-var fantom_mainnet_default2 = network299;
-var network300 = {
-  chainId: "314",
-  chainSelector: {
-    name: "filecoin-mainnet",
-    selector: 4561443241176882990n
-  },
-  chainFamily: "evm",
-  networkType: "mainnet"
-};
-var filecoin_mainnet_default2 = network300;
-var network301 = {
-  chainId: "252",
-  chainSelector: {
-    name: "fraxtal-mainnet",
-    selector: 1462016016387883143n
-  },
-  chainFamily: "evm",
-  networkType: "mainnet"
-};
-var fraxtal_mainnet_default2 = network301;
-var network302 = {
-  chainId: "100",
-  chainSelector: {
-    name: "gnosis_chain-mainnet",
-    selector: 465200170687744372n
-  },
-  chainFamily: "evm",
-  networkType: "mainnet"
-};
-var gnosis_chain_mainnet_default2 = network302;
-var network303 = {
-  chainId: "295",
-  chainSelector: {
-    name: "hedera-mainnet",
-    selector: 3229138320728879060n
-  },
-  chainFamily: "evm",
-  networkType: "mainnet"
-};
-var hedera_mainnet_default2 = network303;
-var network304 = {
-  chainId: "43111",
-  chainSelector: {
-    name: "hemi-mainnet",
-    selector: 1804312132722180201n
-  },
-  chainFamily: "evm",
-  networkType: "mainnet"
-};
-var hemi_mainnet_default2 = network304;
-var network305 = {
-  chainId: "999",
-  chainSelector: {
-    name: "hyperliquid-mainnet",
-    selector: 2442541497099098535n
-  },
-  chainFamily: "evm",
-  networkType: "mainnet"
-};
-var hyperliquid_mainnet_default2 = network305;
-var network306 = {
-  chainId: "678",
-  chainSelector: {
-    name: "janction-mainnet",
-    selector: 9107126442626377432n
-  },
-  chainFamily: "evm",
-  networkType: "mainnet"
-};
-var janction_mainnet_default2 = network306;
-var network307 = {
-  chainId: "8217",
-  chainSelector: {
-    name: "kaia-mainnet",
-    selector: 9813823125703490621n
-  },
-  chainFamily: "evm",
-  networkType: "mainnet"
-};
-var kaia_mainnet_default2 = network307;
-var network308 = {
-  chainId: "2222",
-  chainSelector: {
-    name: "kava-mainnet",
-    selector: 7550000543357438061n
-  },
-  chainFamily: "evm",
-  networkType: "mainnet"
-};
-var kava_mainnet_default2 = network308;
-var network309 = {
-  chainId: "1285",
-  chainSelector: {
-    name: "kusama-mainnet-moonriver",
-    selector: 1355020143337428062n
-  },
-  chainFamily: "evm",
-  networkType: "mainnet"
-};
-var kusama_mainnet_moonriver_default2 = network309;
-var network310 = {
-  chainId: "232",
-  chainSelector: {
-    name: "lens-mainnet",
-    selector: 5608378062013572713n
-  },
-  chainFamily: "evm",
-  networkType: "mainnet"
-};
-var lens_mainnet_default2 = network310;
-var network311 = {
-  chainId: "1135",
-  chainSelector: {
-    name: "lisk-mainnet",
-    selector: 15293031020466096408n
-  },
-  chainFamily: "evm",
-  networkType: "mainnet"
-};
-var lisk_mainnet_default2 = network311;
-var network312 = {
-  chainId: "51888",
-  chainSelector: {
-    name: "memento-mainnet",
-    selector: 6473245816409426016n
-  },
-  chainFamily: "evm",
-  networkType: "mainnet"
-};
-var memento_mainnet_default2 = network312;
-var network313 = {
-  chainId: "1750",
-  chainSelector: {
-    name: "metal-mainnet",
-    selector: 13447077090413146373n
-  },
-  chainFamily: "evm",
-  networkType: "mainnet"
-};
-var metal_mainnet_default2 = network313;
-var network314 = {
-  chainId: "228",
-  chainSelector: {
-    name: "mind-mainnet",
-    selector: 11690709103138290329n
-  },
-  chainFamily: "evm",
-  networkType: "mainnet"
-};
-var mind_mainnet_default2 = network314;
-var network315 = {
-  chainId: "185",
-  chainSelector: {
-    name: "mint-mainnet",
-    selector: 17164792800244661392n
-  },
-  chainFamily: "evm",
-  networkType: "mainnet"
-};
-var mint_mainnet_default2 = network315;
-var network316 = {
-  chainId: "143",
-  chainSelector: {
-    name: "monad-mainnet",
-    selector: 8481857512324358265n
-  },
-  chainFamily: "evm",
-  networkType: "mainnet"
-};
-var monad_mainnet_default2 = network316;
-var network317 = {
-  chainId: "2818",
-  chainSelector: {
-    name: "morph-mainnet",
-    selector: 18164309074156128038n
-  },
-  chainFamily: "evm",
-  networkType: "mainnet"
-};
-var morph_mainnet_default2 = network317;
-var network318 = {
-  chainId: "397",
-  chainSelector: {
-    name: "near-mainnet",
-    selector: 2039744413822257700n
-  },
-  chainFamily: "evm",
-  networkType: "mainnet"
-};
-var near_mainnet_default2 = network318;
-var network319 = {
-  chainId: "259",
-  chainSelector: {
-    name: "neonlink-mainnet",
-    selector: 8239338020728974000n
-  },
-  chainFamily: "evm",
-  networkType: "mainnet"
-};
-var neonlink_mainnet_default2 = network319;
-var network320 = {
-  chainId: "47763",
-  chainSelector: {
-    name: "neox-mainnet",
-    selector: 7222032299962346917n
-  },
-  chainFamily: "evm",
-  networkType: "mainnet"
-};
-var neox_mainnet_default2 = network320;
-var network321 = {
-  chainId: "68414",
-  chainSelector: {
-    name: "nexon-mainnet-henesys",
-    selector: 12657445206920369324n
-  },
-  chainFamily: "evm",
-  networkType: "mainnet"
-};
-var nexon_mainnet_henesys_default2 = network321;
-var network322 = {
-  chainId: "60118",
-  chainSelector: {
-    name: "nexon-mainnet-lith",
-    selector: 15758750456714168963n
-  },
-  chainFamily: "evm",
-  networkType: "mainnet"
-};
-var nexon_mainnet_lith_default2 = network322;
-var network323 = {
-  chainId: "807424",
-  chainSelector: {
-    name: "nexon-qa",
-    selector: 14632960069656270105n
-  },
-  chainFamily: "evm",
-  networkType: "mainnet"
-};
-var nexon_qa_default2 = network323;
-var network324 = {
-  chainId: "847799",
-  chainSelector: {
-    name: "nexon-stage",
-    selector: 5556806327594153475n
-  },
-  chainFamily: "evm",
-  networkType: "mainnet"
-};
-var nexon_stage_default2 = network324;
-var network325 = {
-  chainId: "6900",
-  chainSelector: {
-    name: "nibiru-mainnet",
-    selector: 17349189558768828726n
-  },
-  chainFamily: "evm",
-  networkType: "mainnet"
-};
-var nibiru_mainnet_default2 = network325;
-var network326 = {
-  chainId: "9745",
-  chainSelector: {
-    name: "plasma-mainnet",
-    selector: 9335212494177455608n
-  },
-  chainFamily: "evm",
-  networkType: "mainnet"
-};
-var plasma_mainnet_default2 = network326;
-var network327 = {
-  chainId: "98866",
-  chainSelector: {
-    name: "plume-mainnet",
-    selector: 17912061998839310979n
-  },
-  chainFamily: "evm",
-  networkType: "mainnet"
-};
-var plume_mainnet_default2 = network327;
-var network328 = {
-  chainId: "592",
-  chainSelector: {
-    name: "polkadot-mainnet-astar",
-    selector: 6422105447186081193n
-  },
-  chainFamily: "evm",
-  networkType: "mainnet"
-};
-var polkadot_mainnet_astar_default2 = network328;
-var network329 = {
-  chainId: "2031",
-  chainSelector: {
-    name: "polkadot-mainnet-centrifuge",
-    selector: 8175830712062617656n
-  },
-  chainFamily: "evm",
-  networkType: "mainnet"
-};
-var polkadot_mainnet_centrifuge_default2 = network329;
-var network330 = {
-  chainId: "46",
-  chainSelector: {
-    name: "polkadot-mainnet-darwinia",
-    selector: 8866418665544333000n
-  },
-  chainFamily: "evm",
-  networkType: "mainnet"
-};
-var polkadot_mainnet_darwinia_default2 = network330;
-var network331 = {
-  chainId: "1284",
-  chainSelector: {
-    name: "polkadot-mainnet-moonbeam",
-    selector: 1252863800116739621n
-  },
-  chainFamily: "evm",
-  networkType: "mainnet"
-};
-var polkadot_mainnet_moonbeam_default2 = network331;
-var network332 = {
-  chainId: "137",
-  chainSelector: {
-    name: "polygon-mainnet",
-    selector: 4051577828743386545n
-  },
-  chainFamily: "evm",
-  networkType: "mainnet"
-};
-var polygon_mainnet_default2 = network332;
-var network333 = {
-  chainId: "747474",
-  chainSelector: {
-    name: "polygon-mainnet-katana",
-    selector: 2459028469735686113n
-  },
-  chainFamily: "evm",
-  networkType: "mainnet"
-};
-var polygon_mainnet_katana_default2 = network333;
-var network334 = {
-  chainId: "2020",
-  chainSelector: {
-    name: "ronin-mainnet",
-    selector: 6916147374840168594n
-  },
-  chainFamily: "evm",
-  networkType: "mainnet"
-};
-var ronin_mainnet_default2 = network334;
-var network335 = {
-  chainId: "30",
-  chainSelector: {
-    name: "rootstock-mainnet",
-    selector: 11964252391146578476n
-  },
-  chainFamily: "evm",
-  networkType: "mainnet"
-};
-var rootstock_mainnet_default2 = network335;
-var network336 = {
-  chainId: "1329",
-  chainSelector: {
-    name: "sei-mainnet",
-    selector: 9027416829622342829n
-  },
-  chainFamily: "evm",
-  networkType: "mainnet"
-};
-var sei_mainnet_default2 = network336;
-var network337 = {
-  chainId: "109",
-  chainSelector: {
-    name: "shibarium-mainnet",
-    selector: 3993510008929295315n
-  },
-  chainFamily: "evm",
-  networkType: "mainnet"
-};
-var shibarium_mainnet_default2 = network337;
-var network338 = {
-  chainId: "1868",
-  chainSelector: {
-    name: "soneium-mainnet",
-    selector: 12505351618335765396n
-  },
-  chainFamily: "evm",
-  networkType: "mainnet"
-};
-var soneium_mainnet_default2 = network338;
-var network339 = {
-  chainId: "146",
-  chainSelector: {
-    name: "sonic-mainnet",
-    selector: 1673871237479749969n
-  },
-  chainFamily: "evm",
-  networkType: "mainnet"
-};
-var sonic_mainnet_default2 = network339;
-var network340 = {
-  chainId: "5330",
-  chainSelector: {
-    name: "superseed-mainnet",
-    selector: 470401360549526817n
-  },
-  chainFamily: "evm",
-  networkType: "mainnet"
-};
-var superseed_mainnet_default2 = network340;
-var network341 = {
-  chainId: "239",
-  chainSelector: {
-    name: "tac-mainnet",
-    selector: 5936861837188149645n
-  },
-  chainFamily: "evm",
-  networkType: "mainnet"
-};
-var tac_mainnet_default2 = network341;
-var network342 = {
-  chainId: "40",
-  chainSelector: {
-    name: "telos-evm-mainnet",
-    selector: 1477345371608778000n
-  },
-  chainFamily: "evm",
-  networkType: "mainnet"
-};
-var telos_evm_mainnet_default2 = network342;
-var network343 = {
-  chainId: "61166",
-  chainSelector: {
-    name: "treasure-mainnet",
-    selector: 5214452172935136222n
-  },
-  chainFamily: "evm",
-  networkType: "mainnet"
-};
-var treasure_mainnet_default2 = network343;
-var network344 = {
-  chainId: "728126428",
-  chainSelector: {
-    name: "tron-mainnet-evm",
-    selector: 1546563616611573946n
-  },
-  chainFamily: "evm",
-  networkType: "mainnet"
-};
-var tron_mainnet_evm_default2 = network344;
-var network345 = {
-  chainId: "106",
-  chainSelector: {
-    name: "velas-mainnet",
-    selector: 374210358663784372n
-  },
-  chainFamily: "evm",
-  networkType: "mainnet"
-};
-var velas_mainnet_default2 = network345;
-var network346 = {
-  chainId: "1111",
-  chainSelector: {
-    name: "wemix-mainnet",
-    selector: 5142893604156789321n
-  },
-  chainFamily: "evm",
-  networkType: "mainnet"
-};
-var wemix_mainnet_default2 = network346;
-var network347 = {
-  chainId: "50",
-  chainSelector: {
-    name: "xdc-mainnet",
-    selector: 17673274061779414707n
-  },
-  chainFamily: "evm",
-  networkType: "mainnet"
-};
-var xdc_mainnet_default2 = network347;
-var network348 = {
-  chainId: "7000",
-  chainSelector: {
-    name: "zetachain-mainnet",
-    selector: 10817664450262215148n
-  },
-  chainFamily: "evm",
-  networkType: "mainnet"
-};
-var zetachain_mainnet_default2 = network348;
-var network349 = {
-  chainId: "810180",
-  chainSelector: {
-    name: "zklink_nova-mainnet",
-    selector: 4350319965322101699n
-  },
-  chainFamily: "evm",
-  networkType: "mainnet"
-};
-var zklink_nova_mainnet_default2 = network349;
-var network350 = {
-  chainId: "7777777",
-  chainSelector: {
-    name: "zora-mainnet",
-    selector: 3555797439612589184n
-  },
-  chainFamily: "evm",
-  networkType: "mainnet"
-};
-var zora_mainnet_default2 = network350;
-var network351 = {
-  chainId: "5eykt4UsFv8P8NJdTREpY1vzqKqZKvdpKuc147dw2N9d",
-  chainSelector: {
-    name: "solana-mainnet",
-    selector: 124615329519749607n
-  },
-  chainFamily: "solana",
-  networkType: "mainnet"
-};
-var solana_mainnet_default2 = network351;
-var network352 = {
-  chainId: "1",
-  chainSelector: {
-    name: "sui-mainnet",
-    selector: 17529533435026248318n
-  },
-  chainFamily: "sui",
-  networkType: "mainnet"
-};
-var sui_mainnet_default2 = network352;
-var network353 = {
-  chainId: "-239",
-  chainSelector: {
-    name: "ton-mainnet",
-    selector: 16448340667252469081n
-  },
-  chainFamily: "ton",
-  networkType: "mainnet"
-};
-var ton_mainnet_default2 = network353;
-var network354 = {
-  chainId: "728126428",
-  chainSelector: {
-    name: "tron-mainnet",
-    selector: 1546563616611573945n
-  },
-  chainFamily: "tron",
-  networkType: "mainnet"
-};
-var tron_mainnet_default2 = network354;
-var network355 = {
-  chainId: "4",
-  chainSelector: {
-    name: "aptos-localnet",
-    selector: 4457093679053095497n
-  },
-  chainFamily: "aptos",
-  networkType: "testnet"
-};
-var aptos_localnet_default2 = network355;
-var network356 = {
-  chainId: "2",
-  chainSelector: {
-    name: "aptos-testnet",
-    selector: 743186221051783445n
-  },
-  chainFamily: "aptos",
-  networkType: "testnet"
-};
-var aptos_testnet_default2 = network356;
-var network357 = {
-  chainId: "16601",
-  chainSelector: {
-    name: "0g-testnet-galileo",
-    selector: 2131427466778448014n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var _0g_testnet_galileo_default2 = network357;
-var network358 = {
-  chainId: "16600",
-  chainSelector: {
-    name: "0g-testnet-newton",
-    selector: 16088006396410204581n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var _0g_testnet_newton_default2 = network358;
-var network359 = {
-  chainId: "11124",
-  chainSelector: {
-    name: "abstract-testnet",
-    selector: 16235373811196386733n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var abstract_testnet_default2 = network359;
-var network360 = {
-  chainId: "31337",
-  chainSelector: {
-    name: "anvil-devnet",
-    selector: 7759470850252068959n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var anvil_devnet_default2 = network360;
-var network361 = {
-  chainId: "33111",
-  chainSelector: {
-    name: "apechain-testnet-curtis",
-    selector: 9900119385908781505n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var apechain_testnet_curtis_default2 = network361;
-var network362 = {
-  chainId: "462",
-  chainSelector: {
-    name: "areon-testnet",
-    selector: 7317911323415911000n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var areon_testnet_default2 = network362;
-var network363 = {
-  chainId: "432201",
-  chainSelector: {
-    name: "avalanche-subnet-dexalot-testnet",
-    selector: 1458281248224512906n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var avalanche_subnet_dexalot_testnet_default2 = network363;
-var network364 = {
-  chainId: "43113",
-  chainSelector: {
-    name: "avalanche-testnet-fuji",
-    selector: 14767482510784806043n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var avalanche_testnet_fuji_default2 = network364;
-var network365 = {
-  chainId: "595581",
-  chainSelector: {
-    name: "avalanche-testnet-nexon",
-    selector: 7837562506228496256n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var avalanche_testnet_nexon_default2 = network365;
-var network366 = {
-  chainId: "80085",
-  chainSelector: {
-    name: "berachain-testnet-artio",
-    selector: 12336603543561911511n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var berachain_testnet_artio_default2 = network366;
-var network367 = {
-  chainId: "80084",
-  chainSelector: {
-    name: "berachain-testnet-bartio",
-    selector: 8999465244383784164n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var berachain_testnet_bartio_default2 = network367;
-var network368 = {
-  chainId: "80069",
-  chainSelector: {
-    name: "berachain-testnet-bepolia",
-    selector: 7728255861635209484n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var berachain_testnet_bepolia_default2 = network368;
-var network369 = {
-  chainId: "97",
-  chainSelector: {
-    name: "binance_smart_chain-testnet",
-    selector: 13264668187771770619n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var binance_smart_chain_testnet_default2 = network369;
-var network370 = {
-  chainId: "5611",
-  chainSelector: {
-    name: "binance_smart_chain-testnet-opbnb-1",
-    selector: 13274425992935471758n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var binance_smart_chain_testnet_opbnb_1_default2 = network370;
-var network371 = {
-  chainId: "1908",
-  chainSelector: {
-    name: "bitcichain-testnet",
-    selector: 4888058894222120000n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var bitcichain_testnet_default2 = network371;
-var network372 = {
-  chainId: "200810",
-  chainSelector: {
-    name: "bitcoin-testnet-bitlayer-1",
-    selector: 3789623672476206327n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var bitcoin_testnet_bitlayer_1_default2 = network372;
-var network373 = {
-  chainId: "3636",
-  chainSelector: {
-    name: "bitcoin-testnet-botanix",
-    selector: 1467223411771711614n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var bitcoin_testnet_botanix_default2 = network373;
-var network374 = {
-  chainId: "1123",
-  chainSelector: {
-    name: "bitcoin-testnet-bsquared-1",
-    selector: 1948510578179542068n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var bitcoin_testnet_bsquared_1_default2 = network374;
-var network375 = {
-  chainId: "686868",
-  chainSelector: {
-    name: "bitcoin-testnet-merlin",
-    selector: 5269261765892944301n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var bitcoin_testnet_merlin_default2 = network375;
-var network376 = {
-  chainId: "31",
-  chainSelector: {
-    name: "bitcoin-testnet-rootstock",
-    selector: 8953668971247136127n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var bitcoin_testnet_rootstock_default2 = network376;
-var network377 = {
-  chainId: "808813",
-  chainSelector: {
-    name: "bitcoin-testnet-sepolia-bob-1",
-    selector: 5535534526963509396n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var bitcoin_testnet_sepolia_bob_1_default2 = network377;
-var network378 = {
-  chainId: "945",
-  chainSelector: {
-    name: "bittensor-testnet",
-    selector: 2177900824115119161n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var bittensor_testnet_default2 = network378;
-var network379 = {
-  chainId: "1029",
-  chainSelector: {
-    name: "bittorrent_chain-testnet",
-    selector: 4459371029167934217n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var bittorrent_chain_testnet_default2 = network379;
-var network380 = {
-  chainId: "44787",
-  chainSelector: {
-    name: "celo-testnet-alfajores",
-    selector: 3552045678561919002n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var celo_testnet_alfajores_default2 = network380;
-var network381 = {
-  chainId: "812242",
-  chainSelector: {
-    name: "codex-testnet",
-    selector: 7225665875429174318n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var codex_testnet_default2 = network381;
-var network382 = {
-  chainId: "53",
-  chainSelector: {
-    name: "coinex_smart_chain-testnet",
-    selector: 8955032871639343000n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var coinex_smart_chain_testnet_default2 = network382;
-var network383 = {
-  chainId: "1114",
-  chainSelector: {
-    name: "core-testnet",
-    selector: 4264732132125536123n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var core_testnet_default2 = network383;
-var network384 = {
-  chainId: "338",
-  chainSelector: {
-    name: "cronos-testnet",
-    selector: 2995292832068775165n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var cronos_testnet_default2 = network384;
-var network385 = {
-  chainId: "282",
-  chainSelector: {
-    name: "cronos-testnet-zkevm-1",
-    selector: 3842103497652714138n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var cronos_testnet_zkevm_1_default2 = network385;
-var network386 = {
-  chainId: "240",
-  chainSelector: {
-    name: "cronos-zkevm-testnet-sepolia",
-    selector: 16487132492576884721n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var cronos_zkevm_testnet_sepolia_default2 = network386;
-var network387 = {
-  chainId: "2025",
-  chainSelector: {
-    name: "dtcc-testnet-andesite",
-    selector: 15513093881969820114n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var dtcc_testnet_andesite_default2 = network387;
-var network388 = {
-  chainId: "421613",
-  chainSelector: {
-    name: "ethereum-testnet-goerli-arbitrum-1",
-    selector: 6101244977088475029n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var ethereum_testnet_goerli_arbitrum_1_default2 = network388;
-var network389 = {
-  chainId: "84531",
-  chainSelector: {
-    name: "ethereum-testnet-goerli-base-1",
-    selector: 5790810961207155433n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var ethereum_testnet_goerli_base_1_default2 = network389;
-var network390 = {
-  chainId: "59140",
-  chainSelector: {
-    name: "ethereum-testnet-goerli-linea-1",
-    selector: 1355246678561316402n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var ethereum_testnet_goerli_linea_1_default2 = network390;
-var network391 = {
-  chainId: "5001",
-  chainSelector: {
-    name: "ethereum-testnet-goerli-mantle-1",
-    selector: 4168263376276232250n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var ethereum_testnet_goerli_mantle_1_default2 = network391;
-var network392 = {
-  chainId: "420",
-  chainSelector: {
-    name: "ethereum-testnet-goerli-optimism-1",
-    selector: 2664363617261496610n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var ethereum_testnet_goerli_optimism_1_default2 = network392;
-var network393 = {
-  chainId: "1442",
-  chainSelector: {
-    name: "ethereum-testnet-goerli-polygon-zkevm-1",
-    selector: 11059667695644972511n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var ethereum_testnet_goerli_polygon_zkevm_1_default2 = network393;
-var network394 = {
-  chainId: "280",
-  chainSelector: {
-    name: "ethereum-testnet-goerli-zksync-1",
-    selector: 6802309497652714138n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var ethereum_testnet_goerli_zksync_1_default2 = network394;
-var network395 = {
-  chainId: "17000",
-  chainSelector: {
-    name: "ethereum-testnet-holesky",
-    selector: 7717148896336251131n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var ethereum_testnet_holesky_default2 = network395;
-var network396 = {
-  chainId: "2522",
-  chainSelector: {
-    name: "ethereum-testnet-holesky-fraxtal-1",
-    selector: 8901520481741771655n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var ethereum_testnet_holesky_fraxtal_1_default2 = network396;
-var network397 = {
-  chainId: "2810",
-  chainSelector: {
-    name: "ethereum-testnet-holesky-morph-1",
-    selector: 8304510386741731151n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var ethereum_testnet_holesky_morph_1_default2 = network397;
-var network398 = {
-  chainId: "167009",
-  chainSelector: {
-    name: "ethereum-testnet-holesky-taiko-1",
-    selector: 7248756420937879088n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var ethereum_testnet_holesky_taiko_1_default2 = network398;
-var network399 = {
-  chainId: "11155111",
-  chainSelector: {
-    name: "ethereum-testnet-sepolia",
-    selector: 16015286601757825753n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var ethereum_testnet_sepolia_default2 = network399;
-var network400 = {
-  chainId: "421614",
-  chainSelector: {
-    name: "ethereum-testnet-sepolia-arbitrum-1",
-    selector: 3478487238524512106n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var ethereum_testnet_sepolia_arbitrum_1_default2 = network400;
-var network401 = {
-  chainId: "12325",
-  chainSelector: {
-    name: "ethereum-testnet-sepolia-arbitrum-1-l3x-1",
-    selector: 3486622437121596122n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var ethereum_testnet_sepolia_arbitrum_1_l3x_1_default2 = network401;
-var network402 = {
-  chainId: "978657",
-  chainSelector: {
-    name: "ethereum-testnet-sepolia-arbitrum-1-treasure-1",
-    selector: 10443705513486043421n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var ethereum_testnet_sepolia_arbitrum_1_treasure_1_default2 = network402;
-var network403 = {
-  chainId: "84532",
-  chainSelector: {
-    name: "ethereum-testnet-sepolia-base-1",
-    selector: 10344971235874465080n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var ethereum_testnet_sepolia_base_1_default2 = network403;
-var network404 = {
-  chainId: "168587773",
-  chainSelector: {
-    name: "ethereum-testnet-sepolia-blast-1",
-    selector: 2027362563942762617n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var ethereum_testnet_sepolia_blast_1_default2 = network404;
-var network405 = {
-  chainId: "21000001",
-  chainSelector: {
-    name: "ethereum-testnet-sepolia-corn-1",
-    selector: 1467427327723633929n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var ethereum_testnet_sepolia_corn_1_default2 = network405;
-var network406 = {
-  chainId: "133",
-  chainSelector: {
-    name: "ethereum-testnet-sepolia-hashkey-1",
-    selector: 4356164186791070119n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var ethereum_testnet_sepolia_hashkey_1_default2 = network406;
-var network407 = {
-  chainId: "13473",
-  chainSelector: {
-    name: "ethereum-testnet-sepolia-immutable-zkevm-1",
-    selector: 4526165231216331901n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var ethereum_testnet_sepolia_immutable_zkevm_1_default2 = network407;
-var network408 = {
-  chainId: "2358",
-  chainSelector: {
-    name: "ethereum-testnet-sepolia-kroma-1",
-    selector: 5990477251245693094n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var ethereum_testnet_sepolia_kroma_1_default2 = network408;
-var network409 = {
-  chainId: "37111",
-  chainSelector: {
-    name: "ethereum-testnet-sepolia-lens-1",
-    selector: 6827576821754315911n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var ethereum_testnet_sepolia_lens_1_default2 = network409;
-var network410 = {
-  chainId: "59141",
-  chainSelector: {
-    name: "ethereum-testnet-sepolia-linea-1",
-    selector: 5719461335882077547n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var ethereum_testnet_sepolia_linea_1_default2 = network410;
-var network411 = {
-  chainId: "4202",
-  chainSelector: {
-    name: "ethereum-testnet-sepolia-lisk-1",
-    selector: 5298399861320400553n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var ethereum_testnet_sepolia_lisk_1_default2 = network411;
-var network412 = {
-  chainId: "5003",
-  chainSelector: {
-    name: "ethereum-testnet-sepolia-mantle-1",
-    selector: 8236463271206331221n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var ethereum_testnet_sepolia_mantle_1_default2 = network412;
-var network413 = {
-  chainId: "59902",
-  chainSelector: {
-    name: "ethereum-testnet-sepolia-metis-1",
-    selector: 3777822886988675105n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var ethereum_testnet_sepolia_metis_1_default2 = network413;
-var network414 = {
-  chainId: "919",
-  chainSelector: {
-    name: "ethereum-testnet-sepolia-mode-1",
-    selector: 829525985033418733n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var ethereum_testnet_sepolia_mode_1_default2 = network414;
-var network415 = {
-  chainId: "11155420",
-  chainSelector: {
-    name: "ethereum-testnet-sepolia-optimism-1",
-    selector: 5224473277236331295n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var ethereum_testnet_sepolia_optimism_1_default2 = network415;
-var network416 = {
-  chainId: "717160",
-  chainSelector: {
-    name: "ethereum-testnet-sepolia-polygon-validium-1",
-    selector: 4418231248214522936n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var ethereum_testnet_sepolia_polygon_validium_1_default2 = network416;
-var network417 = {
-  chainId: "2442",
-  chainSelector: {
-    name: "ethereum-testnet-sepolia-polygon-zkevm-1",
-    selector: 1654667687261492630n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var ethereum_testnet_sepolia_polygon_zkevm_1_default2 = network417;
-var network418 = {
-  chainId: "534351",
-  chainSelector: {
-    name: "ethereum-testnet-sepolia-scroll-1",
-    selector: 2279865765895943307n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var ethereum_testnet_sepolia_scroll_1_default2 = network418;
-var network419 = {
-  chainId: "1946",
-  chainSelector: {
-    name: "ethereum-testnet-sepolia-soneium-1",
-    selector: 686603546605904534n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var ethereum_testnet_sepolia_soneium_1_default2 = network419;
-var network420 = {
-  chainId: "1301",
-  chainSelector: {
-    name: "ethereum-testnet-sepolia-unichain-1",
-    selector: 14135854469784514356n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var ethereum_testnet_sepolia_unichain_1_default2 = network420;
-var network421 = {
-  chainId: "4801",
-  chainSelector: {
-    name: "ethereum-testnet-sepolia-worldchain-1",
-    selector: 5299555114858065850n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var ethereum_testnet_sepolia_worldchain_1_default2 = network421;
-var network422 = {
-  chainId: "195",
-  chainSelector: {
-    name: "ethereum-testnet-sepolia-xlayer-1",
-    selector: 2066098519157881736n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var ethereum_testnet_sepolia_xlayer_1_default2 = network422;
-var network423 = {
-  chainId: "48899",
-  chainSelector: {
-    name: "ethereum-testnet-sepolia-zircuit-1",
-    selector: 4562743618362911021n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var ethereum_testnet_sepolia_zircuit_1_default2 = network423;
-var network424 = {
-  chainId: "300",
-  chainSelector: {
-    name: "ethereum-testnet-sepolia-zksync-1",
-    selector: 6898391096552792247n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var ethereum_testnet_sepolia_zksync_1_default2 = network424;
-var network425 = {
-  chainId: "128123",
-  chainSelector: {
-    name: "etherlink-testnet",
-    selector: 1910019406958449359n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var etherlink_testnet_default2 = network425;
-var network426 = {
-  chainId: "4002",
-  chainSelector: {
-    name: "fantom-testnet",
-    selector: 4905564228793744293n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var fantom_testnet_default2 = network426;
-var network427 = {
-  chainId: "31415926",
-  chainSelector: {
-    name: "filecoin-testnet",
-    selector: 7060342227814389000n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var filecoin_testnet_default2 = network427;
-var network428 = {
-  chainId: "1337",
-  chainSelector: {
-    name: "geth-testnet",
-    selector: 3379446385462418246n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var geth_testnet_default2 = network428;
-var network429 = {
-  chainId: "10200",
-  chainSelector: {
-    name: "gnosis_chain-testnet-chiado",
-    selector: 8871595565390010547n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var gnosis_chain_testnet_chiado_default2 = network429;
-var network430 = {
-  chainId: "296",
-  chainSelector: {
-    name: "hedera-testnet",
-    selector: 222782988166878823n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var hedera_testnet_default2 = network430;
-var network431 = {
-  chainId: "743111",
-  chainSelector: {
-    name: "hemi-testnet-sepolia",
-    selector: 16126893759944359622n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var hemi_testnet_sepolia_default2 = network431;
-var network432 = {
-  chainId: "998",
-  chainSelector: {
-    name: "hyperliquid-testnet",
-    selector: 4286062357653186312n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var hyperliquid_testnet_default2 = network432;
-var network433 = {
-  chainId: "763373",
-  chainSelector: {
-    name: "ink-testnet-sepolia",
-    selector: 9763904284804119144n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var ink_testnet_sepolia_default2 = network433;
-var network434 = {
-  chainId: "679",
-  chainSelector: {
-    name: "janction-testnet-sepolia",
-    selector: 5059197667603797935n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var janction_testnet_sepolia_default2 = network434;
-var network435 = {
-  chainId: "2019775",
-  chainSelector: {
-    name: "jovay-testnet",
-    selector: 945045181441419236n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var jovay_testnet_default2 = network435;
-var network436 = {
-  chainId: "1001",
-  chainSelector: {
-    name: "kaia-testnet-kairos",
-    selector: 2624132734533621656n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var kaia_testnet_kairos_default2 = network436;
-var network437 = {
-  chainId: "2221",
-  chainSelector: {
-    name: "kava-testnet",
-    selector: 2110537777356199208n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var kava_testnet_default2 = network437;
-var network438 = {
-  chainId: "6342",
-  chainSelector: {
-    name: "megaeth-testnet",
-    selector: 2443239559770384419n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var megaeth_testnet_default2 = network438;
-var network439 = {
-  chainId: "2129",
-  chainSelector: {
-    name: "memento-testnet",
-    selector: 12168171414969487009n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var memento_testnet_default2 = network439;
-var network440 = {
-  chainId: "1740",
-  chainSelector: {
-    name: "metal-testnet",
-    selector: 6286293440461807648n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var metal_testnet_default2 = network440;
-var network441 = {
-  chainId: "192940",
-  chainSelector: {
-    name: "mind-testnet",
-    selector: 7189150270347329685n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var mind_testnet_default2 = network441;
-var network442 = {
-  chainId: "1687",
-  chainSelector: {
-    name: "mint-testnet",
-    selector: 10749384167430721561n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var mint_testnet_default2 = network442;
-var network443 = {
-  chainId: "10143",
-  chainSelector: {
-    name: "monad-testnet",
-    selector: 2183018362218727504n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var monad_testnet_default2 = network443;
-var network444 = {
-  chainId: "398",
-  chainSelector: {
-    name: "near-testnet",
-    selector: 5061593697262339000n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var near_testnet_default2 = network444;
-var network445 = {
-  chainId: "9559",
-  chainSelector: {
-    name: "neonlink-testnet",
-    selector: 1113014352258747600n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var neonlink_testnet_default2 = network445;
-var network446 = {
-  chainId: "12227332",
-  chainSelector: {
-    name: "neox-testnet-t4",
-    selector: 2217764097022649312n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var neox_testnet_t4_default2 = network446;
-var network447 = {
-  chainId: "5668",
-  chainSelector: {
-    name: "nexon-dev",
-    selector: 8911150974185440581n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var nexon_dev_default2 = network447;
-var network448 = {
-  chainId: "6930",
-  chainSelector: {
-    name: "nibiru-testnet",
-    selector: 305104239123120457n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var nibiru_testnet_default2 = network448;
-var network449 = {
-  chainId: "9000",
-  chainSelector: {
-    name: "ondo-testnet",
-    selector: 344208382356656551n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var ondo_testnet_default2 = network449;
-var network450 = {
-  chainId: "688688",
-  chainSelector: {
-    name: "pharos-testnet",
-    selector: 4012524741200567430n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var pharos_testnet_default2 = network450;
-var network451 = {
-  chainId: "9746",
-  chainSelector: {
-    name: "plasma-testnet",
-    selector: 3967220077692964309n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var plasma_testnet_default2 = network451;
-var network452 = {
-  chainId: "98864",
-  chainSelector: {
-    name: "plume-devnet",
-    selector: 3743020999916460931n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var plume_devnet_default2 = network452;
-var network453 = {
-  chainId: "161221135",
-  chainSelector: {
-    name: "plume-testnet",
-    selector: 14684575664602284776n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var plume_testnet_default2 = network453;
-var network454 = {
-  chainId: "98867",
-  chainSelector: {
-    name: "plume-testnet-sepolia",
-    selector: 13874588925447303949n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var plume_testnet_sepolia_default2 = network454;
-var network455 = {
-  chainId: "81",
-  chainSelector: {
-    name: "polkadot-testnet-astar-shibuya",
-    selector: 6955638871347136141n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var polkadot_testnet_astar_shibuya_default2 = network455;
-var network456 = {
-  chainId: "2088",
-  chainSelector: {
-    name: "polkadot-testnet-centrifuge-altair",
-    selector: 2333097300889804761n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var polkadot_testnet_centrifuge_altair_default2 = network456;
-var network457 = {
-  chainId: "45",
-  chainSelector: {
-    name: "polkadot-testnet-darwinia-pangoro",
-    selector: 4340886533089894000n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var polkadot_testnet_darwinia_pangoro_default2 = network457;
-var network458 = {
-  chainId: "1287",
-  chainSelector: {
-    name: "polkadot-testnet-moonbeam-moonbase",
-    selector: 5361632739113536121n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var polkadot_testnet_moonbeam_moonbase_default2 = network458;
-var network459 = {
-  chainId: "80002",
-  chainSelector: {
-    name: "polygon-testnet-amoy",
-    selector: 16281711391670634445n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var polygon_testnet_amoy_default2 = network459;
-var network460 = {
-  chainId: "80001",
-  chainSelector: {
-    name: "polygon-testnet-mumbai",
-    selector: 12532609583862916517n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var polygon_testnet_mumbai_default2 = network460;
-var network461 = {
-  chainId: "129399",
-  chainSelector: {
-    name: "polygon-testnet-tatara",
-    selector: 9090863410735740267n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var polygon_testnet_tatara_default2 = network461;
-var network462 = {
-  chainId: "2024",
-  chainSelector: {
-    name: "private-testnet-andesite",
-    selector: 6915682381028791124n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var private_testnet_andesite_default2 = network462;
-var network463 = {
-  chainId: "2023",
-  chainSelector: {
-    name: "private-testnet-granite",
-    selector: 3260900564719373474n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var private_testnet_granite_default2 = network463;
-var network464 = {
-  chainId: "424242",
-  chainSelector: {
-    name: "private-testnet-mica",
-    selector: 4489326297382772450n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var private_testnet_mica_default2 = network464;
-var network465 = {
-  chainId: "682",
-  chainSelector: {
-    name: "private-testnet-obsidian",
-    selector: 6260932437388305511n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var private_testnet_obsidian_default2 = network465;
-var network466 = {
-  chainId: "45439",
-  chainSelector: {
-    name: "private-testnet-opala",
-    selector: 8446413392851542429n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var private_testnet_opala_default2 = network466;
-var network467 = {
-  chainId: "2021",
-  chainSelector: {
-    name: "ronin-testnet-saigon",
-    selector: 13116810400804392105n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var ronin_testnet_saigon_default2 = network467;
-var network468 = {
-  chainId: "1328",
-  chainSelector: {
-    name: "sei-testnet-atlantic",
-    selector: 1216300075444106652n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var sei_testnet_atlantic_default2 = network468;
-var network469 = {
-  chainId: "157",
-  chainSelector: {
-    name: "shibarium-testnet-puppynet",
-    selector: 17833296867764334567n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var shibarium_testnet_puppynet_default2 = network469;
-var network470 = {
-  chainId: "57054",
-  chainSelector: {
-    name: "sonic-testnet-blaze",
-    selector: 3676871237479449268n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var sonic_testnet_blaze_default2 = network470;
-var network471 = {
-  chainId: "1513",
-  chainSelector: {
-    name: "story-testnet",
-    selector: 4237030917318060427n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var story_testnet_default2 = network471;
-var network472 = {
-  chainId: "53302",
-  chainSelector: {
-    name: "superseed-testnet",
-    selector: 13694007683517087973n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var superseed_testnet_default2 = network472;
-var network473 = {
-  chainId: "2391",
-  chainSelector: {
-    name: "tac-testnet",
-    selector: 9488606126177218005n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var tac_testnet_default2 = network473;
-var network474 = {
-  chainId: "41",
-  chainSelector: {
-    name: "telos-evm-testnet",
-    selector: 729797994450396300n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var telos_evm_testnet_default2 = network474;
-var network475 = {
-  chainId: "978658",
-  chainSelector: {
-    name: "treasure-testnet-topaz",
-    selector: 3676916124122457866n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var treasure_testnet_topaz_default2 = network475;
-var network476 = {
-  chainId: "3360022319",
-  chainSelector: {
-    name: "tron-devnet-evm",
-    selector: 13231703482326770600n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var tron_devnet_evm_default2 = network476;
-var network477 = {
-  chainId: "3448148188",
-  chainSelector: {
-    name: "tron-testnet-nile-evm",
-    selector: 2052925811360307749n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var tron_testnet_nile_evm_default2 = network477;
-var network478 = {
-  chainId: "2494104990",
-  chainSelector: {
-    name: "tron-testnet-shasta-evm",
-    selector: 13231703482326770598n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var tron_testnet_shasta_evm_default2 = network478;
-var network479 = {
-  chainId: "111",
-  chainSelector: {
-    name: "velas-testnet",
-    selector: 572210378683744374n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var velas_testnet_default2 = network479;
-var network480 = {
-  chainId: "1112",
-  chainSelector: {
-    name: "wemix-testnet",
-    selector: 9284632837123596123n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var wemix_testnet_default2 = network480;
-var network481 = {
-  chainId: "51",
-  chainSelector: {
-    name: "xdc-testnet",
-    selector: 3017758115101368649n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var xdc_testnet_default2 = network481;
-var network482 = {
-  chainId: "80087",
-  chainSelector: {
-    name: "zero-g-testnet-galileo",
-    selector: 2285225387454015855n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var zero_g_testnet_galileo_default2 = network482;
-var network483 = {
-  chainId: "48898",
-  chainSelector: {
-    name: "zircuit-testnet-garfield",
-    selector: 13781831279385219069n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var zircuit_testnet_garfield_default2 = network483;
-var network484 = {
-  chainId: "810181",
-  chainSelector: {
-    name: "zklink_nova-testnet",
-    selector: 5837261596322416298n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var zklink_nova_testnet_default2 = network484;
-var network485 = {
-  chainId: "999999999",
-  chainSelector: {
-    name: "zora-testnet",
-    selector: 16244020411108056671n
-  },
-  chainFamily: "evm",
-  networkType: "testnet"
-};
-var zora_testnet_default2 = network485;
-var network486 = {
-  chainId: "EtWTRABZaYq6iMfeYKouRu166VU2xqa1wcaWoxPkrZBG",
-  chainSelector: {
-    name: "solana-devnet",
-    selector: 16423721717087811551n
-  },
-  chainFamily: "solana",
-  networkType: "testnet"
-};
-var solana_devnet_default2 = network486;
-var network487 = {
-  chainId: "4uhcVJyU9pJkvQyS88uRDiswHXSCkY3zQawwpjk2NsNY",
-  chainSelector: {
-    name: "solana-testnet",
-    selector: 6302590918974934319n
-  },
-  chainFamily: "solana",
-  networkType: "testnet"
-};
-var solana_testnet_default2 = network487;
-var network488 = {
-  chainId: "4",
-  chainSelector: {
-    name: "sui-localnet",
-    selector: 18395503381733958356n
-  },
-  chainFamily: "sui",
-  networkType: "testnet"
-};
-var sui_localnet_default2 = network488;
-var network489 = {
-  chainId: "2",
-  chainSelector: {
-    name: "sui-testnet",
-    selector: 9762610643973837292n
-  },
-  chainFamily: "sui",
-  networkType: "testnet"
-};
-var sui_testnet_default2 = network489;
-var network490 = {
-  chainId: "-217",
-  chainSelector: {
-    name: "ton-localnet",
-    selector: 13879075125137744094n
-  },
-  chainFamily: "ton",
-  networkType: "testnet"
-};
-var ton_localnet_default2 = network490;
-var network491 = {
-  chainId: "-3",
-  chainSelector: {
-    name: "ton-testnet",
-    selector: 1399300952838017768n
-  },
-  chainFamily: "ton",
-  networkType: "testnet"
-};
-var ton_testnet_default2 = network491;
-var network492 = {
-  chainId: "3360022319",
-  chainSelector: {
-    name: "tron-devnet",
-    selector: 13231703482326770599n
-  },
-  chainFamily: "tron",
-  networkType: "testnet"
-};
-var tron_devnet_default2 = network492;
-var network493 = {
-  chainId: "3448148188",
-  chainSelector: {
-    name: "tron-testnet-nile",
-    selector: 2052925811360307740n
-  },
-  chainFamily: "tron",
-  networkType: "testnet"
-};
-var tron_testnet_nile_default2 = network493;
-var network494 = {
-  chainId: "2494104990",
-  chainSelector: {
-    name: "tron-testnet-shasta",
-    selector: 13231703482326770597n
-  },
-  chainFamily: "tron",
-  networkType: "testnet"
-};
-var tron_testnet_shasta_default2 = network494;
-var mainnetBySelector2 = new Map([
-  [5009297550715157269n, ethereum_mainnet_default2],
-  [3734403246176062136n, ethereum_mainnet_optimism_1_default2],
-  [1456215246176062136n, cronos_mainnet_default2],
-  [11964252391146578476n, rootstock_mainnet_default2],
-  [1477345371608778000n, telos_evm_mainnet_default2],
-  [8866418665544333000n, polkadot_mainnet_darwinia_default2],
-  [17673274061779414707n, xdc_mainnet_default2],
-  [1761333065194157300n, coinex_smart_chain_mainnet_default2],
-  [11344663589394136015n, binance_smart_chain_mainnet_default2],
-  [465200170687744372n, gnosis_chain_mainnet_default2],
-  [374210358663784372n, velas_mainnet_default2],
-  [3993510008929295315n, shibarium_mainnet_default2],
-  [1923510103922296319n, ethereum_mainnet_unichain_1_default2],
-  [4051577828743386545n, polygon_mainnet_default2],
-  [8481857512324358265n, monad_mainnet_default2],
-  [1673871237479749969n, sonic_mainnet_default2],
-  [7613811247471741961n, ethereum_mainnet_hashkey_1_default2],
-  [17164792800244661392n, mint_mainnet_default2],
-  [3016212468291539606n, ethereum_mainnet_xlayer_1_default2],
-  [3776006016387883143n, bittorrent_chain_mainnet_default2],
-  [465944652040885897n, binance_smart_chain_mainnet_opbnb_1_default2],
-  [5406759801798337480n, bitcoin_mainnet_bsquared_1_default2],
-  [11690709103138290329n, mind_mainnet_default2],
-  [5608378062013572713n, lens_mainnet_default2],
-  [5936861837188149645n, tac_mainnet_default2],
-  [3768048213127883732n, fantom_mainnet_default2],
-  [1462016016387883143n, fraxtal_mainnet_default2],
-  [3719320017875267166n, ethereum_mainnet_kroma_1_default2],
-  [8239338020728974000n, neonlink_mainnet_default2],
-  [3229138320728879060n, hedera_mainnet_default2],
-  [4561443241176882990n, filecoin_mainnet_default2],
-  [1562403441176082196n, ethereum_mainnet_zksync_1_default2],
-  [8788096068760390840n, cronos_zkevm_mainnet_default2],
-  [2039744413822257700n, near_mainnet_default2],
-  [1939936305787790600n, areon_mainnet_default2],
-  [2049429975587534727n, ethereum_mainnet_worldchain_1_default2],
-  [6422105447186081193n, polkadot_mainnet_astar_default2],
-  [9107126442626377432n, janction_mainnet_default2],
-  [2135107236357186872n, bittensor_mainnet_default2],
-  [2442541497099098535n, hyperliquid_mainnet_default2],
-  [3358365939762719202n, conflux_mainnet_default2],
-  [8805746078405598895n, ethereum_mainnet_metis_1_default2],
-  [4348158687435793198n, ethereum_mainnet_polygon_zkevm_1_default2],
-  [5142893604156789321n, wemix_mainnet_default2],
-  [1224752112135636129n, core_mainnet_default2],
-  [15293031020466096408n, lisk_mainnet_default2],
-  [1252863800116739621n, polkadot_mainnet_moonbeam_default2],
-  [1355020143337428062n, kusama_mainnet_moonriver_default2],
-  [9027416829622342829n, sei_mainnet_default2],
-  [13447077090413146373n, metal_mainnet_default2],
-  [12505351618335765396n, soneium_mainnet_default2],
-  [4874388048629246000n, bitcichain_mainnet_default2],
-  [6916147374840168594n, ronin_mainnet_default2],
-  [8175830712062617656n, polkadot_mainnet_centrifuge_default2],
-  [7550000543357438061n, kava_mainnet_default2],
-  [3577778157919314504n, abstract_mainnet_default2],
-  [18164309074156128038n, morph_mainnet_default2],
-  [4560701533377838164n, bitcoin_mainnet_botanix_default2],
-  [1540201334317828111n, ethereum_mainnet_astar_zkevm_1_default2],
-  [241851231317828981n, bitcoin_merlin_mainnet_default2],
-  [1556008542357238666n, ethereum_mainnet_mantle_1_default2],
-  [470401360549526817n, superseed_mainnet_default2],
-  [17349189558768828726n, nibiru_mainnet_default2],
-  [10817664450262215148n, zetachain_mainnet_default2],
-  [9813823125703490621n, kaia_mainnet_default2],
-  [15971525489660198786n, ethereum_mainnet_base_1_default2],
-  [9335212494177455608n, plasma_mainnet_default2],
-  [3162193654116181371n, ethereum_mainnet_arbitrum_1_l3x_1_default2],
-  [1237925231416731909n, ethereum_mainnet_immutable_zkevm_1_default2],
-  [4426351306075016396n, _0g_mainnet_default2],
-  [14894068710063348487n, apechain_mainnet_default2],
-  [7264351850409363825n, ethereum_mainnet_mode_1_default2],
-  [4949039107694359620n, ethereum_mainnet_arbitrum_1_default2],
-  [1346049177634351622n, celo_mainnet_default2],
-  [13624601974233774587n, etherlink_mainnet_default2],
-  [1804312132722180201n, hemi_mainnet_default2],
-  [6433500567565415381n, avalanche_mainnet_default2],
-  [7222032299962346917n, neox_mainnet_default2],
-  [17198166215261833993n, ethereum_mainnet_zircuit_1_default2],
-  [6473245816409426016n, memento_mainnet_default2],
-  [3461204551265785888n, ethereum_mainnet_ink_1_default2],
-  [4627098889531055414n, ethereum_mainnet_linea_1_default2],
-  [15758750456714168963n, nexon_mainnet_lith_default2],
-  [3849287863852499584n, bitcoin_mainnet_bob_1_default2],
-  [5214452172935136222n, treasure_mainnet_default2],
-  [12657445206920369324n, nexon_mainnet_henesys_default2],
-  [1294465214383781161n, berachain_mainnet_default2],
-  [9478124434908827753n, codex_mainnet_default2],
-  [4411394078118774322n, ethereum_mainnet_blast_1_default2],
-  [17912061998839310979n, plume_mainnet_default2],
-  [16468599424800719238n, ethereum_mainnet_taiko_1_default2],
-  [7937294810946806131n, bitcoin_mainnet_bitlayer_1_default2],
-  [5463201557265485081n, avalanche_subnet_dexalot_mainnet_default2],
-  [13204309965629103672n, ethereum_mainnet_scroll_1_default2],
-  [2459028469735686113n, polygon_mainnet_katana_default2],
-  [14632960069656270105n, nexon_qa_default2],
-  [4350319965322101699n, zklink_nova_mainnet_default2],
-  [5556806327594153475n, nexon_stage_default2],
-  [1010349088906777999n, ethereum_mainnet_arbitrum_1_treasure_1_default2],
-  [3555797439612589184n, zora_mainnet_default2],
-  [9043146809313071210n, corn_mainnet_default2],
-  [1546563616611573946n, tron_mainnet_evm_default2],
-  [124615329519749607n, solana_mainnet_default2],
-  [4741433654826277614n, aptos_mainnet_default2],
-  [17529533435026248318n, sui_mainnet_default2],
-  [16448340667252469081n, ton_mainnet_default2],
-  [1546563616611573945n, tron_mainnet_default2]
-]);
-var testnetBySelector2 = new Map([
-  [8953668971247136127n, bitcoin_testnet_rootstock_default2],
-  [729797994450396300n, telos_evm_testnet_default2],
-  [4340886533089894000n, polkadot_testnet_darwinia_pangoro_default2],
-  [3017758115101368649n, xdc_testnet_default2],
-  [8955032871639343000n, coinex_smart_chain_testnet_default2],
-  [6955638871347136141n, polkadot_testnet_astar_shibuya_default2],
-  [13264668187771770619n, binance_smart_chain_testnet_default2],
-  [572210378683744374n, velas_testnet_default2],
-  [4356164186791070119n, ethereum_testnet_sepolia_hashkey_1_default2],
-  [17833296867764334567n, shibarium_testnet_puppynet_default2],
-  [2066098519157881736n, ethereum_testnet_sepolia_xlayer_1_default2],
-  [16487132492576884721n, cronos_zkevm_testnet_sepolia_default2],
-  [6802309497652714138n, ethereum_testnet_goerli_zksync_1_default2],
-  [3842103497652714138n, cronos_testnet_zkevm_1_default2],
-  [222782988166878823n, hedera_testnet_default2],
-  [6898391096552792247n, ethereum_testnet_sepolia_zksync_1_default2],
-  [2995292832068775165n, cronos_testnet_default2],
-  [5061593697262339000n, near_testnet_default2],
-  [2664363617261496610n, ethereum_testnet_goerli_optimism_1_default2],
-  [7317911323415911000n, areon_testnet_default2],
-  [5059197667603797935n, janction_testnet_sepolia_default2],
-  [6260932437388305511n, private_testnet_obsidian_default2],
-  [829525985033418733n, ethereum_testnet_sepolia_mode_1_default2],
-  [2177900824115119161n, bittensor_testnet_default2],
-  [4286062357653186312n, hyperliquid_testnet_default2],
-  [2624132734533621656n, kaia_testnet_kairos_default2],
-  [4459371029167934217n, bittorrent_chain_testnet_default2],
-  [9284632837123596123n, wemix_testnet_default2],
-  [4264732132125536123n, core_testnet_default2],
-  [1948510578179542068n, bitcoin_testnet_bsquared_1_default2],
-  [5361632739113536121n, polkadot_testnet_moonbeam_moonbase_default2],
-  [14135854469784514356n, ethereum_testnet_sepolia_unichain_1_default2],
-  [1216300075444106652n, sei_testnet_atlantic_default2],
-  [3379446385462418246n, geth_testnet_default2],
-  [11059667695644972511n, ethereum_testnet_goerli_polygon_zkevm_1_default2],
-  [4237030917318060427n, story_testnet_default2],
-  [10749384167430721561n, mint_testnet_default2],
-  [6286293440461807648n, metal_testnet_default2],
-  [4888058894222120000n, bitcichain_testnet_default2],
-  [686603546605904534n, ethereum_testnet_sepolia_soneium_1_default2],
-  [13116810400804392105n, ronin_testnet_saigon_default2],
-  [3260900564719373474n, private_testnet_granite_default2],
-  [6915682381028791124n, private_testnet_andesite_default2],
-  [15513093881969820114n, dtcc_testnet_andesite_default2],
-  [2333097300889804761n, polkadot_testnet_centrifuge_altair_default2],
-  [12168171414969487009n, memento_testnet_default2],
-  [2110537777356199208n, kava_testnet_default2],
-  [5990477251245693094n, ethereum_testnet_sepolia_kroma_1_default2],
-  [9488606126177218005n, tac_testnet_default2],
-  [1654667687261492630n, ethereum_testnet_sepolia_polygon_zkevm_1_default2],
-  [8901520481741771655n, ethereum_testnet_holesky_fraxtal_1_default2],
-  [8304510386741731151n, ethereum_testnet_holesky_morph_1_default2],
-  [1467223411771711614n, bitcoin_testnet_botanix_default2],
-  [4905564228793744293n, fantom_testnet_default2],
-  [5298399861320400553n, ethereum_testnet_sepolia_lisk_1_default2],
-  [5299555114858065850n, ethereum_testnet_sepolia_worldchain_1_default2],
-  [4168263376276232250n, ethereum_testnet_goerli_mantle_1_default2],
-  [8236463271206331221n, ethereum_testnet_sepolia_mantle_1_default2],
-  [13274425992935471758n, binance_smart_chain_testnet_opbnb_1_default2],
-  [8911150974185440581n, nexon_dev_default2],
-  [2443239559770384419n, megaeth_testnet_default2],
-  [305104239123120457n, nibiru_testnet_default2],
-  [344208382356656551n, ondo_testnet_default2],
-  [1113014352258747600n, neonlink_testnet_default2],
-  [3967220077692964309n, plasma_testnet_default2],
-  [2183018362218727504n, monad_testnet_default2],
-  [8871595565390010547n, gnosis_chain_testnet_chiado_default2],
-  [16235373811196386733n, abstract_testnet_default2],
-  [3486622437121596122n, ethereum_testnet_sepolia_arbitrum_1_l3x_1_default2],
-  [4526165231216331901n, ethereum_testnet_sepolia_immutable_zkevm_1_default2],
-  [16088006396410204581n, _0g_testnet_newton_default2],
-  [2131427466778448014n, _0g_testnet_galileo_default2],
-  [7717148896336251131n, ethereum_testnet_holesky_default2],
-  [7759470850252068959n, anvil_devnet_default2],
-  [9900119385908781505n, apechain_testnet_curtis_default2],
-  [6827576821754315911n, ethereum_testnet_sepolia_lens_1_default2],
-  [14767482510784806043n, avalanche_testnet_fuji_default2],
-  [3552045678561919002n, celo_testnet_alfajores_default2],
-  [8446413392851542429n, private_testnet_opala_default2],
-  [13781831279385219069n, zircuit_testnet_garfield_default2],
-  [4562743618362911021n, ethereum_testnet_sepolia_zircuit_1_default2],
-  [13694007683517087973n, superseed_testnet_default2],
-  [3676871237479449268n, sonic_testnet_blaze_default2],
-  [1355246678561316402n, ethereum_testnet_goerli_linea_1_default2],
-  [5719461335882077547n, ethereum_testnet_sepolia_linea_1_default2],
-  [3777822886988675105n, ethereum_testnet_sepolia_metis_1_default2],
-  [12532609583862916517n, polygon_testnet_mumbai_default2],
-  [16281711391670634445n, polygon_testnet_amoy_default2],
-  [7728255861635209484n, berachain_testnet_bepolia_default2],
-  [8999465244383784164n, berachain_testnet_bartio_default2],
-  [12336603543561911511n, berachain_testnet_artio_default2],
-  [2285225387454015855n, zero_g_testnet_galileo_default2],
-  [5790810961207155433n, ethereum_testnet_goerli_base_1_default2],
-  [10344971235874465080n, ethereum_testnet_sepolia_base_1_default2],
-  [3743020999916460931n, plume_devnet_default2],
-  [13874588925447303949n, plume_testnet_sepolia_default2],
-  [1910019406958449359n, etherlink_testnet_default2],
-  [9090863410735740267n, polygon_testnet_tatara_default2],
-  [7248756420937879088n, ethereum_testnet_holesky_taiko_1_default2],
-  [7189150270347329685n, mind_testnet_default2],
-  [3789623672476206327n, bitcoin_testnet_bitlayer_1_default2],
-  [6101244977088475029n, ethereum_testnet_goerli_arbitrum_1_default2],
-  [3478487238524512106n, ethereum_testnet_sepolia_arbitrum_1_default2],
-  [4489326297382772450n, private_testnet_mica_default2],
-  [1458281248224512906n, avalanche_subnet_dexalot_testnet_default2],
-  [2279865765895943307n, ethereum_testnet_sepolia_scroll_1_default2],
-  [7837562506228496256n, avalanche_testnet_nexon_default2],
-  [5269261765892944301n, bitcoin_testnet_merlin_default2],
-  [4012524741200567430n, pharos_testnet_default2],
-  [4418231248214522936n, ethereum_testnet_sepolia_polygon_validium_1_default2],
-  [16126893759944359622n, hemi_testnet_sepolia_default2],
-  [9763904284804119144n, ink_testnet_sepolia_default2],
-  [5535534526963509396n, bitcoin_testnet_sepolia_bob_1_default2],
-  [5837261596322416298n, zklink_nova_testnet_default2],
-  [7225665875429174318n, codex_testnet_default2],
-  [10443705513486043421n, ethereum_testnet_sepolia_arbitrum_1_treasure_1_default2],
-  [3676916124122457866n, treasure_testnet_topaz_default2],
-  [945045181441419236n, jovay_testnet_default2],
-  [16015286601757825753n, ethereum_testnet_sepolia_default2],
-  [5224473277236331295n, ethereum_testnet_sepolia_optimism_1_default2],
-  [2217764097022649312n, neox_testnet_t4_default2],
-  [1467427327723633929n, ethereum_testnet_sepolia_corn_1_default2],
-  [7060342227814389000n, filecoin_testnet_default2],
-  [14684575664602284776n, plume_testnet_default2],
-  [2027362563942762617n, ethereum_testnet_sepolia_blast_1_default2],
-  [16244020411108056671n, zora_testnet_default2],
-  [13231703482326770598n, tron_testnet_shasta_evm_default2],
-  [13231703482326770600n, tron_devnet_evm_default2],
-  [2052925811360307749n, tron_testnet_nile_evm_default2],
-  [6302590918974934319n, solana_testnet_default2],
-  [16423721717087811551n, solana_devnet_default2],
-  [743186221051783445n, aptos_testnet_default2],
-  [4457093679053095497n, aptos_localnet_default2],
-  [9762610643973837292n, sui_testnet_default2],
-  [18395503381733958356n, sui_localnet_default2],
-  [1399300952838017768n, ton_testnet_default2],
-  [13879075125137744094n, ton_localnet_default2],
-  [13231703482326770597n, tron_testnet_shasta_default2],
-  [13231703482326770599n, tron_devnet_default2],
-  [2052925811360307740n, tron_testnet_nile_default2]
-]);
-var mainnetByName2 = new Map([
-  ["ethereum-mainnet", ethereum_mainnet_default2],
-  ["ethereum-mainnet-optimism-1", ethereum_mainnet_optimism_1_default2],
-  ["cronos-mainnet", cronos_mainnet_default2],
-  ["rootstock-mainnet", rootstock_mainnet_default2],
-  ["telos-evm-mainnet", telos_evm_mainnet_default2],
-  ["polkadot-mainnet-darwinia", polkadot_mainnet_darwinia_default2],
-  ["xdc-mainnet", xdc_mainnet_default2],
-  ["coinex_smart_chain-mainnet", coinex_smart_chain_mainnet_default2],
-  ["binance_smart_chain-mainnet", binance_smart_chain_mainnet_default2],
-  ["gnosis_chain-mainnet", gnosis_chain_mainnet_default2],
-  ["velas-mainnet", velas_mainnet_default2],
-  ["shibarium-mainnet", shibarium_mainnet_default2],
-  ["ethereum-mainnet-unichain-1", ethereum_mainnet_unichain_1_default2],
-  ["polygon-mainnet", polygon_mainnet_default2],
-  ["monad-mainnet", monad_mainnet_default2],
-  ["sonic-mainnet", sonic_mainnet_default2],
-  ["ethereum-mainnet-hashkey-1", ethereum_mainnet_hashkey_1_default2],
-  ["mint-mainnet", mint_mainnet_default2],
-  ["ethereum-mainnet-xlayer-1", ethereum_mainnet_xlayer_1_default2],
-  ["bittorrent_chain-mainnet", bittorrent_chain_mainnet_default2],
-  ["binance_smart_chain-mainnet-opbnb-1", binance_smart_chain_mainnet_opbnb_1_default2],
-  ["bitcoin-mainnet-bsquared-1", bitcoin_mainnet_bsquared_1_default2],
-  ["mind-mainnet", mind_mainnet_default2],
-  ["lens-mainnet", lens_mainnet_default2],
-  ["tac-mainnet", tac_mainnet_default2],
-  ["fantom-mainnet", fantom_mainnet_default2],
-  ["fraxtal-mainnet", fraxtal_mainnet_default2],
-  ["ethereum-mainnet-kroma-1", ethereum_mainnet_kroma_1_default2],
-  ["neonlink-mainnet", neonlink_mainnet_default2],
-  ["hedera-mainnet", hedera_mainnet_default2],
-  ["filecoin-mainnet", filecoin_mainnet_default2],
-  ["ethereum-mainnet-zksync-1", ethereum_mainnet_zksync_1_default2],
-  ["cronos-zkevm-mainnet", cronos_zkevm_mainnet_default2],
-  ["near-mainnet", near_mainnet_default2],
-  ["areon-mainnet", areon_mainnet_default2],
-  ["ethereum-mainnet-worldchain-1", ethereum_mainnet_worldchain_1_default2],
-  ["polkadot-mainnet-astar", polkadot_mainnet_astar_default2],
-  ["janction-mainnet", janction_mainnet_default2],
-  ["bittensor-mainnet", bittensor_mainnet_default2],
-  ["hyperliquid-mainnet", hyperliquid_mainnet_default2],
-  ["conflux-mainnet", conflux_mainnet_default2],
-  ["ethereum-mainnet-metis-1", ethereum_mainnet_metis_1_default2],
-  ["ethereum-mainnet-polygon-zkevm-1", ethereum_mainnet_polygon_zkevm_1_default2],
-  ["wemix-mainnet", wemix_mainnet_default2],
-  ["core-mainnet", core_mainnet_default2],
-  ["lisk-mainnet", lisk_mainnet_default2],
-  ["polkadot-mainnet-moonbeam", polkadot_mainnet_moonbeam_default2],
-  ["kusama-mainnet-moonriver", kusama_mainnet_moonriver_default2],
-  ["sei-mainnet", sei_mainnet_default2],
-  ["metal-mainnet", metal_mainnet_default2],
-  ["soneium-mainnet", soneium_mainnet_default2],
-  ["bitcichain-mainnet", bitcichain_mainnet_default2],
-  ["ronin-mainnet", ronin_mainnet_default2],
-  ["polkadot-mainnet-centrifuge", polkadot_mainnet_centrifuge_default2],
-  ["kava-mainnet", kava_mainnet_default2],
-  ["abstract-mainnet", abstract_mainnet_default2],
-  ["morph-mainnet", morph_mainnet_default2],
-  ["bitcoin-mainnet-botanix", bitcoin_mainnet_botanix_default2],
-  ["ethereum-mainnet-astar-zkevm-1", ethereum_mainnet_astar_zkevm_1_default2],
-  ["bitcoin-merlin-mainnet", bitcoin_merlin_mainnet_default2],
-  ["ethereum-mainnet-mantle-1", ethereum_mainnet_mantle_1_default2],
-  ["superseed-mainnet", superseed_mainnet_default2],
-  ["nibiru-mainnet", nibiru_mainnet_default2],
-  ["zetachain-mainnet", zetachain_mainnet_default2],
-  ["kaia-mainnet", kaia_mainnet_default2],
-  ["ethereum-mainnet-base-1", ethereum_mainnet_base_1_default2],
-  ["plasma-mainnet", plasma_mainnet_default2],
-  ["ethereum-mainnet-arbitrum-1-l3x-1", ethereum_mainnet_arbitrum_1_l3x_1_default2],
-  ["ethereum-mainnet-immutable-zkevm-1", ethereum_mainnet_immutable_zkevm_1_default2],
-  ["0g-mainnet", _0g_mainnet_default2],
-  ["apechain-mainnet", apechain_mainnet_default2],
-  ["ethereum-mainnet-mode-1", ethereum_mainnet_mode_1_default2],
-  ["ethereum-mainnet-arbitrum-1", ethereum_mainnet_arbitrum_1_default2],
-  ["celo-mainnet", celo_mainnet_default2],
-  ["etherlink-mainnet", etherlink_mainnet_default2],
-  ["hemi-mainnet", hemi_mainnet_default2],
-  ["avalanche-mainnet", avalanche_mainnet_default2],
-  ["neox-mainnet", neox_mainnet_default2],
-  ["ethereum-mainnet-zircuit-1", ethereum_mainnet_zircuit_1_default2],
-  ["memento-mainnet", memento_mainnet_default2],
-  ["ethereum-mainnet-ink-1", ethereum_mainnet_ink_1_default2],
-  ["ethereum-mainnet-linea-1", ethereum_mainnet_linea_1_default2],
-  ["nexon-mainnet-lith", nexon_mainnet_lith_default2],
-  ["bitcoin-mainnet-bob-1", bitcoin_mainnet_bob_1_default2],
-  ["treasure-mainnet", treasure_mainnet_default2],
-  ["nexon-mainnet-henesys", nexon_mainnet_henesys_default2],
-  ["berachain-mainnet", berachain_mainnet_default2],
-  ["codex-mainnet", codex_mainnet_default2],
-  ["ethereum-mainnet-blast-1", ethereum_mainnet_blast_1_default2],
-  ["plume-mainnet", plume_mainnet_default2],
-  ["ethereum-mainnet-taiko-1", ethereum_mainnet_taiko_1_default2],
-  ["bitcoin-mainnet-bitlayer-1", bitcoin_mainnet_bitlayer_1_default2],
-  ["avalanche-subnet-dexalot-mainnet", avalanche_subnet_dexalot_mainnet_default2],
-  ["ethereum-mainnet-scroll-1", ethereum_mainnet_scroll_1_default2],
-  ["polygon-mainnet-katana", polygon_mainnet_katana_default2],
-  ["nexon-qa", nexon_qa_default2],
-  ["zklink_nova-mainnet", zklink_nova_mainnet_default2],
-  ["nexon-stage", nexon_stage_default2],
-  ["ethereum-mainnet-arbitrum-1-treasure-1", ethereum_mainnet_arbitrum_1_treasure_1_default2],
-  ["zora-mainnet", zora_mainnet_default2],
-  ["corn-mainnet", corn_mainnet_default2],
-  ["tron-mainnet-evm", tron_mainnet_evm_default2],
-  ["solana-mainnet", solana_mainnet_default2],
-  ["aptos-mainnet", aptos_mainnet_default2],
-  ["sui-mainnet", sui_mainnet_default2],
-  ["ton-mainnet", ton_mainnet_default2],
-  ["tron-mainnet", tron_mainnet_default2]
-]);
-var testnetByName2 = new Map([
-  ["bitcoin-testnet-rootstock", bitcoin_testnet_rootstock_default2],
-  ["telos-evm-testnet", telos_evm_testnet_default2],
-  ["polkadot-testnet-darwinia-pangoro", polkadot_testnet_darwinia_pangoro_default2],
-  ["xdc-testnet", xdc_testnet_default2],
-  ["coinex_smart_chain-testnet", coinex_smart_chain_testnet_default2],
-  ["polkadot-testnet-astar-shibuya", polkadot_testnet_astar_shibuya_default2],
-  ["binance_smart_chain-testnet", binance_smart_chain_testnet_default2],
-  ["velas-testnet", velas_testnet_default2],
-  ["ethereum-testnet-sepolia-hashkey-1", ethereum_testnet_sepolia_hashkey_1_default2],
-  ["shibarium-testnet-puppynet", shibarium_testnet_puppynet_default2],
-  ["ethereum-testnet-sepolia-xlayer-1", ethereum_testnet_sepolia_xlayer_1_default2],
-  ["cronos-zkevm-testnet-sepolia", cronos_zkevm_testnet_sepolia_default2],
-  ["ethereum-testnet-goerli-zksync-1", ethereum_testnet_goerli_zksync_1_default2],
-  ["cronos-testnet-zkevm-1", cronos_testnet_zkevm_1_default2],
-  ["hedera-testnet", hedera_testnet_default2],
-  ["ethereum-testnet-sepolia-zksync-1", ethereum_testnet_sepolia_zksync_1_default2],
-  ["cronos-testnet", cronos_testnet_default2],
-  ["near-testnet", near_testnet_default2],
-  ["ethereum-testnet-goerli-optimism-1", ethereum_testnet_goerli_optimism_1_default2],
-  ["areon-testnet", areon_testnet_default2],
-  ["janction-testnet-sepolia", janction_testnet_sepolia_default2],
-  ["private-testnet-obsidian", private_testnet_obsidian_default2],
-  ["ethereum-testnet-sepolia-mode-1", ethereum_testnet_sepolia_mode_1_default2],
-  ["bittensor-testnet", bittensor_testnet_default2],
-  ["hyperliquid-testnet", hyperliquid_testnet_default2],
-  ["kaia-testnet-kairos", kaia_testnet_kairos_default2],
-  ["bittorrent_chain-testnet", bittorrent_chain_testnet_default2],
-  ["wemix-testnet", wemix_testnet_default2],
-  ["core-testnet", core_testnet_default2],
-  ["bitcoin-testnet-bsquared-1", bitcoin_testnet_bsquared_1_default2],
-  ["polkadot-testnet-moonbeam-moonbase", polkadot_testnet_moonbeam_moonbase_default2],
-  ["ethereum-testnet-sepolia-unichain-1", ethereum_testnet_sepolia_unichain_1_default2],
-  ["sei-testnet-atlantic", sei_testnet_atlantic_default2],
-  ["geth-testnet", geth_testnet_default2],
-  ["ethereum-testnet-goerli-polygon-zkevm-1", ethereum_testnet_goerli_polygon_zkevm_1_default2],
-  ["story-testnet", story_testnet_default2],
-  ["mint-testnet", mint_testnet_default2],
-  ["metal-testnet", metal_testnet_default2],
-  ["bitcichain-testnet", bitcichain_testnet_default2],
-  ["ethereum-testnet-sepolia-soneium-1", ethereum_testnet_sepolia_soneium_1_default2],
-  ["ronin-testnet-saigon", ronin_testnet_saigon_default2],
-  ["private-testnet-granite", private_testnet_granite_default2],
-  ["private-testnet-andesite", private_testnet_andesite_default2],
-  ["dtcc-testnet-andesite", dtcc_testnet_andesite_default2],
-  ["polkadot-testnet-centrifuge-altair", polkadot_testnet_centrifuge_altair_default2],
-  ["memento-testnet", memento_testnet_default2],
-  ["kava-testnet", kava_testnet_default2],
-  ["ethereum-testnet-sepolia-kroma-1", ethereum_testnet_sepolia_kroma_1_default2],
-  ["tac-testnet", tac_testnet_default2],
-  [
-    "ethereum-testnet-sepolia-polygon-zkevm-1",
-    ethereum_testnet_sepolia_polygon_zkevm_1_default2
-  ],
-  ["ethereum-testnet-holesky-fraxtal-1", ethereum_testnet_holesky_fraxtal_1_default2],
-  ["ethereum-testnet-holesky-morph-1", ethereum_testnet_holesky_morph_1_default2],
-  ["bitcoin-testnet-botanix", bitcoin_testnet_botanix_default2],
-  ["fantom-testnet", fantom_testnet_default2],
-  ["ethereum-testnet-sepolia-lisk-1", ethereum_testnet_sepolia_lisk_1_default2],
-  ["ethereum-testnet-sepolia-worldchain-1", ethereum_testnet_sepolia_worldchain_1_default2],
-  ["ethereum-testnet-goerli-mantle-1", ethereum_testnet_goerli_mantle_1_default2],
-  ["ethereum-testnet-sepolia-mantle-1", ethereum_testnet_sepolia_mantle_1_default2],
-  ["binance_smart_chain-testnet-opbnb-1", binance_smart_chain_testnet_opbnb_1_default2],
-  ["nexon-dev", nexon_dev_default2],
-  ["megaeth-testnet", megaeth_testnet_default2],
-  ["nibiru-testnet", nibiru_testnet_default2],
-  ["ondo-testnet", ondo_testnet_default2],
-  ["neonlink-testnet", neonlink_testnet_default2],
-  ["plasma-testnet", plasma_testnet_default2],
-  ["monad-testnet", monad_testnet_default2],
-  ["gnosis_chain-testnet-chiado", gnosis_chain_testnet_chiado_default2],
-  ["abstract-testnet", abstract_testnet_default2],
-  [
-    "ethereum-testnet-sepolia-arbitrum-1-l3x-1",
-    ethereum_testnet_sepolia_arbitrum_1_l3x_1_default2
-  ],
-  [
-    "ethereum-testnet-sepolia-immutable-zkevm-1",
-    ethereum_testnet_sepolia_immutable_zkevm_1_default2
-  ],
-  ["0g-testnet-newton", _0g_testnet_newton_default2],
-  ["0g-testnet-galileo", _0g_testnet_galileo_default2],
-  ["ethereum-testnet-holesky", ethereum_testnet_holesky_default2],
-  ["anvil-devnet", anvil_devnet_default2],
-  ["apechain-testnet-curtis", apechain_testnet_curtis_default2],
-  ["ethereum-testnet-sepolia-lens-1", ethereum_testnet_sepolia_lens_1_default2],
-  ["avalanche-testnet-fuji", avalanche_testnet_fuji_default2],
-  ["celo-testnet-alfajores", celo_testnet_alfajores_default2],
-  ["private-testnet-opala", private_testnet_opala_default2],
-  ["zircuit-testnet-garfield", zircuit_testnet_garfield_default2],
-  ["ethereum-testnet-sepolia-zircuit-1", ethereum_testnet_sepolia_zircuit_1_default2],
-  ["superseed-testnet", superseed_testnet_default2],
-  ["sonic-testnet-blaze", sonic_testnet_blaze_default2],
-  ["ethereum-testnet-goerli-linea-1", ethereum_testnet_goerli_linea_1_default2],
-  ["ethereum-testnet-sepolia-linea-1", ethereum_testnet_sepolia_linea_1_default2],
-  ["ethereum-testnet-sepolia-metis-1", ethereum_testnet_sepolia_metis_1_default2],
-  ["polygon-testnet-mumbai", polygon_testnet_mumbai_default2],
-  ["polygon-testnet-amoy", polygon_testnet_amoy_default2],
-  ["berachain-testnet-bepolia", berachain_testnet_bepolia_default2],
-  ["berachain-testnet-bartio", berachain_testnet_bartio_default2],
-  ["berachain-testnet-artio", berachain_testnet_artio_default2],
-  ["zero-g-testnet-galileo", zero_g_testnet_galileo_default2],
-  ["ethereum-testnet-goerli-base-1", ethereum_testnet_goerli_base_1_default2],
-  ["ethereum-testnet-sepolia-base-1", ethereum_testnet_sepolia_base_1_default2],
-  ["plume-devnet", plume_devnet_default2],
-  ["plume-testnet-sepolia", plume_testnet_sepolia_default2],
-  ["etherlink-testnet", etherlink_testnet_default2],
-  ["polygon-testnet-tatara", polygon_testnet_tatara_default2],
-  ["ethereum-testnet-holesky-taiko-1", ethereum_testnet_holesky_taiko_1_default2],
-  ["mind-testnet", mind_testnet_default2],
-  ["bitcoin-testnet-bitlayer-1", bitcoin_testnet_bitlayer_1_default2],
-  ["ethereum-testnet-goerli-arbitrum-1", ethereum_testnet_goerli_arbitrum_1_default2],
-  ["ethereum-testnet-sepolia-arbitrum-1", ethereum_testnet_sepolia_arbitrum_1_default2],
-  ["private-testnet-mica", private_testnet_mica_default2],
-  ["avalanche-subnet-dexalot-testnet", avalanche_subnet_dexalot_testnet_default2],
-  ["ethereum-testnet-sepolia-scroll-1", ethereum_testnet_sepolia_scroll_1_default2],
-  ["avalanche-testnet-nexon", avalanche_testnet_nexon_default2],
-  ["bitcoin-testnet-merlin", bitcoin_testnet_merlin_default2],
-  ["pharos-testnet", pharos_testnet_default2],
-  [
-    "ethereum-testnet-sepolia-polygon-validium-1",
-    ethereum_testnet_sepolia_polygon_validium_1_default2
-  ],
-  ["hemi-testnet-sepolia", hemi_testnet_sepolia_default2],
-  ["ink-testnet-sepolia", ink_testnet_sepolia_default2],
-  ["bitcoin-testnet-sepolia-bob-1", bitcoin_testnet_sepolia_bob_1_default2],
-  ["zklink_nova-testnet", zklink_nova_testnet_default2],
-  ["codex-testnet", codex_testnet_default2],
-  [
-    "ethereum-testnet-sepolia-arbitrum-1-treasure-1",
-    ethereum_testnet_sepolia_arbitrum_1_treasure_1_default2
-  ],
-  ["treasure-testnet-topaz", treasure_testnet_topaz_default2],
-  ["jovay-testnet", jovay_testnet_default2],
-  ["ethereum-testnet-sepolia", ethereum_testnet_sepolia_default2],
-  ["ethereum-testnet-sepolia-optimism-1", ethereum_testnet_sepolia_optimism_1_default2],
-  ["neox-testnet-t4", neox_testnet_t4_default2],
-  ["ethereum-testnet-sepolia-corn-1", ethereum_testnet_sepolia_corn_1_default2],
-  ["filecoin-testnet", filecoin_testnet_default2],
-  ["plume-testnet", plume_testnet_default2],
-  ["ethereum-testnet-sepolia-blast-1", ethereum_testnet_sepolia_blast_1_default2],
-  ["zora-testnet", zora_testnet_default2],
-  ["tron-testnet-shasta-evm", tron_testnet_shasta_evm_default2],
-  ["tron-devnet-evm", tron_devnet_evm_default2],
-  ["tron-testnet-nile-evm", tron_testnet_nile_evm_default2],
-  ["solana-testnet", solana_testnet_default2],
-  ["solana-devnet", solana_devnet_default2],
-  ["aptos-testnet", aptos_testnet_default2],
-  ["aptos-localnet", aptos_localnet_default2],
-  ["sui-testnet", sui_testnet_default2],
-  ["sui-localnet", sui_localnet_default2],
-  ["ton-testnet", ton_testnet_default2],
-  ["ton-localnet", ton_localnet_default2],
-  ["tron-testnet-shasta", tron_testnet_shasta_default2],
-  ["tron-devnet", tron_devnet_default2],
-  ["tron-testnet-nile", tron_testnet_nile_default2]
-]);
-var mainnetBySelectorByFamily2 = {
-  evm: new Map([
-    [5009297550715157269n, ethereum_mainnet_default2],
-    [3734403246176062136n, ethereum_mainnet_optimism_1_default2],
-    [1456215246176062136n, cronos_mainnet_default2],
-    [11964252391146578476n, rootstock_mainnet_default2],
-    [1477345371608778000n, telos_evm_mainnet_default2],
-    [8866418665544333000n, polkadot_mainnet_darwinia_default2],
-    [17673274061779414707n, xdc_mainnet_default2],
-    [1761333065194157300n, coinex_smart_chain_mainnet_default2],
-    [11344663589394136015n, binance_smart_chain_mainnet_default2],
-    [465200170687744372n, gnosis_chain_mainnet_default2],
-    [374210358663784372n, velas_mainnet_default2],
-    [3993510008929295315n, shibarium_mainnet_default2],
-    [1923510103922296319n, ethereum_mainnet_unichain_1_default2],
-    [4051577828743386545n, polygon_mainnet_default2],
-    [8481857512324358265n, monad_mainnet_default2],
-    [1673871237479749969n, sonic_mainnet_default2],
-    [7613811247471741961n, ethereum_mainnet_hashkey_1_default2],
-    [17164792800244661392n, mint_mainnet_default2],
-    [3016212468291539606n, ethereum_mainnet_xlayer_1_default2],
-    [3776006016387883143n, bittorrent_chain_mainnet_default2],
-    [465944652040885897n, binance_smart_chain_mainnet_opbnb_1_default2],
-    [5406759801798337480n, bitcoin_mainnet_bsquared_1_default2],
-    [11690709103138290329n, mind_mainnet_default2],
-    [5608378062013572713n, lens_mainnet_default2],
-    [5936861837188149645n, tac_mainnet_default2],
-    [3768048213127883732n, fantom_mainnet_default2],
-    [1462016016387883143n, fraxtal_mainnet_default2],
-    [3719320017875267166n, ethereum_mainnet_kroma_1_default2],
-    [8239338020728974000n, neonlink_mainnet_default2],
-    [3229138320728879060n, hedera_mainnet_default2],
-    [4561443241176882990n, filecoin_mainnet_default2],
-    [1562403441176082196n, ethereum_mainnet_zksync_1_default2],
-    [8788096068760390840n, cronos_zkevm_mainnet_default2],
-    [2039744413822257700n, near_mainnet_default2],
-    [1939936305787790600n, areon_mainnet_default2],
-    [2049429975587534727n, ethereum_mainnet_worldchain_1_default2],
-    [6422105447186081193n, polkadot_mainnet_astar_default2],
-    [9107126442626377432n, janction_mainnet_default2],
-    [2135107236357186872n, bittensor_mainnet_default2],
-    [2442541497099098535n, hyperliquid_mainnet_default2],
-    [3358365939762719202n, conflux_mainnet_default2],
-    [8805746078405598895n, ethereum_mainnet_metis_1_default2],
-    [4348158687435793198n, ethereum_mainnet_polygon_zkevm_1_default2],
-    [5142893604156789321n, wemix_mainnet_default2],
-    [1224752112135636129n, core_mainnet_default2],
-    [15293031020466096408n, lisk_mainnet_default2],
-    [1252863800116739621n, polkadot_mainnet_moonbeam_default2],
-    [1355020143337428062n, kusama_mainnet_moonriver_default2],
-    [9027416829622342829n, sei_mainnet_default2],
-    [13447077090413146373n, metal_mainnet_default2],
-    [12505351618335765396n, soneium_mainnet_default2],
-    [4874388048629246000n, bitcichain_mainnet_default2],
-    [6916147374840168594n, ronin_mainnet_default2],
-    [8175830712062617656n, polkadot_mainnet_centrifuge_default2],
-    [7550000543357438061n, kava_mainnet_default2],
-    [3577778157919314504n, abstract_mainnet_default2],
-    [18164309074156128038n, morph_mainnet_default2],
-    [4560701533377838164n, bitcoin_mainnet_botanix_default2],
-    [1540201334317828111n, ethereum_mainnet_astar_zkevm_1_default2],
-    [241851231317828981n, bitcoin_merlin_mainnet_default2],
-    [1556008542357238666n, ethereum_mainnet_mantle_1_default2],
-    [470401360549526817n, superseed_mainnet_default2],
-    [17349189558768828726n, nibiru_mainnet_default2],
-    [10817664450262215148n, zetachain_mainnet_default2],
-    [9813823125703490621n, kaia_mainnet_default2],
-    [15971525489660198786n, ethereum_mainnet_base_1_default2],
-    [9335212494177455608n, plasma_mainnet_default2],
-    [3162193654116181371n, ethereum_mainnet_arbitrum_1_l3x_1_default2],
-    [1237925231416731909n, ethereum_mainnet_immutable_zkevm_1_default2],
-    [4426351306075016396n, _0g_mainnet_default2],
-    [14894068710063348487n, apechain_mainnet_default2],
-    [7264351850409363825n, ethereum_mainnet_mode_1_default2],
-    [4949039107694359620n, ethereum_mainnet_arbitrum_1_default2],
-    [1346049177634351622n, celo_mainnet_default2],
-    [13624601974233774587n, etherlink_mainnet_default2],
-    [1804312132722180201n, hemi_mainnet_default2],
-    [6433500567565415381n, avalanche_mainnet_default2],
-    [7222032299962346917n, neox_mainnet_default2],
-    [17198166215261833993n, ethereum_mainnet_zircuit_1_default2],
-    [6473245816409426016n, memento_mainnet_default2],
-    [3461204551265785888n, ethereum_mainnet_ink_1_default2],
-    [4627098889531055414n, ethereum_mainnet_linea_1_default2],
-    [15758750456714168963n, nexon_mainnet_lith_default2],
-    [3849287863852499584n, bitcoin_mainnet_bob_1_default2],
-    [5214452172935136222n, treasure_mainnet_default2],
-    [12657445206920369324n, nexon_mainnet_henesys_default2],
-    [1294465214383781161n, berachain_mainnet_default2],
-    [9478124434908827753n, codex_mainnet_default2],
-    [4411394078118774322n, ethereum_mainnet_blast_1_default2],
-    [17912061998839310979n, plume_mainnet_default2],
-    [16468599424800719238n, ethereum_mainnet_taiko_1_default2],
-    [7937294810946806131n, bitcoin_mainnet_bitlayer_1_default2],
-    [5463201557265485081n, avalanche_subnet_dexalot_mainnet_default2],
-    [13204309965629103672n, ethereum_mainnet_scroll_1_default2],
-    [2459028469735686113n, polygon_mainnet_katana_default2],
-    [14632960069656270105n, nexon_qa_default2],
-    [4350319965322101699n, zklink_nova_mainnet_default2],
-    [5556806327594153475n, nexon_stage_default2],
-    [1010349088906777999n, ethereum_mainnet_arbitrum_1_treasure_1_default2],
-    [3555797439612589184n, zora_mainnet_default2],
-    [9043146809313071210n, corn_mainnet_default2],
-    [1546563616611573946n, tron_mainnet_evm_default2]
-  ]),
-  solana: new Map([[124615329519749607n, solana_mainnet_default2]]),
-  aptos: new Map([[4741433654826277614n, aptos_mainnet_default2]]),
-  sui: new Map([[17529533435026248318n, sui_mainnet_default2]]),
-  ton: new Map([[16448340667252469081n, ton_mainnet_default2]]),
-  tron: new Map([[1546563616611573945n, tron_mainnet_default2]])
-};
-var testnetBySelectorByFamily2 = {
-  evm: new Map([
-    [8953668971247136127n, bitcoin_testnet_rootstock_default2],
-    [729797994450396300n, telos_evm_testnet_default2],
-    [4340886533089894000n, polkadot_testnet_darwinia_pangoro_default2],
-    [3017758115101368649n, xdc_testnet_default2],
-    [8955032871639343000n, coinex_smart_chain_testnet_default2],
-    [6955638871347136141n, polkadot_testnet_astar_shibuya_default2],
-    [13264668187771770619n, binance_smart_chain_testnet_default2],
-    [572210378683744374n, velas_testnet_default2],
-    [4356164186791070119n, ethereum_testnet_sepolia_hashkey_1_default2],
-    [17833296867764334567n, shibarium_testnet_puppynet_default2],
-    [2066098519157881736n, ethereum_testnet_sepolia_xlayer_1_default2],
-    [16487132492576884721n, cronos_zkevm_testnet_sepolia_default2],
-    [6802309497652714138n, ethereum_testnet_goerli_zksync_1_default2],
-    [3842103497652714138n, cronos_testnet_zkevm_1_default2],
-    [222782988166878823n, hedera_testnet_default2],
-    [6898391096552792247n, ethereum_testnet_sepolia_zksync_1_default2],
-    [2995292832068775165n, cronos_testnet_default2],
-    [5061593697262339000n, near_testnet_default2],
-    [2664363617261496610n, ethereum_testnet_goerli_optimism_1_default2],
-    [7317911323415911000n, areon_testnet_default2],
-    [5059197667603797935n, janction_testnet_sepolia_default2],
-    [6260932437388305511n, private_testnet_obsidian_default2],
-    [829525985033418733n, ethereum_testnet_sepolia_mode_1_default2],
-    [2177900824115119161n, bittensor_testnet_default2],
-    [4286062357653186312n, hyperliquid_testnet_default2],
-    [2624132734533621656n, kaia_testnet_kairos_default2],
-    [4459371029167934217n, bittorrent_chain_testnet_default2],
-    [9284632837123596123n, wemix_testnet_default2],
-    [4264732132125536123n, core_testnet_default2],
-    [1948510578179542068n, bitcoin_testnet_bsquared_1_default2],
-    [5361632739113536121n, polkadot_testnet_moonbeam_moonbase_default2],
-    [14135854469784514356n, ethereum_testnet_sepolia_unichain_1_default2],
-    [1216300075444106652n, sei_testnet_atlantic_default2],
-    [3379446385462418246n, geth_testnet_default2],
-    [11059667695644972511n, ethereum_testnet_goerli_polygon_zkevm_1_default2],
-    [4237030917318060427n, story_testnet_default2],
-    [10749384167430721561n, mint_testnet_default2],
-    [6286293440461807648n, metal_testnet_default2],
-    [4888058894222120000n, bitcichain_testnet_default2],
-    [686603546605904534n, ethereum_testnet_sepolia_soneium_1_default2],
-    [13116810400804392105n, ronin_testnet_saigon_default2],
-    [3260900564719373474n, private_testnet_granite_default2],
-    [6915682381028791124n, private_testnet_andesite_default2],
-    [15513093881969820114n, dtcc_testnet_andesite_default2],
-    [2333097300889804761n, polkadot_testnet_centrifuge_altair_default2],
-    [12168171414969487009n, memento_testnet_default2],
-    [2110537777356199208n, kava_testnet_default2],
-    [5990477251245693094n, ethereum_testnet_sepolia_kroma_1_default2],
-    [9488606126177218005n, tac_testnet_default2],
-    [1654667687261492630n, ethereum_testnet_sepolia_polygon_zkevm_1_default2],
-    [8901520481741771655n, ethereum_testnet_holesky_fraxtal_1_default2],
-    [8304510386741731151n, ethereum_testnet_holesky_morph_1_default2],
-    [1467223411771711614n, bitcoin_testnet_botanix_default2],
-    [4905564228793744293n, fantom_testnet_default2],
-    [5298399861320400553n, ethereum_testnet_sepolia_lisk_1_default2],
-    [5299555114858065850n, ethereum_testnet_sepolia_worldchain_1_default2],
-    [4168263376276232250n, ethereum_testnet_goerli_mantle_1_default2],
-    [8236463271206331221n, ethereum_testnet_sepolia_mantle_1_default2],
-    [13274425992935471758n, binance_smart_chain_testnet_opbnb_1_default2],
-    [8911150974185440581n, nexon_dev_default2],
-    [2443239559770384419n, megaeth_testnet_default2],
-    [305104239123120457n, nibiru_testnet_default2],
-    [344208382356656551n, ondo_testnet_default2],
-    [1113014352258747600n, neonlink_testnet_default2],
-    [3967220077692964309n, plasma_testnet_default2],
-    [2183018362218727504n, monad_testnet_default2],
-    [8871595565390010547n, gnosis_chain_testnet_chiado_default2],
-    [16235373811196386733n, abstract_testnet_default2],
-    [3486622437121596122n, ethereum_testnet_sepolia_arbitrum_1_l3x_1_default2],
-    [4526165231216331901n, ethereum_testnet_sepolia_immutable_zkevm_1_default2],
-    [16088006396410204581n, _0g_testnet_newton_default2],
-    [2131427466778448014n, _0g_testnet_galileo_default2],
-    [7717148896336251131n, ethereum_testnet_holesky_default2],
-    [7759470850252068959n, anvil_devnet_default2],
-    [9900119385908781505n, apechain_testnet_curtis_default2],
-    [6827576821754315911n, ethereum_testnet_sepolia_lens_1_default2],
-    [14767482510784806043n, avalanche_testnet_fuji_default2],
-    [3552045678561919002n, celo_testnet_alfajores_default2],
-    [8446413392851542429n, private_testnet_opala_default2],
-    [13781831279385219069n, zircuit_testnet_garfield_default2],
-    [4562743618362911021n, ethereum_testnet_sepolia_zircuit_1_default2],
-    [13694007683517087973n, superseed_testnet_default2],
-    [3676871237479449268n, sonic_testnet_blaze_default2],
-    [1355246678561316402n, ethereum_testnet_goerli_linea_1_default2],
-    [5719461335882077547n, ethereum_testnet_sepolia_linea_1_default2],
-    [3777822886988675105n, ethereum_testnet_sepolia_metis_1_default2],
-    [12532609583862916517n, polygon_testnet_mumbai_default2],
-    [16281711391670634445n, polygon_testnet_amoy_default2],
-    [7728255861635209484n, berachain_testnet_bepolia_default2],
-    [8999465244383784164n, berachain_testnet_bartio_default2],
-    [12336603543561911511n, berachain_testnet_artio_default2],
-    [2285225387454015855n, zero_g_testnet_galileo_default2],
-    [5790810961207155433n, ethereum_testnet_goerli_base_1_default2],
-    [10344971235874465080n, ethereum_testnet_sepolia_base_1_default2],
-    [3743020999916460931n, plume_devnet_default2],
-    [13874588925447303949n, plume_testnet_sepolia_default2],
-    [1910019406958449359n, etherlink_testnet_default2],
-    [9090863410735740267n, polygon_testnet_tatara_default2],
-    [7248756420937879088n, ethereum_testnet_holesky_taiko_1_default2],
-    [7189150270347329685n, mind_testnet_default2],
-    [3789623672476206327n, bitcoin_testnet_bitlayer_1_default2],
-    [6101244977088475029n, ethereum_testnet_goerli_arbitrum_1_default2],
-    [3478487238524512106n, ethereum_testnet_sepolia_arbitrum_1_default2],
-    [4489326297382772450n, private_testnet_mica_default2],
-    [1458281248224512906n, avalanche_subnet_dexalot_testnet_default2],
-    [2279865765895943307n, ethereum_testnet_sepolia_scroll_1_default2],
-    [7837562506228496256n, avalanche_testnet_nexon_default2],
-    [5269261765892944301n, bitcoin_testnet_merlin_default2],
-    [4012524741200567430n, pharos_testnet_default2],
-    [4418231248214522936n, ethereum_testnet_sepolia_polygon_validium_1_default2],
-    [16126893759944359622n, hemi_testnet_sepolia_default2],
-    [9763904284804119144n, ink_testnet_sepolia_default2],
-    [5535534526963509396n, bitcoin_testnet_sepolia_bob_1_default2],
-    [5837261596322416298n, zklink_nova_testnet_default2],
-    [7225665875429174318n, codex_testnet_default2],
-    [10443705513486043421n, ethereum_testnet_sepolia_arbitrum_1_treasure_1_default2],
-    [3676916124122457866n, treasure_testnet_topaz_default2],
-    [945045181441419236n, jovay_testnet_default2],
-    [16015286601757825753n, ethereum_testnet_sepolia_default2],
-    [5224473277236331295n, ethereum_testnet_sepolia_optimism_1_default2],
-    [2217764097022649312n, neox_testnet_t4_default2],
-    [1467427327723633929n, ethereum_testnet_sepolia_corn_1_default2],
-    [7060342227814389000n, filecoin_testnet_default2],
-    [14684575664602284776n, plume_testnet_default2],
-    [2027362563942762617n, ethereum_testnet_sepolia_blast_1_default2],
-    [16244020411108056671n, zora_testnet_default2],
-    [13231703482326770598n, tron_testnet_shasta_evm_default2],
-    [13231703482326770600n, tron_devnet_evm_default2],
-    [2052925811360307749n, tron_testnet_nile_evm_default2]
-  ]),
-  solana: new Map([
-    [6302590918974934319n, solana_testnet_default2],
-    [16423721717087811551n, solana_devnet_default2]
-  ]),
-  aptos: new Map([
-    [743186221051783445n, aptos_testnet_default2],
-    [4457093679053095497n, aptos_localnet_default2]
-  ]),
-  sui: new Map([
-    [9762610643973837292n, sui_testnet_default2],
-    [18395503381733958356n, sui_localnet_default2]
-  ]),
-  ton: new Map([
-    [1399300952838017768n, ton_testnet_default2],
-    [13879075125137744094n, ton_localnet_default2]
-  ]),
-  tron: new Map([
-    [13231703482326770597n, tron_testnet_shasta_default2],
-    [13231703482326770599n, tron_devnet_default2],
-    [2052925811360307740n, tron_testnet_nile_default2]
-  ])
-};
-var mainnetByNameByFamily2 = {
-  evm: new Map([
-    ["ethereum-mainnet", ethereum_mainnet_default2],
-    ["ethereum-mainnet-optimism-1", ethereum_mainnet_optimism_1_default2],
-    ["cronos-mainnet", cronos_mainnet_default2],
-    ["rootstock-mainnet", rootstock_mainnet_default2],
-    ["telos-evm-mainnet", telos_evm_mainnet_default2],
-    ["polkadot-mainnet-darwinia", polkadot_mainnet_darwinia_default2],
-    ["xdc-mainnet", xdc_mainnet_default2],
-    ["coinex_smart_chain-mainnet", coinex_smart_chain_mainnet_default2],
-    ["binance_smart_chain-mainnet", binance_smart_chain_mainnet_default2],
-    ["gnosis_chain-mainnet", gnosis_chain_mainnet_default2],
-    ["velas-mainnet", velas_mainnet_default2],
-    ["shibarium-mainnet", shibarium_mainnet_default2],
-    ["ethereum-mainnet-unichain-1", ethereum_mainnet_unichain_1_default2],
-    ["polygon-mainnet", polygon_mainnet_default2],
-    ["monad-mainnet", monad_mainnet_default2],
-    ["sonic-mainnet", sonic_mainnet_default2],
-    ["ethereum-mainnet-hashkey-1", ethereum_mainnet_hashkey_1_default2],
-    ["mint-mainnet", mint_mainnet_default2],
-    ["ethereum-mainnet-xlayer-1", ethereum_mainnet_xlayer_1_default2],
-    ["bittorrent_chain-mainnet", bittorrent_chain_mainnet_default2],
-    ["binance_smart_chain-mainnet-opbnb-1", binance_smart_chain_mainnet_opbnb_1_default2],
-    ["bitcoin-mainnet-bsquared-1", bitcoin_mainnet_bsquared_1_default2],
-    ["mind-mainnet", mind_mainnet_default2],
-    ["lens-mainnet", lens_mainnet_default2],
-    ["tac-mainnet", tac_mainnet_default2],
-    ["fantom-mainnet", fantom_mainnet_default2],
-    ["fraxtal-mainnet", fraxtal_mainnet_default2],
-    ["ethereum-mainnet-kroma-1", ethereum_mainnet_kroma_1_default2],
-    ["neonlink-mainnet", neonlink_mainnet_default2],
-    ["hedera-mainnet", hedera_mainnet_default2],
-    ["filecoin-mainnet", filecoin_mainnet_default2],
-    ["ethereum-mainnet-zksync-1", ethereum_mainnet_zksync_1_default2],
-    ["cronos-zkevm-mainnet", cronos_zkevm_mainnet_default2],
-    ["near-mainnet", near_mainnet_default2],
-    ["areon-mainnet", areon_mainnet_default2],
-    ["ethereum-mainnet-worldchain-1", ethereum_mainnet_worldchain_1_default2],
-    ["polkadot-mainnet-astar", polkadot_mainnet_astar_default2],
-    ["janction-mainnet", janction_mainnet_default2],
-    ["bittensor-mainnet", bittensor_mainnet_default2],
-    ["hyperliquid-mainnet", hyperliquid_mainnet_default2],
-    ["conflux-mainnet", conflux_mainnet_default2],
-    ["ethereum-mainnet-metis-1", ethereum_mainnet_metis_1_default2],
-    ["ethereum-mainnet-polygon-zkevm-1", ethereum_mainnet_polygon_zkevm_1_default2],
-    ["wemix-mainnet", wemix_mainnet_default2],
-    ["core-mainnet", core_mainnet_default2],
-    ["lisk-mainnet", lisk_mainnet_default2],
-    ["polkadot-mainnet-moonbeam", polkadot_mainnet_moonbeam_default2],
-    ["kusama-mainnet-moonriver", kusama_mainnet_moonriver_default2],
-    ["sei-mainnet", sei_mainnet_default2],
-    ["metal-mainnet", metal_mainnet_default2],
-    ["soneium-mainnet", soneium_mainnet_default2],
-    ["bitcichain-mainnet", bitcichain_mainnet_default2],
-    ["ronin-mainnet", ronin_mainnet_default2],
-    ["polkadot-mainnet-centrifuge", polkadot_mainnet_centrifuge_default2],
-    ["kava-mainnet", kava_mainnet_default2],
-    ["abstract-mainnet", abstract_mainnet_default2],
-    ["morph-mainnet", morph_mainnet_default2],
-    ["bitcoin-mainnet-botanix", bitcoin_mainnet_botanix_default2],
-    ["ethereum-mainnet-astar-zkevm-1", ethereum_mainnet_astar_zkevm_1_default2],
-    ["bitcoin-merlin-mainnet", bitcoin_merlin_mainnet_default2],
-    ["ethereum-mainnet-mantle-1", ethereum_mainnet_mantle_1_default2],
-    ["superseed-mainnet", superseed_mainnet_default2],
-    ["nibiru-mainnet", nibiru_mainnet_default2],
-    ["zetachain-mainnet", zetachain_mainnet_default2],
-    ["kaia-mainnet", kaia_mainnet_default2],
-    ["ethereum-mainnet-base-1", ethereum_mainnet_base_1_default2],
-    ["plasma-mainnet", plasma_mainnet_default2],
-    ["ethereum-mainnet-arbitrum-1-l3x-1", ethereum_mainnet_arbitrum_1_l3x_1_default2],
-    ["ethereum-mainnet-immutable-zkevm-1", ethereum_mainnet_immutable_zkevm_1_default2],
-    ["0g-mainnet", _0g_mainnet_default2],
-    ["apechain-mainnet", apechain_mainnet_default2],
-    ["ethereum-mainnet-mode-1", ethereum_mainnet_mode_1_default2],
-    ["ethereum-mainnet-arbitrum-1", ethereum_mainnet_arbitrum_1_default2],
-    ["celo-mainnet", celo_mainnet_default2],
-    ["etherlink-mainnet", etherlink_mainnet_default2],
-    ["hemi-mainnet", hemi_mainnet_default2],
-    ["avalanche-mainnet", avalanche_mainnet_default2],
-    ["neox-mainnet", neox_mainnet_default2],
-    ["ethereum-mainnet-zircuit-1", ethereum_mainnet_zircuit_1_default2],
-    ["memento-mainnet", memento_mainnet_default2],
-    ["ethereum-mainnet-ink-1", ethereum_mainnet_ink_1_default2],
-    ["ethereum-mainnet-linea-1", ethereum_mainnet_linea_1_default2],
-    ["nexon-mainnet-lith", nexon_mainnet_lith_default2],
-    ["bitcoin-mainnet-bob-1", bitcoin_mainnet_bob_1_default2],
-    ["treasure-mainnet", treasure_mainnet_default2],
-    ["nexon-mainnet-henesys", nexon_mainnet_henesys_default2],
-    ["berachain-mainnet", berachain_mainnet_default2],
-    ["codex-mainnet", codex_mainnet_default2],
-    ["ethereum-mainnet-blast-1", ethereum_mainnet_blast_1_default2],
-    ["plume-mainnet", plume_mainnet_default2],
-    ["ethereum-mainnet-taiko-1", ethereum_mainnet_taiko_1_default2],
-    ["bitcoin-mainnet-bitlayer-1", bitcoin_mainnet_bitlayer_1_default2],
-    ["avalanche-subnet-dexalot-mainnet", avalanche_subnet_dexalot_mainnet_default2],
-    ["ethereum-mainnet-scroll-1", ethereum_mainnet_scroll_1_default2],
-    ["polygon-mainnet-katana", polygon_mainnet_katana_default2],
-    ["nexon-qa", nexon_qa_default2],
-    ["zklink_nova-mainnet", zklink_nova_mainnet_default2],
-    ["nexon-stage", nexon_stage_default2],
-    ["ethereum-mainnet-arbitrum-1-treasure-1", ethereum_mainnet_arbitrum_1_treasure_1_default2],
-    ["zora-mainnet", zora_mainnet_default2],
-    ["corn-mainnet", corn_mainnet_default2],
-    ["tron-mainnet-evm", tron_mainnet_evm_default2]
-  ]),
-  solana: new Map([["solana-mainnet", solana_mainnet_default2]]),
-  aptos: new Map([["aptos-mainnet", aptos_mainnet_default2]]),
-  sui: new Map([["sui-mainnet", sui_mainnet_default2]]),
-  ton: new Map([["ton-mainnet", ton_mainnet_default2]]),
-  tron: new Map([["tron-mainnet", tron_mainnet_default2]])
-};
-var testnetByNameByFamily2 = {
-  evm: new Map([
-    ["bitcoin-testnet-rootstock", bitcoin_testnet_rootstock_default2],
-    ["telos-evm-testnet", telos_evm_testnet_default2],
-    ["polkadot-testnet-darwinia-pangoro", polkadot_testnet_darwinia_pangoro_default2],
-    ["xdc-testnet", xdc_testnet_default2],
-    ["coinex_smart_chain-testnet", coinex_smart_chain_testnet_default2],
-    ["polkadot-testnet-astar-shibuya", polkadot_testnet_astar_shibuya_default2],
-    ["binance_smart_chain-testnet", binance_smart_chain_testnet_default2],
-    ["velas-testnet", velas_testnet_default2],
-    ["ethereum-testnet-sepolia-hashkey-1", ethereum_testnet_sepolia_hashkey_1_default2],
-    ["shibarium-testnet-puppynet", shibarium_testnet_puppynet_default2],
-    ["ethereum-testnet-sepolia-xlayer-1", ethereum_testnet_sepolia_xlayer_1_default2],
-    ["cronos-zkevm-testnet-sepolia", cronos_zkevm_testnet_sepolia_default2],
-    ["ethereum-testnet-goerli-zksync-1", ethereum_testnet_goerli_zksync_1_default2],
-    ["cronos-testnet-zkevm-1", cronos_testnet_zkevm_1_default2],
-    ["hedera-testnet", hedera_testnet_default2],
-    ["ethereum-testnet-sepolia-zksync-1", ethereum_testnet_sepolia_zksync_1_default2],
-    ["cronos-testnet", cronos_testnet_default2],
-    ["near-testnet", near_testnet_default2],
-    ["ethereum-testnet-goerli-optimism-1", ethereum_testnet_goerli_optimism_1_default2],
-    ["areon-testnet", areon_testnet_default2],
-    ["janction-testnet-sepolia", janction_testnet_sepolia_default2],
-    ["private-testnet-obsidian", private_testnet_obsidian_default2],
-    ["ethereum-testnet-sepolia-mode-1", ethereum_testnet_sepolia_mode_1_default2],
-    ["bittensor-testnet", bittensor_testnet_default2],
-    ["hyperliquid-testnet", hyperliquid_testnet_default2],
-    ["kaia-testnet-kairos", kaia_testnet_kairos_default2],
-    ["bittorrent_chain-testnet", bittorrent_chain_testnet_default2],
-    ["wemix-testnet", wemix_testnet_default2],
-    ["core-testnet", core_testnet_default2],
-    ["bitcoin-testnet-bsquared-1", bitcoin_testnet_bsquared_1_default2],
-    ["polkadot-testnet-moonbeam-moonbase", polkadot_testnet_moonbeam_moonbase_default2],
-    ["ethereum-testnet-sepolia-unichain-1", ethereum_testnet_sepolia_unichain_1_default2],
-    ["sei-testnet-atlantic", sei_testnet_atlantic_default2],
-    ["geth-testnet", geth_testnet_default2],
-    [
-      "ethereum-testnet-goerli-polygon-zkevm-1",
-      ethereum_testnet_goerli_polygon_zkevm_1_default2
-    ],
-    ["story-testnet", story_testnet_default2],
-    ["mint-testnet", mint_testnet_default2],
-    ["metal-testnet", metal_testnet_default2],
-    ["bitcichain-testnet", bitcichain_testnet_default2],
-    ["ethereum-testnet-sepolia-soneium-1", ethereum_testnet_sepolia_soneium_1_default2],
-    ["ronin-testnet-saigon", ronin_testnet_saigon_default2],
-    ["private-testnet-granite", private_testnet_granite_default2],
-    ["private-testnet-andesite", private_testnet_andesite_default2],
-    ["dtcc-testnet-andesite", dtcc_testnet_andesite_default2],
-    ["polkadot-testnet-centrifuge-altair", polkadot_testnet_centrifuge_altair_default2],
-    ["memento-testnet", memento_testnet_default2],
-    ["kava-testnet", kava_testnet_default2],
-    ["ethereum-testnet-sepolia-kroma-1", ethereum_testnet_sepolia_kroma_1_default2],
-    ["tac-testnet", tac_testnet_default2],
-    [
-      "ethereum-testnet-sepolia-polygon-zkevm-1",
-      ethereum_testnet_sepolia_polygon_zkevm_1_default2
-    ],
-    ["ethereum-testnet-holesky-fraxtal-1", ethereum_testnet_holesky_fraxtal_1_default2],
-    ["ethereum-testnet-holesky-morph-1", ethereum_testnet_holesky_morph_1_default2],
-    ["bitcoin-testnet-botanix", bitcoin_testnet_botanix_default2],
-    ["fantom-testnet", fantom_testnet_default2],
-    ["ethereum-testnet-sepolia-lisk-1", ethereum_testnet_sepolia_lisk_1_default2],
-    ["ethereum-testnet-sepolia-worldchain-1", ethereum_testnet_sepolia_worldchain_1_default2],
-    ["ethereum-testnet-goerli-mantle-1", ethereum_testnet_goerli_mantle_1_default2],
-    ["ethereum-testnet-sepolia-mantle-1", ethereum_testnet_sepolia_mantle_1_default2],
-    ["binance_smart_chain-testnet-opbnb-1", binance_smart_chain_testnet_opbnb_1_default2],
-    ["nexon-dev", nexon_dev_default2],
-    ["megaeth-testnet", megaeth_testnet_default2],
-    ["nibiru-testnet", nibiru_testnet_default2],
-    ["ondo-testnet", ondo_testnet_default2],
-    ["neonlink-testnet", neonlink_testnet_default2],
-    ["plasma-testnet", plasma_testnet_default2],
-    ["monad-testnet", monad_testnet_default2],
-    ["gnosis_chain-testnet-chiado", gnosis_chain_testnet_chiado_default2],
-    ["abstract-testnet", abstract_testnet_default2],
-    [
-      "ethereum-testnet-sepolia-arbitrum-1-l3x-1",
-      ethereum_testnet_sepolia_arbitrum_1_l3x_1_default2
-    ],
-    [
-      "ethereum-testnet-sepolia-immutable-zkevm-1",
-      ethereum_testnet_sepolia_immutable_zkevm_1_default2
-    ],
-    ["0g-testnet-newton", _0g_testnet_newton_default2],
-    ["0g-testnet-galileo", _0g_testnet_galileo_default2],
-    ["ethereum-testnet-holesky", ethereum_testnet_holesky_default2],
-    ["anvil-devnet", anvil_devnet_default2],
-    ["apechain-testnet-curtis", apechain_testnet_curtis_default2],
-    ["ethereum-testnet-sepolia-lens-1", ethereum_testnet_sepolia_lens_1_default2],
-    ["avalanche-testnet-fuji", avalanche_testnet_fuji_default2],
-    ["celo-testnet-alfajores", celo_testnet_alfajores_default2],
-    ["private-testnet-opala", private_testnet_opala_default2],
-    ["zircuit-testnet-garfield", zircuit_testnet_garfield_default2],
-    ["ethereum-testnet-sepolia-zircuit-1", ethereum_testnet_sepolia_zircuit_1_default2],
-    ["superseed-testnet", superseed_testnet_default2],
-    ["sonic-testnet-blaze", sonic_testnet_blaze_default2],
-    ["ethereum-testnet-goerli-linea-1", ethereum_testnet_goerli_linea_1_default2],
-    ["ethereum-testnet-sepolia-linea-1", ethereum_testnet_sepolia_linea_1_default2],
-    ["ethereum-testnet-sepolia-metis-1", ethereum_testnet_sepolia_metis_1_default2],
-    ["polygon-testnet-mumbai", polygon_testnet_mumbai_default2],
-    ["polygon-testnet-amoy", polygon_testnet_amoy_default2],
-    ["berachain-testnet-bepolia", berachain_testnet_bepolia_default2],
-    ["berachain-testnet-bartio", berachain_testnet_bartio_default2],
-    ["berachain-testnet-artio", berachain_testnet_artio_default2],
-    ["zero-g-testnet-galileo", zero_g_testnet_galileo_default2],
-    ["ethereum-testnet-goerli-base-1", ethereum_testnet_goerli_base_1_default2],
-    ["ethereum-testnet-sepolia-base-1", ethereum_testnet_sepolia_base_1_default2],
-    ["plume-devnet", plume_devnet_default2],
-    ["plume-testnet-sepolia", plume_testnet_sepolia_default2],
-    ["etherlink-testnet", etherlink_testnet_default2],
-    ["polygon-testnet-tatara", polygon_testnet_tatara_default2],
-    ["ethereum-testnet-holesky-taiko-1", ethereum_testnet_holesky_taiko_1_default2],
-    ["mind-testnet", mind_testnet_default2],
-    ["bitcoin-testnet-bitlayer-1", bitcoin_testnet_bitlayer_1_default2],
-    ["ethereum-testnet-goerli-arbitrum-1", ethereum_testnet_goerli_arbitrum_1_default2],
-    ["ethereum-testnet-sepolia-arbitrum-1", ethereum_testnet_sepolia_arbitrum_1_default2],
-    ["private-testnet-mica", private_testnet_mica_default2],
-    ["avalanche-subnet-dexalot-testnet", avalanche_subnet_dexalot_testnet_default2],
-    ["ethereum-testnet-sepolia-scroll-1", ethereum_testnet_sepolia_scroll_1_default2],
-    ["avalanche-testnet-nexon", avalanche_testnet_nexon_default2],
-    ["bitcoin-testnet-merlin", bitcoin_testnet_merlin_default2],
-    ["pharos-testnet", pharos_testnet_default2],
-    [
-      "ethereum-testnet-sepolia-polygon-validium-1",
-      ethereum_testnet_sepolia_polygon_validium_1_default2
-    ],
-    ["hemi-testnet-sepolia", hemi_testnet_sepolia_default2],
-    ["ink-testnet-sepolia", ink_testnet_sepolia_default2],
-    ["bitcoin-testnet-sepolia-bob-1", bitcoin_testnet_sepolia_bob_1_default2],
-    ["zklink_nova-testnet", zklink_nova_testnet_default2],
-    ["codex-testnet", codex_testnet_default2],
-    [
-      "ethereum-testnet-sepolia-arbitrum-1-treasure-1",
-      ethereum_testnet_sepolia_arbitrum_1_treasure_1_default2
-    ],
-    ["treasure-testnet-topaz", treasure_testnet_topaz_default2],
-    ["jovay-testnet", jovay_testnet_default2],
-    ["ethereum-testnet-sepolia", ethereum_testnet_sepolia_default2],
-    ["ethereum-testnet-sepolia-optimism-1", ethereum_testnet_sepolia_optimism_1_default2],
-    ["neox-testnet-t4", neox_testnet_t4_default2],
-    ["ethereum-testnet-sepolia-corn-1", ethereum_testnet_sepolia_corn_1_default2],
-    ["filecoin-testnet", filecoin_testnet_default2],
-    ["plume-testnet", plume_testnet_default2],
-    ["ethereum-testnet-sepolia-blast-1", ethereum_testnet_sepolia_blast_1_default2],
-    ["zora-testnet", zora_testnet_default2],
-    ["tron-testnet-shasta-evm", tron_testnet_shasta_evm_default2],
-    ["tron-devnet-evm", tron_devnet_evm_default2],
-    ["tron-testnet-nile-evm", tron_testnet_nile_evm_default2]
-  ]),
-  solana: new Map([
-    ["solana-testnet", solana_testnet_default2],
-    ["solana-devnet", solana_devnet_default2]
-  ]),
-  aptos: new Map([
-    ["aptos-testnet", aptos_testnet_default2],
-    ["aptos-localnet", aptos_localnet_default2]
-  ]),
-  sui: new Map([
-    ["sui-testnet", sui_testnet_default2],
-    ["sui-localnet", sui_localnet_default2]
-  ]),
-  ton: new Map([
-    ["ton-testnet", ton_testnet_default2],
-    ["ton-localnet", ton_localnet_default2]
-  ]),
-  tron: new Map([
-    ["tron-testnet-shasta", tron_testnet_shasta_default2],
-    ["tron-devnet", tron_devnet_default2],
-    ["tron-testnet-nile", tron_testnet_nile_default2]
-  ])
-};
-
-class NetworkLookup2 {
-  maps;
-  constructor(maps) {
-    this.maps = maps;
-  }
-  find(options) {
-    const { chainSelector, chainSelectorName, isTestnet, chainFamily } = options;
-    const getBySelector = (map) => {
-      if (chainSelector === undefined)
-        return;
-      return map.get(chainSelector);
-    };
-    if (chainSelector === undefined && !chainSelectorName) {
-      return;
-    }
-    if (chainFamily && chainSelector !== undefined) {
-      if (isTestnet === false) {
-        return getBySelector(this.maps.mainnetBySelectorByFamily[chainFamily]);
-      }
-      if (isTestnet === true) {
-        return getBySelector(this.maps.testnetBySelectorByFamily[chainFamily]);
-      }
-      let network495 = getBySelector(this.maps.testnetBySelectorByFamily[chainFamily]);
-      if (!network495) {
-        network495 = getBySelector(this.maps.mainnetBySelectorByFamily[chainFamily]);
-      }
-      return network495;
-    }
-    if (chainFamily && chainSelectorName) {
-      if (isTestnet === false) {
-        return this.maps.mainnetByNameByFamily[chainFamily].get(chainSelectorName);
-      }
-      if (isTestnet === true) {
-        return this.maps.testnetByNameByFamily[chainFamily].get(chainSelectorName);
-      }
-      let network495 = this.maps.testnetByNameByFamily[chainFamily].get(chainSelectorName);
-      if (!network495) {
-        network495 = this.maps.mainnetByNameByFamily[chainFamily].get(chainSelectorName);
-      }
-      return network495;
-    }
-    if (chainSelector !== undefined) {
-      if (isTestnet === false) {
-        return getBySelector(this.maps.mainnetBySelector);
-      }
-      if (isTestnet === true) {
-        return getBySelector(this.maps.testnetBySelector);
-      }
-      let network495 = getBySelector(this.maps.testnetBySelector);
-      if (!network495) {
-        network495 = getBySelector(this.maps.mainnetBySelector);
-      }
-      return network495;
-    }
-    if (chainSelectorName) {
-      if (isTestnet === false) {
-        return this.maps.mainnetByName.get(chainSelectorName);
-      }
-      if (isTestnet === true) {
-        return this.maps.testnetByName.get(chainSelectorName);
-      }
-      let network495 = this.maps.testnetByName.get(chainSelectorName);
-      if (!network495) {
-        network495 = this.maps.mainnetByName.get(chainSelectorName);
-      }
-      return network495;
-    }
-    return;
-  }
-}
-var defaultLookup2 = new NetworkLookup2({
-  mainnetByName: mainnetByName2,
-  mainnetByNameByFamily: mainnetByNameByFamily2,
-  mainnetBySelector: mainnetBySelector2,
-  mainnetBySelectorByFamily: mainnetBySelectorByFamily2,
-  testnetByName: testnetByName2,
-  testnetByNameByFamily: testnetByNameByFamily2,
-  testnetBySelector: testnetBySelector2,
-  testnetBySelectorByFamily: testnetBySelectorByFamily2
-});
-function consensusIdenticalAggregation2() {
-  return simpleConsensus2(AggregationType2.IDENTICAL);
-}
-
-class ConsensusImpl2 {
-  descriptor;
-  defaultValue;
-  constructor(descriptor, defaultValue) {
-    this.descriptor = descriptor;
-    this.defaultValue = defaultValue;
-  }
-  withDefault(t) {
-    return new ConsensusImpl2(this.descriptor, t);
-  }
-  _usesUToForceShape(_) {}
-}
-function simpleConsensus2(agg) {
-  return new ConsensusImpl2(simpleDescriptor2(agg));
-}
-function simpleDescriptor2(agg) {
-  return create3(ConsensusDescriptorSchema2, {
-    descriptor: {
-      case: "aggregation",
-      value: agg
-    }
-  });
-}
-
-class Int642 {
-  static INT64_MIN = -(2n ** 63n);
-  static INT64_MAX = 2n ** 63n - 1n;
-  value;
-  static toInt64Bigint(v) {
-    if (typeof v === "string") {
-      const bi2 = BigInt(v);
-      return Int642.toInt64Bigint(bi2);
-    }
-    if (typeof v === "bigint") {
-      if (v > Int642.INT64_MAX)
-        throw new Error("int64 overflow");
-      else if (v < Int642.INT64_MIN)
-        throw new Error("int64 underflow");
-      return v;
-    }
-    if (!Number.isFinite(v) || !Number.isInteger(v))
-      throw new Error("int64 requires an integer number");
-    const bi = BigInt(v);
-    if (bi > Int642.INT64_MAX)
-      throw new Error("int64 overflow");
-    else if (bi < Int642.INT64_MIN)
-      throw new Error("int64 underflow");
-    return bi;
-  }
-  constructor(v) {
-    this.value = Int642.toInt64Bigint(v);
-  }
-  add(i2, safe = true) {
-    return safe ? new Int642(this.value + i2.value) : new Int642(BigInt.asIntN(64, this.value + i2.value));
-  }
-  sub(i2, safe = true) {
-    return safe ? new Int642(this.value - i2.value) : new Int642(BigInt.asIntN(64, this.value - i2.value));
-  }
-  mul(i2, safe = true) {
-    return safe ? new Int642(this.value * i2.value) : new Int642(BigInt.asIntN(64, this.value * i2.value));
-  }
-  div(i2, safe = true) {
-    return safe ? new Int642(this.value / i2.value) : new Int642(BigInt.asIntN(64, this.value / i2.value));
-  }
-}
-
-class UInt642 {
-  static UINT64_MAX = 2n ** 64n - 1n;
-  value;
-  static toUint64Bigint(v) {
-    if (typeof v === "string") {
-      const bi2 = BigInt(v);
-      return UInt642.toUint64Bigint(bi2);
-    }
-    if (typeof v === "bigint") {
-      if (v > UInt642.UINT64_MAX)
-        throw new Error("uint64 overflow");
-      else if (v < 0n)
-        throw new Error("uint64 underflow");
-      return v;
-    }
-    if (!Number.isFinite(v) || !Number.isInteger(v))
-      throw new Error("uint64 requires an integer number");
-    const bi = BigInt(v);
-    if (bi > UInt642.UINT64_MAX)
-      throw new Error("uint64 overflow");
-    else if (bi < 0n)
-      throw new Error("uint64 underflow");
-    return bi;
-  }
-  constructor(v) {
-    this.value = UInt642.toUint64Bigint(v);
-  }
-  add(i2, safe = true) {
-    return safe ? new UInt642(this.value + i2.value) : new UInt642(BigInt.asUintN(64, this.value + i2.value));
-  }
-  sub(i2, safe = true) {
-    return safe ? new UInt642(this.value - i2.value) : new UInt642(BigInt.asUintN(64, this.value - i2.value));
-  }
-  mul(i2, safe = true) {
-    return safe ? new UInt642(this.value * i2.value) : new UInt642(BigInt.asUintN(64, this.value * i2.value));
-  }
-  div(i2, safe = true) {
-    return safe ? new UInt642(this.value / i2.value) : new UInt642(BigInt.asUintN(64, this.value / i2.value));
-  }
-}
-var exports_external2 = {};
-__export(exports_external2, {
-  void: () => voidType2,
-  util: () => util3,
-  unknown: () => unknownType2,
-  union: () => unionType2,
-  undefined: () => undefinedType2,
-  tuple: () => tupleType2,
-  transformer: () => effectsType2,
-  symbol: () => symbolType2,
-  string: () => stringType2,
-  strictObject: () => strictObjectType2,
-  setErrorMap: () => setErrorMap2,
-  set: () => setType2,
-  record: () => recordType2,
-  quotelessJson: () => quotelessJson2,
-  promise: () => promiseType2,
-  preprocess: () => preprocessType2,
-  pipeline: () => pipelineType2,
-  ostring: () => ostring2,
-  optional: () => optionalType2,
-  onumber: () => onumber2,
-  oboolean: () => oboolean2,
-  objectUtil: () => objectUtil2,
-  object: () => objectType2,
-  number: () => numberType2,
-  nullable: () => nullableType2,
-  null: () => nullType2,
-  never: () => neverType2,
-  nativeEnum: () => nativeEnumType2,
-  nan: () => nanType2,
-  map: () => mapType2,
-  makeIssue: () => makeIssue2,
-  literal: () => literalType2,
-  lazy: () => lazyType2,
-  late: () => late2,
-  isValid: () => isValid2,
-  isDirty: () => isDirty2,
-  isAsync: () => isAsync2,
-  isAborted: () => isAborted2,
-  intersection: () => intersectionType2,
-  instanceof: () => instanceOfType2,
-  getParsedType: () => getParsedType2,
-  getErrorMap: () => getErrorMap2,
-  function: () => functionType2,
-  enum: () => enumType2,
-  effect: () => effectsType2,
-  discriminatedUnion: () => discriminatedUnionType2,
-  defaultErrorMap: () => en_default2,
-  datetimeRegex: () => datetimeRegex2,
-  date: () => dateType2,
-  custom: () => custom2,
-  coerce: () => coerce2,
-  boolean: () => booleanType2,
-  bigint: () => bigIntType2,
-  array: () => arrayType2,
-  any: () => anyType2,
-  addIssueToContext: () => addIssueToContext2,
-  ZodVoid: () => ZodVoid2,
-  ZodUnknown: () => ZodUnknown2,
-  ZodUnion: () => ZodUnion2,
-  ZodUndefined: () => ZodUndefined2,
-  ZodType: () => ZodType2,
-  ZodTuple: () => ZodTuple2,
-  ZodTransformer: () => ZodEffects2,
-  ZodSymbol: () => ZodSymbol2,
-  ZodString: () => ZodString2,
-  ZodSet: () => ZodSet2,
-  ZodSchema: () => ZodType2,
-  ZodRecord: () => ZodRecord2,
-  ZodReadonly: () => ZodReadonly2,
-  ZodPromise: () => ZodPromise2,
-  ZodPipeline: () => ZodPipeline2,
-  ZodParsedType: () => ZodParsedType2,
-  ZodOptional: () => ZodOptional2,
-  ZodObject: () => ZodObject2,
-  ZodNumber: () => ZodNumber2,
-  ZodNullable: () => ZodNullable2,
-  ZodNull: () => ZodNull2,
-  ZodNever: () => ZodNever2,
-  ZodNativeEnum: () => ZodNativeEnum2,
-  ZodNaN: () => ZodNaN2,
-  ZodMap: () => ZodMap2,
-  ZodLiteral: () => ZodLiteral2,
-  ZodLazy: () => ZodLazy2,
-  ZodIssueCode: () => ZodIssueCode2,
-  ZodIntersection: () => ZodIntersection2,
-  ZodFunction: () => ZodFunction2,
-  ZodFirstPartyTypeKind: () => ZodFirstPartyTypeKind2,
-  ZodError: () => ZodError3,
-  ZodEnum: () => ZodEnum2,
-  ZodEffects: () => ZodEffects2,
-  ZodDiscriminatedUnion: () => ZodDiscriminatedUnion2,
-  ZodDefault: () => ZodDefault2,
-  ZodDate: () => ZodDate2,
-  ZodCatch: () => ZodCatch2,
-  ZodBranded: () => ZodBranded2,
-  ZodBoolean: () => ZodBoolean2,
-  ZodBigInt: () => ZodBigInt2,
-  ZodArray: () => ZodArray2,
-  ZodAny: () => ZodAny2,
-  Schema: () => ZodType2,
-  ParseStatus: () => ParseStatus2,
-  OK: () => OK2,
-  NEVER: () => NEVER2,
-  INVALID: () => INVALID2,
-  EMPTY_PATH: () => EMPTY_PATH2,
-  DIRTY: () => DIRTY2,
-  BRAND: () => BRAND2
-});
-var util3;
-(function(util4) {
-  util4.assertEqual = (_) => {};
-  function assertIs(_arg) {}
-  util4.assertIs = assertIs;
-  function assertNever(_x) {
-    throw new Error;
-  }
-  util4.assertNever = assertNever;
-  util4.arrayToEnum = (items) => {
-    const obj = {};
-    for (const item of items) {
-      obj[item] = item;
-    }
-    return obj;
-  };
-  util4.getValidEnumValues = (obj) => {
-    const validKeys = util4.objectKeys(obj).filter((k) => typeof obj[obj[k]] !== "number");
-    const filtered = {};
-    for (const k of validKeys) {
-      filtered[k] = obj[k];
-    }
-    return util4.objectValues(filtered);
-  };
-  util4.objectValues = (obj) => {
-    return util4.objectKeys(obj).map(function(e) {
-      return obj[e];
-    });
-  };
-  util4.objectKeys = typeof Object.keys === "function" ? (obj) => Object.keys(obj) : (object) => {
-    const keys = [];
-    for (const key in object) {
-      if (Object.prototype.hasOwnProperty.call(object, key)) {
-        keys.push(key);
-      }
-    }
-    return keys;
-  };
-  util4.find = (arr, checker) => {
-    for (const item of arr) {
-      if (checker(item))
-        return item;
-    }
-    return;
-  };
-  util4.isInteger = typeof Number.isInteger === "function" ? (val) => Number.isInteger(val) : (val) => typeof val === "number" && Number.isFinite(val) && Math.floor(val) === val;
-  function joinValues(array, separator = " | ") {
-    return array.map((val) => typeof val === "string" ? `'${val}'` : val).join(separator);
-  }
-  util4.joinValues = joinValues;
-  util4.jsonStringifyReplacer = (_, value3) => {
-    if (typeof value3 === "bigint") {
-      return value3.toString();
-    }
-    return value3;
-  };
-})(util3 || (util3 = {}));
-var objectUtil2;
-(function(objectUtil3) {
-  objectUtil3.mergeShapes = (first, second) => {
-    return {
-      ...first,
-      ...second
-    };
-  };
-})(objectUtil2 || (objectUtil2 = {}));
-var ZodParsedType2 = util3.arrayToEnum([
-  "string",
-  "nan",
-  "number",
-  "integer",
-  "float",
-  "boolean",
-  "date",
-  "bigint",
-  "symbol",
-  "function",
-  "undefined",
-  "null",
-  "array",
-  "object",
-  "unknown",
-  "promise",
-  "void",
-  "never",
-  "map",
-  "set"
-]);
-var getParsedType2 = (data) => {
-  const t = typeof data;
-  switch (t) {
-    case "undefined":
-      return ZodParsedType2.undefined;
-    case "string":
-      return ZodParsedType2.string;
-    case "number":
-      return Number.isNaN(data) ? ZodParsedType2.nan : ZodParsedType2.number;
-    case "boolean":
-      return ZodParsedType2.boolean;
-    case "function":
-      return ZodParsedType2.function;
-    case "bigint":
-      return ZodParsedType2.bigint;
-    case "symbol":
-      return ZodParsedType2.symbol;
-    case "object":
-      if (Array.isArray(data)) {
-        return ZodParsedType2.array;
-      }
-      if (data === null) {
-        return ZodParsedType2.null;
-      }
-      if (data.then && typeof data.then === "function" && data.catch && typeof data.catch === "function") {
-        return ZodParsedType2.promise;
-      }
-      if (typeof Map !== "undefined" && data instanceof Map) {
-        return ZodParsedType2.map;
-      }
-      if (typeof Set !== "undefined" && data instanceof Set) {
-        return ZodParsedType2.set;
-      }
-      if (typeof Date !== "undefined" && data instanceof Date) {
-        return ZodParsedType2.date;
-      }
-      return ZodParsedType2.object;
-    default:
-      return ZodParsedType2.unknown;
-  }
-};
-var ZodIssueCode2 = util3.arrayToEnum([
-  "invalid_type",
-  "invalid_literal",
-  "custom",
-  "invalid_union",
-  "invalid_union_discriminator",
-  "invalid_enum_value",
-  "unrecognized_keys",
-  "invalid_arguments",
-  "invalid_return_type",
-  "invalid_date",
-  "invalid_string",
-  "too_small",
-  "too_big",
-  "invalid_intersection_types",
-  "not_multiple_of",
-  "not_finite"
-]);
-var quotelessJson2 = (obj) => {
-  const json = JSON.stringify(obj, null, 2);
-  return json.replace(/"([^"]+)":/g, "$1:");
-};
-
-class ZodError3 extends Error {
-  get errors() {
-    return this.issues;
-  }
-  constructor(issues) {
-    super();
-    this.issues = [];
-    this.addIssue = (sub) => {
-      this.issues = [...this.issues, sub];
-    };
-    this.addIssues = (subs = []) => {
-      this.issues = [...this.issues, ...subs];
-    };
-    const actualProto = new.target.prototype;
-    if (Object.setPrototypeOf) {
-      Object.setPrototypeOf(this, actualProto);
-    } else {
-      this.__proto__ = actualProto;
-    }
-    this.name = "ZodError";
-    this.issues = issues;
-  }
-  format(_mapper) {
-    const mapper = _mapper || function(issue) {
-      return issue.message;
-    };
-    const fieldErrors = { _errors: [] };
-    const processError = (error) => {
-      for (const issue of error.issues) {
-        if (issue.code === "invalid_union") {
-          issue.unionErrors.map(processError);
-        } else if (issue.code === "invalid_return_type") {
-          processError(issue.returnTypeError);
-        } else if (issue.code === "invalid_arguments") {
-          processError(issue.argumentsError);
-        } else if (issue.path.length === 0) {
-          fieldErrors._errors.push(mapper(issue));
-        } else {
-          let curr = fieldErrors;
-          let i2 = 0;
-          while (i2 < issue.path.length) {
-            const el = issue.path[i2];
-            const terminal = i2 === issue.path.length - 1;
-            if (!terminal) {
-              curr[el] = curr[el] || { _errors: [] };
-            } else {
-              curr[el] = curr[el] || { _errors: [] };
-              curr[el]._errors.push(mapper(issue));
-            }
-            curr = curr[el];
-            i2++;
-          }
-        }
-      }
-    };
-    processError(this);
-    return fieldErrors;
-  }
-  static assert(value3) {
-    if (!(value3 instanceof ZodError3)) {
-      throw new Error(`Not a ZodError: ${value3}`);
-    }
-  }
-  toString() {
-    return this.message;
-  }
-  get message() {
-    return JSON.stringify(this.issues, util3.jsonStringifyReplacer, 2);
-  }
-  get isEmpty() {
-    return this.issues.length === 0;
-  }
-  flatten(mapper = (issue) => issue.message) {
-    const fieldErrors = {};
-    const formErrors = [];
-    for (const sub of this.issues) {
-      if (sub.path.length > 0) {
-        const firstEl = sub.path[0];
-        fieldErrors[firstEl] = fieldErrors[firstEl] || [];
-        fieldErrors[firstEl].push(mapper(sub));
-      } else {
-        formErrors.push(mapper(sub));
-      }
-    }
-    return { formErrors, fieldErrors };
-  }
-  get formErrors() {
-    return this.flatten();
-  }
-}
-ZodError3.create = (issues) => {
-  const error = new ZodError3(issues);
-  return error;
-};
-var errorMap2 = (issue, _ctx) => {
-  let message;
-  switch (issue.code) {
-    case ZodIssueCode2.invalid_type:
-      if (issue.received === ZodParsedType2.undefined) {
-        message = "Required";
-      } else {
-        message = `Expected ${issue.expected}, received ${issue.received}`;
-      }
-      break;
-    case ZodIssueCode2.invalid_literal:
-      message = `Invalid literal value, expected ${JSON.stringify(issue.expected, util3.jsonStringifyReplacer)}`;
-      break;
-    case ZodIssueCode2.unrecognized_keys:
-      message = `Unrecognized key(s) in object: ${util3.joinValues(issue.keys, ", ")}`;
-      break;
-    case ZodIssueCode2.invalid_union:
-      message = `Invalid input`;
-      break;
-    case ZodIssueCode2.invalid_union_discriminator:
-      message = `Invalid discriminator value. Expected ${util3.joinValues(issue.options)}`;
-      break;
-    case ZodIssueCode2.invalid_enum_value:
-      message = `Invalid enum value. Expected ${util3.joinValues(issue.options)}, received '${issue.received}'`;
-      break;
-    case ZodIssueCode2.invalid_arguments:
-      message = `Invalid function arguments`;
-      break;
-    case ZodIssueCode2.invalid_return_type:
-      message = `Invalid function return type`;
-      break;
-    case ZodIssueCode2.invalid_date:
-      message = `Invalid date`;
-      break;
-    case ZodIssueCode2.invalid_string:
-      if (typeof issue.validation === "object") {
-        if ("includes" in issue.validation) {
-          message = `Invalid input: must include "${issue.validation.includes}"`;
-          if (typeof issue.validation.position === "number") {
-            message = `${message} at one or more positions greater than or equal to ${issue.validation.position}`;
-          }
-        } else if ("startsWith" in issue.validation) {
-          message = `Invalid input: must start with "${issue.validation.startsWith}"`;
-        } else if ("endsWith" in issue.validation) {
-          message = `Invalid input: must end with "${issue.validation.endsWith}"`;
-        } else {
-          util3.assertNever(issue.validation);
-        }
-      } else if (issue.validation !== "regex") {
-        message = `Invalid ${issue.validation}`;
-      } else {
-        message = "Invalid";
-      }
-      break;
-    case ZodIssueCode2.too_small:
-      if (issue.type === "array")
-        message = `Array must contain ${issue.exact ? "exactly" : issue.inclusive ? `at least` : `more than`} ${issue.minimum} element(s)`;
-      else if (issue.type === "string")
-        message = `String must contain ${issue.exact ? "exactly" : issue.inclusive ? `at least` : `over`} ${issue.minimum} character(s)`;
-      else if (issue.type === "number")
-        message = `Number must be ${issue.exact ? `exactly equal to ` : issue.inclusive ? `greater than or equal to ` : `greater than `}${issue.minimum}`;
-      else if (issue.type === "bigint")
-        message = `Number must be ${issue.exact ? `exactly equal to ` : issue.inclusive ? `greater than or equal to ` : `greater than `}${issue.minimum}`;
-      else if (issue.type === "date")
-        message = `Date must be ${issue.exact ? `exactly equal to ` : issue.inclusive ? `greater than or equal to ` : `greater than `}${new Date(Number(issue.minimum))}`;
-      else
-        message = "Invalid input";
-      break;
-    case ZodIssueCode2.too_big:
-      if (issue.type === "array")
-        message = `Array must contain ${issue.exact ? `exactly` : issue.inclusive ? `at most` : `less than`} ${issue.maximum} element(s)`;
-      else if (issue.type === "string")
-        message = `String must contain ${issue.exact ? `exactly` : issue.inclusive ? `at most` : `under`} ${issue.maximum} character(s)`;
-      else if (issue.type === "number")
-        message = `Number must be ${issue.exact ? `exactly` : issue.inclusive ? `less than or equal to` : `less than`} ${issue.maximum}`;
-      else if (issue.type === "bigint")
-        message = `BigInt must be ${issue.exact ? `exactly` : issue.inclusive ? `less than or equal to` : `less than`} ${issue.maximum}`;
-      else if (issue.type === "date")
-        message = `Date must be ${issue.exact ? `exactly` : issue.inclusive ? `smaller than or equal to` : `smaller than`} ${new Date(Number(issue.maximum))}`;
-      else
-        message = "Invalid input";
-      break;
-    case ZodIssueCode2.custom:
-      message = `Invalid input`;
-      break;
-    case ZodIssueCode2.invalid_intersection_types:
-      message = `Intersection results could not be merged`;
-      break;
-    case ZodIssueCode2.not_multiple_of:
-      message = `Number must be a multiple of ${issue.multipleOf}`;
-      break;
-    case ZodIssueCode2.not_finite:
-      message = "Number must be finite";
-      break;
-    default:
-      message = _ctx.defaultError;
-      util3.assertNever(issue);
-  }
-  return { message };
-};
-var en_default2 = errorMap2;
-var overrideErrorMap2 = en_default2;
-function setErrorMap2(map) {
-  overrideErrorMap2 = map;
-}
-function getErrorMap2() {
-  return overrideErrorMap2;
-}
-var makeIssue2 = (params) => {
-  const { data, path, errorMaps, issueData } = params;
-  const fullPath = [...path, ...issueData.path || []];
-  const fullIssue = {
-    ...issueData,
-    path: fullPath
-  };
-  if (issueData.message !== undefined) {
-    return {
-      ...issueData,
-      path: fullPath,
-      message: issueData.message
-    };
-  }
-  let errorMessage = "";
-  const maps = errorMaps.filter((m) => !!m).slice().reverse();
-  for (const map of maps) {
-    errorMessage = map(fullIssue, { data, defaultError: errorMessage }).message;
-  }
-  return {
-    ...issueData,
-    path: fullPath,
-    message: errorMessage
-  };
-};
-var EMPTY_PATH2 = [];
-function addIssueToContext2(ctx, issueData) {
-  const overrideMap = getErrorMap2();
-  const issue = makeIssue2({
-    issueData,
-    data: ctx.data,
-    path: ctx.path,
-    errorMaps: [
-      ctx.common.contextualErrorMap,
-      ctx.schemaErrorMap,
-      overrideMap,
-      overrideMap === en_default2 ? undefined : en_default2
-    ].filter((x) => !!x)
-  });
-  ctx.common.issues.push(issue);
-}
-
-class ParseStatus2 {
-  constructor() {
-    this.value = "valid";
-  }
-  dirty() {
-    if (this.value === "valid")
-      this.value = "dirty";
-  }
-  abort() {
-    if (this.value !== "aborted")
-      this.value = "aborted";
-  }
-  static mergeArray(status, results) {
-    const arrayValue = [];
-    for (const s of results) {
-      if (s.status === "aborted")
-        return INVALID2;
-      if (s.status === "dirty")
-        status.dirty();
-      arrayValue.push(s.value);
-    }
-    return { status: status.value, value: arrayValue };
-  }
-  static async mergeObjectAsync(status, pairs) {
-    const syncPairs = [];
-    for (const pair of pairs) {
-      const key = await pair.key;
-      const value3 = await pair.value;
-      syncPairs.push({
-        key,
-        value: value3
-      });
-    }
-    return ParseStatus2.mergeObjectSync(status, syncPairs);
-  }
-  static mergeObjectSync(status, pairs) {
-    const finalObject = {};
-    for (const pair of pairs) {
-      const { key, value: value3 } = pair;
-      if (key.status === "aborted")
-        return INVALID2;
-      if (value3.status === "aborted")
-        return INVALID2;
-      if (key.status === "dirty")
-        status.dirty();
-      if (value3.status === "dirty")
-        status.dirty();
-      if (key.value !== "__proto__" && (typeof value3.value !== "undefined" || pair.alwaysSet)) {
-        finalObject[key.value] = value3.value;
-      }
-    }
-    return { status: status.value, value: finalObject };
-  }
-}
-var INVALID2 = Object.freeze({
-  status: "aborted"
-});
-var DIRTY2 = (value3) => ({ status: "dirty", value: value3 });
-var OK2 = (value3) => ({ status: "valid", value: value3 });
-var isAborted2 = (x) => x.status === "aborted";
-var isDirty2 = (x) => x.status === "dirty";
-var isValid2 = (x) => x.status === "valid";
-var isAsync2 = (x) => typeof Promise !== "undefined" && x instanceof Promise;
-var errorUtil2;
-(function(errorUtil3) {
-  errorUtil3.errToObj = (message) => typeof message === "string" ? { message } : message || {};
-  errorUtil3.toString = (message) => typeof message === "string" ? message : message?.message;
-})(errorUtil2 || (errorUtil2 = {}));
-
-class ParseInputLazyPath2 {
-  constructor(parent, value3, path, key) {
-    this._cachedPath = [];
-    this.parent = parent;
-    this.data = value3;
-    this._path = path;
-    this._key = key;
-  }
-  get path() {
-    if (!this._cachedPath.length) {
-      if (Array.isArray(this._key)) {
-        this._cachedPath.push(...this._path, ...this._key);
-      } else {
-        this._cachedPath.push(...this._path, this._key);
-      }
-    }
-    return this._cachedPath;
-  }
-}
-var handleResult2 = (ctx, result) => {
-  if (isValid2(result)) {
-    return { success: true, data: result.value };
-  } else {
-    if (!ctx.common.issues.length) {
-      throw new Error("Validation failed but no issues detected.");
-    }
-    return {
-      success: false,
-      get error() {
-        if (this._error)
-          return this._error;
-        const error = new ZodError3(ctx.common.issues);
-        this._error = error;
-        return this._error;
-      }
-    };
-  }
-};
-function processCreateParams2(params) {
-  if (!params)
-    return {};
-  const { errorMap: errorMap3, invalid_type_error, required_error, description } = params;
-  if (errorMap3 && (invalid_type_error || required_error)) {
-    throw new Error(`Can't use "invalid_type_error" or "required_error" in conjunction with custom error map.`);
-  }
-  if (errorMap3)
-    return { errorMap: errorMap3, description };
-  const customMap = (iss, ctx) => {
-    const { message } = params;
-    if (iss.code === "invalid_enum_value") {
-      return { message: message ?? ctx.defaultError };
-    }
-    if (typeof ctx.data === "undefined") {
-      return { message: message ?? required_error ?? ctx.defaultError };
-    }
-    if (iss.code !== "invalid_type")
-      return { message: ctx.defaultError };
-    return { message: message ?? invalid_type_error ?? ctx.defaultError };
-  };
-  return { errorMap: customMap, description };
-}
-
-class ZodType2 {
-  get description() {
-    return this._def.description;
-  }
-  _getType(input) {
-    return getParsedType2(input.data);
-  }
-  _getOrReturnCtx(input, ctx) {
-    return ctx || {
-      common: input.parent.common,
-      data: input.data,
-      parsedType: getParsedType2(input.data),
-      schemaErrorMap: this._def.errorMap,
-      path: input.path,
-      parent: input.parent
-    };
-  }
-  _processInputParams(input) {
-    return {
-      status: new ParseStatus2,
-      ctx: {
-        common: input.parent.common,
-        data: input.data,
-        parsedType: getParsedType2(input.data),
-        schemaErrorMap: this._def.errorMap,
-        path: input.path,
-        parent: input.parent
-      }
-    };
-  }
-  _parseSync(input) {
-    const result = this._parse(input);
-    if (isAsync2(result)) {
-      throw new Error("Synchronous parse encountered promise.");
-    }
-    return result;
-  }
-  _parseAsync(input) {
-    const result = this._parse(input);
-    return Promise.resolve(result);
-  }
-  parse(data, params) {
-    const result = this.safeParse(data, params);
-    if (result.success)
-      return result.data;
-    throw result.error;
-  }
-  safeParse(data, params) {
-    const ctx = {
-      common: {
-        issues: [],
-        async: params?.async ?? false,
-        contextualErrorMap: params?.errorMap
-      },
-      path: params?.path || [],
-      schemaErrorMap: this._def.errorMap,
-      parent: null,
-      data,
-      parsedType: getParsedType2(data)
-    };
-    const result = this._parseSync({ data, path: ctx.path, parent: ctx });
-    return handleResult2(ctx, result);
-  }
-  "~validate"(data) {
-    const ctx = {
-      common: {
-        issues: [],
-        async: !!this["~standard"].async
-      },
-      path: [],
-      schemaErrorMap: this._def.errorMap,
-      parent: null,
-      data,
-      parsedType: getParsedType2(data)
-    };
-    if (!this["~standard"].async) {
-      try {
-        const result = this._parseSync({ data, path: [], parent: ctx });
-        return isValid2(result) ? {
-          value: result.value
-        } : {
-          issues: ctx.common.issues
-        };
-      } catch (err) {
-        if (err?.message?.toLowerCase()?.includes("encountered")) {
-          this["~standard"].async = true;
-        }
-        ctx.common = {
-          issues: [],
-          async: true
-        };
-      }
-    }
-    return this._parseAsync({ data, path: [], parent: ctx }).then((result) => isValid2(result) ? {
-      value: result.value
-    } : {
-      issues: ctx.common.issues
-    });
-  }
-  async parseAsync(data, params) {
-    const result = await this.safeParseAsync(data, params);
-    if (result.success)
-      return result.data;
-    throw result.error;
-  }
-  async safeParseAsync(data, params) {
-    const ctx = {
-      common: {
-        issues: [],
-        contextualErrorMap: params?.errorMap,
-        async: true
-      },
-      path: params?.path || [],
-      schemaErrorMap: this._def.errorMap,
-      parent: null,
-      data,
-      parsedType: getParsedType2(data)
-    };
-    const maybeAsyncResult = this._parse({ data, path: ctx.path, parent: ctx });
-    const result = await (isAsync2(maybeAsyncResult) ? maybeAsyncResult : Promise.resolve(maybeAsyncResult));
-    return handleResult2(ctx, result);
-  }
-  refine(check, message) {
-    const getIssueProperties = (val) => {
-      if (typeof message === "string" || typeof message === "undefined") {
-        return { message };
-      } else if (typeof message === "function") {
-        return message(val);
-      } else {
-        return message;
-      }
-    };
-    return this._refinement((val, ctx) => {
-      const result = check(val);
-      const setError = () => ctx.addIssue({
-        code: ZodIssueCode2.custom,
-        ...getIssueProperties(val)
-      });
-      if (typeof Promise !== "undefined" && result instanceof Promise) {
-        return result.then((data) => {
-          if (!data) {
-            setError();
-            return false;
-          } else {
-            return true;
-          }
-        });
-      }
-      if (!result) {
-        setError();
-        return false;
-      } else {
-        return true;
-      }
-    });
-  }
-  refinement(check, refinementData) {
-    return this._refinement((val, ctx) => {
-      if (!check(val)) {
-        ctx.addIssue(typeof refinementData === "function" ? refinementData(val, ctx) : refinementData);
-        return false;
-      } else {
-        return true;
-      }
-    });
-  }
-  _refinement(refinement) {
-    return new ZodEffects2({
-      schema: this,
-      typeName: ZodFirstPartyTypeKind2.ZodEffects,
-      effect: { type: "refinement", refinement }
-    });
-  }
-  superRefine(refinement) {
-    return this._refinement(refinement);
-  }
-  constructor(def) {
-    this.spa = this.safeParseAsync;
-    this._def = def;
-    this.parse = this.parse.bind(this);
-    this.safeParse = this.safeParse.bind(this);
-    this.parseAsync = this.parseAsync.bind(this);
-    this.safeParseAsync = this.safeParseAsync.bind(this);
-    this.spa = this.spa.bind(this);
-    this.refine = this.refine.bind(this);
-    this.refinement = this.refinement.bind(this);
-    this.superRefine = this.superRefine.bind(this);
-    this.optional = this.optional.bind(this);
-    this.nullable = this.nullable.bind(this);
-    this.nullish = this.nullish.bind(this);
-    this.array = this.array.bind(this);
-    this.promise = this.promise.bind(this);
-    this.or = this.or.bind(this);
-    this.and = this.and.bind(this);
-    this.transform = this.transform.bind(this);
-    this.brand = this.brand.bind(this);
-    this.default = this.default.bind(this);
-    this.catch = this.catch.bind(this);
-    this.describe = this.describe.bind(this);
-    this.pipe = this.pipe.bind(this);
-    this.readonly = this.readonly.bind(this);
-    this.isNullable = this.isNullable.bind(this);
-    this.isOptional = this.isOptional.bind(this);
-    this["~standard"] = {
-      version: 1,
-      vendor: "zod",
-      validate: (data) => this["~validate"](data)
-    };
-  }
-  optional() {
-    return ZodOptional2.create(this, this._def);
-  }
-  nullable() {
-    return ZodNullable2.create(this, this._def);
-  }
-  nullish() {
-    return this.nullable().optional();
-  }
-  array() {
-    return ZodArray2.create(this);
-  }
-  promise() {
-    return ZodPromise2.create(this, this._def);
-  }
-  or(option) {
-    return ZodUnion2.create([this, option], this._def);
-  }
-  and(incoming) {
-    return ZodIntersection2.create(this, incoming, this._def);
-  }
-  transform(transform) {
-    return new ZodEffects2({
-      ...processCreateParams2(this._def),
-      schema: this,
-      typeName: ZodFirstPartyTypeKind2.ZodEffects,
-      effect: { type: "transform", transform }
-    });
-  }
-  default(def) {
-    const defaultValueFunc = typeof def === "function" ? def : () => def;
-    return new ZodDefault2({
-      ...processCreateParams2(this._def),
-      innerType: this,
-      defaultValue: defaultValueFunc,
-      typeName: ZodFirstPartyTypeKind2.ZodDefault
-    });
-  }
-  brand() {
-    return new ZodBranded2({
-      typeName: ZodFirstPartyTypeKind2.ZodBranded,
-      type: this,
-      ...processCreateParams2(this._def)
-    });
-  }
-  catch(def) {
-    const catchValueFunc = typeof def === "function" ? def : () => def;
-    return new ZodCatch2({
-      ...processCreateParams2(this._def),
-      innerType: this,
-      catchValue: catchValueFunc,
-      typeName: ZodFirstPartyTypeKind2.ZodCatch
-    });
-  }
-  describe(description) {
-    const This = this.constructor;
-    return new This({
-      ...this._def,
-      description
-    });
-  }
-  pipe(target) {
-    return ZodPipeline2.create(this, target);
-  }
-  readonly() {
-    return ZodReadonly2.create(this);
-  }
-  isOptional() {
-    return this.safeParse(undefined).success;
-  }
-  isNullable() {
-    return this.safeParse(null).success;
-  }
-}
-var cuidRegex2 = /^c[^\s-]{8,}$/i;
-var cuid2Regex2 = /^[0-9a-z]+$/;
-var ulidRegex2 = /^[0-9A-HJKMNP-TV-Z]{26}$/i;
-var uuidRegex2 = /^[0-9a-fA-F]{8}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{12}$/i;
-var nanoidRegex2 = /^[a-z0-9_-]{21}$/i;
-var jwtRegex2 = /^[A-Za-z0-9-_]+\.[A-Za-z0-9-_]+\.[A-Za-z0-9-_]*$/;
-var durationRegex2 = /^[-+]?P(?!$)(?:(?:[-+]?\d+Y)|(?:[-+]?\d+[.,]\d+Y$))?(?:(?:[-+]?\d+M)|(?:[-+]?\d+[.,]\d+M$))?(?:(?:[-+]?\d+W)|(?:[-+]?\d+[.,]\d+W$))?(?:(?:[-+]?\d+D)|(?:[-+]?\d+[.,]\d+D$))?(?:T(?=[\d+-])(?:(?:[-+]?\d+H)|(?:[-+]?\d+[.,]\d+H$))?(?:(?:[-+]?\d+M)|(?:[-+]?\d+[.,]\d+M$))?(?:[-+]?\d+(?:[.,]\d+)?S)?)??$/;
-var emailRegex2 = /^(?!\.)(?!.*\.\.)([A-Z0-9_'+\-\.]*)[A-Z0-9_+-]@([A-Z0-9][A-Z0-9\-]*\.)+[A-Z]{2,}$/i;
-var _emojiRegex2 = `^(\\p{Extended_Pictographic}|\\p{Emoji_Component})+$`;
-var emojiRegex2;
-var ipv4Regex2 = /^(?:(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])\.){3}(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])$/;
-var ipv4CidrRegex2 = /^(?:(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])\.){3}(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])\/(3[0-2]|[12]?[0-9])$/;
-var ipv6Regex2 = /^(([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,7}:|([0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,5}(:[0-9a-fA-F]{1,4}){1,2}|([0-9a-fA-F]{1,4}:){1,4}(:[0-9a-fA-F]{1,4}){1,3}|([0-9a-fA-F]{1,4}:){1,3}(:[0-9a-fA-F]{1,4}){1,4}|([0-9a-fA-F]{1,4}:){1,2}(:[0-9a-fA-F]{1,4}){1,5}|[0-9a-fA-F]{1,4}:((:[0-9a-fA-F]{1,4}){1,6})|:((:[0-9a-fA-F]{1,4}){1,7}|:)|fe80:(:[0-9a-fA-F]{0,4}){0,4}%[0-9a-zA-Z]{1,}|::(ffff(:0{1,4}){0,1}:){0,1}((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])|([0-9a-fA-F]{1,4}:){1,4}:((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9]))$/;
-var ipv6CidrRegex2 = /^(([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,7}:|([0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,5}(:[0-9a-fA-F]{1,4}){1,2}|([0-9a-fA-F]{1,4}:){1,4}(:[0-9a-fA-F]{1,4}){1,3}|([0-9a-fA-F]{1,4}:){1,3}(:[0-9a-fA-F]{1,4}){1,4}|([0-9a-fA-F]{1,4}:){1,2}(:[0-9a-fA-F]{1,4}){1,5}|[0-9a-fA-F]{1,4}:((:[0-9a-fA-F]{1,4}){1,6})|:((:[0-9a-fA-F]{1,4}){1,7}|:)|fe80:(:[0-9a-fA-F]{0,4}){0,4}%[0-9a-zA-Z]{1,}|::(ffff(:0{1,4}){0,1}:){0,1}((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])|([0-9a-fA-F]{1,4}:){1,4}:((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9]))\/(12[0-8]|1[01][0-9]|[1-9]?[0-9])$/;
-var base64Regex2 = /^([0-9a-zA-Z+/]{4})*(([0-9a-zA-Z+/]{2}==)|([0-9a-zA-Z+/]{3}=))?$/;
-var base64urlRegex2 = /^([0-9a-zA-Z-_]{4})*(([0-9a-zA-Z-_]{2}(==)?)|([0-9a-zA-Z-_]{3}(=)?))?$/;
-var dateRegexSource2 = `((\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-((0[13578]|1[02])-(0[1-9]|[12]\\d|3[01])|(0[469]|11)-(0[1-9]|[12]\\d|30)|(02)-(0[1-9]|1\\d|2[0-8])))`;
-var dateRegex2 = new RegExp(`^${dateRegexSource2}$`);
-function timeRegexSource2(args) {
-  let secondsRegexSource = `[0-5]\\d`;
-  if (args.precision) {
-    secondsRegexSource = `${secondsRegexSource}\\.\\d{${args.precision}}`;
-  } else if (args.precision == null) {
-    secondsRegexSource = `${secondsRegexSource}(\\.\\d+)?`;
-  }
-  const secondsQuantifier = args.precision ? "+" : "?";
-  return `([01]\\d|2[0-3]):[0-5]\\d(:${secondsRegexSource})${secondsQuantifier}`;
-}
-function timeRegex2(args) {
-  return new RegExp(`^${timeRegexSource2(args)}$`);
-}
-function datetimeRegex2(args) {
-  let regex = `${dateRegexSource2}T${timeRegexSource2(args)}`;
-  const opts = [];
-  opts.push(args.local ? `Z?` : `Z`);
-  if (args.offset)
-    opts.push(`([+-]\\d{2}:?\\d{2})`);
-  regex = `${regex}(${opts.join("|")})`;
-  return new RegExp(`^${regex}$`);
-}
-function isValidIP2(ip, version) {
-  if ((version === "v4" || !version) && ipv4Regex2.test(ip)) {
-    return true;
-  }
-  if ((version === "v6" || !version) && ipv6Regex2.test(ip)) {
-    return true;
-  }
-  return false;
-}
-function isValidJWT2(jwt, alg) {
-  if (!jwtRegex2.test(jwt))
-    return false;
-  try {
-    const [header] = jwt.split(".");
-    if (!header)
-      return false;
-    const base64 = header.replace(/-/g, "+").replace(/_/g, "/").padEnd(header.length + (4 - header.length % 4) % 4, "=");
-    const decoded = JSON.parse(atob(base64));
-    if (typeof decoded !== "object" || decoded === null)
-      return false;
-    if ("typ" in decoded && decoded?.typ !== "JWT")
-      return false;
-    if (!decoded.alg)
-      return false;
-    if (alg && decoded.alg !== alg)
-      return false;
-    return true;
-  } catch {
-    return false;
-  }
-}
-function isValidCidr2(ip, version) {
-  if ((version === "v4" || !version) && ipv4CidrRegex2.test(ip)) {
-    return true;
-  }
-  if ((version === "v6" || !version) && ipv6CidrRegex2.test(ip)) {
-    return true;
-  }
-  return false;
-}
-
-class ZodString2 extends ZodType2 {
-  _parse(input) {
-    if (this._def.coerce) {
-      input.data = String(input.data);
-    }
-    const parsedType = this._getType(input);
-    if (parsedType !== ZodParsedType2.string) {
-      const ctx2 = this._getOrReturnCtx(input);
-      addIssueToContext2(ctx2, {
-        code: ZodIssueCode2.invalid_type,
-        expected: ZodParsedType2.string,
-        received: ctx2.parsedType
-      });
-      return INVALID2;
-    }
-    const status = new ParseStatus2;
-    let ctx = undefined;
-    for (const check of this._def.checks) {
-      if (check.kind === "min") {
-        if (input.data.length < check.value) {
-          ctx = this._getOrReturnCtx(input, ctx);
-          addIssueToContext2(ctx, {
-            code: ZodIssueCode2.too_small,
-            minimum: check.value,
-            type: "string",
-            inclusive: true,
-            exact: false,
-            message: check.message
-          });
-          status.dirty();
-        }
-      } else if (check.kind === "max") {
-        if (input.data.length > check.value) {
-          ctx = this._getOrReturnCtx(input, ctx);
-          addIssueToContext2(ctx, {
-            code: ZodIssueCode2.too_big,
-            maximum: check.value,
-            type: "string",
-            inclusive: true,
-            exact: false,
-            message: check.message
-          });
-          status.dirty();
-        }
-      } else if (check.kind === "length") {
-        const tooBig = input.data.length > check.value;
-        const tooSmall = input.data.length < check.value;
-        if (tooBig || tooSmall) {
-          ctx = this._getOrReturnCtx(input, ctx);
-          if (tooBig) {
-            addIssueToContext2(ctx, {
-              code: ZodIssueCode2.too_big,
-              maximum: check.value,
-              type: "string",
-              inclusive: true,
-              exact: true,
-              message: check.message
-            });
-          } else if (tooSmall) {
-            addIssueToContext2(ctx, {
-              code: ZodIssueCode2.too_small,
-              minimum: check.value,
-              type: "string",
-              inclusive: true,
-              exact: true,
-              message: check.message
-            });
-          }
-          status.dirty();
-        }
-      } else if (check.kind === "email") {
-        if (!emailRegex2.test(input.data)) {
-          ctx = this._getOrReturnCtx(input, ctx);
-          addIssueToContext2(ctx, {
-            validation: "email",
-            code: ZodIssueCode2.invalid_string,
-            message: check.message
-          });
-          status.dirty();
-        }
-      } else if (check.kind === "emoji") {
-        if (!emojiRegex2) {
-          emojiRegex2 = new RegExp(_emojiRegex2, "u");
-        }
-        if (!emojiRegex2.test(input.data)) {
-          ctx = this._getOrReturnCtx(input, ctx);
-          addIssueToContext2(ctx, {
-            validation: "emoji",
-            code: ZodIssueCode2.invalid_string,
-            message: check.message
-          });
-          status.dirty();
-        }
-      } else if (check.kind === "uuid") {
-        if (!uuidRegex2.test(input.data)) {
-          ctx = this._getOrReturnCtx(input, ctx);
-          addIssueToContext2(ctx, {
-            validation: "uuid",
-            code: ZodIssueCode2.invalid_string,
-            message: check.message
-          });
-          status.dirty();
-        }
-      } else if (check.kind === "nanoid") {
-        if (!nanoidRegex2.test(input.data)) {
-          ctx = this._getOrReturnCtx(input, ctx);
-          addIssueToContext2(ctx, {
-            validation: "nanoid",
-            code: ZodIssueCode2.invalid_string,
-            message: check.message
-          });
-          status.dirty();
-        }
-      } else if (check.kind === "cuid") {
-        if (!cuidRegex2.test(input.data)) {
-          ctx = this._getOrReturnCtx(input, ctx);
-          addIssueToContext2(ctx, {
-            validation: "cuid",
-            code: ZodIssueCode2.invalid_string,
-            message: check.message
-          });
-          status.dirty();
-        }
-      } else if (check.kind === "cuid2") {
-        if (!cuid2Regex2.test(input.data)) {
-          ctx = this._getOrReturnCtx(input, ctx);
-          addIssueToContext2(ctx, {
-            validation: "cuid2",
-            code: ZodIssueCode2.invalid_string,
-            message: check.message
-          });
-          status.dirty();
-        }
-      } else if (check.kind === "ulid") {
-        if (!ulidRegex2.test(input.data)) {
-          ctx = this._getOrReturnCtx(input, ctx);
-          addIssueToContext2(ctx, {
-            validation: "ulid",
-            code: ZodIssueCode2.invalid_string,
-            message: check.message
-          });
-          status.dirty();
-        }
-      } else if (check.kind === "url") {
-        try {
-          new URL(input.data);
-        } catch {
-          ctx = this._getOrReturnCtx(input, ctx);
-          addIssueToContext2(ctx, {
-            validation: "url",
-            code: ZodIssueCode2.invalid_string,
-            message: check.message
-          });
-          status.dirty();
-        }
-      } else if (check.kind === "regex") {
-        check.regex.lastIndex = 0;
-        const testResult = check.regex.test(input.data);
-        if (!testResult) {
-          ctx = this._getOrReturnCtx(input, ctx);
-          addIssueToContext2(ctx, {
-            validation: "regex",
-            code: ZodIssueCode2.invalid_string,
-            message: check.message
-          });
-          status.dirty();
-        }
-      } else if (check.kind === "trim") {
-        input.data = input.data.trim();
-      } else if (check.kind === "includes") {
-        if (!input.data.includes(check.value, check.position)) {
-          ctx = this._getOrReturnCtx(input, ctx);
-          addIssueToContext2(ctx, {
-            code: ZodIssueCode2.invalid_string,
-            validation: { includes: check.value, position: check.position },
-            message: check.message
-          });
-          status.dirty();
-        }
-      } else if (check.kind === "toLowerCase") {
-        input.data = input.data.toLowerCase();
-      } else if (check.kind === "toUpperCase") {
-        input.data = input.data.toUpperCase();
-      } else if (check.kind === "startsWith") {
-        if (!input.data.startsWith(check.value)) {
-          ctx = this._getOrReturnCtx(input, ctx);
-          addIssueToContext2(ctx, {
-            code: ZodIssueCode2.invalid_string,
-            validation: { startsWith: check.value },
-            message: check.message
-          });
-          status.dirty();
-        }
-      } else if (check.kind === "endsWith") {
-        if (!input.data.endsWith(check.value)) {
-          ctx = this._getOrReturnCtx(input, ctx);
-          addIssueToContext2(ctx, {
-            code: ZodIssueCode2.invalid_string,
-            validation: { endsWith: check.value },
-            message: check.message
-          });
-          status.dirty();
-        }
-      } else if (check.kind === "datetime") {
-        const regex = datetimeRegex2(check);
-        if (!regex.test(input.data)) {
-          ctx = this._getOrReturnCtx(input, ctx);
-          addIssueToContext2(ctx, {
-            code: ZodIssueCode2.invalid_string,
-            validation: "datetime",
-            message: check.message
-          });
-          status.dirty();
-        }
-      } else if (check.kind === "date") {
-        const regex = dateRegex2;
-        if (!regex.test(input.data)) {
-          ctx = this._getOrReturnCtx(input, ctx);
-          addIssueToContext2(ctx, {
-            code: ZodIssueCode2.invalid_string,
-            validation: "date",
-            message: check.message
-          });
-          status.dirty();
-        }
-      } else if (check.kind === "time") {
-        const regex = timeRegex2(check);
-        if (!regex.test(input.data)) {
-          ctx = this._getOrReturnCtx(input, ctx);
-          addIssueToContext2(ctx, {
-            code: ZodIssueCode2.invalid_string,
-            validation: "time",
-            message: check.message
-          });
-          status.dirty();
-        }
-      } else if (check.kind === "duration") {
-        if (!durationRegex2.test(input.data)) {
-          ctx = this._getOrReturnCtx(input, ctx);
-          addIssueToContext2(ctx, {
-            validation: "duration",
-            code: ZodIssueCode2.invalid_string,
-            message: check.message
-          });
-          status.dirty();
-        }
-      } else if (check.kind === "ip") {
-        if (!isValidIP2(input.data, check.version)) {
-          ctx = this._getOrReturnCtx(input, ctx);
-          addIssueToContext2(ctx, {
-            validation: "ip",
-            code: ZodIssueCode2.invalid_string,
-            message: check.message
-          });
-          status.dirty();
-        }
-      } else if (check.kind === "jwt") {
-        if (!isValidJWT2(input.data, check.alg)) {
-          ctx = this._getOrReturnCtx(input, ctx);
-          addIssueToContext2(ctx, {
-            validation: "jwt",
-            code: ZodIssueCode2.invalid_string,
-            message: check.message
-          });
-          status.dirty();
-        }
-      } else if (check.kind === "cidr") {
-        if (!isValidCidr2(input.data, check.version)) {
-          ctx = this._getOrReturnCtx(input, ctx);
-          addIssueToContext2(ctx, {
-            validation: "cidr",
-            code: ZodIssueCode2.invalid_string,
-            message: check.message
-          });
-          status.dirty();
-        }
-      } else if (check.kind === "base64") {
-        if (!base64Regex2.test(input.data)) {
-          ctx = this._getOrReturnCtx(input, ctx);
-          addIssueToContext2(ctx, {
-            validation: "base64",
-            code: ZodIssueCode2.invalid_string,
-            message: check.message
-          });
-          status.dirty();
-        }
-      } else if (check.kind === "base64url") {
-        if (!base64urlRegex2.test(input.data)) {
-          ctx = this._getOrReturnCtx(input, ctx);
-          addIssueToContext2(ctx, {
-            validation: "base64url",
-            code: ZodIssueCode2.invalid_string,
-            message: check.message
-          });
-          status.dirty();
-        }
-      } else {
-        util3.assertNever(check);
-      }
-    }
-    return { status: status.value, value: input.data };
-  }
-  _regex(regex, validation, message) {
-    return this.refinement((data) => regex.test(data), {
-      validation,
-      code: ZodIssueCode2.invalid_string,
-      ...errorUtil2.errToObj(message)
-    });
-  }
-  _addCheck(check) {
-    return new ZodString2({
-      ...this._def,
-      checks: [...this._def.checks, check]
-    });
-  }
-  email(message) {
-    return this._addCheck({ kind: "email", ...errorUtil2.errToObj(message) });
-  }
-  url(message) {
-    return this._addCheck({ kind: "url", ...errorUtil2.errToObj(message) });
-  }
-  emoji(message) {
-    return this._addCheck({ kind: "emoji", ...errorUtil2.errToObj(message) });
-  }
-  uuid(message) {
-    return this._addCheck({ kind: "uuid", ...errorUtil2.errToObj(message) });
-  }
-  nanoid(message) {
-    return this._addCheck({ kind: "nanoid", ...errorUtil2.errToObj(message) });
-  }
-  cuid(message) {
-    return this._addCheck({ kind: "cuid", ...errorUtil2.errToObj(message) });
-  }
-  cuid2(message) {
-    return this._addCheck({ kind: "cuid2", ...errorUtil2.errToObj(message) });
-  }
-  ulid(message) {
-    return this._addCheck({ kind: "ulid", ...errorUtil2.errToObj(message) });
-  }
-  base64(message) {
-    return this._addCheck({ kind: "base64", ...errorUtil2.errToObj(message) });
-  }
-  base64url(message) {
-    return this._addCheck({
-      kind: "base64url",
-      ...errorUtil2.errToObj(message)
-    });
-  }
-  jwt(options) {
-    return this._addCheck({ kind: "jwt", ...errorUtil2.errToObj(options) });
-  }
-  ip(options) {
-    return this._addCheck({ kind: "ip", ...errorUtil2.errToObj(options) });
-  }
-  cidr(options) {
-    return this._addCheck({ kind: "cidr", ...errorUtil2.errToObj(options) });
-  }
-  datetime(options) {
-    if (typeof options === "string") {
-      return this._addCheck({
-        kind: "datetime",
-        precision: null,
-        offset: false,
-        local: false,
-        message: options
-      });
-    }
-    return this._addCheck({
-      kind: "datetime",
-      precision: typeof options?.precision === "undefined" ? null : options?.precision,
-      offset: options?.offset ?? false,
-      local: options?.local ?? false,
-      ...errorUtil2.errToObj(options?.message)
-    });
-  }
-  date(message) {
-    return this._addCheck({ kind: "date", message });
-  }
-  time(options) {
-    if (typeof options === "string") {
-      return this._addCheck({
-        kind: "time",
-        precision: null,
-        message: options
-      });
-    }
-    return this._addCheck({
-      kind: "time",
-      precision: typeof options?.precision === "undefined" ? null : options?.precision,
-      ...errorUtil2.errToObj(options?.message)
-    });
-  }
-  duration(message) {
-    return this._addCheck({ kind: "duration", ...errorUtil2.errToObj(message) });
-  }
-  regex(regex, message) {
-    return this._addCheck({
-      kind: "regex",
-      regex,
-      ...errorUtil2.errToObj(message)
-    });
-  }
-  includes(value3, options) {
-    return this._addCheck({
-      kind: "includes",
-      value: value3,
-      position: options?.position,
-      ...errorUtil2.errToObj(options?.message)
-    });
-  }
-  startsWith(value3, message) {
-    return this._addCheck({
-      kind: "startsWith",
-      value: value3,
-      ...errorUtil2.errToObj(message)
-    });
-  }
-  endsWith(value3, message) {
-    return this._addCheck({
-      kind: "endsWith",
-      value: value3,
-      ...errorUtil2.errToObj(message)
-    });
-  }
-  min(minLength, message) {
-    return this._addCheck({
-      kind: "min",
-      value: minLength,
-      ...errorUtil2.errToObj(message)
-    });
-  }
-  max(maxLength, message) {
-    return this._addCheck({
-      kind: "max",
-      value: maxLength,
-      ...errorUtil2.errToObj(message)
-    });
-  }
-  length(len2, message) {
-    return this._addCheck({
-      kind: "length",
-      value: len2,
-      ...errorUtil2.errToObj(message)
-    });
-  }
-  nonempty(message) {
-    return this.min(1, errorUtil2.errToObj(message));
-  }
-  trim() {
-    return new ZodString2({
-      ...this._def,
-      checks: [...this._def.checks, { kind: "trim" }]
-    });
-  }
-  toLowerCase() {
-    return new ZodString2({
-      ...this._def,
-      checks: [...this._def.checks, { kind: "toLowerCase" }]
-    });
-  }
-  toUpperCase() {
-    return new ZodString2({
-      ...this._def,
-      checks: [...this._def.checks, { kind: "toUpperCase" }]
-    });
-  }
-  get isDatetime() {
-    return !!this._def.checks.find((ch) => ch.kind === "datetime");
-  }
-  get isDate() {
-    return !!this._def.checks.find((ch) => ch.kind === "date");
-  }
-  get isTime() {
-    return !!this._def.checks.find((ch) => ch.kind === "time");
-  }
-  get isDuration() {
-    return !!this._def.checks.find((ch) => ch.kind === "duration");
-  }
-  get isEmail() {
-    return !!this._def.checks.find((ch) => ch.kind === "email");
-  }
-  get isURL() {
-    return !!this._def.checks.find((ch) => ch.kind === "url");
-  }
-  get isEmoji() {
-    return !!this._def.checks.find((ch) => ch.kind === "emoji");
-  }
-  get isUUID() {
-    return !!this._def.checks.find((ch) => ch.kind === "uuid");
-  }
-  get isNANOID() {
-    return !!this._def.checks.find((ch) => ch.kind === "nanoid");
-  }
-  get isCUID() {
-    return !!this._def.checks.find((ch) => ch.kind === "cuid");
-  }
-  get isCUID2() {
-    return !!this._def.checks.find((ch) => ch.kind === "cuid2");
-  }
-  get isULID() {
-    return !!this._def.checks.find((ch) => ch.kind === "ulid");
-  }
-  get isIP() {
-    return !!this._def.checks.find((ch) => ch.kind === "ip");
-  }
-  get isCIDR() {
-    return !!this._def.checks.find((ch) => ch.kind === "cidr");
-  }
-  get isBase64() {
-    return !!this._def.checks.find((ch) => ch.kind === "base64");
-  }
-  get isBase64url() {
-    return !!this._def.checks.find((ch) => ch.kind === "base64url");
-  }
-  get minLength() {
-    let min = null;
-    for (const ch of this._def.checks) {
-      if (ch.kind === "min") {
-        if (min === null || ch.value > min)
-          min = ch.value;
-      }
-    }
-    return min;
-  }
-  get maxLength() {
-    let max = null;
-    for (const ch of this._def.checks) {
-      if (ch.kind === "max") {
-        if (max === null || ch.value < max)
-          max = ch.value;
-      }
-    }
-    return max;
-  }
-}
-ZodString2.create = (params) => {
-  return new ZodString2({
-    checks: [],
-    typeName: ZodFirstPartyTypeKind2.ZodString,
-    coerce: params?.coerce ?? false,
-    ...processCreateParams2(params)
-  });
-};
-function floatSafeRemainder2(val, step) {
-  const valDecCount = (val.toString().split(".")[1] || "").length;
-  const stepDecCount = (step.toString().split(".")[1] || "").length;
-  const decCount = valDecCount > stepDecCount ? valDecCount : stepDecCount;
-  const valInt = Number.parseInt(val.toFixed(decCount).replace(".", ""));
-  const stepInt = Number.parseInt(step.toFixed(decCount).replace(".", ""));
-  return valInt % stepInt / 10 ** decCount;
-}
-
-class ZodNumber2 extends ZodType2 {
-  constructor() {
-    super(...arguments);
-    this.min = this.gte;
-    this.max = this.lte;
-    this.step = this.multipleOf;
-  }
-  _parse(input) {
-    if (this._def.coerce) {
-      input.data = Number(input.data);
-    }
-    const parsedType = this._getType(input);
-    if (parsedType !== ZodParsedType2.number) {
-      const ctx2 = this._getOrReturnCtx(input);
-      addIssueToContext2(ctx2, {
-        code: ZodIssueCode2.invalid_type,
-        expected: ZodParsedType2.number,
-        received: ctx2.parsedType
-      });
-      return INVALID2;
-    }
-    let ctx = undefined;
-    const status = new ParseStatus2;
-    for (const check of this._def.checks) {
-      if (check.kind === "int") {
-        if (!util3.isInteger(input.data)) {
-          ctx = this._getOrReturnCtx(input, ctx);
-          addIssueToContext2(ctx, {
-            code: ZodIssueCode2.invalid_type,
-            expected: "integer",
-            received: "float",
-            message: check.message
-          });
-          status.dirty();
-        }
-      } else if (check.kind === "min") {
-        const tooSmall = check.inclusive ? input.data < check.value : input.data <= check.value;
-        if (tooSmall) {
-          ctx = this._getOrReturnCtx(input, ctx);
-          addIssueToContext2(ctx, {
-            code: ZodIssueCode2.too_small,
-            minimum: check.value,
-            type: "number",
-            inclusive: check.inclusive,
-            exact: false,
-            message: check.message
-          });
-          status.dirty();
-        }
-      } else if (check.kind === "max") {
-        const tooBig = check.inclusive ? input.data > check.value : input.data >= check.value;
-        if (tooBig) {
-          ctx = this._getOrReturnCtx(input, ctx);
-          addIssueToContext2(ctx, {
-            code: ZodIssueCode2.too_big,
-            maximum: check.value,
-            type: "number",
-            inclusive: check.inclusive,
-            exact: false,
-            message: check.message
-          });
-          status.dirty();
-        }
-      } else if (check.kind === "multipleOf") {
-        if (floatSafeRemainder2(input.data, check.value) !== 0) {
-          ctx = this._getOrReturnCtx(input, ctx);
-          addIssueToContext2(ctx, {
-            code: ZodIssueCode2.not_multiple_of,
-            multipleOf: check.value,
-            message: check.message
-          });
-          status.dirty();
-        }
-      } else if (check.kind === "finite") {
-        if (!Number.isFinite(input.data)) {
-          ctx = this._getOrReturnCtx(input, ctx);
-          addIssueToContext2(ctx, {
-            code: ZodIssueCode2.not_finite,
-            message: check.message
-          });
-          status.dirty();
-        }
-      } else {
-        util3.assertNever(check);
-      }
-    }
-    return { status: status.value, value: input.data };
-  }
-  gte(value3, message) {
-    return this.setLimit("min", value3, true, errorUtil2.toString(message));
-  }
-  gt(value3, message) {
-    return this.setLimit("min", value3, false, errorUtil2.toString(message));
-  }
-  lte(value3, message) {
-    return this.setLimit("max", value3, true, errorUtil2.toString(message));
-  }
-  lt(value3, message) {
-    return this.setLimit("max", value3, false, errorUtil2.toString(message));
-  }
-  setLimit(kind, value3, inclusive, message) {
-    return new ZodNumber2({
-      ...this._def,
-      checks: [
-        ...this._def.checks,
-        {
-          kind,
-          value: value3,
-          inclusive,
-          message: errorUtil2.toString(message)
-        }
+class UnknownTypeError extends BaseError {
+  constructor({ type }) {
+    super("Unknown type.", {
+      metaMessages: [
+        `Type "${type}" is not a valid ABI type. Perhaps you forgot to include a struct signature?`
       ]
     });
-  }
-  _addCheck(check) {
-    return new ZodNumber2({
-      ...this._def,
-      checks: [...this._def.checks, check]
+    Object.defineProperty(this, "name", {
+      enumerable: true,
+      configurable: true,
+      writable: true,
+      value: "UnknownTypeError"
     });
-  }
-  int(message) {
-    return this._addCheck({
-      kind: "int",
-      message: errorUtil2.toString(message)
-    });
-  }
-  positive(message) {
-    return this._addCheck({
-      kind: "min",
-      value: 0,
-      inclusive: false,
-      message: errorUtil2.toString(message)
-    });
-  }
-  negative(message) {
-    return this._addCheck({
-      kind: "max",
-      value: 0,
-      inclusive: false,
-      message: errorUtil2.toString(message)
-    });
-  }
-  nonpositive(message) {
-    return this._addCheck({
-      kind: "max",
-      value: 0,
-      inclusive: true,
-      message: errorUtil2.toString(message)
-    });
-  }
-  nonnegative(message) {
-    return this._addCheck({
-      kind: "min",
-      value: 0,
-      inclusive: true,
-      message: errorUtil2.toString(message)
-    });
-  }
-  multipleOf(value3, message) {
-    return this._addCheck({
-      kind: "multipleOf",
-      value: value3,
-      message: errorUtil2.toString(message)
-    });
-  }
-  finite(message) {
-    return this._addCheck({
-      kind: "finite",
-      message: errorUtil2.toString(message)
-    });
-  }
-  safe(message) {
-    return this._addCheck({
-      kind: "min",
-      inclusive: true,
-      value: Number.MIN_SAFE_INTEGER,
-      message: errorUtil2.toString(message)
-    })._addCheck({
-      kind: "max",
-      inclusive: true,
-      value: Number.MAX_SAFE_INTEGER,
-      message: errorUtil2.toString(message)
-    });
-  }
-  get minValue() {
-    let min = null;
-    for (const ch of this._def.checks) {
-      if (ch.kind === "min") {
-        if (min === null || ch.value > min)
-          min = ch.value;
-      }
-    }
-    return min;
-  }
-  get maxValue() {
-    let max = null;
-    for (const ch of this._def.checks) {
-      if (ch.kind === "max") {
-        if (max === null || ch.value < max)
-          max = ch.value;
-      }
-    }
-    return max;
-  }
-  get isInt() {
-    return !!this._def.checks.find((ch) => ch.kind === "int" || ch.kind === "multipleOf" && util3.isInteger(ch.value));
-  }
-  get isFinite() {
-    let max = null;
-    let min = null;
-    for (const ch of this._def.checks) {
-      if (ch.kind === "finite" || ch.kind === "int" || ch.kind === "multipleOf") {
-        return true;
-      } else if (ch.kind === "min") {
-        if (min === null || ch.value > min)
-          min = ch.value;
-      } else if (ch.kind === "max") {
-        if (max === null || ch.value < max)
-          max = ch.value;
-      }
-    }
-    return Number.isFinite(min) && Number.isFinite(max);
   }
 }
-ZodNumber2.create = (params) => {
-  return new ZodNumber2({
-    checks: [],
-    typeName: ZodFirstPartyTypeKind2.ZodNumber,
-    coerce: params?.coerce || false,
-    ...processCreateParams2(params)
-  });
-};
 
-class ZodBigInt2 extends ZodType2 {
-  constructor() {
-    super(...arguments);
-    this.min = this.gte;
-    this.max = this.lte;
-  }
-  _parse(input) {
-    if (this._def.coerce) {
-      try {
-        input.data = BigInt(input.data);
-      } catch {
-        return this._getInvalidInput(input);
-      }
-    }
-    const parsedType = this._getType(input);
-    if (parsedType !== ZodParsedType2.bigint) {
-      return this._getInvalidInput(input);
-    }
-    let ctx = undefined;
-    const status = new ParseStatus2;
-    for (const check of this._def.checks) {
-      if (check.kind === "min") {
-        const tooSmall = check.inclusive ? input.data < check.value : input.data <= check.value;
-        if (tooSmall) {
-          ctx = this._getOrReturnCtx(input, ctx);
-          addIssueToContext2(ctx, {
-            code: ZodIssueCode2.too_small,
-            type: "bigint",
-            minimum: check.value,
-            inclusive: check.inclusive,
-            message: check.message
-          });
-          status.dirty();
-        }
-      } else if (check.kind === "max") {
-        const tooBig = check.inclusive ? input.data > check.value : input.data >= check.value;
-        if (tooBig) {
-          ctx = this._getOrReturnCtx(input, ctx);
-          addIssueToContext2(ctx, {
-            code: ZodIssueCode2.too_big,
-            type: "bigint",
-            maximum: check.value,
-            inclusive: check.inclusive,
-            message: check.message
-          });
-          status.dirty();
-        }
-      } else if (check.kind === "multipleOf") {
-        if (input.data % check.value !== BigInt(0)) {
-          ctx = this._getOrReturnCtx(input, ctx);
-          addIssueToContext2(ctx, {
-            code: ZodIssueCode2.not_multiple_of,
-            multipleOf: check.value,
-            message: check.message
-          });
-          status.dirty();
-        }
-      } else {
-        util3.assertNever(check);
-      }
-    }
-    return { status: status.value, value: input.data };
-  }
-  _getInvalidInput(input) {
-    const ctx = this._getOrReturnCtx(input);
-    addIssueToContext2(ctx, {
-      code: ZodIssueCode2.invalid_type,
-      expected: ZodParsedType2.bigint,
-      received: ctx.parsedType
+class UnknownSolidityTypeError extends BaseError {
+  constructor({ type }) {
+    super("Unknown type.", {
+      metaMessages: [`Type "${type}" is not a valid ABI type.`]
     });
-    return INVALID2;
+    Object.defineProperty(this, "name", {
+      enumerable: true,
+      configurable: true,
+      writable: true,
+      value: "UnknownSolidityTypeError"
+    });
   }
-  gte(value3, message) {
-    return this.setLimit("min", value3, true, errorUtil2.toString(message));
+}
+
+class InvalidAbiParametersError extends BaseError {
+  constructor({ params }) {
+    super("Failed to parse ABI parameters.", {
+      details: `parseAbiParameters(${JSON.stringify(params, null, 2)})`,
+      docsPath: "/api/human#parseabiparameters-1"
+    });
+    Object.defineProperty(this, "name", {
+      enumerable: true,
+      configurable: true,
+      writable: true,
+      value: "InvalidAbiParametersError"
+    });
   }
-  gt(value3, message) {
-    return this.setLimit("min", value3, false, errorUtil2.toString(message));
+}
+
+class InvalidParameterError extends BaseError {
+  constructor({ param }) {
+    super("Invalid ABI parameter.", {
+      details: param
+    });
+    Object.defineProperty(this, "name", {
+      enumerable: true,
+      configurable: true,
+      writable: true,
+      value: "InvalidParameterError"
+    });
   }
-  lte(value3, message) {
-    return this.setLimit("max", value3, true, errorUtil2.toString(message));
-  }
-  lt(value3, message) {
-    return this.setLimit("max", value3, false, errorUtil2.toString(message));
-  }
-  setLimit(kind, value3, inclusive, message) {
-    return new ZodBigInt2({
-      ...this._def,
-      checks: [
-        ...this._def.checks,
-        {
-          kind,
-          value: value3,
-          inclusive,
-          message: errorUtil2.toString(message)
-        }
+}
+
+class SolidityProtectedKeywordError extends BaseError {
+  constructor({ param, name }) {
+    super("Invalid ABI parameter.", {
+      details: param,
+      metaMessages: [
+        `"${name}" is a protected Solidity keyword. More info: https://docs.soliditylang.org/en/latest/cheatsheet.html`
       ]
     });
-  }
-  _addCheck(check) {
-    return new ZodBigInt2({
-      ...this._def,
-      checks: [...this._def.checks, check]
+    Object.defineProperty(this, "name", {
+      enumerable: true,
+      configurable: true,
+      writable: true,
+      value: "SolidityProtectedKeywordError"
     });
-  }
-  positive(message) {
-    return this._addCheck({
-      kind: "min",
-      value: BigInt(0),
-      inclusive: false,
-      message: errorUtil2.toString(message)
-    });
-  }
-  negative(message) {
-    return this._addCheck({
-      kind: "max",
-      value: BigInt(0),
-      inclusive: false,
-      message: errorUtil2.toString(message)
-    });
-  }
-  nonpositive(message) {
-    return this._addCheck({
-      kind: "max",
-      value: BigInt(0),
-      inclusive: true,
-      message: errorUtil2.toString(message)
-    });
-  }
-  nonnegative(message) {
-    return this._addCheck({
-      kind: "min",
-      value: BigInt(0),
-      inclusive: true,
-      message: errorUtil2.toString(message)
-    });
-  }
-  multipleOf(value3, message) {
-    return this._addCheck({
-      kind: "multipleOf",
-      value: value3,
-      message: errorUtil2.toString(message)
-    });
-  }
-  get minValue() {
-    let min = null;
-    for (const ch of this._def.checks) {
-      if (ch.kind === "min") {
-        if (min === null || ch.value > min)
-          min = ch.value;
-      }
-    }
-    return min;
-  }
-  get maxValue() {
-    let max = null;
-    for (const ch of this._def.checks) {
-      if (ch.kind === "max") {
-        if (max === null || ch.value < max)
-          max = ch.value;
-      }
-    }
-    return max;
   }
 }
-ZodBigInt2.create = (params) => {
-  return new ZodBigInt2({
-    checks: [],
-    typeName: ZodFirstPartyTypeKind2.ZodBigInt,
-    coerce: params?.coerce ?? false,
-    ...processCreateParams2(params)
-  });
-};
 
-class ZodBoolean2 extends ZodType2 {
-  _parse(input) {
-    if (this._def.coerce) {
-      input.data = Boolean(input.data);
-    }
-    const parsedType = this._getType(input);
-    if (parsedType !== ZodParsedType2.boolean) {
-      const ctx = this._getOrReturnCtx(input);
-      addIssueToContext2(ctx, {
-        code: ZodIssueCode2.invalid_type,
-        expected: ZodParsedType2.boolean,
-        received: ctx.parsedType
-      });
-      return INVALID2;
-    }
-    return OK2(input.data);
+class InvalidModifierError extends BaseError {
+  constructor({ param, type, modifier }) {
+    super("Invalid ABI parameter.", {
+      details: param,
+      metaMessages: [
+        `Modifier "${modifier}" not allowed${type ? ` in "${type}" type` : ""}.`
+      ]
+    });
+    Object.defineProperty(this, "name", {
+      enumerable: true,
+      configurable: true,
+      writable: true,
+      value: "InvalidModifierError"
+    });
   }
 }
-ZodBoolean2.create = (params) => {
-  return new ZodBoolean2({
-    typeName: ZodFirstPartyTypeKind2.ZodBoolean,
-    coerce: params?.coerce || false,
-    ...processCreateParams2(params)
-  });
-};
 
-class ZodDate2 extends ZodType2 {
-  _parse(input) {
-    if (this._def.coerce) {
-      input.data = new Date(input.data);
-    }
-    const parsedType = this._getType(input);
-    if (parsedType !== ZodParsedType2.date) {
-      const ctx2 = this._getOrReturnCtx(input);
-      addIssueToContext2(ctx2, {
-        code: ZodIssueCode2.invalid_type,
-        expected: ZodParsedType2.date,
-        received: ctx2.parsedType
-      });
-      return INVALID2;
-    }
-    if (Number.isNaN(input.data.getTime())) {
-      const ctx2 = this._getOrReturnCtx(input);
-      addIssueToContext2(ctx2, {
-        code: ZodIssueCode2.invalid_date
-      });
-      return INVALID2;
-    }
-    const status = new ParseStatus2;
-    let ctx = undefined;
-    for (const check of this._def.checks) {
-      if (check.kind === "min") {
-        if (input.data.getTime() < check.value) {
-          ctx = this._getOrReturnCtx(input, ctx);
-          addIssueToContext2(ctx, {
-            code: ZodIssueCode2.too_small,
-            message: check.message,
-            inclusive: true,
-            exact: false,
-            minimum: check.value,
-            type: "date"
-          });
-          status.dirty();
-        }
-      } else if (check.kind === "max") {
-        if (input.data.getTime() > check.value) {
-          ctx = this._getOrReturnCtx(input, ctx);
-          addIssueToContext2(ctx, {
-            code: ZodIssueCode2.too_big,
-            message: check.message,
-            inclusive: true,
-            exact: false,
-            maximum: check.value,
-            type: "date"
-          });
-          status.dirty();
-        }
-      } else {
-        util3.assertNever(check);
+class InvalidFunctionModifierError extends BaseError {
+  constructor({ param, type, modifier }) {
+    super("Invalid ABI parameter.", {
+      details: param,
+      metaMessages: [
+        `Modifier "${modifier}" not allowed${type ? ` in "${type}" type` : ""}.`,
+        `Data location can only be specified for array, struct, or mapping types, but "${modifier}" was given.`
+      ]
+    });
+    Object.defineProperty(this, "name", {
+      enumerable: true,
+      configurable: true,
+      writable: true,
+      value: "InvalidFunctionModifierError"
+    });
+  }
+}
+
+class InvalidAbiTypeParameterError extends BaseError {
+  constructor({ abiParameter }) {
+    super("Invalid ABI parameter.", {
+      details: JSON.stringify(abiParameter, null, 2),
+      metaMessages: ["ABI parameter type is invalid."]
+    });
+    Object.defineProperty(this, "name", {
+      enumerable: true,
+      configurable: true,
+      writable: true,
+      value: "InvalidAbiTypeParameterError"
+    });
+  }
+}
+
+class InvalidSignatureError extends BaseError {
+  constructor({ signature, type }) {
+    super(`Invalid ${type} signature.`, {
+      details: signature
+    });
+    Object.defineProperty(this, "name", {
+      enumerable: true,
+      configurable: true,
+      writable: true,
+      value: "InvalidSignatureError"
+    });
+  }
+}
+
+class UnknownSignatureError extends BaseError {
+  constructor({ signature }) {
+    super("Unknown signature.", {
+      details: signature
+    });
+    Object.defineProperty(this, "name", {
+      enumerable: true,
+      configurable: true,
+      writable: true,
+      value: "UnknownSignatureError"
+    });
+  }
+}
+
+class InvalidStructSignatureError extends BaseError {
+  constructor({ signature }) {
+    super("Invalid struct signature.", {
+      details: signature,
+      metaMessages: ["No properties exist."]
+    });
+    Object.defineProperty(this, "name", {
+      enumerable: true,
+      configurable: true,
+      writable: true,
+      value: "InvalidStructSignatureError"
+    });
+  }
+}
+
+class CircularReferenceError extends BaseError {
+  constructor({ type }) {
+    super("Circular reference detected.", {
+      metaMessages: [`Struct "${type}" is a circular reference.`]
+    });
+    Object.defineProperty(this, "name", {
+      enumerable: true,
+      configurable: true,
+      writable: true,
+      value: "CircularReferenceError"
+    });
+  }
+}
+
+class InvalidParenthesisError extends BaseError {
+  constructor({ current, depth }) {
+    super("Unbalanced parentheses.", {
+      metaMessages: [
+        `"${current.trim()}" has too many ${depth > 0 ? "opening" : "closing"} parentheses.`
+      ],
+      details: `Depth "${depth}"`
+    });
+    Object.defineProperty(this, "name", {
+      enumerable: true,
+      configurable: true,
+      writable: true,
+      value: "InvalidParenthesisError"
+    });
+  }
+}
+function getParameterCacheKey(param, type, structs) {
+  let structKey = "";
+  if (structs)
+    for (const struct of Object.entries(structs)) {
+      if (!struct)
+        continue;
+      let propertyKey = "";
+      for (const property of struct[1]) {
+        propertyKey += `[${property.type}${property.name ? `:${property.name}` : ""}]`;
       }
+      structKey += `(${struct[0]}{${propertyKey}})`;
     }
+  if (type)
+    return `${type}:${param}${structKey}`;
+  return `${param}${structKey}`;
+}
+var parameterCache = new Map([
+  ["address", { type: "address" }],
+  ["bool", { type: "bool" }],
+  ["bytes", { type: "bytes" }],
+  ["bytes32", { type: "bytes32" }],
+  ["int", { type: "int256" }],
+  ["int256", { type: "int256" }],
+  ["string", { type: "string" }],
+  ["uint", { type: "uint256" }],
+  ["uint8", { type: "uint8" }],
+  ["uint16", { type: "uint16" }],
+  ["uint24", { type: "uint24" }],
+  ["uint32", { type: "uint32" }],
+  ["uint64", { type: "uint64" }],
+  ["uint96", { type: "uint96" }],
+  ["uint112", { type: "uint112" }],
+  ["uint160", { type: "uint160" }],
+  ["uint192", { type: "uint192" }],
+  ["uint256", { type: "uint256" }],
+  ["address owner", { type: "address", name: "owner" }],
+  ["address to", { type: "address", name: "to" }],
+  ["bool approved", { type: "bool", name: "approved" }],
+  ["bytes _data", { type: "bytes", name: "_data" }],
+  ["bytes data", { type: "bytes", name: "data" }],
+  ["bytes signature", { type: "bytes", name: "signature" }],
+  ["bytes32 hash", { type: "bytes32", name: "hash" }],
+  ["bytes32 r", { type: "bytes32", name: "r" }],
+  ["bytes32 root", { type: "bytes32", name: "root" }],
+  ["bytes32 s", { type: "bytes32", name: "s" }],
+  ["string name", { type: "string", name: "name" }],
+  ["string symbol", { type: "string", name: "symbol" }],
+  ["string tokenURI", { type: "string", name: "tokenURI" }],
+  ["uint tokenId", { type: "uint256", name: "tokenId" }],
+  ["uint8 v", { type: "uint8", name: "v" }],
+  ["uint256 balance", { type: "uint256", name: "balance" }],
+  ["uint256 tokenId", { type: "uint256", name: "tokenId" }],
+  ["uint256 value", { type: "uint256", name: "value" }],
+  [
+    "event:address indexed from",
+    { type: "address", name: "from", indexed: true }
+  ],
+  ["event:address indexed to", { type: "address", name: "to", indexed: true }],
+  [
+    "event:uint indexed tokenId",
+    { type: "uint256", name: "tokenId", indexed: true }
+  ],
+  [
+    "event:uint256 indexed tokenId",
+    { type: "uint256", name: "tokenId", indexed: true }
+  ]
+]);
+function parseSignature(signature, structs = {}) {
+  if (isFunctionSignature(signature))
+    return parseFunctionSignature(signature, structs);
+  if (isEventSignature(signature))
+    return parseEventSignature(signature, structs);
+  if (isErrorSignature(signature))
+    return parseErrorSignature(signature, structs);
+  if (isConstructorSignature(signature))
+    return parseConstructorSignature(signature, structs);
+  if (isFallbackSignature(signature))
+    return parseFallbackSignature(signature);
+  if (isReceiveSignature(signature))
     return {
-      status: status.value,
-      value: new Date(input.data.getTime())
+      type: "receive",
+      stateMutability: "payable"
     };
-  }
-  _addCheck(check) {
-    return new ZodDate2({
-      ...this._def,
-      checks: [...this._def.checks, check]
-    });
-  }
-  min(minDate, message) {
-    return this._addCheck({
-      kind: "min",
-      value: minDate.getTime(),
-      message: errorUtil2.toString(message)
-    });
-  }
-  max(maxDate, message) {
-    return this._addCheck({
-      kind: "max",
-      value: maxDate.getTime(),
-      message: errorUtil2.toString(message)
-    });
-  }
-  get minDate() {
-    let min = null;
-    for (const ch of this._def.checks) {
-      if (ch.kind === "min") {
-        if (min === null || ch.value > min)
-          min = ch.value;
-      }
-    }
-    return min != null ? new Date(min) : null;
-  }
-  get maxDate() {
-    let max = null;
-    for (const ch of this._def.checks) {
-      if (ch.kind === "max") {
-        if (max === null || ch.value < max)
-          max = ch.value;
-      }
-    }
-    return max != null ? new Date(max) : null;
-  }
+  throw new UnknownSignatureError({ signature });
 }
-ZodDate2.create = (params) => {
-  return new ZodDate2({
-    checks: [],
-    coerce: params?.coerce || false,
-    typeName: ZodFirstPartyTypeKind2.ZodDate,
-    ...processCreateParams2(params)
-  });
-};
-
-class ZodSymbol2 extends ZodType2 {
-  _parse(input) {
-    const parsedType = this._getType(input);
-    if (parsedType !== ZodParsedType2.symbol) {
-      const ctx = this._getOrReturnCtx(input);
-      addIssueToContext2(ctx, {
-        code: ZodIssueCode2.invalid_type,
-        expected: ZodParsedType2.symbol,
-        received: ctx.parsedType
-      });
-      return INVALID2;
-    }
-    return OK2(input.data);
+function parseFunctionSignature(signature, structs = {}) {
+  const match = execFunctionSignature(signature);
+  if (!match)
+    throw new InvalidSignatureError({ signature, type: "function" });
+  const inputParams = splitParameters(match.parameters);
+  const inputs = [];
+  const inputLength = inputParams.length;
+  for (let i2 = 0;i2 < inputLength; i2++) {
+    inputs.push(parseAbiParameter(inputParams[i2], {
+      modifiers: functionModifiers,
+      structs,
+      type: "function"
+    }));
   }
-}
-ZodSymbol2.create = (params) => {
-  return new ZodSymbol2({
-    typeName: ZodFirstPartyTypeKind2.ZodSymbol,
-    ...processCreateParams2(params)
-  });
-};
-
-class ZodUndefined2 extends ZodType2 {
-  _parse(input) {
-    const parsedType = this._getType(input);
-    if (parsedType !== ZodParsedType2.undefined) {
-      const ctx = this._getOrReturnCtx(input);
-      addIssueToContext2(ctx, {
-        code: ZodIssueCode2.invalid_type,
-        expected: ZodParsedType2.undefined,
-        received: ctx.parsedType
-      });
-      return INVALID2;
-    }
-    return OK2(input.data);
-  }
-}
-ZodUndefined2.create = (params) => {
-  return new ZodUndefined2({
-    typeName: ZodFirstPartyTypeKind2.ZodUndefined,
-    ...processCreateParams2(params)
-  });
-};
-
-class ZodNull2 extends ZodType2 {
-  _parse(input) {
-    const parsedType = this._getType(input);
-    if (parsedType !== ZodParsedType2.null) {
-      const ctx = this._getOrReturnCtx(input);
-      addIssueToContext2(ctx, {
-        code: ZodIssueCode2.invalid_type,
-        expected: ZodParsedType2.null,
-        received: ctx.parsedType
-      });
-      return INVALID2;
-    }
-    return OK2(input.data);
-  }
-}
-ZodNull2.create = (params) => {
-  return new ZodNull2({
-    typeName: ZodFirstPartyTypeKind2.ZodNull,
-    ...processCreateParams2(params)
-  });
-};
-
-class ZodAny2 extends ZodType2 {
-  constructor() {
-    super(...arguments);
-    this._any = true;
-  }
-  _parse(input) {
-    return OK2(input.data);
-  }
-}
-ZodAny2.create = (params) => {
-  return new ZodAny2({
-    typeName: ZodFirstPartyTypeKind2.ZodAny,
-    ...processCreateParams2(params)
-  });
-};
-
-class ZodUnknown2 extends ZodType2 {
-  constructor() {
-    super(...arguments);
-    this._unknown = true;
-  }
-  _parse(input) {
-    return OK2(input.data);
-  }
-}
-ZodUnknown2.create = (params) => {
-  return new ZodUnknown2({
-    typeName: ZodFirstPartyTypeKind2.ZodUnknown,
-    ...processCreateParams2(params)
-  });
-};
-
-class ZodNever2 extends ZodType2 {
-  _parse(input) {
-    const ctx = this._getOrReturnCtx(input);
-    addIssueToContext2(ctx, {
-      code: ZodIssueCode2.invalid_type,
-      expected: ZodParsedType2.never,
-      received: ctx.parsedType
-    });
-    return INVALID2;
-  }
-}
-ZodNever2.create = (params) => {
-  return new ZodNever2({
-    typeName: ZodFirstPartyTypeKind2.ZodNever,
-    ...processCreateParams2(params)
-  });
-};
-
-class ZodVoid2 extends ZodType2 {
-  _parse(input) {
-    const parsedType = this._getType(input);
-    if (parsedType !== ZodParsedType2.undefined) {
-      const ctx = this._getOrReturnCtx(input);
-      addIssueToContext2(ctx, {
-        code: ZodIssueCode2.invalid_type,
-        expected: ZodParsedType2.void,
-        received: ctx.parsedType
-      });
-      return INVALID2;
-    }
-    return OK2(input.data);
-  }
-}
-ZodVoid2.create = (params) => {
-  return new ZodVoid2({
-    typeName: ZodFirstPartyTypeKind2.ZodVoid,
-    ...processCreateParams2(params)
-  });
-};
-
-class ZodArray2 extends ZodType2 {
-  _parse(input) {
-    const { ctx, status } = this._processInputParams(input);
-    const def = this._def;
-    if (ctx.parsedType !== ZodParsedType2.array) {
-      addIssueToContext2(ctx, {
-        code: ZodIssueCode2.invalid_type,
-        expected: ZodParsedType2.array,
-        received: ctx.parsedType
-      });
-      return INVALID2;
-    }
-    if (def.exactLength !== null) {
-      const tooBig = ctx.data.length > def.exactLength.value;
-      const tooSmall = ctx.data.length < def.exactLength.value;
-      if (tooBig || tooSmall) {
-        addIssueToContext2(ctx, {
-          code: tooBig ? ZodIssueCode2.too_big : ZodIssueCode2.too_small,
-          minimum: tooSmall ? def.exactLength.value : undefined,
-          maximum: tooBig ? def.exactLength.value : undefined,
-          type: "array",
-          inclusive: true,
-          exact: true,
-          message: def.exactLength.message
-        });
-        status.dirty();
-      }
-    }
-    if (def.minLength !== null) {
-      if (ctx.data.length < def.minLength.value) {
-        addIssueToContext2(ctx, {
-          code: ZodIssueCode2.too_small,
-          minimum: def.minLength.value,
-          type: "array",
-          inclusive: true,
-          exact: false,
-          message: def.minLength.message
-        });
-        status.dirty();
-      }
-    }
-    if (def.maxLength !== null) {
-      if (ctx.data.length > def.maxLength.value) {
-        addIssueToContext2(ctx, {
-          code: ZodIssueCode2.too_big,
-          maximum: def.maxLength.value,
-          type: "array",
-          inclusive: true,
-          exact: false,
-          message: def.maxLength.message
-        });
-        status.dirty();
-      }
-    }
-    if (ctx.common.async) {
-      return Promise.all([...ctx.data].map((item, i2) => {
-        return def.type._parseAsync(new ParseInputLazyPath2(ctx, item, ctx.path, i2));
-      })).then((result2) => {
-        return ParseStatus2.mergeArray(status, result2);
-      });
-    }
-    const result = [...ctx.data].map((item, i2) => {
-      return def.type._parseSync(new ParseInputLazyPath2(ctx, item, ctx.path, i2));
-    });
-    return ParseStatus2.mergeArray(status, result);
-  }
-  get element() {
-    return this._def.type;
-  }
-  min(minLength, message) {
-    return new ZodArray2({
-      ...this._def,
-      minLength: { value: minLength, message: errorUtil2.toString(message) }
-    });
-  }
-  max(maxLength, message) {
-    return new ZodArray2({
-      ...this._def,
-      maxLength: { value: maxLength, message: errorUtil2.toString(message) }
-    });
-  }
-  length(len2, message) {
-    return new ZodArray2({
-      ...this._def,
-      exactLength: { value: len2, message: errorUtil2.toString(message) }
-    });
-  }
-  nonempty(message) {
-    return this.min(1, message);
-  }
-}
-ZodArray2.create = (schema, params) => {
-  return new ZodArray2({
-    type: schema,
-    minLength: null,
-    maxLength: null,
-    exactLength: null,
-    typeName: ZodFirstPartyTypeKind2.ZodArray,
-    ...processCreateParams2(params)
-  });
-};
-function deepPartialify2(schema) {
-  if (schema instanceof ZodObject2) {
-    const newShape = {};
-    for (const key in schema.shape) {
-      const fieldSchema = schema.shape[key];
-      newShape[key] = ZodOptional2.create(deepPartialify2(fieldSchema));
-    }
-    return new ZodObject2({
-      ...schema._def,
-      shape: () => newShape
-    });
-  } else if (schema instanceof ZodArray2) {
-    return new ZodArray2({
-      ...schema._def,
-      type: deepPartialify2(schema.element)
-    });
-  } else if (schema instanceof ZodOptional2) {
-    return ZodOptional2.create(deepPartialify2(schema.unwrap()));
-  } else if (schema instanceof ZodNullable2) {
-    return ZodNullable2.create(deepPartialify2(schema.unwrap()));
-  } else if (schema instanceof ZodTuple2) {
-    return ZodTuple2.create(schema.items.map((item) => deepPartialify2(item)));
-  } else {
-    return schema;
-  }
-}
-
-class ZodObject2 extends ZodType2 {
-  constructor() {
-    super(...arguments);
-    this._cached = null;
-    this.nonstrict = this.passthrough;
-    this.augment = this.extend;
-  }
-  _getCached() {
-    if (this._cached !== null)
-      return this._cached;
-    const shape = this._def.shape();
-    const keys = util3.objectKeys(shape);
-    this._cached = { shape, keys };
-    return this._cached;
-  }
-  _parse(input) {
-    const parsedType = this._getType(input);
-    if (parsedType !== ZodParsedType2.object) {
-      const ctx2 = this._getOrReturnCtx(input);
-      addIssueToContext2(ctx2, {
-        code: ZodIssueCode2.invalid_type,
-        expected: ZodParsedType2.object,
-        received: ctx2.parsedType
-      });
-      return INVALID2;
-    }
-    const { status, ctx } = this._processInputParams(input);
-    const { shape, keys: shapeKeys } = this._getCached();
-    const extraKeys = [];
-    if (!(this._def.catchall instanceof ZodNever2 && this._def.unknownKeys === "strip")) {
-      for (const key in ctx.data) {
-        if (!shapeKeys.includes(key)) {
-          extraKeys.push(key);
-        }
-      }
-    }
-    const pairs = [];
-    for (const key of shapeKeys) {
-      const keyValidator = shape[key];
-      const value3 = ctx.data[key];
-      pairs.push({
-        key: { status: "valid", value: key },
-        value: keyValidator._parse(new ParseInputLazyPath2(ctx, value3, ctx.path, key)),
-        alwaysSet: key in ctx.data
-      });
-    }
-    if (this._def.catchall instanceof ZodNever2) {
-      const unknownKeys = this._def.unknownKeys;
-      if (unknownKeys === "passthrough") {
-        for (const key of extraKeys) {
-          pairs.push({
-            key: { status: "valid", value: key },
-            value: { status: "valid", value: ctx.data[key] }
-          });
-        }
-      } else if (unknownKeys === "strict") {
-        if (extraKeys.length > 0) {
-          addIssueToContext2(ctx, {
-            code: ZodIssueCode2.unrecognized_keys,
-            keys: extraKeys
-          });
-          status.dirty();
-        }
-      } else if (unknownKeys === "strip") {} else {
-        throw new Error(`Internal ZodObject error: invalid unknownKeys value.`);
-      }
-    } else {
-      const catchall = this._def.catchall;
-      for (const key of extraKeys) {
-        const value3 = ctx.data[key];
-        pairs.push({
-          key: { status: "valid", value: key },
-          value: catchall._parse(new ParseInputLazyPath2(ctx, value3, ctx.path, key)),
-          alwaysSet: key in ctx.data
-        });
-      }
-    }
-    if (ctx.common.async) {
-      return Promise.resolve().then(async () => {
-        const syncPairs = [];
-        for (const pair of pairs) {
-          const key = await pair.key;
-          const value3 = await pair.value;
-          syncPairs.push({
-            key,
-            value: value3,
-            alwaysSet: pair.alwaysSet
-          });
-        }
-        return syncPairs;
-      }).then((syncPairs) => {
-        return ParseStatus2.mergeObjectSync(status, syncPairs);
-      });
-    } else {
-      return ParseStatus2.mergeObjectSync(status, pairs);
-    }
-  }
-  get shape() {
-    return this._def.shape();
-  }
-  strict(message) {
-    errorUtil2.errToObj;
-    return new ZodObject2({
-      ...this._def,
-      unknownKeys: "strict",
-      ...message !== undefined ? {
-        errorMap: (issue, ctx) => {
-          const defaultError = this._def.errorMap?.(issue, ctx).message ?? ctx.defaultError;
-          if (issue.code === "unrecognized_keys")
-            return {
-              message: errorUtil2.errToObj(message).message ?? defaultError
-            };
-          return {
-            message: defaultError
-          };
-        }
-      } : {}
-    });
-  }
-  strip() {
-    return new ZodObject2({
-      ...this._def,
-      unknownKeys: "strip"
-    });
-  }
-  passthrough() {
-    return new ZodObject2({
-      ...this._def,
-      unknownKeys: "passthrough"
-    });
-  }
-  extend(augmentation) {
-    return new ZodObject2({
-      ...this._def,
-      shape: () => ({
-        ...this._def.shape(),
-        ...augmentation
-      })
-    });
-  }
-  merge(merging) {
-    const merged = new ZodObject2({
-      unknownKeys: merging._def.unknownKeys,
-      catchall: merging._def.catchall,
-      shape: () => ({
-        ...this._def.shape(),
-        ...merging._def.shape()
-      }),
-      typeName: ZodFirstPartyTypeKind2.ZodObject
-    });
-    return merged;
-  }
-  setKey(key, schema) {
-    return this.augment({ [key]: schema });
-  }
-  catchall(index) {
-    return new ZodObject2({
-      ...this._def,
-      catchall: index
-    });
-  }
-  pick(mask) {
-    const shape = {};
-    for (const key of util3.objectKeys(mask)) {
-      if (mask[key] && this.shape[key]) {
-        shape[key] = this.shape[key];
-      }
-    }
-    return new ZodObject2({
-      ...this._def,
-      shape: () => shape
-    });
-  }
-  omit(mask) {
-    const shape = {};
-    for (const key of util3.objectKeys(this.shape)) {
-      if (!mask[key]) {
-        shape[key] = this.shape[key];
-      }
-    }
-    return new ZodObject2({
-      ...this._def,
-      shape: () => shape
-    });
-  }
-  deepPartial() {
-    return deepPartialify2(this);
-  }
-  partial(mask) {
-    const newShape = {};
-    for (const key of util3.objectKeys(this.shape)) {
-      const fieldSchema = this.shape[key];
-      if (mask && !mask[key]) {
-        newShape[key] = fieldSchema;
-      } else {
-        newShape[key] = fieldSchema.optional();
-      }
-    }
-    return new ZodObject2({
-      ...this._def,
-      shape: () => newShape
-    });
-  }
-  required(mask) {
-    const newShape = {};
-    for (const key of util3.objectKeys(this.shape)) {
-      if (mask && !mask[key]) {
-        newShape[key] = this.shape[key];
-      } else {
-        const fieldSchema = this.shape[key];
-        let newField3 = fieldSchema;
-        while (newField3 instanceof ZodOptional2) {
-          newField3 = newField3._def.innerType;
-        }
-        newShape[key] = newField3;
-      }
-    }
-    return new ZodObject2({
-      ...this._def,
-      shape: () => newShape
-    });
-  }
-  keyof() {
-    return createZodEnum2(util3.objectKeys(this.shape));
-  }
-}
-ZodObject2.create = (shape, params) => {
-  return new ZodObject2({
-    shape: () => shape,
-    unknownKeys: "strip",
-    catchall: ZodNever2.create(),
-    typeName: ZodFirstPartyTypeKind2.ZodObject,
-    ...processCreateParams2(params)
-  });
-};
-ZodObject2.strictCreate = (shape, params) => {
-  return new ZodObject2({
-    shape: () => shape,
-    unknownKeys: "strict",
-    catchall: ZodNever2.create(),
-    typeName: ZodFirstPartyTypeKind2.ZodObject,
-    ...processCreateParams2(params)
-  });
-};
-ZodObject2.lazycreate = (shape, params) => {
-  return new ZodObject2({
-    shape,
-    unknownKeys: "strip",
-    catchall: ZodNever2.create(),
-    typeName: ZodFirstPartyTypeKind2.ZodObject,
-    ...processCreateParams2(params)
-  });
-};
-
-class ZodUnion2 extends ZodType2 {
-  _parse(input) {
-    const { ctx } = this._processInputParams(input);
-    const options = this._def.options;
-    function handleResults(results) {
-      for (const result of results) {
-        if (result.result.status === "valid") {
-          return result.result;
-        }
-      }
-      for (const result of results) {
-        if (result.result.status === "dirty") {
-          ctx.common.issues.push(...result.ctx.common.issues);
-          return result.result;
-        }
-      }
-      const unionErrors = results.map((result) => new ZodError3(result.ctx.common.issues));
-      addIssueToContext2(ctx, {
-        code: ZodIssueCode2.invalid_union,
-        unionErrors
-      });
-      return INVALID2;
-    }
-    if (ctx.common.async) {
-      return Promise.all(options.map(async (option) => {
-        const childCtx = {
-          ...ctx,
-          common: {
-            ...ctx.common,
-            issues: []
-          },
-          parent: null
-        };
-        return {
-          result: await option._parseAsync({
-            data: ctx.data,
-            path: ctx.path,
-            parent: childCtx
-          }),
-          ctx: childCtx
-        };
-      })).then(handleResults);
-    } else {
-      let dirty = undefined;
-      const issues = [];
-      for (const option of options) {
-        const childCtx = {
-          ...ctx,
-          common: {
-            ...ctx.common,
-            issues: []
-          },
-          parent: null
-        };
-        const result = option._parseSync({
-          data: ctx.data,
-          path: ctx.path,
-          parent: childCtx
-        });
-        if (result.status === "valid") {
-          return result;
-        } else if (result.status === "dirty" && !dirty) {
-          dirty = { result, ctx: childCtx };
-        }
-        if (childCtx.common.issues.length) {
-          issues.push(childCtx.common.issues);
-        }
-      }
-      if (dirty) {
-        ctx.common.issues.push(...dirty.ctx.common.issues);
-        return dirty.result;
-      }
-      const unionErrors = issues.map((issues2) => new ZodError3(issues2));
-      addIssueToContext2(ctx, {
-        code: ZodIssueCode2.invalid_union,
-        unionErrors
-      });
-      return INVALID2;
-    }
-  }
-  get options() {
-    return this._def.options;
-  }
-}
-ZodUnion2.create = (types5, params) => {
-  return new ZodUnion2({
-    options: types5,
-    typeName: ZodFirstPartyTypeKind2.ZodUnion,
-    ...processCreateParams2(params)
-  });
-};
-var getDiscriminator2 = (type) => {
-  if (type instanceof ZodLazy2) {
-    return getDiscriminator2(type.schema);
-  } else if (type instanceof ZodEffects2) {
-    return getDiscriminator2(type.innerType());
-  } else if (type instanceof ZodLiteral2) {
-    return [type.value];
-  } else if (type instanceof ZodEnum2) {
-    return type.options;
-  } else if (type instanceof ZodNativeEnum2) {
-    return util3.objectValues(type.enum);
-  } else if (type instanceof ZodDefault2) {
-    return getDiscriminator2(type._def.innerType);
-  } else if (type instanceof ZodUndefined2) {
-    return [undefined];
-  } else if (type instanceof ZodNull2) {
-    return [null];
-  } else if (type instanceof ZodOptional2) {
-    return [undefined, ...getDiscriminator2(type.unwrap())];
-  } else if (type instanceof ZodNullable2) {
-    return [null, ...getDiscriminator2(type.unwrap())];
-  } else if (type instanceof ZodBranded2) {
-    return getDiscriminator2(type.unwrap());
-  } else if (type instanceof ZodReadonly2) {
-    return getDiscriminator2(type.unwrap());
-  } else if (type instanceof ZodCatch2) {
-    return getDiscriminator2(type._def.innerType);
-  } else {
-    return [];
-  }
-};
-
-class ZodDiscriminatedUnion2 extends ZodType2 {
-  _parse(input) {
-    const { ctx } = this._processInputParams(input);
-    if (ctx.parsedType !== ZodParsedType2.object) {
-      addIssueToContext2(ctx, {
-        code: ZodIssueCode2.invalid_type,
-        expected: ZodParsedType2.object,
-        received: ctx.parsedType
-      });
-      return INVALID2;
-    }
-    const discriminator = this.discriminator;
-    const discriminatorValue = ctx.data[discriminator];
-    const option = this.optionsMap.get(discriminatorValue);
-    if (!option) {
-      addIssueToContext2(ctx, {
-        code: ZodIssueCode2.invalid_union_discriminator,
-        options: Array.from(this.optionsMap.keys()),
-        path: [discriminator]
-      });
-      return INVALID2;
-    }
-    if (ctx.common.async) {
-      return option._parseAsync({
-        data: ctx.data,
-        path: ctx.path,
-        parent: ctx
-      });
-    } else {
-      return option._parseSync({
-        data: ctx.data,
-        path: ctx.path,
-        parent: ctx
-      });
-    }
-  }
-  get discriminator() {
-    return this._def.discriminator;
-  }
-  get options() {
-    return this._def.options;
-  }
-  get optionsMap() {
-    return this._def.optionsMap;
-  }
-  static create(discriminator, options, params) {
-    const optionsMap = new Map;
-    for (const type of options) {
-      const discriminatorValues = getDiscriminator2(type.shape[discriminator]);
-      if (!discriminatorValues.length) {
-        throw new Error(`A discriminator value for key \`${discriminator}\` could not be extracted from all schema options`);
-      }
-      for (const value3 of discriminatorValues) {
-        if (optionsMap.has(value3)) {
-          throw new Error(`Discriminator property ${String(discriminator)} has duplicate value ${String(value3)}`);
-        }
-        optionsMap.set(value3, type);
-      }
-    }
-    return new ZodDiscriminatedUnion2({
-      typeName: ZodFirstPartyTypeKind2.ZodDiscriminatedUnion,
-      discriminator,
-      options,
-      optionsMap,
-      ...processCreateParams2(params)
-    });
-  }
-}
-function mergeValues2(a, b) {
-  const aType = getParsedType2(a);
-  const bType = getParsedType2(b);
-  if (a === b) {
-    return { valid: true, data: a };
-  } else if (aType === ZodParsedType2.object && bType === ZodParsedType2.object) {
-    const bKeys = util3.objectKeys(b);
-    const sharedKeys = util3.objectKeys(a).filter((key) => bKeys.indexOf(key) !== -1);
-    const newObj = { ...a, ...b };
-    for (const key of sharedKeys) {
-      const sharedValue = mergeValues2(a[key], b[key]);
-      if (!sharedValue.valid) {
-        return { valid: false };
-      }
-      newObj[key] = sharedValue.data;
-    }
-    return { valid: true, data: newObj };
-  } else if (aType === ZodParsedType2.array && bType === ZodParsedType2.array) {
-    if (a.length !== b.length) {
-      return { valid: false };
-    }
-    const newArray = [];
-    for (let index = 0;index < a.length; index++) {
-      const itemA = a[index];
-      const itemB = b[index];
-      const sharedValue = mergeValues2(itemA, itemB);
-      if (!sharedValue.valid) {
-        return { valid: false };
-      }
-      newArray.push(sharedValue.data);
-    }
-    return { valid: true, data: newArray };
-  } else if (aType === ZodParsedType2.date && bType === ZodParsedType2.date && +a === +b) {
-    return { valid: true, data: a };
-  } else {
-    return { valid: false };
-  }
-}
-
-class ZodIntersection2 extends ZodType2 {
-  _parse(input) {
-    const { status, ctx } = this._processInputParams(input);
-    const handleParsed = (parsedLeft, parsedRight) => {
-      if (isAborted2(parsedLeft) || isAborted2(parsedRight)) {
-        return INVALID2;
-      }
-      const merged = mergeValues2(parsedLeft.value, parsedRight.value);
-      if (!merged.valid) {
-        addIssueToContext2(ctx, {
-          code: ZodIssueCode2.invalid_intersection_types
-        });
-        return INVALID2;
-      }
-      if (isDirty2(parsedLeft) || isDirty2(parsedRight)) {
-        status.dirty();
-      }
-      return { status: status.value, value: merged.data };
-    };
-    if (ctx.common.async) {
-      return Promise.all([
-        this._def.left._parseAsync({
-          data: ctx.data,
-          path: ctx.path,
-          parent: ctx
-        }),
-        this._def.right._parseAsync({
-          data: ctx.data,
-          path: ctx.path,
-          parent: ctx
-        })
-      ]).then(([left, right]) => handleParsed(left, right));
-    } else {
-      return handleParsed(this._def.left._parseSync({
-        data: ctx.data,
-        path: ctx.path,
-        parent: ctx
-      }), this._def.right._parseSync({
-        data: ctx.data,
-        path: ctx.path,
-        parent: ctx
+  const outputs = [];
+  if (match.returns) {
+    const outputParams = splitParameters(match.returns);
+    const outputLength = outputParams.length;
+    for (let i2 = 0;i2 < outputLength; i2++) {
+      outputs.push(parseAbiParameter(outputParams[i2], {
+        modifiers: functionModifiers,
+        structs,
+        type: "function"
       }));
     }
   }
+  return {
+    name: match.name,
+    type: "function",
+    stateMutability: match.stateMutability ?? "nonpayable",
+    inputs,
+    outputs
+  };
 }
-ZodIntersection2.create = (left, right, params) => {
-  return new ZodIntersection2({
-    left,
-    right,
-    typeName: ZodFirstPartyTypeKind2.ZodIntersection,
-    ...processCreateParams2(params)
-  });
-};
-
-class ZodTuple2 extends ZodType2 {
-  _parse(input) {
-    const { status, ctx } = this._processInputParams(input);
-    if (ctx.parsedType !== ZodParsedType2.array) {
-      addIssueToContext2(ctx, {
-        code: ZodIssueCode2.invalid_type,
-        expected: ZodParsedType2.array,
-        received: ctx.parsedType
-      });
-      return INVALID2;
-    }
-    if (ctx.data.length < this._def.items.length) {
-      addIssueToContext2(ctx, {
-        code: ZodIssueCode2.too_small,
-        minimum: this._def.items.length,
-        inclusive: true,
-        exact: false,
-        type: "array"
-      });
-      return INVALID2;
-    }
-    const rest = this._def.rest;
-    if (!rest && ctx.data.length > this._def.items.length) {
-      addIssueToContext2(ctx, {
-        code: ZodIssueCode2.too_big,
-        maximum: this._def.items.length,
-        inclusive: true,
-        exact: false,
-        type: "array"
-      });
-      status.dirty();
-    }
-    const items = [...ctx.data].map((item, itemIndex) => {
-      const schema = this._def.items[itemIndex] || this._def.rest;
-      if (!schema)
-        return null;
-      return schema._parse(new ParseInputLazyPath2(ctx, item, ctx.path, itemIndex));
-    }).filter((x) => !!x);
-    if (ctx.common.async) {
-      return Promise.all(items).then((results) => {
-        return ParseStatus2.mergeArray(status, results);
-      });
-    } else {
-      return ParseStatus2.mergeArray(status, items);
-    }
-  }
-  get items() {
-    return this._def.items;
-  }
-  rest(rest) {
-    return new ZodTuple2({
-      ...this._def,
-      rest
-    });
-  }
+function parseEventSignature(signature, structs = {}) {
+  const match = execEventSignature(signature);
+  if (!match)
+    throw new InvalidSignatureError({ signature, type: "event" });
+  const params = splitParameters(match.parameters);
+  const abiParameters = [];
+  const length = params.length;
+  for (let i2 = 0;i2 < length; i2++)
+    abiParameters.push(parseAbiParameter(params[i2], {
+      modifiers: eventModifiers,
+      structs,
+      type: "event"
+    }));
+  return { name: match.name, type: "event", inputs: abiParameters };
 }
-ZodTuple2.create = (schemas, params) => {
-  if (!Array.isArray(schemas)) {
-    throw new Error("You must pass an array of schemas to z.tuple([ ... ])");
-  }
-  return new ZodTuple2({
-    items: schemas,
-    typeName: ZodFirstPartyTypeKind2.ZodTuple,
-    rest: null,
-    ...processCreateParams2(params)
-  });
-};
-
-class ZodRecord2 extends ZodType2 {
-  get keySchema() {
-    return this._def.keyType;
-  }
-  get valueSchema() {
-    return this._def.valueType;
-  }
-  _parse(input) {
-    const { status, ctx } = this._processInputParams(input);
-    if (ctx.parsedType !== ZodParsedType2.object) {
-      addIssueToContext2(ctx, {
-        code: ZodIssueCode2.invalid_type,
-        expected: ZodParsedType2.object,
-        received: ctx.parsedType
-      });
-      return INVALID2;
-    }
-    const pairs = [];
-    const keyType = this._def.keyType;
-    const valueType = this._def.valueType;
-    for (const key in ctx.data) {
-      pairs.push({
-        key: keyType._parse(new ParseInputLazyPath2(ctx, key, ctx.path, key)),
-        value: valueType._parse(new ParseInputLazyPath2(ctx, ctx.data[key], ctx.path, key)),
-        alwaysSet: key in ctx.data
-      });
-    }
-    if (ctx.common.async) {
-      return ParseStatus2.mergeObjectAsync(status, pairs);
-    } else {
-      return ParseStatus2.mergeObjectSync(status, pairs);
-    }
-  }
-  get element() {
-    return this._def.valueType;
-  }
-  static create(first, second, third) {
-    if (second instanceof ZodType2) {
-      return new ZodRecord2({
-        keyType: first,
-        valueType: second,
-        typeName: ZodFirstPartyTypeKind2.ZodRecord,
-        ...processCreateParams2(third)
-      });
-    }
-    return new ZodRecord2({
-      keyType: ZodString2.create(),
-      valueType: first,
-      typeName: ZodFirstPartyTypeKind2.ZodRecord,
-      ...processCreateParams2(second)
-    });
-  }
+function parseErrorSignature(signature, structs = {}) {
+  const match = execErrorSignature(signature);
+  if (!match)
+    throw new InvalidSignatureError({ signature, type: "error" });
+  const params = splitParameters(match.parameters);
+  const abiParameters = [];
+  const length = params.length;
+  for (let i2 = 0;i2 < length; i2++)
+    abiParameters.push(parseAbiParameter(params[i2], { structs, type: "error" }));
+  return { name: match.name, type: "error", inputs: abiParameters };
 }
-
-class ZodMap2 extends ZodType2 {
-  get keySchema() {
-    return this._def.keyType;
-  }
-  get valueSchema() {
-    return this._def.valueType;
-  }
-  _parse(input) {
-    const { status, ctx } = this._processInputParams(input);
-    if (ctx.parsedType !== ZodParsedType2.map) {
-      addIssueToContext2(ctx, {
-        code: ZodIssueCode2.invalid_type,
-        expected: ZodParsedType2.map,
-        received: ctx.parsedType
-      });
-      return INVALID2;
-    }
-    const keyType = this._def.keyType;
-    const valueType = this._def.valueType;
-    const pairs = [...ctx.data.entries()].map(([key, value3], index) => {
-      return {
-        key: keyType._parse(new ParseInputLazyPath2(ctx, key, ctx.path, [index, "key"])),
-        value: valueType._parse(new ParseInputLazyPath2(ctx, value3, ctx.path, [index, "value"]))
-      };
-    });
-    if (ctx.common.async) {
-      const finalMap = new Map;
-      return Promise.resolve().then(async () => {
-        for (const pair of pairs) {
-          const key = await pair.key;
-          const value3 = await pair.value;
-          if (key.status === "aborted" || value3.status === "aborted") {
-            return INVALID2;
-          }
-          if (key.status === "dirty" || value3.status === "dirty") {
-            status.dirty();
-          }
-          finalMap.set(key.value, value3.value);
-        }
-        return { status: status.value, value: finalMap };
-      });
-    } else {
-      const finalMap = new Map;
-      for (const pair of pairs) {
-        const key = pair.key;
-        const value3 = pair.value;
-        if (key.status === "aborted" || value3.status === "aborted") {
-          return INVALID2;
-        }
-        if (key.status === "dirty" || value3.status === "dirty") {
-          status.dirty();
-        }
-        finalMap.set(key.value, value3.value);
-      }
-      return { status: status.value, value: finalMap };
-    }
-  }
+function parseConstructorSignature(signature, structs = {}) {
+  const match = execConstructorSignature(signature);
+  if (!match)
+    throw new InvalidSignatureError({ signature, type: "constructor" });
+  const params = splitParameters(match.parameters);
+  const abiParameters = [];
+  const length = params.length;
+  for (let i2 = 0;i2 < length; i2++)
+    abiParameters.push(parseAbiParameter(params[i2], { structs, type: "constructor" }));
+  return {
+    type: "constructor",
+    stateMutability: match.stateMutability ?? "nonpayable",
+    inputs: abiParameters
+  };
 }
-ZodMap2.create = (keyType, valueType, params) => {
-  return new ZodMap2({
-    valueType,
-    keyType,
-    typeName: ZodFirstPartyTypeKind2.ZodMap,
-    ...processCreateParams2(params)
-  });
-};
-
-class ZodSet2 extends ZodType2 {
-  _parse(input) {
-    const { status, ctx } = this._processInputParams(input);
-    if (ctx.parsedType !== ZodParsedType2.set) {
-      addIssueToContext2(ctx, {
-        code: ZodIssueCode2.invalid_type,
-        expected: ZodParsedType2.set,
-        received: ctx.parsedType
-      });
-      return INVALID2;
+function parseFallbackSignature(signature) {
+  const match = execFallbackSignature(signature);
+  if (!match)
+    throw new InvalidSignatureError({ signature, type: "fallback" });
+  return {
+    type: "fallback",
+    stateMutability: match.stateMutability ?? "nonpayable"
+  };
+}
+var abiParameterWithoutTupleRegex = /^(?<type>[a-zA-Z$_][a-zA-Z0-9$_]*(?:\spayable)?)(?<array>(?:\[\d*?\])+?)?(?:\s(?<modifier>calldata|indexed|memory|storage{1}))?(?:\s(?<name>[a-zA-Z$_][a-zA-Z0-9$_]*))?$/;
+var abiParameterWithTupleRegex = /^\((?<type>.+?)\)(?<array>(?:\[\d*?\])+?)?(?:\s(?<modifier>calldata|indexed|memory|storage{1}))?(?:\s(?<name>[a-zA-Z$_][a-zA-Z0-9$_]*))?$/;
+var dynamicIntegerRegex = /^u?int$/;
+function parseAbiParameter(param, options) {
+  const parameterCacheKey = getParameterCacheKey(param, options?.type, options?.structs);
+  if (parameterCache.has(parameterCacheKey))
+    return parameterCache.get(parameterCacheKey);
+  const isTuple = isTupleRegex.test(param);
+  const match = execTyped(isTuple ? abiParameterWithTupleRegex : abiParameterWithoutTupleRegex, param);
+  if (!match)
+    throw new InvalidParameterError({ param });
+  if (match.name && isSolidityKeyword(match.name))
+    throw new SolidityProtectedKeywordError({ param, name: match.name });
+  const name = match.name ? { name: match.name } : {};
+  const indexed = match.modifier === "indexed" ? { indexed: true } : {};
+  const structs = options?.structs ?? {};
+  let type;
+  let components = {};
+  if (isTuple) {
+    type = "tuple";
+    const params = splitParameters(match.type);
+    const components_ = [];
+    const length = params.length;
+    for (let i2 = 0;i2 < length; i2++) {
+      components_.push(parseAbiParameter(params[i2], { structs }));
     }
-    const def = this._def;
-    if (def.minSize !== null) {
-      if (ctx.data.size < def.minSize.value) {
-        addIssueToContext2(ctx, {
-          code: ZodIssueCode2.too_small,
-          minimum: def.minSize.value,
-          type: "set",
-          inclusive: true,
-          exact: false,
-          message: def.minSize.message
+    components = { components: components_ };
+  } else if (match.type in structs) {
+    type = "tuple";
+    components = { components: structs[match.type] };
+  } else if (dynamicIntegerRegex.test(match.type)) {
+    type = `${match.type}256`;
+  } else if (match.type === "address payable") {
+    type = "address";
+  } else {
+    type = match.type;
+    if (!(options?.type === "struct") && !isSolidityType(type))
+      throw new UnknownSolidityTypeError({ type });
+  }
+  if (match.modifier) {
+    if (!options?.modifiers?.has?.(match.modifier))
+      throw new InvalidModifierError({
+        param,
+        type: options?.type,
+        modifier: match.modifier
+      });
+    if (functionModifiers.has(match.modifier) && !isValidDataLocation(type, !!match.array))
+      throw new InvalidFunctionModifierError({
+        param,
+        type: options?.type,
+        modifier: match.modifier
+      });
+  }
+  const abiParameter = {
+    type: `${type}${match.array ?? ""}`,
+    ...name,
+    ...indexed,
+    ...components
+  };
+  parameterCache.set(parameterCacheKey, abiParameter);
+  return abiParameter;
+}
+function splitParameters(params, result = [], current = "", depth = 0) {
+  const length = params.trim().length;
+  for (let i2 = 0;i2 < length; i2++) {
+    const char = params[i2];
+    const tail = params.slice(i2 + 1);
+    switch (char) {
+      case ",":
+        return depth === 0 ? splitParameters(tail, [...result, current.trim()]) : splitParameters(tail, result, `${current}${char}`, depth);
+      case "(":
+        return splitParameters(tail, result, `${current}${char}`, depth + 1);
+      case ")":
+        return splitParameters(tail, result, `${current}${char}`, depth - 1);
+      default:
+        return splitParameters(tail, result, `${current}${char}`, depth);
+    }
+  }
+  if (current === "")
+    return result;
+  if (depth !== 0)
+    throw new InvalidParenthesisError({ current, depth });
+  result.push(current.trim());
+  return result;
+}
+function isSolidityType(type) {
+  return type === "address" || type === "bool" || type === "function" || type === "string" || bytesRegex.test(type) || integerRegex.test(type);
+}
+var protectedKeywordsRegex = /^(?:after|alias|anonymous|apply|auto|byte|calldata|case|catch|constant|copyof|default|defined|error|event|external|false|final|function|immutable|implements|in|indexed|inline|internal|let|mapping|match|memory|mutable|null|of|override|partial|private|promise|public|pure|reference|relocatable|return|returns|sizeof|static|storage|struct|super|supports|switch|this|true|try|typedef|typeof|var|view|virtual)$/;
+function isSolidityKeyword(name) {
+  return name === "address" || name === "bool" || name === "function" || name === "string" || name === "tuple" || bytesRegex.test(name) || integerRegex.test(name) || protectedKeywordsRegex.test(name);
+}
+function isValidDataLocation(type, isArray) {
+  return isArray || type === "bytes" || type === "string" || type === "tuple";
+}
+function parseStructs(signatures) {
+  const shallowStructs = {};
+  const signaturesLength = signatures.length;
+  for (let i2 = 0;i2 < signaturesLength; i2++) {
+    const signature = signatures[i2];
+    if (!isStructSignature(signature))
+      continue;
+    const match = execStructSignature(signature);
+    if (!match)
+      throw new InvalidSignatureError({ signature, type: "struct" });
+    const properties = match.properties.split(";");
+    const components = [];
+    const propertiesLength = properties.length;
+    for (let k = 0;k < propertiesLength; k++) {
+      const property = properties[k];
+      const trimmed = property.trim();
+      if (!trimmed)
+        continue;
+      const abiParameter = parseAbiParameter(trimmed, {
+        type: "struct"
+      });
+      components.push(abiParameter);
+    }
+    if (!components.length)
+      throw new InvalidStructSignatureError({ signature });
+    shallowStructs[match.name] = components;
+  }
+  const resolvedStructs = {};
+  const entries = Object.entries(shallowStructs);
+  const entriesLength = entries.length;
+  for (let i2 = 0;i2 < entriesLength; i2++) {
+    const [name, parameters] = entries[i2];
+    resolvedStructs[name] = resolveStructs(parameters, shallowStructs);
+  }
+  return resolvedStructs;
+}
+var typeWithoutTupleRegex = /^(?<type>[a-zA-Z$_][a-zA-Z0-9$_]*)(?<array>(?:\[\d*?\])+?)?$/;
+function resolveStructs(abiParameters = [], structs = {}, ancestors = new Set) {
+  const components = [];
+  const length = abiParameters.length;
+  for (let i2 = 0;i2 < length; i2++) {
+    const abiParameter = abiParameters[i2];
+    const isTuple = isTupleRegex.test(abiParameter.type);
+    if (isTuple)
+      components.push(abiParameter);
+    else {
+      const match = execTyped(typeWithoutTupleRegex, abiParameter.type);
+      if (!match?.type)
+        throw new InvalidAbiTypeParameterError({ abiParameter });
+      const { array, type } = match;
+      if (type in structs) {
+        if (ancestors.has(type))
+          throw new CircularReferenceError({ type });
+        components.push({
+          ...abiParameter,
+          type: `tuple${array ?? ""}`,
+          components: resolveStructs(structs[type], structs, new Set([...ancestors, type]))
         });
-        status.dirty();
+      } else {
+        if (isSolidityType(type))
+          components.push(abiParameter);
+        else
+          throw new UnknownTypeError({ type });
       }
     }
-    if (def.maxSize !== null) {
-      if (ctx.data.size > def.maxSize.value) {
-        addIssueToContext2(ctx, {
-          code: ZodIssueCode2.too_big,
-          maximum: def.maxSize.value,
-          type: "set",
-          inclusive: true,
-          exact: false,
-          message: def.maxSize.message
-        });
-        status.dirty();
-      }
-    }
-    const valueType = this._def.valueType;
-    function finalizeSet(elements2) {
-      const parsedSet = new Set;
-      for (const element of elements2) {
-        if (element.status === "aborted")
-          return INVALID2;
-        if (element.status === "dirty")
-          status.dirty();
-        parsedSet.add(element.value);
-      }
-      return { status: status.value, value: parsedSet };
-    }
-    const elements = [...ctx.data.values()].map((item, i2) => valueType._parse(new ParseInputLazyPath2(ctx, item, ctx.path, i2)));
-    if (ctx.common.async) {
-      return Promise.all(elements).then((elements2) => finalizeSet(elements2));
-    } else {
-      return finalizeSet(elements);
-    }
   }
-  min(minSize, message) {
-    return new ZodSet2({
-      ...this._def,
-      minSize: { value: minSize, message: errorUtil2.toString(message) }
-    });
-  }
-  max(maxSize, message) {
-    return new ZodSet2({
-      ...this._def,
-      maxSize: { value: maxSize, message: errorUtil2.toString(message) }
-    });
-  }
-  size(size, message) {
-    return this.min(size, message).max(size, message);
-  }
-  nonempty(message) {
-    return this.min(1, message);
-  }
+  return components;
 }
-ZodSet2.create = (valueType, params) => {
-  return new ZodSet2({
-    valueType,
-    minSize: null,
-    maxSize: null,
-    typeName: ZodFirstPartyTypeKind2.ZodSet,
-    ...processCreateParams2(params)
-  });
+function parseAbi(signatures) {
+  const structs = parseStructs(signatures);
+  const abi = [];
+  const length = signatures.length;
+  for (let i2 = 0;i2 < length; i2++) {
+    const signature = signatures[i2];
+    if (isStructSignature(signature))
+      continue;
+    abi.push(parseSignature(signature, structs));
+  }
+  return abi;
+}
+function parseAbiParameters(params) {
+  const abiParameters = [];
+  if (typeof params === "string") {
+    const parameters = splitParameters(params);
+    const length = parameters.length;
+    for (let i2 = 0;i2 < length; i2++) {
+      abiParameters.push(parseAbiParameter(parameters[i2], { modifiers }));
+    }
+  } else {
+    const structs = parseStructs(params);
+    const length = params.length;
+    for (let i2 = 0;i2 < length; i2++) {
+      const signature = params[i2];
+      if (isStructSignature(signature))
+        continue;
+      const parameters = splitParameters(signature);
+      const length2 = parameters.length;
+      for (let k = 0;k < length2; k++) {
+        abiParameters.push(parseAbiParameter(parameters[k], { modifiers, structs }));
+      }
+    }
+  }
+  if (abiParameters.length === 0)
+    throw new InvalidAbiParametersError({ params });
+  return abiParameters;
+}
+function formatAbiItem2(abiItem, { includeName = false } = {}) {
+  if (abiItem.type !== "function" && abiItem.type !== "event" && abiItem.type !== "error")
+    throw new InvalidDefinitionTypeError(abiItem.type);
+  return `${abiItem.name}(${formatAbiParams(abiItem.inputs, { includeName })})`;
+}
+function formatAbiParams(params, { includeName = false } = {}) {
+  if (!params)
+    return "";
+  return params.map((param) => formatAbiParam(param, { includeName })).join(includeName ? ", " : ",");
+}
+function formatAbiParam(param, { includeName }) {
+  if (param.type.startsWith("tuple")) {
+    return `(${formatAbiParams(param.components, { includeName })})${param.type.slice("tuple".length)}`;
+  }
+  return param.type + (includeName && param.name ? ` ${param.name}` : "");
+}
+function isHex(value2, { strict = true } = {}) {
+  if (!value2)
+    return false;
+  if (typeof value2 !== "string")
+    return false;
+  return strict ? /^0x[0-9a-fA-F]*$/.test(value2) : value2.startsWith("0x");
+}
+function size(value2) {
+  if (isHex(value2, { strict: false }))
+    return Math.ceil((value2.length - 2) / 2);
+  return value2.length;
+}
+var version2 = "2.47.0";
+var errorConfig = {
+  getDocsUrl: ({ docsBaseUrl, docsPath = "", docsSlug }) => docsPath ? `${docsBaseUrl ?? "https://viem.sh"}${docsPath}${docsSlug ? `#${docsSlug}` : ""}` : undefined,
+  version: `viem@${version2}`
 };
 
-class ZodFunction2 extends ZodType2 {
+class BaseError3 extends Error {
+  constructor(shortMessage, args = {}) {
+    const details = (() => {
+      if (args.cause instanceof BaseError3)
+        return args.cause.details;
+      if (args.cause?.message)
+        return args.cause.message;
+      return args.details;
+    })();
+    const docsPath = (() => {
+      if (args.cause instanceof BaseError3)
+        return args.cause.docsPath || args.docsPath;
+      return args.docsPath;
+    })();
+    const docsUrl = errorConfig.getDocsUrl?.({ ...args, docsPath });
+    const message = [
+      shortMessage || "An error occurred.",
+      "",
+      ...args.metaMessages ? [...args.metaMessages, ""] : [],
+      ...docsUrl ? [`Docs: ${docsUrl}`] : [],
+      ...details ? [`Details: ${details}`] : [],
+      ...errorConfig.version ? [`Version: ${errorConfig.version}`] : []
+    ].join(`
+`);
+    super(message, args.cause ? { cause: args.cause } : undefined);
+    Object.defineProperty(this, "details", {
+      enumerable: true,
+      configurable: true,
+      writable: true,
+      value: undefined
+    });
+    Object.defineProperty(this, "docsPath", {
+      enumerable: true,
+      configurable: true,
+      writable: true,
+      value: undefined
+    });
+    Object.defineProperty(this, "metaMessages", {
+      enumerable: true,
+      configurable: true,
+      writable: true,
+      value: undefined
+    });
+    Object.defineProperty(this, "shortMessage", {
+      enumerable: true,
+      configurable: true,
+      writable: true,
+      value: undefined
+    });
+    Object.defineProperty(this, "version", {
+      enumerable: true,
+      configurable: true,
+      writable: true,
+      value: undefined
+    });
+    Object.defineProperty(this, "name", {
+      enumerable: true,
+      configurable: true,
+      writable: true,
+      value: "BaseError"
+    });
+    this.details = details;
+    this.docsPath = docsPath;
+    this.metaMessages = args.metaMessages;
+    this.name = args.name ?? this.name;
+    this.shortMessage = shortMessage;
+    this.version = version2;
+  }
+  walk(fn) {
+    return walk(this, fn);
+  }
+}
+function walk(err, fn) {
+  if (fn?.(err))
+    return err;
+  if (err && typeof err === "object" && "cause" in err && err.cause !== undefined)
+    return walk(err.cause, fn);
+  return fn ? null : err;
+}
+
+class AbiDecodingDataSizeTooSmallError extends BaseError3 {
+  constructor({ data, params, size: size2 }) {
+    super([`Data size of ${size2} bytes is too small for given parameters.`].join(`
+`), {
+      metaMessages: [
+        `Params: (${formatAbiParams(params, { includeName: true })})`,
+        `Data:   ${data} (${size2} bytes)`
+      ],
+      name: "AbiDecodingDataSizeTooSmallError"
+    });
+    Object.defineProperty(this, "data", {
+      enumerable: true,
+      configurable: true,
+      writable: true,
+      value: undefined
+    });
+    Object.defineProperty(this, "params", {
+      enumerable: true,
+      configurable: true,
+      writable: true,
+      value: undefined
+    });
+    Object.defineProperty(this, "size", {
+      enumerable: true,
+      configurable: true,
+      writable: true,
+      value: undefined
+    });
+    this.data = data;
+    this.params = params;
+    this.size = size2;
+  }
+}
+
+class AbiDecodingZeroDataError extends BaseError3 {
   constructor() {
-    super(...arguments);
-    this.validate = this.implement;
+    super('Cannot decode zero data ("0x") with ABI parameters.', {
+      name: "AbiDecodingZeroDataError"
+    });
   }
-  _parse(input) {
-    const { ctx } = this._processInputParams(input);
-    if (ctx.parsedType !== ZodParsedType2.function) {
-      addIssueToContext2(ctx, {
-        code: ZodIssueCode2.invalid_type,
-        expected: ZodParsedType2.function,
-        received: ctx.parsedType
-      });
-      return INVALID2;
+}
+
+class AbiEncodingArrayLengthMismatchError extends BaseError3 {
+  constructor({ expectedLength, givenLength, type }) {
+    super([
+      `ABI encoding array length mismatch for type ${type}.`,
+      `Expected length: ${expectedLength}`,
+      `Given length: ${givenLength}`
+    ].join(`
+`), { name: "AbiEncodingArrayLengthMismatchError" });
+  }
+}
+
+class AbiEncodingBytesSizeMismatchError extends BaseError3 {
+  constructor({ expectedSize, value: value2 }) {
+    super(`Size of bytes "${value2}" (bytes${size(value2)}) does not match expected size (bytes${expectedSize}).`, { name: "AbiEncodingBytesSizeMismatchError" });
+  }
+}
+
+class AbiEncodingLengthMismatchError extends BaseError3 {
+  constructor({ expectedLength, givenLength }) {
+    super([
+      "ABI encoding params/values length mismatch.",
+      `Expected length (params): ${expectedLength}`,
+      `Given length (values): ${givenLength}`
+    ].join(`
+`), { name: "AbiEncodingLengthMismatchError" });
+  }
+}
+
+class AbiEventSignatureEmptyTopicsError extends BaseError3 {
+  constructor({ docsPath }) {
+    super("Cannot extract event signature from empty topics.", {
+      docsPath,
+      name: "AbiEventSignatureEmptyTopicsError"
+    });
+  }
+}
+
+class AbiEventSignatureNotFoundError extends BaseError3 {
+  constructor(signature, { docsPath }) {
+    super([
+      `Encoded event signature "${signature}" not found on ABI.`,
+      "Make sure you are using the correct ABI and that the event exists on it.",
+      `You can look up the signature here: https://4byte.sourcify.dev/?q=${signature}.`
+    ].join(`
+`), {
+      docsPath,
+      name: "AbiEventSignatureNotFoundError"
+    });
+  }
+}
+
+class DecodeLogDataMismatch extends BaseError3 {
+  constructor({ abiItem, data, params, size: size2 }) {
+    super([
+      `Data size of ${size2} bytes is too small for non-indexed event parameters.`
+    ].join(`
+`), {
+      metaMessages: [
+        `Params: (${formatAbiParams(params, { includeName: true })})`,
+        `Data:   ${data} (${size2} bytes)`
+      ],
+      name: "DecodeLogDataMismatch"
+    });
+    Object.defineProperty(this, "abiItem", {
+      enumerable: true,
+      configurable: true,
+      writable: true,
+      value: undefined
+    });
+    Object.defineProperty(this, "data", {
+      enumerable: true,
+      configurable: true,
+      writable: true,
+      value: undefined
+    });
+    Object.defineProperty(this, "params", {
+      enumerable: true,
+      configurable: true,
+      writable: true,
+      value: undefined
+    });
+    Object.defineProperty(this, "size", {
+      enumerable: true,
+      configurable: true,
+      writable: true,
+      value: undefined
+    });
+    this.abiItem = abiItem;
+    this.data = data;
+    this.params = params;
+    this.size = size2;
+  }
+}
+
+class DecodeLogTopicsMismatch extends BaseError3 {
+  constructor({ abiItem, param }) {
+    super([
+      `Expected a topic for indexed event parameter${param.name ? ` "${param.name}"` : ""} on event "${formatAbiItem2(abiItem, { includeName: true })}".`
+    ].join(`
+`), { name: "DecodeLogTopicsMismatch" });
+    Object.defineProperty(this, "abiItem", {
+      enumerable: true,
+      configurable: true,
+      writable: true,
+      value: undefined
+    });
+    this.abiItem = abiItem;
+  }
+}
+
+class InvalidAbiEncodingTypeError extends BaseError3 {
+  constructor(type, { docsPath }) {
+    super([
+      `Type "${type}" is not a valid encoding type.`,
+      "Please provide a valid ABI type."
+    ].join(`
+`), { docsPath, name: "InvalidAbiEncodingType" });
+  }
+}
+
+class InvalidAbiDecodingTypeError extends BaseError3 {
+  constructor(type, { docsPath }) {
+    super([
+      `Type "${type}" is not a valid decoding type.`,
+      "Please provide a valid ABI type."
+    ].join(`
+`), { docsPath, name: "InvalidAbiDecodingType" });
+  }
+}
+
+class InvalidArrayError extends BaseError3 {
+  constructor(value2) {
+    super([`Value "${value2}" is not a valid array.`].join(`
+`), {
+      name: "InvalidArrayError"
+    });
+  }
+}
+
+class InvalidDefinitionTypeError extends BaseError3 {
+  constructor(type) {
+    super([
+      `"${type}" is not a valid definition type.`,
+      'Valid types: "function", "event", "error"'
+    ].join(`
+`), { name: "InvalidDefinitionTypeError" });
+  }
+}
+
+class NegativeOffsetError extends BaseError3 {
+  constructor({ offset }) {
+    super(`Offset \`${offset}\` cannot be negative.`, {
+      name: "NegativeOffsetError"
+    });
+  }
+}
+
+class PositionOutOfBoundsError extends BaseError3 {
+  constructor({ length, position }) {
+    super(`Position \`${position}\` is out of bounds (\`0 < position < ${length}\`).`, { name: "PositionOutOfBoundsError" });
+  }
+}
+
+class RecursiveReadLimitExceededError extends BaseError3 {
+  constructor({ count, limit }) {
+    super(`Recursive read limit of \`${limit}\` exceeded (recursive read count: \`${count}\`).`, { name: "RecursiveReadLimitExceededError" });
+  }
+}
+
+class SliceOffsetOutOfBoundsError extends BaseError3 {
+  constructor({ offset, position, size: size2 }) {
+    super(`Slice ${position === "start" ? "starting" : "ending"} at offset "${offset}" is out-of-bounds (size: ${size2}).`, { name: "SliceOffsetOutOfBoundsError" });
+  }
+}
+
+class SizeExceedsPaddingSizeError extends BaseError3 {
+  constructor({ size: size2, targetSize, type }) {
+    super(`${type.charAt(0).toUpperCase()}${type.slice(1).toLowerCase()} size (${size2}) exceeds padding size (${targetSize}).`, { name: "SizeExceedsPaddingSizeError" });
+  }
+}
+function pad(hexOrBytes, { dir, size: size2 = 32 } = {}) {
+  if (typeof hexOrBytes === "string")
+    return padHex(hexOrBytes, { dir, size: size2 });
+  return padBytes(hexOrBytes, { dir, size: size2 });
+}
+function padHex(hex_, { dir, size: size2 = 32 } = {}) {
+  if (size2 === null)
+    return hex_;
+  const hex = hex_.replace("0x", "");
+  if (hex.length > size2 * 2)
+    throw new SizeExceedsPaddingSizeError({
+      size: Math.ceil(hex.length / 2),
+      targetSize: size2,
+      type: "hex"
+    });
+  return `0x${hex[dir === "right" ? "padEnd" : "padStart"](size2 * 2, "0")}`;
+}
+function padBytes(bytes, { dir, size: size2 = 32 } = {}) {
+  if (size2 === null)
+    return bytes;
+  if (bytes.length > size2)
+    throw new SizeExceedsPaddingSizeError({
+      size: bytes.length,
+      targetSize: size2,
+      type: "bytes"
+    });
+  const paddedBytes = new Uint8Array(size2);
+  for (let i2 = 0;i2 < size2; i2++) {
+    const padEnd = dir === "right";
+    paddedBytes[padEnd ? i2 : size2 - i2 - 1] = bytes[padEnd ? i2 : bytes.length - i2 - 1];
+  }
+  return paddedBytes;
+}
+
+class IntegerOutOfRangeError extends BaseError3 {
+  constructor({ max, min, signed, size: size2, value: value2 }) {
+    super(`Number "${value2}" is not in safe ${size2 ? `${size2 * 8}-bit ${signed ? "signed" : "unsigned"} ` : ""}integer range ${max ? `(${min} to ${max})` : `(above ${min})`}`, { name: "IntegerOutOfRangeError" });
+  }
+}
+
+class InvalidBytesBooleanError extends BaseError3 {
+  constructor(bytes) {
+    super(`Bytes value "${bytes}" is not a valid boolean. The bytes array must contain a single byte of either a 0 or 1 value.`, {
+      name: "InvalidBytesBooleanError"
+    });
+  }
+}
+
+class SizeOverflowError extends BaseError3 {
+  constructor({ givenSize, maxSize }) {
+    super(`Size cannot exceed ${maxSize} bytes. Given size: ${givenSize} bytes.`, { name: "SizeOverflowError" });
+  }
+}
+function trim(hexOrBytes, { dir = "left" } = {}) {
+  let data = typeof hexOrBytes === "string" ? hexOrBytes.replace("0x", "") : hexOrBytes;
+  let sliceLength = 0;
+  for (let i2 = 0;i2 < data.length - 1; i2++) {
+    if (data[dir === "left" ? i2 : data.length - i2 - 1].toString() === "0")
+      sliceLength++;
+    else
+      break;
+  }
+  data = dir === "left" ? data.slice(sliceLength) : data.slice(0, data.length - sliceLength);
+  if (typeof hexOrBytes === "string") {
+    if (data.length === 1 && dir === "right")
+      data = `${data}0`;
+    return `0x${data.length % 2 === 1 ? `0${data}` : data}`;
+  }
+  return data;
+}
+function assertSize2(hexOrBytes, { size: size2 }) {
+  if (size(hexOrBytes) > size2)
+    throw new SizeOverflowError({
+      givenSize: size(hexOrBytes),
+      maxSize: size2
+    });
+}
+function hexToBigInt(hex, opts = {}) {
+  const { signed } = opts;
+  if (opts.size)
+    assertSize2(hex, { size: opts.size });
+  const value2 = BigInt(hex);
+  if (!signed)
+    return value2;
+  const size2 = (hex.length - 2) / 2;
+  const max = (1n << BigInt(size2) * 8n - 1n) - 1n;
+  if (value2 <= max)
+    return value2;
+  return value2 - BigInt(`0x${"f".padStart(size2 * 2, "f")}`) - 1n;
+}
+function hexToNumber(hex, opts = {}) {
+  const value2 = hexToBigInt(hex, opts);
+  const number = Number(value2);
+  if (!Number.isSafeInteger(number))
+    throw new IntegerOutOfRangeError({
+      max: `${Number.MAX_SAFE_INTEGER}`,
+      min: `${Number.MIN_SAFE_INTEGER}`,
+      signed: opts.signed,
+      size: opts.size,
+      value: `${value2}n`
+    });
+  return number;
+}
+var hexes = /* @__PURE__ */ Array.from({ length: 256 }, (_v, i2) => i2.toString(16).padStart(2, "0"));
+function toHex(value2, opts = {}) {
+  if (typeof value2 === "number" || typeof value2 === "bigint")
+    return numberToHex(value2, opts);
+  if (typeof value2 === "string") {
+    return stringToHex(value2, opts);
+  }
+  if (typeof value2 === "boolean")
+    return boolToHex(value2, opts);
+  return bytesToHex2(value2, opts);
+}
+function boolToHex(value2, opts = {}) {
+  const hex = `0x${Number(value2)}`;
+  if (typeof opts.size === "number") {
+    assertSize2(hex, { size: opts.size });
+    return pad(hex, { size: opts.size });
+  }
+  return hex;
+}
+function bytesToHex2(value2, opts = {}) {
+  let string = "";
+  for (let i2 = 0;i2 < value2.length; i2++) {
+    string += hexes[value2[i2]];
+  }
+  const hex = `0x${string}`;
+  if (typeof opts.size === "number") {
+    assertSize2(hex, { size: opts.size });
+    return pad(hex, { dir: "right", size: opts.size });
+  }
+  return hex;
+}
+function numberToHex(value_, opts = {}) {
+  const { signed, size: size2 } = opts;
+  const value2 = BigInt(value_);
+  let maxValue;
+  if (size2) {
+    if (signed)
+      maxValue = (1n << BigInt(size2) * 8n - 1n) - 1n;
+    else
+      maxValue = 2n ** (BigInt(size2) * 8n) - 1n;
+  } else if (typeof value_ === "number") {
+    maxValue = BigInt(Number.MAX_SAFE_INTEGER);
+  }
+  const minValue = typeof maxValue === "bigint" && signed ? -maxValue - 1n : 0;
+  if (maxValue && value2 > maxValue || value2 < minValue) {
+    const suffix = typeof value_ === "bigint" ? "n" : "";
+    throw new IntegerOutOfRangeError({
+      max: maxValue ? `${maxValue}${suffix}` : undefined,
+      min: `${minValue}${suffix}`,
+      signed,
+      size: size2,
+      value: `${value_}${suffix}`
+    });
+  }
+  const hex = `0x${(signed && value2 < 0 ? (1n << BigInt(size2 * 8)) + BigInt(value2) : value2).toString(16)}`;
+  if (size2)
+    return pad(hex, { size: size2 });
+  return hex;
+}
+var encoder = /* @__PURE__ */ new TextEncoder;
+function stringToHex(value_, opts = {}) {
+  const value2 = encoder.encode(value_);
+  return bytesToHex2(value2, opts);
+}
+var encoder2 = /* @__PURE__ */ new TextEncoder;
+function toBytes(value2, opts = {}) {
+  if (typeof value2 === "number" || typeof value2 === "bigint")
+    return numberToBytes(value2, opts);
+  if (typeof value2 === "boolean")
+    return boolToBytes(value2, opts);
+  if (isHex(value2))
+    return hexToBytes2(value2, opts);
+  return stringToBytes(value2, opts);
+}
+function boolToBytes(value2, opts = {}) {
+  const bytes = new Uint8Array(1);
+  bytes[0] = Number(value2);
+  if (typeof opts.size === "number") {
+    assertSize2(bytes, { size: opts.size });
+    return pad(bytes, { size: opts.size });
+  }
+  return bytes;
+}
+var charCodeMap = {
+  zero: 48,
+  nine: 57,
+  A: 65,
+  F: 70,
+  a: 97,
+  f: 102
+};
+function charCodeToBase16(char) {
+  if (char >= charCodeMap.zero && char <= charCodeMap.nine)
+    return char - charCodeMap.zero;
+  if (char >= charCodeMap.A && char <= charCodeMap.F)
+    return char - (charCodeMap.A - 10);
+  if (char >= charCodeMap.a && char <= charCodeMap.f)
+    return char - (charCodeMap.a - 10);
+  return;
+}
+function hexToBytes2(hex_, opts = {}) {
+  let hex = hex_;
+  if (opts.size) {
+    assertSize2(hex, { size: opts.size });
+    hex = pad(hex, { dir: "right", size: opts.size });
+  }
+  let hexString = hex.slice(2);
+  if (hexString.length % 2)
+    hexString = `0${hexString}`;
+  const length = hexString.length / 2;
+  const bytes = new Uint8Array(length);
+  for (let index = 0, j = 0;index < length; index++) {
+    const nibbleLeft = charCodeToBase16(hexString.charCodeAt(j++));
+    const nibbleRight = charCodeToBase16(hexString.charCodeAt(j++));
+    if (nibbleLeft === undefined || nibbleRight === undefined) {
+      throw new BaseError3(`Invalid byte sequence ("${hexString[j - 2]}${hexString[j - 1]}" in "${hexString}").`);
     }
-    function makeArgsIssue(args, error) {
-      return makeIssue2({
-        data: args,
-        path: ctx.path,
-        errorMaps: [ctx.common.contextualErrorMap, ctx.schemaErrorMap, getErrorMap2(), en_default2].filter((x) => !!x),
-        issueData: {
-          code: ZodIssueCode2.invalid_arguments,
-          argumentsError: error
+    bytes[index] = nibbleLeft * 16 + nibbleRight;
+  }
+  return bytes;
+}
+function numberToBytes(value2, opts) {
+  const hex = numberToHex(value2, opts);
+  return hexToBytes2(hex);
+}
+function stringToBytes(value2, opts = {}) {
+  const bytes = encoder2.encode(value2);
+  if (typeof opts.size === "number") {
+    assertSize2(bytes, { size: opts.size });
+    return pad(bytes, { dir: "right", size: opts.size });
+  }
+  return bytes;
+}
+var U32_MASK64 = /* @__PURE__ */ BigInt(2 ** 32 - 1);
+var _32n = /* @__PURE__ */ BigInt(32);
+function fromBig(n, le = false) {
+  if (le)
+    return { h: Number(n & U32_MASK64), l: Number(n >> _32n & U32_MASK64) };
+  return { h: Number(n >> _32n & U32_MASK64) | 0, l: Number(n & U32_MASK64) | 0 };
+}
+function split(lst, le = false) {
+  const len2 = lst.length;
+  let Ah = new Uint32Array(len2);
+  let Al = new Uint32Array(len2);
+  for (let i2 = 0;i2 < len2; i2++) {
+    const { h, l } = fromBig(lst[i2], le);
+    [Ah[i2], Al[i2]] = [h, l];
+  }
+  return [Ah, Al];
+}
+var rotlSH = (h, l, s) => h << s | l >>> 32 - s;
+var rotlSL = (h, l, s) => l << s | h >>> 32 - s;
+var rotlBH = (h, l, s) => l << s - 32 | h >>> 64 - s;
+var rotlBL = (h, l, s) => h << s - 32 | l >>> 64 - s;
+/*! noble-hashes - MIT License (c) 2022 Paul Miller (paulmillr.com) */
+function isBytes(a) {
+  return a instanceof Uint8Array || ArrayBuffer.isView(a) && a.constructor.name === "Uint8Array";
+}
+function anumber(n) {
+  if (!Number.isSafeInteger(n) || n < 0)
+    throw new Error("positive integer expected, got " + n);
+}
+function abytes(b, ...lengths) {
+  if (!isBytes(b))
+    throw new Error("Uint8Array expected");
+  if (lengths.length > 0 && !lengths.includes(b.length))
+    throw new Error("Uint8Array expected of length " + lengths + ", got length=" + b.length);
+}
+function aexists(instance, checkFinished = true) {
+  if (instance.destroyed)
+    throw new Error("Hash instance has been destroyed");
+  if (checkFinished && instance.finished)
+    throw new Error("Hash#digest() has already been called");
+}
+function aoutput(out, instance) {
+  abytes(out);
+  const min = instance.outputLen;
+  if (out.length < min) {
+    throw new Error("digestInto() expects output buffer of length at least " + min);
+  }
+}
+function u32(arr) {
+  return new Uint32Array(arr.buffer, arr.byteOffset, Math.floor(arr.byteLength / 4));
+}
+function clean(...arrays) {
+  for (let i2 = 0;i2 < arrays.length; i2++) {
+    arrays[i2].fill(0);
+  }
+}
+var isLE = /* @__PURE__ */ (() => new Uint8Array(new Uint32Array([287454020]).buffer)[0] === 68)();
+function byteSwap(word) {
+  return word << 24 & 4278190080 | word << 8 & 16711680 | word >>> 8 & 65280 | word >>> 24 & 255;
+}
+function byteSwap32(arr) {
+  for (let i2 = 0;i2 < arr.length; i2++) {
+    arr[i2] = byteSwap(arr[i2]);
+  }
+  return arr;
+}
+var swap32IfBE = isLE ? (u) => u : byteSwap32;
+function utf8ToBytes2(str) {
+  if (typeof str !== "string")
+    throw new Error("string expected");
+  return new Uint8Array(new TextEncoder().encode(str));
+}
+function toBytes2(data) {
+  if (typeof data === "string")
+    data = utf8ToBytes2(data);
+  abytes(data);
+  return data;
+}
+
+class Hash {
+}
+function createHasher(hashCons) {
+  const hashC = (msg) => hashCons().update(toBytes2(msg)).digest();
+  const tmp = hashCons();
+  hashC.outputLen = tmp.outputLen;
+  hashC.blockLen = tmp.blockLen;
+  hashC.create = () => hashCons();
+  return hashC;
+}
+var _0n = BigInt(0);
+var _1n = BigInt(1);
+var _2n = BigInt(2);
+var _7n = BigInt(7);
+var _256n = BigInt(256);
+var _0x71n = BigInt(113);
+var SHA3_PI = [];
+var SHA3_ROTL = [];
+var _SHA3_IOTA = [];
+for (let round = 0, R = _1n, x = 1, y = 0;round < 24; round++) {
+  [x, y] = [y, (2 * x + 3 * y) % 5];
+  SHA3_PI.push(2 * (5 * y + x));
+  SHA3_ROTL.push((round + 1) * (round + 2) / 2 % 64);
+  let t = _0n;
+  for (let j = 0;j < 7; j++) {
+    R = (R << _1n ^ (R >> _7n) * _0x71n) % _256n;
+    if (R & _2n)
+      t ^= _1n << (_1n << /* @__PURE__ */ BigInt(j)) - _1n;
+  }
+  _SHA3_IOTA.push(t);
+}
+var IOTAS = split(_SHA3_IOTA, true);
+var SHA3_IOTA_H = IOTAS[0];
+var SHA3_IOTA_L = IOTAS[1];
+var rotlH = (h, l, s) => s > 32 ? rotlBH(h, l, s) : rotlSH(h, l, s);
+var rotlL = (h, l, s) => s > 32 ? rotlBL(h, l, s) : rotlSL(h, l, s);
+function keccakP(s, rounds = 24) {
+  const B = new Uint32Array(5 * 2);
+  for (let round = 24 - rounds;round < 24; round++) {
+    for (let x = 0;x < 10; x++)
+      B[x] = s[x] ^ s[x + 10] ^ s[x + 20] ^ s[x + 30] ^ s[x + 40];
+    for (let x = 0;x < 10; x += 2) {
+      const idx1 = (x + 8) % 10;
+      const idx0 = (x + 2) % 10;
+      const B0 = B[idx0];
+      const B1 = B[idx0 + 1];
+      const Th = rotlH(B0, B1, 1) ^ B[idx1];
+      const Tl = rotlL(B0, B1, 1) ^ B[idx1 + 1];
+      for (let y = 0;y < 50; y += 10) {
+        s[x + y] ^= Th;
+        s[x + y + 1] ^= Tl;
+      }
+    }
+    let curH = s[2];
+    let curL = s[3];
+    for (let t = 0;t < 24; t++) {
+      const shift = SHA3_ROTL[t];
+      const Th = rotlH(curH, curL, shift);
+      const Tl = rotlL(curH, curL, shift);
+      const PI = SHA3_PI[t];
+      curH = s[PI];
+      curL = s[PI + 1];
+      s[PI] = Th;
+      s[PI + 1] = Tl;
+    }
+    for (let y = 0;y < 50; y += 10) {
+      for (let x = 0;x < 10; x++)
+        B[x] = s[y + x];
+      for (let x = 0;x < 10; x++)
+        s[y + x] ^= ~B[(x + 2) % 10] & B[(x + 4) % 10];
+    }
+    s[0] ^= SHA3_IOTA_H[round];
+    s[1] ^= SHA3_IOTA_L[round];
+  }
+  clean(B);
+}
+
+class Keccak extends Hash {
+  constructor(blockLen, suffix, outputLen, enableXOF = false, rounds = 24) {
+    super();
+    this.pos = 0;
+    this.posOut = 0;
+    this.finished = false;
+    this.destroyed = false;
+    this.enableXOF = false;
+    this.blockLen = blockLen;
+    this.suffix = suffix;
+    this.outputLen = outputLen;
+    this.enableXOF = enableXOF;
+    this.rounds = rounds;
+    anumber(outputLen);
+    if (!(0 < blockLen && blockLen < 200))
+      throw new Error("only keccak-f1600 function is supported");
+    this.state = new Uint8Array(200);
+    this.state32 = u32(this.state);
+  }
+  clone() {
+    return this._cloneInto();
+  }
+  keccak() {
+    swap32IfBE(this.state32);
+    keccakP(this.state32, this.rounds);
+    swap32IfBE(this.state32);
+    this.posOut = 0;
+    this.pos = 0;
+  }
+  update(data) {
+    aexists(this);
+    data = toBytes2(data);
+    abytes(data);
+    const { blockLen, state } = this;
+    const len2 = data.length;
+    for (let pos = 0;pos < len2; ) {
+      const take = Math.min(blockLen - this.pos, len2 - pos);
+      for (let i2 = 0;i2 < take; i2++)
+        state[this.pos++] ^= data[pos++];
+      if (this.pos === blockLen)
+        this.keccak();
+    }
+    return this;
+  }
+  finish() {
+    if (this.finished)
+      return;
+    this.finished = true;
+    const { state, suffix, pos, blockLen } = this;
+    state[pos] ^= suffix;
+    if ((suffix & 128) !== 0 && pos === blockLen - 1)
+      this.keccak();
+    state[blockLen - 1] ^= 128;
+    this.keccak();
+  }
+  writeInto(out) {
+    aexists(this, false);
+    abytes(out);
+    this.finish();
+    const bufferOut = this.state;
+    const { blockLen } = this;
+    for (let pos = 0, len2 = out.length;pos < len2; ) {
+      if (this.posOut >= blockLen)
+        this.keccak();
+      const take = Math.min(blockLen - this.posOut, len2 - pos);
+      out.set(bufferOut.subarray(this.posOut, this.posOut + take), pos);
+      this.posOut += take;
+      pos += take;
+    }
+    return out;
+  }
+  xofInto(out) {
+    if (!this.enableXOF)
+      throw new Error("XOF is not possible for this instance");
+    return this.writeInto(out);
+  }
+  xof(bytes) {
+    anumber(bytes);
+    return this.xofInto(new Uint8Array(bytes));
+  }
+  digestInto(out) {
+    aoutput(out, this);
+    if (this.finished)
+      throw new Error("digest() was already called");
+    this.writeInto(out);
+    this.destroy();
+    return out;
+  }
+  digest() {
+    return this.digestInto(new Uint8Array(this.outputLen));
+  }
+  destroy() {
+    this.destroyed = true;
+    clean(this.state);
+  }
+  _cloneInto(to) {
+    const { blockLen, suffix, outputLen, rounds, enableXOF } = this;
+    to || (to = new Keccak(blockLen, suffix, outputLen, enableXOF, rounds));
+    to.state32.set(this.state32);
+    to.pos = this.pos;
+    to.posOut = this.posOut;
+    to.finished = this.finished;
+    to.rounds = rounds;
+    to.suffix = suffix;
+    to.outputLen = outputLen;
+    to.enableXOF = enableXOF;
+    to.destroyed = this.destroyed;
+    return to;
+  }
+}
+var gen = (suffix, blockLen, outputLen) => createHasher(() => new Keccak(blockLen, suffix, outputLen));
+var keccak_256 = /* @__PURE__ */ (() => gen(1, 136, 256 / 8))();
+function keccak256(value2, to_) {
+  const to = to_ || "hex";
+  const bytes = keccak_256(isHex(value2, { strict: false }) ? toBytes(value2) : value2);
+  if (to === "bytes")
+    return bytes;
+  return toHex(bytes);
+}
+var hash = (value2) => keccak256(toBytes(value2));
+function hashSignature(sig) {
+  return hash(sig);
+}
+function normalizeSignature(signature) {
+  let active = true;
+  let current = "";
+  let level = 0;
+  let result = "";
+  let valid = false;
+  for (let i2 = 0;i2 < signature.length; i2++) {
+    const char = signature[i2];
+    if (["(", ")", ","].includes(char))
+      active = true;
+    if (char === "(")
+      level++;
+    if (char === ")")
+      level--;
+    if (!active)
+      continue;
+    if (level === 0) {
+      if (char === " " && ["event", "function", ""].includes(result))
+        result = "";
+      else {
+        result += char;
+        if (char === ")") {
+          valid = true;
+          break;
         }
-      });
+      }
+      continue;
     }
-    function makeReturnsIssue(returns, error) {
-      return makeIssue2({
-        data: returns,
-        path: ctx.path,
-        errorMaps: [ctx.common.contextualErrorMap, ctx.schemaErrorMap, getErrorMap2(), en_default2].filter((x) => !!x),
-        issueData: {
-          code: ZodIssueCode2.invalid_return_type,
-          returnTypeError: error
-        }
-      });
+    if (char === " ") {
+      if (signature[i2 - 1] !== "," && current !== "," && current !== ",(") {
+        current = "";
+        active = false;
+      }
+      continue;
     }
-    const params = { errorMap: ctx.common.contextualErrorMap };
-    const fn = ctx.data;
-    if (this._def.returns instanceof ZodPromise2) {
-      const me = this;
-      return OK2(async function(...args) {
-        const error = new ZodError3([]);
-        const parsedArgs = await me._def.args.parseAsync(args, params).catch((e) => {
-          error.addIssue(makeArgsIssue(args, e));
-          throw error;
-        });
-        const result = await Reflect.apply(fn, this, parsedArgs);
-        const parsedReturns = await me._def.returns._def.type.parseAsync(result, params).catch((e) => {
-          error.addIssue(makeReturnsIssue(result, e));
-          throw error;
-        });
-        return parsedReturns;
+    result += char;
+    current += char;
+  }
+  if (!valid)
+    throw new BaseError3("Unable to normalize signature.");
+  return result;
+}
+var toSignature = (def) => {
+  const def_ = (() => {
+    if (typeof def === "string")
+      return def;
+    return formatAbiItem(def);
+  })();
+  return normalizeSignature(def_);
+};
+function toSignatureHash(fn) {
+  return hashSignature(toSignature(fn));
+}
+var toEventSelector = toSignatureHash;
+
+class InvalidAddressError extends BaseError3 {
+  constructor({ address }) {
+    super(`Address "${address}" is invalid.`, {
+      metaMessages: [
+        "- Address must be a hex value of 20 bytes (40 hex characters).",
+        "- Address must match its checksum counterpart."
+      ],
+      name: "InvalidAddressError"
+    });
+  }
+}
+
+class LruMap extends Map {
+  constructor(size2) {
+    super();
+    Object.defineProperty(this, "maxSize", {
+      enumerable: true,
+      configurable: true,
+      writable: true,
+      value: undefined
+    });
+    this.maxSize = size2;
+  }
+  get(key) {
+    const value2 = super.get(key);
+    if (super.has(key) && value2 !== undefined) {
+      this.delete(key);
+      super.set(key, value2);
+    }
+    return value2;
+  }
+  set(key, value2) {
+    super.set(key, value2);
+    if (this.maxSize && this.size > this.maxSize) {
+      const firstKey = this.keys().next().value;
+      if (firstKey)
+        this.delete(firstKey);
+    }
+    return this;
+  }
+}
+var addressRegex = /^0x[a-fA-F0-9]{40}$/;
+var isAddressCache = /* @__PURE__ */ new LruMap(8192);
+function isAddress(address, options) {
+  const { strict = true } = options ?? {};
+  const cacheKey = `${address}.${strict}`;
+  if (isAddressCache.has(cacheKey))
+    return isAddressCache.get(cacheKey);
+  const result = (() => {
+    if (!addressRegex.test(address))
+      return false;
+    if (address.toLowerCase() === address)
+      return true;
+    if (strict)
+      return checksumAddress(address) === address;
+    return true;
+  })();
+  isAddressCache.set(cacheKey, result);
+  return result;
+}
+var checksumAddressCache = /* @__PURE__ */ new LruMap(8192);
+function checksumAddress(address_, chainId) {
+  if (checksumAddressCache.has(`${address_}.${chainId}`))
+    return checksumAddressCache.get(`${address_}.${chainId}`);
+  const hexAddress = chainId ? `${chainId}${address_.toLowerCase()}` : address_.substring(2).toLowerCase();
+  const hash2 = keccak256(stringToBytes(hexAddress), "bytes");
+  const address = (chainId ? hexAddress.substring(`${chainId}0x`.length) : hexAddress).split("");
+  for (let i2 = 0;i2 < 40; i2 += 2) {
+    if (hash2[i2 >> 1] >> 4 >= 8 && address[i2]) {
+      address[i2] = address[i2].toUpperCase();
+    }
+    if ((hash2[i2 >> 1] & 15) >= 8 && address[i2 + 1]) {
+      address[i2 + 1] = address[i2 + 1].toUpperCase();
+    }
+  }
+  const result = `0x${address.join("")}`;
+  checksumAddressCache.set(`${address_}.${chainId}`, result);
+  return result;
+}
+var staticCursor = {
+  bytes: new Uint8Array,
+  dataView: new DataView(new ArrayBuffer(0)),
+  position: 0,
+  positionReadCount: new Map,
+  recursiveReadCount: 0,
+  recursiveReadLimit: Number.POSITIVE_INFINITY,
+  assertReadLimit() {
+    if (this.recursiveReadCount >= this.recursiveReadLimit)
+      throw new RecursiveReadLimitExceededError({
+        count: this.recursiveReadCount + 1,
+        limit: this.recursiveReadLimit
       });
+  },
+  assertPosition(position) {
+    if (position < 0 || position > this.bytes.length - 1)
+      throw new PositionOutOfBoundsError({
+        length: this.bytes.length,
+        position
+      });
+  },
+  decrementPosition(offset) {
+    if (offset < 0)
+      throw new NegativeOffsetError({ offset });
+    const position = this.position - offset;
+    this.assertPosition(position);
+    this.position = position;
+  },
+  getReadCount(position) {
+    return this.positionReadCount.get(position || this.position) || 0;
+  },
+  incrementPosition(offset) {
+    if (offset < 0)
+      throw new NegativeOffsetError({ offset });
+    const position = this.position + offset;
+    this.assertPosition(position);
+    this.position = position;
+  },
+  inspectByte(position_) {
+    const position = position_ ?? this.position;
+    this.assertPosition(position);
+    return this.bytes[position];
+  },
+  inspectBytes(length, position_) {
+    const position = position_ ?? this.position;
+    this.assertPosition(position + length - 1);
+    return this.bytes.subarray(position, position + length);
+  },
+  inspectUint8(position_) {
+    const position = position_ ?? this.position;
+    this.assertPosition(position);
+    return this.bytes[position];
+  },
+  inspectUint16(position_) {
+    const position = position_ ?? this.position;
+    this.assertPosition(position + 1);
+    return this.dataView.getUint16(position);
+  },
+  inspectUint24(position_) {
+    const position = position_ ?? this.position;
+    this.assertPosition(position + 2);
+    return (this.dataView.getUint16(position) << 8) + this.dataView.getUint8(position + 2);
+  },
+  inspectUint32(position_) {
+    const position = position_ ?? this.position;
+    this.assertPosition(position + 3);
+    return this.dataView.getUint32(position);
+  },
+  pushByte(byte) {
+    this.assertPosition(this.position);
+    this.bytes[this.position] = byte;
+    this.position++;
+  },
+  pushBytes(bytes) {
+    this.assertPosition(this.position + bytes.length - 1);
+    this.bytes.set(bytes, this.position);
+    this.position += bytes.length;
+  },
+  pushUint8(value2) {
+    this.assertPosition(this.position);
+    this.bytes[this.position] = value2;
+    this.position++;
+  },
+  pushUint16(value2) {
+    this.assertPosition(this.position + 1);
+    this.dataView.setUint16(this.position, value2);
+    this.position += 2;
+  },
+  pushUint24(value2) {
+    this.assertPosition(this.position + 2);
+    this.dataView.setUint16(this.position, value2 >> 8);
+    this.dataView.setUint8(this.position + 2, value2 & ~4294967040);
+    this.position += 3;
+  },
+  pushUint32(value2) {
+    this.assertPosition(this.position + 3);
+    this.dataView.setUint32(this.position, value2);
+    this.position += 4;
+  },
+  readByte() {
+    this.assertReadLimit();
+    this._touch();
+    const value2 = this.inspectByte();
+    this.position++;
+    return value2;
+  },
+  readBytes(length, size2) {
+    this.assertReadLimit();
+    this._touch();
+    const value2 = this.inspectBytes(length);
+    this.position += size2 ?? length;
+    return value2;
+  },
+  readUint8() {
+    this.assertReadLimit();
+    this._touch();
+    const value2 = this.inspectUint8();
+    this.position += 1;
+    return value2;
+  },
+  readUint16() {
+    this.assertReadLimit();
+    this._touch();
+    const value2 = this.inspectUint16();
+    this.position += 2;
+    return value2;
+  },
+  readUint24() {
+    this.assertReadLimit();
+    this._touch();
+    const value2 = this.inspectUint24();
+    this.position += 3;
+    return value2;
+  },
+  readUint32() {
+    this.assertReadLimit();
+    this._touch();
+    const value2 = this.inspectUint32();
+    this.position += 4;
+    return value2;
+  },
+  get remaining() {
+    return this.bytes.length - this.position;
+  },
+  setPosition(position) {
+    const oldPosition = this.position;
+    this.assertPosition(position);
+    this.position = position;
+    return () => this.position = oldPosition;
+  },
+  _touch() {
+    if (this.recursiveReadLimit === Number.POSITIVE_INFINITY)
+      return;
+    const count = this.getReadCount();
+    this.positionReadCount.set(this.position, count + 1);
+    if (count > 0)
+      this.recursiveReadCount++;
+  }
+};
+function createCursor(bytes, { recursiveReadLimit = 8192 } = {}) {
+  const cursor = Object.create(staticCursor);
+  cursor.bytes = bytes;
+  cursor.dataView = new DataView(bytes.buffer ?? bytes, bytes.byteOffset, bytes.byteLength);
+  cursor.positionReadCount = new Map;
+  cursor.recursiveReadLimit = recursiveReadLimit;
+  return cursor;
+}
+function slice(value2, start, end, { strict } = {}) {
+  if (isHex(value2, { strict: false }))
+    return sliceHex(value2, start, end, {
+      strict
+    });
+  return sliceBytes(value2, start, end, {
+    strict
+  });
+}
+function assertStartOffset(value2, start) {
+  if (typeof start === "number" && start > 0 && start > size(value2) - 1)
+    throw new SliceOffsetOutOfBoundsError({
+      offset: start,
+      position: "start",
+      size: size(value2)
+    });
+}
+function assertEndOffset(value2, start, end) {
+  if (typeof start === "number" && typeof end === "number" && size(value2) !== end - start) {
+    throw new SliceOffsetOutOfBoundsError({
+      offset: end,
+      position: "end",
+      size: size(value2)
+    });
+  }
+}
+function sliceBytes(value_, start, end, { strict } = {}) {
+  assertStartOffset(value_, start);
+  const value2 = value_.slice(start, end);
+  if (strict)
+    assertEndOffset(value2, start, end);
+  return value2;
+}
+function sliceHex(value_, start, end, { strict } = {}) {
+  assertStartOffset(value_, start);
+  const value2 = `0x${value_.replace("0x", "").slice((start ?? 0) * 2, (end ?? value_.length) * 2)}`;
+  if (strict)
+    assertEndOffset(value2, start, end);
+  return value2;
+}
+function bytesToBigInt(bytes, opts = {}) {
+  if (typeof opts.size !== "undefined")
+    assertSize2(bytes, { size: opts.size });
+  const hex = bytesToHex2(bytes, opts);
+  return hexToBigInt(hex, opts);
+}
+function bytesToBool(bytes_, opts = {}) {
+  let bytes = bytes_;
+  if (typeof opts.size !== "undefined") {
+    assertSize2(bytes, { size: opts.size });
+    bytes = trim(bytes);
+  }
+  if (bytes.length > 1 || bytes[0] > 1)
+    throw new InvalidBytesBooleanError(bytes);
+  return Boolean(bytes[0]);
+}
+function bytesToNumber(bytes, opts = {}) {
+  if (typeof opts.size !== "undefined")
+    assertSize2(bytes, { size: opts.size });
+  const hex = bytesToHex2(bytes, opts);
+  return hexToNumber(hex, opts);
+}
+function bytesToString(bytes_, opts = {}) {
+  let bytes = bytes_;
+  if (typeof opts.size !== "undefined") {
+    assertSize2(bytes, { size: opts.size });
+    bytes = trim(bytes, { dir: "right" });
+  }
+  return new TextDecoder().decode(bytes);
+}
+function concat(values) {
+  if (typeof values[0] === "string")
+    return concatHex(values);
+  return concatBytes(values);
+}
+function concatBytes(values) {
+  let length = 0;
+  for (const arr of values) {
+    length += arr.length;
+  }
+  const result = new Uint8Array(length);
+  let offset = 0;
+  for (const arr of values) {
+    result.set(arr, offset);
+    offset += arr.length;
+  }
+  return result;
+}
+function concatHex(values) {
+  return `0x${values.reduce((acc, x) => acc + x.replace("0x", ""), "")}`;
+}
+var integerRegex2 = /^(u?int)(8|16|24|32|40|48|56|64|72|80|88|96|104|112|120|128|136|144|152|160|168|176|184|192|200|208|216|224|232|240|248|256)?$/;
+function encodeAbiParameters(params, values) {
+  if (params.length !== values.length)
+    throw new AbiEncodingLengthMismatchError({
+      expectedLength: params.length,
+      givenLength: values.length
+    });
+  const preparedParams = prepareParams({
+    params,
+    values
+  });
+  const data = encodeParams(preparedParams);
+  if (data.length === 0)
+    return "0x";
+  return data;
+}
+function prepareParams({ params, values }) {
+  const preparedParams = [];
+  for (let i2 = 0;i2 < params.length; i2++) {
+    preparedParams.push(prepareParam({ param: params[i2], value: values[i2] }));
+  }
+  return preparedParams;
+}
+function prepareParam({ param, value: value2 }) {
+  const arrayComponents = getArrayComponents(param.type);
+  if (arrayComponents) {
+    const [length, type] = arrayComponents;
+    return encodeArray(value2, { length, param: { ...param, type } });
+  }
+  if (param.type === "tuple") {
+    return encodeTuple(value2, {
+      param
+    });
+  }
+  if (param.type === "address") {
+    return encodeAddress(value2);
+  }
+  if (param.type === "bool") {
+    return encodeBool(value2);
+  }
+  if (param.type.startsWith("uint") || param.type.startsWith("int")) {
+    const signed = param.type.startsWith("int");
+    const [, , size2 = "256"] = integerRegex2.exec(param.type) ?? [];
+    return encodeNumber(value2, {
+      signed,
+      size: Number(size2)
+    });
+  }
+  if (param.type.startsWith("bytes")) {
+    return encodeBytes(value2, { param });
+  }
+  if (param.type === "string") {
+    return encodeString(value2);
+  }
+  throw new InvalidAbiEncodingTypeError(param.type, {
+    docsPath: "/docs/contract/encodeAbiParameters"
+  });
+}
+function encodeParams(preparedParams) {
+  let staticSize = 0;
+  for (let i2 = 0;i2 < preparedParams.length; i2++) {
+    const { dynamic, encoded } = preparedParams[i2];
+    if (dynamic)
+      staticSize += 32;
+    else
+      staticSize += size(encoded);
+  }
+  const staticParams = [];
+  const dynamicParams = [];
+  let dynamicSize = 0;
+  for (let i2 = 0;i2 < preparedParams.length; i2++) {
+    const { dynamic, encoded } = preparedParams[i2];
+    if (dynamic) {
+      staticParams.push(numberToHex(staticSize + dynamicSize, { size: 32 }));
+      dynamicParams.push(encoded);
+      dynamicSize += size(encoded);
     } else {
-      const me = this;
-      return OK2(function(...args) {
-        const parsedArgs = me._def.args.safeParse(args, params);
-        if (!parsedArgs.success) {
-          throw new ZodError3([makeArgsIssue(args, parsedArgs.error)]);
-        }
-        const result = Reflect.apply(fn, this, parsedArgs.data);
-        const parsedReturns = me._def.returns.safeParse(result, params);
-        if (!parsedReturns.success) {
-          throw new ZodError3([makeReturnsIssue(result, parsedReturns.error)]);
-        }
-        return parsedReturns.data;
-      });
+      staticParams.push(encoded);
     }
   }
-  parameters() {
-    return this._def.args;
-  }
-  returnType() {
-    return this._def.returns;
-  }
-  args(...items) {
-    return new ZodFunction2({
-      ...this._def,
-      args: ZodTuple2.create(items).rest(ZodUnknown2.create())
+  return concat([...staticParams, ...dynamicParams]);
+}
+function encodeAddress(value2) {
+  if (!isAddress(value2))
+    throw new InvalidAddressError({ address: value2 });
+  return { dynamic: false, encoded: padHex(value2.toLowerCase()) };
+}
+function encodeArray(value2, { length, param }) {
+  const dynamic = length === null;
+  if (!Array.isArray(value2))
+    throw new InvalidArrayError(value2);
+  if (!dynamic && value2.length !== length)
+    throw new AbiEncodingArrayLengthMismatchError({
+      expectedLength: length,
+      givenLength: value2.length,
+      type: `${param.type}[${length}]`
     });
+  let dynamicChild = false;
+  const preparedParams = [];
+  for (let i2 = 0;i2 < value2.length; i2++) {
+    const preparedParam = prepareParam({ param, value: value2[i2] });
+    if (preparedParam.dynamic)
+      dynamicChild = true;
+    preparedParams.push(preparedParam);
   }
-  returns(returnType) {
-    return new ZodFunction2({
-      ...this._def,
-      returns: returnType
+  if (dynamic || dynamicChild) {
+    const data = encodeParams(preparedParams);
+    if (dynamic) {
+      const length2 = numberToHex(preparedParams.length, { size: 32 });
+      return {
+        dynamic: true,
+        encoded: preparedParams.length > 0 ? concat([length2, data]) : length2
+      };
+    }
+    if (dynamicChild)
+      return { dynamic: true, encoded: data };
+  }
+  return {
+    dynamic: false,
+    encoded: concat(preparedParams.map(({ encoded }) => encoded))
+  };
+}
+function encodeBytes(value2, { param }) {
+  const [, paramSize] = param.type.split("bytes");
+  const bytesSize = size(value2);
+  if (!paramSize) {
+    let value_ = value2;
+    if (bytesSize % 32 !== 0)
+      value_ = padHex(value_, {
+        dir: "right",
+        size: Math.ceil((value2.length - 2) / 2 / 32) * 32
+      });
+    return {
+      dynamic: true,
+      encoded: concat([padHex(numberToHex(bytesSize, { size: 32 })), value_])
+    };
+  }
+  if (bytesSize !== Number.parseInt(paramSize, 10))
+    throw new AbiEncodingBytesSizeMismatchError({
+      expectedSize: Number.parseInt(paramSize, 10),
+      value: value2
     });
-  }
-  implement(func) {
-    const validatedFunc = this.parse(func);
-    return validatedFunc;
-  }
-  strictImplement(func) {
-    const validatedFunc = this.parse(func);
-    return validatedFunc;
-  }
-  static create(args, returns, params) {
-    return new ZodFunction2({
-      args: args ? args : ZodTuple2.create([]).rest(ZodUnknown2.create()),
-      returns: returns || ZodUnknown2.create(),
-      typeName: ZodFirstPartyTypeKind2.ZodFunction,
-      ...processCreateParams2(params)
-    });
-  }
+  return { dynamic: false, encoded: padHex(value2, { dir: "right" }) };
 }
-
-class ZodLazy2 extends ZodType2 {
-  get schema() {
-    return this._def.getter();
-  }
-  _parse(input) {
-    const { ctx } = this._processInputParams(input);
-    const lazySchema = this._def.getter();
-    return lazySchema._parse({ data: ctx.data, path: ctx.path, parent: ctx });
-  }
+function encodeBool(value2) {
+  if (typeof value2 !== "boolean")
+    throw new BaseError3(`Invalid boolean value: "${value2}" (type: ${typeof value2}). Expected: \`true\` or \`false\`.`);
+  return { dynamic: false, encoded: padHex(boolToHex(value2)) };
 }
-ZodLazy2.create = (getter, params) => {
-  return new ZodLazy2({
-    getter,
-    typeName: ZodFirstPartyTypeKind2.ZodLazy,
-    ...processCreateParams2(params)
-  });
-};
-
-class ZodLiteral2 extends ZodType2 {
-  _parse(input) {
-    if (input.data !== this._def.value) {
-      const ctx = this._getOrReturnCtx(input);
-      addIssueToContext2(ctx, {
-        received: ctx.data,
-        code: ZodIssueCode2.invalid_literal,
-        expected: this._def.value
+function encodeNumber(value2, { signed, size: size2 = 256 }) {
+  if (typeof size2 === "number") {
+    const max = 2n ** (BigInt(size2) - (signed ? 1n : 0n)) - 1n;
+    const min = signed ? -max - 1n : 0n;
+    if (value2 > max || value2 < min)
+      throw new IntegerOutOfRangeError({
+        max: max.toString(),
+        min: min.toString(),
+        signed,
+        size: size2 / 8,
+        value: value2.toString()
       });
-      return INVALID2;
-    }
-    return { status: "valid", value: input.data };
   }
-  get value() {
-    return this._def.value;
-  }
+  return {
+    dynamic: false,
+    encoded: numberToHex(value2, {
+      size: 32,
+      signed
+    })
+  };
 }
-ZodLiteral2.create = (value3, params) => {
-  return new ZodLiteral2({
-    value: value3,
-    typeName: ZodFirstPartyTypeKind2.ZodLiteral,
-    ...processCreateParams2(params)
-  });
-};
-function createZodEnum2(values, params) {
-  return new ZodEnum2({
-    values,
-    typeName: ZodFirstPartyTypeKind2.ZodEnum,
-    ...processCreateParams2(params)
-  });
-}
-
-class ZodEnum2 extends ZodType2 {
-  _parse(input) {
-    if (typeof input.data !== "string") {
-      const ctx = this._getOrReturnCtx(input);
-      const expectedValues = this._def.values;
-      addIssueToContext2(ctx, {
-        expected: util3.joinValues(expectedValues),
-        received: ctx.parsedType,
-        code: ZodIssueCode2.invalid_type
-      });
-      return INVALID2;
-    }
-    if (!this._cache) {
-      this._cache = new Set(this._def.values);
-    }
-    if (!this._cache.has(input.data)) {
-      const ctx = this._getOrReturnCtx(input);
-      const expectedValues = this._def.values;
-      addIssueToContext2(ctx, {
-        received: ctx.data,
-        code: ZodIssueCode2.invalid_enum_value,
-        options: expectedValues
-      });
-      return INVALID2;
-    }
-    return OK2(input.data);
-  }
-  get options() {
-    return this._def.values;
-  }
-  get enum() {
-    const enumValues = {};
-    for (const val of this._def.values) {
-      enumValues[val] = val;
-    }
-    return enumValues;
-  }
-  get Values() {
-    const enumValues = {};
-    for (const val of this._def.values) {
-      enumValues[val] = val;
-    }
-    return enumValues;
-  }
-  get Enum() {
-    const enumValues = {};
-    for (const val of this._def.values) {
-      enumValues[val] = val;
-    }
-    return enumValues;
-  }
-  extract(values, newDef = this._def) {
-    return ZodEnum2.create(values, {
-      ...this._def,
-      ...newDef
-    });
-  }
-  exclude(values, newDef = this._def) {
-    return ZodEnum2.create(this.options.filter((opt) => !values.includes(opt)), {
-      ...this._def,
-      ...newDef
-    });
-  }
-}
-ZodEnum2.create = createZodEnum2;
-
-class ZodNativeEnum2 extends ZodType2 {
-  _parse(input) {
-    const nativeEnumValues = util3.getValidEnumValues(this._def.values);
-    const ctx = this._getOrReturnCtx(input);
-    if (ctx.parsedType !== ZodParsedType2.string && ctx.parsedType !== ZodParsedType2.number) {
-      const expectedValues = util3.objectValues(nativeEnumValues);
-      addIssueToContext2(ctx, {
-        expected: util3.joinValues(expectedValues),
-        received: ctx.parsedType,
-        code: ZodIssueCode2.invalid_type
-      });
-      return INVALID2;
-    }
-    if (!this._cache) {
-      this._cache = new Set(util3.getValidEnumValues(this._def.values));
-    }
-    if (!this._cache.has(input.data)) {
-      const expectedValues = util3.objectValues(nativeEnumValues);
-      addIssueToContext2(ctx, {
-        received: ctx.data,
-        code: ZodIssueCode2.invalid_enum_value,
-        options: expectedValues
-      });
-      return INVALID2;
-    }
-    return OK2(input.data);
-  }
-  get enum() {
-    return this._def.values;
-  }
-}
-ZodNativeEnum2.create = (values, params) => {
-  return new ZodNativeEnum2({
-    values,
-    typeName: ZodFirstPartyTypeKind2.ZodNativeEnum,
-    ...processCreateParams2(params)
-  });
-};
-
-class ZodPromise2 extends ZodType2 {
-  unwrap() {
-    return this._def.type;
-  }
-  _parse(input) {
-    const { ctx } = this._processInputParams(input);
-    if (ctx.parsedType !== ZodParsedType2.promise && ctx.common.async === false) {
-      addIssueToContext2(ctx, {
-        code: ZodIssueCode2.invalid_type,
-        expected: ZodParsedType2.promise,
-        received: ctx.parsedType
-      });
-      return INVALID2;
-    }
-    const promisified = ctx.parsedType === ZodParsedType2.promise ? ctx.data : Promise.resolve(ctx.data);
-    return OK2(promisified.then((data) => {
-      return this._def.type.parseAsync(data, {
-        path: ctx.path,
-        errorMap: ctx.common.contextualErrorMap
-      });
+function encodeString(value2) {
+  const hexValue = stringToHex(value2);
+  const partsLength = Math.ceil(size(hexValue) / 32);
+  const parts = [];
+  for (let i2 = 0;i2 < partsLength; i2++) {
+    parts.push(padHex(slice(hexValue, i2 * 32, (i2 + 1) * 32), {
+      dir: "right"
     }));
   }
+  return {
+    dynamic: true,
+    encoded: concat([
+      padHex(numberToHex(size(hexValue), { size: 32 })),
+      ...parts
+    ])
+  };
 }
-ZodPromise2.create = (schema, params) => {
-  return new ZodPromise2({
-    type: schema,
-    typeName: ZodFirstPartyTypeKind2.ZodPromise,
-    ...processCreateParams2(params)
-  });
-};
-
-class ZodEffects2 extends ZodType2 {
-  innerType() {
-    return this._def.schema;
-  }
-  sourceType() {
-    return this._def.schema._def.typeName === ZodFirstPartyTypeKind2.ZodEffects ? this._def.schema.sourceType() : this._def.schema;
-  }
-  _parse(input) {
-    const { status, ctx } = this._processInputParams(input);
-    const effect = this._def.effect || null;
-    const checkCtx = {
-      addIssue: (arg) => {
-        addIssueToContext2(ctx, arg);
-        if (arg.fatal) {
-          status.abort();
-        } else {
-          status.dirty();
-        }
-      },
-      get path() {
-        return ctx.path;
-      }
-    };
-    checkCtx.addIssue = checkCtx.addIssue.bind(checkCtx);
-    if (effect.type === "preprocess") {
-      const processed = effect.transform(ctx.data, checkCtx);
-      if (ctx.common.async) {
-        return Promise.resolve(processed).then(async (processed2) => {
-          if (status.value === "aborted")
-            return INVALID2;
-          const result = await this._def.schema._parseAsync({
-            data: processed2,
-            path: ctx.path,
-            parent: ctx
-          });
-          if (result.status === "aborted")
-            return INVALID2;
-          if (result.status === "dirty")
-            return DIRTY2(result.value);
-          if (status.value === "dirty")
-            return DIRTY2(result.value);
-          return result;
-        });
-      } else {
-        if (status.value === "aborted")
-          return INVALID2;
-        const result = this._def.schema._parseSync({
-          data: processed,
-          path: ctx.path,
-          parent: ctx
-        });
-        if (result.status === "aborted")
-          return INVALID2;
-        if (result.status === "dirty")
-          return DIRTY2(result.value);
-        if (status.value === "dirty")
-          return DIRTY2(result.value);
-        return result;
-      }
-    }
-    if (effect.type === "refinement") {
-      const executeRefinement = (acc) => {
-        const result = effect.refinement(acc, checkCtx);
-        if (ctx.common.async) {
-          return Promise.resolve(result);
-        }
-        if (result instanceof Promise) {
-          throw new Error("Async refinement encountered during synchronous parse operation. Use .parseAsync instead.");
-        }
-        return acc;
-      };
-      if (ctx.common.async === false) {
-        const inner = this._def.schema._parseSync({
-          data: ctx.data,
-          path: ctx.path,
-          parent: ctx
-        });
-        if (inner.status === "aborted")
-          return INVALID2;
-        if (inner.status === "dirty")
-          status.dirty();
-        executeRefinement(inner.value);
-        return { status: status.value, value: inner.value };
-      } else {
-        return this._def.schema._parseAsync({ data: ctx.data, path: ctx.path, parent: ctx }).then((inner) => {
-          if (inner.status === "aborted")
-            return INVALID2;
-          if (inner.status === "dirty")
-            status.dirty();
-          return executeRefinement(inner.value).then(() => {
-            return { status: status.value, value: inner.value };
-          });
-        });
-      }
-    }
-    if (effect.type === "transform") {
-      if (ctx.common.async === false) {
-        const base = this._def.schema._parseSync({
-          data: ctx.data,
-          path: ctx.path,
-          parent: ctx
-        });
-        if (!isValid2(base))
-          return INVALID2;
-        const result = effect.transform(base.value, checkCtx);
-        if (result instanceof Promise) {
-          throw new Error(`Asynchronous transform encountered during synchronous parse operation. Use .parseAsync instead.`);
-        }
-        return { status: status.value, value: result };
-      } else {
-        return this._def.schema._parseAsync({ data: ctx.data, path: ctx.path, parent: ctx }).then((base) => {
-          if (!isValid2(base))
-            return INVALID2;
-          return Promise.resolve(effect.transform(base.value, checkCtx)).then((result) => ({
-            status: status.value,
-            value: result
-          }));
-        });
-      }
-    }
-    util3.assertNever(effect);
-  }
-}
-ZodEffects2.create = (schema, effect, params) => {
-  return new ZodEffects2({
-    schema,
-    typeName: ZodFirstPartyTypeKind2.ZodEffects,
-    effect,
-    ...processCreateParams2(params)
-  });
-};
-ZodEffects2.createWithPreprocess = (preprocess, schema, params) => {
-  return new ZodEffects2({
-    schema,
-    effect: { type: "preprocess", transform: preprocess },
-    typeName: ZodFirstPartyTypeKind2.ZodEffects,
-    ...processCreateParams2(params)
-  });
-};
-
-class ZodOptional2 extends ZodType2 {
-  _parse(input) {
-    const parsedType = this._getType(input);
-    if (parsedType === ZodParsedType2.undefined) {
-      return OK2(undefined);
-    }
-    return this._def.innerType._parse(input);
-  }
-  unwrap() {
-    return this._def.innerType;
-  }
-}
-ZodOptional2.create = (type, params) => {
-  return new ZodOptional2({
-    innerType: type,
-    typeName: ZodFirstPartyTypeKind2.ZodOptional,
-    ...processCreateParams2(params)
-  });
-};
-
-class ZodNullable2 extends ZodType2 {
-  _parse(input) {
-    const parsedType = this._getType(input);
-    if (parsedType === ZodParsedType2.null) {
-      return OK2(null);
-    }
-    return this._def.innerType._parse(input);
-  }
-  unwrap() {
-    return this._def.innerType;
-  }
-}
-ZodNullable2.create = (type, params) => {
-  return new ZodNullable2({
-    innerType: type,
-    typeName: ZodFirstPartyTypeKind2.ZodNullable,
-    ...processCreateParams2(params)
-  });
-};
-
-class ZodDefault2 extends ZodType2 {
-  _parse(input) {
-    const { ctx } = this._processInputParams(input);
-    let data = ctx.data;
-    if (ctx.parsedType === ZodParsedType2.undefined) {
-      data = this._def.defaultValue();
-    }
-    return this._def.innerType._parse({
-      data,
-      path: ctx.path,
-      parent: ctx
+function encodeTuple(value2, { param }) {
+  let dynamic = false;
+  const preparedParams = [];
+  for (let i2 = 0;i2 < param.components.length; i2++) {
+    const param_ = param.components[i2];
+    const index = Array.isArray(value2) ? i2 : param_.name;
+    const preparedParam = prepareParam({
+      param: param_,
+      value: value2[index]
     });
+    preparedParams.push(preparedParam);
+    if (preparedParam.dynamic)
+      dynamic = true;
   }
-  removeDefault() {
-    return this._def.innerType;
-  }
+  return {
+    dynamic,
+    encoded: dynamic ? encodeParams(preparedParams) : concat(preparedParams.map(({ encoded }) => encoded))
+  };
 }
-ZodDefault2.create = (type, params) => {
-  return new ZodDefault2({
-    innerType: type,
-    typeName: ZodFirstPartyTypeKind2.ZodDefault,
-    defaultValue: typeof params.default === "function" ? params.default : () => params.default,
-    ...processCreateParams2(params)
-  });
-};
-
-class ZodCatch2 extends ZodType2 {
-  _parse(input) {
-    const { ctx } = this._processInputParams(input);
-    const newCtx = {
-      ...ctx,
-      common: {
-        ...ctx.common,
-        issues: []
-      }
-    };
-    const result = this._def.innerType._parse({
-      data: newCtx.data,
-      path: newCtx.path,
-      parent: {
-        ...newCtx
-      }
+function getArrayComponents(type) {
+  const matches = type.match(/^(.*)\[(\d+)?\]$/);
+  return matches ? [matches[2] ? Number(matches[2]) : null, matches[1]] : undefined;
+}
+function decodeAbiParameters(params, data) {
+  const bytes = typeof data === "string" ? hexToBytes2(data) : data;
+  const cursor = createCursor(bytes);
+  if (size(bytes) === 0 && params.length > 0)
+    throw new AbiDecodingZeroDataError;
+  if (size(data) && size(data) < 32)
+    throw new AbiDecodingDataSizeTooSmallError({
+      data: typeof data === "string" ? data : bytesToHex2(data),
+      params,
+      size: size(data)
     });
-    if (isAsync2(result)) {
-      return result.then((result2) => {
-        return {
-          status: "valid",
-          value: result2.status === "valid" ? result2.value : this._def.catchValue({
-            get error() {
-              return new ZodError3(newCtx.common.issues);
-            },
-            input: newCtx.data
-          })
-        };
+  let consumed = 0;
+  const values = [];
+  for (let i2 = 0;i2 < params.length; ++i2) {
+    const param = params[i2];
+    cursor.setPosition(consumed);
+    const [data2, consumed_] = decodeParameter(cursor, param, {
+      staticPosition: 0
+    });
+    consumed += consumed_;
+    values.push(data2);
+  }
+  return values;
+}
+function decodeParameter(cursor, param, { staticPosition }) {
+  const arrayComponents = getArrayComponents(param.type);
+  if (arrayComponents) {
+    const [length, type] = arrayComponents;
+    return decodeArray(cursor, { ...param, type }, { length, staticPosition });
+  }
+  if (param.type === "tuple")
+    return decodeTuple(cursor, param, { staticPosition });
+  if (param.type === "address")
+    return decodeAddress(cursor);
+  if (param.type === "bool")
+    return decodeBool(cursor);
+  if (param.type.startsWith("bytes"))
+    return decodeBytes(cursor, param, { staticPosition });
+  if (param.type.startsWith("uint") || param.type.startsWith("int"))
+    return decodeNumber(cursor, param);
+  if (param.type === "string")
+    return decodeString(cursor, { staticPosition });
+  throw new InvalidAbiDecodingTypeError(param.type, {
+    docsPath: "/docs/contract/decodeAbiParameters"
+  });
+}
+var sizeOfLength = 32;
+var sizeOfOffset = 32;
+function decodeAddress(cursor) {
+  const value2 = cursor.readBytes(32);
+  return [checksumAddress(bytesToHex2(sliceBytes(value2, -20))), 32];
+}
+function decodeArray(cursor, param, { length, staticPosition }) {
+  if (!length) {
+    const offset = bytesToNumber(cursor.readBytes(sizeOfOffset));
+    const start = staticPosition + offset;
+    const startOfData = start + sizeOfLength;
+    cursor.setPosition(start);
+    const length2 = bytesToNumber(cursor.readBytes(sizeOfLength));
+    const dynamicChild = hasDynamicChild(param);
+    let consumed2 = 0;
+    const value3 = [];
+    for (let i2 = 0;i2 < length2; ++i2) {
+      cursor.setPosition(startOfData + (dynamicChild ? i2 * 32 : consumed2));
+      const [data, consumed_] = decodeParameter(cursor, param, {
+        staticPosition: startOfData
       });
-    } else {
-      return {
-        status: "valid",
-        value: result.status === "valid" ? result.value : this._def.catchValue({
-          get error() {
-            return new ZodError3(newCtx.common.issues);
-          },
-          input: newCtx.data
-        })
-      };
+      consumed2 += consumed_;
+      value3.push(data);
     }
+    cursor.setPosition(staticPosition + 32);
+    return [value3, 32];
   }
-  removeCatch() {
-    return this._def.innerType;
-  }
-}
-ZodCatch2.create = (type, params) => {
-  return new ZodCatch2({
-    innerType: type,
-    typeName: ZodFirstPartyTypeKind2.ZodCatch,
-    catchValue: typeof params.catch === "function" ? params.catch : () => params.catch,
-    ...processCreateParams2(params)
-  });
-};
-
-class ZodNaN2 extends ZodType2 {
-  _parse(input) {
-    const parsedType = this._getType(input);
-    if (parsedType !== ZodParsedType2.nan) {
-      const ctx = this._getOrReturnCtx(input);
-      addIssueToContext2(ctx, {
-        code: ZodIssueCode2.invalid_type,
-        expected: ZodParsedType2.nan,
-        received: ctx.parsedType
+  if (hasDynamicChild(param)) {
+    const offset = bytesToNumber(cursor.readBytes(sizeOfOffset));
+    const start = staticPosition + offset;
+    const value3 = [];
+    for (let i2 = 0;i2 < length; ++i2) {
+      cursor.setPosition(start + i2 * 32);
+      const [data] = decodeParameter(cursor, param, {
+        staticPosition: start
       });
-      return INVALID2;
+      value3.push(data);
     }
-    return { status: "valid", value: input.data };
+    cursor.setPosition(staticPosition + 32);
+    return [value3, 32];
   }
+  let consumed = 0;
+  const value2 = [];
+  for (let i2 = 0;i2 < length; ++i2) {
+    const [data, consumed_] = decodeParameter(cursor, param, {
+      staticPosition: staticPosition + consumed
+    });
+    consumed += consumed_;
+    value2.push(data);
+  }
+  return [value2, consumed];
 }
-ZodNaN2.create = (params) => {
-  return new ZodNaN2({
-    typeName: ZodFirstPartyTypeKind2.ZodNaN,
-    ...processCreateParams2(params)
-  });
-};
-var BRAND2 = Symbol("zod_brand");
-
-class ZodBranded2 extends ZodType2 {
-  _parse(input) {
-    const { ctx } = this._processInputParams(input);
-    const data = ctx.data;
-    return this._def.type._parse({
-      data,
-      path: ctx.path,
-      parent: ctx
+function decodeBool(cursor) {
+  return [bytesToBool(cursor.readBytes(32), { size: 32 }), 32];
+}
+function decodeBytes(cursor, param, { staticPosition }) {
+  const [_, size2] = param.type.split("bytes");
+  if (!size2) {
+    const offset = bytesToNumber(cursor.readBytes(32));
+    cursor.setPosition(staticPosition + offset);
+    const length = bytesToNumber(cursor.readBytes(32));
+    if (length === 0) {
+      cursor.setPosition(staticPosition + 32);
+      return ["0x", 32];
+    }
+    const data = cursor.readBytes(length);
+    cursor.setPosition(staticPosition + 32);
+    return [bytesToHex2(data), 32];
+  }
+  const value2 = bytesToHex2(cursor.readBytes(Number.parseInt(size2, 10), 32));
+  return [value2, 32];
+}
+function decodeNumber(cursor, param) {
+  const signed = param.type.startsWith("int");
+  const size2 = Number.parseInt(param.type.split("int")[1] || "256", 10);
+  const value2 = cursor.readBytes(32);
+  return [
+    size2 > 48 ? bytesToBigInt(value2, { signed }) : bytesToNumber(value2, { signed }),
+    32
+  ];
+}
+function decodeTuple(cursor, param, { staticPosition }) {
+  const hasUnnamedChild = param.components.length === 0 || param.components.some(({ name }) => !name);
+  const value2 = hasUnnamedChild ? [] : {};
+  let consumed = 0;
+  if (hasDynamicChild(param)) {
+    const offset = bytesToNumber(cursor.readBytes(sizeOfOffset));
+    const start = staticPosition + offset;
+    for (let i2 = 0;i2 < param.components.length; ++i2) {
+      const component = param.components[i2];
+      cursor.setPosition(start + consumed);
+      const [data, consumed_] = decodeParameter(cursor, component, {
+        staticPosition: start
+      });
+      consumed += consumed_;
+      value2[hasUnnamedChild ? i2 : component?.name] = data;
+    }
+    cursor.setPosition(staticPosition + 32);
+    return [value2, 32];
+  }
+  for (let i2 = 0;i2 < param.components.length; ++i2) {
+    const component = param.components[i2];
+    const [data, consumed_] = decodeParameter(cursor, component, {
+      staticPosition
+    });
+    value2[hasUnnamedChild ? i2 : component?.name] = data;
+    consumed += consumed_;
+  }
+  return [value2, consumed];
+}
+function decodeString(cursor, { staticPosition }) {
+  const offset = bytesToNumber(cursor.readBytes(32));
+  const start = staticPosition + offset;
+  cursor.setPosition(start);
+  const length = bytesToNumber(cursor.readBytes(32));
+  if (length === 0) {
+    cursor.setPosition(staticPosition + 32);
+    return ["", 32];
+  }
+  const data = cursor.readBytes(length, 32);
+  const value2 = bytesToString(trim(data));
+  cursor.setPosition(staticPosition + 32);
+  return [value2, 32];
+}
+function hasDynamicChild(param) {
+  const { type } = param;
+  if (type === "string")
+    return true;
+  if (type === "bytes")
+    return true;
+  if (type.endsWith("[]"))
+    return true;
+  if (type === "tuple")
+    return param.components?.some(hasDynamicChild);
+  const arrayComponents = getArrayComponents(param.type);
+  if (arrayComponents && hasDynamicChild({ ...param, type: arrayComponents[1] }))
+    return true;
+  return false;
+}
+var docsPath = "/docs/contract/decodeEventLog";
+function decodeEventLog(parameters) {
+  const { abi, data, strict: strict_, topics } = parameters;
+  const strict = strict_ ?? true;
+  const [signature, ...argTopics] = topics;
+  if (!signature)
+    throw new AbiEventSignatureEmptyTopicsError({ docsPath });
+  const abiItem = abi.find((x) => x.type === "event" && signature === toEventSelector(formatAbiItem2(x)));
+  if (!(abiItem && ("name" in abiItem)) || abiItem.type !== "event")
+    throw new AbiEventSignatureNotFoundError(signature, { docsPath });
+  const { name, inputs } = abiItem;
+  const isUnnamed = inputs?.some((x) => !(("name" in x) && x.name));
+  const args = isUnnamed ? [] : {};
+  const indexedInputs = inputs.map((x, i2) => [x, i2]).filter(([x]) => ("indexed" in x) && x.indexed);
+  const missingIndexedInputs = [];
+  for (let i2 = 0;i2 < indexedInputs.length; i2++) {
+    const [param, argIndex] = indexedInputs[i2];
+    const topic = argTopics[i2];
+    if (!topic) {
+      if (strict)
+        throw new DecodeLogTopicsMismatch({
+          abiItem,
+          param
+        });
+      missingIndexedInputs.push([param, argIndex]);
+      continue;
+    }
+    args[isUnnamed ? argIndex : param.name || argIndex] = decodeTopic({
+      param,
+      value: topic
     });
   }
-  unwrap() {
-    return this._def.type;
-  }
-}
-
-class ZodPipeline2 extends ZodType2 {
-  _parse(input) {
-    const { status, ctx } = this._processInputParams(input);
-    if (ctx.common.async) {
-      const handleAsync = async () => {
-        const inResult = await this._def.in._parseAsync({
-          data: ctx.data,
-          path: ctx.path,
-          parent: ctx
-        });
-        if (inResult.status === "aborted")
-          return INVALID2;
-        if (inResult.status === "dirty") {
-          status.dirty();
-          return DIRTY2(inResult.value);
-        } else {
-          return this._def.out._parseAsync({
-            data: inResult.value,
-            path: ctx.path,
-            parent: ctx
-          });
-        }
-      };
-      return handleAsync();
-    } else {
-      const inResult = this._def.in._parseSync({
-        data: ctx.data,
-        path: ctx.path,
-        parent: ctx
-      });
-      if (inResult.status === "aborted")
-        return INVALID2;
-      if (inResult.status === "dirty") {
-        status.dirty();
-        return {
-          status: "dirty",
-          value: inResult.value
-        };
-      } else {
-        return this._def.out._parseSync({
-          data: inResult.value,
-          path: ctx.path,
-          parent: ctx
-        });
-      }
-    }
-  }
-  static create(a, b) {
-    return new ZodPipeline2({
-      in: a,
-      out: b,
-      typeName: ZodFirstPartyTypeKind2.ZodPipeline
-    });
-  }
-}
-
-class ZodReadonly2 extends ZodType2 {
-  _parse(input) {
-    const result = this._def.innerType._parse(input);
-    const freeze = (data) => {
-      if (isValid2(data)) {
-        data.value = Object.freeze(data.value);
-      }
-      return data;
-    };
-    return isAsync2(result) ? result.then((data) => freeze(data)) : freeze(result);
-  }
-  unwrap() {
-    return this._def.innerType;
-  }
-}
-ZodReadonly2.create = (type, params) => {
-  return new ZodReadonly2({
-    innerType: type,
-    typeName: ZodFirstPartyTypeKind2.ZodReadonly,
-    ...processCreateParams2(params)
-  });
-};
-function cleanParams2(params, data) {
-  const p = typeof params === "function" ? params(data) : typeof params === "string" ? { message: params } : params;
-  const p2 = typeof p === "string" ? { message: p } : p;
-  return p2;
-}
-function custom2(check, _params = {}, fatal) {
-  if (check)
-    return ZodAny2.create().superRefine((data, ctx) => {
-      const r = check(data);
-      if (r instanceof Promise) {
-        return r.then((r2) => {
-          if (!r2) {
-            const params = cleanParams2(_params, data);
-            const _fatal = params.fatal ?? fatal ?? true;
-            ctx.addIssue({ code: "custom", ...params, fatal: _fatal });
+  const nonIndexedInputs = inputs.filter((x) => !(("indexed" in x) && x.indexed));
+  const inputsToDecode = strict ? nonIndexedInputs : [...missingIndexedInputs.map(([param]) => param), ...nonIndexedInputs];
+  if (inputsToDecode.length > 0) {
+    if (data && data !== "0x") {
+      try {
+        const decodedData = decodeAbiParameters(inputsToDecode, data);
+        if (decodedData) {
+          let dataIndex = 0;
+          if (!strict) {
+            for (const [param, argIndex] of missingIndexedInputs) {
+              args[isUnnamed ? argIndex : param.name || argIndex] = decodedData[dataIndex++];
+            }
           }
-        });
+          if (isUnnamed) {
+            for (let i2 = 0;i2 < inputs.length; i2++)
+              if (args[i2] === undefined && dataIndex < decodedData.length)
+                args[i2] = decodedData[dataIndex++];
+          } else
+            for (let i2 = 0;i2 < nonIndexedInputs.length; i2++)
+              args[nonIndexedInputs[i2].name] = decodedData[dataIndex++];
+        }
+      } catch (err) {
+        if (strict) {
+          if (err instanceof AbiDecodingDataSizeTooSmallError || err instanceof PositionOutOfBoundsError)
+            throw new DecodeLogDataMismatch({
+              abiItem,
+              data,
+              params: inputsToDecode,
+              size: size(data)
+            });
+          throw err;
+        }
       }
-      if (!r) {
-        const params = cleanParams2(_params, data);
-        const _fatal = params.fatal ?? fatal ?? true;
-        ctx.addIssue({ code: "custom", ...params, fatal: _fatal });
-      }
-      return;
-    });
-  return ZodAny2.create();
-}
-var late2 = {
-  object: ZodObject2.lazycreate
-};
-var ZodFirstPartyTypeKind2;
-(function(ZodFirstPartyTypeKind3) {
-  ZodFirstPartyTypeKind3["ZodString"] = "ZodString";
-  ZodFirstPartyTypeKind3["ZodNumber"] = "ZodNumber";
-  ZodFirstPartyTypeKind3["ZodNaN"] = "ZodNaN";
-  ZodFirstPartyTypeKind3["ZodBigInt"] = "ZodBigInt";
-  ZodFirstPartyTypeKind3["ZodBoolean"] = "ZodBoolean";
-  ZodFirstPartyTypeKind3["ZodDate"] = "ZodDate";
-  ZodFirstPartyTypeKind3["ZodSymbol"] = "ZodSymbol";
-  ZodFirstPartyTypeKind3["ZodUndefined"] = "ZodUndefined";
-  ZodFirstPartyTypeKind3["ZodNull"] = "ZodNull";
-  ZodFirstPartyTypeKind3["ZodAny"] = "ZodAny";
-  ZodFirstPartyTypeKind3["ZodUnknown"] = "ZodUnknown";
-  ZodFirstPartyTypeKind3["ZodNever"] = "ZodNever";
-  ZodFirstPartyTypeKind3["ZodVoid"] = "ZodVoid";
-  ZodFirstPartyTypeKind3["ZodArray"] = "ZodArray";
-  ZodFirstPartyTypeKind3["ZodObject"] = "ZodObject";
-  ZodFirstPartyTypeKind3["ZodUnion"] = "ZodUnion";
-  ZodFirstPartyTypeKind3["ZodDiscriminatedUnion"] = "ZodDiscriminatedUnion";
-  ZodFirstPartyTypeKind3["ZodIntersection"] = "ZodIntersection";
-  ZodFirstPartyTypeKind3["ZodTuple"] = "ZodTuple";
-  ZodFirstPartyTypeKind3["ZodRecord"] = "ZodRecord";
-  ZodFirstPartyTypeKind3["ZodMap"] = "ZodMap";
-  ZodFirstPartyTypeKind3["ZodSet"] = "ZodSet";
-  ZodFirstPartyTypeKind3["ZodFunction"] = "ZodFunction";
-  ZodFirstPartyTypeKind3["ZodLazy"] = "ZodLazy";
-  ZodFirstPartyTypeKind3["ZodLiteral"] = "ZodLiteral";
-  ZodFirstPartyTypeKind3["ZodEnum"] = "ZodEnum";
-  ZodFirstPartyTypeKind3["ZodEffects"] = "ZodEffects";
-  ZodFirstPartyTypeKind3["ZodNativeEnum"] = "ZodNativeEnum";
-  ZodFirstPartyTypeKind3["ZodOptional"] = "ZodOptional";
-  ZodFirstPartyTypeKind3["ZodNullable"] = "ZodNullable";
-  ZodFirstPartyTypeKind3["ZodDefault"] = "ZodDefault";
-  ZodFirstPartyTypeKind3["ZodCatch"] = "ZodCatch";
-  ZodFirstPartyTypeKind3["ZodPromise"] = "ZodPromise";
-  ZodFirstPartyTypeKind3["ZodBranded"] = "ZodBranded";
-  ZodFirstPartyTypeKind3["ZodPipeline"] = "ZodPipeline";
-  ZodFirstPartyTypeKind3["ZodReadonly"] = "ZodReadonly";
-})(ZodFirstPartyTypeKind2 || (ZodFirstPartyTypeKind2 = {}));
-var instanceOfType2 = (cls, params = {
-  message: `Input not instance of ${cls.name}`
-}) => custom2((data) => data instanceof cls, params);
-var stringType2 = ZodString2.create;
-var numberType2 = ZodNumber2.create;
-var nanType2 = ZodNaN2.create;
-var bigIntType2 = ZodBigInt2.create;
-var booleanType2 = ZodBoolean2.create;
-var dateType2 = ZodDate2.create;
-var symbolType2 = ZodSymbol2.create;
-var undefinedType2 = ZodUndefined2.create;
-var nullType2 = ZodNull2.create;
-var anyType2 = ZodAny2.create;
-var unknownType2 = ZodUnknown2.create;
-var neverType2 = ZodNever2.create;
-var voidType2 = ZodVoid2.create;
-var arrayType2 = ZodArray2.create;
-var objectType2 = ZodObject2.create;
-var strictObjectType2 = ZodObject2.strictCreate;
-var unionType2 = ZodUnion2.create;
-var discriminatedUnionType2 = ZodDiscriminatedUnion2.create;
-var intersectionType2 = ZodIntersection2.create;
-var tupleType2 = ZodTuple2.create;
-var recordType2 = ZodRecord2.create;
-var mapType2 = ZodMap2.create;
-var setType2 = ZodSet2.create;
-var functionType2 = ZodFunction2.create;
-var lazyType2 = ZodLazy2.create;
-var literalType2 = ZodLiteral2.create;
-var enumType2 = ZodEnum2.create;
-var nativeEnumType2 = ZodNativeEnum2.create;
-var promiseType2 = ZodPromise2.create;
-var effectsType2 = ZodEffects2.create;
-var optionalType2 = ZodOptional2.create;
-var nullableType2 = ZodNullable2.create;
-var preprocessType2 = ZodEffects2.createWithPreprocess;
-var pipelineType2 = ZodPipeline2.create;
-var ostring2 = () => stringType2().optional();
-var onumber2 = () => numberType2().optional();
-var oboolean2 = () => booleanType2().optional();
-var coerce2 = {
-  string: (arg) => ZodString2.create({ ...arg, coerce: true }),
-  number: (arg) => ZodNumber2.create({ ...arg, coerce: true }),
-  boolean: (arg) => ZodBoolean2.create({
-    ...arg,
-    coerce: true
-  }),
-  bigint: (arg) => ZodBigInt2.create({ ...arg, coerce: true }),
-  date: (arg) => ZodDate2.create({ ...arg, coerce: true })
-};
-var NEVER2 = INVALID2;
-var globalHostBindingsSchema2 = exports_external2.object({
-  switchModes: exports_external2.function().args(exports_external2.nativeEnum(Mode2)).returns(exports_external2.void()),
-  log: exports_external2.function().args(exports_external2.string()).returns(exports_external2.void()),
-  sendResponse: exports_external2.function().args(exports_external2.union([exports_external2.instanceof(Uint8Array), exports_external2.custom()])).returns(exports_external2.number()),
-  versionV2: exports_external2.function().args().returns(exports_external2.void()),
-  callCapability: exports_external2.function().args(exports_external2.union([exports_external2.instanceof(Uint8Array), exports_external2.custom()])).returns(exports_external2.number()),
-  awaitCapabilities: exports_external2.function().args(exports_external2.union([exports_external2.instanceof(Uint8Array), exports_external2.custom()]), exports_external2.number()).returns(exports_external2.union([exports_external2.instanceof(Uint8Array), exports_external2.custom()])),
-  getSecrets: exports_external2.function().args(exports_external2.union([exports_external2.instanceof(Uint8Array), exports_external2.custom()]), exports_external2.number()).returns(exports_external2.any()),
-  awaitSecrets: exports_external2.function().args(exports_external2.union([exports_external2.instanceof(Uint8Array), exports_external2.custom()]), exports_external2.number()).returns(exports_external2.union([exports_external2.instanceof(Uint8Array), exports_external2.custom()])),
-  getWasiArgs: exports_external2.function().args().returns(exports_external2.string()),
-  now: exports_external2.function().args().returns(exports_external2.number())
-});
-var validateGlobalHostBindings2 = () => {
-  const globalFunctions = globalThis;
-  try {
-    return globalHostBindingsSchema2.parse(globalFunctions);
-  } catch (error) {
-    const missingFunctions = Object.keys(globalHostBindingsSchema2.shape).filter((key) => !(key in globalFunctions));
-    throw new Error(`Missing required global host functions: ${missingFunctions.join(", ")}. ` + `The CRE WASM runtime must provide these functions on globalThis. ` + `This usually means the workflow is being executed outside the CRE WASM environment, ` + `or the host runtime version is incompatible with this SDK version.`);
-  }
-};
-var _hostBindings2 = null;
-var hostBindings2 = new Proxy({}, {
-  get(target, prop) {
-    if (!_hostBindings2) {
-      _hostBindings2 = validateGlobalHostBindings2();
+    } else if (strict) {
+      throw new DecodeLogDataMismatch({
+        abiItem,
+        data: "0x",
+        params: inputsToDecode,
+        size: 0
+      });
     }
-    return _hostBindings2[prop];
   }
-});
-function isHex(value3, { strict = true } = {}) {
-  if (!value3)
-    return false;
-  if (typeof value3 !== "string")
-    return false;
-  return strict ? /^0x[0-9a-fA-F]*$/.test(value3) : value3.startsWith("0x");
+  return {
+    eventName: name,
+    args: Object.values(args).length > 0 ? args : undefined
+  };
 }
-var exports_external3 = {};
-__export(exports_external3, {
+function decodeTopic({ param, value: value2 }) {
+  if (param.type === "string" || param.type === "bytes" || param.type === "tuple" || param.type.match(/^(.*)\[(\d+)?\]$/))
+    return value2;
+  const decodedArg = decodeAbiParameters([param], value2) || [];
+  return decodedArg[0];
+}
+var exports_external2 = {};
+__export(exports_external2, {
   xor: () => xor,
   xid: () => xid2,
   void: () => _void2,
@@ -26262,7 +16721,7 @@ __export(exports_external3, {
   toLowerCase: () => _toLowerCase,
   toJSONSchema: () => toJSONSchema,
   templateLiteral: () => templateLiteral,
-  symbol: () => symbol3,
+  symbol: () => symbol2,
   superRefine: () => superRefine,
   success: () => success,
   stringbool: () => stringbool,
@@ -26272,7 +16731,7 @@ __export(exports_external3, {
   startsWith: () => _startsWith,
   slugify: () => _slugify,
   size: () => _size,
-  setErrorMap: () => setErrorMap3,
+  setErrorMap: () => setErrorMap2,
   set: () => set,
   safeParseAsync: () => safeParseAsync2,
   safeParse: () => safeParse2,
@@ -26346,12 +16805,12 @@ __export(exports_external3, {
   httpUrl: () => httpUrl,
   hostname: () => hostname2,
   hex: () => hex2,
-  hash: () => hash,
+  hash: () => hash2,
   guid: () => guid2,
   gte: () => _gte,
   gt: () => _gt,
   globalRegistry: () => globalRegistry,
-  getErrorMap: () => getErrorMap3,
+  getErrorMap: () => getErrorMap2,
   function: () => _function,
   fromJSONSchema: () => fromJSONSchema,
   formatError: () => formatError,
@@ -26372,7 +16831,7 @@ __export(exports_external3, {
   decodeAsync: () => decodeAsync2,
   decode: () => decode2,
   date: () => date3,
-  custom: () => custom4,
+  custom: () => custom3,
   cuid2: () => cuid22,
   cuid: () => cuid3,
   core: () => exports_core2,
@@ -26395,46 +16854,46 @@ __export(exports_external3, {
   _ZodString: () => _ZodString,
   ZodXor: () => ZodXor,
   ZodXID: () => ZodXID,
-  ZodVoid: () => ZodVoid3,
-  ZodUnknown: () => ZodUnknown3,
-  ZodUnion: () => ZodUnion3,
-  ZodUndefined: () => ZodUndefined3,
+  ZodVoid: () => ZodVoid2,
+  ZodUnknown: () => ZodUnknown2,
+  ZodUnion: () => ZodUnion2,
+  ZodUndefined: () => ZodUndefined2,
   ZodUUID: () => ZodUUID,
   ZodURL: () => ZodURL,
   ZodULID: () => ZodULID,
-  ZodType: () => ZodType3,
-  ZodTuple: () => ZodTuple3,
+  ZodType: () => ZodType2,
+  ZodTuple: () => ZodTuple2,
   ZodTransform: () => ZodTransform,
   ZodTemplateLiteral: () => ZodTemplateLiteral,
-  ZodSymbol: () => ZodSymbol3,
+  ZodSymbol: () => ZodSymbol2,
   ZodSuccess: () => ZodSuccess,
   ZodStringFormat: () => ZodStringFormat,
-  ZodString: () => ZodString3,
-  ZodSet: () => ZodSet3,
-  ZodRecord: () => ZodRecord3,
+  ZodString: () => ZodString2,
+  ZodSet: () => ZodSet2,
+  ZodRecord: () => ZodRecord2,
   ZodRealError: () => ZodRealError,
-  ZodReadonly: () => ZodReadonly3,
-  ZodPromise: () => ZodPromise3,
+  ZodReadonly: () => ZodReadonly2,
+  ZodPromise: () => ZodPromise2,
   ZodPrefault: () => ZodPrefault,
   ZodPipe: () => ZodPipe,
-  ZodOptional: () => ZodOptional3,
-  ZodObject: () => ZodObject3,
+  ZodOptional: () => ZodOptional2,
+  ZodObject: () => ZodObject2,
   ZodNumberFormat: () => ZodNumberFormat,
-  ZodNumber: () => ZodNumber3,
-  ZodNullable: () => ZodNullable3,
-  ZodNull: () => ZodNull3,
+  ZodNumber: () => ZodNumber2,
+  ZodNullable: () => ZodNullable2,
+  ZodNull: () => ZodNull2,
   ZodNonOptional: () => ZodNonOptional,
-  ZodNever: () => ZodNever3,
+  ZodNever: () => ZodNever2,
   ZodNanoID: () => ZodNanoID,
-  ZodNaN: () => ZodNaN3,
-  ZodMap: () => ZodMap3,
+  ZodNaN: () => ZodNaN2,
+  ZodMap: () => ZodMap2,
   ZodMAC: () => ZodMAC,
-  ZodLiteral: () => ZodLiteral3,
-  ZodLazy: () => ZodLazy3,
+  ZodLiteral: () => ZodLiteral2,
+  ZodLazy: () => ZodLazy2,
   ZodKSUID: () => ZodKSUID,
   ZodJWT: () => ZodJWT,
-  ZodIssueCode: () => ZodIssueCode3,
-  ZodIntersection: () => ZodIntersection3,
+  ZodIssueCode: () => ZodIssueCode2,
+  ZodIntersection: () => ZodIntersection2,
   ZodISOTime: () => ZodISOTime,
   ZodISODuration: () => ZodISODuration,
   ZodISODateTime: () => ZodISODateTime,
@@ -26442,42 +16901,42 @@ __export(exports_external3, {
   ZodIPv6: () => ZodIPv6,
   ZodIPv4: () => ZodIPv4,
   ZodGUID: () => ZodGUID,
-  ZodFunction: () => ZodFunction3,
-  ZodFirstPartyTypeKind: () => ZodFirstPartyTypeKind3,
+  ZodFunction: () => ZodFunction2,
+  ZodFirstPartyTypeKind: () => ZodFirstPartyTypeKind2,
   ZodFile: () => ZodFile,
   ZodExactOptional: () => ZodExactOptional,
-  ZodError: () => ZodError5,
-  ZodEnum: () => ZodEnum3,
+  ZodError: () => ZodError3,
+  ZodEnum: () => ZodEnum2,
   ZodEmoji: () => ZodEmoji,
   ZodEmail: () => ZodEmail,
   ZodE164: () => ZodE164,
-  ZodDiscriminatedUnion: () => ZodDiscriminatedUnion3,
-  ZodDefault: () => ZodDefault3,
-  ZodDate: () => ZodDate3,
+  ZodDiscriminatedUnion: () => ZodDiscriminatedUnion2,
+  ZodDefault: () => ZodDefault2,
+  ZodDate: () => ZodDate2,
   ZodCustomStringFormat: () => ZodCustomStringFormat,
   ZodCustom: () => ZodCustom,
   ZodCodec: () => ZodCodec,
-  ZodCatch: () => ZodCatch3,
+  ZodCatch: () => ZodCatch2,
   ZodCUID2: () => ZodCUID2,
   ZodCUID: () => ZodCUID,
   ZodCIDRv6: () => ZodCIDRv6,
   ZodCIDRv4: () => ZodCIDRv4,
-  ZodBoolean: () => ZodBoolean3,
+  ZodBoolean: () => ZodBoolean2,
   ZodBigIntFormat: () => ZodBigIntFormat,
-  ZodBigInt: () => ZodBigInt3,
+  ZodBigInt: () => ZodBigInt2,
   ZodBase64URL: () => ZodBase64URL,
   ZodBase64: () => ZodBase64,
-  ZodArray: () => ZodArray3,
-  ZodAny: () => ZodAny3,
+  ZodArray: () => ZodArray2,
+  ZodAny: () => ZodAny2,
   TimePrecision: () => TimePrecision,
-  NEVER: () => NEVER3,
+  NEVER: () => NEVER2,
   $output: () => $output,
   $input: () => $input,
   $brand: () => $brand
 });
 var exports_core2 = {};
 __export(exports_core2, {
-  version: () => version,
+  version: () => version3,
   util: () => exports_util,
   treeifyError: () => treeifyError,
   toJSONSchema: () => toJSONSchema,
@@ -26496,7 +16955,7 @@ __export(exports_core2, {
   parse: () => parse,
   meta: () => meta,
   locales: () => exports_locales,
-  isValidJWT: () => isValidJWT3,
+  isValidJWT: () => isValidJWT2,
   isValidBase64URL: () => isValidBase64URL,
   isValidBase64: () => isValidBase64,
   initializeContext: () => initializeContext,
@@ -26642,7 +17101,7 @@ __export(exports_core2, {
   _array: () => _array,
   _any: () => _any,
   TimePrecision: () => TimePrecision,
-  NEVER: () => NEVER3,
+  NEVER: () => NEVER2,
   JSONSchemaGenerator: () => JSONSchemaGenerator,
   JSONSchema: () => exports_json_schema,
   Doc: () => Doc,
@@ -26751,7 +17210,7 @@ __export(exports_core2, {
   $ZodArray: () => $ZodArray,
   $ZodAny: () => $ZodAny
 });
-var NEVER3 = Object.freeze({
+var NEVER2 = Object.freeze({
   status: "aborted"
 });
 function $constructor(name, initializer, params) {
@@ -26857,14 +17316,14 @@ __export(exports_util, {
   joinValues: () => joinValues,
   issue: () => issue,
   isPlainObject: () => isPlainObject,
-  isObject: () => isObject3,
+  isObject: () => isObject2,
   hexToUint8Array: () => hexToUint8Array,
   getSizableOrigin: () => getSizableOrigin,
-  getParsedType: () => getParsedType3,
+  getParsedType: () => getParsedType2,
   getLengthableOrigin: () => getLengthableOrigin,
   getEnumValues: () => getEnumValues,
   getElementAtPath: () => getElementAtPath,
-  floatSafeRemainder: () => floatSafeRemainder3,
+  floatSafeRemainder: () => floatSafeRemainder2,
   finalizeIssue: () => finalizeIssue,
   extend: () => extend,
   escapeRegex: () => escapeRegex,
@@ -26884,7 +17343,7 @@ __export(exports_util, {
   assertNever: () => assertNever,
   assertIs: () => assertIs,
   assertEqual: () => assertEqual,
-  assert: () => assert3,
+  assert: () => assert2,
   allowsEval: () => allowsEval,
   aborted: () => aborted,
   NUMBER_FORMAT_RANGES: () => NUMBER_FORMAT_RANGES,
@@ -26901,7 +17360,7 @@ function assertIs(_arg) {}
 function assertNever(_x) {
   throw new Error("Unexpected value in exhaustive check");
 }
-function assert3(_) {}
+function assert2(_) {}
 function getEnumValues(entries) {
   const numericValues = Object.values(entries).filter((v) => typeof v === "number");
   const values = Object.entries(entries).filter(([k, _]) => numericValues.indexOf(+k) === -1).map(([_, v]) => v);
@@ -26910,19 +17369,19 @@ function getEnumValues(entries) {
 function joinValues(array, separator = "|") {
   return array.map((val) => stringifyPrimitive(val)).join(separator);
 }
-function jsonStringifyReplacer(_, value3) {
-  if (typeof value3 === "bigint")
-    return value3.toString();
-  return value3;
+function jsonStringifyReplacer(_, value2) {
+  if (typeof value2 === "bigint")
+    return value2.toString();
+  return value2;
 }
 function cached(getter) {
   const set = false;
   return {
     get value() {
       if (!set) {
-        const value3 = getter();
-        Object.defineProperty(this, "value", { value: value3 });
-        return value3;
+        const value2 = getter();
+        Object.defineProperty(this, "value", { value: value2 });
+        return value2;
       }
       throw new Error("cached value already set");
     }
@@ -26936,7 +17395,7 @@ function cleanRegex(source) {
   const end = source.endsWith("$") ? source.length - 1 : source.length;
   return source.slice(start, end);
 }
-function floatSafeRemainder3(val, step) {
+function floatSafeRemainder2(val, step) {
   const valDecCount = (val.toString().split(".")[1] || "").length;
   const stepString = step.toString();
   let stepDecCount = (stepString.split(".")[1] || "").length;
@@ -26953,17 +17412,17 @@ function floatSafeRemainder3(val, step) {
 }
 var EVALUATING = Symbol("evaluating");
 function defineLazy(object, key, getter) {
-  let value3 = undefined;
+  let value2 = undefined;
   Object.defineProperty(object, key, {
     get() {
-      if (value3 === EVALUATING) {
+      if (value2 === EVALUATING) {
         return;
       }
-      if (value3 === undefined) {
-        value3 = EVALUATING;
-        value3 = getter();
+      if (value2 === undefined) {
+        value2 = EVALUATING;
+        value2 = getter();
       }
-      return value3;
+      return value2;
     },
     set(v) {
       Object.defineProperty(object, key, {
@@ -26976,9 +17435,9 @@ function defineLazy(object, key, getter) {
 function objectClone(obj) {
   return Object.create(Object.getPrototypeOf(obj), Object.getOwnPropertyDescriptors(obj));
 }
-function assignProp(target, prop, value3) {
+function assignProp(target, prop, value2) {
   Object.defineProperty(target, prop, {
-    value: value3,
+    value: value2,
     writable: true,
     enumerable: true,
     configurable: true
@@ -27026,7 +17485,7 @@ function slugify(input) {
   return input.toLowerCase().trim().replace(/[^\w\s-]/g, "").replace(/[\s_-]+/g, "-").replace(/^-+|-+$/g, "");
 }
 var captureStackTrace = "captureStackTrace" in Error ? Error.captureStackTrace : (..._args) => {};
-function isObject3(data) {
+function isObject2(data) {
   return typeof data === "object" && data !== null && !Array.isArray(data);
 }
 var allowsEval = cached(() => {
@@ -27042,7 +17501,7 @@ var allowsEval = cached(() => {
   }
 });
 function isPlainObject(o) {
-  if (isObject3(o) === false)
+  if (isObject2(o) === false)
     return false;
   const ctor = o.constructor;
   if (ctor === undefined)
@@ -27050,7 +17509,7 @@ function isPlainObject(o) {
   if (typeof ctor !== "function")
     return true;
   const prot = ctor.prototype;
-  if (isObject3(prot) === false)
+  if (isObject2(prot) === false)
     return false;
   if (Object.prototype.hasOwnProperty.call(prot, "isPrototypeOf") === false) {
     return false;
@@ -27073,7 +17532,7 @@ function numKeys(data) {
   }
   return keyCount;
 }
-var getParsedType3 = (data) => {
+var getParsedType2 = (data) => {
   const t = typeof data;
   switch (t) {
     case "undefined":
@@ -27151,9 +17610,9 @@ function createTransparentProxy(getter) {
       target ?? (target = getter());
       return Reflect.get(target, prop, receiver);
     },
-    set(_, prop, value3, receiver) {
+    set(_, prop, value2, receiver) {
       target ?? (target = getter());
-      return Reflect.set(target, prop, value3, receiver);
+      return Reflect.set(target, prop, value2, receiver);
     },
     has(_, prop) {
       target ?? (target = getter());
@@ -27177,12 +17636,12 @@ function createTransparentProxy(getter) {
     }
   });
 }
-function stringifyPrimitive(value3) {
-  if (typeof value3 === "bigint")
-    return value3.toString() + "n";
-  if (typeof value3 === "string")
-    return `"${value3}"`;
-  return `${value3}`;
+function stringifyPrimitive(value2) {
+  if (typeof value2 === "bigint")
+    return value2.toString() + "n";
+  if (typeof value2 === "string")
+    return `"${value2}"`;
+  return `${value2}`;
 }
 function optionalKeys(shape) {
   return Object.keys(shape).filter((k) => {
@@ -27633,9 +18092,9 @@ function prettifyError(error) {
   return lines.join(`
 `);
 }
-var _parse = (_Err) => (schema, value3, _ctx, _params) => {
+var _parse = (_Err) => (schema, value2, _ctx, _params) => {
   const ctx = _ctx ? Object.assign(_ctx, { async: false }) : { async: false };
-  const result = schema._zod.run({ value: value3, issues: [] }, ctx);
+  const result = schema._zod.run({ value: value2, issues: [] }, ctx);
   if (result instanceof Promise) {
     throw new $ZodAsyncError;
   }
@@ -27647,9 +18106,9 @@ var _parse = (_Err) => (schema, value3, _ctx, _params) => {
   return result.value;
 };
 var parse = /* @__PURE__ */ _parse($ZodRealError);
-var _parseAsync = (_Err) => async (schema, value3, _ctx, params) => {
+var _parseAsync = (_Err) => async (schema, value2, _ctx, params) => {
   const ctx = _ctx ? Object.assign(_ctx, { async: true }) : { async: true };
-  let result = schema._zod.run({ value: value3, issues: [] }, ctx);
+  let result = schema._zod.run({ value: value2, issues: [] }, ctx);
   if (result instanceof Promise)
     result = await result;
   if (result.issues.length) {
@@ -27660,9 +18119,9 @@ var _parseAsync = (_Err) => async (schema, value3, _ctx, params) => {
   return result.value;
 };
 var parseAsync = /* @__PURE__ */ _parseAsync($ZodRealError);
-var _safeParse = (_Err) => (schema, value3, _ctx) => {
+var _safeParse = (_Err) => (schema, value2, _ctx) => {
   const ctx = _ctx ? { ..._ctx, async: false } : { async: false };
-  const result = schema._zod.run({ value: value3, issues: [] }, ctx);
+  const result = schema._zod.run({ value: value2, issues: [] }, ctx);
   if (result instanceof Promise) {
     throw new $ZodAsyncError;
   }
@@ -27672,9 +18131,9 @@ var _safeParse = (_Err) => (schema, value3, _ctx) => {
   } : { success: true, data: result.value };
 };
 var safeParse = /* @__PURE__ */ _safeParse($ZodRealError);
-var _safeParseAsync = (_Err) => async (schema, value3, _ctx) => {
+var _safeParseAsync = (_Err) => async (schema, value2, _ctx) => {
   const ctx = _ctx ? Object.assign(_ctx, { async: true }) : { async: true };
-  let result = schema._zod.run({ value: value3, issues: [] }, ctx);
+  let result = schema._zod.run({ value: value2, issues: [] }, ctx);
   if (result instanceof Promise)
     result = await result;
   return result.issues.length ? {
@@ -27683,40 +18142,40 @@ var _safeParseAsync = (_Err) => async (schema, value3, _ctx) => {
   } : { success: true, data: result.value };
 };
 var safeParseAsync = /* @__PURE__ */ _safeParseAsync($ZodRealError);
-var _encode = (_Err) => (schema, value3, _ctx) => {
+var _encode = (_Err) => (schema, value2, _ctx) => {
   const ctx = _ctx ? Object.assign(_ctx, { direction: "backward" }) : { direction: "backward" };
-  return _parse(_Err)(schema, value3, ctx);
+  return _parse(_Err)(schema, value2, ctx);
 };
 var encode = /* @__PURE__ */ _encode($ZodRealError);
-var _decode = (_Err) => (schema, value3, _ctx) => {
-  return _parse(_Err)(schema, value3, _ctx);
+var _decode = (_Err) => (schema, value2, _ctx) => {
+  return _parse(_Err)(schema, value2, _ctx);
 };
 var decode = /* @__PURE__ */ _decode($ZodRealError);
-var _encodeAsync = (_Err) => async (schema, value3, _ctx) => {
+var _encodeAsync = (_Err) => async (schema, value2, _ctx) => {
   const ctx = _ctx ? Object.assign(_ctx, { direction: "backward" }) : { direction: "backward" };
-  return _parseAsync(_Err)(schema, value3, ctx);
+  return _parseAsync(_Err)(schema, value2, ctx);
 };
 var encodeAsync = /* @__PURE__ */ _encodeAsync($ZodRealError);
-var _decodeAsync = (_Err) => async (schema, value3, _ctx) => {
-  return _parseAsync(_Err)(schema, value3, _ctx);
+var _decodeAsync = (_Err) => async (schema, value2, _ctx) => {
+  return _parseAsync(_Err)(schema, value2, _ctx);
 };
 var decodeAsync = /* @__PURE__ */ _decodeAsync($ZodRealError);
-var _safeEncode = (_Err) => (schema, value3, _ctx) => {
+var _safeEncode = (_Err) => (schema, value2, _ctx) => {
   const ctx = _ctx ? Object.assign(_ctx, { direction: "backward" }) : { direction: "backward" };
-  return _safeParse(_Err)(schema, value3, ctx);
+  return _safeParse(_Err)(schema, value2, ctx);
 };
 var safeEncode = /* @__PURE__ */ _safeEncode($ZodRealError);
-var _safeDecode = (_Err) => (schema, value3, _ctx) => {
-  return _safeParse(_Err)(schema, value3, _ctx);
+var _safeDecode = (_Err) => (schema, value2, _ctx) => {
+  return _safeParse(_Err)(schema, value2, _ctx);
 };
 var safeDecode = /* @__PURE__ */ _safeDecode($ZodRealError);
-var _safeEncodeAsync = (_Err) => async (schema, value3, _ctx) => {
+var _safeEncodeAsync = (_Err) => async (schema, value2, _ctx) => {
   const ctx = _ctx ? Object.assign(_ctx, { direction: "backward" }) : { direction: "backward" };
-  return _safeParseAsync(_Err)(schema, value3, ctx);
+  return _safeParseAsync(_Err)(schema, value2, ctx);
 };
 var safeEncodeAsync = /* @__PURE__ */ _safeEncodeAsync($ZodRealError);
-var _safeDecodeAsync = (_Err) => async (schema, value3, _ctx) => {
-  return _safeParseAsync(_Err)(schema, value3, _ctx);
+var _safeDecodeAsync = (_Err) => async (schema, value2, _ctx) => {
+  return _safeParseAsync(_Err)(schema, value2, _ctx);
 };
 var safeDecodeAsync = /* @__PURE__ */ _safeDecodeAsync($ZodRealError);
 var exports_regexes = {};
@@ -27789,10 +18248,10 @@ var nanoid = /^[a-zA-Z0-9_-]{21}$/;
 var duration = /^P(?:(\d+W)|(?!.*W)(?=\d|T\d)(\d+Y)?(\d+M)?(\d+D)?(T(?=\d)(\d+H)?(\d+M)?(\d+([.,]\d+)?S)?)?)$/;
 var extendedDuration = /^[-+]?P(?!$)(?:(?:[-+]?\d+Y)|(?:[-+]?\d+[.,]\d+Y$))?(?:(?:[-+]?\d+M)|(?:[-+]?\d+[.,]\d+M$))?(?:(?:[-+]?\d+W)|(?:[-+]?\d+[.,]\d+W$))?(?:(?:[-+]?\d+D)|(?:[-+]?\d+[.,]\d+D$))?(?:T(?=[\d+-])(?:(?:[-+]?\d+H)|(?:[-+]?\d+[.,]\d+H$))?(?:(?:[-+]?\d+M)|(?:[-+]?\d+[.,]\d+M$))?(?:[-+]?\d+(?:[.,]\d+)?S)?)??$/;
 var guid = /^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12})$/;
-var uuid = (version) => {
-  if (!version)
+var uuid = (version3) => {
+  if (!version3)
     return /^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$/;
-  return new RegExp(`^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-${version}[0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12})$`);
+  return new RegExp(`^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-${version3}[0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12})$`);
 };
 var uuid4 = /* @__PURE__ */ uuid(4);
 var uuid6 = /* @__PURE__ */ uuid(6);
@@ -27837,8 +18296,8 @@ function datetime(args) {
     opts.push("");
   if (args.offset)
     opts.push(`([+-](?:[01]\\d|2[0-3]):[0-5]\\d)`);
-  const timeRegex3 = `${time2}(?:${opts.join("|")})`;
-  return new RegExp(`^${dateSource}T(?:${timeRegex3})$`);
+  const timeRegex2 = `${time2}(?:${opts.join("|")})`;
+  return new RegExp(`^${dateSource}T(?:${timeRegex2})$`);
 }
 var string = (params) => {
   const regex = params ? `[\\s\\S]{${params?.minimum ?? 0},${params?.maximum ?? ""}}` : `[\\s\\S]*`;
@@ -27950,7 +18409,7 @@ var $ZodCheckMultipleOf = /* @__PURE__ */ $constructor("$ZodCheckMultipleOf", (i
   inst._zod.check = (payload) => {
     if (typeof payload.value !== typeof def.value)
       throw new Error("Cannot mix number and bigint in multiple_of check.");
-    const isMultiple = typeof payload.value === "bigint" ? payload.value % def.value === BigInt(0) : floatSafeRemainder3(payload.value, def.value) === 0;
+    const isMultiple = typeof payload.value === "bigint" ? payload.value % def.value === BigInt(0) : floatSafeRemainder2(payload.value, def.value) === 0;
     if (isMultiple)
       return;
     payload.issues.push({
@@ -28091,8 +18550,8 @@ var $ZodCheckMaxSize = /* @__PURE__ */ $constructor("$ZodCheckMaxSize", (inst, d
   });
   inst._zod.check = (payload) => {
     const input = payload.value;
-    const size2 = input.size;
-    if (size2 <= def.maximum)
+    const size3 = input.size;
+    if (size3 <= def.maximum)
       return;
     payload.issues.push({
       origin: getSizableOrigin(input),
@@ -28119,8 +18578,8 @@ var $ZodCheckMinSize = /* @__PURE__ */ $constructor("$ZodCheckMinSize", (inst, d
   });
   inst._zod.check = (payload) => {
     const input = payload.value;
-    const size2 = input.size;
-    if (size2 >= def.minimum)
+    const size3 = input.size;
+    if (size3 >= def.minimum)
       return;
     payload.issues.push({
       origin: getSizableOrigin(input),
@@ -28148,10 +18607,10 @@ var $ZodCheckSizeEquals = /* @__PURE__ */ $constructor("$ZodCheckSizeEquals", (i
   });
   inst._zod.check = (payload) => {
     const input = payload.value;
-    const size2 = input.size;
-    if (size2 === def.size)
+    const size3 = input.size;
+    if (size3 === def.size)
       return;
-    const tooBig = size2 > def.size;
+    const tooBig = size3 > def.size;
     payload.issues.push({
       origin: getSizableOrigin(input),
       ...tooBig ? { code: "too_big", maximum: def.size } : { code: "too_small", minimum: def.size },
@@ -28456,7 +18915,7 @@ class Doc {
 `));
   }
 }
-var version = {
+var version3 = {
   major: 4,
   minor: 3,
   patch: 6
@@ -28466,7 +18925,7 @@ var $ZodType = /* @__PURE__ */ $constructor("$ZodType", (inst, def) => {
   inst ?? (inst = {});
   inst._zod.def = def;
   inst._zod.bag = inst._zod.bag || {};
-  inst._zod.version = version;
+  inst._zod.version = version3;
   const checks = [...inst._zod.def.checks ?? []];
   if (inst._zod.traits.has("$ZodCheck")) {
     checks.unshift(inst);
@@ -28483,14 +18942,14 @@ var $ZodType = /* @__PURE__ */ $constructor("$ZodType", (inst, def) => {
     });
   } else {
     const runChecks = (payload, checks2, ctx) => {
-      let isAborted3 = aborted(payload);
+      let isAborted2 = aborted(payload);
       let asyncResult;
       for (const ch of checks2) {
         if (ch._zod.def.when) {
           const shouldRun = ch._zod.def.when(payload);
           if (!shouldRun)
             continue;
-        } else if (isAborted3) {
+        } else if (isAborted2) {
           continue;
         }
         const currLen = payload.issues.length;
@@ -28504,15 +18963,15 @@ var $ZodType = /* @__PURE__ */ $constructor("$ZodType", (inst, def) => {
             const nextLen = payload.issues.length;
             if (nextLen === currLen)
               return;
-            if (!isAborted3)
-              isAborted3 = aborted(payload, currLen);
+            if (!isAborted2)
+              isAborted2 = aborted(payload, currLen);
           });
         } else {
           const nextLen = payload.issues.length;
           if (nextLen === currLen)
             continue;
-          if (!isAborted3)
-            isAborted3 = aborted(payload, currLen);
+          if (!isAborted2)
+            isAborted2 = aborted(payload, currLen);
         }
       }
       if (asyncResult) {
@@ -28558,12 +19017,12 @@ var $ZodType = /* @__PURE__ */ $constructor("$ZodType", (inst, def) => {
     };
   }
   defineLazy(inst, "~standard", () => ({
-    validate: (value3) => {
+    validate: (value2) => {
       try {
-        const r = safeParse(inst, value3);
+        const r = safeParse(inst, value2);
         return r.success ? { value: r.data } : { issues: r.error?.issues };
       } catch (_) {
-        return safeParseAsync(inst, value3).then((r) => r.success ? { value: r.data } : { issues: r.error?.issues });
+        return safeParseAsync(inst, value2).then((r) => r.success ? { value: r.data } : { issues: r.error?.issues });
       }
     },
     vendor: "zod",
@@ -28831,7 +19290,7 @@ var $ZodE164 = /* @__PURE__ */ $constructor("$ZodE164", (inst, def) => {
   def.pattern ?? (def.pattern = e164);
   $ZodStringFormat.init(inst, def);
 });
-function isValidJWT3(token, algorithm = null) {
+function isValidJWT2(token, algorithm = null) {
   try {
     const tokensParts = token.split(".");
     if (tokensParts.length !== 3)
@@ -28854,7 +19313,7 @@ function isValidJWT3(token, algorithm = null) {
 var $ZodJWT = /* @__PURE__ */ $constructor("$ZodJWT", (inst, def) => {
   $ZodStringFormat.init(inst, def);
   inst._zod.check = (payload) => {
-    if (isValidJWT3(payload.value, def.alg))
+    if (isValidJWT2(payload.value, def.alg))
       return;
     payload.issues.push({
       code: "invalid_format",
@@ -29191,13 +19650,13 @@ var $ZodObject = /* @__PURE__ */ $constructor("$ZodObject", (inst, def) => {
     }
     return propValues;
   });
-  const isObject4 = isObject3;
+  const isObject3 = isObject2;
   const catchall = def.catchall;
-  let value3;
+  let value2;
   inst._zod.parse = (payload, ctx) => {
-    value3 ?? (value3 = _normalized.value);
+    value2 ?? (value2 = _normalized.value);
     const input = payload.value;
-    if (!isObject4(input)) {
+    if (!isObject3(input)) {
       payload.issues.push({
         expected: "object",
         code: "invalid_type",
@@ -29208,8 +19667,8 @@ var $ZodObject = /* @__PURE__ */ $constructor("$ZodObject", (inst, def) => {
     }
     payload.value = {};
     const proms = [];
-    const shape = value3.shape;
-    for (const key of value3.keys) {
+    const shape = value2.shape;
+    for (const key of value2.keys) {
       const el = shape[key];
       const isOptionalOut = el._zod.optout === "optional";
       const r = el._zod.run({ value: input[key], issues: [] }, ctx);
@@ -29295,16 +19754,16 @@ var $ZodObjectJIT = /* @__PURE__ */ $constructor("$ZodObjectJIT", (inst, def) =>
     return (payload, ctx) => fn(shape, payload, ctx);
   };
   let fastpass;
-  const isObject4 = isObject3;
+  const isObject3 = isObject2;
   const jit = !globalConfig.jitless;
   const allowsEval2 = allowsEval;
   const fastEnabled = jit && allowsEval2.value;
   const catchall = def.catchall;
-  let value3;
+  let value2;
   inst._zod.parse = (payload, ctx) => {
-    value3 ?? (value3 = _normalized.value);
+    value2 ?? (value2 = _normalized.value);
     const input = payload.value;
-    if (!isObject4(input)) {
+    if (!isObject3(input)) {
       payload.issues.push({
         expected: "object",
         code: "invalid_type",
@@ -29319,7 +19778,7 @@ var $ZodObjectJIT = /* @__PURE__ */ $constructor("$ZodObjectJIT", (inst, def) =>
       payload = fastpass(payload, ctx);
       if (!catchall)
         return payload;
-      return handleCatchall([], input, payload, ctx, value3, inst);
+      return handleCatchall([], input, payload, ctx, value2, inst);
     }
     return superParse(payload, ctx);
   };
@@ -29482,7 +19941,7 @@ var $ZodDiscriminatedUnion = /* @__PURE__ */ $constructor("$ZodDiscriminatedUnio
   });
   inst._zod.parse = (payload, ctx) => {
     const input = payload.value;
-    if (!isObject3(input)) {
+    if (!isObject2(input)) {
       payload.issues.push({
         code: "invalid_type",
         expected: "object",
@@ -29525,7 +19984,7 @@ var $ZodIntersection = /* @__PURE__ */ $constructor("$ZodIntersection", (inst, d
     return handleIntersectionResults(payload, left, right);
   };
 });
-function mergeValues3(a, b) {
+function mergeValues2(a, b) {
   if (a === b) {
     return { valid: true, data: a };
   }
@@ -29537,7 +19996,7 @@ function mergeValues3(a, b) {
     const sharedKeys = Object.keys(a).filter((key) => bKeys.indexOf(key) !== -1);
     const newObj = { ...a, ...b };
     for (const key of sharedKeys) {
-      const sharedValue = mergeValues3(a[key], b[key]);
+      const sharedValue = mergeValues2(a[key], b[key]);
       if (!sharedValue.valid) {
         return {
           valid: false,
@@ -29556,7 +20015,7 @@ function mergeValues3(a, b) {
     for (let index = 0;index < a.length; index++) {
       const itemA = a[index];
       const itemB = b[index];
-      const sharedValue = mergeValues3(itemA, itemB);
+      const sharedValue = mergeValues2(itemA, itemB);
       if (!sharedValue.valid) {
         return {
           valid: false,
@@ -29601,7 +20060,7 @@ function handleIntersectionResults(result, left, right) {
   }
   if (aborted(result))
     return result;
-  const merged = mergeValues3(left.value, right.value);
+  const merged = mergeValues2(left.value, right.value);
   if (!merged.valid) {
     throw new Error(`Unmergable intersection. Error path: ` + `${JSON.stringify(merged.mergeErrorPath)}`);
   }
@@ -29805,9 +20264,9 @@ var $ZodMap = /* @__PURE__ */ $constructor("$ZodMap", (inst, def) => {
     }
     const proms = [];
     payload.value = new Map;
-    for (const [key, value3] of input) {
+    for (const [key, value2] of input) {
       const keyResult = def.keyType._zod.run({ value: key, issues: [] }, ctx);
-      const valueResult = def.valueType._zod.run({ value: value3, issues: [] }, ctx);
+      const valueResult = def.valueType._zod.run({ value: value2, issues: [] }, ctx);
       if (keyResult instanceof Promise || valueResult instanceof Promise) {
         proms.push(Promise.all([keyResult, valueResult]).then(([keyResult2, valueResult2]) => {
           handleMapResult(keyResult2, valueResult2, payload, key, input, inst, ctx);
@@ -30213,23 +20672,23 @@ function handleCodecAResult(result, def, ctx) {
   if (direction === "forward") {
     const transformed = def.transform(result.value, result);
     if (transformed instanceof Promise) {
-      return transformed.then((value3) => handleCodecTxResult(result, value3, def.out, ctx));
+      return transformed.then((value2) => handleCodecTxResult(result, value2, def.out, ctx));
     }
     return handleCodecTxResult(result, transformed, def.out, ctx);
   } else {
     const transformed = def.reverseTransform(result.value, result);
     if (transformed instanceof Promise) {
-      return transformed.then((value3) => handleCodecTxResult(result, value3, def.in, ctx));
+      return transformed.then((value2) => handleCodecTxResult(result, value2, def.in, ctx));
     }
     return handleCodecTxResult(result, transformed, def.in, ctx);
   }
 }
-function handleCodecTxResult(left, value3, nextSchema, ctx) {
+function handleCodecTxResult(left, value2, nextSchema, ctx) {
   if (left.issues.length) {
     left.aborted = true;
     return left;
   }
-  return nextSchema._zod.run({ value: value3, issues: left.issues }, ctx);
+  return nextSchema._zod.run({ value: value2, issues: left.issues }, ctx);
 }
 var $ZodReadonly = /* @__PURE__ */ $constructor("$ZodReadonly", (inst, def) => {
   $ZodType.init(inst, def);
@@ -30464,7 +20923,7 @@ __export(exports_locales, {
   fa: () => fa_default,
   es: () => es_default,
   eo: () => eo_default,
-  en: () => en_default3,
+  en: () => en_default2,
   de: () => de_default,
   da: () => da_default,
   cs: () => cs_default,
@@ -31494,7 +21953,7 @@ var error9 = () => {
     }
   };
 };
-function en_default3() {
+function en_default2() {
   return {
     localeError: error9()
   };
@@ -36373,35 +26832,35 @@ function _nan(Class2, params) {
     ...normalizeParams(params)
   });
 }
-function _lt(value3, params) {
+function _lt(value2, params) {
   return new $ZodCheckLessThan({
     check: "less_than",
     ...normalizeParams(params),
-    value: value3,
+    value: value2,
     inclusive: false
   });
 }
-function _lte(value3, params) {
+function _lte(value2, params) {
   return new $ZodCheckLessThan({
     check: "less_than",
     ...normalizeParams(params),
-    value: value3,
+    value: value2,
     inclusive: true
   });
 }
-function _gt(value3, params) {
+function _gt(value2, params) {
   return new $ZodCheckGreaterThan({
     check: "greater_than",
     ...normalizeParams(params),
-    value: value3,
+    value: value2,
     inclusive: false
   });
 }
-function _gte(value3, params) {
+function _gte(value2, params) {
   return new $ZodCheckGreaterThan({
     check: "greater_than",
     ...normalizeParams(params),
-    value: value3,
+    value: value2,
     inclusive: true
   });
 }
@@ -36417,11 +26876,11 @@ function _nonpositive(params) {
 function _nonnegative(params) {
   return _gte(0, params);
 }
-function _multipleOf(value3, params) {
+function _multipleOf(value2, params) {
   return new $ZodCheckMultipleOf({
     check: "multiple_of",
     ...normalizeParams(params),
-    value: value3
+    value: value2
   });
 }
 function _maxSize(maximum, params) {
@@ -36438,11 +26897,11 @@ function _minSize(minimum, params) {
     minimum
   });
 }
-function _size(size2, params) {
+function _size(size3, params) {
   return new $ZodCheckSizeEquals({
     check: "size_equals",
     ...normalizeParams(params),
-    size: size2
+    size: size3
   });
 }
 function _maxLength(maximum, params) {
@@ -36521,10 +26980,10 @@ function _property(property, schema, params) {
     ...normalizeParams(params)
   });
 }
-function _mime(types6, params) {
+function _mime(types4, params) {
   return new $ZodCheckMimeType({
     check: "mime_type",
-    mime: types6,
+    mime: types4,
     ...normalizeParams(params)
   });
 }
@@ -36635,10 +27094,10 @@ function _nativeEnum(Class2, entries, params) {
     ...normalizeParams(params)
   });
 }
-function _literal(Class2, value3, params) {
+function _literal(Class2, value2, params) {
   return new Class2({
     type: "literal",
-    values: Array.isArray(value3) ? value3 : [value3],
+    values: Array.isArray(value2) ? value2 : [value2],
     ...normalizeParams(params)
   });
 }
@@ -37727,12 +28186,12 @@ function toJSONSchema(input, params) {
       process2(schema, ctx2);
     }
     const schemas = {};
-    const external3 = {
+    const external2 = {
       registry: registry3,
       uri: params?.uri,
       defs
     };
-    ctx2.external = external3;
+    ctx2.external = external2;
     for (const entry of registry3._idmap.entries()) {
       const [key, schema] = entry;
       extractDefs(ctx2, schema);
@@ -37771,8 +28230,8 @@ class JSONSchemaGenerator {
   get counter() {
     return this.ctx.counter;
   }
-  set counter(value3) {
-    this.ctx.counter = value3;
+  set counter(value2) {
+    this.ctx.counter = value2;
   }
   get seen() {
     return this.ctx.seen;
@@ -37830,7 +28289,7 @@ __export(exports_schemas2, {
   tuple: () => tuple,
   transform: () => transform,
   templateLiteral: () => templateLiteral,
-  symbol: () => symbol3,
+  symbol: () => symbol2,
   superRefine: () => superRefine,
   success: () => success,
   stringbool: () => stringbool,
@@ -37878,7 +28337,7 @@ __export(exports_schemas2, {
   httpUrl: () => httpUrl,
   hostname: () => hostname2,
   hex: () => hex2,
-  hash: () => hash,
+  hash: () => hash2,
   guid: () => guid2,
   function: () => _function,
   float64: () => float64,
@@ -37892,7 +28351,7 @@ __export(exports_schemas2, {
   discriminatedUnion: () => discriminatedUnion,
   describe: () => describe2,
   date: () => date3,
-  custom: () => custom4,
+  custom: () => custom3,
   cuid2: () => cuid22,
   cuid: () => cuid3,
   codec: () => codec,
@@ -37911,72 +28370,72 @@ __export(exports_schemas2, {
   _ZodString: () => _ZodString,
   ZodXor: () => ZodXor,
   ZodXID: () => ZodXID,
-  ZodVoid: () => ZodVoid3,
-  ZodUnknown: () => ZodUnknown3,
-  ZodUnion: () => ZodUnion3,
-  ZodUndefined: () => ZodUndefined3,
+  ZodVoid: () => ZodVoid2,
+  ZodUnknown: () => ZodUnknown2,
+  ZodUnion: () => ZodUnion2,
+  ZodUndefined: () => ZodUndefined2,
   ZodUUID: () => ZodUUID,
   ZodURL: () => ZodURL,
   ZodULID: () => ZodULID,
-  ZodType: () => ZodType3,
-  ZodTuple: () => ZodTuple3,
+  ZodType: () => ZodType2,
+  ZodTuple: () => ZodTuple2,
   ZodTransform: () => ZodTransform,
   ZodTemplateLiteral: () => ZodTemplateLiteral,
-  ZodSymbol: () => ZodSymbol3,
+  ZodSymbol: () => ZodSymbol2,
   ZodSuccess: () => ZodSuccess,
   ZodStringFormat: () => ZodStringFormat,
-  ZodString: () => ZodString3,
-  ZodSet: () => ZodSet3,
-  ZodRecord: () => ZodRecord3,
-  ZodReadonly: () => ZodReadonly3,
-  ZodPromise: () => ZodPromise3,
+  ZodString: () => ZodString2,
+  ZodSet: () => ZodSet2,
+  ZodRecord: () => ZodRecord2,
+  ZodReadonly: () => ZodReadonly2,
+  ZodPromise: () => ZodPromise2,
   ZodPrefault: () => ZodPrefault,
   ZodPipe: () => ZodPipe,
-  ZodOptional: () => ZodOptional3,
-  ZodObject: () => ZodObject3,
+  ZodOptional: () => ZodOptional2,
+  ZodObject: () => ZodObject2,
   ZodNumberFormat: () => ZodNumberFormat,
-  ZodNumber: () => ZodNumber3,
-  ZodNullable: () => ZodNullable3,
-  ZodNull: () => ZodNull3,
+  ZodNumber: () => ZodNumber2,
+  ZodNullable: () => ZodNullable2,
+  ZodNull: () => ZodNull2,
   ZodNonOptional: () => ZodNonOptional,
-  ZodNever: () => ZodNever3,
+  ZodNever: () => ZodNever2,
   ZodNanoID: () => ZodNanoID,
-  ZodNaN: () => ZodNaN3,
-  ZodMap: () => ZodMap3,
+  ZodNaN: () => ZodNaN2,
+  ZodMap: () => ZodMap2,
   ZodMAC: () => ZodMAC,
-  ZodLiteral: () => ZodLiteral3,
-  ZodLazy: () => ZodLazy3,
+  ZodLiteral: () => ZodLiteral2,
+  ZodLazy: () => ZodLazy2,
   ZodKSUID: () => ZodKSUID,
   ZodJWT: () => ZodJWT,
-  ZodIntersection: () => ZodIntersection3,
+  ZodIntersection: () => ZodIntersection2,
   ZodIPv6: () => ZodIPv6,
   ZodIPv4: () => ZodIPv4,
   ZodGUID: () => ZodGUID,
-  ZodFunction: () => ZodFunction3,
+  ZodFunction: () => ZodFunction2,
   ZodFile: () => ZodFile,
   ZodExactOptional: () => ZodExactOptional,
-  ZodEnum: () => ZodEnum3,
+  ZodEnum: () => ZodEnum2,
   ZodEmoji: () => ZodEmoji,
   ZodEmail: () => ZodEmail,
   ZodE164: () => ZodE164,
-  ZodDiscriminatedUnion: () => ZodDiscriminatedUnion3,
-  ZodDefault: () => ZodDefault3,
-  ZodDate: () => ZodDate3,
+  ZodDiscriminatedUnion: () => ZodDiscriminatedUnion2,
+  ZodDefault: () => ZodDefault2,
+  ZodDate: () => ZodDate2,
   ZodCustomStringFormat: () => ZodCustomStringFormat,
   ZodCustom: () => ZodCustom,
   ZodCodec: () => ZodCodec,
-  ZodCatch: () => ZodCatch3,
+  ZodCatch: () => ZodCatch2,
   ZodCUID2: () => ZodCUID2,
   ZodCUID: () => ZodCUID,
   ZodCIDRv6: () => ZodCIDRv6,
   ZodCIDRv4: () => ZodCIDRv4,
-  ZodBoolean: () => ZodBoolean3,
+  ZodBoolean: () => ZodBoolean2,
   ZodBigIntFormat: () => ZodBigIntFormat,
-  ZodBigInt: () => ZodBigInt3,
+  ZodBigInt: () => ZodBigInt2,
   ZodBase64URL: () => ZodBase64URL,
   ZodBase64: () => ZodBase64,
-  ZodArray: () => ZodArray3,
-  ZodAny: () => ZodAny3
+  ZodArray: () => ZodArray2,
+  ZodAny: () => ZodAny2
 });
 var exports_checks2 = {};
 __export(exports_checks2, {
@@ -38078,7 +28537,7 @@ var initializer2 = (inst, issues) => {
     }
   });
 };
-var ZodError5 = $constructor("ZodError", initializer2);
+var ZodError3 = $constructor("ZodError", initializer2);
 var ZodRealError = $constructor("ZodError", initializer2, {
   Parent: Error
 });
@@ -38094,7 +28553,7 @@ var safeEncode2 = /* @__PURE__ */ _safeEncode(ZodRealError);
 var safeDecode2 = /* @__PURE__ */ _safeDecode(ZodRealError);
 var safeEncodeAsync2 = /* @__PURE__ */ _safeEncodeAsync(ZodRealError);
 var safeDecodeAsync2 = /* @__PURE__ */ _safeDecodeAsync(ZodRealError);
-var ZodType3 = /* @__PURE__ */ $constructor("ZodType", (inst, def) => {
+var ZodType2 = /* @__PURE__ */ $constructor("ZodType", (inst, def) => {
   $ZodType.init(inst, def);
   Object.assign(inst["~standard"], {
     jsonSchema: {
@@ -38179,7 +28638,7 @@ var ZodType3 = /* @__PURE__ */ $constructor("ZodType", (inst, def) => {
 });
 var _ZodString = /* @__PURE__ */ $constructor("_ZodString", (inst, def) => {
   $ZodString.init(inst, def);
-  ZodType3.init(inst, def);
+  ZodType2.init(inst, def);
   inst._zod.processJSONSchema = (ctx, json, params) => stringProcessor(inst, ctx, json, params);
   const bag = inst._zod.bag;
   inst.format = bag.format ?? null;
@@ -38201,7 +28660,7 @@ var _ZodString = /* @__PURE__ */ $constructor("_ZodString", (inst, def) => {
   inst.toUpperCase = () => inst.check(_toUpperCase());
   inst.slugify = () => inst.check(_slugify());
 });
-var ZodString3 = /* @__PURE__ */ $constructor("ZodString", (inst, def) => {
+var ZodString2 = /* @__PURE__ */ $constructor("ZodString", (inst, def) => {
   $ZodString.init(inst, def);
   _ZodString.init(inst, def);
   inst.email = (params) => inst.check(_email(ZodEmail, params));
@@ -38233,7 +28692,7 @@ var ZodString3 = /* @__PURE__ */ $constructor("ZodString", (inst, def) => {
   inst.duration = (params) => inst.check(duration2(params));
 });
 function string2(params) {
-  return _string(ZodString3, params);
+  return _string(ZodString2, params);
 }
 var ZodStringFormat = /* @__PURE__ */ $constructor("ZodStringFormat", (inst, def) => {
   $ZodStringFormat.init(inst, def);
@@ -38408,7 +28867,7 @@ function hostname2(_params) {
 function hex2(_params) {
   return _stringFormat(ZodCustomStringFormat, "hex", exports_regexes.hex, _params);
 }
-function hash(alg, params) {
+function hash2(alg, params) {
   const enc = params?.enc ?? "hex";
   const format = `${alg}_${enc}`;
   const regex = exports_regexes[format];
@@ -38416,24 +28875,24 @@ function hash(alg, params) {
     throw new Error(`Unrecognized hash format: ${format}`);
   return _stringFormat(ZodCustomStringFormat, format, regex, params);
 }
-var ZodNumber3 = /* @__PURE__ */ $constructor("ZodNumber", (inst, def) => {
+var ZodNumber2 = /* @__PURE__ */ $constructor("ZodNumber", (inst, def) => {
   $ZodNumber.init(inst, def);
-  ZodType3.init(inst, def);
+  ZodType2.init(inst, def);
   inst._zod.processJSONSchema = (ctx, json, params) => numberProcessor(inst, ctx, json, params);
-  inst.gt = (value3, params) => inst.check(_gt(value3, params));
-  inst.gte = (value3, params) => inst.check(_gte(value3, params));
-  inst.min = (value3, params) => inst.check(_gte(value3, params));
-  inst.lt = (value3, params) => inst.check(_lt(value3, params));
-  inst.lte = (value3, params) => inst.check(_lte(value3, params));
-  inst.max = (value3, params) => inst.check(_lte(value3, params));
+  inst.gt = (value2, params) => inst.check(_gt(value2, params));
+  inst.gte = (value2, params) => inst.check(_gte(value2, params));
+  inst.min = (value2, params) => inst.check(_gte(value2, params));
+  inst.lt = (value2, params) => inst.check(_lt(value2, params));
+  inst.lte = (value2, params) => inst.check(_lte(value2, params));
+  inst.max = (value2, params) => inst.check(_lte(value2, params));
   inst.int = (params) => inst.check(int(params));
   inst.safe = (params) => inst.check(int(params));
   inst.positive = (params) => inst.check(_gt(0, params));
   inst.nonnegative = (params) => inst.check(_gte(0, params));
   inst.negative = (params) => inst.check(_lt(0, params));
   inst.nonpositive = (params) => inst.check(_lte(0, params));
-  inst.multipleOf = (value3, params) => inst.check(_multipleOf(value3, params));
-  inst.step = (value3, params) => inst.check(_multipleOf(value3, params));
+  inst.multipleOf = (value2, params) => inst.check(_multipleOf(value2, params));
+  inst.step = (value2, params) => inst.check(_multipleOf(value2, params));
   inst.finite = () => inst;
   const bag = inst._zod.bag;
   inst.minValue = Math.max(bag.minimum ?? Number.NEGATIVE_INFINITY, bag.exclusiveMinimum ?? Number.NEGATIVE_INFINITY) ?? null;
@@ -38443,11 +28902,11 @@ var ZodNumber3 = /* @__PURE__ */ $constructor("ZodNumber", (inst, def) => {
   inst.format = bag.format ?? null;
 });
 function number2(params) {
-  return _number(ZodNumber3, params);
+  return _number(ZodNumber2, params);
 }
 var ZodNumberFormat = /* @__PURE__ */ $constructor("ZodNumberFormat", (inst, def) => {
   $ZodNumberFormat.init(inst, def);
-  ZodNumber3.init(inst, def);
+  ZodNumber2.init(inst, def);
 });
 function int(params) {
   return _int(ZodNumberFormat, params);
@@ -38464,42 +28923,42 @@ function int32(params) {
 function uint32(params) {
   return _uint32(ZodNumberFormat, params);
 }
-var ZodBoolean3 = /* @__PURE__ */ $constructor("ZodBoolean", (inst, def) => {
+var ZodBoolean2 = /* @__PURE__ */ $constructor("ZodBoolean", (inst, def) => {
   $ZodBoolean.init(inst, def);
-  ZodType3.init(inst, def);
+  ZodType2.init(inst, def);
   inst._zod.processJSONSchema = (ctx, json, params) => booleanProcessor(inst, ctx, json, params);
 });
 function boolean2(params) {
-  return _boolean(ZodBoolean3, params);
+  return _boolean(ZodBoolean2, params);
 }
-var ZodBigInt3 = /* @__PURE__ */ $constructor("ZodBigInt", (inst, def) => {
+var ZodBigInt2 = /* @__PURE__ */ $constructor("ZodBigInt", (inst, def) => {
   $ZodBigInt.init(inst, def);
-  ZodType3.init(inst, def);
+  ZodType2.init(inst, def);
   inst._zod.processJSONSchema = (ctx, json, params) => bigintProcessor(inst, ctx, json, params);
-  inst.gte = (value3, params) => inst.check(_gte(value3, params));
-  inst.min = (value3, params) => inst.check(_gte(value3, params));
-  inst.gt = (value3, params) => inst.check(_gt(value3, params));
-  inst.gte = (value3, params) => inst.check(_gte(value3, params));
-  inst.min = (value3, params) => inst.check(_gte(value3, params));
-  inst.lt = (value3, params) => inst.check(_lt(value3, params));
-  inst.lte = (value3, params) => inst.check(_lte(value3, params));
-  inst.max = (value3, params) => inst.check(_lte(value3, params));
+  inst.gte = (value2, params) => inst.check(_gte(value2, params));
+  inst.min = (value2, params) => inst.check(_gte(value2, params));
+  inst.gt = (value2, params) => inst.check(_gt(value2, params));
+  inst.gte = (value2, params) => inst.check(_gte(value2, params));
+  inst.min = (value2, params) => inst.check(_gte(value2, params));
+  inst.lt = (value2, params) => inst.check(_lt(value2, params));
+  inst.lte = (value2, params) => inst.check(_lte(value2, params));
+  inst.max = (value2, params) => inst.check(_lte(value2, params));
   inst.positive = (params) => inst.check(_gt(BigInt(0), params));
   inst.negative = (params) => inst.check(_lt(BigInt(0), params));
   inst.nonpositive = (params) => inst.check(_lte(BigInt(0), params));
   inst.nonnegative = (params) => inst.check(_gte(BigInt(0), params));
-  inst.multipleOf = (value3, params) => inst.check(_multipleOf(value3, params));
+  inst.multipleOf = (value2, params) => inst.check(_multipleOf(value2, params));
   const bag = inst._zod.bag;
   inst.minValue = bag.minimum ?? null;
   inst.maxValue = bag.maximum ?? null;
   inst.format = bag.format ?? null;
 });
 function bigint2(params) {
-  return _bigint(ZodBigInt3, params);
+  return _bigint(ZodBigInt2, params);
 }
 var ZodBigIntFormat = /* @__PURE__ */ $constructor("ZodBigIntFormat", (inst, def) => {
   $ZodBigIntFormat.init(inst, def);
-  ZodBigInt3.init(inst, def);
+  ZodBigInt2.init(inst, def);
 });
 function int64(params) {
   return _int64(ZodBigIntFormat, params);
@@ -38507,78 +28966,78 @@ function int64(params) {
 function uint64(params) {
   return _uint64(ZodBigIntFormat, params);
 }
-var ZodSymbol3 = /* @__PURE__ */ $constructor("ZodSymbol", (inst, def) => {
+var ZodSymbol2 = /* @__PURE__ */ $constructor("ZodSymbol", (inst, def) => {
   $ZodSymbol.init(inst, def);
-  ZodType3.init(inst, def);
+  ZodType2.init(inst, def);
   inst._zod.processJSONSchema = (ctx, json, params) => symbolProcessor(inst, ctx, json, params);
 });
-function symbol3(params) {
-  return _symbol(ZodSymbol3, params);
+function symbol2(params) {
+  return _symbol(ZodSymbol2, params);
 }
-var ZodUndefined3 = /* @__PURE__ */ $constructor("ZodUndefined", (inst, def) => {
+var ZodUndefined2 = /* @__PURE__ */ $constructor("ZodUndefined", (inst, def) => {
   $ZodUndefined.init(inst, def);
-  ZodType3.init(inst, def);
+  ZodType2.init(inst, def);
   inst._zod.processJSONSchema = (ctx, json, params) => undefinedProcessor(inst, ctx, json, params);
 });
 function _undefined3(params) {
-  return _undefined2(ZodUndefined3, params);
+  return _undefined2(ZodUndefined2, params);
 }
-var ZodNull3 = /* @__PURE__ */ $constructor("ZodNull", (inst, def) => {
+var ZodNull2 = /* @__PURE__ */ $constructor("ZodNull", (inst, def) => {
   $ZodNull.init(inst, def);
-  ZodType3.init(inst, def);
+  ZodType2.init(inst, def);
   inst._zod.processJSONSchema = (ctx, json, params) => nullProcessor(inst, ctx, json, params);
 });
 function _null3(params) {
-  return _null2(ZodNull3, params);
+  return _null2(ZodNull2, params);
 }
-var ZodAny3 = /* @__PURE__ */ $constructor("ZodAny", (inst, def) => {
+var ZodAny2 = /* @__PURE__ */ $constructor("ZodAny", (inst, def) => {
   $ZodAny.init(inst, def);
-  ZodType3.init(inst, def);
+  ZodType2.init(inst, def);
   inst._zod.processJSONSchema = (ctx, json, params) => anyProcessor(inst, ctx, json, params);
 });
 function any() {
-  return _any(ZodAny3);
+  return _any(ZodAny2);
 }
-var ZodUnknown3 = /* @__PURE__ */ $constructor("ZodUnknown", (inst, def) => {
+var ZodUnknown2 = /* @__PURE__ */ $constructor("ZodUnknown", (inst, def) => {
   $ZodUnknown.init(inst, def);
-  ZodType3.init(inst, def);
+  ZodType2.init(inst, def);
   inst._zod.processJSONSchema = (ctx, json, params) => unknownProcessor(inst, ctx, json, params);
 });
 function unknown() {
-  return _unknown(ZodUnknown3);
+  return _unknown(ZodUnknown2);
 }
-var ZodNever3 = /* @__PURE__ */ $constructor("ZodNever", (inst, def) => {
+var ZodNever2 = /* @__PURE__ */ $constructor("ZodNever", (inst, def) => {
   $ZodNever.init(inst, def);
-  ZodType3.init(inst, def);
+  ZodType2.init(inst, def);
   inst._zod.processJSONSchema = (ctx, json, params) => neverProcessor(inst, ctx, json, params);
 });
 function never(params) {
-  return _never(ZodNever3, params);
+  return _never(ZodNever2, params);
 }
-var ZodVoid3 = /* @__PURE__ */ $constructor("ZodVoid", (inst, def) => {
+var ZodVoid2 = /* @__PURE__ */ $constructor("ZodVoid", (inst, def) => {
   $ZodVoid.init(inst, def);
-  ZodType3.init(inst, def);
+  ZodType2.init(inst, def);
   inst._zod.processJSONSchema = (ctx, json, params) => voidProcessor(inst, ctx, json, params);
 });
 function _void2(params) {
-  return _void(ZodVoid3, params);
+  return _void(ZodVoid2, params);
 }
-var ZodDate3 = /* @__PURE__ */ $constructor("ZodDate", (inst, def) => {
+var ZodDate2 = /* @__PURE__ */ $constructor("ZodDate", (inst, def) => {
   $ZodDate.init(inst, def);
-  ZodType3.init(inst, def);
+  ZodType2.init(inst, def);
   inst._zod.processJSONSchema = (ctx, json, params) => dateProcessor(inst, ctx, json, params);
-  inst.min = (value3, params) => inst.check(_gte(value3, params));
-  inst.max = (value3, params) => inst.check(_lte(value3, params));
+  inst.min = (value2, params) => inst.check(_gte(value2, params));
+  inst.max = (value2, params) => inst.check(_lte(value2, params));
   const c = inst._zod.bag;
   inst.minDate = c.minimum ? new Date(c.minimum) : null;
   inst.maxDate = c.maximum ? new Date(c.maximum) : null;
 });
 function date3(params) {
-  return _date(ZodDate3, params);
+  return _date(ZodDate2, params);
 }
-var ZodArray3 = /* @__PURE__ */ $constructor("ZodArray", (inst, def) => {
+var ZodArray2 = /* @__PURE__ */ $constructor("ZodArray", (inst, def) => {
   $ZodArray.init(inst, def);
-  ZodType3.init(inst, def);
+  ZodType2.init(inst, def);
   inst._zod.processJSONSchema = (ctx, json, params) => arrayProcessor(inst, ctx, json, params);
   inst.element = def.element;
   inst.min = (minLength, params) => inst.check(_minLength(minLength, params));
@@ -38588,15 +29047,15 @@ var ZodArray3 = /* @__PURE__ */ $constructor("ZodArray", (inst, def) => {
   inst.unwrap = () => inst.element;
 });
 function array(element, params) {
-  return _array(ZodArray3, element, params);
+  return _array(ZodArray2, element, params);
 }
 function keyof(schema) {
   const shape = schema._zod.def.shape;
   return _enum2(Object.keys(shape));
 }
-var ZodObject3 = /* @__PURE__ */ $constructor("ZodObject", (inst, def) => {
+var ZodObject2 = /* @__PURE__ */ $constructor("ZodObject", (inst, def) => {
   $ZodObjectJIT.init(inst, def);
-  ZodType3.init(inst, def);
+  ZodType2.init(inst, def);
   inst._zod.processJSONSchema = (ctx, json, params) => objectProcessor(inst, ctx, json, params);
   exports_util.defineLazy(inst, "shape", () => {
     return def.shape;
@@ -38616,7 +29075,7 @@ var ZodObject3 = /* @__PURE__ */ $constructor("ZodObject", (inst, def) => {
   inst.merge = (other) => exports_util.merge(inst, other);
   inst.pick = (mask) => exports_util.pick(inst, mask);
   inst.omit = (mask) => exports_util.omit(inst, mask);
-  inst.partial = (...args) => exports_util.partial(ZodOptional3, inst, args[0]);
+  inst.partial = (...args) => exports_util.partial(ZodOptional2, inst, args[0]);
   inst.required = (...args) => exports_util.required(ZodNonOptional, inst, args[0]);
 });
 function object(shape, params) {
@@ -38625,10 +29084,10 @@ function object(shape, params) {
     shape: shape ?? {},
     ...exports_util.normalizeParams(params)
   };
-  return new ZodObject3(def);
+  return new ZodObject2(def);
 }
 function strictObject(shape, params) {
-  return new ZodObject3({
+  return new ZodObject2({
     type: "object",
     shape,
     catchall: never(),
@@ -38636,28 +29095,28 @@ function strictObject(shape, params) {
   });
 }
 function looseObject(shape, params) {
-  return new ZodObject3({
+  return new ZodObject2({
     type: "object",
     shape,
     catchall: unknown(),
     ...exports_util.normalizeParams(params)
   });
 }
-var ZodUnion3 = /* @__PURE__ */ $constructor("ZodUnion", (inst, def) => {
+var ZodUnion2 = /* @__PURE__ */ $constructor("ZodUnion", (inst, def) => {
   $ZodUnion.init(inst, def);
-  ZodType3.init(inst, def);
+  ZodType2.init(inst, def);
   inst._zod.processJSONSchema = (ctx, json, params) => unionProcessor(inst, ctx, json, params);
   inst.options = def.options;
 });
 function union(options, params) {
-  return new ZodUnion3({
+  return new ZodUnion2({
     type: "union",
     options,
     ...exports_util.normalizeParams(params)
   });
 }
 var ZodXor = /* @__PURE__ */ $constructor("ZodXor", (inst, def) => {
-  ZodUnion3.init(inst, def);
+  ZodUnion2.init(inst, def);
   $ZodXor.init(inst, def);
   inst._zod.processJSONSchema = (ctx, json, params) => unionProcessor(inst, ctx, json, params);
   inst.options = def.options;
@@ -38670,33 +29129,33 @@ function xor(options, params) {
     ...exports_util.normalizeParams(params)
   });
 }
-var ZodDiscriminatedUnion3 = /* @__PURE__ */ $constructor("ZodDiscriminatedUnion", (inst, def) => {
-  ZodUnion3.init(inst, def);
+var ZodDiscriminatedUnion2 = /* @__PURE__ */ $constructor("ZodDiscriminatedUnion", (inst, def) => {
+  ZodUnion2.init(inst, def);
   $ZodDiscriminatedUnion.init(inst, def);
 });
 function discriminatedUnion(discriminator, options, params) {
-  return new ZodDiscriminatedUnion3({
+  return new ZodDiscriminatedUnion2({
     type: "union",
     options,
     discriminator,
     ...exports_util.normalizeParams(params)
   });
 }
-var ZodIntersection3 = /* @__PURE__ */ $constructor("ZodIntersection", (inst, def) => {
+var ZodIntersection2 = /* @__PURE__ */ $constructor("ZodIntersection", (inst, def) => {
   $ZodIntersection.init(inst, def);
-  ZodType3.init(inst, def);
+  ZodType2.init(inst, def);
   inst._zod.processJSONSchema = (ctx, json, params) => intersectionProcessor(inst, ctx, json, params);
 });
 function intersection(left, right) {
-  return new ZodIntersection3({
+  return new ZodIntersection2({
     type: "intersection",
     left,
     right
   });
 }
-var ZodTuple3 = /* @__PURE__ */ $constructor("ZodTuple", (inst, def) => {
+var ZodTuple2 = /* @__PURE__ */ $constructor("ZodTuple", (inst, def) => {
   $ZodTuple.init(inst, def);
-  ZodType3.init(inst, def);
+  ZodType2.init(inst, def);
   inst._zod.processJSONSchema = (ctx, json, params) => tupleProcessor(inst, ctx, json, params);
   inst.rest = (rest) => inst.clone({
     ...inst._zod.def,
@@ -38707,22 +29166,22 @@ function tuple(items, _paramsOrRest, _params) {
   const hasRest = _paramsOrRest instanceof $ZodType;
   const params = hasRest ? _params : _paramsOrRest;
   const rest = hasRest ? _paramsOrRest : null;
-  return new ZodTuple3({
+  return new ZodTuple2({
     type: "tuple",
     items,
     rest,
     ...exports_util.normalizeParams(params)
   });
 }
-var ZodRecord3 = /* @__PURE__ */ $constructor("ZodRecord", (inst, def) => {
+var ZodRecord2 = /* @__PURE__ */ $constructor("ZodRecord", (inst, def) => {
   $ZodRecord.init(inst, def);
-  ZodType3.init(inst, def);
+  ZodType2.init(inst, def);
   inst._zod.processJSONSchema = (ctx, json, params) => recordProcessor(inst, ctx, json, params);
   inst.keyType = def.keyType;
   inst.valueType = def.valueType;
 });
 function record(keyType, valueType, params) {
-  return new ZodRecord3({
+  return new ZodRecord2({
     type: "record",
     keyType,
     valueType,
@@ -38732,7 +29191,7 @@ function record(keyType, valueType, params) {
 function partialRecord(keyType, valueType, params) {
   const k = clone2(keyType);
   k._zod.values = undefined;
-  return new ZodRecord3({
+  return new ZodRecord2({
     type: "record",
     keyType: k,
     valueType,
@@ -38740,7 +29199,7 @@ function partialRecord(keyType, valueType, params) {
   });
 }
 function looseRecord(keyType, valueType, params) {
-  return new ZodRecord3({
+  return new ZodRecord2({
     type: "record",
     keyType,
     valueType,
@@ -38748,9 +29207,9 @@ function looseRecord(keyType, valueType, params) {
     ...exports_util.normalizeParams(params)
   });
 }
-var ZodMap3 = /* @__PURE__ */ $constructor("ZodMap", (inst, def) => {
+var ZodMap2 = /* @__PURE__ */ $constructor("ZodMap", (inst, def) => {
   $ZodMap.init(inst, def);
-  ZodType3.init(inst, def);
+  ZodType2.init(inst, def);
   inst._zod.processJSONSchema = (ctx, json, params) => mapProcessor(inst, ctx, json, params);
   inst.keyType = def.keyType;
   inst.valueType = def.valueType;
@@ -38760,16 +29219,16 @@ var ZodMap3 = /* @__PURE__ */ $constructor("ZodMap", (inst, def) => {
   inst.size = (...args) => inst.check(_size(...args));
 });
 function map(keyType, valueType, params) {
-  return new ZodMap3({
+  return new ZodMap2({
     type: "map",
     keyType,
     valueType,
     ...exports_util.normalizeParams(params)
   });
 }
-var ZodSet3 = /* @__PURE__ */ $constructor("ZodSet", (inst, def) => {
+var ZodSet2 = /* @__PURE__ */ $constructor("ZodSet", (inst, def) => {
   $ZodSet.init(inst, def);
-  ZodType3.init(inst, def);
+  ZodType2.init(inst, def);
   inst._zod.processJSONSchema = (ctx, json, params) => setProcessor(inst, ctx, json, params);
   inst.min = (...args) => inst.check(_minSize(...args));
   inst.nonempty = (params) => inst.check(_minSize(1, params));
@@ -38777,28 +29236,28 @@ var ZodSet3 = /* @__PURE__ */ $constructor("ZodSet", (inst, def) => {
   inst.size = (...args) => inst.check(_size(...args));
 });
 function set(valueType, params) {
-  return new ZodSet3({
+  return new ZodSet2({
     type: "set",
     valueType,
     ...exports_util.normalizeParams(params)
   });
 }
-var ZodEnum3 = /* @__PURE__ */ $constructor("ZodEnum", (inst, def) => {
+var ZodEnum2 = /* @__PURE__ */ $constructor("ZodEnum", (inst, def) => {
   $ZodEnum.init(inst, def);
-  ZodType3.init(inst, def);
+  ZodType2.init(inst, def);
   inst._zod.processJSONSchema = (ctx, json, params) => enumProcessor(inst, ctx, json, params);
   inst.enum = def.entries;
   inst.options = Object.values(def.entries);
   const keys = new Set(Object.keys(def.entries));
   inst.extract = (values, params) => {
     const newEntries = {};
-    for (const value3 of values) {
-      if (keys.has(value3)) {
-        newEntries[value3] = def.entries[value3];
+    for (const value2 of values) {
+      if (keys.has(value2)) {
+        newEntries[value2] = def.entries[value2];
       } else
-        throw new Error(`Key ${value3} not found in enum`);
+        throw new Error(`Key ${value2} not found in enum`);
     }
-    return new ZodEnum3({
+    return new ZodEnum2({
       ...def,
       checks: [],
       ...exports_util.normalizeParams(params),
@@ -38807,13 +29266,13 @@ var ZodEnum3 = /* @__PURE__ */ $constructor("ZodEnum", (inst, def) => {
   };
   inst.exclude = (values, params) => {
     const newEntries = { ...def.entries };
-    for (const value3 of values) {
-      if (keys.has(value3)) {
-        delete newEntries[value3];
+    for (const value2 of values) {
+      if (keys.has(value2)) {
+        delete newEntries[value2];
       } else
-        throw new Error(`Key ${value3} not found in enum`);
+        throw new Error(`Key ${value2} not found in enum`);
     }
-    return new ZodEnum3({
+    return new ZodEnum2({
       ...def,
       checks: [],
       ...exports_util.normalizeParams(params),
@@ -38823,22 +29282,22 @@ var ZodEnum3 = /* @__PURE__ */ $constructor("ZodEnum", (inst, def) => {
 });
 function _enum2(values, params) {
   const entries = Array.isArray(values) ? Object.fromEntries(values.map((v) => [v, v])) : values;
-  return new ZodEnum3({
+  return new ZodEnum2({
     type: "enum",
     entries,
     ...exports_util.normalizeParams(params)
   });
 }
 function nativeEnum(entries, params) {
-  return new ZodEnum3({
+  return new ZodEnum2({
     type: "enum",
     entries,
     ...exports_util.normalizeParams(params)
   });
 }
-var ZodLiteral3 = /* @__PURE__ */ $constructor("ZodLiteral", (inst, def) => {
+var ZodLiteral2 = /* @__PURE__ */ $constructor("ZodLiteral", (inst, def) => {
   $ZodLiteral.init(inst, def);
-  ZodType3.init(inst, def);
+  ZodType2.init(inst, def);
   inst._zod.processJSONSchema = (ctx, json, params) => literalProcessor(inst, ctx, json, params);
   inst.values = new Set(def.values);
   Object.defineProperty(inst, "value", {
@@ -38850,27 +29309,27 @@ var ZodLiteral3 = /* @__PURE__ */ $constructor("ZodLiteral", (inst, def) => {
     }
   });
 });
-function literal(value3, params) {
-  return new ZodLiteral3({
+function literal(value2, params) {
+  return new ZodLiteral2({
     type: "literal",
-    values: Array.isArray(value3) ? value3 : [value3],
+    values: Array.isArray(value2) ? value2 : [value2],
     ...exports_util.normalizeParams(params)
   });
 }
 var ZodFile = /* @__PURE__ */ $constructor("ZodFile", (inst, def) => {
   $ZodFile.init(inst, def);
-  ZodType3.init(inst, def);
+  ZodType2.init(inst, def);
   inst._zod.processJSONSchema = (ctx, json, params) => fileProcessor(inst, ctx, json, params);
-  inst.min = (size2, params) => inst.check(_minSize(size2, params));
-  inst.max = (size2, params) => inst.check(_maxSize(size2, params));
-  inst.mime = (types6, params) => inst.check(_mime(Array.isArray(types6) ? types6 : [types6], params));
+  inst.min = (size3, params) => inst.check(_minSize(size3, params));
+  inst.max = (size3, params) => inst.check(_maxSize(size3, params));
+  inst.mime = (types4, params) => inst.check(_mime(Array.isArray(types4) ? types4 : [types4], params));
 });
 function file(params) {
   return _file(ZodFile, params);
 }
 var ZodTransform = /* @__PURE__ */ $constructor("ZodTransform", (inst, def) => {
   $ZodTransform.init(inst, def);
-  ZodType3.init(inst, def);
+  ZodType2.init(inst, def);
   inst._zod.processJSONSchema = (ctx, json, params) => transformProcessor(inst, ctx, json, params);
   inst._zod.parse = (payload, _ctx) => {
     if (_ctx.direction === "backward") {
@@ -38906,21 +29365,21 @@ function transform(fn) {
     transform: fn
   });
 }
-var ZodOptional3 = /* @__PURE__ */ $constructor("ZodOptional", (inst, def) => {
+var ZodOptional2 = /* @__PURE__ */ $constructor("ZodOptional", (inst, def) => {
   $ZodOptional.init(inst, def);
-  ZodType3.init(inst, def);
+  ZodType2.init(inst, def);
   inst._zod.processJSONSchema = (ctx, json, params) => optionalProcessor(inst, ctx, json, params);
   inst.unwrap = () => inst._zod.def.innerType;
 });
 function optional(innerType) {
-  return new ZodOptional3({
+  return new ZodOptional2({
     type: "optional",
     innerType
   });
 }
 var ZodExactOptional = /* @__PURE__ */ $constructor("ZodExactOptional", (inst, def) => {
   $ZodExactOptional.init(inst, def);
-  ZodType3.init(inst, def);
+  ZodType2.init(inst, def);
   inst._zod.processJSONSchema = (ctx, json, params) => optionalProcessor(inst, ctx, json, params);
   inst.unwrap = () => inst._zod.def.innerType;
 });
@@ -38930,14 +29389,14 @@ function exactOptional(innerType) {
     innerType
   });
 }
-var ZodNullable3 = /* @__PURE__ */ $constructor("ZodNullable", (inst, def) => {
+var ZodNullable2 = /* @__PURE__ */ $constructor("ZodNullable", (inst, def) => {
   $ZodNullable.init(inst, def);
-  ZodType3.init(inst, def);
+  ZodType2.init(inst, def);
   inst._zod.processJSONSchema = (ctx, json, params) => nullableProcessor(inst, ctx, json, params);
   inst.unwrap = () => inst._zod.def.innerType;
 });
 function nullable(innerType) {
-  return new ZodNullable3({
+  return new ZodNullable2({
     type: "nullable",
     innerType
   });
@@ -38945,15 +29404,15 @@ function nullable(innerType) {
 function nullish2(innerType) {
   return optional(nullable(innerType));
 }
-var ZodDefault3 = /* @__PURE__ */ $constructor("ZodDefault", (inst, def) => {
+var ZodDefault2 = /* @__PURE__ */ $constructor("ZodDefault", (inst, def) => {
   $ZodDefault.init(inst, def);
-  ZodType3.init(inst, def);
+  ZodType2.init(inst, def);
   inst._zod.processJSONSchema = (ctx, json, params) => defaultProcessor(inst, ctx, json, params);
   inst.unwrap = () => inst._zod.def.innerType;
   inst.removeDefault = inst.unwrap;
 });
 function _default2(innerType, defaultValue) {
-  return new ZodDefault3({
+  return new ZodDefault2({
     type: "default",
     innerType,
     get defaultValue() {
@@ -38963,7 +29422,7 @@ function _default2(innerType, defaultValue) {
 }
 var ZodPrefault = /* @__PURE__ */ $constructor("ZodPrefault", (inst, def) => {
   $ZodPrefault.init(inst, def);
-  ZodType3.init(inst, def);
+  ZodType2.init(inst, def);
   inst._zod.processJSONSchema = (ctx, json, params) => prefaultProcessor(inst, ctx, json, params);
   inst.unwrap = () => inst._zod.def.innerType;
 });
@@ -38978,7 +29437,7 @@ function prefault(innerType, defaultValue) {
 }
 var ZodNonOptional = /* @__PURE__ */ $constructor("ZodNonOptional", (inst, def) => {
   $ZodNonOptional.init(inst, def);
-  ZodType3.init(inst, def);
+  ZodType2.init(inst, def);
   inst._zod.processJSONSchema = (ctx, json, params) => nonoptionalProcessor(inst, ctx, json, params);
   inst.unwrap = () => inst._zod.def.innerType;
 });
@@ -38991,7 +29450,7 @@ function nonoptional(innerType, params) {
 }
 var ZodSuccess = /* @__PURE__ */ $constructor("ZodSuccess", (inst, def) => {
   $ZodSuccess.init(inst, def);
-  ZodType3.init(inst, def);
+  ZodType2.init(inst, def);
   inst._zod.processJSONSchema = (ctx, json, params) => successProcessor(inst, ctx, json, params);
   inst.unwrap = () => inst._zod.def.innerType;
 });
@@ -39001,31 +29460,31 @@ function success(innerType) {
     innerType
   });
 }
-var ZodCatch3 = /* @__PURE__ */ $constructor("ZodCatch", (inst, def) => {
+var ZodCatch2 = /* @__PURE__ */ $constructor("ZodCatch", (inst, def) => {
   $ZodCatch.init(inst, def);
-  ZodType3.init(inst, def);
+  ZodType2.init(inst, def);
   inst._zod.processJSONSchema = (ctx, json, params) => catchProcessor(inst, ctx, json, params);
   inst.unwrap = () => inst._zod.def.innerType;
   inst.removeCatch = inst.unwrap;
 });
 function _catch2(innerType, catchValue) {
-  return new ZodCatch3({
+  return new ZodCatch2({
     type: "catch",
     innerType,
     catchValue: typeof catchValue === "function" ? catchValue : () => catchValue
   });
 }
-var ZodNaN3 = /* @__PURE__ */ $constructor("ZodNaN", (inst, def) => {
+var ZodNaN2 = /* @__PURE__ */ $constructor("ZodNaN", (inst, def) => {
   $ZodNaN.init(inst, def);
-  ZodType3.init(inst, def);
+  ZodType2.init(inst, def);
   inst._zod.processJSONSchema = (ctx, json, params) => nanProcessor(inst, ctx, json, params);
 });
 function nan(params) {
-  return _nan(ZodNaN3, params);
+  return _nan(ZodNaN2, params);
 }
 var ZodPipe = /* @__PURE__ */ $constructor("ZodPipe", (inst, def) => {
   $ZodPipe.init(inst, def);
-  ZodType3.init(inst, def);
+  ZodType2.init(inst, def);
   inst._zod.processJSONSchema = (ctx, json, params) => pipeProcessor(inst, ctx, json, params);
   inst.in = def.in;
   inst.out = def.out;
@@ -39050,21 +29509,21 @@ function codec(in_, out, params) {
     reverseTransform: params.encode
   });
 }
-var ZodReadonly3 = /* @__PURE__ */ $constructor("ZodReadonly", (inst, def) => {
+var ZodReadonly2 = /* @__PURE__ */ $constructor("ZodReadonly", (inst, def) => {
   $ZodReadonly.init(inst, def);
-  ZodType3.init(inst, def);
+  ZodType2.init(inst, def);
   inst._zod.processJSONSchema = (ctx, json, params) => readonlyProcessor(inst, ctx, json, params);
   inst.unwrap = () => inst._zod.def.innerType;
 });
 function readonly(innerType) {
-  return new ZodReadonly3({
+  return new ZodReadonly2({
     type: "readonly",
     innerType
   });
 }
 var ZodTemplateLiteral = /* @__PURE__ */ $constructor("ZodTemplateLiteral", (inst, def) => {
   $ZodTemplateLiteral.init(inst, def);
-  ZodType3.init(inst, def);
+  ZodType2.init(inst, def);
   inst._zod.processJSONSchema = (ctx, json, params) => templateLiteralProcessor(inst, ctx, json, params);
 });
 function templateLiteral(parts, params) {
@@ -39074,37 +29533,37 @@ function templateLiteral(parts, params) {
     ...exports_util.normalizeParams(params)
   });
 }
-var ZodLazy3 = /* @__PURE__ */ $constructor("ZodLazy", (inst, def) => {
+var ZodLazy2 = /* @__PURE__ */ $constructor("ZodLazy", (inst, def) => {
   $ZodLazy.init(inst, def);
-  ZodType3.init(inst, def);
+  ZodType2.init(inst, def);
   inst._zod.processJSONSchema = (ctx, json, params) => lazyProcessor(inst, ctx, json, params);
   inst.unwrap = () => inst._zod.def.getter();
 });
 function lazy(getter) {
-  return new ZodLazy3({
+  return new ZodLazy2({
     type: "lazy",
     getter
   });
 }
-var ZodPromise3 = /* @__PURE__ */ $constructor("ZodPromise", (inst, def) => {
+var ZodPromise2 = /* @__PURE__ */ $constructor("ZodPromise", (inst, def) => {
   $ZodPromise.init(inst, def);
-  ZodType3.init(inst, def);
+  ZodType2.init(inst, def);
   inst._zod.processJSONSchema = (ctx, json, params) => promiseProcessor(inst, ctx, json, params);
   inst.unwrap = () => inst._zod.def.innerType;
 });
 function promise(innerType) {
-  return new ZodPromise3({
+  return new ZodPromise2({
     type: "promise",
     innerType
   });
 }
-var ZodFunction3 = /* @__PURE__ */ $constructor("ZodFunction", (inst, def) => {
+var ZodFunction2 = /* @__PURE__ */ $constructor("ZodFunction", (inst, def) => {
   $ZodFunction.init(inst, def);
-  ZodType3.init(inst, def);
+  ZodType2.init(inst, def);
   inst._zod.processJSONSchema = (ctx, json, params) => functionProcessor(inst, ctx, json, params);
 });
 function _function(params) {
-  return new ZodFunction3({
+  return new ZodFunction2({
     type: "function",
     input: Array.isArray(params?.input) ? tuple(params?.input) : params?.input ?? array(unknown()),
     output: params?.output ?? unknown()
@@ -39112,7 +29571,7 @@ function _function(params) {
 }
 var ZodCustom = /* @__PURE__ */ $constructor("ZodCustom", (inst, def) => {
   $ZodCustom.init(inst, def);
-  ZodType3.init(inst, def);
+  ZodType2.init(inst, def);
   inst._zod.processJSONSchema = (ctx, json, params) => customProcessor(inst, ctx, json, params);
 });
 function check(fn) {
@@ -39122,7 +29581,7 @@ function check(fn) {
   ch._zod.check = fn;
   return ch;
 }
-function custom4(fn, _params) {
+function custom3(fn, _params) {
   return _custom(ZodCustom, fn ?? (() => true), _params);
 }
 function refine(fn, _params = {}) {
@@ -39157,8 +29616,8 @@ function _instanceof(cls, params = {}) {
 }
 var stringbool = (...args) => _stringbool({
   Codec: ZodCodec,
-  Boolean: ZodBoolean3,
-  String: ZodString3
+  Boolean: ZodBoolean2,
+  String: ZodString2
 }, ...args);
 function json(params) {
   const jsonSchema = lazy(() => {
@@ -39169,7 +29628,7 @@ function json(params) {
 function preprocess(fn, schema) {
   return pipe(transform(fn), schema);
 }
-var ZodIssueCode3 = {
+var ZodIssueCode2 = {
   invalid_type: "invalid_type",
   too_big: "too_big",
   too_small: "too_small",
@@ -39182,16 +29641,16 @@ var ZodIssueCode3 = {
   invalid_value: "invalid_value",
   custom: "custom"
 };
-function setErrorMap3(map2) {
+function setErrorMap2(map2) {
   config({
     customError: map2
   });
 }
-function getErrorMap3() {
+function getErrorMap2() {
   return config().customError;
 }
-var ZodFirstPartyTypeKind3;
-(function(ZodFirstPartyTypeKind4) {})(ZodFirstPartyTypeKind3 || (ZodFirstPartyTypeKind3 = {}));
+var ZodFirstPartyTypeKind2;
+(function(ZodFirstPartyTypeKind3) {})(ZodFirstPartyTypeKind2 || (ZodFirstPartyTypeKind2 = {}));
 var z = {
   ...exports_schemas2,
   ...exports_checks2,
@@ -39640,10 +30099,10 @@ function fromJSONSchema(schema, params) {
   if (typeof schema === "boolean") {
     return schema ? z.any() : z.never();
   }
-  const version2 = detectVersion(schema, params?.defaultTarget);
+  const version4 = detectVersion(schema, params?.defaultTarget);
   const defs = schema.$defs || schema.definitions || {};
   const ctx = {
-    version: version2,
+    version: version4,
     defs,
     refs: new Map,
     processing: new Set,
@@ -39661,108 +30120,115 @@ __export(exports_coerce, {
   bigint: () => bigint3
 });
 function string3(params) {
-  return _coercedString(ZodString3, params);
+  return _coercedString(ZodString2, params);
 }
 function number3(params) {
-  return _coercedNumber(ZodNumber3, params);
+  return _coercedNumber(ZodNumber2, params);
 }
 function boolean3(params) {
-  return _coercedBoolean(ZodBoolean3, params);
+  return _coercedBoolean(ZodBoolean2, params);
 }
 function bigint3(params) {
-  return _coercedBigint(ZodBigInt3, params);
+  return _coercedBigint(ZodBigInt2, params);
 }
 function date4(params) {
-  return _coercedDate(ZodDate3, params);
+  return _coercedDate(ZodDate2, params);
 }
-config(en_default3());
-var zHex = () => exports_external3.string().refine((value3) => isHex(value3), "Invalid Ethereum address").transform((value3) => value3);
-var zEvmConfig = () => exports_external3.object({
-  chainSelectorName: exports_external3.string().min(1),
-  sessionRegistryAddress: exports_external3.string().regex(/^0x[a-fA-F0-9]{40}$/, "Invalid Ethereum address"),
-  managerAddress: exports_external3.string().regex(/^0x[a-fA-F0-9]{40}$/, "Invalid Ethereum address"),
-  gasLimit: exports_external3.string().regex(/^\d+$/, "gasLimit must be a numeric string").refine((val) => Number(val) > 0, {
+config(en_default2());
+var zod_default = exports_external2;
+var zHex = () => exports_external2.string().refine((value2) => isHex(value2), "Invalid Ethereum address").transform((value2) => value2);
+var zEvmConfig = () => exports_external2.object({
+  chainSelectorName: exports_external2.string().min(1),
+  sessionRegistryAddress: exports_external2.string().regex(/^0x[a-fA-F0-9]{40}$/, "Invalid Ethereum address"),
+  managerAddress: exports_external2.string().regex(/^0x[a-fA-F0-9]{40}$/, "Invalid Ethereum address"),
+  gasLimit: exports_external2.string().regex(/^\d+$/, "gasLimit must be a numeric string").refine((val) => Number(val) > 0, {
     message: "gasLimit must be greater than 0"
   })
 });
-var zConfig = () => exports_external3.object({
-  model: exports_external3.string(),
-  evms: exports_external3.array(zEvmConfig()).min(1, "At least one EVM config is required")
+var zConfig = () => exports_external2.object({
+  model: exports_external2.string(),
+  evms: exports_external2.array(zEvmConfig()).min(1, "At least one EVM config is required")
 });
-var zAiEvaluationResponse = () => exports_external3.object({
-  result: exports_external3.array(exports_external3.object({
-    goal: exports_external3.string().describe("The goal key from the list (exact match)"),
-    score: exports_external3.number().min(0).max(1e4).describe("Score 0-10000 basepoints: topic coverage, depth, relevance, clarity, completeness, accuracy"),
-    reasoning: exports_external3.string().describe("Brief bullet points: what was good, what could improve"),
-    improvements: exports_external3.string().array().describe("Scopes for improvements if any")
+var zAiEvaluationResponse = () => exports_external2.object({
+  result: exports_external2.array(exports_external2.object({
+    goal: exports_external2.string().describe("The goal key from the list (exact match)"),
+    score: exports_external2.number().min(0).max(1e4).describe("Score 0-10000 basepoints: topic coverage, depth, relevance, clarity, completeness, accuracy"),
+    reasoning: exports_external2.string().describe("Brief bullet points: what was good, what could improve"),
+    improvements: exports_external2.string().array().describe("Scopes for improvements if any")
   })),
-  confidence: exports_external3.number().min(0).max(1e4).describe("Confidence score in basepoints")
+  confidence: exports_external2.number().min(0).max(1e4).describe("Confidence score in basepoints")
 });
-var zSessionDetails = () => exports_external3.object({
-  sessionId: exports_external3.number(),
-  topic: exports_external3.string(),
-  goals: exports_external3.array(exports_external3.object({ name: exports_external3.string(), weight: exports_external3.number() })),
-  metadata: exports_external3.string(),
-  transcriptId: exports_external3.string()
+var zSessionDetails = () => exports_external2.object({
+  topic: exports_external2.string(),
+  price: exports_external2.number(),
+  goals: exports_external2.array(exports_external2.object({ name: exports_external2.string(), weight: exports_external2.number() })),
+  metadata: exports_external2.string(),
+  transcriptId: exports_external2.string()
 });
-var zWriteToStoreResponse = () => exports_external3.object({
-  data: exports_external3.object({
-    cid: exports_external3.string()
+var zWriteToStoreResponse = () => exports_external2.object({
+  data: exports_external2.object({
+    cid: exports_external2.string()
   })
+});
+var zListingData = () => zSessionDetails().omit({
+  transcriptId: true
 });
 var zStoreKeySchemas = () => ({
-  evaluationReport: exports_external3.object({
-    score: exports_external3.number(),
-    reasoning: exports_external3.string(),
-    improvements: exports_external3.string().array()
+  evaluationReport: exports_external2.object({
+    score: exports_external2.number(),
+    reasoning: exports_external2.string(),
+    improvements: exports_external2.string().array()
   }),
   sessionData: zSessionDetails(),
-  unpublishedSessionData: zSessionDetails().omit({ transcriptId: true })
+  unpublishedSessionData: zListingData()
 });
-var zRecallTranscriptArtifactResponse = () => exports_external3.object({
-  id: exports_external3.string(),
-  created_at: exports_external3.string(),
-  data: exports_external3.object({
-    download_url: exports_external3.string().nullable(),
-    provider_data_download_url: exports_external3.string().nullable()
-  })
-});
-var zRecallTranscriptResponse = () => exports_external3.object({
-  participant: exports_external3.object({
-    id: exports_external3.union([exports_external3.string(), exports_external3.number()]),
-    name: exports_external3.string().nullable(),
-    is_host: exports_external3.boolean().nullable(),
-    platform: exports_external3.string().nullable(),
-    extra_data: exports_external3.any().nullable(),
-    email: exports_external3.string().nullable().optional()
+var zRecallTranscriptResponse = () => exports_external2.object({
+  participant: exports_external2.object({
+    id: exports_external2.union([exports_external2.string(), exports_external2.number()]),
+    name: exports_external2.string().nullable(),
+    is_host: exports_external2.boolean().nullable(),
+    platform: exports_external2.string().nullable(),
+    extra_data: exports_external2.any().nullable(),
+    email: exports_external2.string().nullable().optional()
   }),
-  words: exports_external3.array(exports_external3.object({
-    text: exports_external3.string(),
-    start_timestamp: exports_external3.object({
-      absolute: exports_external3.string(),
-      relative: exports_external3.number()
+  words: exports_external2.array(exports_external2.object({
+    text: exports_external2.string(),
+    start_timestamp: exports_external2.object({
+      absolute: exports_external2.string(),
+      relative: exports_external2.number()
     }),
-    end_timestamp: exports_external3.object({
-      absolute: exports_external3.string(),
-      relative: exports_external3.number()
+    end_timestamp: exports_external2.object({
+      absolute: exports_external2.string(),
+      relative: exports_external2.number()
     })
   }))
 }).array();
-var getRecallTranscript = (runtime3, recallTranscriptId) => {
-  const apiKey = runtime3.getSecret({ id: "RECALL_API_KEY" }).result();
-  const apiBaseUrl = runtime3.getSecret({ id: "RECALL_API_BASE_URL" }).result();
-  const httpClient = new cre3.capabilities.HTTPClient;
-  const { downloadUrl } = httpClient.sendRequest(runtime3, RetrieveRecallTranscriptArtifactData(recallTranscriptId, apiBaseUrl.value, apiKey.value), consensusIdenticalAggregation2())(runtime3.config).result();
-  const result = httpClient.sendRequest(runtime3, GetRecallTranscriptData(downloadUrl, apiKey.value), consensusIdenticalAggregation2())(runtime3.config).result();
+var zRecallBotCreationResponse = () => exports_external2.object({
+  id: exports_external2.string(),
+  recordings: exports_external2.array(exports_external2.object({
+    id: exports_external2.string(),
+    media_shortcuts: exports_external2.object({
+      transcript: exports_external2.object({
+        id: exports_external2.string(),
+        data: exports_external2.object({
+          download_url: exports_external2.string().nullable(),
+          provider_data_download_url: exports_external2.string().nullable()
+        }).optional()
+      }).nullable()
+    })
+  }))
+});
+var getRecallTranscript = (runtime2, recallBotId) => {
+  const apiBaseUrl = runtime2.getSecret({ id: "RECALL_API_BASE_URL" }).result();
+  const apiKey = runtime2.getSecret({ id: "RECALL_API_KEY" }).result();
+  const httpClient = new cre.capabilities.HTTPClient;
+  const { transcriptUrl } = httpClient.sendRequest(runtime2, GetRecallBotTranscriptDownloadUrlData(`${apiBaseUrl.value}/bot/${recallBotId}/`, apiKey.value), consensusIdenticalAggregation())(runtime2.config).result();
+  const result = httpClient.sendRequest(runtime2, GetRecallTranscriptData(transcriptUrl), consensusIdenticalAggregation())(runtime2.config).result();
   return result;
 };
-var GetRecallTranscriptData = (transcriptUrl, apiKey) => (sendRequester, _config) => {
+var GetRecallTranscriptData = (transcriptUrl) => (sendRequester, _config) => {
   const req = {
-    url: `${transcriptUrl}`,
-    headers: {
-      Authorization: `Bearer ${apiKey}`,
-      "Content-Type": "application/json"
-    },
+    url: transcriptUrl,
     method: "GET",
     cacheSettings: {
       store: true,
@@ -39771,18 +30237,19 @@ var GetRecallTranscriptData = (transcriptUrl, apiKey) => (sendRequester, _config
   };
   const resp = sendRequester.sendRequest(req).result();
   const bodyText = new TextDecoder().decode(resp.body);
-  if (!ok2(resp))
+  if (!ok(resp))
     throw new Error(`HTTP request failed with status: ${resp.statusCode}. Error: ${bodyText}`);
   const parsedResponse = zRecallTranscriptResponse().parse(JSON.parse(bodyText));
   return {
     raw: compressTranscript(parsedResponse)
   };
 };
-var RetrieveRecallTranscriptArtifactData = (transcriptId, apiBaseUrl, apiKey) => (sendRequester, _config) => {
+var GetRecallBotTranscriptDownloadUrlData = (botUrl, apiKey) => (sendRequester, _config) => {
   const req = {
-    url: `${apiBaseUrl}/transcript/${transcriptId}`,
+    url: botUrl,
     headers: {
-      Authorization: `Bearer ${apiKey}`,
+      Authorization: `Token ${apiKey}`,
+      accept: "application/json",
       "Content-Type": "application/json"
     },
     method: "GET",
@@ -39793,17 +30260,14 @@ var RetrieveRecallTranscriptArtifactData = (transcriptId, apiBaseUrl, apiKey) =>
   };
   const resp = sendRequester.sendRequest(req).result();
   const bodyText = new TextDecoder().decode(resp.body);
-  if (!ok2(resp))
+  if (!ok(resp))
     throw new Error(`HTTP request failed with status: ${resp.statusCode}. Error: ${bodyText}`);
-  const parsedResponse = zRecallTranscriptArtifactResponse().parse(JSON.parse(bodyText));
-  const { download_url } = parsedResponse.data;
-  if (!download_url) {
-    throw new Error(`Transcript artifact with id ${transcriptId} does not have a download URL`);
+  const parsedResponse = zRecallBotCreationResponse().parse(JSON.parse(bodyText));
+  const transcriptUrl = parsedResponse.recordings.map((recording) => recording.media_shortcuts.transcript?.data?.download_url ?? recording.media_shortcuts.transcript?.data?.provider_data_download_url).find((url2) => Boolean(url2));
+  if (!transcriptUrl) {
+    throw new Error(`Transcript download URL is missing for Recall bot ${parsedResponse.id}`);
   }
-  return {
-    id: parsedResponse.id,
-    downloadUrl: download_url
-  };
+  return { transcriptUrl };
 };
 function compressTranscript(transcript) {
   const participantMap = new Map;
@@ -39849,23 +30313,46 @@ function compressTranscript(transcript) {
 ` : "";
   return header + dialogue;
 }
-function writeToStore(runtime3, key, id, value3) {
-  const pinataApiJwt = runtime3.getSecret({ id: "PINATA_API_JWT" }).result();
-  const httpClient = new cre3.capabilities.HTTPClient;
-  const writeResult = httpClient.sendRequest(runtime3, (sendRequester, _config) => {
-    const formData = new FormData;
-    const file2 = new File([JSON.stringify(zStoreKeySchemas()[key].parse(value3))], `${key}:${id}.json`, {
-      type: "application/json"
-    });
-    formData.append("file", file2);
-    formData.append("network", "public");
-    formData.append("name", `${key}:${id}.json`);
-    formData.append("keyvalues", JSON.stringify({
-      keyvalues: {
-        env: "prod"
-      }
-    }));
-    const bodyBytes = new TextEncoder().encode(JSON.stringify(formData));
+function writeToStore(runtime2, key, id, value2) {
+  const pinataApiJwt = runtime2.getSecret({ id: "PINATA_API_JWT" }).result();
+  const httpClient = new cre.capabilities.HTTPClient;
+  const writeResult = httpClient.sendRequest(runtime2, (sendRequester, _config) => {
+    const filename = `${key}:${id}.json`;
+    const jsonContent = JSON.stringify(zStoreKeySchemas()[key].parse(value2));
+    const boundary = "----CREFormBoundary7MA4YWxkTrZu0gW";
+    const multipart = [
+      `--${boundary}\r
+`,
+      `Content-Disposition: form-data; name="network"\r
+`,
+      `\r
+`,
+      `public\r
+`,
+      `--${boundary}\r
+`,
+      `Content-Disposition: form-data; name="file"; filename="${filename}"\r
+`,
+      `Content-Type: application/json\r
+`,
+      `\r
+`,
+      jsonContent,
+      `\r
+`,
+      `--${boundary}\r
+`,
+      `Content-Disposition: form-data; name="name"\r
+`,
+      `\r
+`,
+      filename,
+      `\r
+`,
+      `--${boundary}--\r
+`
+    ].join("");
+    const bodyBytes = new TextEncoder().encode(multipart);
     const body = Buffer.from(bodyBytes).toString("base64");
     const req = {
       url: "https://uploads.pinata.cloud/v3/files",
@@ -39873,7 +30360,7 @@ function writeToStore(runtime3, key, id, value3) {
       body,
       headers: {
         Authorization: `Bearer ${pinataApiJwt.value}`,
-        "Content-Type": "application/json"
+        "Content-Type": `multipart/form-data; boundary=${boundary}`
       },
       cacheSettings: {
         store: true,
@@ -39881,19 +30368,19 @@ function writeToStore(runtime3, key, id, value3) {
       }
     };
     const resp = sendRequester.sendRequest(req).result();
-    if (!ok2(resp))
+    if (!ok(resp))
       throw new Error(`HTTP request failed with status: ${resp.statusCode}`);
     const bodyText = new TextDecoder().decode(resp.body);
-    const externalResp = JSON.parse(bodyText);
-    return zWriteToStoreResponse().parse(externalResp);
-  }, consensusIdenticalAggregation2())(runtime3.config).result();
+    return zWriteToStoreResponse().parse(JSON.parse(bodyText));
+  }, consensusIdenticalAggregation())(runtime2.config).result();
   return writeResult;
 }
-function readFromStore(runtime3, key, cid) {
-  const httpClient = new cre3.capabilities.HTTPClient;
-  const readResult = httpClient.sendRequest(runtime3, (sendRequester, _config) => {
+function readFromStore(runtime2, key, cid) {
+  const pinataGatewayUrl = runtime2.getSecret({ id: "PINATA_GATEWAY_URL" }).result();
+  const httpClient = new cre.capabilities.HTTPClient;
+  const readResult = httpClient.sendRequest(runtime2, (sendRequester, _config) => {
     const req = {
-      url: `https://${cid}.ipfs.w3s.link/`,
+      url: `${pinataGatewayUrl.value}/ipfs/${cid}`,
       method: "GET",
       headers: {
         "Content-Type": "application/json"
@@ -39904,2449 +30391,13 @@ function readFromStore(runtime3, key, cid) {
       }
     };
     const resp = sendRequester.sendRequest(req).result();
-    if (!ok2(resp))
+    if (!ok(resp))
       throw new Error(`HTTP request failed with status: ${resp.statusCode}`);
     const bodyText = new TextDecoder().decode(resp.body);
     const parsedData = JSON.parse(bodyText);
     return zStoreKeySchemas()[key].parse(parsedData);
-  }, consensusIdenticalAggregation2())(runtime3.config).result();
+  }, consensusIdenticalAggregation())(runtime2.config).result();
   return zStoreKeySchemas()[key].parse(readResult);
-}
-function execTyped(regex, string4) {
-  const match = regex.exec(string4);
-  return match?.groups;
-}
-var bytesRegex = /^bytes([1-9]|1[0-9]|2[0-9]|3[0-2])?$/;
-var integerRegex = /^u?int(8|16|24|32|40|48|56|64|72|80|88|96|104|112|120|128|136|144|152|160|168|176|184|192|200|208|216|224|232|240|248|256)?$/;
-var isTupleRegex = /^\(.+?\).*?$/;
-var tupleRegex = /^tuple(?<array>(\[(\d*)\])*)$/;
-function formatAbiParameter(abiParameter) {
-  let type = abiParameter.type;
-  if (tupleRegex.test(abiParameter.type) && "components" in abiParameter) {
-    type = "(";
-    const length = abiParameter.components.length;
-    for (let i2 = 0;i2 < length; i2++) {
-      const component = abiParameter.components[i2];
-      type += formatAbiParameter(component);
-      if (i2 < length - 1)
-        type += ", ";
-    }
-    const result = execTyped(tupleRegex, abiParameter.type);
-    type += `)${result?.array ?? ""}`;
-    return formatAbiParameter({
-      ...abiParameter,
-      type
-    });
-  }
-  if ("indexed" in abiParameter && abiParameter.indexed)
-    type = `${type} indexed`;
-  if (abiParameter.name)
-    return `${type} ${abiParameter.name}`;
-  return type;
-}
-function formatAbiParameters(abiParameters) {
-  let params = "";
-  const length = abiParameters.length;
-  for (let i2 = 0;i2 < length; i2++) {
-    const abiParameter = abiParameters[i2];
-    params += formatAbiParameter(abiParameter);
-    if (i2 !== length - 1)
-      params += ", ";
-  }
-  return params;
-}
-function formatAbiItem(abiItem) {
-  if (abiItem.type === "function")
-    return `function ${abiItem.name}(${formatAbiParameters(abiItem.inputs)})${abiItem.stateMutability && abiItem.stateMutability !== "nonpayable" ? ` ${abiItem.stateMutability}` : ""}${abiItem.outputs?.length ? ` returns (${formatAbiParameters(abiItem.outputs)})` : ""}`;
-  if (abiItem.type === "event")
-    return `event ${abiItem.name}(${formatAbiParameters(abiItem.inputs)})`;
-  if (abiItem.type === "error")
-    return `error ${abiItem.name}(${formatAbiParameters(abiItem.inputs)})`;
-  if (abiItem.type === "constructor")
-    return `constructor(${formatAbiParameters(abiItem.inputs)})${abiItem.stateMutability === "payable" ? " payable" : ""}`;
-  if (abiItem.type === "fallback")
-    return `fallback() external${abiItem.stateMutability === "payable" ? " payable" : ""}`;
-  return "receive() external payable";
-}
-var errorSignatureRegex = /^error (?<name>[a-zA-Z$_][a-zA-Z0-9$_]*)\((?<parameters>.*?)\)$/;
-function isErrorSignature(signature) {
-  return errorSignatureRegex.test(signature);
-}
-function execErrorSignature(signature) {
-  return execTyped(errorSignatureRegex, signature);
-}
-var eventSignatureRegex = /^event (?<name>[a-zA-Z$_][a-zA-Z0-9$_]*)\((?<parameters>.*?)\)$/;
-function isEventSignature(signature) {
-  return eventSignatureRegex.test(signature);
-}
-function execEventSignature(signature) {
-  return execTyped(eventSignatureRegex, signature);
-}
-var functionSignatureRegex = /^function (?<name>[a-zA-Z$_][a-zA-Z0-9$_]*)\((?<parameters>.*?)\)(?: (?<scope>external|public{1}))?(?: (?<stateMutability>pure|view|nonpayable|payable{1}))?(?: returns\s?\((?<returns>.*?)\))?$/;
-function isFunctionSignature(signature) {
-  return functionSignatureRegex.test(signature);
-}
-function execFunctionSignature(signature) {
-  return execTyped(functionSignatureRegex, signature);
-}
-var structSignatureRegex = /^struct (?<name>[a-zA-Z$_][a-zA-Z0-9$_]*) \{(?<properties>.*?)\}$/;
-function isStructSignature(signature) {
-  return structSignatureRegex.test(signature);
-}
-function execStructSignature(signature) {
-  return execTyped(structSignatureRegex, signature);
-}
-var constructorSignatureRegex = /^constructor\((?<parameters>.*?)\)(?:\s(?<stateMutability>payable{1}))?$/;
-function isConstructorSignature(signature) {
-  return constructorSignatureRegex.test(signature);
-}
-function execConstructorSignature(signature) {
-  return execTyped(constructorSignatureRegex, signature);
-}
-var fallbackSignatureRegex = /^fallback\(\) external(?:\s(?<stateMutability>payable{1}))?$/;
-function isFallbackSignature(signature) {
-  return fallbackSignatureRegex.test(signature);
-}
-function execFallbackSignature(signature) {
-  return execTyped(fallbackSignatureRegex, signature);
-}
-var receiveSignatureRegex = /^receive\(\) external payable$/;
-function isReceiveSignature(signature) {
-  return receiveSignatureRegex.test(signature);
-}
-var modifiers = new Set([
-  "memory",
-  "indexed",
-  "storage",
-  "calldata"
-]);
-var eventModifiers = new Set(["indexed"]);
-var functionModifiers = new Set([
-  "calldata",
-  "memory",
-  "storage"
-]);
-var version2 = "1.0.8";
-
-class BaseError2 extends Error {
-  constructor(shortMessage, args = {}) {
-    const details = args.cause instanceof BaseError2 ? args.cause.details : args.cause?.message ? args.cause.message : args.details;
-    const docsPath = args.cause instanceof BaseError2 ? args.cause.docsPath || args.docsPath : args.docsPath;
-    const message = [
-      shortMessage || "An error occurred.",
-      "",
-      ...args.metaMessages ? [...args.metaMessages, ""] : [],
-      ...docsPath ? [`Docs: https://abitype.dev${docsPath}`] : [],
-      ...details ? [`Details: ${details}`] : [],
-      `Version: abitype@${version2}`
-    ].join(`
-`);
-    super(message);
-    Object.defineProperty(this, "details", {
-      enumerable: true,
-      configurable: true,
-      writable: true,
-      value: undefined
-    });
-    Object.defineProperty(this, "docsPath", {
-      enumerable: true,
-      configurable: true,
-      writable: true,
-      value: undefined
-    });
-    Object.defineProperty(this, "metaMessages", {
-      enumerable: true,
-      configurable: true,
-      writable: true,
-      value: undefined
-    });
-    Object.defineProperty(this, "shortMessage", {
-      enumerable: true,
-      configurable: true,
-      writable: true,
-      value: undefined
-    });
-    Object.defineProperty(this, "name", {
-      enumerable: true,
-      configurable: true,
-      writable: true,
-      value: "AbiTypeError"
-    });
-    if (args.cause)
-      this.cause = args.cause;
-    this.details = details;
-    this.docsPath = docsPath;
-    this.metaMessages = args.metaMessages;
-    this.shortMessage = shortMessage;
-  }
-}
-
-class UnknownTypeError2 extends BaseError2 {
-  constructor({ type }) {
-    super("Unknown type.", {
-      metaMessages: [
-        `Type "${type}" is not a valid ABI type. Perhaps you forgot to include a struct signature?`
-      ]
-    });
-    Object.defineProperty(this, "name", {
-      enumerable: true,
-      configurable: true,
-      writable: true,
-      value: "UnknownTypeError"
-    });
-  }
-}
-
-class UnknownSolidityTypeError extends BaseError2 {
-  constructor({ type }) {
-    super("Unknown type.", {
-      metaMessages: [`Type "${type}" is not a valid ABI type.`]
-    });
-    Object.defineProperty(this, "name", {
-      enumerable: true,
-      configurable: true,
-      writable: true,
-      value: "UnknownSolidityTypeError"
-    });
-  }
-}
-
-class InvalidAbiParametersError2 extends BaseError2 {
-  constructor({ params }) {
-    super("Failed to parse ABI parameters.", {
-      details: `parseAbiParameters(${JSON.stringify(params, null, 2)})`,
-      docsPath: "/api/human#parseabiparameters-1"
-    });
-    Object.defineProperty(this, "name", {
-      enumerable: true,
-      configurable: true,
-      writable: true,
-      value: "InvalidAbiParametersError"
-    });
-  }
-}
-
-class InvalidParameterError2 extends BaseError2 {
-  constructor({ param }) {
-    super("Invalid ABI parameter.", {
-      details: param
-    });
-    Object.defineProperty(this, "name", {
-      enumerable: true,
-      configurable: true,
-      writable: true,
-      value: "InvalidParameterError"
-    });
-  }
-}
-
-class SolidityProtectedKeywordError2 extends BaseError2 {
-  constructor({ param, name }) {
-    super("Invalid ABI parameter.", {
-      details: param,
-      metaMessages: [
-        `"${name}" is a protected Solidity keyword. More info: https://docs.soliditylang.org/en/latest/cheatsheet.html`
-      ]
-    });
-    Object.defineProperty(this, "name", {
-      enumerable: true,
-      configurable: true,
-      writable: true,
-      value: "SolidityProtectedKeywordError"
-    });
-  }
-}
-
-class InvalidModifierError2 extends BaseError2 {
-  constructor({ param, type, modifier }) {
-    super("Invalid ABI parameter.", {
-      details: param,
-      metaMessages: [
-        `Modifier "${modifier}" not allowed${type ? ` in "${type}" type` : ""}.`
-      ]
-    });
-    Object.defineProperty(this, "name", {
-      enumerable: true,
-      configurable: true,
-      writable: true,
-      value: "InvalidModifierError"
-    });
-  }
-}
-
-class InvalidFunctionModifierError2 extends BaseError2 {
-  constructor({ param, type, modifier }) {
-    super("Invalid ABI parameter.", {
-      details: param,
-      metaMessages: [
-        `Modifier "${modifier}" not allowed${type ? ` in "${type}" type` : ""}.`,
-        `Data location can only be specified for array, struct, or mapping types, but "${modifier}" was given.`
-      ]
-    });
-    Object.defineProperty(this, "name", {
-      enumerable: true,
-      configurable: true,
-      writable: true,
-      value: "InvalidFunctionModifierError"
-    });
-  }
-}
-
-class InvalidAbiTypeParameterError2 extends BaseError2 {
-  constructor({ abiParameter }) {
-    super("Invalid ABI parameter.", {
-      details: JSON.stringify(abiParameter, null, 2),
-      metaMessages: ["ABI parameter type is invalid."]
-    });
-    Object.defineProperty(this, "name", {
-      enumerable: true,
-      configurable: true,
-      writable: true,
-      value: "InvalidAbiTypeParameterError"
-    });
-  }
-}
-
-class InvalidSignatureError2 extends BaseError2 {
-  constructor({ signature, type }) {
-    super(`Invalid ${type} signature.`, {
-      details: signature
-    });
-    Object.defineProperty(this, "name", {
-      enumerable: true,
-      configurable: true,
-      writable: true,
-      value: "InvalidSignatureError"
-    });
-  }
-}
-
-class UnknownSignatureError2 extends BaseError2 {
-  constructor({ signature }) {
-    super("Unknown signature.", {
-      details: signature
-    });
-    Object.defineProperty(this, "name", {
-      enumerable: true,
-      configurable: true,
-      writable: true,
-      value: "UnknownSignatureError"
-    });
-  }
-}
-
-class InvalidStructSignatureError2 extends BaseError2 {
-  constructor({ signature }) {
-    super("Invalid struct signature.", {
-      details: signature,
-      metaMessages: ["No properties exist."]
-    });
-    Object.defineProperty(this, "name", {
-      enumerable: true,
-      configurable: true,
-      writable: true,
-      value: "InvalidStructSignatureError"
-    });
-  }
-}
-
-class CircularReferenceError2 extends BaseError2 {
-  constructor({ type }) {
-    super("Circular reference detected.", {
-      metaMessages: [`Struct "${type}" is a circular reference.`]
-    });
-    Object.defineProperty(this, "name", {
-      enumerable: true,
-      configurable: true,
-      writable: true,
-      value: "CircularReferenceError"
-    });
-  }
-}
-
-class InvalidParenthesisError2 extends BaseError2 {
-  constructor({ current, depth }) {
-    super("Unbalanced parentheses.", {
-      metaMessages: [
-        `"${current.trim()}" has too many ${depth > 0 ? "opening" : "closing"} parentheses.`
-      ],
-      details: `Depth "${depth}"`
-    });
-    Object.defineProperty(this, "name", {
-      enumerable: true,
-      configurable: true,
-      writable: true,
-      value: "InvalidParenthesisError"
-    });
-  }
-}
-function getParameterCacheKey(param, type, structs) {
-  let structKey = "";
-  if (structs)
-    for (const struct of Object.entries(structs)) {
-      if (!struct)
-        continue;
-      let propertyKey = "";
-      for (const property of struct[1]) {
-        propertyKey += `[${property.type}${property.name ? `:${property.name}` : ""}]`;
-      }
-      structKey += `(${struct[0]}{${propertyKey}})`;
-    }
-  if (type)
-    return `${type}:${param}${structKey}`;
-  return param;
-}
-var parameterCache = new Map([
-  ["address", { type: "address" }],
-  ["bool", { type: "bool" }],
-  ["bytes", { type: "bytes" }],
-  ["bytes32", { type: "bytes32" }],
-  ["int", { type: "int256" }],
-  ["int256", { type: "int256" }],
-  ["string", { type: "string" }],
-  ["uint", { type: "uint256" }],
-  ["uint8", { type: "uint8" }],
-  ["uint16", { type: "uint16" }],
-  ["uint24", { type: "uint24" }],
-  ["uint32", { type: "uint32" }],
-  ["uint64", { type: "uint64" }],
-  ["uint96", { type: "uint96" }],
-  ["uint112", { type: "uint112" }],
-  ["uint160", { type: "uint160" }],
-  ["uint192", { type: "uint192" }],
-  ["uint256", { type: "uint256" }],
-  ["address owner", { type: "address", name: "owner" }],
-  ["address to", { type: "address", name: "to" }],
-  ["bool approved", { type: "bool", name: "approved" }],
-  ["bytes _data", { type: "bytes", name: "_data" }],
-  ["bytes data", { type: "bytes", name: "data" }],
-  ["bytes signature", { type: "bytes", name: "signature" }],
-  ["bytes32 hash", { type: "bytes32", name: "hash" }],
-  ["bytes32 r", { type: "bytes32", name: "r" }],
-  ["bytes32 root", { type: "bytes32", name: "root" }],
-  ["bytes32 s", { type: "bytes32", name: "s" }],
-  ["string name", { type: "string", name: "name" }],
-  ["string symbol", { type: "string", name: "symbol" }],
-  ["string tokenURI", { type: "string", name: "tokenURI" }],
-  ["uint tokenId", { type: "uint256", name: "tokenId" }],
-  ["uint8 v", { type: "uint8", name: "v" }],
-  ["uint256 balance", { type: "uint256", name: "balance" }],
-  ["uint256 tokenId", { type: "uint256", name: "tokenId" }],
-  ["uint256 value", { type: "uint256", name: "value" }],
-  [
-    "event:address indexed from",
-    { type: "address", name: "from", indexed: true }
-  ],
-  ["event:address indexed to", { type: "address", name: "to", indexed: true }],
-  [
-    "event:uint indexed tokenId",
-    { type: "uint256", name: "tokenId", indexed: true }
-  ],
-  [
-    "event:uint256 indexed tokenId",
-    { type: "uint256", name: "tokenId", indexed: true }
-  ]
-]);
-function parseSignature3(signature, structs = {}) {
-  if (isFunctionSignature(signature))
-    return parseFunctionSignature(signature, structs);
-  if (isEventSignature(signature))
-    return parseEventSignature(signature, structs);
-  if (isErrorSignature(signature))
-    return parseErrorSignature(signature, structs);
-  if (isConstructorSignature(signature))
-    return parseConstructorSignature(signature, structs);
-  if (isFallbackSignature(signature))
-    return parseFallbackSignature(signature);
-  if (isReceiveSignature(signature))
-    return {
-      type: "receive",
-      stateMutability: "payable"
-    };
-  throw new UnknownSignatureError2({ signature });
-}
-function parseFunctionSignature(signature, structs = {}) {
-  const match = execFunctionSignature(signature);
-  if (!match)
-    throw new InvalidSignatureError2({ signature, type: "function" });
-  const inputParams = splitParameters(match.parameters);
-  const inputs = [];
-  const inputLength = inputParams.length;
-  for (let i2 = 0;i2 < inputLength; i2++) {
-    inputs.push(parseAbiParameter2(inputParams[i2], {
-      modifiers: functionModifiers,
-      structs,
-      type: "function"
-    }));
-  }
-  const outputs = [];
-  if (match.returns) {
-    const outputParams = splitParameters(match.returns);
-    const outputLength = outputParams.length;
-    for (let i2 = 0;i2 < outputLength; i2++) {
-      outputs.push(parseAbiParameter2(outputParams[i2], {
-        modifiers: functionModifiers,
-        structs,
-        type: "function"
-      }));
-    }
-  }
-  return {
-    name: match.name,
-    type: "function",
-    stateMutability: match.stateMutability ?? "nonpayable",
-    inputs,
-    outputs
-  };
-}
-function parseEventSignature(signature, structs = {}) {
-  const match = execEventSignature(signature);
-  if (!match)
-    throw new InvalidSignatureError2({ signature, type: "event" });
-  const params = splitParameters(match.parameters);
-  const abiParameters = [];
-  const length = params.length;
-  for (let i2 = 0;i2 < length; i2++)
-    abiParameters.push(parseAbiParameter2(params[i2], {
-      modifiers: eventModifiers,
-      structs,
-      type: "event"
-    }));
-  return { name: match.name, type: "event", inputs: abiParameters };
-}
-function parseErrorSignature(signature, structs = {}) {
-  const match = execErrorSignature(signature);
-  if (!match)
-    throw new InvalidSignatureError2({ signature, type: "error" });
-  const params = splitParameters(match.parameters);
-  const abiParameters = [];
-  const length = params.length;
-  for (let i2 = 0;i2 < length; i2++)
-    abiParameters.push(parseAbiParameter2(params[i2], { structs, type: "error" }));
-  return { name: match.name, type: "error", inputs: abiParameters };
-}
-function parseConstructorSignature(signature, structs = {}) {
-  const match = execConstructorSignature(signature);
-  if (!match)
-    throw new InvalidSignatureError2({ signature, type: "constructor" });
-  const params = splitParameters(match.parameters);
-  const abiParameters = [];
-  const length = params.length;
-  for (let i2 = 0;i2 < length; i2++)
-    abiParameters.push(parseAbiParameter2(params[i2], { structs, type: "constructor" }));
-  return {
-    type: "constructor",
-    stateMutability: match.stateMutability ?? "nonpayable",
-    inputs: abiParameters
-  };
-}
-function parseFallbackSignature(signature) {
-  const match = execFallbackSignature(signature);
-  if (!match)
-    throw new InvalidSignatureError2({ signature, type: "fallback" });
-  return {
-    type: "fallback",
-    stateMutability: match.stateMutability ?? "nonpayable"
-  };
-}
-var abiParameterWithoutTupleRegex = /^(?<type>[a-zA-Z$_][a-zA-Z0-9$_]*)(?<array>(?:\[\d*?\])+?)?(?:\s(?<modifier>calldata|indexed|memory|storage{1}))?(?:\s(?<name>[a-zA-Z$_][a-zA-Z0-9$_]*))?$/;
-var abiParameterWithTupleRegex = /^\((?<type>.+?)\)(?<array>(?:\[\d*?\])+?)?(?:\s(?<modifier>calldata|indexed|memory|storage{1}))?(?:\s(?<name>[a-zA-Z$_][a-zA-Z0-9$_]*))?$/;
-var dynamicIntegerRegex = /^u?int$/;
-function parseAbiParameter2(param, options) {
-  const parameterCacheKey = getParameterCacheKey(param, options?.type, options?.structs);
-  if (parameterCache.has(parameterCacheKey))
-    return parameterCache.get(parameterCacheKey);
-  const isTuple = isTupleRegex.test(param);
-  const match = execTyped(isTuple ? abiParameterWithTupleRegex : abiParameterWithoutTupleRegex, param);
-  if (!match)
-    throw new InvalidParameterError2({ param });
-  if (match.name && isSolidityKeyword(match.name))
-    throw new SolidityProtectedKeywordError2({ param, name: match.name });
-  const name = match.name ? { name: match.name } : {};
-  const indexed = match.modifier === "indexed" ? { indexed: true } : {};
-  const structs = options?.structs ?? {};
-  let type;
-  let components = {};
-  if (isTuple) {
-    type = "tuple";
-    const params = splitParameters(match.type);
-    const components_ = [];
-    const length = params.length;
-    for (let i2 = 0;i2 < length; i2++) {
-      components_.push(parseAbiParameter2(params[i2], { structs }));
-    }
-    components = { components: components_ };
-  } else if (match.type in structs) {
-    type = "tuple";
-    components = { components: structs[match.type] };
-  } else if (dynamicIntegerRegex.test(match.type)) {
-    type = `${match.type}256`;
-  } else {
-    type = match.type;
-    if (!(options?.type === "struct") && !isSolidityType(type))
-      throw new UnknownSolidityTypeError({ type });
-  }
-  if (match.modifier) {
-    if (!options?.modifiers?.has?.(match.modifier))
-      throw new InvalidModifierError2({
-        param,
-        type: options?.type,
-        modifier: match.modifier
-      });
-    if (functionModifiers.has(match.modifier) && !isValidDataLocation(type, !!match.array))
-      throw new InvalidFunctionModifierError2({
-        param,
-        type: options?.type,
-        modifier: match.modifier
-      });
-  }
-  const abiParameter = {
-    type: `${type}${match.array ?? ""}`,
-    ...name,
-    ...indexed,
-    ...components
-  };
-  parameterCache.set(parameterCacheKey, abiParameter);
-  return abiParameter;
-}
-function splitParameters(params, result = [], current = "", depth = 0) {
-  const length = params.trim().length;
-  for (let i2 = 0;i2 < length; i2++) {
-    const char = params[i2];
-    const tail = params.slice(i2 + 1);
-    switch (char) {
-      case ",":
-        return depth === 0 ? splitParameters(tail, [...result, current.trim()]) : splitParameters(tail, result, `${current}${char}`, depth);
-      case "(":
-        return splitParameters(tail, result, `${current}${char}`, depth + 1);
-      case ")":
-        return splitParameters(tail, result, `${current}${char}`, depth - 1);
-      default:
-        return splitParameters(tail, result, `${current}${char}`, depth);
-    }
-  }
-  if (current === "")
-    return result;
-  if (depth !== 0)
-    throw new InvalidParenthesisError2({ current, depth });
-  result.push(current.trim());
-  return result;
-}
-function isSolidityType(type) {
-  return type === "address" || type === "bool" || type === "function" || type === "string" || bytesRegex.test(type) || integerRegex.test(type);
-}
-var protectedKeywordsRegex = /^(?:after|alias|anonymous|apply|auto|byte|calldata|case|catch|constant|copyof|default|defined|error|event|external|false|final|function|immutable|implements|in|indexed|inline|internal|let|mapping|match|memory|mutable|null|of|override|partial|private|promise|public|pure|reference|relocatable|return|returns|sizeof|static|storage|struct|super|supports|switch|this|true|try|typedef|typeof|var|view|virtual)$/;
-function isSolidityKeyword(name) {
-  return name === "address" || name === "bool" || name === "function" || name === "string" || name === "tuple" || bytesRegex.test(name) || integerRegex.test(name) || protectedKeywordsRegex.test(name);
-}
-function isValidDataLocation(type, isArray) {
-  return isArray || type === "bytes" || type === "string" || type === "tuple";
-}
-function parseStructs(signatures) {
-  const shallowStructs = {};
-  const signaturesLength = signatures.length;
-  for (let i2 = 0;i2 < signaturesLength; i2++) {
-    const signature = signatures[i2];
-    if (!isStructSignature(signature))
-      continue;
-    const match = execStructSignature(signature);
-    if (!match)
-      throw new InvalidSignatureError2({ signature, type: "struct" });
-    const properties = match.properties.split(";");
-    const components = [];
-    const propertiesLength = properties.length;
-    for (let k = 0;k < propertiesLength; k++) {
-      const property = properties[k];
-      const trimmed = property.trim();
-      if (!trimmed)
-        continue;
-      const abiParameter = parseAbiParameter2(trimmed, {
-        type: "struct"
-      });
-      components.push(abiParameter);
-    }
-    if (!components.length)
-      throw new InvalidStructSignatureError2({ signature });
-    shallowStructs[match.name] = components;
-  }
-  const resolvedStructs = {};
-  const entries = Object.entries(shallowStructs);
-  const entriesLength = entries.length;
-  for (let i2 = 0;i2 < entriesLength; i2++) {
-    const [name, parameters] = entries[i2];
-    resolvedStructs[name] = resolveStructs(parameters, shallowStructs);
-  }
-  return resolvedStructs;
-}
-var typeWithoutTupleRegex = /^(?<type>[a-zA-Z$_][a-zA-Z0-9$_]*)(?<array>(?:\[\d*?\])+?)?$/;
-function resolveStructs(abiParameters, structs, ancestors = new Set) {
-  const components = [];
-  const length = abiParameters.length;
-  for (let i2 = 0;i2 < length; i2++) {
-    const abiParameter = abiParameters[i2];
-    const isTuple = isTupleRegex.test(abiParameter.type);
-    if (isTuple)
-      components.push(abiParameter);
-    else {
-      const match = execTyped(typeWithoutTupleRegex, abiParameter.type);
-      if (!match?.type)
-        throw new InvalidAbiTypeParameterError2({ abiParameter });
-      const { array: array2, type } = match;
-      if (type in structs) {
-        if (ancestors.has(type))
-          throw new CircularReferenceError2({ type });
-        components.push({
-          ...abiParameter,
-          type: `tuple${array2 ?? ""}`,
-          components: resolveStructs(structs[type] ?? [], structs, new Set([...ancestors, type]))
-        });
-      } else {
-        if (isSolidityType(type))
-          components.push(abiParameter);
-        else
-          throw new UnknownTypeError2({ type });
-      }
-    }
-  }
-  return components;
-}
-function parseAbi2(signatures) {
-  const structs = parseStructs(signatures);
-  const abi = [];
-  const length = signatures.length;
-  for (let i2 = 0;i2 < length; i2++) {
-    const signature = signatures[i2];
-    if (isStructSignature(signature))
-      continue;
-    abi.push(parseSignature3(signature, structs));
-  }
-  return abi;
-}
-function parseAbiParameters2(params) {
-  const abiParameters = [];
-  if (typeof params === "string") {
-    const parameters = splitParameters(params);
-    const length = parameters.length;
-    for (let i2 = 0;i2 < length; i2++) {
-      abiParameters.push(parseAbiParameter2(parameters[i2], { modifiers }));
-    }
-  } else {
-    const structs = parseStructs(params);
-    const length = params.length;
-    for (let i2 = 0;i2 < length; i2++) {
-      const signature = params[i2];
-      if (isStructSignature(signature))
-        continue;
-      const parameters = splitParameters(signature);
-      const length2 = parameters.length;
-      for (let k = 0;k < length2; k++) {
-        abiParameters.push(parseAbiParameter2(parameters[k], { modifiers, structs }));
-      }
-    }
-  }
-  if (abiParameters.length === 0)
-    throw new InvalidAbiParametersError2({ params });
-  return abiParameters;
-}
-function formatAbiItem2(abiItem, { includeName = false } = {}) {
-  if (abiItem.type !== "function" && abiItem.type !== "event" && abiItem.type !== "error")
-    throw new InvalidDefinitionTypeError2(abiItem.type);
-  return `${abiItem.name}(${formatAbiParams(abiItem.inputs, { includeName })})`;
-}
-function formatAbiParams(params, { includeName = false } = {}) {
-  if (!params)
-    return "";
-  return params.map((param) => formatAbiParam(param, { includeName })).join(includeName ? ", " : ",");
-}
-function formatAbiParam(param, { includeName }) {
-  if (param.type.startsWith("tuple")) {
-    return `(${formatAbiParams(param.components, { includeName })})${param.type.slice("tuple".length)}`;
-  }
-  return param.type + (includeName && param.name ? ` ${param.name}` : "");
-}
-function isHex2(value3, { strict = true } = {}) {
-  if (!value3)
-    return false;
-  if (typeof value3 !== "string")
-    return false;
-  return strict ? /^0x[0-9a-fA-F]*$/.test(value3) : value3.startsWith("0x");
-}
-function size2(value3) {
-  if (isHex2(value3, { strict: false }))
-    return Math.ceil((value3.length - 2) / 2);
-  return value3.length;
-}
-var version3 = "2.34.0";
-var errorConfig = {
-  getDocsUrl: ({ docsBaseUrl, docsPath = "", docsSlug }) => docsPath ? `${docsBaseUrl ?? "https://viem.sh"}${docsPath}${docsSlug ? `#${docsSlug}` : ""}` : undefined,
-  version: `viem@${version3}`
-};
-
-class BaseError4 extends Error {
-  constructor(shortMessage, args = {}) {
-    const details = (() => {
-      if (args.cause instanceof BaseError4)
-        return args.cause.details;
-      if (args.cause?.message)
-        return args.cause.message;
-      return args.details;
-    })();
-    const docsPath = (() => {
-      if (args.cause instanceof BaseError4)
-        return args.cause.docsPath || args.docsPath;
-      return args.docsPath;
-    })();
-    const docsUrl = errorConfig.getDocsUrl?.({ ...args, docsPath });
-    const message = [
-      shortMessage || "An error occurred.",
-      "",
-      ...args.metaMessages ? [...args.metaMessages, ""] : [],
-      ...docsUrl ? [`Docs: ${docsUrl}`] : [],
-      ...details ? [`Details: ${details}`] : [],
-      ...errorConfig.version ? [`Version: ${errorConfig.version}`] : []
-    ].join(`
-`);
-    super(message, args.cause ? { cause: args.cause } : undefined);
-    Object.defineProperty(this, "details", {
-      enumerable: true,
-      configurable: true,
-      writable: true,
-      value: undefined
-    });
-    Object.defineProperty(this, "docsPath", {
-      enumerable: true,
-      configurable: true,
-      writable: true,
-      value: undefined
-    });
-    Object.defineProperty(this, "metaMessages", {
-      enumerable: true,
-      configurable: true,
-      writable: true,
-      value: undefined
-    });
-    Object.defineProperty(this, "shortMessage", {
-      enumerable: true,
-      configurable: true,
-      writable: true,
-      value: undefined
-    });
-    Object.defineProperty(this, "version", {
-      enumerable: true,
-      configurable: true,
-      writable: true,
-      value: undefined
-    });
-    Object.defineProperty(this, "name", {
-      enumerable: true,
-      configurable: true,
-      writable: true,
-      value: "BaseError"
-    });
-    this.details = details;
-    this.docsPath = docsPath;
-    this.metaMessages = args.metaMessages;
-    this.name = args.name ?? this.name;
-    this.shortMessage = shortMessage;
-    this.version = version3;
-  }
-  walk(fn) {
-    return walk(this, fn);
-  }
-}
-function walk(err, fn) {
-  if (fn?.(err))
-    return err;
-  if (err && typeof err === "object" && "cause" in err && err.cause !== undefined)
-    return walk(err.cause, fn);
-  return fn ? null : err;
-}
-
-class AbiDecodingDataSizeTooSmallError2 extends BaseError4 {
-  constructor({ data, params, size: size3 }) {
-    super([`Data size of ${size3} bytes is too small for given parameters.`].join(`
-`), {
-      metaMessages: [
-        `Params: (${formatAbiParams(params, { includeName: true })})`,
-        `Data:   ${data} (${size3} bytes)`
-      ],
-      name: "AbiDecodingDataSizeTooSmallError"
-    });
-    Object.defineProperty(this, "data", {
-      enumerable: true,
-      configurable: true,
-      writable: true,
-      value: undefined
-    });
-    Object.defineProperty(this, "params", {
-      enumerable: true,
-      configurable: true,
-      writable: true,
-      value: undefined
-    });
-    Object.defineProperty(this, "size", {
-      enumerable: true,
-      configurable: true,
-      writable: true,
-      value: undefined
-    });
-    this.data = data;
-    this.params = params;
-    this.size = size3;
-  }
-}
-
-class AbiDecodingZeroDataError2 extends BaseError4 {
-  constructor() {
-    super('Cannot decode zero data ("0x") with ABI parameters.', {
-      name: "AbiDecodingZeroDataError"
-    });
-  }
-}
-
-class AbiEncodingArrayLengthMismatchError2 extends BaseError4 {
-  constructor({ expectedLength, givenLength, type }) {
-    super([
-      `ABI encoding array length mismatch for type ${type}.`,
-      `Expected length: ${expectedLength}`,
-      `Given length: ${givenLength}`
-    ].join(`
-`), { name: "AbiEncodingArrayLengthMismatchError" });
-  }
-}
-
-class AbiEncodingBytesSizeMismatchError2 extends BaseError4 {
-  constructor({ expectedSize, value: value3 }) {
-    super(`Size of bytes "${value3}" (bytes${size2(value3)}) does not match expected size (bytes${expectedSize}).`, { name: "AbiEncodingBytesSizeMismatchError" });
-  }
-}
-
-class AbiEncodingLengthMismatchError2 extends BaseError4 {
-  constructor({ expectedLength, givenLength }) {
-    super([
-      "ABI encoding params/values length mismatch.",
-      `Expected length (params): ${expectedLength}`,
-      `Given length (values): ${givenLength}`
-    ].join(`
-`), { name: "AbiEncodingLengthMismatchError" });
-  }
-}
-
-class AbiEventSignatureEmptyTopicsError2 extends BaseError4 {
-  constructor({ docsPath }) {
-    super("Cannot extract event signature from empty topics.", {
-      docsPath,
-      name: "AbiEventSignatureEmptyTopicsError"
-    });
-  }
-}
-
-class AbiEventSignatureNotFoundError2 extends BaseError4 {
-  constructor(signature, { docsPath }) {
-    super([
-      `Encoded event signature "${signature}" not found on ABI.`,
-      "Make sure you are using the correct ABI and that the event exists on it.",
-      `You can look up the signature here: https://openchain.xyz/signatures?query=${signature}.`
-    ].join(`
-`), {
-      docsPath,
-      name: "AbiEventSignatureNotFoundError"
-    });
-  }
-}
-
-class DecodeLogDataMismatch2 extends BaseError4 {
-  constructor({ abiItem, data, params, size: size3 }) {
-    super([
-      `Data size of ${size3} bytes is too small for non-indexed event parameters.`
-    ].join(`
-`), {
-      metaMessages: [
-        `Params: (${formatAbiParams(params, { includeName: true })})`,
-        `Data:   ${data} (${size3} bytes)`
-      ],
-      name: "DecodeLogDataMismatch"
-    });
-    Object.defineProperty(this, "abiItem", {
-      enumerable: true,
-      configurable: true,
-      writable: true,
-      value: undefined
-    });
-    Object.defineProperty(this, "data", {
-      enumerable: true,
-      configurable: true,
-      writable: true,
-      value: undefined
-    });
-    Object.defineProperty(this, "params", {
-      enumerable: true,
-      configurable: true,
-      writable: true,
-      value: undefined
-    });
-    Object.defineProperty(this, "size", {
-      enumerable: true,
-      configurable: true,
-      writable: true,
-      value: undefined
-    });
-    this.abiItem = abiItem;
-    this.data = data;
-    this.params = params;
-    this.size = size3;
-  }
-}
-
-class DecodeLogTopicsMismatch2 extends BaseError4 {
-  constructor({ abiItem, param }) {
-    super([
-      `Expected a topic for indexed event parameter${param.name ? ` "${param.name}"` : ""} on event "${formatAbiItem2(abiItem, { includeName: true })}".`
-    ].join(`
-`), { name: "DecodeLogTopicsMismatch" });
-    Object.defineProperty(this, "abiItem", {
-      enumerable: true,
-      configurable: true,
-      writable: true,
-      value: undefined
-    });
-    this.abiItem = abiItem;
-  }
-}
-
-class InvalidAbiEncodingTypeError2 extends BaseError4 {
-  constructor(type, { docsPath }) {
-    super([
-      `Type "${type}" is not a valid encoding type.`,
-      "Please provide a valid ABI type."
-    ].join(`
-`), { docsPath, name: "InvalidAbiEncodingType" });
-  }
-}
-
-class InvalidAbiDecodingTypeError2 extends BaseError4 {
-  constructor(type, { docsPath }) {
-    super([
-      `Type "${type}" is not a valid decoding type.`,
-      "Please provide a valid ABI type."
-    ].join(`
-`), { docsPath, name: "InvalidAbiDecodingType" });
-  }
-}
-
-class InvalidArrayError2 extends BaseError4 {
-  constructor(value3) {
-    super([`Value "${value3}" is not a valid array.`].join(`
-`), {
-      name: "InvalidArrayError"
-    });
-  }
-}
-
-class InvalidDefinitionTypeError2 extends BaseError4 {
-  constructor(type) {
-    super([
-      `"${type}" is not a valid definition type.`,
-      'Valid types: "function", "event", "error"'
-    ].join(`
-`), { name: "InvalidDefinitionTypeError" });
-  }
-}
-
-class SliceOffsetOutOfBoundsError2 extends BaseError4 {
-  constructor({ offset, position, size: size3 }) {
-    super(`Slice ${position === "start" ? "starting" : "ending"} at offset "${offset}" is out-of-bounds (size: ${size3}).`, { name: "SliceOffsetOutOfBoundsError" });
-  }
-}
-
-class SizeExceedsPaddingSizeError2 extends BaseError4 {
-  constructor({ size: size3, targetSize, type }) {
-    super(`${type.charAt(0).toUpperCase()}${type.slice(1).toLowerCase()} size (${size3}) exceeds padding size (${targetSize}).`, { name: "SizeExceedsPaddingSizeError" });
-  }
-}
-function pad2(hexOrBytes, { dir, size: size3 = 32 } = {}) {
-  if (typeof hexOrBytes === "string")
-    return padHex2(hexOrBytes, { dir, size: size3 });
-  return padBytes2(hexOrBytes, { dir, size: size3 });
-}
-function padHex2(hex_, { dir, size: size3 = 32 } = {}) {
-  if (size3 === null)
-    return hex_;
-  const hex3 = hex_.replace("0x", "");
-  if (hex3.length > size3 * 2)
-    throw new SizeExceedsPaddingSizeError2({
-      size: Math.ceil(hex3.length / 2),
-      targetSize: size3,
-      type: "hex"
-    });
-  return `0x${hex3[dir === "right" ? "padEnd" : "padStart"](size3 * 2, "0")}`;
-}
-function padBytes2(bytes, { dir, size: size3 = 32 } = {}) {
-  if (size3 === null)
-    return bytes;
-  if (bytes.length > size3)
-    throw new SizeExceedsPaddingSizeError2({
-      size: bytes.length,
-      targetSize: size3,
-      type: "bytes"
-    });
-  const paddedBytes = new Uint8Array(size3);
-  for (let i2 = 0;i2 < size3; i2++) {
-    const padEnd = dir === "right";
-    paddedBytes[padEnd ? i2 : size3 - i2 - 1] = bytes[padEnd ? i2 : bytes.length - i2 - 1];
-  }
-  return paddedBytes;
-}
-
-class IntegerOutOfRangeError2 extends BaseError4 {
-  constructor({ max, min, signed, size: size3, value: value3 }) {
-    super(`Number "${value3}" is not in safe ${size3 ? `${size3 * 8}-bit ${signed ? "signed" : "unsigned"} ` : ""}integer range ${max ? `(${min} to ${max})` : `(above ${min})`}`, { name: "IntegerOutOfRangeError" });
-  }
-}
-
-class InvalidBytesBooleanError2 extends BaseError4 {
-  constructor(bytes) {
-    super(`Bytes value "${bytes}" is not a valid boolean. The bytes array must contain a single byte of either a 0 or 1 value.`, {
-      name: "InvalidBytesBooleanError"
-    });
-  }
-}
-
-class SizeOverflowError2 extends BaseError4 {
-  constructor({ givenSize, maxSize }) {
-    super(`Size cannot exceed ${maxSize} bytes. Given size: ${givenSize} bytes.`, { name: "SizeOverflowError" });
-  }
-}
-function trim2(hexOrBytes, { dir = "left" } = {}) {
-  let data = typeof hexOrBytes === "string" ? hexOrBytes.replace("0x", "") : hexOrBytes;
-  let sliceLength = 0;
-  for (let i2 = 0;i2 < data.length - 1; i2++) {
-    if (data[dir === "left" ? i2 : data.length - i2 - 1].toString() === "0")
-      sliceLength++;
-    else
-      break;
-  }
-  data = dir === "left" ? data.slice(sliceLength) : data.slice(0, data.length - sliceLength);
-  if (typeof hexOrBytes === "string") {
-    if (data.length === 1 && dir === "right")
-      data = `${data}0`;
-    return `0x${data.length % 2 === 1 ? `0${data}` : data}`;
-  }
-  return data;
-}
-function assertSize2(hexOrBytes, { size: size3 }) {
-  if (size2(hexOrBytes) > size3)
-    throw new SizeOverflowError2({
-      givenSize: size2(hexOrBytes),
-      maxSize: size3
-    });
-}
-function hexToBigInt2(hex3, opts = {}) {
-  const { signed } = opts;
-  if (opts.size)
-    assertSize2(hex3, { size: opts.size });
-  const value3 = BigInt(hex3);
-  if (!signed)
-    return value3;
-  const size3 = (hex3.length - 2) / 2;
-  const max = (1n << BigInt(size3) * 8n - 1n) - 1n;
-  if (value3 <= max)
-    return value3;
-  return value3 - BigInt(`0x${"f".padStart(size3 * 2, "f")}`) - 1n;
-}
-function hexToNumber2(hex3, opts = {}) {
-  return Number(hexToBigInt2(hex3, opts));
-}
-var hexes = /* @__PURE__ */ Array.from({ length: 256 }, (_v, i2) => i2.toString(16).padStart(2, "0"));
-function toHex2(value3, opts = {}) {
-  if (typeof value3 === "number" || typeof value3 === "bigint")
-    return numberToHex2(value3, opts);
-  if (typeof value3 === "string") {
-    return stringToHex2(value3, opts);
-  }
-  if (typeof value3 === "boolean")
-    return boolToHex2(value3, opts);
-  return bytesToHex3(value3, opts);
-}
-function boolToHex2(value3, opts = {}) {
-  const hex3 = `0x${Number(value3)}`;
-  if (typeof opts.size === "number") {
-    assertSize2(hex3, { size: opts.size });
-    return pad2(hex3, { size: opts.size });
-  }
-  return hex3;
-}
-function bytesToHex3(value3, opts = {}) {
-  let string4 = "";
-  for (let i2 = 0;i2 < value3.length; i2++) {
-    string4 += hexes[value3[i2]];
-  }
-  const hex3 = `0x${string4}`;
-  if (typeof opts.size === "number") {
-    assertSize2(hex3, { size: opts.size });
-    return pad2(hex3, { dir: "right", size: opts.size });
-  }
-  return hex3;
-}
-function numberToHex2(value_, opts = {}) {
-  const { signed, size: size3 } = opts;
-  const value3 = BigInt(value_);
-  let maxValue;
-  if (size3) {
-    if (signed)
-      maxValue = (1n << BigInt(size3) * 8n - 1n) - 1n;
-    else
-      maxValue = 2n ** (BigInt(size3) * 8n) - 1n;
-  } else if (typeof value_ === "number") {
-    maxValue = BigInt(Number.MAX_SAFE_INTEGER);
-  }
-  const minValue = typeof maxValue === "bigint" && signed ? -maxValue - 1n : 0;
-  if (maxValue && value3 > maxValue || value3 < minValue) {
-    const suffix = typeof value_ === "bigint" ? "n" : "";
-    throw new IntegerOutOfRangeError2({
-      max: maxValue ? `${maxValue}${suffix}` : undefined,
-      min: `${minValue}${suffix}`,
-      signed,
-      size: size3,
-      value: `${value_}${suffix}`
-    });
-  }
-  const hex3 = `0x${(signed && value3 < 0 ? (1n << BigInt(size3 * 8)) + BigInt(value3) : value3).toString(16)}`;
-  if (size3)
-    return pad2(hex3, { size: size3 });
-  return hex3;
-}
-var encoder = /* @__PURE__ */ new TextEncoder;
-function stringToHex2(value_, opts = {}) {
-  const value3 = encoder.encode(value_);
-  return bytesToHex3(value3, opts);
-}
-var encoder2 = /* @__PURE__ */ new TextEncoder;
-function toBytes2(value3, opts = {}) {
-  if (typeof value3 === "number" || typeof value3 === "bigint")
-    return numberToBytes2(value3, opts);
-  if (typeof value3 === "boolean")
-    return boolToBytes2(value3, opts);
-  if (isHex2(value3))
-    return hexToBytes4(value3, opts);
-  return stringToBytes2(value3, opts);
-}
-function boolToBytes2(value3, opts = {}) {
-  const bytes = new Uint8Array(1);
-  bytes[0] = Number(value3);
-  if (typeof opts.size === "number") {
-    assertSize2(bytes, { size: opts.size });
-    return pad2(bytes, { size: opts.size });
-  }
-  return bytes;
-}
-var charCodeMap = {
-  zero: 48,
-  nine: 57,
-  A: 65,
-  F: 70,
-  a: 97,
-  f: 102
-};
-function charCodeToBase16(char) {
-  if (char >= charCodeMap.zero && char <= charCodeMap.nine)
-    return char - charCodeMap.zero;
-  if (char >= charCodeMap.A && char <= charCodeMap.F)
-    return char - (charCodeMap.A - 10);
-  if (char >= charCodeMap.a && char <= charCodeMap.f)
-    return char - (charCodeMap.a - 10);
-  return;
-}
-function hexToBytes4(hex_, opts = {}) {
-  let hex3 = hex_;
-  if (opts.size) {
-    assertSize2(hex3, { size: opts.size });
-    hex3 = pad2(hex3, { dir: "right", size: opts.size });
-  }
-  let hexString = hex3.slice(2);
-  if (hexString.length % 2)
-    hexString = `0${hexString}`;
-  const length = hexString.length / 2;
-  const bytes = new Uint8Array(length);
-  for (let index = 0, j = 0;index < length; index++) {
-    const nibbleLeft = charCodeToBase16(hexString.charCodeAt(j++));
-    const nibbleRight = charCodeToBase16(hexString.charCodeAt(j++));
-    if (nibbleLeft === undefined || nibbleRight === undefined) {
-      throw new BaseError4(`Invalid byte sequence ("${hexString[j - 2]}${hexString[j - 1]}" in "${hexString}").`);
-    }
-    bytes[index] = nibbleLeft * 16 + nibbleRight;
-  }
-  return bytes;
-}
-function numberToBytes2(value3, opts) {
-  const hex3 = numberToHex2(value3, opts);
-  return hexToBytes4(hex3);
-}
-function stringToBytes2(value3, opts = {}) {
-  const bytes = encoder2.encode(value3);
-  if (typeof opts.size === "number") {
-    assertSize2(bytes, { size: opts.size });
-    return pad2(bytes, { dir: "right", size: opts.size });
-  }
-  return bytes;
-}
-var U32_MASK64 = /* @__PURE__ */ BigInt(2 ** 32 - 1);
-var _32n = /* @__PURE__ */ BigInt(32);
-function fromBig(n, le = false) {
-  if (le)
-    return { h: Number(n & U32_MASK64), l: Number(n >> _32n & U32_MASK64) };
-  return { h: Number(n >> _32n & U32_MASK64) | 0, l: Number(n & U32_MASK64) | 0 };
-}
-function split(lst, le = false) {
-  const len2 = lst.length;
-  let Ah = new Uint32Array(len2);
-  let Al = new Uint32Array(len2);
-  for (let i2 = 0;i2 < len2; i2++) {
-    const { h, l } = fromBig(lst[i2], le);
-    [Ah[i2], Al[i2]] = [h, l];
-  }
-  return [Ah, Al];
-}
-var rotlSH = (h, l, s) => h << s | l >>> 32 - s;
-var rotlSL = (h, l, s) => l << s | h >>> 32 - s;
-var rotlBH = (h, l, s) => l << s - 32 | h >>> 64 - s;
-var rotlBL = (h, l, s) => h << s - 32 | l >>> 64 - s;
-/*! noble-hashes - MIT License (c) 2022 Paul Miller (paulmillr.com) */
-function isBytes2(a) {
-  return a instanceof Uint8Array || ArrayBuffer.isView(a) && a.constructor.name === "Uint8Array";
-}
-function anumber(n) {
-  if (!Number.isSafeInteger(n) || n < 0)
-    throw new Error("positive integer expected, got " + n);
-}
-function abytes(b, ...lengths) {
-  if (!isBytes2(b))
-    throw new Error("Uint8Array expected");
-  if (lengths.length > 0 && !lengths.includes(b.length))
-    throw new Error("Uint8Array expected of length " + lengths + ", got length=" + b.length);
-}
-function aexists(instance, checkFinished = true) {
-  if (instance.destroyed)
-    throw new Error("Hash instance has been destroyed");
-  if (checkFinished && instance.finished)
-    throw new Error("Hash#digest() has already been called");
-}
-function aoutput(out, instance) {
-  abytes(out);
-  const min = instance.outputLen;
-  if (out.length < min) {
-    throw new Error("digestInto() expects output buffer of length at least " + min);
-  }
-}
-function u32(arr) {
-  return new Uint32Array(arr.buffer, arr.byteOffset, Math.floor(arr.byteLength / 4));
-}
-function clean(...arrays) {
-  for (let i2 = 0;i2 < arrays.length; i2++) {
-    arrays[i2].fill(0);
-  }
-}
-var isLE = /* @__PURE__ */ (() => new Uint8Array(new Uint32Array([287454020]).buffer)[0] === 68)();
-function byteSwap(word) {
-  return word << 24 & 4278190080 | word << 8 & 16711680 | word >>> 8 & 65280 | word >>> 24 & 255;
-}
-function byteSwap32(arr) {
-  for (let i2 = 0;i2 < arr.length; i2++) {
-    arr[i2] = byteSwap(arr[i2]);
-  }
-  return arr;
-}
-var swap32IfBE = isLE ? (u) => u : byteSwap32;
-function utf8ToBytes2(str) {
-  if (typeof str !== "string")
-    throw new Error("string expected");
-  return new Uint8Array(new TextEncoder().encode(str));
-}
-function toBytes3(data) {
-  if (typeof data === "string")
-    data = utf8ToBytes2(data);
-  abytes(data);
-  return data;
-}
-
-class Hash {
-}
-function createHasher(hashCons) {
-  const hashC = (msg) => hashCons().update(toBytes3(msg)).digest();
-  const tmp = hashCons();
-  hashC.outputLen = tmp.outputLen;
-  hashC.blockLen = tmp.blockLen;
-  hashC.create = () => hashCons();
-  return hashC;
-}
-var _0n = BigInt(0);
-var _1n = BigInt(1);
-var _2n = BigInt(2);
-var _7n = BigInt(7);
-var _256n = BigInt(256);
-var _0x71n = BigInt(113);
-var SHA3_PI = [];
-var SHA3_ROTL = [];
-var _SHA3_IOTA = [];
-for (let round = 0, R = _1n, x = 1, y = 0;round < 24; round++) {
-  [x, y] = [y, (2 * x + 3 * y) % 5];
-  SHA3_PI.push(2 * (5 * y + x));
-  SHA3_ROTL.push((round + 1) * (round + 2) / 2 % 64);
-  let t = _0n;
-  for (let j = 0;j < 7; j++) {
-    R = (R << _1n ^ (R >> _7n) * _0x71n) % _256n;
-    if (R & _2n)
-      t ^= _1n << (_1n << /* @__PURE__ */ BigInt(j)) - _1n;
-  }
-  _SHA3_IOTA.push(t);
-}
-var IOTAS = split(_SHA3_IOTA, true);
-var SHA3_IOTA_H = IOTAS[0];
-var SHA3_IOTA_L = IOTAS[1];
-var rotlH = (h, l, s) => s > 32 ? rotlBH(h, l, s) : rotlSH(h, l, s);
-var rotlL = (h, l, s) => s > 32 ? rotlBL(h, l, s) : rotlSL(h, l, s);
-function keccakP(s, rounds = 24) {
-  const B = new Uint32Array(5 * 2);
-  for (let round = 24 - rounds;round < 24; round++) {
-    for (let x = 0;x < 10; x++)
-      B[x] = s[x] ^ s[x + 10] ^ s[x + 20] ^ s[x + 30] ^ s[x + 40];
-    for (let x = 0;x < 10; x += 2) {
-      const idx1 = (x + 8) % 10;
-      const idx0 = (x + 2) % 10;
-      const B0 = B[idx0];
-      const B1 = B[idx0 + 1];
-      const Th = rotlH(B0, B1, 1) ^ B[idx1];
-      const Tl = rotlL(B0, B1, 1) ^ B[idx1 + 1];
-      for (let y = 0;y < 50; y += 10) {
-        s[x + y] ^= Th;
-        s[x + y + 1] ^= Tl;
-      }
-    }
-    let curH = s[2];
-    let curL = s[3];
-    for (let t = 0;t < 24; t++) {
-      const shift = SHA3_ROTL[t];
-      const Th = rotlH(curH, curL, shift);
-      const Tl = rotlL(curH, curL, shift);
-      const PI = SHA3_PI[t];
-      curH = s[PI];
-      curL = s[PI + 1];
-      s[PI] = Th;
-      s[PI + 1] = Tl;
-    }
-    for (let y = 0;y < 50; y += 10) {
-      for (let x = 0;x < 10; x++)
-        B[x] = s[y + x];
-      for (let x = 0;x < 10; x++)
-        s[y + x] ^= ~B[(x + 2) % 10] & B[(x + 4) % 10];
-    }
-    s[0] ^= SHA3_IOTA_H[round];
-    s[1] ^= SHA3_IOTA_L[round];
-  }
-  clean(B);
-}
-
-class Keccak extends Hash {
-  constructor(blockLen, suffix, outputLen, enableXOF = false, rounds = 24) {
-    super();
-    this.pos = 0;
-    this.posOut = 0;
-    this.finished = false;
-    this.destroyed = false;
-    this.enableXOF = false;
-    this.blockLen = blockLen;
-    this.suffix = suffix;
-    this.outputLen = outputLen;
-    this.enableXOF = enableXOF;
-    this.rounds = rounds;
-    anumber(outputLen);
-    if (!(0 < blockLen && blockLen < 200))
-      throw new Error("only keccak-f1600 function is supported");
-    this.state = new Uint8Array(200);
-    this.state32 = u32(this.state);
-  }
-  clone() {
-    return this._cloneInto();
-  }
-  keccak() {
-    swap32IfBE(this.state32);
-    keccakP(this.state32, this.rounds);
-    swap32IfBE(this.state32);
-    this.posOut = 0;
-    this.pos = 0;
-  }
-  update(data) {
-    aexists(this);
-    data = toBytes3(data);
-    abytes(data);
-    const { blockLen, state } = this;
-    const len2 = data.length;
-    for (let pos = 0;pos < len2; ) {
-      const take = Math.min(blockLen - this.pos, len2 - pos);
-      for (let i2 = 0;i2 < take; i2++)
-        state[this.pos++] ^= data[pos++];
-      if (this.pos === blockLen)
-        this.keccak();
-    }
-    return this;
-  }
-  finish() {
-    if (this.finished)
-      return;
-    this.finished = true;
-    const { state, suffix, pos, blockLen } = this;
-    state[pos] ^= suffix;
-    if ((suffix & 128) !== 0 && pos === blockLen - 1)
-      this.keccak();
-    state[blockLen - 1] ^= 128;
-    this.keccak();
-  }
-  writeInto(out) {
-    aexists(this, false);
-    abytes(out);
-    this.finish();
-    const bufferOut = this.state;
-    const { blockLen } = this;
-    for (let pos = 0, len2 = out.length;pos < len2; ) {
-      if (this.posOut >= blockLen)
-        this.keccak();
-      const take = Math.min(blockLen - this.posOut, len2 - pos);
-      out.set(bufferOut.subarray(this.posOut, this.posOut + take), pos);
-      this.posOut += take;
-      pos += take;
-    }
-    return out;
-  }
-  xofInto(out) {
-    if (!this.enableXOF)
-      throw new Error("XOF is not possible for this instance");
-    return this.writeInto(out);
-  }
-  xof(bytes) {
-    anumber(bytes);
-    return this.xofInto(new Uint8Array(bytes));
-  }
-  digestInto(out) {
-    aoutput(out, this);
-    if (this.finished)
-      throw new Error("digest() was already called");
-    this.writeInto(out);
-    this.destroy();
-    return out;
-  }
-  digest() {
-    return this.digestInto(new Uint8Array(this.outputLen));
-  }
-  destroy() {
-    this.destroyed = true;
-    clean(this.state);
-  }
-  _cloneInto(to) {
-    const { blockLen, suffix, outputLen, rounds, enableXOF } = this;
-    to || (to = new Keccak(blockLen, suffix, outputLen, enableXOF, rounds));
-    to.state32.set(this.state32);
-    to.pos = this.pos;
-    to.posOut = this.posOut;
-    to.finished = this.finished;
-    to.rounds = rounds;
-    to.suffix = suffix;
-    to.outputLen = outputLen;
-    to.enableXOF = enableXOF;
-    to.destroyed = this.destroyed;
-    return to;
-  }
-}
-var gen = (suffix, blockLen, outputLen) => createHasher(() => new Keccak(blockLen, suffix, outputLen));
-var keccak_256 = /* @__PURE__ */ (() => gen(1, 136, 256 / 8))();
-function keccak2562(value3, to_) {
-  const to = to_ || "hex";
-  const bytes = keccak_256(isHex2(value3, { strict: false }) ? toBytes2(value3) : value3);
-  if (to === "bytes")
-    return bytes;
-  return toHex2(bytes);
-}
-var hash2 = (value3) => keccak2562(toBytes2(value3));
-function hashSignature(sig) {
-  return hash2(sig);
-}
-function normalizeSignature(signature) {
-  let active = true;
-  let current = "";
-  let level = 0;
-  let result = "";
-  let valid = false;
-  for (let i2 = 0;i2 < signature.length; i2++) {
-    const char = signature[i2];
-    if (["(", ")", ","].includes(char))
-      active = true;
-    if (char === "(")
-      level++;
-    if (char === ")")
-      level--;
-    if (!active)
-      continue;
-    if (level === 0) {
-      if (char === " " && ["event", "function", ""].includes(result))
-        result = "";
-      else {
-        result += char;
-        if (char === ")") {
-          valid = true;
-          break;
-        }
-      }
-      continue;
-    }
-    if (char === " ") {
-      if (signature[i2 - 1] !== "," && current !== "," && current !== ",(") {
-        current = "";
-        active = false;
-      }
-      continue;
-    }
-    result += char;
-    current += char;
-  }
-  if (!valid)
-    throw new BaseError4("Unable to normalize signature.");
-  return result;
-}
-var toSignature = (def) => {
-  const def_ = (() => {
-    if (typeof def === "string")
-      return def;
-    return formatAbiItem(def);
-  })();
-  return normalizeSignature(def_);
-};
-function toSignatureHash(fn) {
-  return hashSignature(toSignature(fn));
-}
-var toEventSelector3 = toSignatureHash;
-
-class NegativeOffsetError extends BaseError4 {
-  constructor({ offset }) {
-    super(`Offset \`${offset}\` cannot be negative.`, {
-      name: "NegativeOffsetError"
-    });
-  }
-}
-
-class PositionOutOfBoundsError extends BaseError4 {
-  constructor({ length, position }) {
-    super(`Position \`${position}\` is out of bounds (\`0 < position < ${length}\`).`, { name: "PositionOutOfBoundsError" });
-  }
-}
-
-class RecursiveReadLimitExceededError extends BaseError4 {
-  constructor({ count, limit }) {
-    super(`Recursive read limit of \`${limit}\` exceeded (recursive read count: \`${count}\`).`, { name: "RecursiveReadLimitExceededError" });
-  }
-}
-
-class InvalidAddressError2 extends BaseError4 {
-  constructor({ address }) {
-    super(`Address "${address}" is invalid.`, {
-      metaMessages: [
-        "- Address must be a hex value of 20 bytes (40 hex characters).",
-        "- Address must match its checksum counterpart."
-      ],
-      name: "InvalidAddressError"
-    });
-  }
-}
-
-class LruMap extends Map {
-  constructor(size3) {
-    super();
-    Object.defineProperty(this, "maxSize", {
-      enumerable: true,
-      configurable: true,
-      writable: true,
-      value: undefined
-    });
-    this.maxSize = size3;
-  }
-  get(key) {
-    const value3 = super.get(key);
-    if (super.has(key) && value3 !== undefined) {
-      this.delete(key);
-      super.set(key, value3);
-    }
-    return value3;
-  }
-  set(key, value3) {
-    super.set(key, value3);
-    if (this.maxSize && this.size > this.maxSize) {
-      const firstKey = this.keys().next().value;
-      if (firstKey)
-        this.delete(firstKey);
-    }
-    return this;
-  }
-}
-var addressRegex = /^0x[a-fA-F0-9]{40}$/;
-var isAddressCache = /* @__PURE__ */ new LruMap(8192);
-function isAddress2(address, options) {
-  const { strict = true } = options ?? {};
-  const cacheKey = `${address}.${strict}`;
-  if (isAddressCache.has(cacheKey))
-    return isAddressCache.get(cacheKey);
-  const result = (() => {
-    if (!addressRegex.test(address))
-      return false;
-    if (address.toLowerCase() === address)
-      return true;
-    if (strict)
-      return checksumAddress(address) === address;
-    return true;
-  })();
-  isAddressCache.set(cacheKey, result);
-  return result;
-}
-var checksumAddressCache = /* @__PURE__ */ new LruMap(8192);
-function checksumAddress(address_, chainId) {
-  if (checksumAddressCache.has(`${address_}.${chainId}`))
-    return checksumAddressCache.get(`${address_}.${chainId}`);
-  const hexAddress = chainId ? `${chainId}${address_.toLowerCase()}` : address_.substring(2).toLowerCase();
-  const hash3 = keccak2562(stringToBytes2(hexAddress), "bytes");
-  const address = (chainId ? hexAddress.substring(`${chainId}0x`.length) : hexAddress).split("");
-  for (let i2 = 0;i2 < 40; i2 += 2) {
-    if (hash3[i2 >> 1] >> 4 >= 8 && address[i2]) {
-      address[i2] = address[i2].toUpperCase();
-    }
-    if ((hash3[i2 >> 1] & 15) >= 8 && address[i2 + 1]) {
-      address[i2 + 1] = address[i2 + 1].toUpperCase();
-    }
-  }
-  const result = `0x${address.join("")}`;
-  checksumAddressCache.set(`${address_}.${chainId}`, result);
-  return result;
-}
-var staticCursor = {
-  bytes: new Uint8Array,
-  dataView: new DataView(new ArrayBuffer(0)),
-  position: 0,
-  positionReadCount: new Map,
-  recursiveReadCount: 0,
-  recursiveReadLimit: Number.POSITIVE_INFINITY,
-  assertReadLimit() {
-    if (this.recursiveReadCount >= this.recursiveReadLimit)
-      throw new RecursiveReadLimitExceededError({
-        count: this.recursiveReadCount + 1,
-        limit: this.recursiveReadLimit
-      });
-  },
-  assertPosition(position) {
-    if (position < 0 || position > this.bytes.length - 1)
-      throw new PositionOutOfBoundsError({
-        length: this.bytes.length,
-        position
-      });
-  },
-  decrementPosition(offset) {
-    if (offset < 0)
-      throw new NegativeOffsetError({ offset });
-    const position = this.position - offset;
-    this.assertPosition(position);
-    this.position = position;
-  },
-  getReadCount(position) {
-    return this.positionReadCount.get(position || this.position) || 0;
-  },
-  incrementPosition(offset) {
-    if (offset < 0)
-      throw new NegativeOffsetError({ offset });
-    const position = this.position + offset;
-    this.assertPosition(position);
-    this.position = position;
-  },
-  inspectByte(position_) {
-    const position = position_ ?? this.position;
-    this.assertPosition(position);
-    return this.bytes[position];
-  },
-  inspectBytes(length, position_) {
-    const position = position_ ?? this.position;
-    this.assertPosition(position + length - 1);
-    return this.bytes.subarray(position, position + length);
-  },
-  inspectUint8(position_) {
-    const position = position_ ?? this.position;
-    this.assertPosition(position);
-    return this.bytes[position];
-  },
-  inspectUint16(position_) {
-    const position = position_ ?? this.position;
-    this.assertPosition(position + 1);
-    return this.dataView.getUint16(position);
-  },
-  inspectUint24(position_) {
-    const position = position_ ?? this.position;
-    this.assertPosition(position + 2);
-    return (this.dataView.getUint16(position) << 8) + this.dataView.getUint8(position + 2);
-  },
-  inspectUint32(position_) {
-    const position = position_ ?? this.position;
-    this.assertPosition(position + 3);
-    return this.dataView.getUint32(position);
-  },
-  pushByte(byte) {
-    this.assertPosition(this.position);
-    this.bytes[this.position] = byte;
-    this.position++;
-  },
-  pushBytes(bytes) {
-    this.assertPosition(this.position + bytes.length - 1);
-    this.bytes.set(bytes, this.position);
-    this.position += bytes.length;
-  },
-  pushUint8(value3) {
-    this.assertPosition(this.position);
-    this.bytes[this.position] = value3;
-    this.position++;
-  },
-  pushUint16(value3) {
-    this.assertPosition(this.position + 1);
-    this.dataView.setUint16(this.position, value3);
-    this.position += 2;
-  },
-  pushUint24(value3) {
-    this.assertPosition(this.position + 2);
-    this.dataView.setUint16(this.position, value3 >> 8);
-    this.dataView.setUint8(this.position + 2, value3 & ~4294967040);
-    this.position += 3;
-  },
-  pushUint32(value3) {
-    this.assertPosition(this.position + 3);
-    this.dataView.setUint32(this.position, value3);
-    this.position += 4;
-  },
-  readByte() {
-    this.assertReadLimit();
-    this._touch();
-    const value3 = this.inspectByte();
-    this.position++;
-    return value3;
-  },
-  readBytes(length, size3) {
-    this.assertReadLimit();
-    this._touch();
-    const value3 = this.inspectBytes(length);
-    this.position += size3 ?? length;
-    return value3;
-  },
-  readUint8() {
-    this.assertReadLimit();
-    this._touch();
-    const value3 = this.inspectUint8();
-    this.position += 1;
-    return value3;
-  },
-  readUint16() {
-    this.assertReadLimit();
-    this._touch();
-    const value3 = this.inspectUint16();
-    this.position += 2;
-    return value3;
-  },
-  readUint24() {
-    this.assertReadLimit();
-    this._touch();
-    const value3 = this.inspectUint24();
-    this.position += 3;
-    return value3;
-  },
-  readUint32() {
-    this.assertReadLimit();
-    this._touch();
-    const value3 = this.inspectUint32();
-    this.position += 4;
-    return value3;
-  },
-  get remaining() {
-    return this.bytes.length - this.position;
-  },
-  setPosition(position) {
-    const oldPosition = this.position;
-    this.assertPosition(position);
-    this.position = position;
-    return () => this.position = oldPosition;
-  },
-  _touch() {
-    if (this.recursiveReadLimit === Number.POSITIVE_INFINITY)
-      return;
-    const count = this.getReadCount();
-    this.positionReadCount.set(this.position, count + 1);
-    if (count > 0)
-      this.recursiveReadCount++;
-  }
-};
-function createCursor(bytes, { recursiveReadLimit = 8192 } = {}) {
-  const cursor = Object.create(staticCursor);
-  cursor.bytes = bytes;
-  cursor.dataView = new DataView(bytes.buffer, bytes.byteOffset, bytes.byteLength);
-  cursor.positionReadCount = new Map;
-  cursor.recursiveReadLimit = recursiveReadLimit;
-  return cursor;
-}
-function slice2(value3, start, end, { strict } = {}) {
-  if (isHex2(value3, { strict: false }))
-    return sliceHex2(value3, start, end, {
-      strict
-    });
-  return sliceBytes2(value3, start, end, {
-    strict
-  });
-}
-function assertStartOffset(value3, start) {
-  if (typeof start === "number" && start > 0 && start > size2(value3) - 1)
-    throw new SliceOffsetOutOfBoundsError2({
-      offset: start,
-      position: "start",
-      size: size2(value3)
-    });
-}
-function assertEndOffset(value3, start, end) {
-  if (typeof start === "number" && typeof end === "number" && size2(value3) !== end - start) {
-    throw new SliceOffsetOutOfBoundsError2({
-      offset: end,
-      position: "end",
-      size: size2(value3)
-    });
-  }
-}
-function sliceBytes2(value_, start, end, { strict } = {}) {
-  assertStartOffset(value_, start);
-  const value3 = value_.slice(start, end);
-  if (strict)
-    assertEndOffset(value3, start, end);
-  return value3;
-}
-function sliceHex2(value_, start, end, { strict } = {}) {
-  assertStartOffset(value_, start);
-  const value3 = `0x${value_.replace("0x", "").slice((start ?? 0) * 2, (end ?? value_.length) * 2)}`;
-  if (strict)
-    assertEndOffset(value3, start, end);
-  return value3;
-}
-function bytesToBigInt2(bytes, opts = {}) {
-  if (typeof opts.size !== "undefined")
-    assertSize2(bytes, { size: opts.size });
-  const hex3 = bytesToHex3(bytes, opts);
-  return hexToBigInt2(hex3, opts);
-}
-function bytesToBool2(bytes_, opts = {}) {
-  let bytes = bytes_;
-  if (typeof opts.size !== "undefined") {
-    assertSize2(bytes, { size: opts.size });
-    bytes = trim2(bytes);
-  }
-  if (bytes.length > 1 || bytes[0] > 1)
-    throw new InvalidBytesBooleanError2(bytes);
-  return Boolean(bytes[0]);
-}
-function bytesToNumber2(bytes, opts = {}) {
-  if (typeof opts.size !== "undefined")
-    assertSize2(bytes, { size: opts.size });
-  const hex3 = bytesToHex3(bytes, opts);
-  return hexToNumber2(hex3, opts);
-}
-function bytesToString2(bytes_, opts = {}) {
-  let bytes = bytes_;
-  if (typeof opts.size !== "undefined") {
-    assertSize2(bytes, { size: opts.size });
-    bytes = trim2(bytes, { dir: "right" });
-  }
-  return new TextDecoder().decode(bytes);
-}
-function concat2(values) {
-  if (typeof values[0] === "string")
-    return concatHex2(values);
-  return concatBytes2(values);
-}
-function concatBytes2(values) {
-  let length = 0;
-  for (const arr of values) {
-    length += arr.length;
-  }
-  const result = new Uint8Array(length);
-  let offset = 0;
-  for (const arr of values) {
-    result.set(arr, offset);
-    offset += arr.length;
-  }
-  return result;
-}
-function concatHex2(values) {
-  return `0x${values.reduce((acc, x) => acc + x.replace("0x", ""), "")}`;
-}
-var integerRegex2 = /^(u?int)(8|16|24|32|40|48|56|64|72|80|88|96|104|112|120|128|136|144|152|160|168|176|184|192|200|208|216|224|232|240|248|256)?$/;
-function encodeAbiParameters2(params, values) {
-  if (params.length !== values.length)
-    throw new AbiEncodingLengthMismatchError2({
-      expectedLength: params.length,
-      givenLength: values.length
-    });
-  const preparedParams = prepareParams({
-    params,
-    values
-  });
-  const data = encodeParams(preparedParams);
-  if (data.length === 0)
-    return "0x";
-  return data;
-}
-function prepareParams({ params, values }) {
-  const preparedParams = [];
-  for (let i2 = 0;i2 < params.length; i2++) {
-    preparedParams.push(prepareParam({ param: params[i2], value: values[i2] }));
-  }
-  return preparedParams;
-}
-function prepareParam({ param, value: value3 }) {
-  const arrayComponents = getArrayComponents(param.type);
-  if (arrayComponents) {
-    const [length, type] = arrayComponents;
-    return encodeArray(value3, { length, param: { ...param, type } });
-  }
-  if (param.type === "tuple") {
-    return encodeTuple(value3, {
-      param
-    });
-  }
-  if (param.type === "address") {
-    return encodeAddress(value3);
-  }
-  if (param.type === "bool") {
-    return encodeBool(value3);
-  }
-  if (param.type.startsWith("uint") || param.type.startsWith("int")) {
-    const signed = param.type.startsWith("int");
-    const [, , size3 = "256"] = integerRegex2.exec(param.type) ?? [];
-    return encodeNumber(value3, {
-      signed,
-      size: Number(size3)
-    });
-  }
-  if (param.type.startsWith("bytes")) {
-    return encodeBytes(value3, { param });
-  }
-  if (param.type === "string") {
-    return encodeString(value3);
-  }
-  throw new InvalidAbiEncodingTypeError2(param.type, {
-    docsPath: "/docs/contract/encodeAbiParameters"
-  });
-}
-function encodeParams(preparedParams) {
-  let staticSize = 0;
-  for (let i2 = 0;i2 < preparedParams.length; i2++) {
-    const { dynamic, encoded } = preparedParams[i2];
-    if (dynamic)
-      staticSize += 32;
-    else
-      staticSize += size2(encoded);
-  }
-  const staticParams = [];
-  const dynamicParams = [];
-  let dynamicSize = 0;
-  for (let i2 = 0;i2 < preparedParams.length; i2++) {
-    const { dynamic, encoded } = preparedParams[i2];
-    if (dynamic) {
-      staticParams.push(numberToHex2(staticSize + dynamicSize, { size: 32 }));
-      dynamicParams.push(encoded);
-      dynamicSize += size2(encoded);
-    } else {
-      staticParams.push(encoded);
-    }
-  }
-  return concat2([...staticParams, ...dynamicParams]);
-}
-function encodeAddress(value3) {
-  if (!isAddress2(value3))
-    throw new InvalidAddressError2({ address: value3 });
-  return { dynamic: false, encoded: padHex2(value3.toLowerCase()) };
-}
-function encodeArray(value3, { length, param }) {
-  const dynamic = length === null;
-  if (!Array.isArray(value3))
-    throw new InvalidArrayError2(value3);
-  if (!dynamic && value3.length !== length)
-    throw new AbiEncodingArrayLengthMismatchError2({
-      expectedLength: length,
-      givenLength: value3.length,
-      type: `${param.type}[${length}]`
-    });
-  let dynamicChild = false;
-  const preparedParams = [];
-  for (let i2 = 0;i2 < value3.length; i2++) {
-    const preparedParam = prepareParam({ param, value: value3[i2] });
-    if (preparedParam.dynamic)
-      dynamicChild = true;
-    preparedParams.push(preparedParam);
-  }
-  if (dynamic || dynamicChild) {
-    const data = encodeParams(preparedParams);
-    if (dynamic) {
-      const length2 = numberToHex2(preparedParams.length, { size: 32 });
-      return {
-        dynamic: true,
-        encoded: preparedParams.length > 0 ? concat2([length2, data]) : length2
-      };
-    }
-    if (dynamicChild)
-      return { dynamic: true, encoded: data };
-  }
-  return {
-    dynamic: false,
-    encoded: concat2(preparedParams.map(({ encoded }) => encoded))
-  };
-}
-function encodeBytes(value3, { param }) {
-  const [, paramSize] = param.type.split("bytes");
-  const bytesSize = size2(value3);
-  if (!paramSize) {
-    let value_ = value3;
-    if (bytesSize % 32 !== 0)
-      value_ = padHex2(value_, {
-        dir: "right",
-        size: Math.ceil((value3.length - 2) / 2 / 32) * 32
-      });
-    return {
-      dynamic: true,
-      encoded: concat2([padHex2(numberToHex2(bytesSize, { size: 32 })), value_])
-    };
-  }
-  if (bytesSize !== Number.parseInt(paramSize))
-    throw new AbiEncodingBytesSizeMismatchError2({
-      expectedSize: Number.parseInt(paramSize),
-      value: value3
-    });
-  return { dynamic: false, encoded: padHex2(value3, { dir: "right" }) };
-}
-function encodeBool(value3) {
-  if (typeof value3 !== "boolean")
-    throw new BaseError4(`Invalid boolean value: "${value3}" (type: ${typeof value3}). Expected: \`true\` or \`false\`.`);
-  return { dynamic: false, encoded: padHex2(boolToHex2(value3)) };
-}
-function encodeNumber(value3, { signed, size: size3 = 256 }) {
-  if (typeof size3 === "number") {
-    const max = 2n ** (BigInt(size3) - (signed ? 1n : 0n)) - 1n;
-    const min = signed ? -max - 1n : 0n;
-    if (value3 > max || value3 < min)
-      throw new IntegerOutOfRangeError2({
-        max: max.toString(),
-        min: min.toString(),
-        signed,
-        size: size3 / 8,
-        value: value3.toString()
-      });
-  }
-  return {
-    dynamic: false,
-    encoded: numberToHex2(value3, {
-      size: 32,
-      signed
-    })
-  };
-}
-function encodeString(value3) {
-  const hexValue = stringToHex2(value3);
-  const partsLength = Math.ceil(size2(hexValue) / 32);
-  const parts = [];
-  for (let i2 = 0;i2 < partsLength; i2++) {
-    parts.push(padHex2(slice2(hexValue, i2 * 32, (i2 + 1) * 32), {
-      dir: "right"
-    }));
-  }
-  return {
-    dynamic: true,
-    encoded: concat2([
-      padHex2(numberToHex2(size2(hexValue), { size: 32 })),
-      ...parts
-    ])
-  };
-}
-function encodeTuple(value3, { param }) {
-  let dynamic = false;
-  const preparedParams = [];
-  for (let i2 = 0;i2 < param.components.length; i2++) {
-    const param_ = param.components[i2];
-    const index = Array.isArray(value3) ? i2 : param_.name;
-    const preparedParam = prepareParam({
-      param: param_,
-      value: value3[index]
-    });
-    preparedParams.push(preparedParam);
-    if (preparedParam.dynamic)
-      dynamic = true;
-  }
-  return {
-    dynamic,
-    encoded: dynamic ? encodeParams(preparedParams) : concat2(preparedParams.map(({ encoded }) => encoded))
-  };
-}
-function getArrayComponents(type) {
-  const matches = type.match(/^(.*)\[(\d+)?\]$/);
-  return matches ? [matches[2] ? Number(matches[2]) : null, matches[1]] : undefined;
-}
-function decodeAbiParameters2(params, data) {
-  const bytes = typeof data === "string" ? hexToBytes4(data) : data;
-  const cursor = createCursor(bytes);
-  if (size2(bytes) === 0 && params.length > 0)
-    throw new AbiDecodingZeroDataError2;
-  if (size2(data) && size2(data) < 32)
-    throw new AbiDecodingDataSizeTooSmallError2({
-      data: typeof data === "string" ? data : bytesToHex3(data),
-      params,
-      size: size2(data)
-    });
-  let consumed = 0;
-  const values = [];
-  for (let i2 = 0;i2 < params.length; ++i2) {
-    const param = params[i2];
-    cursor.setPosition(consumed);
-    const [data2, consumed_] = decodeParameter(cursor, param, {
-      staticPosition: 0
-    });
-    consumed += consumed_;
-    values.push(data2);
-  }
-  return values;
-}
-function decodeParameter(cursor, param, { staticPosition }) {
-  const arrayComponents = getArrayComponents(param.type);
-  if (arrayComponents) {
-    const [length, type] = arrayComponents;
-    return decodeArray(cursor, { ...param, type }, { length, staticPosition });
-  }
-  if (param.type === "tuple")
-    return decodeTuple(cursor, param, { staticPosition });
-  if (param.type === "address")
-    return decodeAddress(cursor);
-  if (param.type === "bool")
-    return decodeBool(cursor);
-  if (param.type.startsWith("bytes"))
-    return decodeBytes(cursor, param, { staticPosition });
-  if (param.type.startsWith("uint") || param.type.startsWith("int"))
-    return decodeNumber(cursor, param);
-  if (param.type === "string")
-    return decodeString(cursor, { staticPosition });
-  throw new InvalidAbiDecodingTypeError2(param.type, {
-    docsPath: "/docs/contract/decodeAbiParameters"
-  });
-}
-var sizeOfLength = 32;
-var sizeOfOffset = 32;
-function decodeAddress(cursor) {
-  const value3 = cursor.readBytes(32);
-  return [checksumAddress(bytesToHex3(sliceBytes2(value3, -20))), 32];
-}
-function decodeArray(cursor, param, { length, staticPosition }) {
-  if (!length) {
-    const offset = bytesToNumber2(cursor.readBytes(sizeOfOffset));
-    const start = staticPosition + offset;
-    const startOfData = start + sizeOfLength;
-    cursor.setPosition(start);
-    const length2 = bytesToNumber2(cursor.readBytes(sizeOfLength));
-    const dynamicChild = hasDynamicChild(param);
-    let consumed2 = 0;
-    const value4 = [];
-    for (let i2 = 0;i2 < length2; ++i2) {
-      cursor.setPosition(startOfData + (dynamicChild ? i2 * 32 : consumed2));
-      const [data, consumed_] = decodeParameter(cursor, param, {
-        staticPosition: startOfData
-      });
-      consumed2 += consumed_;
-      value4.push(data);
-    }
-    cursor.setPosition(staticPosition + 32);
-    return [value4, 32];
-  }
-  if (hasDynamicChild(param)) {
-    const offset = bytesToNumber2(cursor.readBytes(sizeOfOffset));
-    const start = staticPosition + offset;
-    const value4 = [];
-    for (let i2 = 0;i2 < length; ++i2) {
-      cursor.setPosition(start + i2 * 32);
-      const [data] = decodeParameter(cursor, param, {
-        staticPosition: start
-      });
-      value4.push(data);
-    }
-    cursor.setPosition(staticPosition + 32);
-    return [value4, 32];
-  }
-  let consumed = 0;
-  const value3 = [];
-  for (let i2 = 0;i2 < length; ++i2) {
-    const [data, consumed_] = decodeParameter(cursor, param, {
-      staticPosition: staticPosition + consumed
-    });
-    consumed += consumed_;
-    value3.push(data);
-  }
-  return [value3, consumed];
-}
-function decodeBool(cursor) {
-  return [bytesToBool2(cursor.readBytes(32), { size: 32 }), 32];
-}
-function decodeBytes(cursor, param, { staticPosition }) {
-  const [_, size3] = param.type.split("bytes");
-  if (!size3) {
-    const offset = bytesToNumber2(cursor.readBytes(32));
-    cursor.setPosition(staticPosition + offset);
-    const length = bytesToNumber2(cursor.readBytes(32));
-    if (length === 0) {
-      cursor.setPosition(staticPosition + 32);
-      return ["0x", 32];
-    }
-    const data = cursor.readBytes(length);
-    cursor.setPosition(staticPosition + 32);
-    return [bytesToHex3(data), 32];
-  }
-  const value3 = bytesToHex3(cursor.readBytes(Number.parseInt(size3), 32));
-  return [value3, 32];
-}
-function decodeNumber(cursor, param) {
-  const signed = param.type.startsWith("int");
-  const size3 = Number.parseInt(param.type.split("int")[1] || "256");
-  const value3 = cursor.readBytes(32);
-  return [
-    size3 > 48 ? bytesToBigInt2(value3, { signed }) : bytesToNumber2(value3, { signed }),
-    32
-  ];
-}
-function decodeTuple(cursor, param, { staticPosition }) {
-  const hasUnnamedChild = param.components.length === 0 || param.components.some(({ name }) => !name);
-  const value3 = hasUnnamedChild ? [] : {};
-  let consumed = 0;
-  if (hasDynamicChild(param)) {
-    const offset = bytesToNumber2(cursor.readBytes(sizeOfOffset));
-    const start = staticPosition + offset;
-    for (let i2 = 0;i2 < param.components.length; ++i2) {
-      const component = param.components[i2];
-      cursor.setPosition(start + consumed);
-      const [data, consumed_] = decodeParameter(cursor, component, {
-        staticPosition: start
-      });
-      consumed += consumed_;
-      value3[hasUnnamedChild ? i2 : component?.name] = data;
-    }
-    cursor.setPosition(staticPosition + 32);
-    return [value3, 32];
-  }
-  for (let i2 = 0;i2 < param.components.length; ++i2) {
-    const component = param.components[i2];
-    const [data, consumed_] = decodeParameter(cursor, component, {
-      staticPosition
-    });
-    value3[hasUnnamedChild ? i2 : component?.name] = data;
-    consumed += consumed_;
-  }
-  return [value3, consumed];
-}
-function decodeString(cursor, { staticPosition }) {
-  const offset = bytesToNumber2(cursor.readBytes(32));
-  const start = staticPosition + offset;
-  cursor.setPosition(start);
-  const length = bytesToNumber2(cursor.readBytes(32));
-  if (length === 0) {
-    cursor.setPosition(staticPosition + 32);
-    return ["", 32];
-  }
-  const data = cursor.readBytes(length, 32);
-  const value3 = bytesToString2(trim2(data));
-  cursor.setPosition(staticPosition + 32);
-  return [value3, 32];
-}
-function hasDynamicChild(param) {
-  const { type } = param;
-  if (type === "string")
-    return true;
-  if (type === "bytes")
-    return true;
-  if (type.endsWith("[]"))
-    return true;
-  if (type === "tuple")
-    return param.components?.some(hasDynamicChild);
-  const arrayComponents = getArrayComponents(param.type);
-  if (arrayComponents && hasDynamicChild({ ...param, type: arrayComponents[1] }))
-    return true;
-  return false;
-}
-var docsPath = "/docs/contract/decodeEventLog";
-function decodeEventLog2(parameters) {
-  const { abi, data, strict: strict_, topics } = parameters;
-  const strict = strict_ ?? true;
-  const [signature, ...argTopics] = topics;
-  if (!signature)
-    throw new AbiEventSignatureEmptyTopicsError2({ docsPath });
-  const abiItem = abi.find((x) => x.type === "event" && signature === toEventSelector3(formatAbiItem2(x)));
-  if (!(abiItem && ("name" in abiItem)) || abiItem.type !== "event")
-    throw new AbiEventSignatureNotFoundError2(signature, { docsPath });
-  const { name, inputs } = abiItem;
-  const isUnnamed = inputs?.some((x) => !(("name" in x) && x.name));
-  const args = isUnnamed ? [] : {};
-  const indexedInputs = inputs.map((x, i2) => [x, i2]).filter(([x]) => ("indexed" in x) && x.indexed);
-  for (let i2 = 0;i2 < indexedInputs.length; i2++) {
-    const [param, argIndex] = indexedInputs[i2];
-    const topic = argTopics[i2];
-    if (!topic)
-      throw new DecodeLogTopicsMismatch2({
-        abiItem,
-        param
-      });
-    args[isUnnamed ? argIndex : param.name || argIndex] = decodeTopic({
-      param,
-      value: topic
-    });
-  }
-  const nonIndexedInputs = inputs.filter((x) => !(("indexed" in x) && x.indexed));
-  if (nonIndexedInputs.length > 0) {
-    if (data && data !== "0x") {
-      try {
-        const decodedData = decodeAbiParameters2(nonIndexedInputs, data);
-        if (decodedData) {
-          if (isUnnamed)
-            for (let i2 = 0;i2 < inputs.length; i2++)
-              args[i2] = args[i2] ?? decodedData.shift();
-          else
-            for (let i2 = 0;i2 < nonIndexedInputs.length; i2++)
-              args[nonIndexedInputs[i2].name] = decodedData[i2];
-        }
-      } catch (err) {
-        if (strict) {
-          if (err instanceof AbiDecodingDataSizeTooSmallError2 || err instanceof PositionOutOfBoundsError)
-            throw new DecodeLogDataMismatch2({
-              abiItem,
-              data,
-              params: nonIndexedInputs,
-              size: size2(data)
-            });
-          throw err;
-        }
-      }
-    } else if (strict) {
-      throw new DecodeLogDataMismatch2({
-        abiItem,
-        data: "0x",
-        params: nonIndexedInputs,
-        size: 0
-      });
-    }
-  }
-  return {
-    eventName: name,
-    args: Object.values(args).length > 0 ? args : undefined
-  };
-}
-function decodeTopic({ param, value: value3 }) {
-  if (param.type === "string" || param.type === "bytes" || param.type === "tuple" || param.type.match(/^(.*)\[(\d+)?\]$/))
-    return value3;
-  const decodedArg = decodeAbiParameters2([param], value3) || [];
-  return decodedArg[0];
 }
 var systemPrompt = `You are a neutral expert evaluating knowledge exchange quality.
 Evaluate the teaching session against specific criteria and provide structured feedback.
@@ -42417,10 +30468,10 @@ ${args.transcript}
 For each goal, provide a score, reasoning, and improvements. Also provide an overall confidence score (0-10000) for your evaluation.
 Return ONLY the JSON object with result array and confidence field, nothing else.
 `;
-var askAi = (runtime3, session, transcript) => {
-  const apiKey = runtime3.getSecret({ id: "OPENAI_COMPAT_API_KEY" }).result();
+var askAi = (runtime2, session, transcript) => {
+  const apiKey = runtime2.getSecret({ id: "OPENAI_COMPAT_API_KEY" }).result();
   const httpClient = new cre.capabilities.HTTPClient;
-  const result = httpClient.sendRequest(runtime3, PostAiData(session, transcript, apiKey.value), consensusIdenticalAggregation())(runtime3.config).result();
+  const result = httpClient.sendRequest(runtime2, PostAiData(session, transcript, apiKey.value), consensusIdenticalAggregation())(runtime2.config).result();
   return result;
 };
 var PostAiData = (session, transcript, apiKey) => (sendRequester, config2) => {
@@ -42499,97 +30550,103 @@ function reduceEvaluationToScore(evaluation, session) {
     multiplier
   };
 }
-function settleSession(runtime3, session, decision, decisionCid) {
-  const evmCfg = runtime3.config.evms[0];
-  const network495 = getNetwork({
+function settleSession(runtime2, sessionId, decision, decisionCid) {
+  const evmCfg = runtime2.config.evms[0];
+  const pinataGatewayUrl = runtime2.getSecret({ id: "PINATA_GATEWAY_URL" }).result();
+  const network248 = getNetwork({
     chainFamily: "evm",
     chainSelectorName: evmCfg.chainSelectorName,
     isTestnet: true
   });
-  if (!network495)
+  if (!network248)
     throw new Error(`Unknown chain name: ${evmCfg.chainSelectorName}`);
-  const evmClient = new cre.capabilities.EVMClient(network495.chainSelector.selector);
+  const evmClient = new cre.capabilities.EVMClient(network248.chainSelector.selector);
   const score = decision.score / 100;
   const confidence = decision.confidence / 100;
-  const reportData = encodeEvaluationReport(BigInt(session.sessionId), confidence, score, decisionCid);
-  const reportResponse = runtime3.report({
+  const reportData = encodeEvaluationReport(BigInt(sessionId), confidence, score, pinataGatewayUrl.value, decisionCid);
+  const reportResponse = runtime2.report({
     encodedPayload: hexToBase64(reportData),
     encoderName: "evm",
     signingAlgo: "ecdsa",
     hashingAlgo: "keccak256"
   }).result();
-  const writeReportResult = evmClient.writeReport(runtime3, {
+  const writeReportResult = evmClient.writeReport(runtime2, {
     receiver: evmCfg.sessionRegistryAddress,
     report: reportResponse,
     gasConfig: {
-      gasLimit: runtime3.config.evms[0].gasLimit
+      gasLimit: runtime2.config.evms[0].gasLimit
     }
   }).result();
-  runtime3.log("Waiting for write report response");
+  runtime2.log("Waiting for write report response");
   const txHash = bytesToHex(writeReportResult.txHash ?? new Uint8Array(32));
-  runtime3.log(`Write report transaction succeeded: ${txHash}`);
+  runtime2.log(`Write report transaction succeeded: ${txHash}`);
   return txHash;
 }
-var encodeEvaluationReport = (sessionId, confidenceBps, learningBps, responseId) => encodeAbiParameters2(parseAbiParameters2("uint256 id, uint16 confidenceBps, uint16 learningBps, string evidenceUri"), [sessionId, confidenceBps, learningBps, evidenceUri(responseId)]);
-var evidenceUri = (responseId) => `gemini.com/reports/${responseId}`;
-var eventAbi = parseAbi2([
+var encodeEvaluationReport = (sessionId, confidenceBps, learningBps, pinataGatewayUrl, responseId) => encodeAbiParameters(parseAbiParameters("uint256 id, uint16 confidenceBps, uint16 learningBps, string evidenceUri"), [
+  sessionId,
+  confidenceBps,
+  learningBps,
+  evidenceUri(pinataGatewayUrl, responseId)
+]);
+var evidenceUri = (pinataGatewayUrl, responseId) => `${pinataGatewayUrl.replace(/\/$/, "")}/ipfs/${responseId}`;
+var eventAbi = parseAbi([
   "event EvaluationRequested(uint256 indexed sessionId, string dataCID)"
 ]);
 var eventSignature = "EvaluationRequested(uint256,string)";
-var eventHash = keccak2562(toHex2(eventSignature));
-var onLogTrigger = (runtime3, log) => {
+var eventHash = keccak256(toHex(eventSignature));
+var onLogTrigger = (runtime2, log) => {
   try {
     const topics = zod_default.tuple([zHex(), zHex()]).parse(log.topics.map((t) => bytesToHex(t)));
     const data = bytesToHex(log.data);
-    const decodedLog = decodeEventLog2({ abi: eventAbi, data, topics });
-    const evmCfg = runtime3.config.evms[0];
-    runtime3.log(`Event name: ${decodedLog.eventName}`);
+    const decodedLog = decodeEventLog({ abi: eventAbi, data, topics });
+    const evmCfg = runtime2.config.evms[0];
+    runtime2.log(`Event name: ${decodedLog.eventName}`);
     if (decodedLog.eventName !== "EvaluationRequested")
       throw new Error("Unexpected event");
     const { sessionId, dataCID } = decodedLog.args;
-    runtime3.log(`Settlement request detected for sessionId: ${sessionId}, dataCID: ${dataCID}`);
-    const session = readFromStore(runtime3, "sessionData", dataCID);
-    const { raw: transcript } = getRecallTranscript(runtime3, session.transcriptId);
-    const network495 = getNetwork({
+    runtime2.log(`Settlement request detected for sessionId: ${sessionId}, dataCID: ${dataCID}`);
+    const session = readFromStore(runtime2, "sessionData", dataCID);
+    const { raw: transcript } = getRecallTranscript(runtime2, session.transcriptId);
+    const network248 = getNetwork({
       chainFamily: "evm",
       chainSelectorName: evmCfg.chainSelectorName,
       isTestnet: true
     });
-    if (!network495)
+    if (!network248)
       throw new Error(`Unknown chain name: ${evmCfg.chainSelectorName}`);
-    runtime3.log(`Settling Market at contract: ${evmCfg.sessionRegistryAddress} on network: ${network495.chainSelector.selector}`);
-    runtime3.log(`Session data retrieved from store: ${JSON.stringify(session)}`);
-    const settlementResult = askAi(runtime3, session, transcript);
-    runtime3.log(`Successfully sent data to API. Status: ${settlementResult.statusCode}`);
-    const { data: decisionStored } = writeToStore(runtime3, "evaluationReport", session.sessionId.toString(), {
+    runtime2.log(`Settling Market at contract: ${evmCfg.sessionRegistryAddress} on network: ${network248.chainSelector.selector}`);
+    runtime2.log(`Session data retrieved from store: ${JSON.stringify(session)}`);
+    const settlementResult = askAi(runtime2, session, transcript);
+    runtime2.log(`Successfully sent data to API. Status: ${settlementResult.statusCode}`);
+    const { data: decisionStored } = writeToStore(runtime2, "evaluationReport", sessionId.toString(), {
       score: settlementResult.reducedScore,
       reasoning: settlementResult.evaluationContent.result.flatMap((res) => res.reasoning).join(`
 `),
       improvements: settlementResult.evaluationContent.result.flatMap((res) => res.improvements)
     });
-    runtime3.log(`Evaluation report stored with CID: ${decisionStored.cid}`);
-    const txHash = settleSession(runtime3, session, {
+    runtime2.log(`Evaluation report stored with CID: ${decisionStored.cid}`);
+    const txHash = settleSession(runtime2, sessionId, {
       confidence: settlementResult.evaluationContent.confidence,
       score: settlementResult.reducedScore
     }, decisionStored.cid);
-    runtime3.log(`Settlement tx hash: ${txHash}`);
+    runtime2.log(`Settlement tx hash: ${txHash}`);
     return "Settlement Request Processed";
   } catch (err) {
     const msg = err instanceof Error ? err.message : String(err);
-    runtime3.log(`onLogTrigger error: ${msg}`);
+    runtime2.log(`onLogTrigger error: ${msg}`);
     throw err;
   }
 };
 var initWorkflow = (config2) => {
-  const network495 = getNetwork({
+  const network248 = getNetwork({
     chainFamily: "evm",
     chainSelectorName: config2.evms[0].chainSelectorName,
     isTestnet: true
   });
-  if (!network495) {
+  if (!network248) {
     throw new Error(`Network not found for chain selector name: ${config2.evms[0].chainSelectorName}`);
   }
-  const evmClient = new cre.capabilities.EVMClient(network495.chainSelector.selector);
+  const evmClient = new cre.capabilities.EVMClient(network248.chainSelector.selector);
   return [
     cre.handler(evmClient.logTrigger({
       addresses: [config2.evms[0].sessionRegistryAddress],

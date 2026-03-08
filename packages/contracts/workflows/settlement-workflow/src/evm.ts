@@ -18,6 +18,9 @@ export function settleSession(
 	decisionCid: string,
 ): string {
 	const evmCfg = runtime.config.evms[0];
+	const pinataGatewayUrl = runtime
+		.getSecret({ id: "PINATA_GATEWAY_URL" })
+		.result();
 
 	const network = getNetwork({
 		chainFamily: "evm",
@@ -37,6 +40,7 @@ export function settleSession(
 		BigInt(sessionId),
 		confidence,
 		score,
+		pinataGatewayUrl.value,
 		decisionCid,
 	);
 
@@ -70,13 +74,20 @@ const encodeEvaluationReport = (
 	sessionId: bigint,
 	confidenceBps: number,
 	learningBps: number,
+	pinataGatewayUrl: string,
 	responseId: string,
 ) =>
 	encodeAbiParameters(
 		parseAbiParameters(
 			"uint256 id, uint16 confidenceBps, uint16 learningBps, string evidenceUri",
 		),
-		[sessionId, confidenceBps, learningBps, evidenceUri(responseId)],
+		[
+			sessionId,
+			confidenceBps,
+			learningBps,
+			evidenceUri(pinataGatewayUrl, responseId),
+		],
 	);
 
-const evidenceUri = (responseId: string) => `gemini.com/reports/${responseId}`;
+const evidenceUri = (pinataGatewayUrl: string, responseId: string) =>
+	`${pinataGatewayUrl.replace(/\/$/, "")}/ipfs/${responseId}`;
