@@ -1,4 +1,4 @@
-import cardImage from "@/src/assets/card.png";
+import cardImage from "@/src/assets/card.webp";
 import { Skeleton } from "@/src/components/ui/skeleton";
 import { useGetSessionByIdQuery } from "@/src/lib/hooks/api/use-sessions-api";
 import { formatUSDC } from "@/src/lib/utils/usdc";

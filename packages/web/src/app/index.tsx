@@ -1,5 +1,5 @@
-import bottomGlowImage from "@assets/bottom-glow.png";
-import heroAssetImage from "@assets/hero-asset.png";
+import bottomGlowImage from "@assets/bottom-glow.webp";
+import heroAssetImage from "@assets/hero-asset.webp";
 import { SignOutIcon } from "@phosphor-icons/react";
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
@@ -114,7 +114,7 @@ function LandingPage() {
 							className="h-12 rounded-full px-7"
 							onClick={handlePrimaryAction}
 						>
-							{authenticated ? "Start Browsing" : "Sign up"}
+							{authenticated ? "Go to Dashboard" : "Sign up"}
 						</Button>
 						<a
 							href="https://hetairoiconsultingllc.mintlify.app/"
@@ -130,7 +130,7 @@ function LandingPage() {
 
 				<img
 					alt="Verity dashboard preview"
-					className="my-10 mt-14 h-auto w-full rounded-[1.5rem]"
+					className="my-10 mt-14 h-auto w-full rounded-[2.2rem]"
 					height={2522}
 					src={heroAssetImage}
 					width={4224}

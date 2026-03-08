@@ -1,4 +1,4 @@
-import BannerImage from "@assets/card.png";
+import BannerImage from "@assets/card.webp";
 import {
 	CalendarPlusIcon,
 	ChartBarIcon,

@@ -3,7 +3,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { DashboardShell } from "@/src/app/_authenticated/dashboard/:components/dashboard-shell";
 import { Panel } from "@/src/app/_authenticated/dashboard/:components/panel";
-import cardImage from "@/src/assets/card.png";
+import cardImage from "@/src/assets/card.webp";
 import { Pagination } from "@/src/components/ui/pagination";
 import { useGetSessionHistoryQuery } from "@/src/lib/hooks/api/use-sessions-api";
 

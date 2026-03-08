@@ -12,6 +12,9 @@ export const Route = createFileRoute("/_authenticated/settings/")({
 function SettingsPage() {
 	const { user, update } = useAuth();
 
+	const email =
+		user?.email?.address || user?.google?.email || user?.github?.email;
+
 	return (
 		<DashboardShell
 			description="Manage your Privy account and linked providers."
@@ -25,14 +28,11 @@ function SettingsPage() {
 				<p className="text-muted-foreground text-sm">
 					Wallet: {user?.wallet?.address ?? "-"}
 				</p>
-				{user?.email?.address ||
-					user?.google?.email ||
-					(user?.github?.email && (
-						<p className="text-muted-foreground text-sm">
-							Email:{" "}
-							{user.email?.address || user.google?.email || user.github?.email}
-						</p>
-					))}
+				{email && (
+					<p className="text-muted-foreground text-sm">
+						Linked Account: {email}
+					</p>
+				)}
 			</Panel>
 
 			<Panel className="space-y-3">
