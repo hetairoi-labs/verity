@@ -13,8 +13,8 @@ export const Route = createFileRoute("/")({
 });
 
 function LandingPage() {
-	const { authenticated, login, logout } = useAuth();
 	const navigate = useNavigate();
+	const { authenticated, login, logout } = useAuth();
 	const [loginIntent, setLoginIntent] = useState(false);
 
 	useEffect(() => {
@@ -28,13 +28,13 @@ function LandingPage() {
 			return;
 		}
 
-		navigate({ to: "/dashboard" });
+		navigate({ to: "/listings" });
 		setLoginIntent(false);
 	}, [login.result, loginIntent, navigate]);
 
 	const handlePrimaryAction = () => {
 		if (authenticated) {
-			navigate({ to: "/dashboard" });
+			navigate({ to: "/listings" });
 			return;
 		}
 		setLoginIntent(true);
@@ -114,7 +114,7 @@ function LandingPage() {
 							className="h-12 rounded-full px-7"
 							onClick={handlePrimaryAction}
 						>
-							{authenticated ? "Go to Dashboard" : "Get Started"}
+							{authenticated ? "Start Browsing" : "Sign up"}
 						</Button>
 						<a
 							href="https://hetairoiconsultingllc.mintlify.app/"

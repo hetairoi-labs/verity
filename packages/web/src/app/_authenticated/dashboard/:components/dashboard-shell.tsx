@@ -9,16 +9,15 @@ interface DashboardShellProps {
 }
 
 const navItems = [
-	{ label: "Dashboard", to: "/dashboard" },
 	{ label: "Listings", to: "/listings" },
-	{ label: "Create Listing", to: "/listings/create" },
+	{ label: "Dashboard", to: "/dashboard" },
 	{ label: "History", to: "/history" },
 	{ label: "Settings", to: "/settings" },
 ] as const;
 
 export function DashboardShell(props: DashboardShellProps) {
 	return (
-		<div className="mx-auto grid h-screen w-full gap-4 overflow-hidden p-4 lg:grid-cols-[16rem_1fr]">
+		<div className="mx-auto grid min-h-screen w-full gap-4 p-4 lg:grid-cols-[16rem_1fr]">
 			<aside className="sticky top-0 hidden rounded-2xl border border-border/70 bg-card/70 p-4 lg:block">
 				<div className="flex items-center gap-2.5">
 					<span className="grid size-8 place-items-center rounded-full bg-secondary">
@@ -32,7 +31,7 @@ export function DashboardShell(props: DashboardShellProps) {
 						<Link
 							activeProps={{ className: "bg-secondary/80 text-foreground" }}
 							className="rounded-lg px-2.5 py-2 text-muted-foreground text-sm transition-colors hover:bg-secondary/70 hover:text-foreground"
-							key={item.to}
+							key={item.label}
 							to={item.to}
 						>
 							{item.label}
@@ -43,9 +42,7 @@ export function DashboardShell(props: DashboardShellProps) {
 
 			<div>
 				<TopNavbar title={props.title} />
-				<main className="@container/content mt-4 h-full space-y-4 overflow-y-auto">
-					{props.children}
-				</main>
+				<main className="mt-4 space-y-4 overflow-y-auto">{props.children}</main>
 			</div>
 		</div>
 	);
