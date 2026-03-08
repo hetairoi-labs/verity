@@ -60,7 +60,7 @@ describe("createMeeting Integration", () => {
 				duration: 0.1,
 				attendees: [] as string[],
 			};
-			const result = await createMeeting(input, userId);
+			const result = await createMeeting(input);
 
 			expect(result.meetingUrl).toBeDefined();
 			expect(result.sessionPrice).toBeDefined();

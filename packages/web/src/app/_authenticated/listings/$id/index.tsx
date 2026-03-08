@@ -4,6 +4,7 @@ import {
 	ChartBarIcon,
 	ListBulletsIcon,
 	PencilSimpleIcon,
+	UserCircleIcon,
 } from "@phosphor-icons/react";
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
@@ -17,6 +18,7 @@ import {
 	useGetSessionMeetingsQuery,
 } from "@/src/lib/hooks/api/use-meetings-api";
 import { useGetSessionByIdQuery } from "@/src/lib/hooks/api/use-sessions-api";
+import { truncateAddress } from "@/src/lib/utils";
 import { formatUSDC } from "@/src/lib/utils/usdc";
 import { RequestEvaluationModal } from "./:components/request-evaluation-modal";
 import { RequestMeetingModal } from "./:components/request-meeting-modal";
@@ -45,7 +47,7 @@ function SessionDetailPage() {
 			limit: "20",
 		});
 
-	const isHost = user?.id === session?.hostId?.toLowerCase();
+	const isHost = user?.id === session?.hostId;
 
 	return (
 		<DashboardShell
@@ -145,6 +147,18 @@ function SessionDetailPage() {
 								)}
 							</div>
 						</Panel>
+
+						{/* Host Panel */}
+						<Panel className="space-y-4">
+							<h3 className="font-medium text-lg">Host</h3>
+							<div className="flex items-center gap-3 text-muted-foreground">
+								<UserCircleIcon size={32} weight="duotone" />
+								<span className="font-medium text-muted-foreground">
+									{user?.wallet?.address &&
+										truncateAddress(user.wallet.address, 10)}
+								</span>
+							</div>
+						</Panel>
 					</div>
 				</div>
 			</div>
@@ -197,7 +211,7 @@ function MeetingsPanel({
 						className="flex items-center justify-between rounded-xl border border-border/60 bg-card/40 p-4 transition-colors hover:bg-card/60"
 						key={meeting.id}
 					>
-						<div className="space-y-1">
+						<div className="w-full space-y-1">
 							<div className="flex items-center gap-2">
 								<p className="font-medium">
 									{meeting.summary || "Verity Session"}
@@ -211,35 +225,54 @@ function MeetingsPanel({
 									</Badge>
 								)}
 							</div>
-							{isPending ? (
-								<p className="text-muted-foreground text-sm italic">
-									Meeting URL will be available once ready
+							{"createdAt" in meeting && meeting.createdAt && (
+								<p className="text-muted-foreground text-xs">
+									{new Date(meeting.createdAt as string).toLocaleString(
+										undefined,
+										{
+											dateStyle: "medium",
+											timeStyle: "short",
+										}
+									)}
 								</p>
-							) : (
-								<a
-									className="text-muted-foreground text-sm underline-offset-4 hover:underline"
-									href={meeting.meetingUrl}
-									rel="noopener"
-									target="_blank"
-								>
-									{meeting.meetingUrl}
-								</a>
 							)}
-						</div>
-						<Button
-							disabled={isPending}
-							render={
-								isPending ? (
-									<span>Join</span>
+							<div className="mt-4 flex items-center gap-2">
+								{isPending ? (
+									<p className="text-muted-foreground text-sm italic">
+										Meeting URL will be available once ready
+									</p>
 								) : (
-									<a href={meeting.meetingUrl} rel="noopener" target="_blank">
-										Join
+									<a
+										className="rounded-md bg-muted p-2 text-muted-foreground text-sm underline-offset-4 hover:underline"
+										href={meeting.meetingUrl}
+										rel="noopener"
+										target="_blank"
+									>
+										{meeting.meetingUrl}
 									</a>
-								)
-							}
-							size="sm"
-							variant="outline"
-						/>
+								)}
+								{!isPending && (
+									<Button
+										disabled={isPending}
+										nativeButton={false}
+										render={
+											isPending ? (
+												<span>Join</span>
+											) : (
+												<a
+													href={meeting.meetingUrl}
+													rel="noopener"
+													target="_blank"
+												>
+													Join
+												</a>
+											)
+										}
+										variant="outline"
+									/>
+								)}
+							</div>
+						</div>
 					</div>
 				);
 			})}

@@ -10,7 +10,7 @@ export function Panel({
 	return (
 		<section
 			className={cn(
-				"rounded-2xl border border-border/70 bg-card/70 p-6",
+				"rounded-2xl border border-border/70 bg-card p-6",
 				className
 			)}
 		>

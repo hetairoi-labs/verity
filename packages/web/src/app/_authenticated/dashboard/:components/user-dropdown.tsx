@@ -52,7 +52,7 @@ export function UserDropdown({ userImage }: UserDropdownProps) {
 		<DropdownMenu onOpenChange={setOpen} open={open}>
 			<DropdownMenuTrigger
 				className="outline-none"
-				nativeButton={true}
+				nativeButton={false}
 				render={
 					<Avatar className="ml-2 cursor-pointer transition-opacity hover:opacity-80" />
 				}

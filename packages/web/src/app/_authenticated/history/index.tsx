@@ -1,8 +1,10 @@
+import { CaretRightIcon } from "@phosphor-icons/react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { DashboardShell } from "@/src/app/_authenticated/dashboard/:components/dashboard-shell";
 import { Panel } from "@/src/app/_authenticated/dashboard/:components/panel";
-import { Button } from "@/src/components/ui/button";
+import cardImage from "@/src/assets/card.png";
+import { Pagination } from "@/src/components/ui/pagination";
 import { useGetSessionHistoryQuery } from "@/src/lib/hooks/api/use-sessions-api";
 
 const HISTORY_PAGE_LIMIT = 10;
@@ -18,57 +20,68 @@ function HistoryPage() {
 		limit: String(HISTORY_PAGE_LIMIT),
 	});
 
+	const list = sessions ?? [];
+
 	return (
 		<DashboardShell
 			description="Sessions where you are enrolled as a learner/participant."
 			title="History"
 		>
-			<Panel className="space-y-3">
+			<Panel className="space-y-4">
+				<div className="flex items-center justify-between">
+					<p className="text-muted-foreground text-sm">
+						Sessions you’re enrolled in.
+					</p>
+				</div>
+
 				{isLoading ? (
 					<p className="text-muted-foreground">Loading history...</p>
 				) : null}
-				{(sessions ?? []).map((session) => (
-					<div
-						className="flex flex-wrap items-center justify-between gap-3 rounded-xl border border-border/70 bg-card/40 p-3"
-						key={session.id}
-					>
-						<div>
-							<p>{session.title}</p>
-							<p className="text-muted-foreground text-sm">{session.topic}</p>
-							<p className="text-muted-foreground text-xs">
-								Payout/Refund tracked on-chain
-							</p>
-						</div>
-						<Link params={{ id: String(session.id) }} to="/listings/$id">
-							<Button size="sm" variant="outline">
-								Open Session
-							</Button>
+
+				<div className="grid gap-3">
+					{list.map((session) => (
+						<Link
+							key={session.id}
+							params={{ id: String(session.id) }}
+							to="/listings/$id"
+						>
+							<div className="flex items-center justify-between gap-4 rounded-xl border border-border/60 p-4 transition-colors hover:bg-secondary/30">
+								<div className="relative size-16 shrink-0 overflow-hidden rounded-lg">
+									<img
+										alt={session.title ?? ""}
+										className="size-full object-cover"
+										height={64}
+										src={cardImage}
+										width={64}
+									/>
+								</div>
+								<div className="min-w-0 flex-1 space-y-0.5">
+									<p className="truncate font-medium">{session.title}</p>
+									<p className="truncate text-muted-foreground text-sm">
+										{session.topic}
+									</p>
+								</div>
+								<span className="inline-flex shrink-0 items-center gap-1 rounded-lg border border-border/70 bg-background/60 px-2.5 py-1.5 text-muted-foreground text-sm">
+									Open
+									<CaretRightIcon size={16} />
+								</span>
+							</div>
 						</Link>
-					</div>
-				))}
-				{!isLoading && (sessions?.length ?? 0) === 0 ? (
+					))}
+				</div>
+
+				{!isLoading && list.length === 0 ? (
 					<p className="text-muted-foreground text-sm">
 						No enrolled sessions yet.
 					</p>
 				) : null}
 
-				<div className="flex items-center justify-end gap-2">
-					<Button
-						disabled={page <= 1}
-						onClick={() => setPage((current) => Math.max(1, current - 1))}
-						variant="outline"
-					>
-						Previous
-					</Button>
-					<p className="text-muted-foreground text-sm">Page {page}</p>
-					<Button
-						disabled={(sessions?.length ?? 0) < HISTORY_PAGE_LIMIT}
-						onClick={() => setPage((current) => current + 1)}
-						variant="outline"
-					>
-						Next
-					</Button>
-				</div>
+				<Pagination
+					currentPage={page}
+					hasNext={list.length >= HISTORY_PAGE_LIMIT}
+					hasPrev={page > 1}
+					onPageChange={setPage}
+				/>
 			</Panel>
 		</DashboardShell>
 	);

@@ -155,7 +155,7 @@ function FaucetPanel() {
 		<Panel className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
 			<div className="flex items-center gap-4">
 				<div className="grid size-14 place-items-center rounded-lg bg-primary">
-					<CoinIcon className="size-full -rotate-45 p-3" />
+					<CoinIcon className="size-full -rotate-45 p-3 text-primary-foreground" />
 				</div>
 				<div className="">
 					<h2 className="font-medium text-xl">Claim test USDC</h2>

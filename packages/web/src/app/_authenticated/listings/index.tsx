@@ -1,9 +1,8 @@
-import { CaretLeftIcon, CaretRightIcon } from "@phosphor-icons/react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
 import { DashboardShell } from "@/src/app/_authenticated/dashboard/:components/dashboard-shell";
 import { Panel } from "@/src/app/_authenticated/dashboard/:components/panel";
-import { Button } from "@/src/components/ui/button";
+import { Pagination } from "@/src/components/ui/pagination";
 import { useGetAllSessionsQuery } from "@/src/lib/hooks/api/use-sessions-api";
 import { CreateListingModal } from "./:components/create-listing-modal";
 import { ListingCard } from "./:components/listing-card";
@@ -58,23 +57,12 @@ function ListingsPage() {
 					) : null}
 				</div>
 
-				<div className="flex items-center justify-end gap-2">
-					<Button
-						disabled={page <= 1}
-						onClick={() => setPage((current) => Math.max(1, current - 1))}
-						variant="outline"
-					>
-						<CaretLeftIcon />
-					</Button>
-					<p className="p-2 text-muted-foreground text-sm">{page}</p>
-					<Button
-						disabled={(data?.length ?? 0) < LISTINGS_PAGE_LIMIT}
-						onClick={() => setPage((current) => current + 1)}
-						variant="outline"
-					>
-						<CaretRightIcon />
-					</Button>
-				</div>
+				<Pagination
+					currentPage={page}
+					hasNext={(data?.length ?? 0) >= LISTINGS_PAGE_LIMIT}
+					hasPrev={page > 1}
+					onPageChange={setPage}
+				/>
 			</Panel>
 		</DashboardShell>
 	);

@@ -12,8 +12,8 @@ export function truncateText(text: string, length = 20) {
 	return `${text.slice(0, length)}...`;
 }
 
-export function truncateAddress(address: string) {
-	return `${address.slice(0, 6)}...${address.slice(-4)}`;
+export function truncateAddress(address: string, length = 6) {
+	return `${address.slice(0, length)}...${address.slice(-length)}`;
 }
 
 export function serializeWithBigInt(obj: unknown): string {
