@@ -43,6 +43,7 @@ const ensureContracts = (
 export function useAddListing() {
 	const { contracts } = useEvmContext();
 	const upload = useUploadToPinataMutation();
+	const publicClient = usePublicClient();
 	const createSession = useCreateSessionMutation();
 	const [isRunning, setIsRunning] = useState(false);
 
@@ -53,6 +54,9 @@ export function useAddListing() {
 		try {
 			return toast.promise(
 				(async () => {
+					if (!publicClient) {
+						throw new Error("Public client is not available");
+					}
 					const priceRaw = parseUSDC(input.price);
 					const uploadResponse = await upload.mutateAsync({
 						json: {
@@ -65,6 +69,16 @@ export function useAddListing() {
 						uploadResponse.cid,
 						priceRaw,
 					]);
+
+					console.log("txHash for createListing", txHash);
+
+					const receipt = await publicClient.waitForTransactionReceipt({
+						hash: txHash,
+					});
+					if (receipt.status !== "success") {
+						throw new Error("Listing creation transaction failed");
+					}
+
 					return createSession.mutateAsync({
 						txHash,
 						metadata: input.metadata,
