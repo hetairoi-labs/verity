@@ -2,24 +2,16 @@ import { XIcon } from "@phosphor-icons/react";
 import { useForm, useStore } from "@tanstack/react-form";
 import { useEffect } from "react";
 import { toast } from "sonner";
+import { FieldInfo } from "@/src/components/custom/field-info";
 import { Button } from "@/src/components/ui/button";
 import { Input } from "@/src/components/ui/input";
 import { Label } from "@/src/components/ui/label";
 import type { ListingFormInput } from "@/src/lib/hooks/actions/use-session-actions";
 import {
 	type ListingDraft,
+	listingSchema,
 	useListingDraftStore,
 } from "@/src/lib/store/use-listing-draft-store";
-import { parseUSDC } from "@/src/lib/utils/usdc";
-
-interface ListingFormValues {
-	description: string;
-	email: string;
-	goals: string[];
-	price: string;
-	title: string;
-	topic: string;
-}
 
 export interface ListingFormProps {
 	defaultValues?: ListingDraft;
@@ -28,7 +20,7 @@ export interface ListingFormProps {
 	submitLabel: string;
 }
 
-const mapFormToListing = (value: ListingFormValues): ListingFormInput => ({
+const mapFormToListing = (value: ListingDraft): ListingFormInput => ({
 	topic: value.topic,
 	price: value.price,
 	metadata: {
@@ -41,51 +33,35 @@ const mapFormToListing = (value: ListingFormValues): ListingFormInput => ({
 		.map((goal) => ({ name: goal, weight: 1 })),
 });
 
-const validateValues = (value: ListingFormValues) => {
-	if (!value.title.trim()) {
-		throw new Error("Title is required");
-	}
-	if (!value.email.trim()) {
-		throw new Error("Email is required");
-	}
-	if (!value.topic.trim()) {
-		throw new Error("Topic is required");
-	}
-	if (parseUSDC(value.price) < parseUSDC("1")) {
-		throw new Error("Price must be at least 1 USDC");
-	}
-	if (value.goals.filter((g) => g.trim() !== "").length === 0) {
-		throw new Error("At least one goal is required");
-	}
-};
-
 export function ListingForm(props: ListingFormProps) {
 	const { draft, updateDraft } = useListingDraftStore();
 
 	const form = useForm({
 		defaultValues: props.defaultValues ?? draft,
+		validators: {
+			onChange: listingSchema,
+		},
 		onSubmit: async ({ value }) => {
-			validateValues(value);
 			await props.onSubmit(mapFormToListing(value));
 		},
 	});
 
 	const formValues = useStore(form.store, (state) => state.values);
+	const canSubmit = useStore(form.store, (state) => state.canSubmit);
+	const isSubmitting = useStore(form.store, (state) => state.isSubmitting);
 
 	useEffect(() => {
-		// Only sync to draft store if we're not in "edit mode" (no defaultValues provided)
 		if (!props.defaultValues) {
 			updateDraft(formValues);
 		}
 	}, [formValues, updateDraft, props.defaultValues]);
 
-	const isSubmitting = useStore(form.store, (state) => state.isSubmitting);
 	const disabled = props.isPending || isSubmitting;
 
 	return (
 		<div className="space-y-4">
-			<form.Field name="title">
-				{(field) => (
+			<form.Field
+				children={(field) => (
 					<div className="space-y-1.5">
 						<Label
 							className="font-medium text-[#A1A1A1] text-xs uppercase tracking-wider"
@@ -102,11 +78,13 @@ export function ListingForm(props: ListingFormProps) {
 							placeholder="Solidity for product engineers"
 							value={field.state.value}
 						/>
+						<FieldInfo field={field} />
 					</div>
 				)}
-			</form.Field>
-			<form.Field name="email">
-				{(field) => (
+				name="title"
+			/>
+			<form.Field
+				children={(field) => (
 					<div className="space-y-1.5">
 						<Label
 							className="font-medium text-[#A1A1A1] text-xs uppercase tracking-wider"
@@ -123,11 +101,13 @@ export function ListingForm(props: ListingFormProps) {
 							placeholder="host@email.com"
 							value={field.state.value}
 						/>
+						<FieldInfo field={field} />
 					</div>
 				)}
-			</form.Field>
-			<form.Field name="topic">
-				{(field) => (
+				name="email"
+			/>
+			<form.Field
+				children={(field) => (
 					<div className="space-y-1.5">
 						<Label
 							className="font-medium text-[#A1A1A1] text-xs uppercase tracking-wider"
@@ -144,11 +124,13 @@ export function ListingForm(props: ListingFormProps) {
 							placeholder="Blockchain development"
 							value={field.state.value}
 						/>
+						<FieldInfo field={field} />
 					</div>
 				)}
-			</form.Field>
-			<form.Field name="description">
-				{(field) => (
+				name="topic"
+			/>
+			<form.Field
+				children={(field) => (
 					<div className="space-y-1.5">
 						<Label
 							className="font-medium text-[#A1A1A1] text-xs uppercase tracking-wider"
@@ -165,11 +147,13 @@ export function ListingForm(props: ListingFormProps) {
 							placeholder="One-line context for learners"
 							value={field.state.value}
 						/>
+						<FieldInfo field={field} />
 					</div>
 				)}
-			</form.Field>
-			<form.Field name="price">
-				{(field) => (
+				name="description"
+			/>
+			<form.Field
+				children={(field) => (
 					<div className="space-y-1.5">
 						<Label
 							className="font-medium text-[#A1A1A1] text-xs uppercase tracking-wider"
@@ -187,42 +171,51 @@ export function ListingForm(props: ListingFormProps) {
 							type="text"
 							value={field.state.value}
 						/>
+						<FieldInfo field={field} />
 					</div>
 				)}
-			</form.Field>
+				name="price"
+			/>
 
 			<div className="space-y-2">
 				<Label className="font-medium text-[#A1A1A1] text-xs uppercase tracking-wider">
 					Goals
 				</Label>
-				<form.Field mode="array" name="goals">
-					{(field) => (
+				<form.Field
+					children={(field) => (
 						<div className="space-y-2">
 							{field.state.value.map((_, i) => (
-								<form.Field key={`goal-${i}`} name={`goals[${i}]`}>
-									{(subField) => (
-										<div className="flex gap-2">
-											<Input
-												className="h-10 border-white/5 bg-[#141414] focus-visible:border-white/20 focus-visible:ring-0"
-												onBlur={subField.handleBlur}
-												onChange={(e) => subField.handleChange(e.target.value)}
-												placeholder={`Goal ${i + 1}`}
-												value={subField.state.value}
-											/>
-											{field.state.value.length > 1 && (
-												<Button
-													className="border-white/5 bg-[#141414] hover:bg-white/5"
-													onClick={() => field.removeValue(i)}
-													size="icon"
-													type="button"
-													variant="outline"
-												>
-													<XIcon />
-												</Button>
-											)}
+								<form.Field
+									children={(subField) => (
+										<div className="space-y-1">
+											<div className="flex gap-2">
+												<Input
+													className="h-10 border-white/5 bg-[#141414] focus-visible:border-white/20 focus-visible:ring-0"
+													onBlur={subField.handleBlur}
+													onChange={(e) =>
+														subField.handleChange(e.target.value)
+													}
+													placeholder={`Goal ${i + 1}`}
+													value={subField.state.value}
+												/>
+												{field.state.value.length > 1 && (
+													<Button
+														className="border-white/5 bg-[#141414] hover:bg-white/5"
+														onClick={() => field.removeValue(i)}
+														size="icon"
+														type="button"
+														variant="outline"
+													>
+														<XIcon />
+													</Button>
+												)}
+											</div>
+											<FieldInfo field={subField} />
 										</div>
 									)}
-								</form.Field>
+									key={`goal-${i}`}
+									name={`goals[${i}]`}
+								/>
 							))}
 							<Button
 								className="w-full border-white/5 bg-transparent text-[#A1A1A1] hover:bg-white/5"
@@ -233,14 +226,17 @@ export function ListingForm(props: ListingFormProps) {
 							>
 								+ Add Goal
 							</Button>
+							<FieldInfo field={field} />
 						</div>
 					)}
-				</form.Field>
+					mode="array"
+					name="goals"
+				/>
 			</div>
 
 			<Button
 				className="mt-4 h-11 w-full rounded-lg bg-[#2546BE] font-medium text-white transition-colors hover:bg-[#2546BE]/90"
-				disabled={disabled}
+				disabled={disabled || !canSubmit}
 				onClick={() =>
 					toast.promise(form.handleSubmit(), {
 						loading: "Validating...",

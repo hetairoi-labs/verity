@@ -1,4 +1,8 @@
-import { useState } from "react";
+import { XIcon } from "@phosphor-icons/react";
+import { useForm, useStore } from "@tanstack/react-form";
+import { toast } from "sonner";
+import { z } from "zod";
+import { FieldInfo } from "@/src/components/custom/field-info";
 import { Button } from "@/src/components/ui/button";
 import {
 	Dialog,
@@ -18,14 +22,41 @@ interface RequestMeetingModalProps {
 	sessionId: number;
 }
 
+const requestMeetingSchema = z.object({
+	summary: z.string().min(1, "Summary is required"),
+	attendees: z
+		.array(z.email("Invalid email format"))
+		.min(1, "At least one attendee email is required"),
+});
+
 export function RequestMeetingModal({
 	open,
 	onOpenChange,
 	sessionId,
 }: RequestMeetingModalProps) {
 	const requestSession = useRequestSessionRegistrationAndEnroll();
-	const [summary, setSummary] = useState("Verity Session");
-	const [attendeesInput, setAttendeesInput] = useState("");
+
+	const form = useForm({
+		defaultValues: {
+			summary: "Verity Session",
+			attendees: [""],
+		},
+		validators: {
+			onChange: requestMeetingSchema,
+		},
+		onSubmit: async ({ value }) => {
+			await requestSession.execute({
+				sessionId,
+				summary: value.summary,
+				attendees: value.attendees,
+			});
+			onOpenChange(false);
+		},
+	});
+
+	const canSubmit = useStore(form.store, (state) => state.canSubmit);
+	const isSubmitting = useStore(form.store, (state) => state.isSubmitting);
+	const disabled = requestSession.isPending || isSubmitting;
 
 	return (
 		<Dialog onOpenChange={onOpenChange} open={open}>
@@ -38,40 +69,88 @@ export function RequestMeetingModal({
 					</DialogDescription>
 				</DialogHeader>
 				<div className="space-y-4 py-4">
-					<div className="space-y-2">
-						<Label>Meeting Summary</Label>
-						<Input
-							onChange={(e) => setSummary(e.target.value)}
-							placeholder="Meeting summary"
-							value={summary}
-						/>
-					</div>
+					<form.Field
+						children={(field) => (
+							<div className="space-y-2">
+								<Label htmlFor={field.name}>Meeting Summary</Label>
+								<Input
+									id={field.name}
+									onBlur={field.handleBlur}
+									onChange={(e) => field.handleChange(e.target.value)}
+									placeholder="Meeting summary"
+									value={field.state.value}
+								/>
+								<FieldInfo field={field} />
+							</div>
+						)}
+						name="summary"
+					/>
+
 					<div className="space-y-2">
 						<Label>Attendee Emails</Label>
-						<Input
-							onChange={(e) => setAttendeesInput(e.target.value)}
-							placeholder="host@email.com, learner@email.com"
-							value={attendeesInput}
+						<form.Field
+							children={(field) => (
+								<div className="space-y-2">
+									{field.state.value.map((_, i) => (
+										<form.Field
+											children={(subField) => (
+												<div className="space-y-1">
+													<div className="flex gap-2">
+														<Input
+															onBlur={subField.handleBlur}
+															onChange={(e) =>
+																subField.handleChange(e.target.value)
+															}
+															placeholder={`email${i + 1}@example.com`}
+															type="email"
+															value={subField.state.value}
+														/>
+														{field.state.value.length > 1 && (
+															<Button
+																onClick={() => field.removeValue(i)}
+																size="icon"
+																type="button"
+																variant="outline"
+															>
+																<XIcon />
+															</Button>
+														)}
+													</div>
+													<FieldInfo field={subField} />
+												</div>
+											)}
+											key={`attendee-${i}`}
+											name={`attendees[${i}]`}
+										/>
+									))}
+									<Button
+										className="w-full"
+										onClick={() => field.pushValue("")}
+										size="sm"
+										type="button"
+										variant="outline"
+									>
+										+ Add Attendee
+									</Button>
+									<FieldInfo field={field} />
+								</div>
+							)}
+							mode="array"
+							name="attendees"
 						/>
-						<p className="text-muted-foreground text-xs">
-							Comma separated list of emails.
-						</p>
 					</div>
 				</div>
 				<DialogFooter showCloseButton>
 					<Button
-						disabled={requestSession.isPending}
-						onClick={async () => {
-							await requestSession.execute({
-								sessionId,
-								summary,
-								attendees: attendeesInput
-									.split(",")
-									.map((v) => v.trim())
-									.filter(Boolean),
-							});
-							onOpenChange(false);
-						}}
+						disabled={disabled || !canSubmit}
+						onClick={() =>
+							toast.promise(form.handleSubmit(), {
+								loading: "Validating...",
+								success: "Request sent",
+								error: (err) =>
+									err instanceof Error ? err.message : "Request failed",
+							})
+						}
 					>
 						{requestSession.isPending ? "Requesting..." : "Request & Enroll"}
 					</Button>
