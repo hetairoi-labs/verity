@@ -53,7 +53,7 @@ export type GetMeetingByIdInput = z.input<typeof getMeetingByIdInputSchema>;
 export type DeleteMeetingInput = z.input<typeof deleteMeetingInputSchema>;
 
 // Handlers
-export async function createMeeting(json: CreateMeetingInput, hostId: string) {
+export async function createMeeting(json: CreateMeetingInput) {
 	const input = createMeetingInputSchema.parse(json);
 
 	// Get Session
@@ -63,7 +63,7 @@ export async function createMeeting(json: CreateMeetingInput, hostId: string) {
 			.from(sessions)
 			.where(
 				buildWhereActive([
-					{ table: sessions, filters: { id: input.sessionId, hostId } },
+					{ table: sessions, filters: { id: input.sessionId } },
 				])
 			)
 			.limit(1)

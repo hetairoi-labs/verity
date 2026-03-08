@@ -1,7 +1,6 @@
 import { XIcon } from "@phosphor-icons/react";
 import { useForm, useStore } from "@tanstack/react-form";
 import { useEffect } from "react";
-import { toast } from "sonner";
 import { FieldInfo } from "@/src/components/custom/field-info";
 import { Button } from "@/src/components/ui/button";
 import { Input } from "@/src/components/ui/input";
@@ -237,14 +236,7 @@ export function ListingForm(props: ListingFormProps) {
 			<Button
 				className="mt-4 h-11 w-full rounded-lg bg-[#2546BE] font-medium text-white transition-colors hover:bg-[#2546BE]/90"
 				disabled={disabled || !canSubmit}
-				onClick={() =>
-					toast.promise(form.handleSubmit(), {
-						loading: "Validating...",
-						success: "Ready",
-						error: (error) =>
-							error instanceof Error ? error.message : "Validation failed",
-					})
-				}
+				onClick={() => form.handleSubmit()}
 			>
 				{props.submitLabel}
 			</Button>

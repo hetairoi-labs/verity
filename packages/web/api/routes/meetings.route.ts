@@ -16,9 +16,9 @@ import { validator } from "../lib/utils/zod";
 const meetingsRoute = new Hono()
 	.use(requireAuth)
 
-	// create meeting
+	// request meeting
 	.post("/", validator("json", createMeetingInputSchema), async (c) => {
-		const result = await createMeeting(c.req.valid("json"), c.var.user.user_id);
+		const result = await createMeeting(c.req.valid("json"));
 		return respond.ok(c, 201, "Meeting created successfully", { ...result });
 	})
 

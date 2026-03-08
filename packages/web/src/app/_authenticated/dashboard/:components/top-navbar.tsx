@@ -25,7 +25,7 @@ export function TopNavbar({
 					<ThemeSwitch variant={"outline"} />
 
 					<Button className="cursor-default" variant="outline">
-						<WalletIcon /> {balance ? formatUSDC(balance) : undefined}{" "}
+						<WalletIcon /> {balance ? formatUSDC(balance) : 0}
 						<span className="text-xs">USDC</span>
 					</Button>
 
