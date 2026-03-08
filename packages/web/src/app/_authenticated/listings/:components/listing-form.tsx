@@ -6,7 +6,10 @@ import { Button } from "@/src/components/ui/button";
 import { Input } from "@/src/components/ui/input";
 import { Label } from "@/src/components/ui/label";
 import type { ListingFormInput } from "@/src/lib/hooks/actions/use-session-actions";
-import { useListingDraftStore } from "@/src/lib/store/use-listing-draft-store";
+import {
+	type ListingDraft,
+	useListingDraftStore,
+} from "@/src/lib/store/use-listing-draft-store";
 import { parseUSDC } from "@/src/lib/utils/usdc";
 
 interface ListingFormValues {
@@ -19,6 +22,7 @@ interface ListingFormValues {
 }
 
 export interface ListingFormProps {
+	defaultValues?: ListingDraft;
 	isPending?: boolean;
 	onSubmit: (value: ListingFormInput) => Promise<unknown>;
 	submitLabel: string;
@@ -59,7 +63,7 @@ export function ListingForm(props: ListingFormProps) {
 	const { draft, updateDraft } = useListingDraftStore();
 
 	const form = useForm({
-		defaultValues: draft,
+		defaultValues: props.defaultValues ?? draft,
 		onSubmit: async ({ value }) => {
 			validateValues(value);
 			await props.onSubmit(mapFormToListing(value));
@@ -69,8 +73,11 @@ export function ListingForm(props: ListingFormProps) {
 	const formValues = useStore(form.store, (state) => state.values);
 
 	useEffect(() => {
-		updateDraft(formValues);
-	}, [formValues, updateDraft]);
+		// Only sync to draft store if we're not in "edit mode" (no defaultValues provided)
+		if (!props.defaultValues) {
+			updateDraft(formValues);
+		}
+	}, [formValues, updateDraft, props.defaultValues]);
 
 	const isSubmitting = useStore(form.store, (state) => state.isSubmitting);
 	const disabled = props.isPending || isSubmitting;

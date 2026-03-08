@@ -8,11 +8,17 @@ import { formatUSDC } from "@/src/lib/utils/usdc";
 import { Panel } from "./panel";
 import { UserDropdown } from "./user-dropdown";
 
-export function TopNavbar({ title }: { title: string }) {
+export function TopNavbar({
+	className,
+	title,
+}: {
+	className?: string;
+	title: string;
+}) {
 	const { balance } = useUsdtBalance();
 
 	return (
-		<Panel>
+		<Panel className={className}>
 			<div className="flex flex-wrap items-center justify-between gap-3">
 				<h1 className="text-2xl">{title}</h1>
 

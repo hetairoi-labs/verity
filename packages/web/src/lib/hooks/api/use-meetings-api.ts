@@ -113,15 +113,15 @@ export function useDeleteMeetingMutation() {
 	});
 }
 
-export type CreateMeetingResponse = Awaited<
-	ReturnType<typeof useCreateMeetingMutation>
->["data"];
-export type GetSessionMeetingsResponse = Awaited<
-	ReturnType<typeof useGetSessionMeetingsQuery>
->["data"];
-export type GetMeetingByIdResponse = Awaited<
-	ReturnType<typeof useGetMeetingByIdQuery>
->["data"];
-export type DeleteMeetingResponse = Awaited<
-	ReturnType<typeof useDeleteMeetingMutation>
->["data"];
+export type CreateMeetingResponse = NonNullable<
+	Awaited<ReturnType<typeof useCreateMeetingMutation>>["data"]
+>;
+export type GetSessionMeetingsResponse = NonNullable<
+	Awaited<ReturnType<typeof useGetSessionMeetingsQuery>>["data"]
+>;
+export type GetMeetingByIdResponse = NonNullable<
+	Awaited<ReturnType<typeof useGetMeetingByIdQuery>>["data"]
+>;
+export type DeleteMeetingResponse = NonNullable<
+	Awaited<ReturnType<typeof useDeleteMeetingMutation>>["data"]
+>;

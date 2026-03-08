@@ -5,6 +5,7 @@ import { TopNavbar } from "./top-navbar";
 interface DashboardShellProps {
 	children: React.ReactNode;
 	description?: string;
+	noNav?: boolean;
 	title: string;
 }
 
@@ -41,8 +42,8 @@ export function DashboardShell(props: DashboardShellProps) {
 			</aside>
 
 			<div>
-				<TopNavbar title={props.title} />
-				<main className="mt-4 space-y-4 overflow-y-auto">{props.children}</main>
+				{!props.noNav && <TopNavbar className="mb-4" title={props.title} />}
+				<main className="space-y-4 overflow-y-auto">{props.children}</main>
 			</div>
 		</div>
 	);
