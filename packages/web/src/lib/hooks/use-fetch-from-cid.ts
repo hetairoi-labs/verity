@@ -2,6 +2,8 @@ import { useQuery } from "@tanstack/react-query";
 import type { z } from "zod";
 import { toGatewayUrl } from "@/src/lib/utils/pinata";
 
+const HTTP_PROTOCOL_REGEX = /^https?:\/\//i;
+
 interface UseFetchFromCidInput<TSchema extends z.ZodTypeAny> {
 	cid: string | undefined;
 	queryKeyPrefix?: string;
@@ -19,7 +21,8 @@ export function useFetchFromCid<TSchema extends z.ZodTypeAny>({
 			if (!cid) {
 				return undefined;
 			}
-			const response = await fetch(toGatewayUrl(cid));
+			const targetUrl = HTTP_PROTOCOL_REGEX.test(cid) ? cid : toGatewayUrl(cid);
+			const response = await fetch(targetUrl);
 			const payload = (await response.json()) as unknown;
 			return schema.parse(payload);
 		},
