@@ -209,7 +209,7 @@ const CreateRecallBotData =
 		const body = Buffer.from(bodyBytes).toString("base64");
 
 		const req: Parameters<typeof sendRequester.sendRequest>[0] = {
-			url: `${apiBaseUrl}/bot`,
+			url: `${apiBaseUrl}/bot/`,
 			body: body,
 			headers: {
 				Authorization: `Token ${apiKey}`,
