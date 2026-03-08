@@ -195,6 +195,11 @@ export function useUpdateListing() {
 	};
 }
 
+interface RequestEvaluationInput {
+	meetingIndex: number;
+	meetingUrl: string;
+}
+
 export function useRequestEvaluation() {
 	const { contracts } = useEvmContext();
 	const setEvaluationRequestTxHash = useCreCliTxHashStore(
@@ -202,7 +207,7 @@ export function useRequestEvaluation() {
 	);
 	const [isRunning, setIsRunning] = useState(false);
 
-	const execute = (meetingIndex: number) => {
+	const execute = (input: RequestEvaluationInput) => {
 		if (!contracts?.SessionRegistry.address) {
 			throw new Error("Contracts are not ready");
 		}
@@ -213,9 +218,9 @@ export function useRequestEvaluation() {
 				(async () => {
 					const txHash =
 						await contracts.SessionRegistry.write.requestEvaluation([
-							BigInt(meetingIndex),
+							BigInt(input.meetingIndex),
 						]);
-					setEvaluationRequestTxHash(meetingIndex, txHash);
+					setEvaluationRequestTxHash(input.meetingUrl, txHash);
 					return txHash;
 				})(),
 				{
@@ -297,7 +302,7 @@ export function useRequestSessionRegistrationAndEnroll() {
 							gas: 500_000n,
 						}
 					);
-					setRequestSessionRegistrationTxHash(input.sessionId, txHash);
+					setRequestSessionRegistrationTxHash(meeting.meetingUrl, txHash);
 
 					console.log("txHash for requestSessionRegistration", txHash);
 					const receipt = await publicClient.waitForTransactionReceipt({
@@ -310,7 +315,6 @@ export function useRequestSessionRegistrationAndEnroll() {
 					await enroll.mutateAsync({
 						sessionId: input.sessionId,
 						meetingUrl: meeting.meetingUrl,
-						txHash,
 					});
 
 					return { meetingUrl: meeting.meetingUrl, txHash };

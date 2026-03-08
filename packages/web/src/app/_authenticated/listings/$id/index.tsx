@@ -17,6 +17,7 @@ import {
 	useGetSessionMeetingsQuery,
 } from "@/src/lib/hooks/api/use-meetings-api";
 import { useGetSessionByIdQuery } from "@/src/lib/hooks/api/use-sessions-api";
+import { useCreCliTxHashStore } from "@/src/lib/store/use-cre-cli-tx-hash-store";
 import { truncateAddress } from "@/src/lib/utils";
 import { formatUSDC } from "@/src/lib/utils/usdc";
 import { RequestEvaluationModal } from "./:components/request-evaluation-modal";
@@ -174,11 +175,20 @@ function MeetingsPanel({
 	isHost: boolean;
 	meetings: GetMeetingByIdResponse[];
 }) {
-	const [selectedEvaluationMeetingIndex, setSelectedEvaluationMeetingIndex] =
-		useState<number | null>(null);
+	const [selectedEvaluationMeeting, setSelectedEvaluationMeeting] = useState<{
+		index: number;
+		url: string;
+	} | null>(null);
 	const [selectedPendingMeetingId, setSelectedPendingMeetingId] = useState<
 		number | null
 	>(null);
+
+	const {
+		evaluationRequestMeetingUrl,
+		evaluationRequestTxHash,
+		requestSessionRegistrationMeetingUrl,
+		requestSessionRegistrationTxHash,
+	} = useCreCliTxHashStore();
 
 	if (isLoading) {
 		return <p className="text-muted-foreground">Loading meetings...</p>;
@@ -273,8 +283,13 @@ function MeetingsPanel({
 											<Button
 												disabled={meeting.meetingIndex == null}
 												onClick={() =>
-													setSelectedEvaluationMeetingIndex(
-														meeting.meetingIndex ?? null
+													setSelectedEvaluationMeeting(
+														meeting.meetingIndex != null
+															? {
+																	index: meeting.meetingIndex,
+																	url: meeting.meetingUrl,
+																}
+															: null
 													)
 												}
 												variant="outline"
@@ -285,18 +300,31 @@ function MeetingsPanel({
 									</>
 								)}
 							</div>
+							{meeting.meetingUrl === requestSessionRegistrationMeetingUrl &&
+								requestSessionRegistrationTxHash && (
+									<p className="text-muted-foreground text-xs">
+										Reg tx: {requestSessionRegistrationTxHash.slice(0, 12)}...
+									</p>
+								)}
+							{meeting.meetingUrl === evaluationRequestMeetingUrl &&
+								evaluationRequestTxHash && (
+									<p className="text-muted-foreground text-xs">
+										Eval tx: {evaluationRequestTxHash.slice(0, 12)}...
+									</p>
+								)}
 						</div>
 					</div>
 				);
 			})}
 			<RequestEvaluationModal
-				meetingIndex={selectedEvaluationMeetingIndex ?? undefined}
+				meetingIndex={selectedEvaluationMeeting?.index}
+				meetingUrl={selectedEvaluationMeeting?.url}
 				onOpenChange={(open) => {
 					if (!open) {
-						setSelectedEvaluationMeetingIndex(null);
+						setSelectedEvaluationMeeting(null);
 					}
 				}}
-				open={selectedEvaluationMeetingIndex != null}
+				open={selectedEvaluationMeeting != null}
 			/>
 			<ResolveMeetingIndexModal
 				meetingId={selectedPendingMeetingId ?? 0}

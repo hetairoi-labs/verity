@@ -1,6 +1,5 @@
-import { definitions, zListingData } from "@verity/contracts";
+import { zListingData } from "@verity/contracts";
 import { and, desc, eq, ne, sql } from "drizzle-orm";
-import { parseEventLogs } from "viem";
 import { z } from "zod";
 import { db } from "../lib/db";
 import { schema } from "../lib/db/schema";
@@ -8,10 +7,8 @@ import { isoNow } from "../lib/db/utils";
 import { buildWhereActive } from "../lib/db/utils/builders";
 import { softCascade } from "../lib/db/utils/cascade";
 import { requireAtLeastOne, safeQuery } from "../lib/db/utils/safe";
-import { waitForReceipt } from "../lib/utils/evm";
 import { ApiError } from "../lib/utils/hono/error";
 import { logger } from "../lib/utils/pino";
-import { zHex } from "../lib/utils/zod";
 import { createGoalInputSchema } from "./goals";
 
 const { sessions, meetings, goals, participants } = schema;
@@ -65,7 +62,6 @@ export const getSessionByIdInputSchema = z.object({
 export const enrollParticipantInputSchema = z.object({
 	sessionId: z.coerce.number().min(0, "Session ID is required"),
 	meetingUrl: z.url(),
-	txHash: zHex(),
 });
 export const getSessionHistoryInputSchema = z.object({
 	page: z.coerce.number().min(1).default(1),
@@ -340,23 +336,6 @@ export async function enrollParticipant(
 	userId: string
 ) {
 	const input = enrollParticipantInputSchema.parse(params);
-	const receipt = await waitForReceipt(input.txHash);
-
-	if (receipt.status !== "success") {
-		throw new ApiError(400, "Transaction was not successful");
-	}
-
-	const events = parseEventLogs({
-		abi: definitions.test.KXManager.abi,
-		logs: receipt.logs,
-		eventName: "SessionRegistrationRequested",
-	});
-	const matchedEvent = events.find(
-		(event) => Number(event.args.listingIndex) === input.sessionId
-	);
-	if (!matchedEvent) {
-		throw new ApiError(400, "Transaction does not match this session");
-	}
 
 	const [session] = await safeQuery(
 		db

@@ -11,16 +11,20 @@ import { useRequestEvaluation } from "@/src/lib/hooks/actions/use-session-action
 
 interface RequestEvaluationModalProps {
 	meetingIndex?: number;
+	meetingUrl?: string;
 	onOpenChange: (open: boolean) => void;
 	open: boolean;
 }
 
 export function RequestEvaluationModal({
 	meetingIndex,
+	meetingUrl,
 	open,
 	onOpenChange,
 }: RequestEvaluationModalProps) {
 	const requestEvaluation = useRequestEvaluation();
+
+	const canSubmit = meetingIndex != null && meetingUrl != null;
 
 	return (
 		<Dialog onOpenChange={onOpenChange} open={open}>
@@ -34,12 +38,15 @@ export function RequestEvaluationModal({
 				</DialogHeader>
 				<DialogFooter showCloseButton>
 					<Button
-						disabled={requestEvaluation.isPending || meetingIndex == null}
-						onClick={async () => {
-							if (meetingIndex == null) {
+						disabled={requestEvaluation.isPending || !canSubmit}
+						onClick={() => {
+							if (!canSubmit) {
 								return;
 							}
-							await requestEvaluation.execute(meetingIndex);
+							requestEvaluation.execute({
+								meetingIndex,
+								meetingUrl: meetingUrl as string,
+							});
 							onOpenChange(false);
 						}}
 					>

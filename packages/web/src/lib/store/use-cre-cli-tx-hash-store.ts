@@ -2,14 +2,14 @@ import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
 interface CreCliTxHashStore {
-	evaluationRequestMeetingIndex?: number;
+	evaluationRequestMeetingUrl?: string;
 	evaluationRequestTxHash?: string;
-	requestSessionRegistrationSessionId?: number;
+	requestSessionRegistrationMeetingUrl?: string;
 	requestSessionRegistrationTxHash?: string;
 	resetTxHashes: () => void;
-	setEvaluationRequestTxHash: (meetingIndex: number, txHash: string) => void;
+	setEvaluationRequestTxHash: (meetingUrl: string, txHash: string) => void;
 	setRequestSessionRegistrationTxHash: (
-		sessionId: number,
+		meetingUrl: string,
 		txHash: string
 	) => void;
 }
@@ -17,28 +17,28 @@ interface CreCliTxHashStore {
 export const useCreCliTxHashStore = create<CreCliTxHashStore>()(
 	persist(
 		(set) => ({
-			evaluationRequestMeetingIndex: undefined,
+			evaluationRequestMeetingUrl: undefined,
 			evaluationRequestTxHash: undefined,
-			requestSessionRegistrationSessionId: undefined,
+			requestSessionRegistrationMeetingUrl: undefined,
 			requestSessionRegistrationTxHash: undefined,
-			setEvaluationRequestTxHash: (meetingIndex: number, txHash: string) =>
+			setEvaluationRequestTxHash: (meetingUrl: string, txHash: string) =>
 				set({
-					evaluationRequestMeetingIndex: meetingIndex,
+					evaluationRequestMeetingUrl: meetingUrl,
 					evaluationRequestTxHash: txHash,
 				}),
 			setRequestSessionRegistrationTxHash: (
-				sessionId: number,
+				meetingUrl: string,
 				txHash: string
 			) =>
 				set({
-					requestSessionRegistrationSessionId: sessionId,
+					requestSessionRegistrationMeetingUrl: meetingUrl,
 					requestSessionRegistrationTxHash: txHash,
 				}),
 			resetTxHashes: () =>
 				set({
-					evaluationRequestMeetingIndex: undefined,
+					evaluationRequestMeetingUrl: undefined,
 					evaluationRequestTxHash: undefined,
-					requestSessionRegistrationSessionId: undefined,
+					requestSessionRegistrationMeetingUrl: undefined,
 					requestSessionRegistrationTxHash: undefined,
 				}),
 		}),
