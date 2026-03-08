@@ -144,8 +144,14 @@ cp .env.example .env
 # 4. Run simulation for initiation workflow
 cre workflow simulate initiation-workflow --target local-simulation
 
+txHash->0xce23ebdd2a5e03961ff706c2705891dc394e23a198acf469033f3bd768031452
+index->1
+
 # 5. Run simulation for settlement workflow
 cre workflow simulate settlement-workflow --target local-simulation
+
+txHash->0xbaf1c586927659019f697b5e666c31d1140cb054847a7b4c701c6607e22f056b
+index->0
 ```
 
 **Environment Variables** (`.env`):
