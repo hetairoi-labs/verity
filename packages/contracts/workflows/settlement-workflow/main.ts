@@ -74,7 +74,7 @@ const onLogTrigger = (runtime: Runtime<Config>, log: EVMLog): string => {
 		const { data: decisionStored } = writeToStore(
 			runtime,
 			"evaluationReport",
-			session.sessionId.toString(),
+			sessionId.toString(),
 			{
 				score: settlementResult.reducedScore,
 				reasoning: settlementResult.evaluationContent.result
@@ -90,7 +90,7 @@ const onLogTrigger = (runtime: Runtime<Config>, log: EVMLog): string => {
 
 		const txHash: string = settleSession(
 			runtime,
-			session,
+			sessionId,
 			{
 				confidence: settlementResult.evaluationContent.confidence,
 				score: settlementResult.reducedScore,

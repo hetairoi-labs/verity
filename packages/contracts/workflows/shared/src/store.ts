@@ -37,16 +37,23 @@ export function writeToStore<T extends StoreKey>(
 
 				const multipart = [
 					`--${boundary}\r\n`,
+					`Content-Disposition: form-data; name="network"\r\n`,
+					`\r\n`,
+					`public\r\n`,
+
+					`--${boundary}\r\n`,
 					`Content-Disposition: form-data; name="file"; filename="${filename}"\r\n`,
 					`Content-Type: application/json\r\n`,
 					`\r\n`,
 					jsonContent,
 					`\r\n`,
+
 					`--${boundary}\r\n`,
 					`Content-Disposition: form-data; name="name"\r\n`,
 					`\r\n`,
 					filename,
 					`\r\n`,
+
 					`--${boundary}--\r\n`,
 				].join("");
 
@@ -90,6 +97,10 @@ export function readFromStore<T extends StoreKey>(
 	key: T,
 	cid: string,
 ): ReadStoreValue<T> {
+	const pinataGatewayUrl = runtime
+		.getSecret({ id: "PINATA_GATEWAY_URL" })
+		.result();
+
 	const httpClient = new cre.capabilities.HTTPClient();
 
 	const readResult = httpClient
@@ -97,7 +108,7 @@ export function readFromStore<T extends StoreKey>(
 			runtime,
 			(sendRequester: HTTPSendRequester, _config: Config) => {
 				const req: Parameters<typeof sendRequester.sendRequest>[0] = {
-					url: `https://${cid}.ipfs.w3s.link/`,
+					url: `${pinataGatewayUrl.value}/ipfs/${cid}`,
 					method: "GET",
 					headers: {
 						"Content-Type": "application/json",

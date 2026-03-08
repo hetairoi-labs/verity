@@ -5,15 +5,15 @@ import {
 	hexToBase64,
 	type Runtime,
 } from "@chainlink/cre-sdk";
-import type { zConfig, zSessionDetails } from "@verity/workflows-shared/zod";
+import type { zConfig } from "@verity/workflows-shared/zod";
 import { encodeAbiParameters, parseAbiParameters } from "viem";
 import type z from "zod";
 
-type SessionDetails = z.infer<ReturnType<typeof zSessionDetails>>;
+// type SessionDetails = z.infer<ReturnType<typeof zSessionDetails>>;
 
 export function settleSession(
 	runtime: Runtime<z.infer<ReturnType<typeof zConfig>>>,
-	session: SessionDetails,
+	sessionId: bigint,
 	decision: { score: number; confidence: number },
 	decisionCid: string,
 ): string {
@@ -34,7 +34,7 @@ export function settleSession(
 	const score = decision.score / 100; //transpate bps;
 	const confidence = decision.confidence / 100; //transpate bps;
 	const reportData = encodeEvaluationReport(
-		BigInt(session.sessionId),
+		BigInt(sessionId),
 		confidence,
 		score,
 		decisionCid,
