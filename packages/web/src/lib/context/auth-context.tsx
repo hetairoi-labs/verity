@@ -5,6 +5,7 @@ import {
 	useLogin,
 	usePrivy,
 } from "@privy-io/react-auth";
+import { useQueryClient } from "@tanstack/react-query";
 import { createContext, use, useState } from "react";
 import { useRegisterUserMutation } from "../hooks/api/use-user-api";
 
@@ -44,6 +45,7 @@ export interface AuthContextType {
 const AuthContext = createContext<AuthContextType | null>(null);
 export function AuthProvider({ children }: { children: React.ReactNode }) {
 	const privy = usePrivy();
+	const queryClient = useQueryClient();
 	const registerUser = useRegisterUserMutation();
 	const [loginResult, setLoginResult] = useState<LoginResult | undefined>(
 		undefined
@@ -70,6 +72,11 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 		},
 	});
 
+	const logout = async () => {
+		await privy.logout();
+		queryClient.clear();
+	};
+
 	const value = {
 		ready: privy.ready,
 		authenticated: privy.authenticated,
@@ -93,7 +100,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 				github: privy.unlinkGithub,
 			},
 		},
-		logout: privy.logout,
+		logout,
 	};
 
 	return <AuthContext value={value}>{children}</AuthContext>;
