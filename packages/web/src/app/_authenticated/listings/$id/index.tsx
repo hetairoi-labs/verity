@@ -371,9 +371,9 @@ function MeetingCard({
 							<Link
 								params={{
 									id: String(sessionId),
-									meetingid: String(meeting.id),
+									meetingIndex: String(meeting.meetingIndex ?? 0),
 								}}
-								to="/listings/$id/results/$meetingid"
+								to="/listings/$id/results/$meetingIndex"
 							>
 								See Result
 							</Link>

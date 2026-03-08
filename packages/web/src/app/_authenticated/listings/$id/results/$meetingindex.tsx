@@ -6,7 +6,6 @@ import { Panel } from "@/src/app/_authenticated/dashboard/:components/panel";
 import { Badge } from "@/src/components/ui/badge";
 import { Button } from "@/src/components/ui/button";
 import { useEvmContext } from "@/src/lib/context/evm-context";
-import { useGetMeetingByIdQuery } from "@/src/lib/hooks/api/use-meetings-api";
 import { useFetchFromCid } from "@/src/lib/hooks/use-fetch-from-cid";
 import {
 	meetingEvidenceSchema,
@@ -14,30 +13,31 @@ import {
 } from "@/src/lib/schemas/onchain-session";
 
 export const Route = createFileRoute(
-	"/_authenticated/listings/$id/results/$meetingid"
+	"/_authenticated/listings/$id/results/$meetingindex"
 )({
 	component: MeetingResultPage,
 });
 
 function MeetingResultPage() {
-	const { id, meetingid } = Route.useParams();
+	const { id, meetingindex } = Route.useParams();
 	const listingId = Number(id);
-	const dbMeetingId = Number(meetingid);
+	const parsedMeetingIndex = Number(meetingindex);
+	const isMeetingIndexValid = Number.isFinite(parsedMeetingIndex);
+	const onchainMeetingIndex = isMeetingIndexValid
+		? BigInt(parsedMeetingIndex)
+		: 0n;
 
 	const { contracts } = useEvmContext();
-	const { data: meeting, isLoading } = useGetMeetingByIdQuery({
-		meetingId: String(dbMeetingId),
-	});
-
-	const hasMeetingIndex = meeting?.meetingIndex != null;
 
 	const { data: onchainSession } = useReadContract({
 		address: contracts?.SessionRegistry.address,
 		abi: contracts?.SessionRegistry.abi,
 		functionName: "getSession",
-		args: [BigInt(meeting?.meetingIndex ?? 0)],
+		args: [onchainMeetingIndex],
 		query: {
-			enabled: Boolean(contracts?.SessionRegistry.address && hasMeetingIndex),
+			enabled: Boolean(
+				contracts?.SessionRegistry.address && isMeetingIndexValid
+			),
 		},
 	});
 
@@ -53,15 +53,9 @@ function MeetingResultPage() {
 		queryKeyPrefix: "meetingEvidence",
 	});
 	let onchainSectionContent: React.ReactNode;
-	if (isLoading) {
+	if (!isMeetingIndexValid) {
 		onchainSectionContent = (
-			<p className="text-muted-foreground text-sm">Loading meeting...</p>
-		);
-	} else if (meeting?.meetingIndex == null) {
-		onchainSectionContent = (
-			<p className="text-muted-foreground text-sm">
-				This meeting has no resolved meeting index yet.
-			</p>
+			<p className="text-muted-foreground text-sm">Invalid meeting index.</p>
 		);
 	} else if (parsedOnchainSession) {
 		onchainSectionContent = (
@@ -112,7 +106,7 @@ function MeetingResultPage() {
 		<DashboardShell
 			description="Onchain and evidence data for this meeting."
 			noNav={true}
-			title={`Meeting Result #${dbMeetingId}`}
+			title={`Meeting Result #${meetingindex}`}
 		>
 			<div className="space-y-4">
 				<Button nativeButton={false} variant="ghost">
