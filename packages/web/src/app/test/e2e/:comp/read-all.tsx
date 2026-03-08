@@ -1,11 +1,13 @@
 import { useState } from "react";
 import { useReadContract } from "wagmi";
+import { z } from "zod";
 import type { ListingWithMetadata } from "@/api/handlers/sessions";
 import { TestCard } from "@/src/components/custom/test-card";
 import { Input } from "@/src/components/ui/input";
 import type { KXContracts } from "@/src/lib/context/evm-context";
+import { useFetchFromCid } from "@/src/lib/hooks/use-fetch-from-cid";
 import { serializeWithBigInt } from "@/src/lib/utils";
-import { ReadDiv, useFetchFromCid } from "./utils";
+import { ReadDiv } from "./utils";
 
 export function ReadAll({ contracts }: { contracts: KXContracts }) {
 	const [listingIndexInput, setListingIndexInput] = useState("0");
@@ -71,9 +73,10 @@ export function ReadAll({ contracts }: { contracts: KXContracts }) {
 			args: [sessionId],
 		});
 
-	const { data: metadata } = useFetchFromCid<ListingWithMetadata>(
-		listing?.dataCID?.toString()
-	);
+	const { data: metadata } = useFetchFromCid({
+		cid: listing?.dataCID?.toString(),
+		schema: z.custom<ListingWithMetadata>(),
+	});
 
 	const disputeWindowOpenLabel =
 		isDisputeWindowOpen === undefined ? "-" : isDisputeWindowOpen.toString();

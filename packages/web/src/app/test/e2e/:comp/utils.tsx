@@ -1,6 +1,3 @@
-import { useQuery } from "@tanstack/react-query";
-import { toGatewayUrl } from "@/src/lib/utils/pinata";
-
 export function ReadDiv({
 	title,
 	children,
@@ -16,19 +13,4 @@ export function ReadDiv({
 			</div>
 		</>
 	);
-}
-
-export function useFetchFromCid<T>(cid: string | undefined) {
-	return useQuery({
-		queryKey: ["fetchFromCid", cid],
-		queryFn: async () => {
-			if (!cid) {
-				return undefined;
-			}
-			console.log("fetching from cid", cid);
-			const response = await fetch(toGatewayUrl(cid));
-			return response.json() as Promise<T>;
-		},
-		enabled: !!cid,
-	});
 }

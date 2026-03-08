@@ -6,18 +6,25 @@ import {
 	PencilSimpleIcon,
 	UserCircleIcon,
 } from "@phosphor-icons/react";
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
+import { useReadContract } from "wagmi";
 import { DashboardShell } from "@/src/app/_authenticated/dashboard/:components/dashboard-shell";
 import { Panel } from "@/src/app/_authenticated/dashboard/:components/panel";
 import { Badge } from "@/src/components/ui/badge";
 import { Button } from "@/src/components/ui/button";
 import { useAuth } from "@/src/lib/context/auth-context";
+import { useEvmContext } from "@/src/lib/context/evm-context";
 import {
 	type GetMeetingByIdResponse,
 	useGetSessionMeetingsQuery,
 } from "@/src/lib/hooks/api/use-meetings-api";
 import { useGetSessionByIdQuery } from "@/src/lib/hooks/api/use-sessions-api";
+import { useFetchFromCid } from "@/src/lib/hooks/use-fetch-from-cid";
+import {
+	meetingEvidenceSchema,
+	onchainMeetingSchema,
+} from "@/src/lib/schemas/onchain-session";
 import { useCreCliTxHashStore } from "@/src/lib/store/use-cre-cli-tx-hash-store";
 import { truncateAddress } from "@/src/lib/utils";
 import { formatUSDC } from "@/src/lib/utils/usdc";
@@ -85,6 +92,7 @@ function SessionDetailPage() {
 							isHost={isHost}
 							isLoading={isMeetingsLoading}
 							meetings={meetings ?? []}
+							sessionId={sessionId}
 						/>
 					</Panel>
 
@@ -171,10 +179,12 @@ function MeetingsPanel({
 	isLoading,
 	isHost,
 	meetings,
+	sessionId,
 }: {
 	isLoading: boolean;
 	isHost: boolean;
 	meetings: GetMeetingByIdResponse[];
+	sessionId: number;
 }) {
 	const [selectedEvaluationMeeting, setSelectedEvaluationMeeting] = useState<{
 		index: number;
@@ -204,139 +214,21 @@ function MeetingsPanel({
 	return (
 		<div className="grid gap-3">
 			{meetings.map((meeting) => {
-				const isPending = meeting.status === "pending";
-
 				return (
-					<div
-						className="flex items-center justify-between rounded-xl border border-border/60 bg-card/40 p-4 transition-colors hover:bg-card/60"
+					<MeetingCard
+						evaluationRequestMeetingUrl={evaluationRequestMeetingUrl}
+						evaluationRequestTxHash={evaluationRequestTxHash}
+						isHost={isHost}
 						key={meeting.id}
-					>
-						<div className="w-full space-y-1">
-							<div className="flex items-center gap-2">
-								<p className="font-medium">
-									{meeting.summary || "Verity Session"}
-								</p>
-								{isPending && (
-									<Badge
-										className="bg-orange-500/10 text-orange-500"
-										variant="outline"
-									>
-										Pending
-									</Badge>
-								)}
-							</div>
-							{"createdAt" in meeting && meeting.createdAt && (
-								<p className="text-muted-foreground text-xs">
-									{new Date(meeting.createdAt as string).toLocaleString(
-										undefined,
-										{
-											dateStyle: "medium",
-											timeStyle: "short",
-										}
-									)}
-								</p>
-							)}
-							<div className="mt-4 flex items-center gap-2">
-								{isPending ? (
-									<p className="text-muted-foreground text-sm italic">
-										Meeting URL will be available once ready
-									</p>
-								) : (
-									<a
-										className="rounded-md bg-muted p-2 text-muted-foreground text-sm underline-offset-4 hover:underline"
-										href={meeting.meetingUrl}
-										rel="noopener"
-										target="_blank"
-									>
-										{meeting.meetingUrl}
-									</a>
-								)}
-								{!isPending && (
-									<>
-										<Button
-											disabled={isPending}
-											nativeButton={false}
-											render={
-												isPending ? (
-													<span>Join</span>
-												) : (
-													<a
-														href={meeting.meetingUrl}
-														rel="noopener"
-														target="_blank"
-													>
-														Join
-													</a>
-												)
-											}
-											variant="outline"
-										/>
-										{isHost && (
-											<Button
-												disabled={meeting.meetingIndex == null}
-												onClick={() =>
-													setSelectedEvaluationMeeting(
-														meeting.meetingIndex != null
-															? {
-																	index: meeting.meetingIndex,
-																	url: meeting.meetingUrl,
-																}
-															: null
-													)
-												}
-												variant="outline"
-											>
-												Evaluation
-											</Button>
-										)}
-									</>
-								)}
-								<Button
-									onClick={() => setSelectedPendingMeetingId(meeting.id)}
-									size="sm"
-									variant="outline"
-								>
-									Attach CRE Tx
-								</Button>
-							</div>
-							{meeting.meetingUrl === requestSessionRegistrationMeetingUrl &&
-								requestSessionRegistrationTxHash && (
-									<div className="flex items-center gap-2">
-										<p className="text-muted-foreground text-xs">
-											Reg tx: {requestSessionRegistrationTxHash}
-										</p>
-										<Button
-											onClick={() =>
-												navigator.clipboard.writeText(
-													requestSessionRegistrationTxHash
-												)
-											}
-											size="icon"
-											variant="ghost"
-										>
-											<CopyIcon size={16} />
-										</Button>
-									</div>
-								)}
-							{meeting.meetingUrl === evaluationRequestMeetingUrl &&
-								evaluationRequestTxHash && (
-									<div className="flex items-center gap-2">
-										<p className="text-muted-foreground text-xs">
-											Eval tx: {evaluationRequestTxHash}
-										</p>
-										<Button
-											onClick={() =>
-												navigator.clipboard.writeText(evaluationRequestTxHash)
-											}
-											size="icon"
-											variant="ghost"
-										>
-											<CopyIcon size={16} />
-										</Button>
-									</div>
-								)}
-						</div>
-					</div>
+						meeting={meeting}
+						requestSessionRegistrationMeetingUrl={
+							requestSessionRegistrationMeetingUrl
+						}
+						requestSessionRegistrationTxHash={requestSessionRegistrationTxHash}
+						sessionId={sessionId}
+						setSelectedEvaluationMeeting={setSelectedEvaluationMeeting}
+						setSelectedPendingMeetingId={setSelectedPendingMeetingId}
+					/>
 				);
 			})}
 			<RequestEvaluationModal
@@ -358,6 +250,230 @@ function MeetingsPanel({
 				}}
 				open={selectedPendingMeetingId != null}
 			/>
+		</div>
+	);
+}
+
+function MeetingCard({
+	evaluationRequestMeetingUrl,
+	evaluationRequestTxHash,
+	isHost,
+	meeting,
+	requestSessionRegistrationMeetingUrl,
+	requestSessionRegistrationTxHash,
+	sessionId,
+	setSelectedEvaluationMeeting,
+	setSelectedPendingMeetingId,
+}: {
+	evaluationRequestMeetingUrl: string | null | undefined;
+	evaluationRequestTxHash: string | null | undefined;
+	isHost: boolean;
+	meeting: GetMeetingByIdResponse;
+	requestSessionRegistrationMeetingUrl: string | null | undefined;
+	requestSessionRegistrationTxHash: string | null | undefined;
+	sessionId: number;
+	setSelectedEvaluationMeeting: React.Dispatch<
+		React.SetStateAction<{
+			index: number;
+			url: string;
+		} | null>
+	>;
+	setSelectedPendingMeetingId: React.Dispatch<
+		React.SetStateAction<number | null>
+	>;
+}) {
+	const { contracts } = useEvmContext();
+	const isPending = meeting.status === "pending";
+	const hasMeetingIndex = meeting.meetingIndex != null;
+
+	const { data: onchainSession } = useReadContract({
+		address: contracts?.SessionRegistry.address,
+		abi: contracts?.SessionRegistry.abi,
+		functionName: "getSession",
+		args: [BigInt(meeting.meetingIndex ?? 0)],
+		query: {
+			enabled: Boolean(contracts?.SessionRegistry.address && hasMeetingIndex),
+		},
+	});
+
+	const onchainSessionResult = onchainMeetingSchema.safeParse(onchainSession);
+	const parsedOnchainSession = onchainSessionResult.success
+		? onchainSessionResult.data
+		: undefined;
+	const evidenceCid = parsedOnchainSession?.evidenceCID.trim() || undefined;
+	const isFinished = Boolean(evidenceCid);
+	let meetingUrlContent: React.ReactNode;
+	if (isPending) {
+		meetingUrlContent = (
+			<p className="text-muted-foreground text-sm italic">
+				Meeting URL will be available once ready
+			</p>
+		);
+	} else if (isFinished) {
+		meetingUrlContent = (
+			<p className="rounded-md bg-muted p-2 text-muted-foreground text-sm">
+				{meeting.meetingUrl}
+			</p>
+		);
+	} else {
+		meetingUrlContent = (
+			<a
+				className="rounded-md bg-muted p-2 text-muted-foreground text-sm underline-offset-4 hover:underline"
+				href={meeting.meetingUrl}
+				rel="noopener"
+				target="_blank"
+			>
+				{meeting.meetingUrl}
+			</a>
+		);
+	}
+
+	const { data: evidenceData } = useFetchFromCid({
+		cid: evidenceCid,
+		schema: meetingEvidenceSchema,
+		queryKeyPrefix: "meetingEvidence",
+	});
+
+	return (
+		<div className="flex items-center justify-between rounded-xl border border-border/60 bg-card/40 p-4 transition-colors hover:bg-card/60">
+			<div className="w-full space-y-1">
+				<div className="flex items-center gap-2">
+					<p className="font-medium">{meeting.summary || "Verity Session"}</p>
+					{isPending && (
+						<Badge
+							className="bg-orange-500/10 text-orange-500"
+							variant="outline"
+						>
+							Pending
+						</Badge>
+					)}
+					{isFinished && (
+						<Badge
+							className="bg-emerald-500/10 text-emerald-600"
+							variant="outline"
+						>
+							Finished
+						</Badge>
+					)}
+				</div>
+				{"createdAt" in meeting && meeting.createdAt && (
+					<p className="text-muted-foreground text-xs">
+						{new Date(meeting.createdAt as string).toLocaleString(undefined, {
+							dateStyle: "medium",
+							timeStyle: "short",
+						})}
+					</p>
+				)}
+				<div className="mt-4 flex items-center gap-2">
+					{meetingUrlContent}
+					{isFinished ? (
+						<Button nativeButton={false} variant="outline">
+							<Link
+								params={{
+									id: String(sessionId),
+									meetingid: String(meeting.id),
+								}}
+								to="/listings/$id/results/$meetingid"
+							>
+								See Result
+							</Link>
+						</Button>
+					) : (
+						<>
+							{!isPending && (
+								<>
+									<Button
+										disabled={isPending}
+										nativeButton={false}
+										render={
+											isPending ? (
+												<span>Join</span>
+											) : (
+												<a
+													href={meeting.meetingUrl}
+													rel="noopener"
+													target="_blank"
+												>
+													Join
+												</a>
+											)
+										}
+										variant="outline"
+									/>
+									{isHost && (
+										<Button
+											disabled={meeting.meetingIndex == null}
+											onClick={() =>
+												setSelectedEvaluationMeeting(
+													meeting.meetingIndex != null
+														? {
+																index: meeting.meetingIndex,
+																url: meeting.meetingUrl,
+															}
+														: null
+												)
+											}
+											variant="outline"
+										>
+											Evaluation
+										</Button>
+									)}
+								</>
+							)}
+							<Button
+								onClick={() => setSelectedPendingMeetingId(meeting.id)}
+								size="sm"
+								variant="outline"
+							>
+								Attach CRE Tx
+							</Button>
+						</>
+					)}
+				</div>
+				{typeof evidenceData?.score === "number" && (
+					<p className="text-muted-foreground text-xs">
+						Evaluation score: {evidenceData.score}
+					</p>
+				)}
+				{meeting.meetingUrl === requestSessionRegistrationMeetingUrl &&
+					requestSessionRegistrationTxHash &&
+					!isFinished && (
+						<div className="flex items-center gap-2">
+							<p className="text-muted-foreground text-xs">
+								Reg tx: {requestSessionRegistrationTxHash}
+							</p>
+							<Button
+								onClick={() =>
+									navigator.clipboard.writeText(
+										requestSessionRegistrationTxHash
+									)
+								}
+								size="icon"
+								variant="ghost"
+							>
+								<CopyIcon size={16} />
+							</Button>
+						</div>
+					)}
+				{meeting.meetingUrl === evaluationRequestMeetingUrl &&
+					evaluationRequestTxHash &&
+					!isFinished && (
+						<div className="flex items-center gap-2">
+							<p className="text-muted-foreground text-xs">
+								Eval tx: {evaluationRequestTxHash}
+							</p>
+							<Button
+								onClick={() =>
+									navigator.clipboard.writeText(evaluationRequestTxHash)
+								}
+								size="icon"
+								variant="ghost"
+							>
+								<CopyIcon size={16} />
+							</Button>
+						</div>
+					)}
+			</div>
 		</div>
 	);
 }
