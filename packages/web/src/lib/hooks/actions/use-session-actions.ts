@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { toast } from "sonner";
-import { maxUint256 } from "viem";
+import { maxUint256, parseEventLogs } from "viem";
 import { useConnection, usePublicClient } from "wagmi";
 import { useEvmContext } from "@/src/lib/context/evm-context";
 import { useCreCliTxHashStore } from "@/src/lib/store/use-cre-cli-tx-hash-store";
@@ -54,8 +54,8 @@ export function useAddListing() {
 		try {
 			return toast.promise(
 				(async () => {
-					if (!publicClient) {
-						throw new Error("Public client is not available");
+					if (!(publicClient && contracts?.Manager.abi)) {
+						throw new Error("Public client or Manager ABI is not available");
 					}
 					const priceRaw = parseUSDC(input.price);
 					const uploadResponse = await upload.mutateAsync({
@@ -79,8 +79,23 @@ export function useAddListing() {
 						throw new Error("Listing creation transaction failed");
 					}
 
+					const logs = parseEventLogs({
+						abi: contracts.Manager.abi,
+						logs: receipt.logs,
+						eventName: "ListingUpsert",
+					});
+					const logData = logs[0]?.args;
+					if (!logData) {
+						throw new Error("Listing index not found in logs");
+					}
+
+					console.log("cid", logData.dataCID);
+
 					return createSession.mutateAsync({
-						txHash,
+						logData: {
+							index: Number(logData.index),
+							dataCID: logData.dataCID,
+						},
 						metadata: input.metadata,
 						topic: input.topic,
 						price: Number(priceRaw),
@@ -109,6 +124,7 @@ export function useUpdateListing() {
 	const { contracts } = useEvmContext();
 	const upload = useUploadToPinataMutation();
 	const updateSession = useUpdateSessionMutation();
+	const publicClient = usePublicClient();
 	const [isRunning, setIsRunning] = useState(false);
 
 	const execute = (sessionId: number, input: ListingFormInput) => {
@@ -118,6 +134,9 @@ export function useUpdateListing() {
 		try {
 			return toast.promise(
 				(async () => {
+					if (!(publicClient && contracts?.Manager.abi)) {
+						throw new Error("Public client or Manager ABI is not available");
+					}
 					const priceRaw = parseUSDC(input.price);
 					const uploadResponse = await upload.mutateAsync({
 						json: {
@@ -131,9 +150,27 @@ export function useUpdateListing() {
 						uploadResponse.cid,
 						priceRaw,
 					]);
+					const receipt = await publicClient.waitForTransactionReceipt({
+						hash: txHash,
+					});
+					if (receipt.status !== "success") {
+						throw new Error("Listing update transaction failed");
+					}
+					const logs = parseEventLogs({
+						abi: contracts.Manager.abi,
+						logs: receipt.logs,
+						eventName: "ListingUpsert",
+					});
+					const logData = logs[0]?.args;
+					if (!logData) {
+						throw new Error("Listing index not found in logs");
+					}
 					return updateSession.mutateAsync({
 						sessionId,
-						txHash,
+						logData: {
+							index: Number(logData.index),
+							dataCID: logData.dataCID,
+						},
 						metadata: input.metadata,
 						topic: input.topic,
 						price: Number(priceRaw),

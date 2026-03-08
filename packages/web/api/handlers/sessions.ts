@@ -46,7 +46,10 @@ export const createSessionRecordInputSchema = z.object({
 // Schemas
 export const createSessionInputSchema = z
 	.object({
-		txHash: zHex(),
+		logData: z.object({
+			index: z.number(),
+			dataCID: z.string(),
+		}),
 	})
 	.extend(listingWithMetadataSchema.shape);
 export const updateSessionInputSchema = createSessionInputSchema;
@@ -162,25 +165,11 @@ export function createSessionRecord(
 // Handlers
 export async function createSession(json: CreateSessionInput, hostId: string) {
 	const input = createSessionInputSchema.parse(json);
-	const receipt = await waitForReceipt(input.txHash);
-
-	const logs = parseEventLogs({
-		abi: definitions.test.KXManager.abi,
-		logs: receipt.logs,
-		eventName: "ListingUpsert",
-	});
-	const listingIndex = logs[0]?.args;
-	if (
-		listingIndex?.index === undefined ||
-		listingIndex?.dataCID === undefined
-	) {
-		throw new ApiError(500, "No listing index or data CID found in logs");
-	}
 
 	const session = await createSessionRecord(
 		{
-			index: Number(listingIndex.index),
-			cid: listingIndex.dataCID,
+			index: Number(input.logData.index),
+			cid: input.logData.dataCID,
 			title: input.metadata.title,
 			email: input.metadata.email,
 			description: input.metadata.description,
@@ -201,26 +190,15 @@ export async function createSession(json: CreateSessionInput, hostId: string) {
 	return session;
 }
 
-export async function updateSession(json: UpdateSessionInput, hostId: string) {
+export function updateSession(json: UpdateSessionInput, hostId: string) {
 	const input = updateSessionInputSchema.parse(json);
-	const receipt = await waitForReceipt(input.txHash);
-
-	const logs = parseEventLogs({
-		abi: definitions.test.KXManager.abi,
-		logs: receipt.logs,
-		eventName: "ListingUpsert",
-	});
-	const listing = logs[0]?.args;
-	if (listing?.index === undefined || listing?.dataCID === undefined) {
-		throw new ApiError(500, "No listing index or data CID found in logs");
-	}
 
 	const nextGoals = input.goals.map((goal) => ({
 		name: goal.name,
 		weightage: goal.weight,
 	}));
-	const nextIndex = Number(listing.index);
-	const nextCid = listing.dataCID;
+	const nextIndex = Number(input.logData.index);
+	const nextCid = input.logData.dataCID;
 
 	return db.transaction(async (tx) => {
 		const [existingSession] = await safeQuery(
