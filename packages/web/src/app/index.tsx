@@ -8,6 +8,8 @@ import ThemeSwitch from "../components/custom/theme-switch";
 import { Button } from "../components/ui/button";
 import { useAuth } from "../lib/context/auth-context";
 
+const DOCS_URL = "https://docs.hetairoi.xyz/";
+
 export const Route = createFileRoute("/")({
 	component: LandingPage,
 });
@@ -66,6 +68,14 @@ function LandingPage() {
 							<a className="hover:text-foreground" href="/">
 								Architecture
 							</a>
+							<a
+								className="hover:text-foreground"
+								href={DOCS_URL}
+								rel="noopener"
+								target="_blank"
+							>
+								Docs
+							</a>
 						</div>
 
 						<div className="flex items-center gap-2">
@@ -110,11 +120,7 @@ function LandingPage() {
 						>
 							{authenticated ? "Go to Dashboard" : "Sign up"}
 						</Button>
-						<a
-							href="https://hetairoiconsultingllc.mintlify.app/"
-							rel="noopener"
-							target="_blank"
-						>
+						<a href={DOCS_URL} rel="noopener" target="_blank">
 							<Button className="h-12 rounded-full px-7" variant="secondary">
 								See Docs
 							</Button>
