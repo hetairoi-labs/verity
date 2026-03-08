@@ -7,26 +7,14 @@ function RouteComponent() {
 			<h1 className="text-7xl uppercase lg:text-9xl">Tests</h1>
 
 			<div className="mt-10 flex gap-4">
-				<Link to="/test/api">
-					<Button>API Tests</Button>
-				</Link>
 				<Link to="/test/e2e">
 					<Button>E2E Tests</Button>
 				</Link>
 				<Link to="/test/auth">
 					<Button>Auth</Button>
 				</Link>
-				<Link to="/test/live">
-					<Button>Live</Button>
-				</Link>
-				<Link to="/test/chat">
-					<Button>Chat</Button>
-				</Link>
 				<Link to="/test/form">
 					<Button>Form</Button>
-				</Link>
-				<Link to="/demo">
-					<Button>Demo</Button>
 				</Link>
 			</div>
 		</div>

@@ -57,7 +57,10 @@ export function UpdateListing({ contracts }: { contracts: KXContracts }) {
 
 		await updateSession.mutateAsync({
 			sessionId: index,
-			txHash,
+			logData: {
+				index,
+				dataCID: cid,
+			},
 			metadata: listingData.metadata,
 			topic: listingData.topic,
 			price: Number(priceRaw),

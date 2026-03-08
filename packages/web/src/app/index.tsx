@@ -22,12 +22,6 @@ function LandingPage() {
 			return;
 		}
 
-		if (login.result.isNewUser) {
-			navigate({ to: "/onboarding" });
-			setLoginIntent(false);
-			return;
-		}
-
 		navigate({ to: "/dashboard" });
 		setLoginIntent(false);
 	}, [login.result, loginIntent, navigate]);

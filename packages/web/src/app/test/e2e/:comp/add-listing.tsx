@@ -1,4 +1,5 @@
-import { useWriteContract } from "wagmi";
+import { parseEventLogs } from "viem";
+import { usePublicClient, useWriteContract } from "wagmi";
 import { TestCard } from "@/src/components/custom/test-card";
 import { Button } from "@/src/components/ui/button";
 import type { KXContracts } from "@/src/lib/context/evm-context";
@@ -25,12 +26,15 @@ export function AddListing({ contracts }: { contracts: KXContracts }) {
 	const writeContract = useWriteContract();
 	const upload = useUploadToPinataMutation();
 	const createSession = useCreateSessionMutation();
+	const publicClient = usePublicClient();
 
 	const isPending =
 		upload.isPending || writeContract.isPending || createSession.isPending;
 
 	async function handleAddListing() {
-		if (!(contracts?.Manager.address && contracts?.Manager.abi)) {
+		if (
+			!(contracts?.Manager.address && contracts?.Manager.abi && publicClient)
+		) {
 			return;
 		}
 
@@ -52,8 +56,27 @@ export function AddListing({ contracts }: { contracts: KXContracts }) {
 		});
 		console.log("write contract completed", txHash);
 
+		const receipt = await publicClient.waitForTransactionReceipt({
+			hash: txHash,
+		});
+		if (receipt.status !== "success") {
+			throw new Error("Listing creation transaction failed");
+		}
+		const logs = parseEventLogs({
+			abi: contracts.Manager.abi,
+			logs: receipt.logs,
+			eventName: "ListingUpsert",
+		});
+		const logData = logs[0]?.args;
+		if (!logData) {
+			throw new Error("Listing index not found in logs");
+		}
+
 		await createSession.mutateAsync({
-			txHash,
+			logData: {
+				index: Number(logData.index),
+				dataCID: logData.dataCID,
+			},
 			metadata: listingData.metadata,
 			topic: listingData.topic,
 			price: Number(priceRaw),

@@ -134,7 +134,7 @@ export function useResolveMeetingIndexMutation() {
 		},
 		onSuccess: (data, variables) => {
 			queryClient.invalidateQueries({
-				queryKey: qk.meetings.byId(variables.meetingId),
+				queryKey: qk.meetings.byId(String(variables.meetingId)),
 			});
 			const sessionId = data?.meeting?.sessionId;
 			if (sessionId != null) {
