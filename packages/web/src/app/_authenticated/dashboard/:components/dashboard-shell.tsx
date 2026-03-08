@@ -1,4 +1,10 @@
-import { StarFourIcon } from "@phosphor-icons/react";
+import {
+	ClockCounterClockwiseIcon,
+	FolderIcon,
+	GearIcon,
+	SquaresFourIcon,
+	StarFourIcon,
+} from "@phosphor-icons/react";
 import { Link } from "@tanstack/react-router";
 import { TopNavbar } from "./top-navbar";
 
@@ -10,10 +16,10 @@ interface DashboardShellProps {
 }
 
 const navItems = [
-	{ label: "Dashboard", to: "/dashboard" },
-	{ label: "Listings", to: "/listings" },
-	{ label: "History", to: "/history" },
-	{ label: "Settings", to: "/settings" },
+	{ icon: SquaresFourIcon, label: "Dashboard", to: "/dashboard" },
+	{ icon: FolderIcon, label: "Browse", to: "/listings" },
+	{ icon: ClockCounterClockwiseIcon, label: "History", to: "/history" },
+	{ icon: GearIcon, label: "Settings", to: "/settings" },
 ] as const;
 
 export function DashboardShell(props: DashboardShellProps) {
@@ -31,11 +37,12 @@ export function DashboardShell(props: DashboardShellProps) {
 					{navItems.map((item) => (
 						<Link
 							activeProps={{ className: "bg-secondary/80 text-foreground" }}
-							className="rounded-lg px-2.5 py-2 text-muted-foreground text-sm transition-colors hover:bg-secondary/70 hover:text-foreground"
+							className="flex items-center gap-2 rounded-lg px-2.5 py-2 text-muted-foreground text-sm transition-colors hover:bg-secondary/70 hover:text-foreground"
 							key={item.label}
 							to={item.to}
 						>
-							{item.label}
+							<item.icon size={20} />
+							<span>{item.label}</span>
 						</Link>
 					))}
 				</nav>
