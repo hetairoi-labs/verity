@@ -61,6 +61,7 @@ export const getSessionByIdInputSchema = z.object({
 });
 export const enrollParticipantInputSchema = z.object({
 	sessionId: z.coerce.number().min(0, "Session ID is required"),
+	meetingUrl: z.url(),
 	txHash: zHex(),
 });
 export const getSessionHistoryInputSchema = z.object({
@@ -426,6 +427,13 @@ export async function enrollParticipant(
 	if (!participant) {
 		throw new ApiError(500, "Failed to enroll participant");
 	}
+
+	await safeQuery(
+		db
+			.update(meetings)
+			.set({ status: "active" })
+			.where(eq(meetings.meetingUrl, input.meetingUrl))
+	);
 
 	return participant;
 }

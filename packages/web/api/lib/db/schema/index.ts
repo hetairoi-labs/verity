@@ -53,6 +53,7 @@ export const meetings = sqliteTable(
 		transcriptId: text("transcript_id"),
 		startDate: text("start_date").notNull(),
 		duration: integer().notNull(),
+		status: text("status").notNull().default("pending"),
 		sessionId: integer("session_id")
 			.references(() => sessions.id)
 			.notNull(),

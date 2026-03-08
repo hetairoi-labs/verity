@@ -9,6 +9,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { DashboardShell } from "@/src/app/_authenticated/dashboard/:components/dashboard-shell";
 import { Panel } from "@/src/app/_authenticated/dashboard/:components/panel";
+import { Badge } from "@/src/components/ui/badge";
 import { Button } from "@/src/components/ui/button";
 import { useAuth } from "@/src/lib/context/auth-context";
 import {
@@ -188,29 +189,60 @@ function MeetingsPanel({
 	}
 	return (
 		<div className="grid gap-3">
-			{meetings.map((meeting) => (
-				<div
-					className="flex items-center justify-between rounded-xl border border-border/60 bg-card/40 p-4 transition-colors hover:bg-card/60"
-					key={meeting.id}
-				>
-					<div className="space-y-1">
-						<p className="font-medium">{meeting.summary || "Verity Session"}</p>
-						<a
-							className="text-muted-foreground text-sm underline-offset-4 hover:underline"
-							href={meeting.meetingUrl}
-							rel="noopener"
-							target="_blank"
-						>
-							{meeting.meetingUrl}
-						</a>
+			{meetings.map((meeting) => {
+				const isPending = meeting.status === "pending";
+
+				return (
+					<div
+						className="flex items-center justify-between rounded-xl border border-border/60 bg-card/40 p-4 transition-colors hover:bg-card/60"
+						key={meeting.id}
+					>
+						<div className="space-y-1">
+							<div className="flex items-center gap-2">
+								<p className="font-medium">
+									{meeting.summary || "Verity Session"}
+								</p>
+								{isPending && (
+									<Badge
+										className="bg-orange-500/10 text-orange-500"
+										variant="outline"
+									>
+										Pending
+									</Badge>
+								)}
+							</div>
+							{isPending ? (
+								<p className="text-muted-foreground text-sm italic">
+									Meeting URL will be available once ready
+								</p>
+							) : (
+								<a
+									className="text-muted-foreground text-sm underline-offset-4 hover:underline"
+									href={meeting.meetingUrl}
+									rel="noopener"
+									target="_blank"
+								>
+									{meeting.meetingUrl}
+								</a>
+							)}
+						</div>
+						<Button
+							disabled={isPending}
+							render={
+								isPending ? (
+									<span>Join</span>
+								) : (
+									<a href={meeting.meetingUrl} rel="noopener" target="_blank">
+										Join
+									</a>
+								)
+							}
+							size="sm"
+							variant="outline"
+						/>
 					</div>
-					<Button size="sm" variant="outline">
-						<a href={meeting.meetingUrl} rel="noopener" target="_blank">
-							Join
-						</a>
-					</Button>
-				</div>
-			))}
+				);
+			})}
 		</div>
 	);
 }

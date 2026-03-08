@@ -1,5 +1,7 @@
 import { CoinIcon } from "@phosphor-icons/react";
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { useState } from "react";
+import { toast } from "sonner";
 import { useConnection } from "wagmi";
 import { DashboardShell } from "@/src/app/_authenticated/dashboard/:components/dashboard-shell";
 import { Panel } from "@/src/app/_authenticated/dashboard/:components/panel";
@@ -30,7 +32,7 @@ function DashboardPage() {
 	return (
 		<DashboardShell
 			description="Manage hosted listings and sessions with live API metrics."
-			title="Host Dashboard"
+			title="Dashboard"
 		>
 			<section className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
 				<MetricCard label="Total Listings" value={metrics?.totalListings} />
@@ -111,26 +113,43 @@ function MetricCard({
 function FaucetPanel() {
 	const { address } = useConnection();
 	const faucet = useFaucetMutation();
-	const { balance, isLoading: isBalanceLoading, refetch } = useUsdtBalance();
+	const { balance, isLoading: isBalanceLoading } = useUsdtBalance();
+	const [claimed, setClaimed] = useState(false);
 
-	function handleClaimFaucet() {
+	async function handleClaimFaucet() {
 		if (!address || balance === undefined || balance >= 1_000_000n) {
 			return;
 		}
 
-		faucet.mutate(
+		await faucet.mutateAsync(
 			{ address },
 			{
 				onSuccess: () => {
-					refetch();
+					setClaimed(true);
 				},
 			}
 		);
+
+		toast.success("USDC added to your wallet");
 	}
 
 	const hasEnoughBalance = balance !== undefined && balance >= 1_000_000n;
 	const isDisabled =
-		faucet.isPending || !address || isBalanceLoading || hasEnoughBalance;
+		faucet.isPending ||
+		claimed ||
+		!address ||
+		isBalanceLoading ||
+		hasEnoughBalance;
+
+	const getButtonLabel = () => {
+		if (faucet.isPending) {
+			return "Claiming...";
+		}
+		if (faucet.isSuccess) {
+			return "Claimed";
+		}
+		return "Claim USDC";
+	};
 
 	return (
 		<Panel className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
@@ -152,7 +171,7 @@ function FaucetPanel() {
 					disabled={isDisabled}
 					onClick={handleClaimFaucet}
 				>
-					{faucet.isPending ? "Claiming..." : "Claim USDC"}
+					{getButtonLabel()}
 				</Button>
 			</div>
 		</Panel>

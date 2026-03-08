@@ -28,13 +28,13 @@ function LandingPage() {
 			return;
 		}
 
-		navigate({ to: "/listings" });
+		navigate({ to: "/dashboard" });
 		setLoginIntent(false);
 	}, [login.result, loginIntent, navigate]);
 
 	const handlePrimaryAction = () => {
 		if (authenticated) {
-			navigate({ to: "/listings" });
+			navigate({ to: "/dashboard" });
 			return;
 		}
 		setLoginIntent(true);

@@ -25,9 +25,14 @@ function SettingsPage() {
 				<p className="text-muted-foreground text-sm">
 					Wallet: {user?.wallet?.address ?? "-"}
 				</p>
-				<p className="text-muted-foreground text-sm">
-					Email: {user?.email?.address ?? "-"}
-				</p>
+				{user?.email?.address ||
+					user?.google?.email ||
+					(user?.github?.email && (
+						<p className="text-muted-foreground text-sm">
+							Email:{" "}
+							{user.email?.address || user.google?.email || user.github?.email}
+						</p>
+					))}
 			</Panel>
 
 			<Panel className="space-y-3">

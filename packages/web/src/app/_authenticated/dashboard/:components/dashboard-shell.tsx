@@ -10,8 +10,8 @@ interface DashboardShellProps {
 }
 
 const navItems = [
-	{ label: "Listings", to: "/listings" },
 	{ label: "Dashboard", to: "/dashboard" },
+	{ label: "Listings", to: "/listings" },
 	{ label: "History", to: "/history" },
 	{ label: "Settings", to: "/settings" },
 ] as const;

@@ -184,7 +184,7 @@ export function useRequestSessionRegistrationAndEnroll() {
 	const enroll = useEnrollParticipantMutation();
 	const [isRunning, setIsRunning] = useState(false);
 
-	const execute = async (input: RequestMeetingInput) => {
+	const execute = (input: RequestMeetingInput) => {
 		const kx = ensureContracts(contracts);
 		if (!address) {
 			throw new Error("Wallet not connected");
@@ -195,7 +195,7 @@ export function useRequestSessionRegistrationAndEnroll() {
 		setIsRunning(true);
 
 		try {
-			return await toast.promise(
+			return toast.promise(
 				(async () => {
 					const meeting = await createMeeting.mutateAsync({
 						sessionId: input.sessionId,
@@ -237,6 +237,7 @@ export function useRequestSessionRegistrationAndEnroll() {
 
 					await enroll.mutateAsync({
 						sessionId: input.sessionId,
+						meetingUrl: meeting.meetingUrl,
 						txHash,
 					});
 
